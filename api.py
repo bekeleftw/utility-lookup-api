@@ -83,6 +83,19 @@ def lookup():
             elif w.get('_confidence') == 'low':
                 response['utilities']['water_note'] = w.get('_note', 'Estimated based on city name - verify with local utility.')
         
+        # Internet (NEW)
+        internet = result.get('internet')
+        if internet:
+            response['utilities']['internet'] = format_internet_providers(internet)
+            if internet.get('has_fiber'):
+                response['utilities']['internet_note'] = f"Fiber available from {internet.get('best_wired', {}).get('name', 'provider')}."
+            elif internet.get('has_cable'):
+                response['utilities']['internet_note'] = "Cable internet available. No fiber service found at this address."
+            else:
+                response['utilities']['internet_note'] = "Limited wired options. DSL, fixed wireless, or satellite may be available."
+        else:
+            response['utilities']['internet_note'] = "Could not retrieve internet provider data from FCC."
+        
         return jsonify(response)
         
     except Exception as e:
@@ -120,6 +133,58 @@ def format_utility(util, util_type):
             'confidence': util.get('_confidence', 'high' if util_type == 'electric' else 'medium'),
             'verified': util.get('_serp_verified', False)
         }
+
+
+def format_internet_providers(internet_data):
+    """Format internet provider data for API response."""
+    if not internet_data:
+        return []
+    
+    providers = internet_data.get('providers', [])
+    formatted = []
+    
+    for p in providers:
+        formatted.append({
+            'name': p.get('name'),
+            'technology': p.get('technology'),
+            'technology_code': p.get('technology_code'),
+            'max_download_mbps': p.get('max_download_mbps'),
+            'max_upload_mbps': p.get('max_upload_mbps'),
+            'low_latency': p.get('low_latency'),
+            'holding_company': p.get('holding_company'),
+        })
+    
+    # Add summary info at the start
+    result = {
+        'providers': formatted,
+        'provider_count': internet_data.get('provider_count', 0),
+        'has_fiber': internet_data.get('has_fiber', False),
+        'has_cable': internet_data.get('has_cable', False),
+        'best_wired': None,
+        'best_wireless': None,
+        'fcc_location_id': internet_data.get('location_id'),
+    }
+    
+    # Add best options
+    if internet_data.get('best_wired'):
+        bw = internet_data['best_wired']
+        result['best_wired'] = {
+            'name': bw.get('name'),
+            'technology': bw.get('technology'),
+            'max_download_mbps': bw.get('max_download_mbps'),
+            'max_upload_mbps': bw.get('max_upload_mbps'),
+        }
+    
+    if internet_data.get('best_wireless'):
+        bwl = internet_data['best_wireless']
+        result['best_wireless'] = {
+            'name': bwl.get('name'),
+            'technology': bwl.get('technology'),
+            'max_download_mbps': bwl.get('max_download_mbps'),
+            'max_upload_mbps': bwl.get('max_upload_mbps'),
+        }
+    
+    return result
 
 
 @app.route('/api/health', methods=['GET'])

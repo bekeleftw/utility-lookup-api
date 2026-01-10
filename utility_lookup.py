@@ -8,6 +8,7 @@ ENDPOINTS USED:
 - Electric Utility: HIFLD ArcGIS FeatureServer (free, no API key)
 - Natural Gas Utility: HIFLD ArcGIS FeatureServer (free, no API key)
 - Water Utility: EPA SDWIS API (free, no API key)
+- Internet Providers: FCC Broadband Map API (free, no API key)
 
 USAGE:
     python utility_lookup.py "1100 Congress Ave, Austin, TX 78701"
@@ -22,6 +23,7 @@ import os
 import re
 from typing import Optional, Tuple, Dict, List, Union
 from pathlib import Path
+from urllib.parse import quote
 from bs4 import BeautifulSoup
 
 # Try to load dotenv for API keys
@@ -54,284 +56,54 @@ BRIGHTDATA_PROXY_PASS = "n59dskgnctqr"
 # OpenAI API key for LLM verification
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
-# =============================================================================
-# FILTERING CONSTANTS - Used to exclude non-retail providers
-# =============================================================================
-
-# Providers to exclude (not retail providers - wholesale, transmission, irrigation, etc.)
-EXCLUDED_PROVIDER_PATTERNS = [
-    "WAPA", "WESTERN AREA POWER",
-    "BPA", "BONNEVILLE POWER",
-    "ERCOT",
-    "IRRIGATION", "IRRIGAT",
-    "WATER CONSERV",
-    "USBIA", "BIA-", "BUREAU OF INDIAN",
-    "RECLAMATION",
-    "GENERATION ONLY",
-    "TRANSMISSION ONLY",
-    "WHOLESALE",
-    "PROJECT",  # e.g., "USBIA-SAN CARLOS PROJECT"
-    "AUTHORITY",  # Often wholesale (but not always - check context)
-]
-
-# Don't exclude these even if they match above patterns
-EXCLUDED_EXCEPTIONS = [
-    "TENNESSEE VALLEY",  # TVA does retail in some areas
-    "SALT RIVER PROJECT",  # Arizona retail provider
-    "LOWER COLORADO RIVER AUTHORITY",  # Texas retail
-]
-
-# Texas TDUs (transmission/distribution utilities) - correct for deregulated TX
-TEXAS_TDUS = [
-    "ONCOR",
-    "CENTERPOINT",
-    "AEP TEXAS",
-    "TNMP",
-    "TEXAS-NEW MEXICO POWER",
-]
-
-# States with retail electric choice (deregulated)
-DEREGULATED_ELECTRIC_STATES = {
-    "TX": "Texas has retail electric choice. This is your TDU (delivery company). Visit powertochoose.org to select a retail provider.",
-    "PA": "Pennsylvania has retail electric choice. You may choose your electricity supplier.",
-    "OH": "Ohio has retail electric choice. You may choose your electricity supplier.",
-    "IL": "Illinois has retail electric choice in some areas. Check with your utility.",
-    "MD": "Maryland has retail electric choice. You may choose your electricity supplier.",
-    "NJ": "New Jersey has retail electric choice. You may choose your electricity supplier.",
-    "NY": "New York has retail electric choice in some areas. Check with your utility.",
-    "CT": "Connecticut has retail electric choice. You may choose your electricity supplier.",
-    "MA": "Massachusetts has retail electric choice. You may choose your electricity supplier.",
-    "ME": "Maine has retail electric choice. You may choose your electricity supplier.",
-    "NH": "New Hampshire has retail electric choice. You may choose your electricity supplier.",
-    "RI": "Rhode Island has retail electric choice. You may choose your electricity supplier.",
-    "DC": "Washington DC has retail electric choice. You may choose your electricity supplier.",
-}
-
-# Major IOUs and utilities to boost in ranking
-MAJOR_ELECTRIC_UTILITIES = [
-    "DUKE ENERGY", "DOMINION", "SOUTHERN COMPANY", "ENTERGY",
-    "XCEL ENERGY", "AMERICAN ELECTRIC", "FIRSTENERGY", "PPL",
-    "PACIFIC GAS", "PG&E", "SOUTHERN CALIFORNIA EDISON", "SCE",
-    "CON EDISON", "CONSOLIDATED EDISON",
-    "GEORGIA POWER", "FLORIDA POWER", "FPL", "VIRGINIA ELECTRIC",
-    "PROGRESS ENERGY", "CAROLINA POWER", "CONSUMERS ENERGY",
-    "DTE ENERGY", "AMEREN", "EVERGY", "EVERSOURCE",
-    "NATIONAL GRID", "PSEG", "EXELON", "COMMONWEALTH EDISON", "COMED",
-    "PECO", "PEPCO", "BGE", "BALTIMORE GAS",
-    "ONCOR", "CENTERPOINT", "AEP",
-    "WISCONSIN ELECTRIC", "WE ENERGIES", "ALLIANT", "WPS",
-    "XCEL", "NORTHERN STATES POWER",
-    "AUSTIN ENERGY", "CPS ENERGY", "SAN ANTONIO",
-    "SEATTLE CITY LIGHT", "TACOMA POWER", "SNOHOMISH",
-    "SALT RIVER PROJECT", "SRP", "APS", "ARIZONA PUBLIC SERVICE",
-    "ROCKY MOUNTAIN POWER", "PACIFICORP",
-    "NEVADA POWER", "NV ENERGY",
-    "PORTLAND GENERAL", "PUGET SOUND ENERGY",
-]
-
-MAJOR_GAS_UTILITIES = [
-    "ATMOS", "CENTERPOINT", "SOUTHERN CALIFORNIA GAS", "SOCAL GAS",
-    "NATIONAL FUEL", "NICOR", "PEOPLES GAS", "SPIRE", "SOUTHWEST GAS",
-    "WASHINGTON GAS", "PIEDMONT NATURAL GAS", "DOMINION ENERGY",
-    "TEXAS GAS SERVICE", "XCEL", "BLACK HILLS",
-    "NORTHWEST NATURAL", "AVISTA", "CASCADE NATURAL GAS",
-    "WPS", "WISCONSIN PUBLIC SERVICE", "WE ENERGIES",
-    "CONSUMERS ENERGY", "DTE", "COLUMBIA GAS",
-    "PSEG", "NATIONAL GRID", "CON EDISON",
-]
-
-
-# =============================================================================
-# FILTERING FUNCTIONS
-# =============================================================================
-
-def filter_electric_providers(providers: Union[Dict, List[Dict]], city: str = None, state: str = None) -> Tuple[List[Dict], Optional[str]]:
-    """
-    Filter electric providers to remove non-retail entities and rank by likelihood.
-    Returns (filtered_providers_list, deregulation_note).
-    """
-    if not providers:
-        return [], None
-
-    # Ensure we have a list
-    if isinstance(providers, dict):
-        providers = [providers]
-
-    filtered = []
-    for p in providers:
-        name = (p.get("NAME") or "").upper()
-
-        # Check if it's an exception first (don't exclude)
-        is_exception = False
-        for exc in EXCLUDED_EXCEPTIONS:
-            if exc in name:
-                is_exception = True
-                break
-
-        if not is_exception:
-            # Check if it should be excluded
-            skip = False
-            for pattern in EXCLUDED_PROVIDER_PATTERNS:
-                if pattern in name:
-                    skip = True
-                    break
-
-            if skip:
-                continue
-
-        filtered.append(p)
-
-    # If nothing left after filtering, return first original (better than nothing)
-    if not filtered and providers:
-        filtered = [providers[0]]
-
-    # Score and rank remaining providers
-    scored = []
-    for p in filtered:
-        name = (p.get("NAME") or "").upper()
-        p_city = (p.get("CITY") or "").upper()
-        score = 50  # Base score
-
-        # Boost if provider city matches address city
-        if city and city.upper() == p_city:
-            score += 40
-
-        # Boost if provider name contains city name (municipal utility)
-        if city and city.upper() in name:
-            score += 35
-
-        # Boost for Texas TDUs in TX
-        if state == "TX":
-            for tdu in TEXAS_TDUS:
-                if tdu in name:
-                    score += 50
-                    break
-
-        # Boost major utilities
-        for major in MAJOR_ELECTRIC_UTILITIES:
-            if major in name:
-                score += 25
-                break
-
-        # Slight penalty for co-ops when other options exist (they often serve surrounding areas)
-        if "COOP" in name or "CO-OP" in name or "COOPERATIVE" in name:
-            if len(filtered) > 1:
-                score -= 10
-
-        # Penalty for utilities from different cities (if it looks municipal)
-        if city and p_city and city.upper() != p_city:
-            if "CITY OF" in name or "MUNICIPAL" in name or "TOWN OF" in name:
-                score -= 40  # Strong penalty for municipal from wrong city
-
-        # Penalty for generic/ambiguous names
-        if "ELECTRIC DIST" in name or "ELECTRICAL DIST" in name:
-            score -= 15
-
-        p["_score"] = score
-        scored.append(p)
-
-    # Sort by score descending
-    scored.sort(key=lambda x: x.get("_score", 0), reverse=True)
-
-    # Set confidence levels
-    if scored:
-        scored[0]["_confidence"] = "high"
-        if len(scored) > 1:
-            gap = scored[0].get("_score", 0) - scored[1].get("_score", 0)
-            if gap < 15:
-                scored[0]["_confidence"] = "medium"
-        for other in scored[1:]:
-            other["_confidence"] = "medium"
-
-    # Check for deregulation note
-    dereg_note = None
-    if state in DEREGULATED_ELECTRIC_STATES:
-        dereg_note = DEREGULATED_ELECTRIC_STATES[state]
-
-    # Only return primary (or top 2 if scores are close)
-    if len(scored) > 1 and (scored[0].get("_score", 0) - scored[1].get("_score", 0)) < 10:
-        return scored[:2], dereg_note
-    return scored[:1], dereg_note
-
-
-def filter_gas_providers(providers: Union[Dict, List[Dict]], city: str = None, state: str = None) -> List[Dict]:
-    """
-    Filter gas providers using similar logic to electric.
-    Returns filtered and ranked list.
-    """
-    if not providers:
-        return []
-
-    if isinstance(providers, dict):
-        providers = [providers]
-
-    filtered = []
-    for p in providers:
-        name = (p.get("NAME") or "").upper()
-
-        # Skip non-retail patterns for gas
-        skip = False
-        for pattern in ["IRRIGATION", "TRANSMISSION", "WHOLESALE", "STORAGE", "PIPELINE"]:
-            if pattern in name:
-                skip = True
-                break
-
-        if skip:
-            continue
-
-        filtered.append(p)
-
-    if not filtered and providers:
-        filtered = [providers[0]]
-
-    # Score and rank
-    scored = []
-    for p in filtered:
-        name = (p.get("NAME") or "").upper()
-        p_city = (p.get("CITY") or "").upper()
-        score = 50
-
-        if city and city.upper() == p_city:
-            score += 40
-
-        if city and city.upper() in name:
-            score += 30
-
-        # Major gas utilities
-        for major in MAJOR_GAS_UTILITIES:
-            if major in name:
-                score += 25
-                break
-
-        p["_score"] = score
-        scored.append(p)
-
-    scored.sort(key=lambda x: x.get("_score", 0), reverse=True)
-
-    # Set confidence
-    if scored:
-        scored[0]["_confidence"] = "high"
-        if len(scored) > 1:
-            gap = scored[0].get("_score", 0) - scored[1].get("_score", 0)
-            if gap < 15:
-                scored[0]["_confidence"] = "medium"
-        for other in scored[1:]:
-            other["_confidence"] = "medium"
-
-    return scored[:1] if scored else []
-
-
-# =============================================================================
-# GEOCODING
-# =============================================================================
-
+# Google Maps API key for geocoding fallback
 GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
 
+# FCC Broadband Map API - no authentication required
+FCC_API_UUID = "ac417bca-6346-46d3-812a-924d11fb7fc0"
+FCC_API_BASE = "https://broadbandmap.fcc.gov/nbm/map/api"
+
+# Technology code descriptions for internet providers
+TECHNOLOGY_CODES = {
+    "10": "Copper/DSL",
+    "40": "Cable",
+    "50": "Fiber to the Premises",
+    "60": "GSO Satellite",
+    "61": "NGSO Satellite",
+    "70": "Unlicensed Fixed Wireless",
+    "71": "Licensed Fixed Wireless",
+    "72": "LTE Fixed Wireless",
+}
+
+SATELLITE_TECH_CODES = ["60", "61"]
+WIRELESS_TECH_CODES = ["70", "71", "72"]
+
+# State abbreviation mapping for Nominatim
+STATE_ABBREVS = {
+    "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+    "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
+    "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID",
+    "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+    "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+    "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
+    "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
+    "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+    "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+    "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+    "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
+    "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+    "Wisconsin": "WI", "Wyoming": "WY", "District of Columbia": "DC"
+}
+
+
+# =============================================================================
+# GEOCODING FUNCTIONS
+# =============================================================================
 
 def geocode_with_census(address: str, include_geography: bool = False) -> Optional[Dict]:
     """
-    Geocode using US Census Geocoder (free, no API key required).
-    Returns dict with coordinates and optionally geography info.
+    Geocode using US Census Geocoder (free, no API key).
+    Best for established addresses, may fail for new construction.
     """
     if include_geography:
         base_url = "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress"
@@ -348,32 +120,29 @@ def geocode_with_census(address: str, include_geography: bool = False) -> Option
             "benchmark": "Public_AR_Current",
             "format": "json"
         }
-
+    
     try:
         response = requests.get(base_url, params=params, timeout=10)
         response.raise_for_status()
         data = response.json()
-
+        
         matches = data.get("result", {}).get("addressMatches", [])
         if not matches:
             return None
-
+        
         match = matches[0]
         coords = match["coordinates"]
-        lon = coords["x"]
-        lat = coords["y"]
-        matched_address = match["matchedAddress"]
-
+        
         result = {
-            "lon": lon,
-            "lat": lat,
-            "matched_address": matched_address,
+            "lon": coords["x"],
+            "lat": coords["y"],
+            "matched_address": match["matchedAddress"],
             "city": None,
             "county": None,
             "state": None,
-            "source": "census"
+            "source": "Census"
         }
-
+        
         # Extract geography info if available
         if include_geography and "geographies" in match:
             geo = match["geographies"]
@@ -386,76 +155,73 @@ def geocode_with_census(address: str, include_geography: bool = False) -> Option
             states = geo.get("States", [])
             if states:
                 result["state"] = states[0].get("STUSAB")
-
+        
         return result
-
+        
     except requests.RequestException:
         return None
 
 
 def geocode_with_google(address: str) -> Optional[Dict]:
     """
-    Geocode using Google Maps Geocoding API.
-    Returns dict with coordinates and geography info.
+    Geocode using Google Maps API (paid, but has free tier).
+    Good for new construction and hard-to-find addresses.
     """
     if not GOOGLE_MAPS_API_KEY:
         return None
-
-    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+    
+    url = "https://maps.googleapis.com/maps/api/geocode/json"
     params = {
         "address": address,
         "key": GOOGLE_MAPS_API_KEY
     }
-
+    
     try:
-        response = requests.get(base_url, params=params, timeout=10)
+        response = requests.get(url, params=params, timeout=10)
         response.raise_for_status()
         data = response.json()
-
+        
         if data.get("status") != "OK" or not data.get("results"):
             return None
-
-        result_data = data["results"][0]
-        location = result_data["geometry"]["location"]
-        lon = location["lng"]
-        lat = location["lat"]
-
-        result = {
-            "lon": lon,
-            "lat": lat,
-            "matched_address": result_data.get("formatted_address"),
-            "city": None,
-            "county": None,
-            "state": None,
-            "source": "google"
-        }
-
-        # Extract address components
-        for component in result_data.get("address_components", []):
+        
+        result = data["results"][0]
+        location = result["geometry"]["location"]
+        
+        # Extract city, county, state from address components
+        city = None
+        county = None
+        state = None
+        
+        for component in result.get("address_components", []):
             types = component.get("types", [])
             if "locality" in types:
-                result["city"] = component["long_name"]
+                city = component["long_name"]
             elif "administrative_area_level_2" in types:
-                # County (remove " County" suffix if present)
-                county = component["long_name"]
-                if county.endswith(" County"):
-                    county = county[:-7]
-                result["county"] = county
+                # Remove " County" suffix if present
+                county = component["long_name"].replace(" County", "")
             elif "administrative_area_level_1" in types:
-                result["state"] = component["short_name"]
-
-        return result
-
+                state = component["short_name"]
+        
+        return {
+            "lon": location["lng"],
+            "lat": location["lat"],
+            "matched_address": result.get("formatted_address"),
+            "city": city,
+            "county": county,
+            "state": state,
+            "source": "Google"
+        }
+        
     except requests.RequestException:
         return None
 
 
 def geocode_with_nominatim(address: str) -> Optional[Dict]:
     """
-    Geocode using Nominatim (OpenStreetMap). Free but rate-limited to 1 req/sec.
-    Returns dict with coordinates and geography info.
+    Geocode using Nominatim/OpenStreetMap (free, rate limited).
+    Fallback when Census and Google fail.
     """
-    base_url = "https://nominatim.openstreetmap.org/search"
+    url = "https://nominatim.openstreetmap.org/search"
     params = {
         "q": address,
         "format": "json",
@@ -466,111 +232,96 @@ def geocode_with_nominatim(address: str) -> Optional[Dict]:
     headers = {
         "User-Agent": "UtilityLookupTool/1.0"
     }
-
+    
     try:
-        response = requests.get(base_url, params=params, headers=headers, timeout=10)
+        response = requests.get(url, params=params, headers=headers, timeout=10)
         response.raise_for_status()
         data = response.json()
-
+        
         if not data:
             return None
-
-        item = data[0]
-        lon = float(item["lon"])
-        lat = float(item["lat"])
-
-        result = {
-            "lon": lon,
-            "lat": lat,
-            "matched_address": item.get("display_name"),
-            "city": None,
-            "county": None,
-            "state": None,
-            "source": "nominatim"
-        }
-
-        # Extract address details
-        addr = item.get("address", {})
-        result["city"] = addr.get("city") or addr.get("town") or addr.get("village")
+        
+        result = data[0]
+        addr = result.get("address", {})
+        
+        # Convert state name to abbreviation
+        state_name = addr.get("state", "")
+        state = STATE_ABBREVS.get(state_name, state_name)
+        
+        # Get county and remove " County" suffix
         county = addr.get("county", "")
         if county.endswith(" County"):
             county = county[:-7]
-        result["county"] = county
-        result["state"] = addr.get("state")
-
-        # Convert state name to abbreviation
-        state_abbrevs = {
-            "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
-            "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
-            "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID",
-            "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
-            "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
-            "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
-            "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
-            "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
-            "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
-            "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
-            "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
-            "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
-            "Wisconsin": "WI", "Wyoming": "WY", "District of Columbia": "DC"
+        
+        return {
+            "lon": float(result["lon"]),
+            "lat": float(result["lat"]),
+            "matched_address": result.get("display_name"),
+            "city": addr.get("city") or addr.get("town") or addr.get("village"),
+            "county": county,
+            "state": state,
+            "source": "Nominatim"
         }
-        if result["state"] in state_abbrevs:
-            result["state"] = state_abbrevs[result["state"]]
-
-        return result
-
+        
     except requests.RequestException:
         return None
 
 
 def geocode_address(address: str, include_geography: bool = False) -> Optional[Dict]:
     """
-    Geocode an address using three-tier fallback: Census → Google → Nominatim.
-    Returns dict with coordinates and geography info.
+    Geocode an address using a three-tier fallback system:
+    1. Census Geocoder (free, best for established addresses)
+    2. Google Maps API (handles new construction)
+    3. Nominatim/OSM (free fallback)
     """
-    # Tier 1: Census (free, no limit, best for established US addresses)
-    result = geocode_with_census(address, include_geography=True)
+    print(f"Looking up utilities for: {address}\n")
+    
+    # Tier 1: Census Geocoder
+    result = geocode_with_census(address, include_geography)
     if result:
         print(f"Geocoded (Census): {result.get('matched_address')}")
         print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
-        if result.get("city") or result.get("county"):
+        if result.get('city') or result.get('county'):
             print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
         return result
-
-    # Tier 2: Google (accurate, handles new construction)
+    
     print("Census geocoder failed, trying Google...")
+    
+    # Tier 2: Google Maps API
     result = geocode_with_google(address)
     if result:
         print(f"Geocoded (Google): {result.get('matched_address')}")
         print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
-        if result.get("city") or result.get("county"):
+        if result.get('city') or result.get('county'):
             print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
         return result
-
-    # Tier 3: Nominatim (free fallback)
+    
     print("Google geocoder failed, trying Nominatim...")
+    
+    # Tier 3: Nominatim/OSM
     result = geocode_with_nominatim(address)
     if result:
         print(f"Geocoded (Nominatim): {result.get('matched_address')}")
         print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
-        if result.get("city") or result.get("county"):
+        if result.get('city') or result.get('county'):
             print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
         return result
-
+    
     print(f"No geocoding results for: {address}")
     return None
 
+
 # =============================================================================
-# UTILITY LOOKUPS
+# UTILITY LOOKUP FUNCTIONS
 # =============================================================================
 
-def lookup_electric_utility(lon: float, lat: float) -> Optional[Union[Dict, List[Dict]]]:
+def lookup_electric_utility(lon: float, lat: float) -> Optional[Dict]:
     """
     Query HIFLD ArcGIS API to find electric utility for a given point.
-    Returns utility info dict or list of dicts if multiple, or None if not found.
+    Returns utility info dict or None if not found.
     """
     base_url = "https://services5.arcgis.com/HDRa0B57OVrv2E1q/arcgis/rest/services/Electric_Retail_Service_Territories/FeatureServer/0/query"
-
+    
     params = {
         "geometry": f"{lon},{lat}",
         "geometryType": "esriGeometryPoint",
@@ -579,35 +330,37 @@ def lookup_electric_utility(lon: float, lat: float) -> Optional[Union[Dict, List
         "returnGeometry": "false",
         "f": "json"
     }
-
+    
     try:
         response = requests.get(base_url, params=params, timeout=15)
         response.raise_for_status()
         data = response.json()
-
+        
         features = data.get("features", [])
         if not features:
             print("No electric utility found for this location.")
             return None
-
+        
         # Return all matches (territories can overlap)
         if len(features) == 1:
             return features[0]["attributes"]
         else:
             return [f["attributes"] for f in features]
-
+        
     except requests.RequestException as e:
         print(f"Electric utility lookup error: {e}")
         return None
 
 
-def lookup_gas_utility(lon: float, lat: float, state: str = None) -> Optional[Union[Dict, List[Dict]]]:
+def lookup_gas_utility(lon: float, lat: float, state: str = None) -> Optional[Dict]:
     """
     Query HIFLD ArcGIS API to find natural gas utility for a given point.
-    Returns utility info dict or list of dicts, or None if not found.
+    Falls back to state-level lookup if spatial query returns no results.
+    Returns utility info dict or None if not found.
     """
     base_url = "https://services5.arcgis.com/HDRa0B57OVrv2E1q/arcgis/rest/services/Natural_Gas_Local_Distribution_Company_Service_Territories/FeatureServer/0/query"
-
+    
+    # First try spatial query
     params = {
         "geometry": f"{lon},{lat}",
         "geometryType": "esriGeometryPoint",
@@ -616,25 +369,80 @@ def lookup_gas_utility(lon: float, lat: float, state: str = None) -> Optional[Un
         "returnGeometry": "false",
         "f": "json"
     }
-
+    
     try:
         response = requests.get(base_url, params=params, timeout=15)
         response.raise_for_status()
         data = response.json()
-
+        
         features = data.get("features", [])
         if features:
+            # Return all matches (territories can overlap)
             if len(features) == 1:
                 return features[0]["attributes"]
             else:
                 return [f["attributes"] for f in features]
-
+        
+        # No spatial match found - return None rather than guessing
         print("No natural gas utility found in database for this location.")
         return None
-
+        
     except requests.RequestException as e:
         print(f"Gas utility lookup error: {e}")
         return None
+
+
+def lookup_gas_utility_by_state(state: str) -> Optional[Dict]:
+    """
+    Fallback: Query gas utilities by state, return the largest by customer count.
+    Used when spatial query fails due to incomplete polygon data.
+    """
+    base_url = "https://services5.arcgis.com/HDRa0B57OVrv2E1q/arcgis/rest/services/Natural_Gas_Local_Distribution_Company_Service_Territories/FeatureServer/0/query"
+    
+    params = {
+        "where": f"STATE='{state}'",
+        "outFields": "NAME,SVCTERID,STATE,TELEPHONE,ADDRESS,CITY,ZIP,WEBSITE,TYPE,HOLDINGCO,TOTAL_CUST",
+        "orderByFields": "TOTAL_CUST DESC",
+        "returnGeometry": "false",
+        "resultRecordCount": 1,
+        "f": "json"
+    }
+    
+    try:
+        response = requests.get(base_url, params=params, timeout=15)
+        response.raise_for_status()
+        data = response.json()
+        
+        features = data.get("features", [])
+        if not features:
+            return None
+        
+        largest = features[0]["attributes"]
+        return largest
+        
+    except requests.RequestException as e:
+        print(f"Gas utility state lookup error: {e}")
+        return None
+
+
+def load_water_cache() -> Dict:
+    """Load water utility cache from file."""
+    if WATER_CACHE_FILE.exists():
+        try:
+            with open(WATER_CACHE_FILE, 'r') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            return {}
+    return {}
+
+
+def save_water_cache(cache: Dict) -> None:
+    """Save water utility cache to file."""
+    try:
+        with open(WATER_CACHE_FILE, 'w') as f:
+            json.dump(cache, f, indent=2)
+    except IOError as e:
+        print(f"Warning: Could not save water cache: {e}")
 
 
 def lookup_water_utility(city: str, county: str, state: str, full_address: str = None) -> Optional[Dict]:
@@ -643,13 +451,13 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
     """
     if not state:
         return None
-
-    # Try local SDWA lookup first
+    
+    # Try local SDWA lookup first (built from build_water_lookup.py)
     if WATER_LOOKUP_FILE.exists():
         try:
             with open(WATER_LOOKUP_FILE, 'r') as f:
                 lookup_data = json.load(f)
-
+            
             # Try city lookup first
             if city:
                 city_key = f"{state}|{city.upper()}"
@@ -657,7 +465,7 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                     result = lookup_data['by_city'][city_key].copy()
                     result['_confidence'] = 'high'
                     return result
-
+            
             # Fall back to county lookup
             if county:
                 county_key = f"{state}|{county.upper()}"
@@ -668,8 +476,8 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                     return result
         except (json.JSONDecodeError, IOError):
             pass
-
-    # Fallback to heuristic
+    
+    # Fallback to heuristic if no local data
     if city:
         return {
             "name": f"City of {city} Water Utilities",
@@ -702,12 +510,310 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
             "_confidence": "low",
             "_note": "Estimated - no SDWA data available"
         }
-
+    
     return None
 
 
+def _format_water_result(ws: Dict) -> Dict:
+    """Format EPA SDWIS water system data into standard format."""
+    return {
+        "name": ws.get("pws_name"),
+        "id": ws.get("pwsid"),
+        "state": ws.get("state_code"),
+        "phone": ws.get("phone_number"),
+        "address": ws.get("address_line1"),
+        "city": ws.get("city_name"),
+        "zip": ws.get("zip_code"),
+        "population_served": ws.get("population_served_count"),
+        "source_type": ws.get("primary_source_code"),
+        "owner_type": ws.get("owner_type_code"),
+        "service_connections": ws.get("service_connections_count"),
+    }
+
+
 # =============================================================================
-# SERP VERIFICATION (Optional)
+# INTERNET PROVIDER LOOKUP (FCC Broadband Map API)
+# =============================================================================
+
+def lookup_fcc_location_id(address: str) -> Optional[str]:
+    """
+    Convert address to FCC location_id using the Fabric API.
+    Returns location_id string or None if address not found.
+    """
+    encoded_address = quote(address, safe='')
+    url = f"{FCC_API_BASE}/fabric/address/{FCC_API_UUID}/{encoded_address}"
+    
+    try:
+        response = requests.get(url, timeout=15, headers={
+            "Accept": "application/json",
+            "User-Agent": "UtilityLookupTool/1.0"
+        })
+        response.raise_for_status()
+        data = response.json()
+        
+        if data.get("status") == "successful" and data.get("data"):
+            return data["data"][0].get("location_id")
+        
+        print(f"FCC API: No location found for address")
+        return None
+        
+    except requests.RequestException as e:
+        print(f"FCC location lookup error: {e}")
+        return None
+
+
+def lookup_internet_providers(address: str = None, location_id: str = None) -> Optional[Dict]:
+    """
+    Look up internet providers for an address using FCC Broadband Map API.
+    
+    Returns dict with:
+    - providers: List of all providers with details
+    - best_wired: Best wired option (fiber > cable > DSL)
+    - has_fiber: Boolean
+    """
+    # Step 1: Get location_id if not provided
+    if not location_id:
+        if not address:
+            return None
+        location_id = lookup_fcc_location_id(address)
+        if not location_id:
+            return None
+    
+    # Step 2: Get provider details
+    url = f"{FCC_API_BASE}/fabric/detail/{FCC_API_UUID}/{location_id}"
+    
+    try:
+        response = requests.get(url, timeout=15, headers={
+            "Accept": "application/json",
+            "User-Agent": "UtilityLookupTool/1.0"
+        })
+        response.raise_for_status()
+        data = response.json()
+        
+        if data.get("status") != "successful" or not data.get("data"):
+            print("FCC API: No provider data found")
+            return None
+        
+        location_data = data["data"][0]
+        providers_raw = location_data.get("detail", [])
+        
+        # Process and dedupe providers
+        providers = []
+        seen = set()
+        
+        for p in providers_raw:
+            key = f"{p.get('brand_name')}|{p.get('technology_code')}"
+            if key in seen:
+                continue
+            seen.add(key)
+            
+            tech_code = p.get("technology_code", "")
+            provider = {
+                "name": p.get("brand_name") or p.get("provider_name"),
+                "provider_name": p.get("provider_name"),
+                "holding_company": p.get("holding_company_name"),
+                "technology": TECHNOLOGY_CODES.get(tech_code, tech_code),
+                "technology_code": tech_code,
+                "max_download_mbps": p.get("maxdown"),
+                "max_upload_mbps": p.get("maxup"),
+                "low_latency": p.get("lowlatency") == 1,
+            }
+            providers.append(provider)
+        
+        # Sort by download speed descending
+        providers.sort(key=lambda x: x.get("max_download_mbps", 0) or 0, reverse=True)
+        
+        # Find best options by category
+        best_fiber = None
+        best_cable = None
+        best_dsl = None
+        best_wireless = None
+        best_satellite = None
+        
+        for p in providers:
+            tech = p.get("technology_code", "")
+            if tech == "50" and not best_fiber:
+                best_fiber = p
+            elif tech == "40" and not best_cable:
+                best_cable = p
+            elif tech == "10" and not best_dsl:
+                best_dsl = p
+            elif tech in WIRELESS_TECH_CODES and not best_wireless:
+                best_wireless = p
+            elif tech in SATELLITE_TECH_CODES and not best_satellite:
+                best_satellite = p
+        
+        best_wired = best_fiber or best_cable or best_dsl
+        
+        return {
+            "location_id": location_id,
+            "address": location_data.get("address_primary"),
+            "city": location_data.get("city"),
+            "state": location_data.get("state"),
+            "zip": location_data.get("zip_code"),
+            "unit_count": location_data.get("unitCount", 1),
+            "providers": providers,
+            "provider_count": len(providers),
+            "has_fiber": best_fiber is not None,
+            "has_cable": best_cable is not None,
+            "best_wired": best_wired,
+            "best_wireless": best_wireless,
+            "best_satellite": best_satellite,
+        }
+        
+    except requests.RequestException as e:
+        print(f"FCC provider lookup error: {e}")
+        return None
+
+
+# =============================================================================
+# RANKING AND FILTERING FUNCTIONS
+# =============================================================================
+
+def rank_electric_providers(providers: List[Dict], city: str = None, county: str = None) -> Tuple[Dict, List[Dict]]:
+    """
+    Rank electric providers to identify the most likely one.
+    Returns (primary_provider, other_providers).
+    """
+    if not providers:
+        return None, []
+    
+    if len(providers) == 1:
+        providers[0]["_confidence"] = "high"
+        return providers[0], []
+    
+    scored = []
+    for p in providers:
+        name = p.get("NAME", "").upper()
+        score = 50  # Base score
+        notes = []
+        
+        # Check if it's a city municipal utility matching the address city
+        if city:
+            city_upper = city.upper()
+            if city_upper in name or f"CITY OF {city_upper}" in name:
+                score += 30
+                notes.append("City municipal match")
+        
+        # Large IOUs are usually correct when present
+        large_ious = ["DUKE ENERGY", "DOMINION", "SOUTHERN COMPANY", "ENTERGY", 
+                      "XCEL ENERGY", "AMERICAN ELECTRIC", "FIRSTENERGY", "PPL",
+                      "PACIFIC GAS", "SOUTHERN CALIFORNIA EDISON", "CON EDISON",
+                      "GEORGIA POWER", "FLORIDA POWER", "VIRGINIA ELECTRIC",
+                      "PROGRESS ENERGY", "CAROLINA POWER", "CONSUMERS ENERGY",
+                      "DTE ENERGY", "AMEREN", "EVERGY", "ONCOR", "CENTERPOINT",
+                      "EVERSOURCE", "NATIONAL GRID", "PSEG", "EXELON", "COMMONWEALTH EDISON"]
+        for iou in large_ious:
+            if iou in name:
+                score += 20
+                notes.append("Major IOU")
+                break
+        
+        # Rural EMCs are common in rural areas
+        if "EMC" in name or "RURAL" in name or "COOPERATIVE" in name or "CO-OP" in name:
+            score += 10
+            notes.append("Rural cooperative")
+        
+        # Municipal utilities from OTHER cities should be deprioritized
+        if "MUNICIPAL" in name or "CITY OF" in name or "TOWN OF" in name:
+            if city and city.upper() not in name:
+                score -= 20
+                notes.append("Different city municipal")
+        
+        # Wholesale/transmission utilities are rarely retail providers
+        if "WHOLESALE" in name or "TRANSMISSION" in name or "GENERATION" in name:
+            score -= 30
+            notes.append("Wholesale/transmission")
+        
+        p["_score"] = score
+        p["_ranking_notes"] = notes
+        scored.append(p)
+    
+    # Sort by score descending
+    scored.sort(key=lambda x: x.get("_score", 0), reverse=True)
+    
+    primary = scored[0]
+    others = scored[1:]
+    
+    # Set confidence based on score gap
+    if len(others) > 0:
+        score_gap = primary.get("_score", 0) - others[0].get("_score", 0)
+        if score_gap >= 20:
+            primary["_confidence"] = "high"
+        else:
+            primary["_confidence"] = "medium"
+            primary["_note"] = f"Close match with {others[0].get('NAME', 'other provider')}"
+    else:
+        primary["_confidence"] = "high"
+    
+    return primary, others
+
+
+def _water_fallback(city: str, state: str, reason: str) -> Dict:
+    """Return a fallback water utility result with low confidence."""
+    fallback_name = f"{city} Water Department" if city else f"{state} Water Utility"
+    return {
+        "name": fallback_name,
+        "id": None,
+        "state": state,
+        "phone": None,
+        "address": None,
+        "city": city,
+        "zip": None,
+        "population_served": None,
+        "source_type": None,
+        "owner_type": None,
+        "service_connections": None,
+        "_confidence": "low",
+        "_fallback_reason": reason,
+    }
+
+
+def filter_utilities_by_location(utilities: Union[Dict, List[Dict]], city: str = None) -> Union[Dict, List[Dict]]:
+    """
+    Filter utilities to remove municipal utilities from other cities.
+    """
+    if not utilities or not city:
+        return utilities
+    
+    city_upper = city.upper()
+    
+    def is_relevant_utility(util: Dict) -> bool:
+        name = util.get("NAME", "").upper()
+        
+        # Check if it's a municipal utility (CITY OF, VILLAGE OF, TOWN OF)
+        municipal_prefixes = ["CITY OF ", "VILLAGE OF ", "TOWN OF "]
+        for prefix in municipal_prefixes:
+            if name.startswith(prefix):
+                util_city = name[len(prefix):].strip().split(" - ")[0].split(",")[0].strip()
+                return util_city == city_upper
+        
+        # Check for pattern like "OCONOMOWOC UTILITIES"
+        municipal_suffixes = [" UTILITIES", " UTILITY", " ELECTRIC", " LIGHT", " POWER", " WATER & LIGHT", " ELECTRIC & WATER"]
+        for suffix in municipal_suffixes:
+            if name.endswith(suffix):
+                util_city = name[:-len(suffix)].strip()
+                if util_city and " " not in util_city:
+                    return util_city == city_upper
+        
+        # Filter out wholesale power suppliers
+        wholesale_indicators = ["WPPI ", "WHOLESALE", "GENERATION", "TRANSMISSION"]
+        if any(indicator in name for indicator in wholesale_indicators):
+            return False
+        
+        return True
+    
+    if isinstance(utilities, list):
+        filtered = [u for u in utilities if is_relevant_utility(u)]
+        if len(filtered) == 1:
+            return filtered[0]
+        return filtered if filtered else None
+    else:
+        return utilities if is_relevant_utility(utilities) else None
+
+
+# =============================================================================
+# SERP VERIFICATION FUNCTIONS
 # =============================================================================
 
 def verify_utility_with_serp(address: str, utility_type: str, candidate_name: str = None) -> Optional[Dict]:
@@ -717,36 +823,48 @@ def verify_utility_with_serp(address: str, utility_type: str, candidate_name: st
     """
     if not BRIGHTDATA_PROXY_PASS:
         return None
-
+    
+    # Build search query
     query = f"{address} {utility_type} utility provider"
     search_url = f"https://www.google.com/search?q={requests.utils.quote(query)}"
-
+    
+    # Set up proxy
     proxy_url = f"http://{BRIGHTDATA_PROXY_USER}:{BRIGHTDATA_PROXY_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
-    proxies = {"http": proxy_url, "https": proxy_url}
-
+    proxies = {
+        "http": proxy_url,
+        "https": proxy_url
+    }
+    
     try:
         import urllib3
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-
-        response = requests.get(search_url, proxies=proxies, timeout=15, verify=False)
+        
+        response = requests.get(
+            search_url,
+            proxies=proxies,
+            timeout=15,
+            verify=False
+        )
         response.raise_for_status()
-
+        
         soup = BeautifulSoup(response.text, 'html.parser')
+        
         for script in soup(["script", "style"]):
             script.decompose()
+        
         search_text = soup.get_text(separator=' ')[:4000]
-
+        
         if OPENAI_API_KEY:
             return analyze_serp_with_llm(search_text, address, utility_type, candidate_name)
-
+        
         return analyze_serp_with_regex(search_text.upper(), candidate_name)
-
-    except Exception:
+        
+    except Exception as e:
         return None
 
 
 def analyze_serp_with_llm(search_text: str, address: str, utility_type: str, candidate_name: str = None) -> Optional[Dict]:
-    """Use OpenAI to analyze search results."""
+    """Use OpenAI to analyze search results and identify the correct utility provider."""
     try:
         prompt = f"""Analyze these Google search results to identify the {utility_type} utility provider for the address: {address}
 
@@ -765,14 +883,14 @@ Reply with ONLY a JSON object in this exact format:
             "Authorization": f"Bearer {OPENAI_API_KEY}",
             "Content-Type": "application/json"
         }
-
+        
         data = {
             "model": "gpt-4o-mini",
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0,
             "max_tokens": 200
         }
-
+        
         response = requests.post(
             "https://api.openai.com/v1/chat/completions",
             headers=headers,
@@ -780,47 +898,50 @@ Reply with ONLY a JSON object in this exact format:
             timeout=15
         )
         response.raise_for_status()
-
+        
         result = response.json()
         content = result["choices"][0]["message"]["content"]
-
+        
         if "```" in content:
             content = content.split("```")[1]
             if content.startswith("json"):
                 content = content[4:]
-
+        
         llm_result = json.loads(content.strip())
-
+        
         return {
             "verified": llm_result.get("matches_database", False),
             "serp_provider": llm_result.get("provider"),
             "confidence": llm_result.get("confidence", "medium"),
             "notes": llm_result.get("notes", "")
         }
-
-    except Exception:
+        
+    except Exception as e:
         return None
 
 
 def analyze_serp_with_regex(combined_text: str, candidate_name: str = None) -> Optional[Dict]:
-    """Fallback regex-based analysis."""
+    """Fallback regex-based analysis when OpenAI is unavailable."""
     utility_patterns = [
+        r'\b(BLUE RIDGE ENERGY)\b',
+        r'\b(PIEDMONT NATURAL GAS)\b',
         r'\b(DUKE ENERGY[A-Z\s]*)\b',
-        r'\b(DOMINION ENERGY[A-Z\s]*)\b',
+        r'\b(FRONTIER NATURAL GAS)\b',
         r'\b([A-Z][A-Z]+\s+(?:ENERGY|ELECTRIC|GAS|WATER|UTILITIES))\b',
         r'\b(CITY OF [A-Z]+(?:\s+WATER)?)\b',
+        r'\b(TOWN OF [A-Z]+)\b',
     ]
-
+    
     found_utilities = []
     for pattern in utility_patterns:
         matches = re.findall(pattern, combined_text)
         found_utilities.extend(matches)
-
+    
     found_utilities = list(set([
-        u.strip() for u in found_utilities
-        if len(u) > 8 and len(u) < 50 and not any(x in u for x in ['SEARCH', 'GOOGLE', 'CLICK'])
+        u.strip() for u in found_utilities 
+        if len(u) > 8 and len(u) < 50 and not any(x in u for x in ['SEARCH', 'GOOGLE', 'CLICK', 'SIGN', 'FILTER'])
     ]))
-
+    
     if candidate_name and found_utilities:
         candidate_upper = candidate_name.upper()
         for found in found_utilities:
@@ -829,27 +950,41 @@ def analyze_serp_with_regex(combined_text: str, candidate_name: str = None) -> O
         return {"verified": False, "serp_suggestions": found_utilities[:3], "confidence": "low"}
     elif found_utilities:
         return {"verified": False, "serp_suggestions": found_utilities[:3], "confidence": "medium"}
-
+    
     return None
 
+
 # =============================================================================
-# FORMATTING
+# OUTPUT FORMATTING FUNCTIONS
 # =============================================================================
 
 def format_utility_result(utility: dict, utility_type: str = "ELECTRIC") -> str:
     """Format utility dict into readable output."""
     utility_id = utility.get('ID') or utility.get('SVCTERID') or utility.get('id', 'N/A')
-    confidence = utility.get('_confidence', 'medium')
-
+    is_fallback = utility.get('_fallback', False)
+    confidence = utility.get('_confidence')
+    
+    if confidence is None:
+        if utility_type == "ELECTRIC":
+            confidence = "high"
+        elif utility_type == "NATURAL GAS":
+            confidence = "medium"
+        else:
+            confidence = "low"
+    
     confidence_labels = {
         "high": "✓",
         "medium": "⚠ verify",
         "low": "? estimated"
     }
     confidence_label = confidence_labels.get(confidence, "")
-
+    
     header = f"{utility_type} UTILITY PROVIDER [{confidence_label}]"
-
+    if is_fallback:
+        header = f"{utility_type} UTILITY PROVIDER [⚠ estimated - largest in state]"
+    elif confidence == "low" and utility.get('_note'):
+        header = f"{utility_type} UTILITY PROVIDER [? estimated]"
+    
     name = utility.get('NAME') or utility.get('name', 'N/A')
     state = utility.get('STATE') or utility.get('state', 'N/A')
     phone = utility.get('TELEPHONE') or utility.get('phone', 'N/A')
@@ -857,7 +992,7 @@ def format_utility_result(utility: dict, utility_type: str = "ELECTRIC") -> str:
     address = utility.get('ADDRESS') or utility.get('address', 'N/A')
     city = utility.get('CITY') or utility.get('city', 'N/A')
     zip_code = utility.get('ZIP') or utility.get('zip', 'N/A')
-
+    
     lines = [
         "",
         "=" * 50,
@@ -867,131 +1002,78 @@ def format_utility_result(utility: dict, utility_type: str = "ELECTRIC") -> str:
         f"State:     {state}",
         f"Phone:     {phone}",
     ]
-
+    
     if utility_type != "WATER":
         lines.append(f"Website:   {website}")
-
+    
     lines.extend([
         f"Address:   {address}",
         f"City:      {city}",
         f"ZIP:       {zip_code}",
         f"Utility ID: {utility_id}",
     ])
-
+    
     if utility_type == "NATURAL GAS":
         lines.append(f"Type:      {utility.get('TYPE', 'N/A')}")
-
+    
     if utility_type == "WATER":
         pop = utility.get('population_served')
         if pop:
             lines.append(f"Pop Served: {pop:,}")
+        source = utility.get('source_type')
+        if source:
+            source_desc = {"GW": "Groundwater", "GWP": "Groundwater", "SW": "Surface Water", "SWP": "Surface Water"}.get(source, source)
+            lines.append(f"Source:    {source_desc}")
+        total = utility.get('_total_matches')
+        if total and total > 1:
+            lines.append(f"Note:      {total} water systems serve this county")
+    
+    lines.append("=" * 50)
+    return "\n".join(lines)
 
+
+def format_internet_result(result: Dict) -> str:
+    """Format internet provider results for display."""
+    if not result:
+        return "No internet provider data found."
+    
+    lines = [
+        "",
+        "=" * 50,
+        "INTERNET PROVIDERS (FCC Broadband Map)",
+        "=" * 50,
+        f"Address:   {result.get('address')}",
+        f"City:      {result.get('city')}, {result.get('state')} {result.get('zip')}",
+        f"Providers: {result.get('provider_count')} available",
+        f"Has Fiber: {'Yes' if result.get('has_fiber') else 'No'}",
+        f"Has Cable: {'Yes' if result.get('has_cable') else 'No'}",
+        ""
+    ]
+    
+    best = result.get("best_wired")
+    if best:
+        lines.append(f"RECOMMENDED (Wired):")
+        lines.append(f"  {best.get('name')} - {best.get('technology')}")
+        lines.append(f"  Speed: {best.get('max_download_mbps')} Mbps down / {best.get('max_upload_mbps')} Mbps up")
+        lines.append("")
+    
+    lines.append("ALL PROVIDERS:")
+    for p in result.get("providers", []):
+        speed = f"{p.get('max_download_mbps')}/{p.get('max_upload_mbps')} Mbps"
+        lines.append(f"  - {p.get('name')}: {p.get('technology')} ({speed})")
+    
     lines.append("=" * 50)
     return "\n".join(lines)
 
 
 # =============================================================================
-# MAIN LOOKUP FUNCTION
+# JSON OUTPUT FUNCTION
 # =============================================================================
 
-def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False) -> Optional[Dict]:
-    """
-    Main function: takes an address string, returns electric, gas, and water utility info.
-    Filters out non-retail providers and adds deregulation notes where applicable.
-    """
-    print(f"\nLooking up utilities for: {address}\n")
-
-    # Step 1: Geocode with geography info
-    geo_result = geocode_address(address, include_geography=True)
-    if not geo_result:
-        return None
-
-    lon = geo_result["lon"]
-    lat = geo_result["lat"]
-    city = geo_result.get("city")
-    state = geo_result.get("state")
-    county = geo_result.get("county")
-
-    # Step 2: Query raw utilities
-    electric_raw = lookup_electric_utility(lon, lat)
-    gas_raw = lookup_gas_utility(lon, lat, state=state)
-
-    # Step 3: Filter and rank providers
-    electric_filtered, electric_note = filter_electric_providers(electric_raw, city, state)
-    gas_filtered = filter_gas_providers(gas_raw, city, state)
-
-    # Step 4: Query water utility
-    water = lookup_water_utility(city, county, state, full_address=address)
-
-    # Step 5: Optional SERP verification for electric
-    if verify_with_serp and electric_filtered:
-        primary = electric_filtered[0]
-        electric_name = primary.get("NAME")
-        if electric_name:
-            print(f"Verifying electric provider with SERP search...")
-            serp_result = verify_utility_with_serp(address, "electric", electric_name)
-            if serp_result:
-                if serp_result.get("verified"):
-                    primary["_serp_verified"] = True
-                    primary["_confidence"] = "high"
-                    print(f"  ✓ SERP verified: {electric_name}")
-                else:
-                    primary["_serp_verified"] = False
-                    print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
-
-    # Step 6: ALWAYS verify gas with SERP (data quality is poor)
-    if gas_filtered:
-        gas_name = gas_filtered[0].get("NAME")
-        if gas_name:
-            print(f"Verifying gas provider with SERP search...")
-            serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
-            if serp_result:
-                if serp_result.get("verified"):
-                    gas_filtered[0]["_serp_verified"] = True
-                    gas_filtered[0]["_confidence"] = "high"
-                    print(f"  ✓ SERP verified: {gas_name}")
-                else:
-                    # SERP found a different provider
-                    gas_filtered[0]["_serp_verified"] = False
-                    if serp_result.get("serp_provider"):
-                        gas_filtered[0]["_serp_suggestion"] = serp_result.get("serp_provider")
-                        gas_filtered[0]["_confidence"] = "low"
-                        print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider')}")
-
-    # Step 7: Build result
-    electric_result = None
-    if electric_filtered:
-        if len(electric_filtered) == 1:
-            electric_result = electric_filtered[0]
-        else:
-            electric_result = electric_filtered
-
-    gas_result = None
-    if gas_filtered:
-        if len(gas_filtered) == 1:
-            gas_result = gas_filtered[0]
-        else:
-            gas_result = gas_filtered
-
-    result = {
-        "electric": electric_result,
-        "electric_note": electric_note,
-        "gas": gas_result,
-        "gas_note": None,
-        "water": water,
-        "water_note": None,
-        "location": {
-            "city": city,
-            "county": county,
-            "state": state
-        }
-    }
-
-    return result
-
-
 def lookup_utility_json(address: str) -> Dict:
-    """Returns structured JSON-friendly dict for integration."""
+    """
+    Returns structured JSON-friendly dict for integration.
+    """
     result = {
         "input_address": address,
         "geocoded_address": None,
@@ -1000,19 +1082,17 @@ def lookup_utility_json(address: str) -> Dict:
         "gas_utility": None,
         "error": None
     }
-
+    
     coords = geocode_address(address)
     if not coords:
         result["error"] = "Geocoding failed"
         return result
-
-    lon, lat = coords
+    
+    lon, lat = coords["lon"], coords["lat"]
     result["coordinates"] = {"longitude": lon, "latitude": lat}
-
+    
     electric = lookup_electric_utility(lon, lat)
     if electric:
-        if isinstance(electric, list):
-            electric = electric[0]
         result["electric_utility"] = {
             "name": electric.get("NAME"),
             "id": electric.get("ID"),
@@ -1023,11 +1103,9 @@ def lookup_utility_json(address: str) -> Dict:
             "city": electric.get("CITY"),
             "zip": electric.get("ZIP"),
         }
-
+    
     gas = lookup_gas_utility(lon, lat)
     if gas:
-        if isinstance(gas, list):
-            gas = gas[0]
         result["gas_utility"] = {
             "name": gas.get("NAME"),
             "id": gas.get("SVCTERID"),
@@ -1039,25 +1117,182 @@ def lookup_utility_json(address: str) -> Dict:
             "zip": gas.get("ZIP"),
             "type": gas.get("TYPE"),
         }
-
+    
     if not electric and not gas:
         result["error"] = "No utilities found for location"
-
+    
     return result
 
 
 # =============================================================================
-# CLI
+# MAIN LOOKUP FUNCTION
+# =============================================================================
+
+def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False) -> Optional[Dict]:
+    """
+    Main function: takes an address string, returns electric, gas, water, and internet utility info.
+    Uses city name to filter out municipal utilities from other cities.
+    Optionally verifies gas/water with SERP search.
+    """
+    # Step 1: Geocode with geography info for filtering
+    geo_result = geocode_address(address, include_geography=filter_by_city)
+    if not geo_result:
+        return None
+    
+    lon = geo_result["lon"]
+    lat = geo_result["lat"]
+    city = geo_result.get("city")
+    state = geo_result.get("state")
+    county = geo_result.get("county")
+    
+    # Step 2: Query utilities
+    electric = lookup_electric_utility(lon, lat)
+    gas = lookup_gas_utility(lon, lat, state=state)
+    
+    # Step 3: Filter by city to remove irrelevant municipal utilities
+    if filter_by_city and city:
+        electric = filter_utilities_by_location(electric, city)
+        gas = filter_utilities_by_location(gas, city)
+    
+    # Step 4: Identify most likely electric provider from overlapping territories
+    primary_electric = None
+    other_electric = []
+    if electric:
+        if isinstance(electric, list) and len(electric) > 1:
+            primary_electric, other_electric = rank_electric_providers(electric, city, county)
+        elif isinstance(electric, list) and len(electric) == 1:
+            primary_electric = electric[0]
+            primary_electric["_confidence"] = "high"
+        else:
+            primary_electric = electric
+            primary_electric["_confidence"] = "high"
+    
+    # Step 5: Query water utility
+    water = lookup_water_utility(city, county, state, full_address=address)
+    
+    # Step 6: Query internet providers (FCC Broadband Map)
+    print(f"Looking up internet providers...")
+    internet = lookup_internet_providers(address=address)
+    if internet:
+        print(f"  Found {internet.get('provider_count', 0)} internet providers")
+        if internet.get('has_fiber'):
+            print(f"  Fiber available: {internet.get('best_wired', {}).get('name')}")
+    else:
+        print("  Could not retrieve internet provider data")
+    
+    # Step 7: Optional SERP verification for electric, gas, and water
+    if verify_with_serp:
+        # Verify electric
+        if primary_electric:
+            electric_name = primary_electric.get("NAME") if isinstance(primary_electric, dict) else None
+            if electric_name:
+                print(f"Verifying electric provider with SERP search...")
+                serp_result = verify_utility_with_serp(address, "electric", electric_name)
+                if serp_result:
+                    if serp_result.get("verified"):
+                        primary_electric["_serp_verified"] = True
+                        primary_electric["_confidence"] = "high"
+                        print(f"  ✓ SERP verified: {electric_name}")
+                    else:
+                        primary_electric["_serp_verified"] = False
+                        serp_provider = serp_result.get("serp_provider")
+                        if serp_provider and other_electric:
+                            for alt in other_electric:
+                                alt_name = alt.get("NAME", "")
+                                if serp_provider.upper() in alt_name.upper() or alt_name.upper() in serp_provider.upper():
+                                    print(f"  ⚠ SERP suggests: {serp_provider} (swapping primary)")
+                                    other_electric.remove(alt)
+                                    other_electric.insert(0, primary_electric)
+                                    primary_electric = alt
+                                    primary_electric["_serp_verified"] = True
+                                    primary_electric["_confidence"] = "high"
+                                    break
+                            else:
+                                print(f"  ⚠ SERP suggests: {serp_provider}")
+                        else:
+                            print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
+        
+        # Verify gas (or find it if HIFLD returned nothing)
+        if gas:
+            gas_name = gas.get("NAME") if isinstance(gas, dict) else None
+            if gas_name:
+                print(f"Verifying gas provider with SERP search...")
+                serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
+                if serp_result:
+                    if serp_result.get("verified"):
+                        gas["_serp_verified"] = True
+                        gas["_confidence"] = "high"
+                        print(f"  ✓ SERP verified: {gas_name}")
+                    else:
+                        gas["_serp_verified"] = False
+                        gas["_serp_suggestion"] = serp_result.get("serp_provider")
+                        gas["_confidence"] = "low"
+                        print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
+        else:
+            # No gas in HIFLD - try to find via SERP
+            print(f"Searching for gas provider via SERP...")
+            serp_result = verify_utility_with_serp(address, "natural gas", None)
+            if serp_result and serp_result.get("serp_provider"):
+                gas = {
+                    "NAME": serp_result.get("serp_provider"),
+                    "_source": "serp",
+                    "_confidence": serp_result.get("confidence", "medium"),
+                    "_notes": serp_result.get("notes", "Found via Google search")
+                }
+                print(f"  Found via SERP: {serp_result.get('serp_provider')}")
+        
+        # Verify water
+        if water:
+            water_name = water.get("name") if isinstance(water, dict) else None
+            if water_name:
+                print(f"Verifying water provider with SERP search...")
+                serp_result = verify_utility_with_serp(address, "water", water_name)
+                if serp_result:
+                    if serp_result.get("verified"):
+                        water["_serp_verified"] = True
+                        water["_confidence"] = "high"
+                        print(f"  ✓ SERP verified: {water_name}")
+                    else:
+                        water["_serp_verified"] = False
+                        water["_serp_suggestions"] = serp_result.get("serp_suggestions", [])
+                        print(f"  ⚠ SERP suggests: {', '.join(serp_result.get('serp_suggestions', []))}")
+    
+    # Build electric result - primary first, then others
+    electric_result = None
+    if primary_electric:
+        if other_electric:
+            electric_result = [primary_electric] + other_electric
+        else:
+            electric_result = primary_electric
+    
+    result = {
+        "electric": electric_result,
+        "gas": gas,
+        "water": water,
+        "internet": internet,
+        "location": {
+            "city": city,
+            "county": county,
+            "state": state
+        }
+    }
+    
+    return result
+
+
+# =============================================================================
+# MAIN ENTRY POINT
 # =============================================================================
 
 if __name__ == "__main__":
+    # Test addresses
     test_addresses = [
         "1100 Congress Ave, Austin, TX 78701",
         "200 S Tryon St, Charlotte, NC 28202",
         "350 5th Ave, New York, NY 10118",
-        "3027 W Coronado Rd, Phoenix, AZ 85009",
     ]
-
+    
+    # Check for --verify flag
     verify_mode = "--verify" in sys.argv
     if verify_mode:
         sys.argv.remove("--verify")
@@ -1066,26 +1301,20 @@ if __name__ == "__main__":
         else:
             print("Warning: BrightData proxy not configured, SERP verification disabled")
             verify_mode = False
-
+    
     if len(sys.argv) > 1:
         if sys.argv[1] == "--test":
+            # Run all test addresses
             for address in test_addresses:
                 result = lookup_utilities_by_address(address, verify_with_serp=verify_mode)
                 if result:
                     electric = result.get("electric")
                     if electric:
                         if isinstance(electric, list):
-                            print(f"\n*** Primary + {len(electric)-1} other providers ***")
-                            for i, e in enumerate(electric):
-                                label = "PRIMARY" if i == 0 else f"OTHER {i}"
-                                print(f"\n--- {label} ---")
+                            for e in electric:
                                 print(format_utility_result(e, "ELECTRIC"))
                         else:
                             print(format_utility_result(electric, "ELECTRIC"))
-
-                        if result.get("electric_note"):
-                            print(f"\n📌 NOTE: {result['electric_note']}")
-
                     gas = result.get("gas")
                     if gas:
                         if isinstance(gas, list):
@@ -1093,49 +1322,63 @@ if __name__ == "__main__":
                                 print(format_utility_result(g, "NATURAL GAS"))
                         else:
                             print(format_utility_result(gas, "NATURAL GAS"))
-
                     water = result.get("water")
                     if water:
                         print(format_utility_result(water, "WATER"))
-                print("\n" + "="*60 + "\n")
-
+                    internet = result.get("internet")
+                    if internet:
+                        print(format_internet_result(internet))
+                print()
+                
+        elif sys.argv[1] == "--coords" and len(sys.argv) >= 4:
+            # Direct coordinate lookup: --coords <lon> <lat>
+            lon = float(sys.argv[2])
+            lat = float(sys.argv[3])
+            print(f"Looking up utilities for coordinates: {lat}, {lon}")
+            electric = lookup_electric_utility(lon, lat)
+            if electric:
+                print(format_utility_result(electric, "ELECTRIC"))
+            gas = lookup_gas_utility(lon, lat)
+            if gas:
+                print(format_utility_result(gas, "NATURAL GAS"))
+                
         elif sys.argv[1] == "--json" and len(sys.argv) >= 3:
+            # JSON output: --json "address"
             address = " ".join(sys.argv[2:])
             result = lookup_utility_json(address)
             print(json.dumps(result, indent=2))
-
+            
         else:
+            # Single address lookup
             address = " ".join(sys.argv[1:])
             result = lookup_utilities_by_address(address, verify_with_serp=verify_mode)
             if result:
                 electric = result.get("electric")
                 if electric:
                     if isinstance(electric, list):
-                        print(f"\n*** Primary + {len(electric)-1} other providers ***")
-                        for i, e in enumerate(electric):
-                            label = "PRIMARY" if i == 0 else f"OTHER {i}"
-                            print(f"\n--- {label} ---")
+                        print(f"\n*** {len(electric)} overlapping electric service territories found ***")
+                        for e in electric:
                             print(format_utility_result(e, "ELECTRIC"))
                     else:
                         print(format_utility_result(electric, "ELECTRIC"))
-
-                    if result.get("electric_note"):
-                        print(f"\n📌 NOTE: {result['electric_note']}")
-
                 gas = result.get("gas")
                 if gas:
                     if isinstance(gas, list):
+                        print(f"\n*** {len(gas)} overlapping gas service territories found ***")
                         for g in gas:
                             print(format_utility_result(g, "NATURAL GAS"))
                     else:
                         print(format_utility_result(gas, "NATURAL GAS"))
-
                 water = result.get("water")
                 if water:
                     print(format_utility_result(water, "WATER"))
+                internet = result.get("internet")
+                if internet:
+                    print(format_internet_result(internet))
     else:
         print("Usage:")
         print('  python utility_lookup.py "123 Main St, City, ST 12345"')
-        print('  python utility_lookup.py --verify "123 Main St, City, ST 12345"')
+        print('  python utility_lookup.py --verify "123 Main St, City, ST 12345"  # With SERP verification')
+        print('  python utility_lookup.py --coords <longitude> <latitude>')
         print('  python utility_lookup.py --json "123 Main St, City, ST 12345"')
         print('  python utility_lookup.py --test')

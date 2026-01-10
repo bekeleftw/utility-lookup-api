@@ -248,7 +248,10 @@ def filter_electric_providers(providers: Union[Dict, List[Dict]], city: str = No
     if state in DEREGULATED_ELECTRIC_STATES:
         dereg_note = DEREGULATED_ELECTRIC_STATES[state]
 
-    return scored, dereg_note
+    # Only return primary (or top 2 if scores are close)
+    if len(scored) > 1 and (scored[0].get("_score", 0) - scored[1].get("_score", 0)) < 10:
+    return scored[:2], dereg_note
+return scored[:1], dereg_note
 
 
 def filter_gas_providers(providers: Union[Dict, List[Dict]], city: str = None, state: str = None) -> List[Dict]:
@@ -315,7 +318,7 @@ def filter_gas_providers(providers: Union[Dict, List[Dict]], city: str = None, s
         for other in scored[1:]:
             other["_confidence"] = "medium"
 
-    return scored
+    return scored[:1] if scored else []
 
 
 # =============================================================================

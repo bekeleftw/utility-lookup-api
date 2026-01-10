@@ -325,10 +325,13 @@ def filter_gas_providers(providers: Union[Dict, List[Dict]], city: str = None, s
 # GEOCODING
 # =============================================================================
 
-def geocode_address(address: str, include_geography: bool = False) -> Optional[Dict]:
+GOOGLE_MAPS_API_KEY = os.getenv('GOOGLE_MAPS_API_KEY')
+
+
+def geocode_with_census(address: str, include_geography: bool = False) -> Optional[Dict]:
     """
-    Geocode an address using the US Census Geocoder (free, no API key required).
-    Returns dict with coordinates and optionally geography info (county, city).
+    Geocode using US Census Geocoder (free, no API key required).
+    Returns dict with coordinates and optionally geography info.
     """
     if include_geography:
         base_url = "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress"
@@ -353,7 +356,6 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
 
         matches = data.get("result", {}).get("addressMatches", [])
         if not matches:
-            print(f"No geocoding results for: {address}")
             return None
 
         match = matches[0]
@@ -368,36 +370,195 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
             "matched_address": matched_address,
             "city": None,
             "county": None,
-            "state": None
+            "state": None,
+            "source": "census"
         }
 
         # Extract geography info if available
         if include_geography and "geographies" in match:
             geo = match["geographies"]
-            # Get county
             counties = geo.get("Counties", [])
             if counties:
                 result["county"] = counties[0].get("BASENAME")
-            # Get city/place
             places = geo.get("Incorporated Places", []) or geo.get("County Subdivisions", [])
             if places:
                 result["city"] = places[0].get("BASENAME")
-            # Get state
             states = geo.get("States", [])
             if states:
                 result["state"] = states[0].get("STUSAB")
 
-        print(f"Geocoded: {matched_address}")
-        print(f"Coordinates: {lat}, {lon}")
-        if result.get("city") or result.get("county"):
-            print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
+        return result
+
+    except requests.RequestException:
+        return None
+
+
+def geocode_with_google(address: str) -> Optional[Dict]:
+    """
+    Geocode using Google Maps Geocoding API.
+    Returns dict with coordinates and geography info.
+    """
+    if not GOOGLE_MAPS_API_KEY:
+        return None
+
+    base_url = "https://maps.googleapis.com/maps/api/geocode/json"
+    params = {
+        "address": address,
+        "key": GOOGLE_MAPS_API_KEY
+    }
+
+    try:
+        response = requests.get(base_url, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+
+        if data.get("status") != "OK" or not data.get("results"):
+            return None
+
+        result_data = data["results"][0]
+        location = result_data["geometry"]["location"]
+        lon = location["lng"]
+        lat = location["lat"]
+
+        result = {
+            "lon": lon,
+            "lat": lat,
+            "matched_address": result_data.get("formatted_address"),
+            "city": None,
+            "county": None,
+            "state": None,
+            "source": "google"
+        }
+
+        # Extract address components
+        for component in result_data.get("address_components", []):
+            types = component.get("types", [])
+            if "locality" in types:
+                result["city"] = component["long_name"]
+            elif "administrative_area_level_2" in types:
+                # County (remove " County" suffix if present)
+                county = component["long_name"]
+                if county.endswith(" County"):
+                    county = county[:-7]
+                result["county"] = county
+            elif "administrative_area_level_1" in types:
+                result["state"] = component["short_name"]
 
         return result
 
-    except requests.RequestException as e:
-        print(f"Geocoding error: {e}")
+    except requests.RequestException:
         return None
 
+
+def geocode_with_nominatim(address: str) -> Optional[Dict]:
+    """
+    Geocode using Nominatim (OpenStreetMap). Free but rate-limited to 1 req/sec.
+    Returns dict with coordinates and geography info.
+    """
+    base_url = "https://nominatim.openstreetmap.org/search"
+    params = {
+        "q": address,
+        "format": "json",
+        "addressdetails": 1,
+        "limit": 1,
+        "countrycodes": "us"
+    }
+    headers = {
+        "User-Agent": "UtilityLookupTool/1.0"
+    }
+
+    try:
+        response = requests.get(base_url, params=params, headers=headers, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+
+        if not data:
+            return None
+
+        item = data[0]
+        lon = float(item["lon"])
+        lat = float(item["lat"])
+
+        result = {
+            "lon": lon,
+            "lat": lat,
+            "matched_address": item.get("display_name"),
+            "city": None,
+            "county": None,
+            "state": None,
+            "source": "nominatim"
+        }
+
+        # Extract address details
+        addr = item.get("address", {})
+        result["city"] = addr.get("city") or addr.get("town") or addr.get("village")
+        county = addr.get("county", "")
+        if county.endswith(" County"):
+            county = county[:-7]
+        result["county"] = county
+        result["state"] = addr.get("state")
+
+        # Convert state name to abbreviation
+        state_abbrevs = {
+            "Alabama": "AL", "Alaska": "AK", "Arizona": "AZ", "Arkansas": "AR",
+            "California": "CA", "Colorado": "CO", "Connecticut": "CT", "Delaware": "DE",
+            "Florida": "FL", "Georgia": "GA", "Hawaii": "HI", "Idaho": "ID",
+            "Illinois": "IL", "Indiana": "IN", "Iowa": "IA", "Kansas": "KS",
+            "Kentucky": "KY", "Louisiana": "LA", "Maine": "ME", "Maryland": "MD",
+            "Massachusetts": "MA", "Michigan": "MI", "Minnesota": "MN", "Mississippi": "MS",
+            "Missouri": "MO", "Montana": "MT", "Nebraska": "NE", "Nevada": "NV",
+            "New Hampshire": "NH", "New Jersey": "NJ", "New Mexico": "NM", "New York": "NY",
+            "North Carolina": "NC", "North Dakota": "ND", "Ohio": "OH", "Oklahoma": "OK",
+            "Oregon": "OR", "Pennsylvania": "PA", "Rhode Island": "RI", "South Carolina": "SC",
+            "South Dakota": "SD", "Tennessee": "TN", "Texas": "TX", "Utah": "UT",
+            "Vermont": "VT", "Virginia": "VA", "Washington": "WA", "West Virginia": "WV",
+            "Wisconsin": "WI", "Wyoming": "WY", "District of Columbia": "DC"
+        }
+        if result["state"] in state_abbrevs:
+            result["state"] = state_abbrevs[result["state"]]
+
+        return result
+
+    except requests.RequestException:
+        return None
+
+
+def geocode_address(address: str, include_geography: bool = False) -> Optional[Dict]:
+    """
+    Geocode an address using three-tier fallback: Census → Google → Nominatim.
+    Returns dict with coordinates and geography info.
+    """
+    # Tier 1: Census (free, no limit, best for established US addresses)
+    result = geocode_with_census(address, include_geography=True)
+    if result:
+        print(f"Geocoded (Census): {result.get('matched_address')}")
+        print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
+        if result.get("city") or result.get("county"):
+            print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
+        return result
+
+    # Tier 2: Google (accurate, handles new construction)
+    print("Census geocoder failed, trying Google...")
+    result = geocode_with_google(address)
+    if result:
+        print(f"Geocoded (Google): {result.get('matched_address')}")
+        print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
+        if result.get("city") or result.get("county"):
+            print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
+        return result
+
+    # Tier 3: Nominatim (free fallback)
+    print("Google geocoder failed, trying Nominatim...")
+    result = geocode_with_nominatim(address)
+    if result:
+        print(f"Geocoded (Nominatim): {result.get('matched_address')}")
+        print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
+        if result.get("city") or result.get("county"):
+            print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
+        return result
+
+    print(f"No geocoding results for: {address}")
+    return None
 
 # =============================================================================
 # UTILITY LOOKUPS

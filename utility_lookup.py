@@ -129,9 +129,10 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
         return None
 
 
-def lookup_electric_utility(lon: float, lat: float) -> Optional[Dict]:
+def lookup_electric_utility(lon: float, lat: float, city: str = None) -> Optional[Dict]:
     """
     Query HIFLD ArcGIS API to find electric utility for a given point.
+    Filters out non-retail providers and returns top 3 most likely retail providers.
     Returns utility info dict or None if not found.
     """
     base_url = "https://services5.arcgis.com/HDRa0B57OVrv2E1q/arcgis/rest/services/Electric_Retail_Service_Territories/FeatureServer/0/query"
@@ -140,7 +141,7 @@ def lookup_electric_utility(lon: float, lat: float) -> Optional[Dict]:
         "geometry": f"{lon},{lat}",
         "geometryType": "esriGeometryPoint",
         "spatialRel": "esriSpatialRelIntersects",
-        "outFields": "NAME,ID,STATE,TELEPHONE,ADDRESS,CITY,ZIP,WEBSITE",
+        "outFields": "NAME,ID,STATE,TELEPHONE,ADDRESS,CITY,ZIP,WEBSITE,TYPE",
         "returnGeometry": "false",
         "f": "json"
     }
@@ -155,11 +156,97 @@ def lookup_electric_utility(lon: float, lat: float) -> Optional[Dict]:
             print("No electric utility found for this location.")
             return None
         
-        # Return all matches (territories can overlap)
-        if len(features) == 1:
-            return features[0]["attributes"]
+        # Extract attributes
+        providers = [f["attributes"] for f in features]
+        
+        # Filter out non-retail providers (wholesale, federal power agencies, irrigation districts)
+        non_retail_keywords = ["WAPA", "IRRIGATION", "WATER CONSERV", "USBIA", "BPA", "BONNEVILLE",
+                               "WHOLESALE", "TRANSMISSION", "GENERATION", "POWER ADMIN"]
+        retail_providers = []
+        for p in providers:
+            name = (p.get("NAME") or "").upper()
+            is_retail = True
+            for keyword in non_retail_keywords:
+                if keyword in name:
+                    is_retail = False
+                    break
+            if is_retail:
+                retail_providers.append(p)
+        
+        if not retail_providers:
+            # If all were filtered out, return original list
+            retail_providers = providers
+        
+        # Score and rank providers
+        scored = []
+        for p in retail_providers:
+            score = 50  # Base score
+            name = (p.get("NAME") or "").upper()
+            provider_type = (p.get("TYPE") or "").upper()
+            provider_city = (p.get("CITY") or "").upper()
+            
+            # Prioritize by TYPE: IOU > Cooperative > Municipal > Political Subdivision
+            type_scores = {
+                "INVESTOR OWNED": 30,
+                "IOU": 30,
+                "COOPERATIVE": 20,
+                "COOP": 20,
+                "MUNICIPAL": 10,
+                "POLITICAL SUBDIVISION": 5,
+                "STATE": 5,
+                "FEDERAL": 0
+            }
+            for type_key, type_score in type_scores.items():
+                if type_key in provider_type:
+                    score += type_score
+                    break
+            
+            # Boost if provider CITY matches geocoded city
+            if city and provider_city:
+                if city.upper() == provider_city or city.upper() in provider_city:
+                    score += 25
+            
+            # Boost city-named municipal utilities
+            if city and city.upper() in name:
+                score += 20
+            
+            # Large IOUs get a boost
+            large_ious = ["DUKE ENERGY", "DOMINION", "SOUTHERN COMPANY", "ENTERGY", 
+                          "XCEL ENERGY", "AMERICAN ELECTRIC", "FIRSTENERGY", "PPL",
+                          "PACIFIC GAS", "SOUTHERN CALIFORNIA EDISON", "CON EDISON",
+                          "GEORGIA POWER", "FLORIDA POWER", "VIRGINIA ELECTRIC",
+                          "PROGRESS ENERGY", "CONSUMERS ENERGY", "DTE ENERGY", 
+                          "AMEREN", "EVERGY", "ONCOR", "CENTERPOINT", "EVERSOURCE", 
+                          "NATIONAL GRID", "PSEG", "EXELON", "COMMONWEALTH EDISON"]
+            for iou in large_ious:
+                if iou in name:
+                    score += 15
+                    break
+            
+            # Rural EMCs/cooperatives
+            if "EMC" in name or "RURAL" in name or "COOPERATIVE" in name or "CO-OP" in name:
+                score += 10
+            
+            # Deprioritize municipal utilities from other cities
+            if ("MUNICIPAL" in name or "CITY OF" in name or "TOWN OF" in name):
+                if city and city.upper() not in name:
+                    score -= 15
+            
+            p["_score"] = score
+            scored.append(p)
+        
+        # Sort by score descending and return top 3
+        scored.sort(key=lambda x: x.get("_score", 0), reverse=True)
+        top_providers = scored[:3]
+        
+        # Set confidence on primary
+        if top_providers:
+            top_providers[0]["_confidence"] = "high" if len(top_providers) == 1 or (top_providers[0].get("_score", 0) - top_providers[1].get("_score", 0) >= 15) else "medium"
+        
+        if len(top_providers) == 1:
+            return top_providers[0]
         else:
-            return [f["attributes"] for f in features]
+            return top_providers
         
     except requests.RequestException as e:
         print(f"Electric utility lookup error: {e}")
@@ -800,30 +887,35 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     lat = geo_result["lat"]
     city = geo_result.get("city")
     
-    # Step 2: Query utilities (pass state for gas fallback)
+    # Step 2: Query utilities (pass city for electric ranking, state for gas fallback)
     state = geo_result.get("state")
     county = geo_result.get("county")
-    electric = lookup_electric_utility(lon, lat)
+    electric = lookup_electric_utility(lon, lat, city=city)  # Now filters and ranks internally
     gas = lookup_gas_utility(lon, lat, state=state)
     
-    # Step 3: Filter by city to remove irrelevant municipal utilities
+    # Step 3: Filter gas by city to remove irrelevant municipal utilities
+    # (Electric filtering/ranking is now done in lookup_electric_utility)
     if filter_by_city and city:
-        electric = filter_utilities_by_location(electric, city)
         gas = filter_utilities_by_location(gas, city)
     
-    # Step 4: Identify most likely electric provider from overlapping territories
+    # Step 4: Extract primary electric provider (already ranked by lookup_electric_utility)
     primary_electric = None
     other_electric = []
     if electric:
         if isinstance(electric, list) and len(electric) > 1:
-            # Rank electric providers by likelihood
-            primary_electric, other_electric = rank_electric_providers(electric, city, county)
+            # Already ranked - first is primary, rest are alternatives
+            primary_electric = electric[0]
+            other_electric = electric[1:]
+            if not primary_electric.get("_confidence"):
+                primary_electric["_confidence"] = "high"
         elif isinstance(electric, list) and len(electric) == 1:
             primary_electric = electric[0]
-            primary_electric["_confidence"] = "high"
+            if not primary_electric.get("_confidence"):
+                primary_electric["_confidence"] = "high"
         else:
             primary_electric = electric
-            primary_electric["_confidence"] = "high"
+            if not primary_electric.get("_confidence"):
+                primary_electric["_confidence"] = "high"
     
     # Step 5: Query water utility
     water = lookup_water_utility(city, county, state, full_address=address)

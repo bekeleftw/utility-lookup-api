@@ -539,12 +539,18 @@ def lookup_fcc_location_id(address: str) -> Optional[str]:
     encoded_address = quote(address, safe='')
     url = f"{FCC_API_BASE}/fabric/address/{FCC_API_UUID}/{encoded_address}"
     
+    # Use BrightData proxy to bypass bot detection
+    proxy_url = f"http://{BRIGHTDATA_PROXY_USER}:{BRIGHTDATA_PROXY_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
+    proxies = {"http": proxy_url, "https": proxy_url}
+    
     try:
-        response = requests.get(url, timeout=15, headers={
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        
+        response = requests.get(url, timeout=15, proxies=proxies, verify=False, headers={
             "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
             "Referer": "https://broadbandmap.fcc.gov/",
-            "Origin": "https://broadbandmap.fcc.gov"
         })
         response.raise_for_status()
         data = response.json()

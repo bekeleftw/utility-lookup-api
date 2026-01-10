@@ -1,0 +1,62 @@
+{
+  "AUSTIN|TX": {
+    "name": "City of Austin Water Utilities",
+    "id": null,
+    "state": "TX",
+    "phone": null,
+    "address": null,
+    "city": "Austin",
+    "zip": null,
+    "population_served": null,
+    "source_type": null,
+    "owner_type": "M",
+    "service_connections": null,
+    "_confidence": "low",
+    "_note": "Estimated - verify with local utility"
+  },
+  "BROOKFIELD|WI": {
+    "name": "City of Brookfield Water Utilities",
+    "id": null,
+    "state": "WI",
+    "phone": null,
+    "address": null,
+    "city": "Brookfield",
+    "zip": null,
+    "population_served": null,
+    "source_type": null,
+    "owner_type": "M",
+    "service_connections": null,
+    "_confidence": "low",
+    "_note": "Estimated - verify with local utility"
+  },
+  "SALEM|OR": {
+    "name": "City of Salem Water Utilities",
+    "id": null,
+    "state": "OR",
+    "phone": null,
+    "address": null,
+    "city": "Salem",
+    "zip": null,
+    "population_served": null,
+    "source_type": null,
+    "owner_type": "M",
+    "service_connections": null,
+    "_confidence": "low",
+    "_note": "Estimated - verify with local utility"
+  },
+  "BOONE|NC": {
+    "name": "City of Boone Water Utilities",
+    "id": null,
+    "state": "NC",
+    "phone": null,
+    "address": null,
+    "city": "Boone",
+    "zip": null,
+    "population_served": null,
+    "source_type": null,
+    "owner_type": "M",
+    "service_connections": null,
+    "_confidence": "low",
+    "_note": "Estimated - verify with local utility"
+  }
+}

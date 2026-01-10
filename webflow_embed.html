@@ -1,0 +1,430 @@
+<!-- 
+  Utility Lookup Widget for Webflow
+  
+  Instructions:
+  1. Host the Flask API (api.py) somewhere (e.g., Railway, Render, or your own server)
+  2. Update the API_URL below to point to your hosted API
+  3. In Webflow, add an "Embed" element and paste this entire code
+-->
+
+<style>
+  .utility-lookup-container {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .utility-lookup-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1a1a1a;
+  }
+  
+  .utility-search-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .utility-input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .utility-input:focus {
+    border-color: #3b82f6;
+  }
+  
+  .utility-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .utility-btn:hover {
+    background: #2563eb;
+  }
+  
+  .utility-btn:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+  }
+  
+  .utility-results {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .utility-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .utility-card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .utility-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+  
+  .utility-icon.electric { background: #fef3c7; }
+  .utility-icon.gas { background: #dbeafe; }
+  .utility-icon.water { background: #d1fae5; }
+  
+  .utility-type {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #6b7280;
+  }
+  
+  .utility-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+  
+  .utility-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    font-size: 14px;
+    color: #4b5563;
+  }
+  
+  .utility-detail {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .utility-detail-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #9ca3af;
+    margin-bottom: 2px;
+  }
+  
+  .utility-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .utility-badge.verified {
+    background: #d1fae5;
+    color: #065f46;
+  }
+  
+  .utility-badge.unverified {
+    background: #fef3c7;
+    color: #92400e;
+  }
+  
+  .utility-location {
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #4b5563;
+  }
+  
+  .utility-loading {
+    text-align: center;
+    padding: 40px;
+    color: #6b7280;
+  }
+  
+  .utility-error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 16px;
+    color: #991b1b;
+  }
+  
+  .utility-note {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #92400e;
+    margin-top: -8px;
+    margin-bottom: 8px;
+  }
+  
+  .utility-secondary-section {
+    margin-top: -8px;
+    margin-bottom: 16px;
+  }
+  
+  .utility-secondary-label {
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .utility-secondary-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .utility-card-compact {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .utility-card-compact .utility-icon {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+  }
+  
+  .utility-card-compact .utility-name-compact {
+    color: #4b5563;
+    font-weight: 500;
+  }
+  
+  .utility-multiple-note {
+    font-size: 12px;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 4px;
+  }
+</style>
+
+<div class="utility-lookup-container">
+  <h2 class="utility-lookup-title">Utility Provider Lookup</h2>
+  
+  <form class="utility-search-form" id="utilityForm">
+    <input 
+      type="text" 
+      class="utility-input" 
+      id="addressInput" 
+      placeholder="Enter address (e.g., 123 Main St, City, ST 12345)"
+      required
+    />
+    <button type="submit" class="utility-btn" id="searchBtn">Search</button>
+  </form>
+  
+  <div id="utilityResults"></div>
+</div>
+
+<script>
+(function() {
+  // UPDATE THIS URL to your hosted API endpoint
+  const API_URL = 'http://localhost:5001/api/lookup';
+  
+  const form = document.getElementById('utilityForm');
+  const input = document.getElementById('addressInput');
+  const btn = document.getElementById('searchBtn');
+  const results = document.getElementById('utilityResults');
+  
+  const icons = {
+    electric: '⚡',
+    gas: '🔥',
+    water: '💧'
+  };
+  
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const address = input.value.trim();
+    if (!address) return;
+    
+    btn.disabled = true;
+    btn.textContent = 'Searching...';
+    results.innerHTML = '<div class="utility-loading">Looking up utilities...</div>';
+    
+    try {
+      const response = await fetch(`${API_URL}?address=${encodeURIComponent(address)}&verify=true`);
+      const data = await response.json();
+      
+      if (data.error) {
+        results.innerHTML = `<div class="utility-error">${data.error}</div>`;
+        return;
+      }
+      
+      renderResults(data);
+    } catch (error) {
+      results.innerHTML = `<div class="utility-error">Failed to connect to API. Make sure the server is running.</div>`;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Search';
+    }
+  });
+  
+  function renderResults(data) {
+    let html = '';
+    
+    // Location header
+    if (data.location) {
+      const loc = data.location;
+      html += `<div class="utility-location">
+        📍 ${loc.city || ''}, ${loc.county ? loc.county + ' County, ' : ''}${loc.state || ''}
+      </div>`;
+    }
+    
+    html += '<div class="utility-results">';
+    
+    // Electric - primary first (full size), others smaller
+    if (data.utilities.electric && data.utilities.electric.length > 0) {
+      // Primary provider - full size
+      html += renderUtilityCard(data.utilities.electric[0], 'electric', null, false);
+      
+      // Other providers - compact/secondary
+      if (data.utilities.electric.length > 1) {
+        const others = data.utilities.electric.slice(1);
+        html += `<div class="utility-secondary-section">
+          <div class="utility-secondary-label">Other providers in area:</div>
+          <div class="utility-secondary-list">`;
+        others.forEach(util => {
+          html += renderUtilityCardCompact(util, 'electric');
+        });
+        html += `</div></div>`;
+      }
+      if (data.utilities.electric_note) {
+        html += `<div class="utility-note">${data.utilities.electric_note}</div>`;
+      }
+    }
+    
+    // Gas
+    if (data.utilities.gas && data.utilities.gas.length > 0) {
+      data.utilities.gas.forEach(util => {
+        html += renderUtilityCard(util, 'gas');
+      });
+      if (data.utilities.gas_note) {
+        html += `<div class="utility-note">${data.utilities.gas_note}</div>`;
+      }
+    } else {
+      html += `<div class="utility-card">
+        <div class="utility-card-header">
+          <div class="utility-icon gas">${icons.gas}</div>
+          <span class="utility-type">Natural Gas</span>
+        </div>
+        <div class="utility-name" style="color: #9ca3af;">No gas provider found</div>
+        <div style="font-size: 13px; color: #6b7280;">${data.utilities.gas_note || 'This area may use propane or have no piped gas service.'}</div>
+      </div>`;
+    }
+    
+    // Water
+    if (data.utilities.water && data.utilities.water.length > 0) {
+      data.utilities.water.forEach(util => {
+        html += renderUtilityCard(util, 'water');
+      });
+      if (data.utilities.water_note) {
+        html += `<div class="utility-note">${data.utilities.water_note}</div>`;
+      }
+    }
+    
+    html += '</div>';
+    results.innerHTML = html;
+  }
+  
+  function renderUtilityCard(util, type, note) {
+    const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water' };
+    const confidence = util.confidence || 'medium';
+    const verified = util.verified;
+    
+    let badge = '';
+    if (verified) {
+      badge = '<span class="utility-badge verified">✓ Verified</span>';
+    } else if (confidence === 'high') {
+      badge = '<span class="utility-badge verified">✓ High Confidence</span>';
+    } else if (confidence === 'medium') {
+      badge = '<span class="utility-badge unverified">⚠ Verify</span>';
+    } else {
+      badge = '<span class="utility-badge unverified">? Estimated</span>';
+    }
+    
+    return `
+      <div class="utility-card">
+        <div class="utility-card-header">
+          <div class="utility-icon ${type}">${icons[type]}</div>
+          <span class="utility-type">${typeLabels[type]}</span>
+          ${badge}
+        </div>
+        <div class="utility-name">${util.name || 'Unknown'}</div>
+        ${note ? `<div class="utility-multiple-note">${note}</div>` : ''}
+        <div class="utility-details">
+          ${util.phone && util.phone !== 'NOT AVAILABLE' ? `
+            <div class="utility-detail">
+              <span class="utility-detail-label">Phone</span>
+              <a href="tel:${util.phone}">${util.phone}</a>
+            </div>
+          ` : ''}
+          ${util.website && util.website !== 'NOT AVAILABLE' ? `
+            <div class="utility-detail">
+              <span class="utility-detail-label">Website</span>
+              <a href="${util.website.startsWith('http') ? util.website : 'https://' + util.website}" target="_blank">${util.website}</a>
+            </div>
+          ` : ''}
+          ${util.city ? `
+            <div class="utility-detail">
+              <span class="utility-detail-label">Location</span>
+              ${util.city}, ${util.state || ''}
+            </div>
+          ` : ''}
+          ${util.population_served ? `
+            <div class="utility-detail">
+              <span class="utility-detail-label">Pop. Served</span>
+              ${util.population_served.toLocaleString()}
+            </div>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }
+  
+  function renderUtilityCardCompact(util, type) {
+    const icons = { electric: '⚡', gas: '🔥', water: '💧' };
+    return `
+      <div class="utility-card-compact">
+        <div class="utility-icon ${type}">${icons[type]}</div>
+        <span class="utility-name-compact">${util.name || 'Unknown'}</span>
+      </div>
+    `;
+  }
+})();
+</script>

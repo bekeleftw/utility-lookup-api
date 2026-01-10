@@ -19,6 +19,119 @@ import os
 from pathlib import Path
 
 # =============================================================================
+# EIA/OpenEI ZIP-TO-UTILITY LOOKUP
+# =============================================================================
+
+# Load EIA ZIP-to-utility lookup data
+_EIA_ZIP_LOOKUP = None
+
+def load_eia_zip_lookup() -> Dict:
+    """Load the EIA ZIP-to-utility lookup data."""
+    global _EIA_ZIP_LOOKUP
+    if _EIA_ZIP_LOOKUP is None:
+        lookup_path = Path(__file__).parent / "eia_zip_utility_lookup.json"
+        if lookup_path.exists():
+            with open(lookup_path, 'r') as f:
+                _EIA_ZIP_LOOKUP = json.load(f)
+        else:
+            _EIA_ZIP_LOOKUP = {}
+    return _EIA_ZIP_LOOKUP
+
+
+def get_eia_utility_by_zip(zip_code: str) -> Optional[Dict]:
+    """
+    Look up utility by ZIP code using EIA/OpenEI data.
+    
+    Returns:
+        Dict with utility info or None if not found
+    """
+    lookup = load_eia_zip_lookup()
+    zip_code = str(zip_code).strip()[:5]  # Normalize to 5 digits
+    
+    if zip_code in lookup:
+        utilities = lookup[zip_code]
+        if utilities:
+            # Return first utility (most common case)
+            # Dedupe by name
+            seen = set()
+            unique = []
+            for u in utilities:
+                if u['name'] not in seen:
+                    seen.add(u['name'])
+                    unique.append(u)
+            return unique
+    return None
+
+
+def verify_with_eia(candidates: List[Dict], zip_code: str, city: str = None, state: str = None) -> Dict:
+    """
+    Verify electric provider using EIA ZIP-to-utility data.
+    
+    This covers most IOUs (Investor-Owned Utilities) across the US.
+    """
+    eia_utilities = get_eia_utility_by_zip(zip_code)
+    
+    if eia_utilities:
+        # We have authoritative EIA data for this ZIP
+        eia_primary = eia_utilities[0]
+        eia_name = eia_primary['name'].upper()
+        
+        # Try to find matching HIFLD candidate
+        matched_candidate = None
+        alternatives = []
+        
+        for candidate in candidates:
+            candidate_name = (candidate.get("NAME") or "").upper()
+            
+            # Check for name match (partial match is OK)
+            eia_words = set(eia_name.replace(',', '').replace('.', '').split())
+            candidate_words = set(candidate_name.replace(',', '').replace('.', '').split())
+            
+            # Match if significant overlap in words
+            common_words = eia_words & candidate_words
+            significant_words = {'DUKE', 'ENERGY', 'EDISON', 'ELECTRIC', 'POWER', 'PECO', 
+                                'DOMINION', 'ENTERGY', 'XCEL', 'AMEREN', 'CONSUMERS',
+                                'PACIFIC', 'SOUTHERN', 'CONSOLIDATED', 'COMMONWEALTH'}
+            
+            if common_words & significant_words:
+                matched_candidate = candidate
+            else:
+                alternatives.append(candidate)
+        
+        if matched_candidate:
+            # Merge HIFLD data with EIA data
+            return {
+                "primary": {
+                    **matched_candidate,
+                    "verified_name": eia_primary['name'],
+                    "eia_id": eia_primary['eiaid'],
+                },
+                "confidence": "verified",
+                "source": "EIA Form 861 ZIP mapping",
+                "selection_reason": f"ZIP {zip_code} is served by {eia_primary['name']} ({eia_primary['ownership']}).",
+                "is_deregulated": None,  # EIA doesn't indicate this
+                "alternatives": alternatives
+            }
+        else:
+            # EIA utility not in HIFLD candidates - use EIA data directly
+            return {
+                "primary": {
+                    "NAME": eia_primary['name'],
+                    "STATE": eia_primary['state'],
+                    "TYPE": eia_primary['ownership'],
+                    "eia_id": eia_primary['eiaid'],
+                },
+                "confidence": "verified",
+                "source": "EIA Form 861 ZIP mapping",
+                "selection_reason": f"ZIP {zip_code} is served by {eia_primary['name']} ({eia_primary['ownership']}).",
+                "is_deregulated": None,
+                "alternatives": candidates  # All HIFLD candidates as alternatives
+            }
+    
+    # No EIA data for this ZIP - return None to fall through to other methods
+    return None
+
+# =============================================================================
 # TEXAS TDU DATA
 # Texas has 5 major TDUs in the deregulated ERCOT market
 # =============================================================================
@@ -382,10 +495,18 @@ def verify_electric_provider(
     """
     state = (state or "").upper()
     
+    # Texas has special TDU handling
     if state == "TX":
         return match_hifld_to_texas_tdu(candidates, zip_code, city)
     
-    # TODO: Add other deregulated states
+    # Try EIA ZIP-to-utility lookup for all other states
+    # This covers most IOUs (Investor-Owned Utilities)
+    if zip_code:
+        eia_result = verify_with_eia(candidates, zip_code, city, state)
+        if eia_result:
+            return eia_result
+    
+    # TODO: Add other deregulated states with state-specific sources
     # elif state == "PA":
     #     return verify_pennsylvania(candidates, zip_code, city)
     # elif state == "OH":
@@ -395,7 +516,8 @@ def verify_electric_provider(
     # elif state == "NY":
     #     return verify_new_york(candidates, zip_code, city)
     
-    # For non-implemented states, use ranking heuristics
+    # Fallback: use ranking heuristics for ZIPs not in EIA data
+    # (typically municipal utilities, co-ops, or rural areas)
     return rank_candidates_generic(candidates, city, county)
 
 

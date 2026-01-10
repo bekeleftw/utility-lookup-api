@@ -564,16 +564,26 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
     
     try:
         with sync_playwright() as p:
+            # Check if we have a display available (for headed mode)
+            import os
+            display = os.environ.get('DISPLAY')
+            use_headed = display is not None and display != ''
+            
+            if use_headed:
+                print(f"  Using headed mode with DISPLAY={display}")
+            else:
+                print("  No DISPLAY available, falling back to headless (may not work)")
+            
             # Use Chromium with stealth settings to bypass bot detection
-            # Note: headed mode (headless=False) is required for FCC site
-            # In Docker/server environments, use xvfb for virtual display
             browser = p.chromium.launch(
-                headless=False,  # FCC requires headed mode
+                headless=not use_headed,  # Use headed if DISPLAY available
                 args=[
                     '--disable-blink-features=AutomationControlled',
                     '--no-sandbox',
                     '--disable-setuid-sandbox',
-                    '--disable-dev-shm-usage'
+                    '--disable-dev-shm-usage',
+                    '--disable-gpu',
+                    '--disable-software-rasterizer'
                 ]
             )
             context = browser.new_context(

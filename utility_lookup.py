@@ -248,10 +248,11 @@ def filter_electric_providers(providers: Union[Dict, List[Dict]], city: str = No
     if state in DEREGULATED_ELECTRIC_STATES:
         dereg_note = DEREGULATED_ELECTRIC_STATES[state]
 
-# Only return primary (or top 2 if scores are close)
+    # Only return primary (or top 2 if scores are close)
     if len(scored) > 1 and (scored[0].get("_score", 0) - scored[1].get("_score", 0)) < 10:
         return scored[:2], dereg_note
     return scored[:1], dereg_note
+
 
 def filter_gas_providers(providers: Union[Dict, List[Dict]], city: str = None, state: str = None) -> List[Dict]:
     """
@@ -760,7 +761,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     # Step 4: Query water utility
     water = lookup_water_utility(city, county, state, full_address=address)
 
-    # Step 5: Optional SERP verification
+    # Step 5: Optional SERP verification for electric
     if verify_with_serp and electric_filtered:
         primary = electric_filtered[0]
         electric_name = primary.get("NAME")
@@ -776,14 +777,32 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     primary["_serp_verified"] = False
                     print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
 
-    # Step 6: Build result
-    # Return primary as single dict if only one, otherwise list with primary first
+    # Step 6: ALWAYS verify gas with SERP (data quality is poor)
+    if gas_filtered:
+        gas_name = gas_filtered[0].get("NAME")
+        if gas_name:
+            print(f"Verifying gas provider with SERP search...")
+            serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
+            if serp_result:
+                if serp_result.get("verified"):
+                    gas_filtered[0]["_serp_verified"] = True
+                    gas_filtered[0]["_confidence"] = "high"
+                    print(f"  ✓ SERP verified: {gas_name}")
+                else:
+                    # SERP found a different provider
+                    gas_filtered[0]["_serp_verified"] = False
+                    if serp_result.get("serp_provider"):
+                        gas_filtered[0]["_serp_suggestion"] = serp_result.get("serp_provider")
+                        gas_filtered[0]["_confidence"] = "low"
+                        print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider')}")
+
+    # Step 7: Build result
     electric_result = None
     if electric_filtered:
         if len(electric_filtered) == 1:
             electric_result = electric_filtered[0]
         else:
-            electric_result = electric_filtered  # List with primary first
+            electric_result = electric_filtered
 
     gas_result = None
     if gas_filtered:
@@ -796,7 +815,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         "electric": electric_result,
         "electric_note": electric_note,
         "gas": gas_result,
-        "gas_note": None,  # Gas is not deregulated in most states
+        "gas_note": None,
         "water": water,
         "water_note": None,
         "location": {

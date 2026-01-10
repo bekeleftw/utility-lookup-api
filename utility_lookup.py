@@ -594,6 +594,8 @@ Search results:
 
 Our database suggests: {candidate_name or 'Unknown'}
 
+IMPORTANT: Only set matches_database to true if the search results explicitly confirm "{candidate_name}" serves this specific address. If the results mention a DIFFERENT provider (even if our database provider is also mentioned), set matches_database to false and return the provider the search results indicate is correct.
+
 Based on the search results, what is the actual {utility_type} utility provider for this address?
 Reply with ONLY a JSON object in this exact format:
 {{"provider": "COMPANY NAME", "confidence": "high/medium/low", "matches_database": true/false, "notes": "brief explanation"}}"""
@@ -668,7 +670,6 @@ def analyze_serp_with_regex(combined_text: str, candidate_name: str = None) -> O
         return {"verified": False, "serp_suggestions": found_utilities[:3], "confidence": "medium"}
 
     return None
-
 
 # =============================================================================
 # FORMATTING

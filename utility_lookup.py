@@ -26,6 +26,9 @@ from pathlib import Path
 from urllib.parse import quote
 from bs4 import BeautifulSoup
 
+# Import state-specific utility verification
+from state_utility_verification import verify_electric_provider
+
 # Try to load dotenv for API keys
 try:
     from dotenv import load_dotenv
@@ -1208,27 +1211,47 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     state = geo_result.get("state")
     county = geo_result.get("county")
     
-    # Step 2: Query utilities
-    electric = lookup_electric_utility(lon, lat)
+    # Step 2: Query utilities from HIFLD
+    electric_candidates = lookup_electric_utility(lon, lat)
     gas = lookup_gas_utility(lon, lat, state=state)
     
     # Step 3: Filter by city to remove irrelevant municipal utilities
     if filter_by_city and city:
-        electric = filter_utilities_by_location(electric, city)
+        electric_candidates = filter_utilities_by_location(electric_candidates, city)
         gas = filter_utilities_by_location(gas, city)
     
-    # Step 4: Identify most likely electric provider from overlapping territories
-    primary_electric = None
-    other_electric = []
-    if electric:
-        if isinstance(electric, list) and len(electric) > 1:
-            primary_electric, other_electric = rank_electric_providers(electric, city, county)
-        elif isinstance(electric, list) and len(electric) == 1:
-            primary_electric = electric[0]
-            primary_electric["_confidence"] = "high"
-        else:
-            primary_electric = electric
-            primary_electric["_confidence"] = "high"
+    # Step 4: Verify electric provider using state-specific data
+    # Convert to list if single result
+    if electric_candidates and not isinstance(electric_candidates, list):
+        electric_candidates = [electric_candidates]
+    
+    # Get ZIP code from geocoded address for verification
+    zip_code = geo_result.get("zip") or ""
+    if not zip_code and geo_result.get("matched_address"):
+        # Try to extract ZIP from matched address
+        import re
+        zip_match = re.search(r'\b(\d{5})\b', geo_result.get("matched_address", ""))
+        if zip_match:
+            zip_code = zip_match.group(1)
+    
+    # Use state-specific verification
+    verification_result = verify_electric_provider(
+        state=state,
+        zip_code=zip_code,
+        city=city,
+        county=county,
+        candidates=electric_candidates or []
+    )
+    
+    primary_electric = verification_result.get("primary")
+    other_electric = verification_result.get("alternatives", [])
+    
+    # Add verification metadata to primary
+    if primary_electric:
+        primary_electric["_confidence"] = verification_result.get("confidence", "medium")
+        primary_electric["_verification_source"] = verification_result.get("source")
+        primary_electric["_selection_reason"] = verification_result.get("selection_reason")
+        primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
     
     # Step 5: Query water utility
     water = lookup_water_utility(city, county, state, full_address=address)

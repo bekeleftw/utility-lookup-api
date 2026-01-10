@@ -37,22 +37,52 @@ def lookup():
             'utilities': {}
         }
         
-        # Electric - now ranked with primary first
+        # Electric - now verified with state-specific data
         electric = result.get('electric')
         if electric:
             if isinstance(electric, list):
                 response['utilities']['electric'] = [format_utility(e, 'electric') for e in electric]
-                if len(electric) > 1:
-                    primary = electric[0]
-                    others = electric[1:]
-                    other_names = [e.get('NAME', 'Unknown') for e in others]
-                    primary_name = primary.get('NAME', 'Unknown')
-                    if primary.get('_serp_verified'):
-                        response['utilities']['electric_note'] = f"Verified: {primary_name}. Other territories in area: {', '.join(other_names)}."
-                    else:
-                        response['utilities']['electric_note'] = f"Most likely: {primary_name} (ranked by location match). Other possibilities: {', '.join(other_names)}."
+                primary = electric[0]
             else:
                 response['utilities']['electric'] = [format_utility(electric, 'electric')]
+                primary = electric
+            
+            # Build electric note with verification info
+            primary_name = primary.get('NAME', 'Unknown')
+            confidence = primary.get('_confidence', 'medium')
+            selection_reason = primary.get('_selection_reason', '')
+            verification_source = primary.get('_verification_source', '')
+            is_deregulated = primary.get('_is_deregulated')
+            
+            # Get alternative names
+            others = electric[1:] if isinstance(electric, list) and len(electric) > 1 else []
+            other_names = [e.get('NAME', 'Unknown') for e in others]
+            
+            if confidence == 'verified':
+                note = f"✓ Verified: {primary_name}."
+                if selection_reason:
+                    note += f" {selection_reason}"
+            elif confidence == 'high':
+                note = f"{primary_name} (high confidence)."
+                if selection_reason:
+                    note += f" {selection_reason}"
+            else:
+                note = f"Most likely: {primary_name}."
+                if selection_reason:
+                    note += f" {selection_reason}"
+            
+            if other_names:
+                note += f" Other territories in area: {', '.join(other_names)}."
+            
+            if is_deregulated is True:
+                note += " This is a deregulated market - you can choose your electricity supplier."
+            elif is_deregulated is False:
+                note += " This utility is not in the deregulated market."
+            
+            response['utilities']['electric_note'] = note
+            response['utilities']['electric_confidence'] = confidence
+            if verification_source:
+                response['utilities']['electric_source'] = verification_source
         
         # Gas
         gas = result.get('gas')

@@ -16,10 +16,14 @@ EXPOSE 8080
 ENV DISPLAY=:99
 
 # Create startup script that starts Xvfb and then gunicorn
-RUN echo '#!/bin/bash\n\
-Xvfb :99 -screen 0 1280x800x24 &\n\
-sleep 1\n\
-exec gunicorn api:app --bind 0.0.0.0:8080 --timeout 120\n\
-' > /app/start.sh && chmod +x /app/start.sh
+COPY <<EOF /app/start.sh
+#!/bin/bash
+echo "Starting Xvfb on display :99..."
+Xvfb :99 -screen 0 1280x800x24 &
+sleep 2
+echo "Xvfb started, launching gunicorn..."
+exec gunicorn api:app --bind 0.0.0.0:8080 --timeout 120
+EOF
+RUN chmod +x /app/start.sh
 
-CMD ["/app/start.sh"]
+CMD ["/bin/bash", "/app/start.sh"]

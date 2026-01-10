@@ -566,13 +566,16 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
         with sync_playwright() as p:
             # Check if we have a display available (for headed mode)
             import os
+            import sys
             display = os.environ.get('DISPLAY')
             use_headed = display is not None and display != ''
             
             if use_headed:
-                print(f"  Using headed mode with DISPLAY={display}")
+                print(f"  Using headed mode with DISPLAY={display}", flush=True)
             else:
-                print("  No DISPLAY available, falling back to headless (may not work)")
+                print("  No DISPLAY available, falling back to headless (may not work)", flush=True)
+            
+            sys.stdout.flush()
             
             # Use Chromium with stealth settings to bypass bot detection
             browser = p.chromium.launch(
@@ -602,16 +605,19 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
             
             # Go to FCC broadband map HOMEPAGE
             # Use domcontentloaded instead of networkidle to avoid timeout
+            print("  Loading FCC homepage...", flush=True)
             page.goto("https://broadbandmap.fcc.gov/", timeout=60000, wait_until="domcontentloaded")
             page.wait_for_timeout(5000)  # Wait for JS to initialize
+            print("  FCC page loaded", flush=True)
             
             # Find and click the address input
             search_input = page.locator('#addrSearch')
             if not search_input.is_visible():
-                print("FCC: Search input not visible")
+                print("  FCC: Search input not visible", flush=True)
                 browser.close()
                 return None
             
+            print("  Typing address...", flush=True)
             search_input.click()
             page.wait_for_timeout(500)
             
@@ -626,18 +632,22 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
             address_street = address.split(',')[0].upper().strip()
             
             if address_street in content.upper():
+                print(f"  Autocomplete found for: {address_street}", flush=True)
                 # Click the suggestion
                 suggestion = page.locator(f'text={address_street}').first
                 if suggestion.is_visible():
                     suggestion.click()
+                    print("  Clicked suggestion, waiting for API...", flush=True)
                     page.wait_for_timeout(8000)  # Wait for API response
             else:
+                print("  No autocomplete, using keyboard fallback", flush=True)
                 # Fallback: try arrow down + enter
                 page.keyboard.press("ArrowDown")
                 page.wait_for_timeout(500)
                 page.keyboard.press("Enter")
                 page.wait_for_timeout(8000)
             
+            print(f"  API captured: {result_data is not None}", flush=True)
             browser.close()
             
     except Exception as e:

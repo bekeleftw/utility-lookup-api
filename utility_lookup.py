@@ -541,7 +541,9 @@ def _format_water_result(ws: Dict) -> Dict:
 def lookup_internet_providers(address: str) -> Optional[Dict]:
     """
     Look up internet providers using Playwright to handle FCC's session requirements.
-    Loads the FCC broadband map, enters address, and intercepts API response.
+    Uses Chromium with stealth settings to bypass bot detection.
+    Loads the FCC broadband map homepage, enters address, clicks autocomplete suggestion,
+    and intercepts the fabric/detail API response.
     """
     try:
         from playwright.sync_api import sync_playwright
@@ -553,7 +555,8 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
     
     def handle_response(response):
         nonlocal result_data
-        if "/api/fabric/detail/" in response.url and response.status == 200:
+        # Capture the fabric/detail API (not hex tiles)
+        if "fabric/detail" in response.url and "hex" not in response.url and response.status == 200:
             try:
                 result_data = response.json()
             except:
@@ -561,41 +564,69 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
     
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True)
+            # Use Chromium with stealth settings to bypass bot detection
+            # Note: headed mode (headless=False) is required for FCC site
+            # In Docker/server environments, use xvfb for virtual display
+            browser = p.chromium.launch(
+                headless=False,  # FCC requires headed mode
+                args=[
+                    '--disable-blink-features=AutomationControlled',
+                    '--no-sandbox',
+                    '--disable-setuid-sandbox',
+                    '--disable-dev-shm-usage'
+                ]
+            )
             context = browser.new_context(
-                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+                viewport={"width": 1280, "height": 800},
+                user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
             )
             page = context.new_page()
+            
+            # Remove webdriver property to avoid detection
+            page.add_init_script("""
+                Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
+            """)
             
             # Listen for API responses
             page.on("response", handle_response)
             
-            # Go to FCC broadband map
-            page.goto("https://broadbandmap.fcc.gov/location-summary/fixed", timeout=30000)
-            page.wait_for_load_state("networkidle", timeout=15000)
+            # Go to FCC broadband map HOMEPAGE
+            # Use domcontentloaded instead of networkidle to avoid timeout
+            page.goto("https://broadbandmap.fcc.gov/", timeout=60000, wait_until="domcontentloaded")
+            page.wait_for_timeout(5000)  # Wait for JS to initialize
             
-            # Find and fill the address input
-            address_input = page.locator('input[type="text"]').first
-            address_input.fill(address)
+            # Find and click the address input
+            search_input = page.locator('#addrSearch')
+            if not search_input.is_visible():
+                print("FCC: Search input not visible")
+                browser.close()
+                return None
             
-            # Wait for autocomplete suggestions
-            page.wait_for_timeout(1500)
+            search_input.click()
+            page.wait_for_timeout(500)
             
-            # Press Enter to search
-            address_input.press("Enter")
+            # Type address slowly using keyboard to trigger autocomplete
+            page.keyboard.type(address, delay=80)
             
-            # Wait for results to load
-            page.wait_for_timeout(5000)
+            # Wait for autocomplete suggestions to appear
+            page.wait_for_timeout(3000)
             
-            # If we didn't catch the API response, try clicking first suggestion
-            if not result_data:
-                try:
-                    suggestion = page.locator('[role="option"]').first
-                    if suggestion.is_visible():
-                        suggestion.click()
-                        page.wait_for_timeout(3000)
-                except:
-                    pass
+            # Check if autocomplete appeared by looking for address in page content
+            content = page.content()
+            address_street = address.split(',')[0].upper().strip()
+            
+            if address_street in content.upper():
+                # Click the suggestion
+                suggestion = page.locator(f'text={address_street}').first
+                if suggestion.is_visible():
+                    suggestion.click()
+                    page.wait_for_timeout(8000)  # Wait for API response
+            else:
+                # Fallback: try arrow down + enter
+                page.keyboard.press("ArrowDown")
+                page.wait_for_timeout(500)
+                page.keyboard.press("Enter")
+                page.wait_for_timeout(8000)
             
             browser.close()
             

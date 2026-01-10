@@ -97,6 +97,7 @@
   .utility-icon.electric { background: #fef3c7; }
   .utility-icon.gas { background: #dbeafe; }
   .utility-icon.water { background: #d1fae5; }
+  .utility-icon.internet { background: #ede9fe; }
   
   .utility-type {
     font-size: 12px;
@@ -255,7 +256,7 @@
 <script>
 (function() {
   // UPDATE THIS URL to your hosted API endpoint
-  const API_URL = 'http://localhost:5001/api/lookup';
+  const API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
   
   const form = document.getElementById('utilityForm');
   const input = document.getElementById('addressInput');
@@ -265,7 +266,8 @@
   const icons = {
     electric: '⚡',
     gas: '🔥',
-    water: '💧'
+    water: '💧',
+    internet: '🌐'
   };
   
   form.addEventListener('submit', async (e) => {
@@ -358,14 +360,23 @@
       }
     }
     
+    // Internet
+    if (data.utilities.internet) {
+      const inet = data.utilities.internet;
+      html += renderInternetCard(inet);
+      if (data.utilities.internet_note) {
+        html += `<div class="utility-note">${data.utilities.internet_note}</div>`;
+      }
+    }
+    
     html += '</div>';
     results.innerHTML = html;
   }
   
-  function renderUtilityCard(util, type, note) {
-    const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water' };
+  function renderUtilityCard(util, type, note, isFirst = true) {
+    const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
     const confidence = util.confidence || 'medium';
-    const verified = util.verified;
+    const verified = confidence === 'verified' || util.verified;
     
     let badge = '';
     if (verified) {
@@ -417,8 +428,46 @@
     `;
   }
   
+  function renderInternetCard(inet) {
+    const providerCount = inet.provider_count || 0;
+    const hasFiber = inet.has_fiber;
+    const bestWired = inet.best_wired;
+    
+    let badge = hasFiber ? '<span class="utility-badge verified">✓ Fiber Available</span>' : 
+                inet.has_cable ? '<span class="utility-badge verified">Cable Available</span>' : 
+                '<span class="utility-badge unverified">Limited Options</span>';
+    
+    let details = '';
+    if (bestWired) {
+      details += `
+        <div class="utility-detail">
+          <span class="utility-detail-label">Best Option</span>
+          ${bestWired.name} (${bestWired.technology})
+        </div>
+        <div class="utility-detail">
+          <span class="utility-detail-label">Speed</span>
+          ${bestWired.max_download_mbps} Mbps down / ${bestWired.max_upload_mbps} Mbps up
+        </div>
+      `;
+    }
+    
+    return `
+      <div class="utility-card">
+        <div class="utility-card-header">
+          <div class="utility-icon internet">${icons.internet}</div>
+          <span class="utility-type">Internet</span>
+          ${badge}
+        </div>
+        <div class="utility-name">${providerCount} providers available</div>
+        <div class="utility-details">
+          ${details}
+        </div>
+      </div>
+    `;
+  }
+  
   function renderUtilityCardCompact(util, type) {
-    const icons = { electric: '⚡', gas: '🔥', water: '💧' };
+    const icons = { electric: '⚡', gas: '🔥', water: '💧', internet: '🌐' };
     return `
       <div class="utility-card-compact">
         <div class="utility-icon ${type}">${icons[type]}</div>

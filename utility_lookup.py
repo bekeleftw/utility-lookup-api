@@ -53,6 +53,10 @@ BRIGHTDATA_PROXY_PORT = 33335
 BRIGHTDATA_PROXY_USER = "brd-customer-hl_6cc76bc7-zone-address_search"
 BRIGHTDATA_PROXY_PASS = "n59dskgnctqr"
 
+# BrightData Web Unlocker for FCC API
+BRIGHTDATA_UNBLOCKER_USER = "brd-customer-hl_6cc76bc7-zone-unblocker1"
+BRIGHTDATA_UNBLOCKER_PASS = "hp8kqmzw2666"
+
 # OpenAI API key for LLM verification
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
 
@@ -536,21 +540,24 @@ def _format_water_result(ws: Dict) -> Dict:
 # =============================================================================
 
 def lookup_fcc_location_id(address: str) -> Optional[str]:
+    """
+    Convert address to FCC location_id using the Fabric API.
+    Uses BrightData Web Unlocker to bypass bot detection.
+    """
     encoded_address = quote(address, safe='')
     url = f"{FCC_API_BASE}/fabric/address/{FCC_API_UUID}/{encoded_address}"
     
-    # Use BrightData proxy to bypass bot detection
-    proxy_url = f"http://{BRIGHTDATA_PROXY_USER}:{BRIGHTDATA_PROXY_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
+    # Use BrightData Web Unlocker proxy
+    proxy_url = f"http://{BRIGHTDATA_UNBLOCKER_USER}:{BRIGHTDATA_UNBLOCKER_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
     proxies = {"http": proxy_url, "https": proxy_url}
     
     try:
         import urllib3
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         
-        response = requests.get(url, timeout=15, proxies=proxies, verify=False, headers={
+        response = requests.get(url, timeout=30, proxies=proxies, verify=False, headers={
             "Accept": "application/json",
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-            "Referer": "https://broadbandmap.fcc.gov/",
         })
         response.raise_for_status()
         data = response.json()
@@ -569,11 +576,7 @@ def lookup_fcc_location_id(address: str) -> Optional[str]:
 def lookup_internet_providers(address: str = None, location_id: str = None) -> Optional[Dict]:
     """
     Look up internet providers for an address using FCC Broadband Map API.
-    
-    Returns dict with:
-    - providers: List of all providers with details
-    - best_wired: Best wired option (fiber > cable > DSL)
-    - has_fiber: Boolean
+    Uses BrightData Web Unlocker to bypass bot detection.
     """
     # Step 1: Get location_id if not provided
     if not location_id:
@@ -586,12 +589,17 @@ def lookup_internet_providers(address: str = None, location_id: str = None) -> O
     # Step 2: Get provider details
     url = f"{FCC_API_BASE}/fabric/detail/{FCC_API_UUID}/{location_id}"
     
+    # Use BrightData Web Unlocker proxy
+    proxy_url = f"http://{BRIGHTDATA_UNBLOCKER_USER}:{BRIGHTDATA_UNBLOCKER_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
+    proxies = {"http": proxy_url, "https": proxy_url}
+    
     try:
-        response = requests.get(url, timeout=15, headers={
+        import urllib3
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+        
+        response = requests.get(url, timeout=30, proxies=proxies, verify=False, headers={
             "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
-            "Referer": "https://broadbandmap.fcc.gov/",
-            "Origin": "https://broadbandmap.fcc.gov"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
         })
         response.raise_for_status()
         data = response.json()

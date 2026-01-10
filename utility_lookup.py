@@ -206,9 +206,9 @@ def lookup_electric_utility(lon: float, lat: float, city: str = None) -> Optiona
                 if city.upper() == provider_city or city.upper() in provider_city:
                     score += 25
             
-            # Boost city-named municipal utilities
+            # Boost city-named utilities (municipal or not) - this is a strong signal
             if city and city.upper() in name:
-                score += 20
+                score += 35  # Strong boost for city name in utility name
             
             # Large IOUs get a boost
             large_ious = ["DUKE ENERGY", "DOMINION", "SOUTHERN COMPANY", "ENTERGY", 

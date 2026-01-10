@@ -536,17 +536,15 @@ def _format_water_result(ws: Dict) -> Dict:
 # =============================================================================
 
 def lookup_fcc_location_id(address: str) -> Optional[str]:
-    """
-    Convert address to FCC location_id using the Fabric API.
-    Returns location_id string or None if address not found.
-    """
     encoded_address = quote(address, safe='')
     url = f"{FCC_API_BASE}/fabric/address/{FCC_API_UUID}/{encoded_address}"
     
     try:
         response = requests.get(url, timeout=15, headers={
             "Accept": "application/json",
-            "User-Agent": "UtilityLookupTool/1.0"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Referer": "https://broadbandmap.fcc.gov/",
+            "Origin": "https://broadbandmap.fcc.gov"
         })
         response.raise_for_status()
         data = response.json()
@@ -585,7 +583,9 @@ def lookup_internet_providers(address: str = None, location_id: str = None) -> O
     try:
         response = requests.get(url, timeout=15, headers={
             "Accept": "application/json",
-            "User-Agent": "UtilityLookupTool/1.0"
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+            "Referer": "https://broadbandmap.fcc.gov/",
+            "Origin": "https://broadbandmap.fcc.gov"
         })
         response.raise_for_status()
         data = response.json()

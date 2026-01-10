@@ -549,36 +549,61 @@ def rank_candidates_generic(candidates: List[Dict], city: str = None, county: st
     # Score candidates
     scored = []
     city_upper = (city or "").upper()
+    county_upper = (county or "").upper()
     
     for c in candidates:
         score = 50
         name = (c.get("NAME") or "").upper()
+        utility_type = (c.get("TYPE") or "").upper()
         
-        # City match is strong signal
+        # City match is strong signal for municipal utilities
         if city_upper and city_upper in name:
-            score += 30
+            score += 35
         
-        # Large IOUs
+        # County match
+        if county_upper and county_upper in name:
+            score += 15
+        
+        # Large IOUs - expanded list
         large_ious = ["DUKE ENERGY", "DOMINION", "SOUTHERN COMPANY", "ENTERGY",
                       "XCEL ENERGY", "PACIFIC GAS", "SOUTHERN CALIFORNIA EDISON",
-                      "CON EDISON", "GEORGIA POWER", "FLORIDA POWER", "EVERSOURCE",
-                      "NATIONAL GRID", "PSEG", "EXELON", "AMEREN", "DTE ENERGY"]
+                      "CON EDISON", "CONSOLIDATED EDISON", "GEORGIA POWER", 
+                      "FLORIDA POWER", "EVERSOURCE", "NATIONAL GRID", "PSEG", 
+                      "EXELON", "AMEREN", "DTE ENERGY", "CONSUMERS ENERGY",
+                      "FIRSTENERGY", "CLEVELAND ELECTRIC", "OHIO EDISON",
+                      "TOLEDO EDISON", "COMMONWEALTH EDISON", "PECO", "PPL",
+                      "DUQUESNE", "CENTERPOINT", "ONCOR", "AEP", "AMERICAN ELECTRIC",
+                      "ENTERGY", "EVERGY", "ALLIANT", "WESTAR", "ROCKY MOUNTAIN",
+                      "PUGET SOUND", "AVISTA", "IDAHO POWER", "PACIFICORP",
+                      "ARIZONA PUBLIC SERVICE", "SALT RIVER PROJECT", "TUCSON ELECTRIC",
+                      "NV ENERGY", "NEVADA POWER", "SIERRA PACIFIC"]
         for iou in large_ious:
             if iou in name:
-                score += 20
+                score += 25
                 break
         
-        # Cooperatives
-        if "COOP" in name or "EMC" in name or "RURAL" in name:
+        # Utility type scoring
+        if "INVESTOR" in utility_type or "IOU" in utility_type:
+            score += 15
+        elif "COOPERATIVE" in utility_type or "COOP" in utility_type:
+            score += 10
+        elif "MUNICIPAL" in utility_type:
+            score += 5
+        
+        # Cooperatives by name
+        if "COOP" in name or "EMC" in name or "RURAL ELECTRIC" in name:
             score += 10
         
-        # Deprioritize wholesale/transmission
+        # Deprioritize wholesale/transmission/generation
         if "WHOLESALE" in name or "TRANSMISSION" in name or "GENERATION" in name:
-            score -= 30
+            score -= 40
+        if "WAPA" in name or "BPA" in name or "BONNEVILLE" in name:
+            score -= 40
         
         # Deprioritize municipal from other cities
-        if ("MUNICIPAL" in name or "CITY OF" in name) and city_upper and city_upper not in name:
-            score -= 20
+        if ("MUNICIPAL" in name or "CITY OF" in name or "TOWN OF" in name):
+            if city_upper and city_upper not in name:
+                score -= 25
         
         c["_score"] = score
         scored.append(c)

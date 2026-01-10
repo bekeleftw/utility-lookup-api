@@ -534,152 +534,150 @@ def _format_water_result(ws: Dict) -> Dict:
         "service_connections": ws.get("service_connections_count"),
     }
 
-
 # =============================================================================
-# INTERNET PROVIDER LOOKUP (FCC Broadband Map API)
+# INTERNET PROVIDER LOOKUP (FCC Broadband Map via Playwright)
 # =============================================================================
 
-def lookup_fcc_location_id(address: str) -> Optional[str]:
+def lookup_internet_providers(address: str) -> Optional[Dict]:
     """
-    Convert address to FCC location_id using the Fabric API.
-    Uses BrightData Web Unlocker to bypass bot detection.
+    Look up internet providers using Playwright to handle FCC's session requirements.
+    Loads the FCC broadband map, enters address, and intercepts API response.
     """
-    encoded_address = quote(address, safe='')
-    url = f"{FCC_API_BASE}/fabric/address/{FCC_API_UUID}/{encoded_address}"
+    try:
+        from playwright.sync_api import sync_playwright
+    except ImportError:
+        print("Playwright not installed, skipping internet lookup")
+        return None
     
-    # Use BrightData Web Unlocker proxy
-    proxy_url = f"http://{BRIGHTDATA_UNBLOCKER_USER}:{BRIGHTDATA_UNBLOCKER_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
-    proxies = {"http": proxy_url, "https": proxy_url}
+    result_data = None
+    
+    def handle_response(response):
+        nonlocal result_data
+        if "/api/fabric/detail/" in response.url and response.status == 200:
+            try:
+                result_data = response.json()
+            except:
+                pass
     
     try:
-        import urllib3
-        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        
-        response = requests.get(url, timeout=30, proxies=proxies, verify=False, headers={
-            "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        })
-        response.raise_for_status()
-        data = response.json()
-        
-        if data.get("status") == "successful" and data.get("data"):
-            return data["data"][0].get("location_id")
-        
-        print(f"FCC API: No location found for address")
-        return None
-        
-    except requests.RequestException as e:
-        print(f"FCC location lookup error: {e}")
-        return None
-
-
-def lookup_internet_providers(address: str = None, location_id: str = None) -> Optional[Dict]:
-    """
-    Look up internet providers for an address using FCC Broadband Map API.
-    Uses BrightData Web Unlocker to bypass bot detection.
-    """
-    # Step 1: Get location_id if not provided
-    if not location_id:
-        if not address:
-            return None
-        location_id = lookup_fcc_location_id(address)
-        if not location_id:
-            return None
-    
-    # Step 2: Get provider details
-    url = f"{FCC_API_BASE}/fabric/detail/{FCC_API_UUID}/{location_id}"
-    
-    # Use BrightData Web Unlocker proxy
-    proxy_url = f"http://{BRIGHTDATA_UNBLOCKER_USER}:{BRIGHTDATA_UNBLOCKER_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
-    proxies = {"http": proxy_url, "https": proxy_url}
-    
-    try:
-        import urllib3
-        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        
-        response = requests.get(url, timeout=30, proxies=proxies, verify=False, headers={
-            "Accept": "application/json",
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-        })
-        response.raise_for_status()
-        data = response.json()
-        
-        if data.get("status") != "successful" or not data.get("data"):
-            print("FCC API: No provider data found")
-            return None
-        
-        location_data = data["data"][0]
-        providers_raw = location_data.get("detail", [])
-        
-        # Process and dedupe providers
-        providers = []
-        seen = set()
-        
-        for p in providers_raw:
-            key = f"{p.get('brand_name')}|{p.get('technology_code')}"
-            if key in seen:
-                continue
-            seen.add(key)
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            context = browser.new_context(
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+            )
+            page = context.new_page()
             
-            tech_code = p.get("technology_code", "")
-            provider = {
-                "name": p.get("brand_name") or p.get("provider_name"),
-                "provider_name": p.get("provider_name"),
-                "holding_company": p.get("holding_company_name"),
-                "technology": TECHNOLOGY_CODES.get(tech_code, tech_code),
-                "technology_code": tech_code,
-                "max_download_mbps": p.get("maxdown"),
-                "max_upload_mbps": p.get("maxup"),
-                "low_latency": p.get("lowlatency") == 1,
-            }
-            providers.append(provider)
-        
-        # Sort by download speed descending
-        providers.sort(key=lambda x: x.get("max_download_mbps", 0) or 0, reverse=True)
-        
-        # Find best options by category
-        best_fiber = None
-        best_cable = None
-        best_dsl = None
-        best_wireless = None
-        best_satellite = None
-        
-        for p in providers:
-            tech = p.get("technology_code", "")
-            if tech == "50" and not best_fiber:
-                best_fiber = p
-            elif tech == "40" and not best_cable:
-                best_cable = p
-            elif tech == "10" and not best_dsl:
-                best_dsl = p
-            elif tech in WIRELESS_TECH_CODES and not best_wireless:
-                best_wireless = p
-            elif tech in SATELLITE_TECH_CODES and not best_satellite:
-                best_satellite = p
-        
-        best_wired = best_fiber or best_cable or best_dsl
-        
-        return {
-            "location_id": location_id,
-            "address": location_data.get("address_primary"),
-            "city": location_data.get("city"),
-            "state": location_data.get("state"),
-            "zip": location_data.get("zip_code"),
-            "unit_count": location_data.get("unitCount", 1),
-            "providers": providers,
-            "provider_count": len(providers),
-            "has_fiber": best_fiber is not None,
-            "has_cable": best_cable is not None,
-            "best_wired": best_wired,
-            "best_wireless": best_wireless,
-            "best_satellite": best_satellite,
-        }
-        
-    except requests.RequestException as e:
-        print(f"FCC provider lookup error: {e}")
+            # Listen for API responses
+            page.on("response", handle_response)
+            
+            # Go to FCC broadband map
+            page.goto("https://broadbandmap.fcc.gov/location-summary/fixed", timeout=30000)
+            page.wait_for_load_state("networkidle", timeout=15000)
+            
+            # Find and fill the address input
+            address_input = page.locator('input[type="text"]').first
+            address_input.fill(address)
+            
+            # Wait for autocomplete suggestions
+            page.wait_for_timeout(1500)
+            
+            # Press Enter to search
+            address_input.press("Enter")
+            
+            # Wait for results to load
+            page.wait_for_timeout(5000)
+            
+            # If we didn't catch the API response, try clicking first suggestion
+            if not result_data:
+                try:
+                    suggestion = page.locator('[role="option"]').first
+                    if suggestion.is_visible():
+                        suggestion.click()
+                        page.wait_for_timeout(3000)
+                except:
+                    pass
+            
+            browser.close()
+            
+    except Exception as e:
+        print(f"Playwright error: {e}")
         return None
-
-
+    
+    # Process the captured API response
+    if not result_data:
+        print("FCC API: No data captured")
+        return None
+    
+    if result_data.get("status") != "successful" or not result_data.get("data"):
+        print("FCC API: No provider data found")
+        return None
+    
+    location_data = result_data["data"][0]
+    providers_raw = location_data.get("detail", [])
+    
+    # Process and dedupe providers
+    providers = []
+    seen = set()
+    
+    for p in providers_raw:
+        key = f"{p.get('brand_name')}|{p.get('technology_code')}"
+        if key in seen:
+            continue
+        seen.add(key)
+        
+        tech_code = str(p.get("technology_code", ""))
+        provider = {
+            "name": p.get("brand_name") or p.get("provider_name"),
+            "provider_name": p.get("provider_name"),
+            "holding_company": p.get("holding_company_name"),
+            "technology": TECHNOLOGY_CODES.get(tech_code, tech_code),
+            "technology_code": tech_code,
+            "max_download_mbps": p.get("maxdown"),
+            "max_upload_mbps": p.get("maxup"),
+            "low_latency": p.get("lowlatency") == 1,
+        }
+        providers.append(provider)
+    
+    # Sort by download speed descending
+    providers.sort(key=lambda x: x.get("max_download_mbps", 0) or 0, reverse=True)
+    
+    # Find best options by category
+    best_fiber = None
+    best_cable = None
+    best_dsl = None
+    best_wireless = None
+    best_satellite = None
+    
+    for prov in providers:
+        tech = prov.get("technology_code", "")
+        if tech == "50" and not best_fiber:
+            best_fiber = prov
+        elif tech == "40" and not best_cable:
+            best_cable = prov
+        elif tech == "10" and not best_dsl:
+            best_dsl = prov
+        elif tech in WIRELESS_TECH_CODES and not best_wireless:
+            best_wireless = prov
+        elif tech in SATELLITE_TECH_CODES and not best_satellite:
+            best_satellite = prov
+    
+    best_wired = best_fiber or best_cable or best_dsl
+    
+    return {
+        "location_id": location_data.get("location_id"),
+        "address": location_data.get("address_primary"),
+        "city": location_data.get("city"),
+        "state": location_data.get("state"),
+        "zip": location_data.get("zip_code"),
+        "unit_count": location_data.get("unitCount", 1),
+        "providers": providers,
+        "provider_count": len(providers),
+        "has_fiber": best_fiber is not None,
+        "has_cable": best_cable is not None,
+        "best_wired": best_wired,
+        "best_wireless": best_wireless,
+        "best_satellite": best_satellite,
+    }
 # =============================================================================
 # RANKING AND FILTERING FUNCTIONS
 # =============================================================================

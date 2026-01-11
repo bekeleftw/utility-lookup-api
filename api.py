@@ -7,6 +7,39 @@ Run with: python api.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from utility_lookup import lookup_utilities_by_address, lookup_utility_json
+from datetime import datetime
+import hashlib
+import json
+import os
+import re
+
+# Feedback storage
+FEEDBACK_DIR = os.path.join(os.path.dirname(__file__), 'data', 'feedback')
+
+def load_feedback(filename):
+    filepath = os.path.join(FEEDBACK_DIR, filename)
+    if os.path.exists(filepath):
+        with open(filepath, 'r') as f:
+            return json.load(f)
+    return {}
+
+def save_feedback(filename, data):
+    filepath = os.path.join(FEEDBACK_DIR, filename)
+    os.makedirs(os.path.dirname(filepath), exist_ok=True)
+    with open(filepath, 'w') as f:
+        json.dump(data, f, indent=2)
+
+def extract_zip(address):
+    """Extract ZIP code from address string."""
+    match = re.search(r'\b(\d{5})(?:-\d{4})?\b', address)
+    return match.group(1) if match else None
+
+def extract_city_state(address):
+    """Extract city and state from address string."""
+    match = re.search(r',\s*([A-Za-z\s]+),\s*([A-Z]{2})\s*\d{5}', address)
+    if match:
+        return match.group(1).strip().upper(), match.group(2).upper()
+    return None, None
 
 app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests from Webflow
@@ -420,7 +453,6 @@ def missing_cities():
     View cities that are missing from EPA SDWIS data.
     These are candidates for adding to the supplemental file.
     """
-    import json
     from pathlib import Path
     
     missing_file = Path(__file__).parent / "water_missing_cities.json"
@@ -452,6 +484,301 @@ def missing_cities():
         })
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+# =============================================================================
+# USER FEEDBACK SYSTEM
+# =============================================================================
+
+@app.route('/api/feedback', methods=['POST'])
+def submit_feedback():
+    """
+    Accept user corrections for utility providers.
+    
+    Request body:
+    {
+        "address": "301 Treasure Trove Path, Kyle, TX 78640",
+        "zip_code": "78640",
+        "utility_type": "gas",
+        "returned_provider": "Texas Gas Service",
+        "correct_provider": "CenterPoint Energy",
+        "source": "resident",
+        "email": null
+    }
+    """
+    data = request.get_json()
+    
+    # Validate required fields
+    required = ['address', 'utility_type', 'returned_provider', 'correct_provider']
+    for field in required:
+        if not data.get(field):
+            return jsonify({"error": f"Missing required field: {field}"}), 400
+    
+    # Validate utility type
+    valid_types = ['electric', 'gas', 'water', 'internet']
+    if data['utility_type'] not in valid_types:
+        return jsonify({"error": f"Invalid utility_type. Must be one of: {valid_types}"}), 400
+    
+    # Extract ZIP and city/state from address
+    zip_code = data.get('zip_code') or extract_zip(data['address'])
+    city, state = extract_city_state(data['address'])
+    
+    # Generate feedback ID
+    feedback_id = 'fb_' + hashlib.md5(
+        f"{data['address']}_{data['utility_type']}_{datetime.now().isoformat()}".encode()
+    ).hexdigest()[:12]
+    
+    # Create feedback record
+    feedback_record = {
+        "feedback_id": feedback_id,
+        "address": data['address'],
+        "zip_code": zip_code,
+        "city": city,
+        "state": state,
+        "utility_type": data['utility_type'],
+        "returned_provider": data['returned_provider'],
+        "correct_provider": data['correct_provider'],
+        "source": data.get('source', 'unknown'),
+        "email": data.get('email'),
+        "submitted_at": datetime.now().isoformat(),
+        "status": "pending",
+        "confirmation_count": 1,
+        "addresses": [data['address']]
+    }
+    
+    # Load pending feedback
+    pending = load_feedback('pending.json')
+    
+    # Check if similar feedback already exists (same ZIP + utility + correction)
+    correction_key = f"{zip_code}_{data['utility_type']}_{data['correct_provider'].upper()}"
+    
+    existing = None
+    for fid, record in pending.items():
+        existing_key = f"{record.get('zip_code')}_{record['utility_type']}_{record['correct_provider'].upper()}"
+        if existing_key == correction_key:
+            existing = fid
+            break
+    
+    if existing:
+        # Increment confirmation count
+        pending[existing]['confirmation_count'] += 1
+        if data['address'] not in pending[existing].get('addresses', []):
+            pending[existing]['addresses'].append(data['address'])
+        
+        # Auto-confirm if threshold reached
+        if pending[existing]['confirmation_count'] >= 3:
+            auto_confirm_feedback(existing, pending[existing])
+            del pending[existing]
+            save_feedback('pending.json', pending)
+            return jsonify({
+                "status": "auto_confirmed",
+                "feedback_id": existing,
+                "message": "Correction confirmed by multiple users and applied."
+            })
+        
+        save_feedback('pending.json', pending)
+        return jsonify({
+            "status": "confirmation_added",
+            "feedback_id": existing,
+            "confirmation_count": pending[existing]['confirmation_count'],
+            "message": f"Thanks! {pending[existing]['confirmation_count']}/3 confirmations for this correction."
+        })
+    
+    # New feedback
+    pending[feedback_id] = feedback_record
+    save_feedback('pending.json', pending)
+    
+    return jsonify({
+        "status": "received",
+        "feedback_id": feedback_id,
+        "message": "Thank you. This correction will be reviewed."
+    })
+
+
+def auto_confirm_feedback(feedback_id, feedback_record):
+    """
+    When 3+ users confirm same correction, auto-apply it.
+    """
+    # Load confirmed feedback
+    confirmed = load_feedback('confirmed.json')
+    
+    # Add to confirmed
+    feedback_record['status'] = 'auto_confirmed'
+    feedback_record['confirmed_at'] = datetime.now().isoformat()
+    confirmed[feedback_id] = feedback_record
+    save_feedback('confirmed.json', confirmed)
+    
+    # Add to override table based on utility type
+    zip_code = feedback_record.get('zip_code')
+    utility_type = feedback_record['utility_type']
+    correct_provider = feedback_record['correct_provider']
+    city = feedback_record.get('city')
+    state = feedback_record.get('state')
+    
+    if utility_type == 'gas' and zip_code:
+        add_gas_zip_override(zip_code, correct_provider, state, f"User feedback ({feedback_record['confirmation_count']} confirmations)")
+    elif utility_type == 'water' and city and state:
+        add_water_override(city, state, correct_provider)
+    
+    print(f"Auto-confirmed feedback {feedback_id}: {zip_code} {utility_type} → {correct_provider}")
+
+
+def add_gas_zip_override(zip_code, provider_name, state, source):
+    """Add a ZIP code override for gas utility."""
+    from pathlib import Path
+    
+    # Update the GAS_ZIP_OVERRIDES in state_utility_verification.py
+    # For now, save to a JSON file that can be loaded
+    overrides_file = Path(__file__).parent / "data" / "gas_zip_overrides.json"
+    overrides_file.parent.mkdir(parents=True, exist_ok=True)
+    
+    if overrides_file.exists():
+        with open(overrides_file, 'r') as f:
+            overrides = json.load(f)
+    else:
+        overrides = {}
+    
+    overrides[zip_code] = {
+        "state": state,
+        "name": provider_name,
+        "source": source,
+        "added_at": datetime.now().isoformat()
+    }
+    
+    with open(overrides_file, 'w') as f:
+        json.dump(overrides, f, indent=2)
+    
+    print(f"Added gas override: {zip_code} → {provider_name}")
+
+
+def add_water_override(city, state, provider_name):
+    """Add a city-level override for water utility."""
+    from pathlib import Path
+    
+    filepath = Path(__file__).parent / "water_utilities_supplemental.json"
+    
+    if filepath.exists():
+        with open(filepath, 'r') as f:
+            data = json.load(f)
+    else:
+        data = {"_description": "Supplemental water utility data", "by_city": {}}
+    
+    key = f"{state}|{city}".upper()
+    data['by_city'][key] = {
+        "name": provider_name,
+        "state": state,
+        "city": city,
+        "_source": "user_feedback",
+        "_confidence": "high",
+        "added_at": datetime.now().isoformat()
+    }
+    
+    with open(filepath, 'w') as f:
+        json.dump(data, f, indent=2)
+    
+    print(f"Added water override: {city}, {state} → {provider_name}")
+
+
+@app.route('/api/feedback/dashboard', methods=['GET'])
+def feedback_dashboard():
+    """
+    Internal dashboard showing feedback status.
+    """
+    pending = load_feedback('pending.json')
+    confirmed = load_feedback('confirmed.json')
+    
+    # Sort pending by confirmation count (highest first)
+    pending_sorted = sorted(
+        pending.values(),
+        key=lambda x: x.get('confirmation_count', 0),
+        reverse=True
+    )
+    
+    # Recent confirmed
+    confirmed_sorted = sorted(
+        confirmed.values(),
+        key=lambda x: x.get('confirmed_at', ''),
+        reverse=True
+    )[:20]
+    
+    # Stats by ZIP
+    zip_stats = {}
+    for record in list(pending.values()) + list(confirmed.values()):
+        zip_code = record.get('zip_code', 'unknown')
+        if zip_code not in zip_stats:
+            zip_stats[zip_code] = {'pending': 0, 'confirmed': 0}
+        if record.get('status') == 'pending':
+            zip_stats[zip_code]['pending'] += 1
+        else:
+            zip_stats[zip_code]['confirmed'] += 1
+    
+    # Top problem ZIPs
+    problem_zips = sorted(
+        zip_stats.items(),
+        key=lambda x: x[1]['pending'] + x[1]['confirmed'],
+        reverse=True
+    )[:10]
+    
+    return jsonify({
+        "summary": {
+            "pending_count": len(pending),
+            "confirmed_count": len(confirmed),
+            "total_feedback": len(pending) + len(confirmed)
+        },
+        "pending": pending_sorted[:20],
+        "recent_confirmed": confirmed_sorted,
+        "problem_zips": problem_zips
+    })
+
+
+@app.route('/api/feedback/<feedback_id>/confirm', methods=['POST'])
+def manually_confirm_feedback(feedback_id):
+    """
+    Manually confirm a pending feedback item (admin action).
+    """
+    pending = load_feedback('pending.json')
+    
+    if feedback_id not in pending:
+        return jsonify({"error": "Feedback not found"}), 404
+    
+    record = pending[feedback_id]
+    auto_confirm_feedback(feedback_id, record)
+    del pending[feedback_id]
+    save_feedback('pending.json', pending)
+    
+    return jsonify({
+        "status": "confirmed",
+        "feedback_id": feedback_id,
+        "message": "Feedback confirmed and override applied."
+    })
+
+
+@app.route('/api/feedback/<feedback_id>/reject', methods=['POST'])
+def reject_feedback(feedback_id):
+    """
+    Reject a pending feedback item (admin action).
+    """
+    pending = load_feedback('pending.json')
+    
+    if feedback_id not in pending:
+        return jsonify({"error": "Feedback not found"}), 404
+    
+    record = pending[feedback_id]
+    record['status'] = 'rejected'
+    record['rejected_at'] = datetime.now().isoformat()
+    
+    # Move to confirmed file (for record keeping)
+    confirmed = load_feedback('confirmed.json')
+    confirmed[feedback_id] = record
+    save_feedback('confirmed.json', confirmed)
+    
+    del pending[feedback_id]
+    save_feedback('pending.json', pending)
+    
+    return jsonify({
+        "status": "rejected",
+        "feedback_id": feedback_id
+    })
 
 
 if __name__ == '__main__':

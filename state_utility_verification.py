@@ -743,6 +743,27 @@ GAS_ZIP_OVERRIDES = {
     # "28202": {"state": "NC", "name": "Piedmont Natural Gas", "phone": "...", "note": "Charlotte"},
 }
 
+def load_gas_zip_overrides():
+    """Load gas ZIP overrides from both hardcoded dict and user feedback JSON file."""
+    import json
+    from pathlib import Path
+    
+    # Start with hardcoded overrides
+    overrides = GAS_ZIP_OVERRIDES.copy()
+    
+    # Load user feedback overrides
+    feedback_file = Path(__file__).parent / "data" / "gas_zip_overrides.json"
+    if feedback_file.exists():
+        try:
+            with open(feedback_file, 'r') as f:
+                user_overrides = json.load(f)
+            # User feedback overrides take precedence
+            overrides.update(user_overrides)
+        except (json.JSONDecodeError, IOError):
+            pass
+    
+    return overrides
+
 # Major gas LDCs by state (for verification)
 STATE_GAS_LDCS = {
     "AL": ["Spire Alabama", "Alagasco"],
@@ -876,9 +897,10 @@ def verify_gas_provider(
     state = (state or "").upper()
     zip_code = str(zip_code).strip()[:5] if zip_code else ""
     
-    # FIRST: Check general ZIP override table (works for any state)
-    if zip_code in GAS_ZIP_OVERRIDES:
-        override = GAS_ZIP_OVERRIDES[zip_code]
+    # FIRST: Check general ZIP override table (includes user feedback overrides)
+    all_overrides = load_gas_zip_overrides()
+    if zip_code in all_overrides:
+        override = all_overrides[zip_code]
         # Verify state matches (safety check)
         if override.get("state", "").upper() == state:
             return {
@@ -889,7 +911,7 @@ def verify_gas_provider(
                     "TYPE": "LDC",
                 },
                 "confidence": "verified",
-                "source": "ZIP override (user-verified)",
+                "source": override.get("source", "ZIP override (user-verified)"),
                 "selection_reason": f"ZIP {zip_code} verified: {override['name']}. {override.get('note', '')}",
                 "alternatives": candidates  # Keep HIFLD candidates as alternatives
             }

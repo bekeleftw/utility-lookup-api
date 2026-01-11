@@ -1,0 +1,13 @@
+{
+  "_description": "Cities missing from EPA SDWIS - candidates for supplemental file",
+  "cities": {
+    "TX|SOME RANDOM CITY": {
+      "state": "TX",
+      "city": "SOME RANDOM CITY",
+      "county": "Travis",
+      "match_type": "county_fallback",
+      "first_seen": "1768153547.2352073",
+      "count": 1
+    }
+  }
+}

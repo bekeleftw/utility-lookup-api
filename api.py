@@ -414,5 +414,45 @@ def batch_lookup():
     })
 
 
+@app.route('/api/missing-cities', methods=['GET'])
+def missing_cities():
+    """
+    View cities that are missing from EPA SDWIS data.
+    These are candidates for adding to the supplemental file.
+    """
+    import json
+    from pathlib import Path
+    
+    missing_file = Path(__file__).parent / "water_missing_cities.json"
+    
+    if not missing_file.exists():
+        return jsonify({
+            'count': 0,
+            'cities': {},
+            'note': 'No missing cities logged yet'
+        })
+    
+    try:
+        with open(missing_file, 'r') as f:
+            data = json.load(f)
+        
+        cities = data.get('cities', {})
+        
+        # Sort by count (most frequent first)
+        sorted_cities = dict(sorted(
+            cities.items(),
+            key=lambda x: x[1].get('count', 0),
+            reverse=True
+        ))
+        
+        return jsonify({
+            'count': len(sorted_cities),
+            'cities': sorted_cities,
+            'note': 'Cities missing from EPA SDWIS - add to water_utilities_supplemental.json'
+        })
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

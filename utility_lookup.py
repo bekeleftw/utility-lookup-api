@@ -453,6 +453,38 @@ def save_water_cache(cache: Dict) -> None:
 
 
 WATER_SUPPLEMENTAL_FILE = Path(__file__).parent / "water_utilities_supplemental.json"
+WATER_MISSING_CITIES_FILE = Path(__file__).parent / "water_missing_cities.json"
+
+def log_missing_water_city(state: str, city: str, county: str, match_type: str):
+    """Log cities that are missing from EPA SDWIS data for later addition to supplemental file."""
+    if not state or not city:
+        return
+    
+    try:
+        # Load existing missing cities
+        if WATER_MISSING_CITIES_FILE.exists():
+            with open(WATER_MISSING_CITIES_FILE, 'r') as f:
+                missing = json.load(f)
+        else:
+            missing = {"_description": "Cities missing from EPA SDWIS - candidates for supplemental file", "cities": {}}
+        
+        key = f"{state}|{city.upper()}"
+        if key not in missing.get("cities", {}):
+            missing["cities"][key] = {
+                "state": state,
+                "city": city.upper(),
+                "county": county,
+                "match_type": match_type,  # "county_fallback" or "heuristic"
+                "first_seen": str(Path(__file__).stat().st_mtime),  # timestamp
+                "count": 1
+            }
+        else:
+            missing["cities"][key]["count"] = missing["cities"][key].get("count", 0) + 1
+        
+        with open(WATER_MISSING_CITIES_FILE, 'w') as f:
+            json.dump(missing, f, indent=2)
+    except Exception:
+        pass  # Don't fail the lookup if logging fails
 
 def lookup_water_utility(city: str, county: str, state: str, full_address: str = None) -> Optional[Dict]:
     """
@@ -531,12 +563,17 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                     result = lookup_data['by_county'][county_key].copy()
                     result['_confidence'] = 'medium'
                     result['_note'] = 'Matched by county - verify for specific address'
+                    # Log this city as missing from EPA city-level data
+                    primary_city = city_variants[0] if city_variants else city
+                    log_missing_water_city(state, primary_city, county, "county_fallback")
                     return result
         except (json.JSONDecodeError, IOError):
             pass
     
     # Fallback to heuristic if no local data
     if city:
+        # Log this city as completely missing from EPA data
+        log_missing_water_city(state, city, county, "heuristic")
         return {
             "name": f"City of {city} Water Utilities",
             "id": None,

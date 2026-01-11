@@ -541,6 +541,43 @@ def _format_water_result(ws: Dict) -> Dict:
 # INTERNET PROVIDER LOOKUP (FCC Broadband Map via Playwright)
 # =============================================================================
 
+def normalize_address_for_fcc(address: str) -> str:
+    """
+    Normalize address for FCC lookup by removing apartment/unit numbers.
+    FCC Broadband Map only accepts building addresses, not unit-level.
+    
+    Examples:
+    - "1725 Toomey Rd Apt 307 Austin TX 78704" -> "1725 Toomey Rd Austin TX 78704"
+    - "123 Main St Unit 4B, City, ST 12345" -> "123 Main St, City, ST 12345"
+    - "456 Oak Ave #201, Town, ST 54321" -> "456 Oak Ave, Town, ST 54321"
+    """
+    import re
+    
+    # Patterns to match apartment/unit designations
+    # Match: Apt, Apt., Apartment, Unit, Ste, Suite, #, Fl, Floor, Bldg, Building
+    # Followed by alphanumeric unit number
+    patterns = [
+        r'\s+(?:apt\.?|apartment)\s*#?\s*\w+',  # Apt 307, Apt. 4B, Apartment 12
+        r'\s+(?:unit)\s*#?\s*\w+',              # Unit 4B, Unit #12
+        r'\s+(?:ste\.?|suite)\s*#?\s*\w+',      # Ste 100, Suite 200
+        r'\s+(?:fl\.?|floor)\s*#?\s*\d+',       # Fl 3, Floor 5
+        r'\s+(?:bldg\.?|building)\s*#?\s*\w+',  # Bldg A, Building 2
+        r'\s+#\s*\w+',                          # #201, # 4B
+    ]
+    
+    normalized = address
+    for pattern in patterns:
+        normalized = re.sub(pattern, '', normalized, flags=re.IGNORECASE)
+    
+    # Clean up any double spaces
+    normalized = re.sub(r'\s+', ' ', normalized).strip()
+    
+    # Clean up comma spacing
+    normalized = re.sub(r'\s*,\s*', ', ', normalized)
+    
+    return normalized
+
+
 def lookup_internet_providers(address: str) -> Optional[Dict]:
     """
     Look up internet providers using Playwright to handle FCC's session requirements.
@@ -553,6 +590,11 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
     except ImportError:
         print("Playwright not installed, skipping internet lookup")
         return None
+    
+    # Normalize address to remove apartment/unit numbers (FCC only accepts building addresses)
+    normalized_address = normalize_address_for_fcc(address)
+    if normalized_address != address:
+        print(f"  Normalized address for FCC: {normalized_address}")
     
     result_data = None
     
@@ -624,15 +666,15 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
             search_input.click()
             page.wait_for_timeout(500)
             
-            # Type address slowly using keyboard to trigger autocomplete
-            page.keyboard.type(address, delay=80)
+            # Type NORMALIZED address (without apt/unit) to trigger autocomplete
+            page.keyboard.type(normalized_address, delay=80)
             
             # Wait for autocomplete suggestions to appear
             page.wait_for_timeout(3000)
             
             # Check if autocomplete appeared by looking for address in page content
             content = page.content()
-            address_street = address.split(',')[0].upper().strip()
+            address_street = normalized_address.split(',')[0].upper().strip()
             
             if address_street in content.upper():
                 print(f"  Autocomplete found for: {address_street}", flush=True)

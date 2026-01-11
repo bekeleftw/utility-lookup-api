@@ -1,0 +1,440 @@
+[
+  {
+    "district_id": "FL-CDD-001",
+    "name": "Celebration Community Development District",
+    "state": "FL",
+    "county": "Osceola",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.55, 28.30], [-81.52, 28.30], [-81.52, 28.33], [-81.55, 28.33], [-81.55, 28.30]]]
+      }
+    },
+    "contact": {
+      "phone": "407-566-1935",
+      "website": "https://www.celebrationcdd.com",
+      "manager": "Inframark"
+    },
+    "zip_codes": ["34747"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-002",
+    "name": "Harmony Community Development District",
+    "state": "FL",
+    "county": "Osceola",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.30, 28.18], [-81.27, 28.18], [-81.27, 28.21], [-81.30, 28.21], [-81.30, 28.18]]]
+      }
+    },
+    "contact": {
+      "phone": "407-566-1935",
+      "website": "https://www.harmonycdd.org",
+      "manager": "Inframark"
+    },
+    "zip_codes": ["34773"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-003",
+    "name": "Reunion East Community Development District",
+    "state": "FL",
+    "county": "Osceola",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.58, 28.32], [-81.55, 28.32], [-81.55, 28.35], [-81.58, 28.35], [-81.58, 28.32]]]
+      }
+    },
+    "contact": {
+      "phone": "407-841-5524",
+      "website": "https://www.reunioneastcdd.com"
+    },
+    "zip_codes": ["34747"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-004",
+    "name": "Reunion West Community Development District",
+    "state": "FL",
+    "county": "Osceola",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.61, 28.32], [-81.58, 28.32], [-81.58, 28.35], [-81.61, 28.35], [-81.61, 28.32]]]
+      }
+    },
+    "contact": {
+      "phone": "407-841-5524",
+      "website": "https://www.reunionwestcdd.com"
+    },
+    "zip_codes": ["34747"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-005",
+    "name": "The Villages Community Development District",
+    "state": "FL",
+    "county": "Sumter",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-82.02, 28.90], [-81.95, 28.90], [-81.95, 28.97], [-82.02, 28.97], [-82.02, 28.90]]]
+      }
+    },
+    "contact": {
+      "phone": "352-753-4508",
+      "website": "https://www.districtgov.org"
+    },
+    "zip_codes": ["32159", "32162", "32163"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-006",
+    "name": "Lakewood Ranch Stewardship District",
+    "state": "FL",
+    "county": "Manatee",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-82.45, 27.38], [-82.38, 27.38], [-82.38, 27.45], [-82.45, 27.45], [-82.45, 27.38]]]
+      }
+    },
+    "contact": {
+      "phone": "941-727-6439",
+      "website": "https://www.lakewoodranchstewardship.com"
+    },
+    "zip_codes": ["34202", "34211", "34212"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-007",
+    "name": "Ave Maria Stewardship Community District",
+    "state": "FL",
+    "county": "Collier",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.45, 26.30], [-81.40, 26.30], [-81.40, 26.35], [-81.45, 26.35], [-81.45, 26.30]]]
+      }
+    },
+    "contact": {
+      "phone": "239-348-3820",
+      "website": "https://www.avemaria.com"
+    },
+    "zip_codes": ["34142"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-008",
+    "name": "Weston Community Development District",
+    "state": "FL",
+    "county": "Broward",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-80.42, 26.08], [-80.35, 26.08], [-80.35, 26.15], [-80.42, 26.15], [-80.42, 26.08]]]
+      }
+    },
+    "contact": {
+      "phone": "954-385-2000",
+      "website": "https://www.westonfl.org"
+    },
+    "zip_codes": ["33326", "33327", "33331", "33332"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-009",
+    "name": "Babcock Ranch Community Independent Special District",
+    "state": "FL",
+    "county": "Charlotte",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.72, 26.82], [-81.68, 26.82], [-81.68, 26.86], [-81.72, 26.86], [-81.72, 26.82]]]
+      }
+    },
+    "contact": {
+      "phone": "941-235-6900",
+      "website": "https://www.babcockranch.com"
+    },
+    "zip_codes": ["33982"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-010",
+    "name": "Nocatee Community Development District",
+    "state": "FL",
+    "county": "St. Johns",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.42, 30.08], [-81.38, 30.08], [-81.38, 30.14], [-81.42, 30.14], [-81.42, 30.08]]]
+      }
+    },
+    "contact": {
+      "phone": "904-924-6863",
+      "website": "https://www.nocatee.com"
+    },
+    "zip_codes": ["32081", "32259"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-011",
+    "name": "Fishhawk Community Development District",
+    "state": "FL",
+    "county": "Hillsborough",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-82.22, 27.85], [-82.18, 27.85], [-82.18, 27.90], [-82.22, 27.90], [-82.22, 27.85]]]
+      }
+    },
+    "contact": {
+      "phone": "813-933-5571",
+      "website": "https://www.fishhawkranch.com"
+    },
+    "zip_codes": ["33547"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-012",
+    "name": "Westchase Community Development District",
+    "state": "FL",
+    "county": "Hillsborough",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-82.60, 28.05], [-82.55, 28.05], [-82.55, 28.10], [-82.60, 28.10], [-82.60, 28.05]]]
+      }
+    },
+    "contact": {
+      "phone": "813-926-6404",
+      "website": "https://www.westchasecdd.com"
+    },
+    "zip_codes": ["33626"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-013",
+    "name": "ChampionsGate Community Development District",
+    "state": "FL",
+    "county": "Osceola",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.62, 28.28], [-81.58, 28.28], [-81.58, 28.32], [-81.62, 28.32], [-81.62, 28.28]]]
+      }
+    },
+    "contact": {
+      "phone": "407-396-2499",
+      "website": "https://www.championsgatecdd.org"
+    },
+    "zip_codes": ["33896"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-014",
+    "name": "Storey Park Community Development District",
+    "state": "FL",
+    "county": "Orange",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.22, 28.38], [-81.18, 28.38], [-81.18, 28.42], [-81.22, 28.42], [-81.22, 28.38]]]
+      }
+    },
+    "contact": {
+      "phone": "407-841-5524"
+    },
+    "zip_codes": ["32832"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-015",
+    "name": "Bonnet Creek Resort Community Development District",
+    "state": "FL",
+    "county": "Orange",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.52, 28.35], [-81.48, 28.35], [-81.48, 28.38], [-81.52, 28.38], [-81.52, 28.35]]]
+      }
+    },
+    "contact": {
+      "phone": "407-566-1935"
+    },
+    "zip_codes": ["32830"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-016",
+    "name": "Poinciana Community Development District",
+    "state": "FL",
+    "county": "Polk",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.48, 28.12], [-81.42, 28.12], [-81.42, 28.18], [-81.48, 28.18], [-81.48, 28.12]]]
+      }
+    },
+    "contact": {
+      "phone": "863-427-7100",
+      "website": "https://www.poincianacdd.org"
+    },
+    "zip_codes": ["34758", "34759"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-017",
+    "name": "Meadow Pointe Community Development District",
+    "state": "FL",
+    "county": "Pasco",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-82.38, 28.22], [-82.34, 28.22], [-82.34, 28.26], [-82.38, 28.26], [-82.38, 28.22]]]
+      }
+    },
+    "contact": {
+      "phone": "813-933-5571"
+    },
+    "zip_codes": ["33559"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-018",
+    "name": "Heritage Harbour Community Development District",
+    "state": "FL",
+    "county": "Manatee",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-82.48, 27.48], [-82.44, 27.48], [-82.44, 27.52], [-82.48, 27.52], [-82.48, 27.48]]]
+      }
+    },
+    "contact": {
+      "phone": "941-727-6439"
+    },
+    "zip_codes": ["34212"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-019",
+    "name": "Miromar Lakes Community Development District",
+    "state": "FL",
+    "county": "Lee",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.78, 26.55], [-81.74, 26.55], [-81.74, 26.59], [-81.78, 26.59], [-81.78, 26.55]]]
+      }
+    },
+    "contact": {
+      "phone": "239-425-2340",
+      "website": "https://www.miromarlakes.com"
+    },
+    "zip_codes": ["33913"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "FL-CDD-020",
+    "name": "Fiddler's Creek Community Development District",
+    "state": "FL",
+    "county": "Collier",
+    "type": "CDD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon",
+      "data": {
+        "type": "Polygon",
+        "coordinates": [[[-81.68, 25.92], [-81.64, 25.92], [-81.64, 25.96], [-81.68, 25.96], [-81.68, 25.92]]]
+      }
+    },
+    "contact": {
+      "phone": "239-732-9300",
+      "website": "https://www.fiddlerscreek.com"
+    },
+    "zip_codes": ["34114"],
+    "data_source": "Manual",
+    "last_updated": "2026-01-11"
+  }
+]

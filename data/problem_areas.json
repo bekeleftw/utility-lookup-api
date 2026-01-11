@@ -1,0 +1,102 @@
+{
+  "_metadata": {
+    "last_updated": "2026-01-11",
+    "version": "1.0"
+  },
+  "zip": {
+    "78640": {
+      "state": "TX",
+      "city": "Kyle",
+      "utilities_affected": ["gas", "water"],
+      "issue": "ZIP spans CenterPoint and Texas Gas Service boundary. Multiple MUDs for water.",
+      "recommendation": "Always verify with SERP. Cap confidence at 'high' without user confirmation.",
+      "known_correct": {
+        "gas": {
+          "Kyle city limits": "CenterPoint Energy",
+          "Plum Creek": "CenterPoint Energy"
+        }
+      },
+      "last_reviewed": "2026-01-11"
+    },
+    "78653": {
+      "state": "TX",
+      "city": "Manor",
+      "utilities_affected": ["water", "electric"],
+      "issue": "Multiple MUDs, city water, and Oncor/Bluebonnet electric boundary.",
+      "recommendation": "Require subdivision name for accurate match.",
+      "last_reviewed": "2026-01-11"
+    },
+    "78610": {
+      "state": "TX",
+      "city": "Buda",
+      "utilities_affected": ["gas"],
+      "issue": "ZIP spans CenterPoint and Texas Gas Service boundary.",
+      "recommendation": "Verify gas provider with SERP.",
+      "last_reviewed": "2026-01-11"
+    },
+    "75013": {
+      "state": "TX",
+      "city": "Allen",
+      "utilities_affected": ["water"],
+      "issue": "City of Allen, North Texas MUD 1, and other MUDs overlap.",
+      "recommendation": "Check subdivision for MUD membership.",
+      "last_reviewed": "2026-01-11"
+    },
+    "30004": {
+      "state": "GA",
+      "city": "Alpharetta",
+      "utilities_affected": ["water"],
+      "issue": "Multiple water providers: Fulton County, City of Alpharetta, North Fulton.",
+      "recommendation": "Verify with city or county.",
+      "last_reviewed": "2026-01-11"
+    },
+    "85286": {
+      "state": "AZ",
+      "city": "Chandler",
+      "utilities_affected": ["electric", "water"],
+      "issue": "SRP and APS electric boundary. Multiple water districts.",
+      "recommendation": "Use utility company address lookup tools.",
+      "last_reviewed": "2026-01-11"
+    }
+  },
+  "county": {
+    "Hays|TX": {
+      "utilities_affected": ["gas"],
+      "issue": "County spans CenterPoint, Texas Gas Service, and propane-only areas.",
+      "recommendation": "Do not use county-level gas matching. Require ZIP or address verification.",
+      "last_reviewed": "2026-01-11"
+    },
+    "Williamson|TX": {
+      "utilities_affected": ["water", "electric"],
+      "issue": "High density of MUDs and WSCs. Oncor/Pedernales boundary.",
+      "recommendation": "Check MUD database. Verify electric co-op status.",
+      "last_reviewed": "2026-01-11"
+    },
+    "Maricopa|AZ": {
+      "utilities_affected": ["electric", "water"],
+      "issue": "SRP/APS boundary runs through county. Dozens of water districts.",
+      "recommendation": "Use utility address lookup tools.",
+      "last_reviewed": "2026-01-11"
+    }
+  },
+  "state": {
+    "FL": {
+      "utilities_affected": ["water"],
+      "issue": "High CDD density. Most new construction served by CDDs, not cities.",
+      "recommendation": "Check CDD database before city water utility.",
+      "last_reviewed": "2026-01-11"
+    },
+    "TX": {
+      "utilities_affected": ["water"],
+      "issue": "Over 1,200 MUDs statewide. New developments almost always in MUDs.",
+      "recommendation": "Check MUD database for addresses in new subdivisions.",
+      "last_reviewed": "2026-01-11"
+    },
+    "CO": {
+      "utilities_affected": ["water"],
+      "issue": "~1,800 metro districts. Most provide water/sewer in suburbs.",
+      "recommendation": "Check DOLA special district database.",
+      "last_reviewed": "2026-01-11"
+    }
+  }
+}

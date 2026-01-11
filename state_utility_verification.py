@@ -764,6 +764,122 @@ def load_gas_zip_overrides():
     
     return overrides
 
+
+# =============================================================================
+# PROBLEM AREAS REGISTRY
+# =============================================================================
+
+PROBLEM_AREAS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'problem_areas.json')
+_problem_areas_cache = None
+
+def load_problem_areas():
+    """Load problem areas data with caching."""
+    global _problem_areas_cache
+    if _problem_areas_cache is None:
+        if os.path.exists(PROBLEM_AREAS_FILE):
+            with open(PROBLEM_AREAS_FILE, 'r') as f:
+                _problem_areas_cache = json.load(f)
+        else:
+            _problem_areas_cache = {'zip': {}, 'county': {}, 'state': {}}
+    return _problem_areas_cache
+
+
+def check_problem_area(zip_code: str, county: str, state: str, utility_type: str) -> dict:
+    """
+    Check if location is a known problem area for this utility type.
+    
+    Returns:
+        {
+            'is_problem_area': bool,
+            'level': 'zip' | 'county' | 'state' | None,
+            'issue': str | None,
+            'recommendation': str | None
+        }
+    """
+    problem_areas = load_problem_areas()
+    
+    # Check ZIP-level first (most specific)
+    if zip_code and zip_code in problem_areas.get('zip', {}):
+        area = problem_areas['zip'][zip_code]
+        if utility_type in area.get('utilities_affected', []):
+            return {
+                'is_problem_area': True,
+                'level': 'zip',
+                'issue': area.get('issue'),
+                'recommendation': area.get('recommendation'),
+                'known_correct': area.get('known_correct', {}).get(utility_type, {})
+            }
+    
+    # Check county-level
+    county_key = f"{county}|{state}" if county and state else None
+    if county_key and county_key in problem_areas.get('county', {}):
+        area = problem_areas['county'][county_key]
+        if utility_type in area.get('utilities_affected', []):
+            return {
+                'is_problem_area': True,
+                'level': 'county',
+                'issue': area.get('issue'),
+                'recommendation': area.get('recommendation')
+            }
+    
+    # Check state-level
+    if state and state in problem_areas.get('state', {}):
+        area = problem_areas['state'][state]
+        if utility_type in area.get('utilities_affected', []):
+            return {
+                'is_problem_area': True,
+                'level': 'state',
+                'issue': area.get('issue'),
+                'recommendation': area.get('recommendation')
+            }
+    
+    return {
+        'is_problem_area': False,
+        'level': None,
+        'issue': None,
+        'recommendation': None
+    }
+
+
+def add_problem_area(
+    level: str,  # 'zip', 'county', 'state'
+    key: str,    # ZIP code, "County|ST", or state abbrev
+    utilities_affected: list,
+    issue: str,
+    recommendation: str,
+    known_correct: dict = None
+):
+    """Add or update a problem area entry."""
+    global _problem_areas_cache
+    from datetime import datetime
+    
+    problem_areas = load_problem_areas()
+    
+    if level not in problem_areas:
+        problem_areas[level] = {}
+    
+    entry = {
+        'utilities_affected': utilities_affected,
+        'issue': issue,
+        'recommendation': recommendation,
+        'last_reviewed': datetime.now().strftime('%Y-%m-%d')
+    }
+    
+    if known_correct:
+        entry['known_correct'] = known_correct
+    
+    problem_areas[level][key] = entry
+    
+    # Save to file
+    os.makedirs(os.path.dirname(PROBLEM_AREAS_FILE), exist_ok=True)
+    with open(PROBLEM_AREAS_FILE, 'w') as f:
+        json.dump(problem_areas, f, indent=2)
+    
+    # Invalidate cache
+    _problem_areas_cache = None
+    
+    print(f"Added problem area: {level} {key}")
+
 # Major gas LDCs by state (for verification)
 STATE_GAS_LDCS = {
     "AL": ["Spire Alabama", "Alagasco"],

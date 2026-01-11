@@ -7,6 +7,7 @@ Run with: python api.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from utility_lookup import lookup_utilities_by_address, lookup_utility_json
+from state_utility_verification import check_problem_area, add_problem_area, load_problem_areas
 from datetime import datetime
 import hashlib
 import json
@@ -779,6 +780,70 @@ def reject_feedback(feedback_id):
         "status": "rejected",
         "feedback_id": feedback_id
     })
+
+
+# =============================================================================
+# PROBLEM AREAS REGISTRY
+# =============================================================================
+
+@app.route('/api/problem-areas', methods=['GET'])
+def list_problem_areas():
+    """List all known problem areas."""
+    problem_areas = load_problem_areas()
+    
+    # Count by level
+    summary = {
+        'zip_count': len(problem_areas.get('zip', {})),
+        'county_count': len(problem_areas.get('county', {})),
+        'state_count': len(problem_areas.get('state', {}))
+    }
+    
+    return jsonify({
+        'summary': summary,
+        'zip': problem_areas.get('zip', {}),
+        'county': problem_areas.get('county', {}),
+        'state': problem_areas.get('state', {})
+    })
+
+
+@app.route('/api/problem-areas/check', methods=['GET'])
+def check_problem_area_endpoint():
+    """Check if a location is a known problem area."""
+    zip_code = request.args.get('zip')
+    county = request.args.get('county')
+    state = request.args.get('state')
+    utility_type = request.args.get('utility_type')
+    
+    if not utility_type:
+        return jsonify({'error': 'utility_type is required'}), 400
+    
+    result = check_problem_area(zip_code, county, state, utility_type)
+    return jsonify(result)
+
+
+@app.route('/api/problem-areas', methods=['POST'])
+def add_problem_area_endpoint():
+    """Add a new problem area (internal use)."""
+    data = request.get_json()
+    
+    required = ['level', 'key', 'utilities_affected', 'issue', 'recommendation']
+    for field in required:
+        if field not in data:
+            return jsonify({'error': f'Missing required field: {field}'}), 400
+    
+    if data['level'] not in ['zip', 'county', 'state']:
+        return jsonify({'error': 'level must be zip, county, or state'}), 400
+    
+    add_problem_area(
+        level=data['level'],
+        key=data['key'],
+        utilities_affected=data['utilities_affected'],
+        issue=data['issue'],
+        recommendation=data['recommendation'],
+        known_correct=data.get('known_correct')
+    )
+    
+    return jsonify({'status': 'added', 'level': data['level'], 'key': data['key']})
 
 
 if __name__ == '__main__':

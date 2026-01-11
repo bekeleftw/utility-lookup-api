@@ -42,9 +42,10 @@ For each lookup, we use a multi-step verification process combining government d
 
 1. **Query HIFLD** - Federal database of electric utility service territories. Returns all utilities whose polygon contains this coordinate. Often returns multiple overlapping territories.
 
-2. **Verify with authoritative state data:**
-   - **Texas:** ZIP-to-TDU mapping. Texas has only 5 TDUs (Oncor, CenterPoint, AEP North, AEP Central, TNMP) plus municipal utilities (Austin Energy, CPS Energy, etc.)
-   - **Other states:** EIA Form 861 data - maps 31,633 ZIP codes to 143 investor-owned utilities nationwide
+2. **Verify with authoritative data (nationwide):**
+   - **EIA Form 861:** Federal data mapping 31,633 ZIP codes to 143 investor-owned utilities across all 50 states (Duke Energy, Con Edison, PG&E, etc.)
+   - **Texas (enhanced):** Additional ZIP-to-TDU mapping for the 5 TDUs (Oncor, CenterPoint, AEP North, AEP Central, TNMP) plus municipal utilities
+   - **Ranking heuristics:** For ZIPs not in EIA data, we rank HIFLD candidates by utility type, name matching, and city/county alignment
 
 3. **Google Search verification (via BrightData):**
    - Search: `"electric utility provider for [full address]"`
@@ -68,9 +69,9 @@ For each lookup, we use a multi-step verification process combining government d
 
 1. **Query HIFLD** - Federal database of natural gas LDC (Local Distribution Company) territories. Returns candidates.
 
-2. **Verify with state data:**
-   - **Texas:** ZIP-to-LDC mapping (Atmos Energy for DFW, CenterPoint for Houston, Texas Gas Service for Austin)
-   - **Other states:** Match against our database of major gas LDCs for all 50 states
+2. **Verify with state data (nationwide):**
+   - **State LDC Database:** We maintain a database of major gas utilities for all 50 states + DC (e.g., Piedmont Natural Gas in NC/SC, Columbia Gas in OH/PA, National Grid in NY/MA)
+   - **Texas (enhanced):** Additional ZIP-to-LDC mapping (Atmos Energy for DFW, CenterPoint for Houston, Texas Gas Service for Austin)
 
 3. **Handle no-service cases:**
    - If HIFLD returns nothing, check if state has limited gas infrastructure (FL, HI, VT, ME)
@@ -145,7 +146,46 @@ For each lookup, we use a multi-step verification process combining government d
 
 ---
 
-## Texas-Specific Data
+## Coverage by State
+
+### Electric Utilities - Nationwide Coverage
+
+| Data Source | States Covered | # of Utilities |
+|-------------|----------------|----------------|
+| EIA Form 861 | All 50 states | 143 IOUs (31,633 ZIPs) |
+| HIFLD Territories | All 50 states | ~3,000 utilities (polygon data) |
+| Texas TDU Mapping | TX only | 5 TDUs + municipals (enhanced) |
+
+**Examples of verified utilities by state:**
+- **CA:** Pacific Gas & Electric, Southern California Edison, San Diego Gas & Electric
+- **NY:** Con Edison, National Grid, NYSEG, RG&E
+- **FL:** Florida Power & Light, Duke Energy Florida, Tampa Electric
+- **PA:** PECO, PPL, Duquesne Light, West Penn Power
+- **IL:** ComEd (Commonwealth Edison), Ameren Illinois
+- **OH:** AEP Ohio, Duke Energy Ohio, FirstEnergy (Ohio Edison, Cleveland Electric)
+- **NC:** Duke Energy Carolinas, Duke Energy Progress
+
+### Gas Utilities - Nationwide Coverage
+
+| Data Source | States Covered | # of Utilities |
+|-------------|----------------|----------------|
+| State LDC Database | All 50 states + DC | ~150 major LDCs |
+| HIFLD Territories | All 50 states | Polygon data |
+| Texas Gas Mapping | TX only | 3 LDCs (enhanced) |
+
+**Examples of verified gas utilities by state:**
+- **CA:** SoCalGas, PG&E, San Diego Gas & Electric
+- **NY:** Con Edison, National Grid, National Fuel Gas
+- **PA:** PECO, Columbia Gas, UGI, Peoples Gas
+- **IL:** Nicor Gas, Peoples Gas, Ameren Illinois
+- **OH:** Columbia Gas, Dominion Energy, Duke Energy Ohio
+- **NC/SC:** Piedmont Natural Gas, Dominion Energy
+
+---
+
+## Texas-Specific Data (Enhanced)
+
+Texas has additional ZIP-level mapping because it's a deregulated market with specific TDU/LDC territories.
 
 ### Electric TDUs (Transmission & Distribution Utilities)
 

@@ -617,6 +617,17 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                     result = supplemental['by_city'][city_key].copy()
                     result['_confidence'] = result.get('_confidence', 'high')
                     result['_source'] = 'supplemental'
+                    # Add confidence scoring
+                    confidence_data = calculate_confidence(
+                        source='supplemental',
+                        match_level='zip5',
+                        utility_type='water'
+                    )
+                    result['confidence_score'] = confidence_data['score']
+                    result['confidence_factors'] = [
+                        f"{f['points']:+d}: {f['description']}" 
+                        for f in confidence_data['factors']
+                    ]
                     return result
         except (json.JSONDecodeError, IOError):
             pass
@@ -637,6 +648,18 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                 if city_key in lookup_data.get('by_city', {}):
                     result = lookup_data['by_city'][city_key].copy()
                     result['_confidence'] = 'high'
+                    result['_source'] = 'epa_sdwis'
+                    # Add confidence scoring
+                    confidence_data = calculate_confidence(
+                        source='epa_sdwis',
+                        match_level='zip5',
+                        utility_type='water'
+                    )
+                    result['confidence_score'] = confidence_data['score']
+                    result['confidence_factors'] = [
+                        f"{f['points']:+d}: {f['description']}" 
+                        for f in confidence_data['factors']
+                    ]
                     return result
             
             # Fall back to county lookup
@@ -645,7 +668,19 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                 if county_key in lookup_data.get('by_county', {}):
                     result = lookup_data['by_county'][county_key].copy()
                     result['_confidence'] = 'medium'
+                    result['_source'] = 'epa_sdwis'
                     result['_note'] = 'Matched by county - verify for specific address'
+                    # Add confidence scoring
+                    confidence_data = calculate_confidence(
+                        source='county_match',
+                        match_level='county',
+                        utility_type='water'
+                    )
+                    result['confidence_score'] = confidence_data['score']
+                    result['confidence_factors'] = [
+                        f"{f['points']:+d}: {f['description']}" 
+                        for f in confidence_data['factors']
+                    ]
                     # Log this city as missing from EPA city-level data
                     primary_city = city_variants[0] if city_variants else city
                     log_missing_water_city(state, primary_city, county, "county_fallback")
@@ -654,6 +689,16 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
             pass
     
     # Fallback to heuristic if no local data
+    heuristic_confidence = calculate_confidence(
+        source='heuristic',
+        match_level='county',
+        utility_type='water'
+    )
+    heuristic_factors = [
+        f"{f['points']:+d}: {f['description']}" 
+        for f in heuristic_confidence['factors']
+    ]
+    
     if city:
         # Log this city as completely missing from EPA data
         log_missing_water_city(state, city, county, "heuristic")
@@ -670,7 +715,10 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
             "owner_type": "M",
             "service_connections": None,
             "_confidence": "low",
-            "_note": "Estimated - no SDWA data available"
+            "_source": "heuristic",
+            "_note": "Estimated - no SDWA data available",
+            "confidence_score": heuristic_confidence['score'],
+            "confidence_factors": heuristic_factors
         }
     elif county:
         return {
@@ -686,7 +734,10 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
             "owner_type": "L",
             "service_connections": None,
             "_confidence": "low",
-            "_note": "Estimated - no SDWA data available"
+            "_source": "heuristic",
+            "_note": "Estimated - no SDWA data available",
+            "confidence_score": heuristic_confidence['score'],
+            "confidence_factors": heuristic_factors
         }
     
     return None

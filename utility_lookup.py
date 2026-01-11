@@ -1236,12 +1236,19 @@ def lookup_utility_json(address: str) -> Dict:
 # MAIN LOOKUP FUNCTION
 # =============================================================================
 
-def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False) -> Optional[Dict]:
+def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False, selected_utilities: list = None) -> Optional[Dict]:
     """
     Main function: takes an address string, returns electric, gas, water, and internet utility info.
     Uses city name to filter out municipal utilities from other cities.
     Optionally verifies gas/water with SERP search.
+    
+    Args:
+        selected_utilities: List of utility types to look up. Default is all: ['electric', 'gas', 'water', 'internet']
     """
+    # Default to all utilities if not specified
+    if selected_utilities is None:
+        selected_utilities = ['electric', 'gas', 'water', 'internet']
+    
     # Step 1: Geocode with geography info for filtering
     geo_result = geocode_address(address, include_geography=filter_by_city)
     if not geo_result:
@@ -1253,20 +1260,6 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     state = geo_result.get("state")
     county = geo_result.get("county")
     
-    # Step 2: Query utilities from HIFLD
-    electric_candidates = lookup_electric_utility(lon, lat)
-    gas = lookup_gas_utility(lon, lat, state=state)
-    
-    # Step 3: Filter by city to remove irrelevant municipal utilities
-    if filter_by_city and city:
-        electric_candidates = filter_utilities_by_location(electric_candidates, city)
-        gas = filter_utilities_by_location(gas, city)
-    
-    # Step 4: Verify electric provider using state-specific data
-    # Convert to list if single result
-    if electric_candidates and not isinstance(electric_candidates, list):
-        electric_candidates = [electric_candidates]
-    
     # Get ZIP code from geocoded address for verification
     zip_code = geo_result.get("zip") or ""
     if not zip_code and geo_result.get("matched_address"):
@@ -1276,65 +1269,95 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         if zip_match:
             zip_code = zip_match.group(1)
     
-    # Use state-specific verification
-    verification_result = verify_electric_provider(
-        state=state,
-        zip_code=zip_code,
-        city=city,
-        county=county,
-        candidates=electric_candidates or []
-    )
+    # Initialize results
+    primary_electric = None
+    other_electric = []
+    primary_gas = None
+    other_gas = []
+    gas_no_service = None
+    water = None
+    internet = None
     
-    primary_electric = verification_result.get("primary")
-    other_electric = verification_result.get("alternatives", [])
-    
-    # Add verification metadata to primary
-    if primary_electric:
-        primary_electric["_confidence"] = verification_result.get("confidence", "medium")
-        primary_electric["_verification_source"] = verification_result.get("source")
-        primary_electric["_selection_reason"] = verification_result.get("selection_reason")
-        primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
-    
-    # Step 4b: Verify gas provider using state-specific data
-    gas_candidates = gas if isinstance(gas, list) else ([gas] if gas else [])
-    
-    gas_verification = verify_gas_provider(
-        state=state,
-        zip_code=zip_code,
-        city=city,
-        county=county,
-        candidates=gas_candidates
-    )
-    
-    primary_gas = gas_verification.get("primary")
-    other_gas = gas_verification.get("alternatives", [])
-    
-    # Add verification metadata to gas
-    if primary_gas:
-        primary_gas["_confidence"] = gas_verification.get("confidence", "medium")
-        primary_gas["_verification_source"] = gas_verification.get("source")
-        primary_gas["_selection_reason"] = gas_verification.get("selection_reason")
-    
-    # Handle no gas service case
-    gas_no_service = gas_verification.get("no_service_note")
-    
-    # Step 5: Query water utility
-    water = lookup_water_utility(city, county, state, full_address=address)
-    
-    # Step 6: Query internet providers (FCC Broadband Map)
-    print(f"Looking up internet providers...")
-    internet = lookup_internet_providers(address=address)
-    if internet:
-        print(f"  Found {internet.get('provider_count', 0)} internet providers")
-        if internet.get('has_fiber'):
-            print(f"  Fiber available: {internet.get('best_wired', {}).get('name')}")
-    else:
-        print("  Could not retrieve internet provider data")
-    
-    # Step 7: Optional SERP verification for electric, gas, and water
-    if verify_with_serp:
-        # Verify electric
+    # Step 2: Electric lookup - only if selected
+    if 'electric' in selected_utilities:
+        electric_candidates = lookup_electric_utility(lon, lat)
+        
+        # Filter by city to remove irrelevant municipal utilities
+        if filter_by_city and city:
+            electric_candidates = filter_utilities_by_location(electric_candidates, city)
+        
+        # Convert to list if single result
+        if electric_candidates and not isinstance(electric_candidates, list):
+            electric_candidates = [electric_candidates]
+        
+        # Use state-specific verification
+        verification_result = verify_electric_provider(
+            state=state,
+            zip_code=zip_code,
+            city=city,
+            county=county,
+            candidates=electric_candidates or []
+        )
+        
+        primary_electric = verification_result.get("primary")
+        other_electric = verification_result.get("alternatives", [])
+        
+        # Add verification metadata to primary
         if primary_electric:
+            primary_electric["_confidence"] = verification_result.get("confidence", "medium")
+            primary_electric["_verification_source"] = verification_result.get("source")
+            primary_electric["_selection_reason"] = verification_result.get("selection_reason")
+            primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
+    
+    # Step 3: Gas lookup - only if selected
+    if 'gas' in selected_utilities:
+        gas = lookup_gas_utility(lon, lat, state=state)
+        
+        # Filter by city to remove irrelevant municipal utilities
+        if filter_by_city and city:
+            gas = filter_utilities_by_location(gas, city)
+        
+        gas_candidates = gas if isinstance(gas, list) else ([gas] if gas else [])
+        
+        gas_verification = verify_gas_provider(
+            state=state,
+            zip_code=zip_code,
+            city=city,
+            county=county,
+            candidates=gas_candidates
+        )
+        
+        primary_gas = gas_verification.get("primary")
+        other_gas = gas_verification.get("alternatives", [])
+        
+        # Add verification metadata to gas
+        if primary_gas:
+            primary_gas["_confidence"] = gas_verification.get("confidence", "medium")
+            primary_gas["_verification_source"] = gas_verification.get("source")
+            primary_gas["_selection_reason"] = gas_verification.get("selection_reason")
+        
+        # Handle no gas service case
+        gas_no_service = gas_verification.get("no_service_note")
+    
+    # Step 4: Water lookup - only if selected
+    if 'water' in selected_utilities:
+        water = lookup_water_utility(city, county, state, full_address=address)
+    
+    # Step 5: Internet lookup - only if selected
+    if 'internet' in selected_utilities:
+        print(f"Looking up internet providers...")
+        internet = lookup_internet_providers(address=address)
+        if internet:
+            print(f"  Found {internet.get('provider_count', 0)} internet providers")
+            if internet.get('has_fiber'):
+                print(f"  Fiber available: {internet.get('best_wired', {}).get('name')}")
+        else:
+            print("  Could not retrieve internet provider data")
+    
+    # Step 6: Optional SERP verification for electric, gas, and water
+    if verify_with_serp:
+        # Verify electric - only if selected
+        if 'electric' in selected_utilities and primary_electric:
             electric_name = primary_electric.get("NAME") if isinstance(primary_electric, dict) else None
             if electric_name:
                 print(f"Verifying electric provider with SERP search...")
@@ -1363,37 +1386,38 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                         else:
                             print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
         
-        # Verify gas (or find it if HIFLD returned nothing)
-        if gas:
-            gas_name = gas.get("NAME") if isinstance(gas, dict) else None
-            if gas_name:
-                print(f"Verifying gas provider with SERP search...")
-                serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
-                if serp_result:
-                    if serp_result.get("verified"):
-                        gas["_serp_verified"] = True
-                        gas["_confidence"] = "high"
-                        print(f"  ✓ SERP verified: {gas_name}")
-                    else:
-                        gas["_serp_verified"] = False
-                        gas["_serp_suggestion"] = serp_result.get("serp_provider")
-                        gas["_confidence"] = "low"
-                        print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
-        else:
-            # No gas in HIFLD - try to find via SERP
-            print(f"Searching for gas provider via SERP...")
-            serp_result = verify_utility_with_serp(address, "natural gas", None)
-            if serp_result and serp_result.get("serp_provider"):
-                gas = {
-                    "NAME": serp_result.get("serp_provider"),
-                    "_source": "serp",
-                    "_confidence": serp_result.get("confidence", "medium"),
-                    "_notes": serp_result.get("notes", "Found via Google search")
-                }
-                print(f"  Found via SERP: {serp_result.get('serp_provider')}")
+        # Verify gas - only if selected
+        if 'gas' in selected_utilities:
+            if primary_gas:
+                gas_name = primary_gas.get("NAME") if isinstance(primary_gas, dict) else None
+                if gas_name:
+                    print(f"Verifying gas provider with SERP search...")
+                    serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
+                    if serp_result:
+                        if serp_result.get("verified"):
+                            primary_gas["_serp_verified"] = True
+                            primary_gas["_confidence"] = "high"
+                            print(f"  ✓ SERP verified: {gas_name}")
+                        else:
+                            primary_gas["_serp_verified"] = False
+                            primary_gas["_serp_suggestion"] = serp_result.get("serp_provider")
+                            primary_gas["_confidence"] = "low"
+                            print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
+            elif not gas_no_service:
+                # No gas in HIFLD - try to find via SERP
+                print(f"Searching for gas provider via SERP...")
+                serp_result = verify_utility_with_serp(address, "natural gas", None)
+                if serp_result and serp_result.get("serp_provider"):
+                    primary_gas = {
+                        "NAME": serp_result.get("serp_provider"),
+                        "_source": "serp",
+                        "_confidence": serp_result.get("confidence", "medium"),
+                        "_notes": serp_result.get("notes", "Found via Google search")
+                    }
+                    print(f"  Found via SERP: {serp_result.get('serp_provider')}")
         
-        # Verify water
-        if water:
+        # Verify water - only if selected
+        if 'water' in selected_utilities and water:
             water_name = water.get("name") if isinstance(water, dict) else None
             if water_name:
                 print(f"Verifying water provider with SERP search...")

@@ -19,16 +19,23 @@ def lookup():
         address = data.get('address')
         # SERP verification is now enabled by default
         verify = data.get('verify', True)
+        # Parse utilities parameter - default to all if not specified
+        utilities_param = data.get('utilities', 'electric,gas,water,internet')
     else:
         address = request.args.get('address')
         # SERP verification is now enabled by default (pass verify=false to disable)
         verify = request.args.get('verify', 'true').lower() != 'false'
+        # Parse utilities parameter - default to all if not specified
+        utilities_param = request.args.get('utilities', 'electric,gas,water,internet')
+    
+    # Parse comma-separated utilities into list
+    selected_utilities = [u.strip().lower() for u in utilities_param.split(',')]
     
     if not address:
         return jsonify({'error': 'Address is required'}), 400
     
     try:
-        result = lookup_utilities_by_address(address, verify_with_serp=verify)
+        result = lookup_utilities_by_address(address, verify_with_serp=verify, selected_utilities=selected_utilities)
         if not result:
             return jsonify({'error': 'Could not geocode address'}), 404
         
@@ -39,122 +46,126 @@ def lookup():
             'utilities': {}
         }
         
-        # Electric - now verified with state-specific data
-        electric = result.get('electric')
-        if electric:
-            if isinstance(electric, list):
-                response['utilities']['electric'] = [format_utility(e, 'electric') for e in electric]
-                primary = electric[0]
-            else:
-                response['utilities']['electric'] = [format_utility(electric, 'electric')]
-                primary = electric
-            
-            # Build electric note with verification info
-            primary_name = primary.get('NAME', 'Unknown')
-            confidence = primary.get('_confidence', 'medium')
-            selection_reason = primary.get('_selection_reason', '')
-            verification_source = primary.get('_verification_source', '')
-            is_deregulated = primary.get('_is_deregulated')
-            
-            # Get alternative names
-            others = electric[1:] if isinstance(electric, list) and len(electric) > 1 else []
-            other_names = [e.get('NAME', 'Unknown') for e in others]
-            
-            if confidence == 'verified':
-                note = f"✓ Verified: {primary_name}."
-                if selection_reason:
-                    note += f" {selection_reason}"
-            elif confidence == 'high':
-                note = f"{primary_name} (high confidence)."
-                if selection_reason:
-                    note += f" {selection_reason}"
-            else:
-                note = f"Most likely: {primary_name}."
-                if selection_reason:
-                    note += f" {selection_reason}"
-            
-            if other_names:
-                note += f" Other territories in area: {', '.join(other_names)}."
-            
-            if is_deregulated is True:
-                note += " This is a deregulated market - you can choose your electricity supplier."
-            elif is_deregulated is False:
-                note += " This utility is not in the deregulated market."
-            
-            response['utilities']['electric_note'] = note
-            response['utilities']['electric_confidence'] = confidence
-            if verification_source:
-                response['utilities']['electric_source'] = verification_source
+        # Electric - only if selected
+        if 'electric' in selected_utilities:
+            electric = result.get('electric')
+            if electric:
+                if isinstance(electric, list):
+                    response['utilities']['electric'] = [format_utility(e, 'electric') for e in electric]
+                    primary = electric[0]
+                else:
+                    response['utilities']['electric'] = [format_utility(electric, 'electric')]
+                    primary = electric
+                
+                # Build electric note with verification info
+                primary_name = primary.get('NAME', 'Unknown')
+                confidence = primary.get('_confidence', 'medium')
+                selection_reason = primary.get('_selection_reason', '')
+                verification_source = primary.get('_verification_source', '')
+                is_deregulated = primary.get('_is_deregulated')
+                
+                # Get alternative names
+                others = electric[1:] if isinstance(electric, list) and len(electric) > 1 else []
+                other_names = [e.get('NAME', 'Unknown') for e in others]
+                
+                if confidence == 'verified':
+                    note = f"✓ Verified: {primary_name}."
+                    if selection_reason:
+                        note += f" {selection_reason}"
+                elif confidence == 'high':
+                    note = f"{primary_name} (high confidence)."
+                    if selection_reason:
+                        note += f" {selection_reason}"
+                else:
+                    note = f"Most likely: {primary_name}."
+                    if selection_reason:
+                        note += f" {selection_reason}"
+                
+                if other_names:
+                    note += f" Other territories in area: {', '.join(other_names)}."
+                
+                if is_deregulated is True:
+                    note += " This is a deregulated market - you can choose your electricity supplier."
+                elif is_deregulated is False:
+                    note += " This utility is not in the deregulated market."
+                
+                response['utilities']['electric_note'] = note
+                response['utilities']['electric_confidence'] = confidence
+                if verification_source:
+                    response['utilities']['electric_source'] = verification_source
         
-        # Gas - now verified with state-specific data
-        gas = result.get('gas')
-        gas_no_service = result.get('gas_no_service')
-        
-        if gas:
-            if isinstance(gas, list):
-                response['utilities']['gas'] = [format_utility(g, 'gas') for g in gas]
-                primary = gas[0]
+        # Gas - only if selected
+        if 'gas' in selected_utilities:
+            gas = result.get('gas')
+            gas_no_service = result.get('gas_no_service')
+            
+            if gas:
+                if isinstance(gas, list):
+                    response['utilities']['gas'] = [format_utility(g, 'gas') for g in gas]
+                    primary = gas[0]
+                else:
+                    response['utilities']['gas'] = [format_utility(gas, 'gas')]
+                    primary = gas
+                
+                # Build gas note with verification info
+                primary_name = primary.get('NAME', 'Unknown')
+                confidence = primary.get('_confidence', 'medium')
+                selection_reason = primary.get('_selection_reason', '')
+                verification_source = primary.get('_verification_source', '')
+                
+                # Get alternative names
+                others = gas[1:] if isinstance(gas, list) and len(gas) > 1 else []
+                other_names = [g.get('NAME', 'Unknown') for g in others]
+                
+                if confidence == 'verified':
+                    note = f"✓ Verified: {primary_name}."
+                    if selection_reason:
+                        note += f" {selection_reason}"
+                elif confidence == 'high':
+                    note = f"{primary_name} (high confidence)."
+                    if selection_reason:
+                        note += f" {selection_reason}"
+                else:
+                    note = f"Most likely: {primary_name}."
+                    if selection_reason:
+                        note += f" {selection_reason}"
+                
+                if other_names:
+                    note += f" Other providers in area: {', '.join(other_names)}."
+                
+                response['utilities']['gas_note'] = note
+                response['utilities']['gas_confidence'] = confidence
+                if verification_source:
+                    response['utilities']['gas_source'] = verification_source
+            elif gas_no_service:
+                response['utilities']['gas_note'] = gas_no_service
             else:
-                response['utilities']['gas'] = [format_utility(gas, 'gas')]
-                primary = gas
-            
-            # Build gas note with verification info
-            primary_name = primary.get('NAME', 'Unknown')
-            confidence = primary.get('_confidence', 'medium')
-            selection_reason = primary.get('_selection_reason', '')
-            verification_source = primary.get('_verification_source', '')
-            
-            # Get alternative names
-            others = gas[1:] if isinstance(gas, list) and len(gas) > 1 else []
-            other_names = [g.get('NAME', 'Unknown') for g in others]
-            
-            if confidence == 'verified':
-                note = f"✓ Verified: {primary_name}."
-                if selection_reason:
-                    note += f" {selection_reason}"
-            elif confidence == 'high':
-                note = f"{primary_name} (high confidence)."
-                if selection_reason:
-                    note += f" {selection_reason}"
-            else:
-                note = f"Most likely: {primary_name}."
-                if selection_reason:
-                    note += f" {selection_reason}"
-            
-            if other_names:
-                note += f" Other providers in area: {', '.join(other_names)}."
-            
-            response['utilities']['gas_note'] = note
-            response['utilities']['gas_confidence'] = confidence
-            if verification_source:
-                response['utilities']['gas_source'] = verification_source
-        elif gas_no_service:
-            response['utilities']['gas_note'] = gas_no_service
-        else:
-            response['utilities']['gas_note'] = "No piped natural gas provider found. This area may use propane or have no gas service."
+                response['utilities']['gas_note'] = "No piped natural gas provider found. This area may use propane or have no gas service."
         
-        # Water
-        water = result.get('water')
-        if water:
-            response['utilities']['water'] = [format_utility(water, 'water')]
-            w = water
-            if w.get('_confidence') == 'medium':
-                response['utilities']['water_note'] = f"Matched by county - multiple water systems serve this area. {w.get('_note', '')}"
-            elif w.get('_confidence') == 'low':
-                response['utilities']['water_note'] = w.get('_note', 'Estimated based on city name - verify with local utility.')
+        # Water - only if selected
+        if 'water' in selected_utilities:
+            water = result.get('water')
+            if water:
+                response['utilities']['water'] = [format_utility(water, 'water')]
+                w = water
+                if w.get('_confidence') == 'medium':
+                    response['utilities']['water_note'] = f"Matched by county - multiple water systems serve this area. {w.get('_note', '')}"
+                elif w.get('_confidence') == 'low':
+                    response['utilities']['water_note'] = w.get('_note', 'Estimated based on city name - verify with local utility.')
         
-        # Internet (NEW)
-        internet = result.get('internet')
-        if internet:
-            response['utilities']['internet'] = format_internet_providers(internet)
-            if internet.get('has_fiber'):
-                response['utilities']['internet_note'] = f"Fiber available from {internet.get('best_wired', {}).get('name', 'provider')}."
-            elif internet.get('has_cable'):
-                response['utilities']['internet_note'] = "Cable internet available. No fiber service found at this address."
+        # Internet - only if selected
+        if 'internet' in selected_utilities:
+            internet = result.get('internet')
+            if internet:
+                response['utilities']['internet'] = format_internet_providers(internet)
+                if internet.get('has_fiber'):
+                    response['utilities']['internet_note'] = f"Fiber available from {internet.get('best_wired', {}).get('name', 'provider')}."
+                elif internet.get('has_cable'):
+                    response['utilities']['internet_note'] = "Cable internet available. No fiber service found at this address."
+                else:
+                    response['utilities']['internet_note'] = "Limited wired options. DSL, fixed wireless, or satellite may be available."
             else:
-                response['utilities']['internet_note'] = "Limited wired options. DSL, fixed wireless, or satellite may be available."
-        else:
-            response['utilities']['internet_note'] = "Could not retrieve internet provider data from FCC."
+                response['utilities']['internet_note'] = "Could not retrieve internet provider data from FCC."
         
         return jsonify(response)
         

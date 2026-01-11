@@ -28,6 +28,7 @@ from bs4 import BeautifulSoup
 
 # Import state-specific utility verification
 from state_utility_verification import verify_electric_provider, verify_gas_provider
+from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 
 # Try to load dotenv for API keys
 try:
@@ -486,18 +487,36 @@ def log_missing_water_city(state: str, city: str, county: str, match_type: str):
     except Exception:
         pass  # Don't fail the lookup if logging fails
 
-def lookup_water_utility(city: str, county: str, state: str, full_address: str = None) -> Optional[Dict]:
+def lookup_water_utility(city: str, county: str, state: str, full_address: str = None, 
+                         lat: float = None, lon: float = None, zip_code: str = None) -> Optional[Dict]:
     """
     Look up water utility using local SDWA data (fast) or fallback to heuristic.
     
     Priority order:
-    1. Supplemental file (manually curated for cities missing from EPA)
-    2. EPA SDWA data (by city)
-    3. EPA SDWA data (by county)
-    4. Heuristic fallback
+    1. Special districts (MUDs, CDDs, etc.) - most precise for new developments
+    2. Supplemental file (manually curated for cities missing from EPA)
+    3. EPA SDWA data (by city)
+    4. EPA SDWA data (by county)
+    5. Heuristic fallback
     """
     if not state:
         return None
+    
+    # PRIORITY 0: Check special districts first (MUDs, CDDs, etc.)
+    if has_special_district_data(state):
+        special_result = lookup_special_district(
+            lat=lat,
+            lon=lon,
+            state=state,
+            zip_code=zip_code,
+            service='water'
+        )
+        if special_result:
+            formatted = format_district_for_response(special_result)
+            # Add standard fields expected by the rest of the system
+            formatted['state'] = state
+            formatted['city'] = city
+            return formatted
     
     # Try to extract city from full address if provided (more reliable than geocoder city)
     address_city = None
@@ -1463,7 +1482,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         
         # Fall back to EPA/supplemental data if SERP didn't find anything
         if not water:
-            water = lookup_water_utility(city, county, state, full_address=address)
+            water = lookup_water_utility(city, county, state, full_address=address,
+                                        lat=lat, lon=lon, zip_code=zip_code)
     
     # Step 5: Internet lookup - only if selected
     if 'internet' in selected_utilities:

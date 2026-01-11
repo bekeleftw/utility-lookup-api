@@ -2,188 +2,195 @@
 
 ## Overview
 
-The Utility Profit lookup system identifies and verifies utility providers for any US address across four categories: **Electric**, **Gas**, **Water**, and **Internet**. Each uses different data sources and verification methods.
+The Utility Profit lookup system identifies and verifies utility providers for any US address across four categories: **Electric**, **Gas**, **Water**, and **Internet**.
+
+For each lookup, we use a multi-step verification process combining government databases, state-specific authoritative data, and Google Search verification via AI.
 
 ---
 
-## Cost Summary
+## Cost Per Lookup: ~$0.02
 
-| Utility Type | Data Source | Cost per Lookup | Notes |
-|-------------|-------------|-----------------|-------|
-| **Electric** | HIFLD + EIA + State data | **$0** | Free government APIs |
-| **Gas** | HIFLD + State LDC database | **$0** | Free government APIs |
-| **Water** | EPA SDWIS | **$0** | Free government API |
-| **Internet** | FCC Broadband Map (via BrightData) | **~$0.01** | Uses BrightData proxy |
-| **Geocoding** | Census Geocoder | **$0** | Free government API |
-| **SERP Verification** | Google Search (via BrightData) | **~$0.01** | Optional, verifies providers |
+| Component | Cost | Source |
+|-----------|------|--------|
+| Geocoding | $0 | US Census Geocoder (free) |
+| Electric/Gas database lookup | $0 | HIFLD, EIA, EPA (free government APIs) |
+| Internet providers | ~$0.01 | FCC Broadband Map via BrightData |
+| Google Search verification | ~$0.01 | BrightData SERP + GPT-4o-mini |
+| **Total** | **~$0.02** | |
 
-### Total Cost: **~$0.01-0.02 per lookup** (with internet + SERP verification)
-
-**Cost Breakdown:**
-- **Server hosting** (Railway): ~$5-20/month depending on usage
-- **BrightData proxy** (for FCC scraping): ~$0.01 per request
-- **BrightData SERP** (for Google verification): ~$0.01 per search (optional)
-
-### BrightData Usage
-
-We use BrightData for two purposes:
-
-1. **FCC Broadband Map Scraping** - The FCC site has strong anti-bot detection. We use BrightData's proxy/unlocker to successfully scrape internet provider data.
-
-2. **SERP Verification (Enabled by Default)** - For every lookup, we perform a Google search like "electric utility provider for [address]" and use GPT-4o-mini to analyze the results and confirm our database match is correct. Pass `verify=false` to disable.
+**Monthly costs:**
+- Server hosting (Railway): ~$5-20/month
+- BrightData usage: Based on lookup volume
 
 ---
 
-## Electric Utility Verification
+## How We Verify Each Provider
 
-### How It Works
+### Step 1: Geocode the Address
 
-1. **Geocode the address** → Get coordinates (lat/lon), city, county, state, ZIP
-2. **Query HIFLD** → Get all electric utility territories that contain this point
-3. **Verify with authoritative data**:
-   - **Texas**: ZIP-to-TDU mapping (Oncor, CenterPoint, AEP, TNMP)
-   - **Other states**: EIA Form 861 ZIP-to-utility mapping (31,000+ ZIPs)
-   - **Fallback**: Ranking heuristics based on utility type and name matching
+**What happens:** Convert street address to coordinates + location metadata
 
-### Data Sources
+**Data source:** US Census Geocoder (free, official government API)
 
-| Source | Coverage | Confidence |
-|--------|----------|------------|
-| **Texas TDU Mapping** | TX only (5 TDUs + municipals) | Verified ✓ |
-| **EIA Form 861** | 31,633 ZIPs, 143 IOUs nationwide | Verified ✓ |
-| **HIFLD Electric Territories** | National polygon data | High/Medium |
-| **State LDC Database** | All 50 states | Medium (fallback) |
+**Output:** Latitude, longitude, city, county, state, ZIP code
 
-### Confidence Levels
+---
 
-- **Verified**: Matched authoritative state/federal data (Texas TDU, EIA)
-- **High**: Single provider or strong heuristic match
-- **Medium**: Multiple candidates, best guess based on ranking
-- **Low**: Uncertain, recommend manual verification
+### Step 2: Electric Utility
 
-### Texas-Specific Logic
+**What happens:**
 
-Texas is deregulated with 5 TDUs (Transmission & Distribution Utilities):
+1. **Query HIFLD** - Federal database of electric utility service territories. Returns all utilities whose polygon contains this coordinate. Often returns multiple overlapping territories.
+
+2. **Verify with authoritative state data:**
+   - **Texas:** ZIP-to-TDU mapping. Texas has only 5 TDUs (Oncor, CenterPoint, AEP North, AEP Central, TNMP) plus municipal utilities (Austin Energy, CPS Energy, etc.)
+   - **Other states:** EIA Form 861 data - maps 31,633 ZIP codes to 143 investor-owned utilities nationwide
+
+3. **Google Search verification (via BrightData):**
+   - Search: `"electric utility provider for [full address]"`
+   - GPT-4o-mini analyzes the search results
+   - Confirms if our database match is correct
+   - If Google suggests a different provider, we flag it or swap
+
+**Cost:** ~$0.01 (BrightData SERP + OpenAI)
+
+**Confidence levels:**
+- **Verified:** Matched state/federal data AND confirmed by Google
+- **High:** Strong database match, Google confirms
+- **Medium:** Database match, Google inconclusive
+- **Low:** Uncertain, recommend manual verification
+
+---
+
+### Step 3: Gas Utility
+
+**What happens:**
+
+1. **Query HIFLD** - Federal database of natural gas LDC (Local Distribution Company) territories. Returns candidates.
+
+2. **Verify with state data:**
+   - **Texas:** ZIP-to-LDC mapping (Atmos Energy for DFW, CenterPoint for Houston, Texas Gas Service for Austin)
+   - **Other states:** Match against our database of major gas LDCs for all 50 states
+
+3. **Handle no-service cases:**
+   - If HIFLD returns nothing, check if state has limited gas infrastructure (FL, HI, VT, ME)
+   - Return "No natural gas service - area likely uses propane"
+
+4. **Google Search verification (via BrightData):**
+   - Search: `"natural gas provider for [full address]"`
+   - GPT-4o-mini confirms the match
+
+**Cost:** ~$0.01 (BrightData SERP + OpenAI)
+
+---
+
+### Step 4: Water Utility
+
+**What happens:**
+
+1. **Query EPA SDWIS** - Federal database of all public water systems in the US
+
+2. **Filter by location:**
+   - Search by city name and county
+   - Prioritize by population served (larger systems first)
+   - Match utility name to city name when possible
+
+3. **Google Search verification (via BrightData):**
+   - Search: `"water utility for [full address]"`
+   - GPT-4o-mini confirms the match
+
+**Cost:** ~$0.01 (BrightData SERP + OpenAI)
+
+**Note:** Water utilities are highly fragmented - thousands of small municipal and private systems. Matching is less precise than electric/gas.
+
+---
+
+### Step 5: Internet Providers
+
+**What happens:**
+
+1. **Normalize address** - Strip apartment/unit numbers (FCC only accepts building-level addresses)
+   - Example: "1725 Toomey Rd Apt 307" → "1725 Toomey Rd"
+
+2. **Scrape FCC Broadband Map (via BrightData):**
+   - Load https://broadbandmap.fcc.gov using Playwright browser automation
+   - Enter the normalized address
+   - Click autocomplete suggestion
+   - Intercept the API response with provider data
+
+3. **Parse results:**
+   - Extract all ISPs serving the address
+   - Identify fiber/cable availability
+   - Find best wired and wireless options
+   - Include download/upload speeds for each provider
+
+**Cost:** ~$0.01 (BrightData proxy)
+
+**Technical notes:**
+- FCC site has strong anti-bot detection
+- Uses Playwright with Chromium in headed mode
+- Requires virtual display (Xvfb) on server
+- Takes ~10 seconds per lookup
+
+---
+
+## Data Sources Summary
+
+| Utility | Primary Source | Verification |
+|---------|---------------|--------------|
+| **Electric** | HIFLD territories + EIA Form 861 + Texas TDU mapping | Google Search + GPT-4o-mini |
+| **Gas** | HIFLD territories + State LDC database + Texas gas mapping | Google Search + GPT-4o-mini |
+| **Water** | EPA SDWIS | Google Search + GPT-4o-mini |
+| **Internet** | FCC Broadband Map (scraped via BrightData) | Direct from FCC (authoritative) |
+
+---
+
+## Texas-Specific Data
+
+### Electric TDUs (Transmission & Distribution Utilities)
 
 | ZIP Prefix | TDU | Service Area |
 |------------|-----|--------------|
-| 750-769 | Oncor | Dallas/Fort Worth |
-| 770-779 | CenterPoint | Houston |
-| 786-789 | Oncor | Austin area (parts) |
-| 793-796 | AEP North | Lubbock/Abilene |
-| 783-785 | AEP Central | Corpus Christi, South TX |
+| 750-769 | Oncor | Dallas/Fort Worth, North Texas |
+| 770-779 | CenterPoint | Houston metro |
+| 786-789 | Oncor | Parts of Austin area |
+| 793-796 | AEP North | Lubbock, Abilene |
+| 783-785 | AEP Central | Corpus Christi, South Texas |
 
-Municipal utilities (Austin Energy, CPS Energy, etc.) are identified by city name and marked as "not in deregulated market."
+**Municipal utilities** (not in deregulated market): Austin Energy, CPS Energy (San Antonio), Denton Municipal, Garland Power & Light, etc.
 
----
-
-## Gas Utility Verification
-
-### How It Works
-
-1. **Query HIFLD Gas Territories** → Get LDC (Local Distribution Company) candidates
-2. **Verify with state-specific data**:
-   - **Texas**: ZIP-to-LDC mapping (Atmos, CenterPoint, Texas Gas Service)
-   - **Other states**: Match against known state LDCs database
-3. **Handle no-service cases** → Return "No natural gas service" for propane/all-electric areas
-
-### Data Sources
-
-| Source | Coverage | Confidence |
-|--------|----------|------------|
-| **Texas Gas Mapping** | TX only (3 major LDCs) | Verified ✓ |
-| **State LDC Database** | All 50 states + DC | High |
-| **HIFLD Gas Territories** | National polygon data | Medium |
-
-### Texas Gas LDCs
+### Gas LDCs
 
 | ZIP Prefix | Gas LDC | Service Area |
 |------------|---------|--------------|
-| 750-769, 790-796 | Atmos Energy | DFW, West TX |
-| 770-779 | CenterPoint Energy | Houston |
+| 750-769, 790-796 | Atmos Energy | DFW, West Texas, Panhandle |
+| 770-779 | CenterPoint Energy | Houston metro |
 | 786-789, 798-799 | Texas Gas Service | Austin, El Paso |
 
-### No-Service Detection
+---
 
-States with limited gas infrastructure are flagged:
-- **Florida**: Very limited outside urban areas
-- **Hawaii**: Limited (mostly Oahu)
-- **Vermont**: Limited (Burlington area)
-- **Maine**: Limited (expanding)
+## API Usage
+
+### Single Lookup
+```
+GET /api/lookup?address=1725 Toomey Rd Austin TX 78704
+```
+
+### Disable SERP Verification (faster, less accurate)
+```
+GET /api/lookup?address=...&verify=false
+```
+
+### Batch Processing (up to 100 addresses)
+```
+POST /api/batch
+Content-Type: multipart/form-data
+file: addresses.csv (must have 'address' column)
+```
 
 ---
 
-## Water Utility Verification
-
-### How It Works
-
-1. **Query EPA SDWIS** → Search by city and county name
-2. **Filter results** → Prioritize by population served and name match
-3. **Return primary** → Largest water system serving the area
-
-### Data Source
-
-| Source | Coverage | Confidence |
-|--------|----------|------------|
-| **EPA SDWIS** | All public water systems in US | High |
-
-### Notes
-
-- Water utilities are highly fragmented (thousands of small systems)
-- Matching is by city/county name, not precise coordinates
-- Large municipal systems are prioritized over small private wells
-
----
-
-## Internet Provider Verification
-
-### How It Works
-
-1. **Normalize address** → Strip apartment/unit numbers (FCC only accepts building addresses)
-2. **Load FCC Broadband Map** → Using Playwright browser automation
-3. **Enter address** → Trigger autocomplete and select suggestion
-4. **Capture API response** → Intercept the `fabric/detail` API call
-5. **Parse providers** → Extract all ISPs with speeds and technology types
-
-### Data Source
-
-| Source | Coverage | Confidence |
-|--------|----------|------------|
-| **FCC Broadband Map** | All US addresses | Verified ✓ |
-
-### Technical Details
-
-- Uses **Playwright** with Chromium in headed mode (requires virtual display on server)
-- Applies **stealth settings** to bypass bot detection
-- Takes **~10 seconds per lookup** due to page load and API wait times
-- Strips apartment/unit numbers automatically (e.g., "Apt 307" → removed)
-
-### Response Includes
-
-- Provider count
-- Fiber availability (yes/no)
-- Cable availability (yes/no)
-- Best wired option (name, technology, speeds)
-- Best wireless option
-- Full provider list with download/upload speeds
-
----
-
-## Geocoding
-
-### How It Works
-
-Address → Coordinates + City + County + State + ZIP
-
-### Data Sources (in order)
-
-1. **US Census Geocoder** (primary) - Free, official
-2. **Google Geocoding API** (fallback) - Requires API key
-3. **Nominatim/OpenStreetMap** (fallback) - Free, rate-limited
-
----
-
-## API Response Structure
+## Response Example
 
 ```json
 {
@@ -194,53 +201,21 @@ Address → Coordinates + City + County + State + ZIP
     "state": "TX"
   },
   "utilities": {
-    "electric": [{
-      "name": "AUSTIN ENERGY",
-      "phone": "512-494-9400",
-      "website": "austinenergy.com",
-      "confidence": "verified"
-    }],
+    "electric": [{"name": "AUSTIN ENERGY", "phone": "512-494-9400"}],
     "electric_confidence": "verified",
-    "electric_note": "✓ Verified: AUSTIN ENERGY. Austin is served by Austin Energy, a municipal utility not in the deregulated ERCOT market.",
+    "electric_note": "✓ Verified: Austin is served by Austin Energy, a municipal utility.",
     
-    "gas": [{
-      "name": "Texas Gas Service",
-      "phone": "1-800-700-2443"
-    }],
+    "gas": [{"name": "Texas Gas Service", "phone": "1-800-700-2443"}],
     "gas_confidence": "verified",
-    "gas_note": "✓ Verified: Texas Gas Service. ZIP 78704 is in Texas Gas Service territory.",
+    "gas_note": "✓ Verified: ZIP 78704 is in Texas Gas Service territory.",
     
-    "water": [{
-      "name": "CITY OF AUSTIN",
-      "phone": "512-972-0000"
-    }],
+    "water": [{"name": "CITY OF AUSTIN", "phone": "512-972-0000"}],
     
     "internet": {
       "provider_count": 8,
       "has_fiber": true,
-      "best_wired": {
-        "name": "AT&T",
-        "technology": "Fiber",
-        "max_download_mbps": 5000
-      }
+      "best_wired": {"name": "AT&T", "technology": "Fiber", "max_download_mbps": 5000}
     }
   }
 }
 ```
-
----
-
-## Batch Processing
-
-The `/api/batch` endpoint allows processing up to 100 addresses at once:
-
-- Upload CSV with `address` column
-- Or send JSON array of addresses
-- Returns all utility data for each address
-- Can download results as CSV
-
----
-
-## Questions?
-
-Contact the development team for technical details or to request additional data sources.

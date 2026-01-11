@@ -251,5 +251,155 @@ def health():
     return jsonify({'status': 'ok'})
 
 
+@app.route('/api/batch', methods=['POST'])
+def batch_lookup():
+    """
+    Batch lookup utilities for multiple addresses from CSV.
+    
+    Accepts:
+    - CSV file upload with 'address' column
+    - OR JSON with 'addresses' array
+    
+    Returns JSON with results array and can be downloaded as CSV.
+    Processes in batches and includes progress tracking.
+    """
+    import csv
+    import io
+    import time
+    
+    addresses = []
+    
+    # Check for file upload
+    if 'file' in request.files:
+        file = request.files['file']
+        if file.filename.endswith('.csv'):
+            stream = io.StringIO(file.stream.read().decode("UTF8"), newline=None)
+            reader = csv.DictReader(stream)
+            
+            # Find address column (case-insensitive)
+            address_col = None
+            for col in reader.fieldnames or []:
+                if col.lower() in ['address', 'full_address', 'property_address', 'street_address']:
+                    address_col = col
+                    break
+            
+            if not address_col:
+                return jsonify({'error': 'CSV must have an address column (address, full_address, property_address, or street_address)'}), 400
+            
+            for row in reader:
+                addr = row.get(address_col, '').strip()
+                if addr:
+                    addresses.append({'address': addr, 'original_row': row})
+    
+    # Check for JSON body
+    elif request.is_json:
+        data = request.get_json()
+        if 'addresses' in data:
+            for addr in data['addresses']:
+                if isinstance(addr, str):
+                    addresses.append({'address': addr, 'original_row': {}})
+                elif isinstance(addr, dict) and 'address' in addr:
+                    addresses.append({'address': addr['address'], 'original_row': addr})
+    
+    if not addresses:
+        return jsonify({'error': 'No addresses provided. Upload a CSV with address column or send JSON with addresses array.'}), 400
+    
+    # Limit batch size
+    max_batch = 100
+    if len(addresses) > max_batch:
+        return jsonify({'error': f'Maximum {max_batch} addresses per batch. You provided {len(addresses)}.'}), 400
+    
+    # Process addresses
+    results = []
+    batch_size = 10
+    
+    for i, item in enumerate(addresses):
+        addr = item['address']
+        original = item['original_row']
+        
+        try:
+            result = lookup_utilities_by_address(addr, verify_with_serp=False)
+            
+            if result:
+                # Extract primary utilities
+                electric = result.get('electric')
+                gas = result.get('gas')
+                water = result.get('water')
+                internet = result.get('internet')
+                location = result.get('location', {})
+                
+                electric_primary = electric[0] if isinstance(electric, list) else electric
+                gas_primary = gas[0] if isinstance(gas, list) else gas
+                
+                row_result = {
+                    'input_address': addr,
+                    'status': 'success',
+                    'city': location.get('city'),
+                    'county': location.get('county'),
+                    'state': location.get('state'),
+                    # Electric
+                    'electric_provider': electric_primary.get('NAME') if electric_primary else None,
+                    'electric_confidence': electric_primary.get('_confidence') if electric_primary else None,
+                    'electric_phone': electric_primary.get('TELEPHONE') if electric_primary else None,
+                    'electric_website': electric_primary.get('WEBSITE') if electric_primary else None,
+                    # Gas
+                    'gas_provider': gas_primary.get('NAME') if gas_primary else None,
+                    'gas_confidence': gas_primary.get('_confidence') if gas_primary else None,
+                    'gas_phone': gas_primary.get('TELEPHONE') if gas_primary else None,
+                    # Water
+                    'water_provider': water.get('name') if water else None,
+                    'water_phone': water.get('phone') if water else None,
+                    # Internet
+                    'internet_provider_count': internet.get('provider_count') if internet else 0,
+                    'has_fiber': internet.get('has_fiber') if internet else False,
+                    'best_internet': internet.get('best_wired', {}).get('name') if internet else None,
+                }
+            else:
+                row_result = {
+                    'input_address': addr,
+                    'status': 'geocode_failed',
+                }
+        except Exception as e:
+            row_result = {
+                'input_address': addr,
+                'status': 'error',
+                'error': str(e),
+            }
+        
+        # Preserve original columns
+        row_result['_original'] = original
+        results.append(row_result)
+        
+        # Log progress every batch_size
+        if (i + 1) % batch_size == 0:
+            print(f"Batch progress: {i + 1}/{len(addresses)} addresses processed")
+    
+    # Return format based on Accept header
+    if request.headers.get('Accept') == 'text/csv':
+        # Return as CSV
+        output = io.StringIO()
+        if results:
+            fieldnames = [k for k in results[0].keys() if k != '_original']
+            writer = csv.DictWriter(output, fieldnames=fieldnames)
+            writer.writeheader()
+            for r in results:
+                row = {k: v for k, v in r.items() if k != '_original'}
+                writer.writerow(row)
+        
+        from flask import Response
+        return Response(
+            output.getvalue(),
+            mimetype='text/csv',
+            headers={'Content-Disposition': 'attachment; filename=utility_lookup_results.csv'}
+        )
+    
+    # Return as JSON
+    return jsonify({
+        'total': len(addresses),
+        'processed': len(results),
+        'results': results
+    })
+
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001, debug=True)

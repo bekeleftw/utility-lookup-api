@@ -1,0 +1,470 @@
+{
+  "_metadata": {
+    "description": "Municipal utility overrides - city-owned utilities not in federal databases",
+    "last_updated": "2026-01-11",
+    "source": "Manual compilation from utility websites and APPA data"
+  },
+  "electric": {
+    "TX": {
+      "Austin": {
+        "name": "Austin Energy",
+        "phone": "512-494-9400",
+        "website": "https://austinenergy.com",
+        "zip_codes": ["78701", "78702", "78703", "78704", "78705", "78712", "78717", "78719", "78721", "78722", "78723", "78724", "78725", "78726", "78727", "78728", "78729", "78730", "78731", "78732", "78733", "78734", "78735", "78736", "78737", "78738", "78739", "78741", "78742", "78744", "78745", "78746", "78747", "78748", "78749", "78750", "78751", "78752", "78753", "78754", "78756", "78757", "78758", "78759"],
+        "note": "Serves City of Austin and some ETJ areas"
+      },
+      "San Antonio": {
+        "name": "CPS Energy",
+        "phone": "210-353-2222",
+        "website": "https://cpsenergy.com",
+        "zip_codes": ["78201", "78202", "78203", "78204", "78205", "78206", "78207", "78208", "78209", "78210", "78211", "78212", "78213", "78214", "78215", "78216", "78217", "78218", "78219", "78220", "78221", "78222", "78223", "78224", "78225", "78226", "78227", "78228", "78229", "78230", "78231", "78232", "78233", "78234", "78235", "78236", "78237", "78238", "78239", "78240", "78241", "78242", "78243", "78244", "78245", "78246", "78247", "78248", "78249", "78250", "78251", "78252", "78253", "78254", "78255", "78256", "78257", "78258", "78259", "78260", "78261", "78263", "78264", "78265", "78266"],
+        "services": ["electric", "gas"],
+        "note": "Also provides natural gas"
+      },
+      "Garland": {
+        "name": "Garland Power & Light",
+        "phone": "972-205-2671",
+        "website": "https://www.garlandpower.com",
+        "zip_codes": ["75040", "75041", "75042", "75043", "75044", "75045"],
+        "note": "Serves City of Garland"
+      },
+      "Georgetown": {
+        "name": "Georgetown Utility Systems",
+        "phone": "512-930-3640",
+        "website": "https://gus.georgetown.org",
+        "zip_codes": ["78626", "78627", "78628", "78633"],
+        "services": ["electric", "water"],
+        "note": "100% renewable energy"
+      },
+      "Greenville": {
+        "name": "Greenville Electric Utility System",
+        "phone": "903-457-3116",
+        "website": "https://www.ci.greenville.tx.us",
+        "zip_codes": ["75401", "75402", "75403"]
+      },
+      "Lubbock": {
+        "name": "Lubbock Power & Light",
+        "phone": "806-775-2509",
+        "website": "https://www.lpandl.com",
+        "zip_codes": ["79401", "79402", "79403", "79404", "79405", "79406", "79407", "79408", "79409", "79410", "79411", "79412", "79413", "79414", "79415", "79416", "79423", "79424"]
+      },
+      "New Braunfels": {
+        "name": "New Braunfels Utilities",
+        "phone": "830-608-8900",
+        "website": "https://www.nbutexas.com",
+        "zip_codes": ["78130", "78131", "78132", "78135"],
+        "services": ["electric", "water"]
+      },
+      "Seguin": {
+        "name": "Seguin Electric",
+        "phone": "830-401-2390",
+        "website": "https://www.seguintexas.gov",
+        "zip_codes": ["78155", "78156"]
+      },
+      "Boerne": {
+        "name": "Boerne Utilities",
+        "phone": "830-249-9511",
+        "website": "https://www.ci.boerne.tx.us",
+        "zip_codes": ["78006", "78015"]
+      },
+      "Bryan": {
+        "name": "Bryan Texas Utilities",
+        "phone": "979-821-5700",
+        "website": "https://www.btutilities.com",
+        "zip_codes": ["77801", "77802", "77803", "77805", "77806", "77807", "77808"]
+      },
+      "College Station": {
+        "name": "College Station Utilities",
+        "phone": "979-764-3500",
+        "website": "https://www.cstx.gov",
+        "zip_codes": ["77840", "77841", "77842", "77843", "77844", "77845"]
+      },
+      "Denton": {
+        "name": "Denton Municipal Electric",
+        "phone": "940-349-8700",
+        "website": "https://www.dentonme.com",
+        "zip_codes": ["76201", "76202", "76203", "76204", "76205", "76206", "76207", "76208", "76209", "76210"]
+      },
+      "Kerrville": {
+        "name": "Kerrville Public Utility Board",
+        "phone": "830-257-3050",
+        "website": "https://www.kpub.com",
+        "zip_codes": ["78028", "78029"]
+      },
+      "Floresville": {
+        "name": "Floresville Electric Light & Power",
+        "phone": "830-393-4100",
+        "website": "https://www.floresvilletx.gov",
+        "zip_codes": ["78114"]
+      }
+    },
+    "CA": {
+      "Los Angeles": {
+        "name": "Los Angeles Department of Water and Power (LADWP)",
+        "phone": "800-342-5397",
+        "website": "https://www.ladwp.com",
+        "zip_codes": ["90001", "90002", "90003", "90004", "90005", "90006", "90007", "90008", "90010", "90011", "90012", "90013", "90014", "90015", "90016", "90017", "90018", "90019", "90020", "90021", "90022", "90023", "90024", "90025", "90026", "90027", "90028", "90029", "90031", "90032", "90033", "90034", "90035", "90036", "90037", "90038", "90039", "90041", "90042", "90043", "90044", "90045", "90046", "90047", "90048", "90049", "90056", "90057", "90058", "90059", "90061", "90062", "90063", "90064", "90065", "90066", "90067", "90068", "90069", "90071", "90077", "90089", "90090", "90094", "90095", "90210", "90211", "90212", "90230", "90232", "90247", "90248", "90272", "90291", "90292", "90293", "90402", "90403", "90404", "90405"],
+        "services": ["electric", "water"],
+        "note": "Largest municipal utility in US"
+      },
+      "Sacramento": {
+        "name": "Sacramento Municipal Utility District (SMUD)",
+        "phone": "888-742-7683",
+        "website": "https://www.smud.org",
+        "zip_codes": ["95608", "95610", "95615", "95621", "95624", "95626", "95628", "95630", "95632", "95638", "95641", "95652", "95655", "95660", "95662", "95670", "95673", "95683", "95693", "95742", "95757", "95758", "95811", "95812", "95813", "95814", "95815", "95816", "95817", "95818", "95819", "95820", "95821", "95822", "95823", "95824", "95825", "95826", "95827", "95828", "95829", "95830", "95831", "95832", "95833", "95834", "95835", "95836", "95837", "95838", "95841", "95842", "95843", "95864"],
+        "note": "6th largest municipal utility in US"
+      },
+      "Riverside": {
+        "name": "Riverside Public Utilities",
+        "phone": "951-826-5485",
+        "website": "https://www.riversideca.gov/utilities",
+        "zip_codes": ["92501", "92502", "92503", "92504", "92505", "92506", "92507", "92508", "92509"],
+        "services": ["electric", "water"]
+      },
+      "Anaheim": {
+        "name": "Anaheim Public Utilities",
+        "phone": "714-765-3300",
+        "website": "https://www.anaheim.net/165/Public-Utilities",
+        "zip_codes": ["92801", "92802", "92803", "92804", "92805", "92806", "92807", "92808", "92809"],
+        "services": ["electric", "water"]
+      },
+      "Pasadena": {
+        "name": "Pasadena Water and Power",
+        "phone": "626-744-4005",
+        "website": "https://www.pwpweb.com",
+        "zip_codes": ["91101", "91102", "91103", "91104", "91105", "91106", "91107", "91108", "91109"],
+        "services": ["electric", "water"]
+      },
+      "Glendale": {
+        "name": "Glendale Water & Power",
+        "phone": "818-548-2107",
+        "website": "https://www.glendaleca.gov/gwp",
+        "zip_codes": ["91201", "91202", "91203", "91204", "91205", "91206", "91207", "91208", "91210"],
+        "services": ["electric", "water"]
+      },
+      "Burbank": {
+        "name": "Burbank Water and Power",
+        "phone": "818-238-3700",
+        "website": "https://www.burbankwaterandpower.com",
+        "zip_codes": ["91501", "91502", "91503", "91504", "91505", "91506"],
+        "services": ["electric", "water"]
+      },
+      "Palo Alto": {
+        "name": "City of Palo Alto Utilities",
+        "phone": "650-329-2161",
+        "website": "https://www.cityofpaloalto.org/Departments/Utilities",
+        "zip_codes": ["94301", "94302", "94303", "94304", "94306"],
+        "services": ["electric", "gas", "water"]
+      },
+      "Santa Clara": {
+        "name": "Silicon Valley Power",
+        "phone": "408-615-2300",
+        "website": "https://www.siliconvalleypower.com",
+        "zip_codes": ["95050", "95051", "95052", "95054"],
+        "note": "City of Santa Clara municipal utility"
+      },
+      "Alameda": {
+        "name": "Alameda Municipal Power",
+        "phone": "510-748-3900",
+        "website": "https://www.alamedamp.com",
+        "zip_codes": ["94501", "94502"]
+      },
+      "Roseville": {
+        "name": "Roseville Electric Utility",
+        "phone": "916-774-5300",
+        "website": "https://www.roseville.ca.us/government/departments/electric_utility",
+        "zip_codes": ["95661", "95678", "95746", "95747"]
+      },
+      "Redding": {
+        "name": "Redding Electric Utility",
+        "phone": "530-339-7200",
+        "website": "https://www.cityofredding.org",
+        "zip_codes": ["96001", "96002", "96003"]
+      },
+      "Lodi": {
+        "name": "Lodi Electric Utility",
+        "phone": "209-333-6762",
+        "website": "https://www.lodi.gov",
+        "zip_codes": ["95240", "95241", "95242"]
+      }
+    },
+    "FL": {
+      "Jacksonville": {
+        "name": "JEA",
+        "phone": "904-665-6000",
+        "website": "https://www.jea.com",
+        "zip_codes": ["32099", "32201", "32202", "32203", "32204", "32205", "32206", "32207", "32208", "32209", "32210", "32211", "32212", "32214", "32216", "32217", "32218", "32219", "32220", "32221", "32222", "32223", "32224", "32225", "32226", "32227", "32228", "32229", "32233", "32234", "32235", "32236", "32237", "32238", "32239", "32240", "32241", "32244", "32245", "32246", "32247", "32254", "32255", "32256", "32257", "32258", "32266", "32277"],
+        "services": ["electric", "water"],
+        "note": "Largest community-owned utility in Florida"
+      },
+      "Orlando": {
+        "name": "Orlando Utilities Commission (OUC)",
+        "phone": "407-423-9018",
+        "website": "https://www.ouc.com",
+        "zip_codes": ["32801", "32802", "32803", "32804", "32805", "32806", "32807", "32808", "32809", "32810", "32811", "32812", "32814", "32817", "32818", "32819", "32820", "32821", "32822", "32824", "32825", "32826", "32827", "32828", "32829", "32830", "32831", "32832", "32833", "32834", "32835", "32836", "32837", "32839"],
+        "services": ["electric", "water"],
+        "note": "Also serves parts of Orange and Osceola counties"
+      },
+      "Gainesville": {
+        "name": "Gainesville Regional Utilities (GRU)",
+        "phone": "352-334-3434",
+        "website": "https://www.gru.com",
+        "zip_codes": ["32601", "32602", "32603", "32604", "32605", "32606", "32607", "32608", "32609", "32610", "32611", "32612", "32614", "32627", "32635", "32641"],
+        "services": ["electric", "gas", "water"]
+      },
+      "Tallahassee": {
+        "name": "City of Tallahassee Utilities",
+        "phone": "850-891-4968",
+        "website": "https://www.talgov.com/you/utilities",
+        "zip_codes": ["32301", "32302", "32303", "32304", "32305", "32306", "32307", "32308", "32309", "32310", "32311", "32312", "32313", "32314", "32315", "32316", "32317", "32318"],
+        "services": ["electric", "gas", "water"]
+      },
+      "Lakeland": {
+        "name": "Lakeland Electric",
+        "phone": "863-834-6300",
+        "website": "https://www.lakelandelectric.com",
+        "zip_codes": ["33801", "33802", "33803", "33804", "33805", "33806", "33807", "33809", "33810", "33811", "33812", "33813", "33815"]
+      },
+      "Fort Pierce": {
+        "name": "Fort Pierce Utilities Authority",
+        "phone": "772-466-1600",
+        "website": "https://www.fpua.com",
+        "zip_codes": ["34945", "34946", "34947", "34948", "34949", "34950", "34951", "34954"],
+        "services": ["electric", "water"]
+      },
+      "Ocala": {
+        "name": "Ocala Electric Utility",
+        "phone": "352-629-2489",
+        "website": "https://www.ocalafl.org/government/city-departments-a-background/electric-utility",
+        "zip_codes": ["34470", "34471", "34472", "34473", "34474", "34475", "34476", "34478", "34479", "34480", "34481", "34482", "34483"]
+      },
+      "Kissimmee": {
+        "name": "Kissimmee Utility Authority (KUA)",
+        "phone": "407-933-7777",
+        "website": "https://www.kua.com",
+        "zip_codes": ["34741", "34742", "34743", "34744", "34745", "34746", "34747", "34758", "34759"]
+      },
+      "Leesburg": {
+        "name": "Leesburg Electric",
+        "phone": "352-728-9786",
+        "website": "https://www.leesburgflorida.gov",
+        "zip_codes": ["34748", "34749", "34788", "34789"]
+      },
+      "Key West": {
+        "name": "Keys Energy Services",
+        "phone": "305-295-1000",
+        "website": "https://www.keysenergy.com",
+        "zip_codes": ["33040", "33041", "33042", "33043", "33045", "33050", "33051", "33052"]
+      },
+      "Vero Beach": {
+        "name": "Vero Beach Utilities",
+        "phone": "772-978-5200",
+        "website": "https://www.covb.org",
+        "zip_codes": ["32960", "32961", "32962", "32963", "32964", "32965", "32966", "32967", "32968", "32969"]
+      }
+    },
+    "TN": {
+      "Memphis": {
+        "name": "Memphis Light, Gas and Water (MLGW)",
+        "phone": "901-544-6549",
+        "website": "https://www.mlgw.com",
+        "zip_codes": ["37501", "38101", "38103", "38104", "38105", "38106", "38107", "38108", "38109", "38111", "38112", "38113", "38114", "38115", "38116", "38117", "38118", "38119", "38120", "38122", "38124", "38125", "38126", "38127", "38128", "38130", "38131", "38132", "38133", "38134", "38135", "38136", "38137", "38138", "38139", "38141", "38145", "38148", "38150", "38151", "38152", "38157", "38159", "38161", "38163", "38166", "38167", "38168", "38173", "38174", "38175", "38177", "38181", "38182", "38183", "38184", "38186", "38187", "38188", "38190", "38193", "38194", "38197"],
+        "services": ["electric", "gas", "water"],
+        "note": "Largest 3-service municipal utility in US"
+      },
+      "Nashville": {
+        "name": "Nashville Electric Service (NES)",
+        "phone": "615-736-6900",
+        "website": "https://www.nespower.com",
+        "zip_codes": ["37011", "37013", "37015", "37027", "37064", "37067", "37072", "37076", "37080", "37115", "37116", "37138", "37143", "37189", "37201", "37202", "37203", "37204", "37205", "37206", "37207", "37208", "37209", "37210", "37211", "37212", "37213", "37214", "37215", "37216", "37217", "37218", "37219", "37220", "37221", "37222", "37224", "37227", "37228", "37229", "37230", "37232", "37234", "37235", "37236", "37238", "37240", "37241", "37242", "37243", "37244", "37246", "37250"]
+      },
+      "Knoxville": {
+        "name": "Knoxville Utilities Board (KUB)",
+        "phone": "865-524-2911",
+        "website": "https://www.kub.org",
+        "zip_codes": ["37901", "37902", "37909", "37912", "37914", "37915", "37916", "37917", "37918", "37919", "37920", "37921", "37922", "37923", "37924", "37927", "37928", "37929", "37930", "37931", "37932", "37933", "37934", "37938", "37939"],
+        "services": ["electric", "gas", "water"]
+      },
+      "Chattanooga": {
+        "name": "EPB (Electric Power Board)",
+        "phone": "423-648-1372",
+        "website": "https://www.epb.com",
+        "zip_codes": ["37341", "37343", "37350", "37351", "37363", "37377", "37379", "37402", "37403", "37404", "37405", "37406", "37407", "37408", "37409", "37410", "37411", "37412", "37414", "37415", "37416", "37419", "37421", "37422", "37424"],
+        "note": "Known for gigabit fiber network"
+      }
+    },
+    "GA": {
+      "Marietta": {
+        "name": "Marietta Power",
+        "phone": "770-794-5150",
+        "website": "https://www.mariettaga.gov",
+        "zip_codes": ["30006", "30007", "30008", "30060", "30061", "30062", "30063", "30064", "30065", "30066", "30067", "30068", "30069"]
+      },
+      "Lawrenceville": {
+        "name": "Lawrenceville Electric",
+        "phone": "770-963-2414",
+        "website": "https://www.lawrencevillega.org",
+        "zip_codes": ["30042", "30043", "30044", "30045", "30046"]
+      }
+    },
+    "NC": {
+      "Fayetteville": {
+        "name": "Fayetteville Public Works Commission (PWC)",
+        "phone": "910-483-1382",
+        "website": "https://www.faypwc.com",
+        "zip_codes": ["28301", "28302", "28303", "28304", "28305", "28306", "28307", "28308", "28309", "28310", "28311", "28312", "28314"],
+        "services": ["electric", "water"]
+      },
+      "Wilson": {
+        "name": "Wilson Energy",
+        "phone": "252-399-2323",
+        "website": "https://www.wilsonnc.org",
+        "zip_codes": ["27893", "27894", "27895", "27896"]
+      },
+      "Greenville": {
+        "name": "Greenville Utilities Commission",
+        "phone": "252-752-7166",
+        "website": "https://www.gaborrecycles.com",
+        "zip_codes": ["27833", "27834", "27835", "27836", "27858"]
+      },
+      "Rocky Mount": {
+        "name": "Rocky Mount Public Utilities",
+        "phone": "252-972-1200",
+        "website": "https://www.rockymountnc.gov",
+        "zip_codes": ["27801", "27802", "27803", "27804"]
+      },
+      "New Bern": {
+        "name": "New Bern Electric",
+        "phone": "252-639-7501",
+        "website": "https://www.newbernnc.gov",
+        "zip_codes": ["28560", "28561", "28562", "28563", "28564"]
+      }
+    },
+    "SC": {
+      "Rock Hill": {
+        "name": "Rock Hill Utilities",
+        "phone": "803-329-5500",
+        "website": "https://www.cityofrockhill.com",
+        "zip_codes": ["29730", "29731", "29732", "29733", "29734"],
+        "services": ["electric", "water"]
+      },
+      "Orangeburg": {
+        "name": "Orangeburg Department of Public Utilities",
+        "phone": "803-268-4100",
+        "website": "https://www.orbgdpu.com",
+        "zip_codes": ["29115", "29116", "29117", "29118"]
+      }
+    },
+    "OH": {
+      "Cleveland": {
+        "name": "Cleveland Public Power",
+        "phone": "216-664-4600",
+        "website": "https://www.cpp.org",
+        "zip_codes": ["44101", "44102", "44103", "44104", "44105", "44106", "44107", "44108", "44109", "44110", "44111", "44112", "44113", "44114", "44115", "44116", "44117", "44118", "44119", "44120", "44121", "44122", "44124", "44125", "44126", "44127", "44128", "44129", "44130", "44134", "44135", "44143", "44144"]
+      },
+      "Columbus": {
+        "name": "Columbus Division of Power",
+        "phone": "614-645-8276",
+        "website": "https://www.columbus.gov",
+        "zip_codes": ["43085", "43201", "43202", "43203", "43204", "43205", "43206", "43207", "43209", "43210", "43211", "43212", "43213", "43214", "43215", "43217", "43219", "43220", "43221", "43222", "43223", "43224", "43227", "43228", "43229", "43230", "43231", "43232"],
+        "note": "Serves select areas, not entire city"
+      }
+    },
+    "NE": {
+      "Omaha": {
+        "name": "Omaha Public Power District (OPPD)",
+        "phone": "402-536-4131",
+        "website": "https://www.oppd.com",
+        "zip_codes": ["68007", "68010", "68022", "68028", "68046", "68064", "68069", "68101", "68102", "68103", "68104", "68105", "68106", "68107", "68108", "68109", "68110", "68111", "68112", "68113", "68114", "68116", "68117", "68118", "68119", "68122", "68124", "68127", "68130", "68131", "68132", "68134", "68135", "68136", "68137", "68138", "68142", "68144", "68145", "68147", "68152", "68154", "68157", "68164"],
+        "note": "Serves 13 counties in Nebraska"
+      },
+      "Lincoln": {
+        "name": "Lincoln Electric System (LES)",
+        "phone": "402-475-4211",
+        "website": "https://www.les.com",
+        "zip_codes": ["68501", "68502", "68503", "68504", "68505", "68506", "68507", "68508", "68509", "68510", "68512", "68514", "68516", "68517", "68520", "68521", "68522", "68523", "68524", "68526", "68527", "68528", "68529", "68531", "68532"]
+      }
+    },
+    "WA": {
+      "Seattle": {
+        "name": "Seattle City Light",
+        "phone": "206-684-3000",
+        "website": "https://www.seattle.gov/city-light",
+        "zip_codes": ["98101", "98102", "98103", "98104", "98105", "98106", "98107", "98108", "98109", "98111", "98112", "98113", "98114", "98115", "98116", "98117", "98118", "98119", "98121", "98122", "98124", "98125", "98126", "98127", "98129", "98131", "98133", "98134", "98136", "98138", "98139", "98141", "98144", "98145", "98146", "98148", "98154", "98155", "98158", "98160", "98161", "98164", "98165", "98166", "98168", "98170", "98174", "98175", "98177", "98178", "98181", "98185", "98188", "98190", "98191", "98194", "98195", "98198", "98199"]
+      },
+      "Tacoma": {
+        "name": "Tacoma Public Utilities",
+        "phone": "253-502-8600",
+        "website": "https://www.mytpu.org",
+        "zip_codes": ["98401", "98402", "98403", "98404", "98405", "98406", "98407", "98408", "98409", "98411", "98412", "98413", "98415", "98416", "98417", "98418", "98419", "98421", "98422", "98424", "98431", "98433", "98443", "98444", "98445", "98446", "98447", "98448", "98465", "98466", "98467"],
+        "services": ["electric", "water"]
+      }
+    },
+    "OR": {
+      "Eugene": {
+        "name": "Eugene Water & Electric Board (EWEB)",
+        "phone": "541-685-7000",
+        "website": "https://www.eweb.org",
+        "zip_codes": ["97401", "97402", "97403", "97404", "97405", "97408"],
+        "services": ["electric", "water"]
+      },
+      "Springfield": {
+        "name": "Springfield Utility Board (SUB)",
+        "phone": "541-744-3600",
+        "website": "https://www.subutil.com",
+        "zip_codes": ["97477", "97478"],
+        "services": ["electric", "water"]
+      }
+    },
+    "AZ": {
+      "Mesa": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com",
+        "zip_codes": ["85201", "85202", "85203", "85204", "85205", "85206", "85207", "85208", "85209", "85210", "85211", "85212", "85213", "85214", "85215", "85216"],
+        "note": "SRP serves much of Phoenix metro area"
+      }
+    },
+    "CO": {
+      "Colorado Springs": {
+        "name": "Colorado Springs Utilities",
+        "phone": "719-448-4800",
+        "website": "https://www.csu.org",
+        "zip_codes": ["80829", "80831", "80840", "80901", "80902", "80903", "80904", "80905", "80906", "80907", "80908", "80909", "80910", "80911", "80912", "80913", "80914", "80915", "80916", "80917", "80918", "80919", "80920", "80921", "80922", "80923", "80924", "80925", "80926", "80927", "80928", "80929", "80930", "80938", "80939", "80941", "80942", "80951"],
+        "services": ["electric", "gas", "water"]
+      },
+      "Fort Collins": {
+        "name": "Fort Collins Utilities",
+        "phone": "970-212-2900",
+        "website": "https://www.fcgov.com/utilities",
+        "zip_codes": ["80521", "80522", "80523", "80524", "80525", "80526", "80527", "80528"]
+      },
+      "Longmont": {
+        "name": "Longmont Power & Communications",
+        "phone": "303-651-8386",
+        "website": "https://www.longmontcolorado.gov/departments/departments-e-m/longmont-power-communications",
+        "zip_codes": ["80501", "80502", "80503", "80504"]
+      }
+    },
+    "UT": {
+      "Provo": {
+        "name": "Provo Power",
+        "phone": "801-852-6050",
+        "website": "https://www.provo.org/departments/energy",
+        "zip_codes": ["84601", "84602", "84603", "84604", "84605", "84606"]
+      },
+      "Logan": {
+        "name": "Logan City Light & Power",
+        "phone": "435-716-9700",
+        "website": "https://www.loganutah.org",
+        "zip_codes": ["84321", "84322", "84323"]
+      },
+      "St. George": {
+        "name": "St. George Energy Services",
+        "phone": "435-627-4700",
+        "website": "https://www.sgcity.org",
+        "zip_codes": ["84770", "84771", "84790", "84791"]
+      }
+    }
+  }
+}

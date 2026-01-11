@@ -30,6 +30,7 @@ from bs4 import BeautifulSoup
 from state_utility_verification import verify_electric_provider, verify_gas_provider, check_problem_area
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 from confidence_scoring import calculate_confidence, source_to_score_key
+from municipal_utilities import lookup_municipal_electric, lookup_municipal_gas, lookup_municipal_water
 
 # Try to load dotenv for API keys
 try:
@@ -1502,64 +1503,99 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     
     # Step 2: Electric lookup - only if selected
     if 'electric' in selected_utilities:
-        electric_candidates = lookup_electric_utility(lon, lat)
-        
-        # Filter by city to remove irrelevant municipal utilities
-        if filter_by_city and city:
-            electric_candidates = filter_utilities_by_location(electric_candidates, city)
-        
-        # Convert to list if single result
-        if electric_candidates and not isinstance(electric_candidates, list):
-            electric_candidates = [electric_candidates]
-        
-        # Use state-specific verification
-        verification_result = verify_electric_provider(
-            state=state,
-            zip_code=zip_code,
-            city=city,
-            county=county,
-            candidates=electric_candidates or []
-        )
-        
-        primary_electric = verification_result.get("primary")
-        other_electric = verification_result.get("alternatives", [])
-        
-        # Add verification metadata to primary
-        if primary_electric:
-            primary_electric["_confidence"] = verification_result.get("confidence", "medium")
-            primary_electric["_verification_source"] = verification_result.get("source")
-            primary_electric["_selection_reason"] = verification_result.get("selection_reason")
-            primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
+        # PRIORITY 1: Check municipal utilities first (Austin Energy, CPS Energy, LADWP, etc.)
+        municipal_electric = lookup_municipal_electric(state, city, zip_code)
+        if municipal_electric:
+            primary_electric = {
+                'NAME': municipal_electric['name'],
+                'TELEPHONE': municipal_electric.get('phone'),
+                'WEBSITE': municipal_electric.get('website'),
+                'STATE': state,
+                'CITY': municipal_electric.get('city', city),
+                '_confidence': municipal_electric['confidence'],
+                '_verification_source': 'municipal_utility_database',
+                '_selection_reason': f"Municipal utility serving {municipal_electric.get('city', city)}",
+                '_is_deregulated': False,
+                '_note': municipal_electric.get('note')
+            }
+            other_electric = []
+        else:
+            # PRIORITY 2: HIFLD and state-specific verification
+            electric_candidates = lookup_electric_utility(lon, lat)
+            
+            # Filter by city to remove irrelevant municipal utilities
+            if filter_by_city and city:
+                electric_candidates = filter_utilities_by_location(electric_candidates, city)
+            
+            # Convert to list if single result
+            if electric_candidates and not isinstance(electric_candidates, list):
+                electric_candidates = [electric_candidates]
+            
+            # Use state-specific verification
+            verification_result = verify_electric_provider(
+                state=state,
+                zip_code=zip_code,
+                city=city,
+                county=county,
+                candidates=electric_candidates or []
+            )
+            
+            primary_electric = verification_result.get("primary")
+            other_electric = verification_result.get("alternatives", [])
+            
+            # Add verification metadata to primary
+            if primary_electric:
+                primary_electric["_confidence"] = verification_result.get("confidence", "medium")
+                primary_electric["_verification_source"] = verification_result.get("source")
+                primary_electric["_selection_reason"] = verification_result.get("selection_reason")
+                primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
     
     # Step 3: Gas lookup - only if selected
     if 'gas' in selected_utilities:
-        gas = lookup_gas_utility(lon, lat, state=state)
-        
-        # Filter by city to remove irrelevant municipal utilities
-        if filter_by_city and city:
-            gas = filter_utilities_by_location(gas, city)
-        
-        gas_candidates = gas if isinstance(gas, list) else ([gas] if gas else [])
-        
-        gas_verification = verify_gas_provider(
-            state=state,
-            zip_code=zip_code,
-            city=city,
-            county=county,
-            candidates=gas_candidates
-        )
-        
-        primary_gas = gas_verification.get("primary")
-        other_gas = gas_verification.get("alternatives", [])
-        
-        # Add verification metadata to gas
-        if primary_gas:
-            primary_gas["_confidence"] = gas_verification.get("confidence", "medium")
-            primary_gas["_verification_source"] = gas_verification.get("source")
-            primary_gas["_selection_reason"] = gas_verification.get("selection_reason")
-        
-        # Handle no gas service case
-        gas_no_service = gas_verification.get("no_service_note")
+        # PRIORITY 1: Check municipal gas utilities (CPS Energy, MLGW, etc.)
+        municipal_gas = lookup_municipal_gas(state, city, zip_code)
+        if municipal_gas:
+            primary_gas = {
+                'NAME': municipal_gas['name'],
+                'TELEPHONE': municipal_gas.get('phone'),
+                'WEBSITE': municipal_gas.get('website'),
+                'STATE': state,
+                'CITY': municipal_gas.get('city', city),
+                '_confidence': municipal_gas['confidence'],
+                '_verification_source': 'municipal_utility_database',
+                '_selection_reason': f"Municipal utility providing gas in {municipal_gas.get('city', city)}"
+            }
+            other_gas = []
+            gas_candidates = []
+        else:
+            # PRIORITY 2: HIFLD and state-specific verification
+            gas = lookup_gas_utility(lon, lat, state=state)
+            
+            # Filter by city to remove irrelevant municipal utilities
+            if filter_by_city and city:
+                gas = filter_utilities_by_location(gas, city)
+            
+            gas_candidates = gas if isinstance(gas, list) else ([gas] if gas else [])
+            
+            gas_verification = verify_gas_provider(
+                state=state,
+                zip_code=zip_code,
+                city=city,
+                county=county,
+                candidates=gas_candidates
+            )
+            
+            primary_gas = gas_verification.get("primary")
+            other_gas = gas_verification.get("alternatives", [])
+            
+            # Add verification metadata to gas
+            if primary_gas:
+                primary_gas["_confidence"] = gas_verification.get("confidence", "medium")
+                primary_gas["_verification_source"] = gas_verification.get("source")
+                primary_gas["_selection_reason"] = gas_verification.get("selection_reason")
+            
+            # Handle no gas service case
+            gas_no_service = gas_verification.get("no_service_note")
     
     # Step 4: Water lookup - only if selected
     # For water, we use SERP as primary source when verify_with_serp=True

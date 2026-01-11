@@ -11,6 +11,7 @@ from state_utility_verification import check_problem_area, add_problem_area, loa
 from special_districts import lookup_special_district, format_district_for_response, get_available_states, has_special_district_data
 from utility_scrapers import get_available_scrapers, get_scrapers_for_state, verify_with_utility_api_sync
 from cross_validation import cross_validate, SourceResult, format_for_response as format_cv_response, get_disagreements, providers_match
+from municipal_utilities import get_all_municipal_utilities, lookup_municipal_electric, get_municipal_stats
 from datetime import datetime
 import hashlib
 import json
@@ -1215,6 +1216,41 @@ def get_lookup_log():
         'lookups': lookups,
         'count': len(lookups)
     })
+
+
+# =============================================================================
+# MUNICIPAL UTILITIES
+# =============================================================================
+
+@app.route('/api/municipal-utilities', methods=['GET'])
+def list_municipal_utilities():
+    """List all municipal utilities."""
+    state = request.args.get('state', '').upper() if request.args.get('state') else None
+    utilities = get_all_municipal_utilities(state)
+    stats = get_municipal_stats()
+    
+    return jsonify({
+        'stats': stats,
+        'utilities': utilities
+    })
+
+
+@app.route('/api/municipal-utilities/lookup', methods=['GET'])
+def lookup_municipal():
+    """Check if address is served by municipal utility."""
+    state = request.args.get('state', '').upper() if request.args.get('state') else None
+    city = request.args.get('city')
+    zip_code = request.args.get('zip')
+    
+    if not state:
+        return jsonify({'error': 'state parameter required'}), 400
+    
+    result = lookup_municipal_electric(state, city, zip_code)
+    
+    if result:
+        return jsonify({'found': True, 'utility': result})
+    else:
+        return jsonify({'found': False, 'message': 'No municipal utility found for this location'})
 
 
 if __name__ == '__main__':

@@ -7,34 +7,37 @@ from datetime import datetime
 from typing import Dict, List, Optional, Any
 
 # Source quality scores (max one applies)
+# Scale: 0-100 where 85+ = high confidence, 65-84 = medium, <65 = low
 SOURCE_SCORES = {
-    'user_confirmed': 45,       # Multiple users confirmed this
-    'user_feedback': 35,        # Single user feedback
-    'utility_api': 40,          # Direct from utility company lookup
-    'special_district': 35,     # MUD/CDD/PUD boundary data
-    'zip_override': 30,         # Manual ZIP correction table
-    'eia_861': 25,              # EIA federal data (electric)
-    'railroad_commission': 25,  # Texas RRC (gas)
-    'state_puc': 25,            # State PUC data
-    'hifld_polygon': 20,        # HIFLD territory polygon
-    'epa_sdwis': 20,            # EPA water systems
-    'state_ldc_mapping': 20,    # State-level gas LDC mapping
-    'google_serp': 25,          # Google search as primary source
-    'serp_only': 15,            # Google search only (no database match)
-    'supplemental': 25,         # Supplemental data file
-    'county_match': 10,         # County-level match (water)
-    'heuristic': 5,             # Name matching / fallback
-    'unknown': 0
+    'user_confirmed': 90,       # Multiple users confirmed this
+    'user_feedback': 85,        # Single user feedback
+    'municipal_utility': 85,    # Municipal utility database (Austin Energy, CPS, LADWP, etc.)
+    'utility_api': 85,          # Direct from utility company lookup
+    'special_district': 80,     # MUD/CDD/PUD boundary data
+    'verified': 80,             # Verified by state-specific data (TX RRC, etc.)
+    'zip_override': 75,         # Manual ZIP correction table
+    'railroad_commission': 75,  # Texas RRC (gas) - authoritative
+    'state_puc': 70,            # State PUC data
+    'eia_861': 65,              # EIA federal data (electric)
+    'supplemental': 65,         # Supplemental data file (curated)
+    'google_serp': 60,          # Google search as primary source
+    'hifld_polygon': 55,        # HIFLD territory polygon
+    'epa_sdwis': 55,            # EPA water systems
+    'state_ldc_mapping': 50,    # State-level gas LDC mapping
+    'serp_only': 45,            # Google search only (no database match)
+    'county_match': 40,         # County-level match (water)
+    'heuristic': 25,            # Name matching / fallback
+    'unknown': 10
 }
 
-# Geographic precision scores (additive)
+# Geographic precision scores (additive bonus)
 PRECISION_SCORES = {
-    'address': 15,              # Exact address match
-    'subdivision': 12,          # Subdivision/neighborhood match
-    'special_district': 12,     # Within special district boundary
-    'zip5': 8,                  # 5-digit ZIP match
-    'zip3': 4,                  # 3-digit ZIP prefix match
-    'county': 2,                # County-level only
+    'address': 10,              # Exact address match
+    'subdivision': 8,           # Subdivision/neighborhood match
+    'special_district': 8,      # Within special district boundary
+    'zip5': 5,                  # 5-digit ZIP match
+    'zip3': 3,                  # 3-digit ZIP prefix match
+    'county': 1,                # County-level only
     'state': 0                  # State-level only
 }
 
@@ -129,7 +132,9 @@ def calculate_confidence(
             })
     
     # === PROBLEM AREA PENALTY ===
-    if is_problem_area:
+    # Don't penalize high-confidence sources (municipal utilities, user confirmed, etc.)
+    high_confidence_sources = {'user_confirmed', 'user_feedback', 'municipal_utility', 'utility_api', 'verified'}
+    if is_problem_area and source not in high_confidence_sources:
         score -= 15
         factors.append({
             'category': 'Known Issues',
@@ -225,31 +230,57 @@ def source_to_score_key(source_string: str) -> str:
     
     # Map common source strings to score keys
     mappings = {
-        'google_serp': 'google_serp',
-        'serp': 'google_serp',
-        'supplemental': 'supplemental',
-        'epa': 'epa_sdwis',
-        'epa_sdwis': 'epa_sdwis',
-        'eia': 'eia_861',
-        'eia_861': 'eia_861',
-        'hifld': 'hifld_polygon',
-        'zip override': 'zip_override',
-        'zip_override': 'zip_override',
+        # Municipal utilities - highest confidence
+        'municipal_utility': 'municipal_utility',
+        'municipal utility': 'municipal_utility',
+        'municipal_utility_database': 'municipal_utility',
+        'municipal utility database': 'municipal_utility',
+        
+        # Verified state-specific data
+        'verified': 'verified',
+        'texas railroad commission': 'verified',
+        'railroad commission': 'verified',
+        'state puc': 'state_puc',
+        
+        # User feedback
         'user feedback': 'user_feedback',
         'user_feedback': 'user_feedback',
         'user confirmed': 'user_confirmed',
-        'texas gas zip override': 'zip_override',
-        'texas railroad commission': 'railroad_commission',
-        'state ldc': 'state_ldc_mapping',
-        'county': 'county_match',
-        'heuristic': 'heuristic',
-        'fcc': 'utility_api',
-        'fcc broadband': 'utility_api',
+        'user_confirmed': 'user_confirmed',
+        
+        # Special districts
         'special_district': 'special_district',
         'special district': 'special_district',
         'mud': 'special_district',
         'wcid': 'special_district',
         'fwsd': 'special_district',
+        'cdd': 'special_district',
+        
+        # ZIP overrides
+        'zip override': 'zip_override',
+        'zip_override': 'zip_override',
+        'texas gas zip override': 'zip_override',
+        
+        # Federal/state data
+        'eia': 'eia_861',
+        'eia_861': 'eia_861',
+        'epa': 'epa_sdwis',
+        'epa_sdwis': 'epa_sdwis',
+        'supplemental': 'supplemental',
+        
+        # SERP
+        'google_serp': 'google_serp',
+        'serp': 'google_serp',
+        
+        # HIFLD
+        'hifld': 'hifld_polygon',
+        
+        # Other
+        'state ldc': 'state_ldc_mapping',
+        'county': 'county_match',
+        'heuristic': 'heuristic',
+        'fcc': 'utility_api',
+        'fcc broadband': 'utility_api',
     }
     
     for key, value in mappings.items():

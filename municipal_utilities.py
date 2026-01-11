@@ -112,7 +112,7 @@ def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None) -> 
 
 
 def lookup_municipal_water(state: str, city: str = None, zip_code: str = None) -> Optional[Dict]:
-    """Check if city has municipal water utility (LADWP, MLGW, etc.)."""
+    """Check if city has municipal water utility (LADWP, MLGW, Austin Water, etc.)."""
     data = load_municipal_data()
     
     # Check electric utilities that also provide water
@@ -125,10 +125,15 @@ def lookup_municipal_water(state: str, city: str = None, zip_code: str = None) -
         
         # Check ZIP
         if zip_code and zip_code in utility.get('zip_codes', []):
+            # Use separate water provider info if available (e.g., Austin Water vs Austin Energy)
+            water_name = utility.get('water_provider', utility['name'])
+            water_phone = utility.get('water_phone', utility.get('phone'))
+            water_website = utility.get('water_website', utility.get('website'))
+            
             return {
-                'name': utility['name'],
-                'phone': utility.get('phone'),
-                'website': utility.get('website'),
+                'name': water_name,
+                'phone': water_phone,
+                'website': water_website,
                 'city': city_name,
                 'source': 'municipal_utility',
                 'confidence': 'high'
@@ -136,10 +141,14 @@ def lookup_municipal_water(state: str, city: str = None, zip_code: str = None) -
         
         # Check city name
         if city and city_name.upper() in city.upper():
+            water_name = utility.get('water_provider', utility['name'])
+            water_phone = utility.get('water_phone', utility.get('phone'))
+            water_website = utility.get('water_website', utility.get('website'))
+            
             return {
-                'name': utility['name'],
-                'phone': utility.get('phone'),
-                'website': utility.get('website'),
+                'name': water_name,
+                'phone': water_phone,
+                'website': water_website,
                 'city': city_name,
                 'source': 'municipal_utility',
                 'confidence': 'medium'

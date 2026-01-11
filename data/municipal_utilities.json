@@ -11,7 +11,11 @@
         "phone": "512-494-9400",
         "website": "https://austinenergy.com",
         "zip_codes": ["78701", "78702", "78703", "78704", "78705", "78712", "78717", "78719", "78721", "78722", "78723", "78724", "78725", "78726", "78727", "78728", "78729", "78730", "78731", "78732", "78733", "78734", "78735", "78736", "78737", "78738", "78739", "78741", "78742", "78744", "78745", "78746", "78747", "78748", "78749", "78750", "78751", "78752", "78753", "78754", "78756", "78757", "78758", "78759"],
-        "note": "Serves City of Austin and some ETJ areas"
+        "services": ["electric", "water"],
+        "water_provider": "Austin Water",
+        "water_phone": "512-972-0000",
+        "water_website": "https://www.austintexas.gov/department/austin-water",
+        "note": "Austin Energy for electric, Austin Water for water/wastewater"
       },
       "San Antonio": {
         "name": "CPS Energy",

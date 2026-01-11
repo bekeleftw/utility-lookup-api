@@ -1598,13 +1598,39 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             gas_no_service = gas_verification.get("no_service_note")
     
     # Step 4: Water lookup - only if selected
-    # For water, we use SERP as primary source when verify_with_serp=True
-    # because EPA SDWIS data has many gaps (missing cities like Kyle, TX)
+    # Priority: Municipal utilities > Special districts > SERP > EPA SDWIS
     if 'water' in selected_utilities:
         water = None
         
-        if verify_with_serp:
-            # SERP-first approach for water - Google is more reliable than EPA for many cities
+        # PRIORITY 1: Check municipal water utilities (LADWP, MLGW, etc.)
+        municipal_water = lookup_municipal_water(state, city, zip_code)
+        if municipal_water:
+            water = {
+                "name": municipal_water['name'],
+                "id": None,
+                "state": state,
+                "phone": municipal_water.get('phone'),
+                "address": None,
+                "city": municipal_water.get('city', city),
+                "zip": zip_code,
+                "population_served": None,
+                "source_type": None,
+                "owner_type": "Municipal",
+                "service_connections": None,
+                "_confidence": municipal_water['confidence'],
+                "_source": "municipal_utility",
+                "_note": f"Municipal utility providing water service"
+            }
+        
+        # PRIORITY 2: Check special districts (MUDs, CDDs)
+        if not water:
+            district = lookup_special_district(lat, lon, state, zip_code, 'water')
+            if district:
+                water = format_district_for_response(district)
+                water['_source'] = 'special_district'
+        
+        # PRIORITY 3: SERP verification (if enabled)
+        if not water and verify_with_serp:
             print(f"Looking up water provider via Google search...")
             serp_result = verify_utility_with_serp(address, "water", None)
             if serp_result and serp_result.get("serp_provider"):
@@ -1612,7 +1638,6 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 serp_confidence = serp_result.get("confidence", "medium")
                 print(f"  SERP found: {serp_provider} (confidence: {serp_confidence})")
                 
-                # Create water result from SERP
                 water = {
                     "name": serp_provider,
                     "id": None,
@@ -1631,7 +1656,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     "_note": serp_result.get("notes", "Found via Google search")
                 }
         
-        # Fall back to EPA/supplemental data if SERP didn't find anything
+        # PRIORITY 4: Fall back to EPA/supplemental data
         if not water:
             water = lookup_water_utility(city, county, state, full_address=address,
                                         lat=lat, lon=lon, zip_code=zip_code)
@@ -1814,7 +1839,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     
     # Add confidence score to gas result
     if primary_gas:
-        gas_source = primary_gas.get('_source', 'hifld')
+        # Use _verification_source first, then _source, then default to hifld
+        gas_source = primary_gas.get('_verification_source') or primary_gas.get('_source', 'hifld')
         gas_confidence = calculate_confidence(
             source=source_to_score_key(gas_source),
             match_level='zip5',

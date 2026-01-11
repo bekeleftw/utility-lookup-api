@@ -687,7 +687,7 @@ TEXAS_GAS_LDCS = {
     }
 }
 
-# Texas ZIP prefix to gas LDC mapping
+# Texas ZIP prefix to gas LDC mapping (default by 3-digit prefix)
 TEXAS_GAS_ZIP_PREFIX = {
     # Dallas/Fort Worth area - Atmos Energy
     "750": "ATMOS", "751": "ATMOS", "752": "ATMOS", "753": "ATMOS",
@@ -706,11 +706,41 @@ TEXAS_GAS_ZIP_PREFIX = {
     "776": "CENTERPOINT", "777": "CENTERPOINT", "778": "CENTERPOINT",
     "779": "CENTERPOINT",
     
-    # Austin area - Texas Gas Service
+    # Austin area - Texas Gas Service (default for 786-789)
     "786": "TEXAS_GAS_SERVICE", "787": "TEXAS_GAS_SERVICE",
     "788": "TEXAS_GAS_SERVICE", "789": "TEXAS_GAS_SERVICE",
     # El Paso - Texas Gas Service
     "798": "TEXAS_GAS_SERVICE", "799": "TEXAS_GAS_SERVICE",
+}
+
+# Full 5-digit ZIP overrides for areas where prefix mapping is wrong
+# These take precedence over the 3-digit prefix mapping
+TEXAS_GAS_ZIP_OVERRIDES = {
+    # Hays County - Kyle, Buda, San Marcos area is CenterPoint, not Texas Gas Service
+    # The 786xx prefix defaults to Texas Gas Service (Austin) but southern Hays County is CenterPoint
+    "78640": "CENTERPOINT",  # Kyle
+    "78610": "CENTERPOINT",  # Buda
+    "78666": "CENTERPOINT",  # San Marcos
+    "78676": "CENTERPOINT",  # Wimberley
+    "78620": "CENTERPOINT",  # Dripping Springs (verify)
+}
+
+# =============================================================================
+# GENERAL GAS ZIP OVERRIDES (ALL STATES)
+# =============================================================================
+# Use this for any ZIP where HIFLD/database data is wrong
+# Format: "ZIP": {"name": "Provider Name", "phone": "...", "note": "reason"}
+
+GAS_ZIP_OVERRIDES = {
+    # Texas - Hays County (CenterPoint, not Texas Gas Service)
+    "78640": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "Kyle - user verified"},
+    "78610": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "Buda"},
+    "78666": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "San Marcos"},
+    "78676": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "Wimberley"},
+    "78620": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "Dripping Springs"},
+    
+    # Add other states as issues are discovered
+    # "28202": {"state": "NC", "name": "Piedmont Natural Gas", "phone": "...", "note": "Charlotte"},
 }
 
 # Major gas LDCs by state (for verification)
@@ -774,8 +804,28 @@ LIMITED_GAS_STATES = ["FL", "HI", "VT", "ME"]
 
 def get_texas_gas_ldc(zip_code: str, city: str = None) -> Dict:
     """Get the gas LDC for a Texas ZIP code."""
+    zip_code = str(zip_code).strip()[:5]  # Normalize to 5 digits
     zip_prefix = zip_code[:3] if len(zip_code) >= 3 else None
     
+    # FIRST: Check 5-digit ZIP overrides (for areas where prefix mapping is wrong)
+    if zip_code in TEXAS_GAS_ZIP_OVERRIDES:
+        ldc_key = TEXAS_GAS_ZIP_OVERRIDES[zip_code]
+        ldc = TEXAS_GAS_LDCS.get(ldc_key)
+        
+        if ldc:
+            return {
+                "primary": {
+                    "name": ldc["name"],
+                    "phone": ldc["phone"],
+                    "website": ldc["website"],
+                },
+                "confidence": "verified",
+                "source": "Texas gas ZIP override (user-verified)",
+                "selection_reason": f"ZIP {zip_code} is in {ldc['name']} territory (verified override).",
+                "alternatives": []
+            }
+    
+    # SECOND: Check 3-digit prefix mapping
     if zip_prefix and zip_prefix in TEXAS_GAS_ZIP_PREFIX:
         ldc_key = TEXAS_GAS_ZIP_PREFIX[zip_prefix]
         ldc = TEXAS_GAS_LDCS.get(ldc_key)
@@ -824,6 +874,25 @@ def verify_gas_provider(
         Dict with primary provider, confidence, source, alternatives, selection_reason
     """
     state = (state or "").upper()
+    zip_code = str(zip_code).strip()[:5] if zip_code else ""
+    
+    # FIRST: Check general ZIP override table (works for any state)
+    if zip_code in GAS_ZIP_OVERRIDES:
+        override = GAS_ZIP_OVERRIDES[zip_code]
+        # Verify state matches (safety check)
+        if override.get("state", "").upper() == state:
+            return {
+                "primary": {
+                    "NAME": override["name"],
+                    "TELEPHONE": override.get("phone"),
+                    "STATE": state,
+                    "TYPE": "LDC",
+                },
+                "confidence": "verified",
+                "source": "ZIP override (user-verified)",
+                "selection_reason": f"ZIP {zip_code} verified: {override['name']}. {override.get('note', '')}",
+                "alternatives": candidates  # Keep HIFLD candidates as alternatives
+            }
     
     # Check if no candidates from HIFLD
     if not candidates:

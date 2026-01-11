@@ -1677,8 +1677,19 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         else:
             gas_result = primary_gas
     
-    # Calculate confidence scores for each utility
-    is_problem = check_problem_area(state=state, zip_code=zip_code, county=county) is not None
+    # Check if this is a problem area for any utility type
+    is_problem_electric = False
+    is_problem_gas = False
+    is_problem_water = False
+    try:
+        problem_check = check_problem_area(zip_code=zip_code, county=county, state=state, utility_type='electric')
+        is_problem_electric = problem_check.get('is_problem_area', False) if problem_check else False
+        problem_check = check_problem_area(zip_code=zip_code, county=county, state=state, utility_type='gas')
+        is_problem_gas = problem_check.get('is_problem_area', False) if problem_check else False
+        problem_check = check_problem_area(zip_code=zip_code, county=county, state=state, utility_type='water')
+        is_problem_water = problem_check.get('is_problem_area', False) if problem_check else False
+    except Exception:
+        pass  # Don't fail lookup if problem area check fails
     
     # Add confidence score to water result
     if water:
@@ -1690,7 +1701,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         water_confidence = calculate_confidence(
             source=source_to_score_key(water_source),
             match_level=water_match,
-            is_problem_area=is_problem,
+            is_problem_area=is_problem_water,
             utility_type='water'
         )
         water['confidence_score'] = water_confidence['score']
@@ -1705,7 +1716,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         elec_confidence = calculate_confidence(
             source=source_to_score_key(elec_source),
             match_level='zip5',
-            is_problem_area=is_problem,
+            is_problem_area=is_problem_electric,
             utility_type='electric'
         )
         primary_electric['confidence_score'] = elec_confidence['score']
@@ -1720,7 +1731,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         gas_confidence = calculate_confidence(
             source=source_to_score_key(gas_source),
             match_level='zip5',
-            is_problem_area=is_problem,
+            is_problem_area=is_problem_gas,
             utility_type='gas'
         )
         primary_gas['confidence_score'] = gas_confidence['score']

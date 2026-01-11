@@ -331,7 +331,9 @@ def match_hifld_to_texas_tdu(candidates: List[Dict], zip_code: str, city: str = 
     
     For deregulated areas (TDU territories), the TDU is the distribution utility.
     HIFLD candidates may show retail providers or overlapping territories.
-    We prioritize the authoritative TDU data.
+    
+    IMPORTANT: Electric cooperatives (co-ops) are NOT in the deregulated market.
+    If HIFLD returns a co-op, we should use that instead of the TDU mapping.
     
     Args:
         candidates: List of utility dicts from HIFLD
@@ -341,7 +343,31 @@ def match_hifld_to_texas_tdu(candidates: List[Dict], zip_code: str, city: str = 
     Returns:
         Verified result with primary provider and alternatives
     """
-    # First get the authoritative TDU for this location
+    # FIRST: Check if HIFLD returns an electric cooperative
+    # Co-ops are NOT in the deregulated market and should take priority over TDU mapping
+    coop_candidate = None
+    coop_keywords = ["COOP", "CO-OP", "COOPERATIVE", "ELECTRIC COOP", "RURAL ELECTRIC"]
+    
+    for candidate in candidates:
+        candidate_name = (candidate.get("NAME") or "").upper()
+        if any(kw in candidate_name for kw in coop_keywords):
+            coop_candidate = candidate
+            break
+    
+    if coop_candidate:
+        # This area is served by a cooperative - NOT deregulated
+        coop_name = coop_candidate.get("NAME", "Electric Cooperative")
+        other_candidates = [c for c in candidates if c != coop_candidate]
+        return {
+            "primary": coop_candidate,
+            "confidence": "verified",
+            "source": "HIFLD Electric Cooperative Territory",
+            "selection_reason": f"This address is served by {coop_name}, an electric cooperative not in the deregulated ERCOT market.",
+            "is_deregulated": False,
+            "alternatives": other_candidates
+        }
+    
+    # No co-op found - check TDU/municipal mapping
     tdu_result = get_texas_tdu(zip_code, city)
     
     if tdu_result["primary"]:

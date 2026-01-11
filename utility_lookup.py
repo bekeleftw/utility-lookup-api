@@ -452,22 +452,73 @@ def save_water_cache(cache: Dict) -> None:
         print(f"Warning: Could not save water cache: {e}")
 
 
+WATER_SUPPLEMENTAL_FILE = Path(__file__).parent / "water_utilities_supplemental.json"
+
 def lookup_water_utility(city: str, county: str, state: str, full_address: str = None) -> Optional[Dict]:
     """
     Look up water utility using local SDWA data (fast) or fallback to heuristic.
+    
+    Priority order:
+    1. Supplemental file (manually curated for cities missing from EPA)
+    2. EPA SDWA data (by city)
+    3. EPA SDWA data (by county)
+    4. Heuristic fallback
     """
     if not state:
         return None
     
-    # Try local SDWA lookup first (built from build_water_lookup.py)
+    # Try to extract city from full address if provided (more reliable than geocoder city)
+    address_city = None
+    if full_address:
+        # Try to extract city from address like "301 Treasure Trove Path, Kyle, TX 78640"
+        import re
+        # Pattern: city name before state abbreviation
+        match = re.search(r',\s*([A-Za-z\s]+),\s*[A-Z]{2}\s*\d{5}', full_address)
+        if match:
+            address_city = match.group(1).strip().upper()
+    
+    # Build list of city variants to try
+    city_variants = []
+    if address_city:
+        city_variants.append(address_city)
+    if city:
+        city_upper = city.upper()
+        if city_upper not in city_variants:
+            city_variants.append(city_upper)
+        if '-' in city_upper:
+            for part in city_upper.split('-'):
+                if part.strip() not in city_variants:
+                    city_variants.append(part.strip())
+    
+    # FIRST: Check supplemental file for cities missing from EPA
+    if WATER_SUPPLEMENTAL_FILE.exists():
+        try:
+            with open(WATER_SUPPLEMENTAL_FILE, 'r') as f:
+                supplemental = json.load(f)
+            
+            for city_variant in city_variants:
+                city_key = f"{state}|{city_variant}"
+                if city_key in supplemental.get('by_city', {}):
+                    result = supplemental['by_city'][city_key].copy()
+                    result['_confidence'] = result.get('_confidence', 'high')
+                    result['_source'] = 'supplemental'
+                    return result
+        except (json.JSONDecodeError, IOError):
+            pass
+    
+    # SECOND: Try EPA SDWA lookup
     if WATER_LOOKUP_FILE.exists():
         try:
             with open(WATER_LOOKUP_FILE, 'r') as f:
                 lookup_data = json.load(f)
             
-            # Try city lookup first
-            if city:
-                city_key = f"{state}|{city.upper()}"
+            # Also try without common suffixes
+            for variant in city_variants[:]:
+                if variant.endswith(' CITY'):
+                    city_variants.append(variant[:-5])
+            
+            for city_variant in city_variants:
+                city_key = f"{state}|{city_variant.strip()}"
                 if city_key in lookup_data.get('by_city', {}):
                     result = lookup_data['by_city'][city_key].copy()
                     result['_confidence'] = 'high'

@@ -1,0 +1,55 @@
+{
+  "_description": "Supplemental water utility data for cities missing from EPA SDWIS database",
+  "_last_updated": "2026-01-11",
+  "_source": "Manual research from city websites",
+  "by_city": {
+    "TX|KYLE": {
+      "name": "CITY OF KYLE",
+      "id": "MANUAL-TX-KYLE",
+      "state": "TX",
+      "phone": "512-262-3939",
+      "website": "https://www.cityofkyle.com/publicworks/water-utilities",
+      "address": "100 W Center St",
+      "city": "KYLE",
+      "zip": "78640",
+      "population_served": 55000,
+      "source_type": "GW",
+      "owner_type": "M",
+      "service_connections": null,
+      "_confidence": "high",
+      "_source": "City of Kyle website"
+    },
+    "TX|DRIPPING SPRINGS": {
+      "name": "CITY OF DRIPPING SPRINGS",
+      "id": "MANUAL-TX-DRIPPING-SPRINGS",
+      "state": "TX",
+      "phone": "512-858-4725",
+      "website": "https://www.cityofdrippingsprings.com",
+      "address": "511 Mercer St",
+      "city": "DRIPPING SPRINGS",
+      "zip": "78620",
+      "population_served": 6000,
+      "source_type": "GW",
+      "owner_type": "M",
+      "service_connections": null,
+      "_confidence": "high",
+      "_source": "City website"
+    },
+    "TX|WIMBERLEY": {
+      "name": "WIMBERLEY WATER SUPPLY CORPORATION",
+      "id": "MANUAL-TX-WIMBERLEY",
+      "state": "TX",
+      "phone": "512-847-9597",
+      "website": "https://www.wimberleywsc.com",
+      "address": "405 FM 2325",
+      "city": "WIMBERLEY",
+      "zip": "78676",
+      "population_served": 3000,
+      "source_type": "GW",
+      "owner_type": "C",
+      "service_connections": null,
+      "_confidence": "high",
+      "_source": "WSC website"
+    }
+  }
+}

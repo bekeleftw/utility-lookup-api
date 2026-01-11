@@ -225,8 +225,26 @@ def lookup_special_district(
             district['_confidence'] = 'medium'
             return district
         elif len(districts) > 1:
-            # Multiple districts in this ZIP - return as candidates
-            # Let caller handle disambiguation
+            # Multiple districts in this ZIP - try to disambiguate with coordinates
+            if lat and lon and SHAPELY_AVAILABLE:
+                from shapely.geometry import Point, shape
+                point = Point(lon, lat)
+                
+                for d in districts:
+                    boundary = d.get('boundary', {})
+                    if boundary.get('type') == 'polygon' and boundary.get('data'):
+                        try:
+                            polygon = shape(boundary['data'])
+                            if polygon.contains(point):
+                                # Found the specific district containing the point
+                                district = d.copy()
+                                district['match_method'] = 'zip_with_coordinates'
+                                district['_confidence'] = 'high'
+                                return district
+                        except Exception:
+                            continue
+            
+            # Could not disambiguate - return as candidates
             return {
                 'multiple_matches': True,
                 'candidates': districts,

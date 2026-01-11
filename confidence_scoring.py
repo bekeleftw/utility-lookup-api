@@ -245,6 +245,11 @@ def source_to_score_key(source_string: str) -> str:
         'heuristic': 'heuristic',
         'fcc': 'utility_api',
         'fcc broadband': 'utility_api',
+        'special_district': 'special_district',
+        'special district': 'special_district',
+        'mud': 'special_district',
+        'wcid': 'special_district',
+        'fwsd': 'special_district',
     }
     
     for key, value in mappings.items():

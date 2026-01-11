@@ -27,8 +27,9 @@ from urllib.parse import quote
 from bs4 import BeautifulSoup
 
 # Import state-specific utility verification
-from state_utility_verification import verify_electric_provider, verify_gas_provider
+from state_utility_verification import verify_electric_provider, verify_gas_provider, check_problem_area
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
+from confidence_scoring import calculate_confidence, source_to_score_key
 
 # Try to load dotenv for API keys
 try:
@@ -566,6 +567,19 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
             # Add standard fields expected by the rest of the system
             formatted['state'] = state
             formatted['city'] = city
+            # Add confidence scoring
+            match_method = special_result.get('match_method', 'zip')
+            match_level = 'address' if match_method in ['coordinates', 'zip_with_coordinates'] else 'special_district'
+            confidence_data = calculate_confidence(
+                source='special_district',
+                match_level=match_level,
+                utility_type='water'
+            )
+            formatted['confidence_score'] = confidence_data['score']
+            formatted['confidence_factors'] = [
+                f"{f['points']:+d}: {f['description']}" 
+                for f in confidence_data['factors']
+            ]
             return formatted
     
     # Try to extract city from full address if provided (more reliable than geocoder city)
@@ -1662,6 +1676,58 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             gas_result = [primary_gas] + other_gas
         else:
             gas_result = primary_gas
+    
+    # Calculate confidence scores for each utility
+    is_problem = check_problem_area(state=state, zip_code=zip_code, county=county) is not None
+    
+    # Add confidence score to water result
+    if water:
+        water_source = water.get('_source', 'unknown')
+        water_match = 'special_district' if water_source == 'special_district' else 'zip5'
+        if water.get('_match_method') == 'coordinates':
+            water_match = 'address'
+        
+        water_confidence = calculate_confidence(
+            source=source_to_score_key(water_source),
+            match_level=water_match,
+            is_problem_area=is_problem,
+            utility_type='water'
+        )
+        water['confidence_score'] = water_confidence['score']
+        water['confidence_factors'] = [
+            f"{f['points']:+d}: {f['description']}" 
+            for f in water_confidence['factors']
+        ]
+    
+    # Add confidence score to electric result
+    if primary_electric:
+        elec_source = primary_electric.get('_verification_source', 'hifld')
+        elec_confidence = calculate_confidence(
+            source=source_to_score_key(elec_source),
+            match_level='zip5',
+            is_problem_area=is_problem,
+            utility_type='electric'
+        )
+        primary_electric['confidence_score'] = elec_confidence['score']
+        primary_electric['confidence_factors'] = [
+            f"{f['points']:+d}: {f['description']}" 
+            for f in elec_confidence['factors']
+        ]
+    
+    # Add confidence score to gas result
+    if primary_gas:
+        gas_source = primary_gas.get('_source', 'hifld')
+        gas_confidence = calculate_confidence(
+            source=source_to_score_key(gas_source),
+            match_level='zip5',
+            is_problem_area=is_problem,
+            utility_type='gas'
+        )
+        primary_gas['confidence_score'] = gas_confidence['score']
+        primary_gas['confidence_factors'] = [
+            f"{f['points']:+d}: {f['description']}" 
+            for f in gas_confidence['factors']
+        ]
     
     result = {
         "electric": electric_result,

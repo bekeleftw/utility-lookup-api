@@ -17,10 +17,12 @@ def lookup():
     if request.method == 'POST':
         data = request.get_json()
         address = data.get('address')
-        verify = data.get('verify', False)
+        # SERP verification is now enabled by default
+        verify = data.get('verify', True)
     else:
         address = request.args.get('address')
-        verify = request.args.get('verify', 'false').lower() == 'true'
+        # SERP verification is now enabled by default (pass verify=false to disable)
+        verify = request.args.get('verify', 'true').lower() != 'false'
     
     if not address:
         return jsonify({'error': 'Address is required'}), 400

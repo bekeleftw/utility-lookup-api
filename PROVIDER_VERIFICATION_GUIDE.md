@@ -10,17 +10,27 @@ The Utility Profit lookup system identifies and verifies utility providers for a
 
 | Utility Type | Data Source | Cost per Lookup | Notes |
 |-------------|-------------|-----------------|-------|
-| **Electric** | HIFLD + EIA + State data | **$0** | All free government APIs |
-| **Gas** | HIFLD + State LDC database | **$0** | All free government APIs |
+| **Electric** | HIFLD + EIA + State data | **$0** | Free government APIs |
+| **Gas** | HIFLD + State LDC database | **$0** | Free government APIs |
 | **Water** | EPA SDWIS | **$0** | Free government API |
-| **Internet** | FCC Broadband Map | **$0** | Free, but slow (~10s/lookup) |
+| **Internet** | FCC Broadband Map (via BrightData) | **~$0.01** | Uses BrightData proxy |
 | **Geocoding** | Census Geocoder | **$0** | Free government API |
+| **SERP Verification** | Google Search (via BrightData) | **~$0.01** | Optional, verifies providers |
 
-### Total Cost: **$0 per lookup**
+### Total Cost: **~$0.01-0.02 per lookup** (with internet + SERP verification)
 
-All data sources are free government APIs. The only costs are:
+**Cost Breakdown:**
 - **Server hosting** (Railway): ~$5-20/month depending on usage
-- **Optional SERP verification** (if enabled): ~$0.01/lookup via BrightData proxy
+- **BrightData proxy** (for FCC scraping): ~$0.01 per request
+- **BrightData SERP** (for Google verification): ~$0.01 per search (optional)
+
+### BrightData Usage
+
+We use BrightData for two purposes:
+
+1. **FCC Broadband Map Scraping** - The FCC site has strong anti-bot detection. We use BrightData's proxy/unlocker to successfully scrape internet provider data.
+
+2. **SERP Verification (Enabled by Default)** - For every lookup, we perform a Google search like "electric utility provider for [address]" and use GPT-4o-mini to analyze the results and confirm our database match is correct. Pass `verify=false` to disable.
 
 ---
 

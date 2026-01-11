@@ -799,7 +799,7 @@ def verify_gas_provider(
     """
     state = (state or "").upper()
     
-    # Check if no candidates - likely no gas service
+    # Check if no candidates from HIFLD
     if not candidates:
         if state in LIMITED_GAS_STATES:
             return {
@@ -810,6 +810,24 @@ def verify_gas_provider(
                 "no_service_note": "No natural gas service - area likely uses propane or heating oil",
                 "alternatives": []
             }
+        
+        # Try to use state LDC database as fallback when HIFLD has no data
+        state_ldcs = STATE_GAS_LDCS.get(state, [])
+        if state_ldcs:
+            # Return the primary LDC for the state with medium confidence
+            primary_ldc = state_ldcs[0]
+            return {
+                "primary": {
+                    "NAME": primary_ldc,
+                    "STATE": state,
+                    "TYPE": "LDC",
+                },
+                "confidence": "medium",
+                "source": "State LDC database (HIFLD gap)",
+                "selection_reason": f"HIFLD data unavailable for this location. {primary_ldc} is the primary gas provider in {state}. Verify with provider.",
+                "alternatives": []
+            }
+        
         return {
             "primary": None,
             "confidence": "none",

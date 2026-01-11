@@ -84,22 +84,50 @@ def lookup():
             if verification_source:
                 response['utilities']['electric_source'] = verification_source
         
-        # Gas
+        # Gas - now verified with state-specific data
         gas = result.get('gas')
+        gas_no_service = result.get('gas_no_service')
+        
         if gas:
             if isinstance(gas, list):
                 response['utilities']['gas'] = [format_utility(g, 'gas') for g in gas]
-                if len(gas) > 1:
-                    names = [g.get('NAME', 'Unknown') for g in gas]
-                    response['utilities']['gas_note'] = f"Multiple overlapping service territories found: {', '.join(names)}. The actual provider depends on exact location."
+                primary = gas[0]
             else:
                 response['utilities']['gas'] = [format_utility(gas, 'gas')]
-                # Add notes for gas confidence issues
-                g = gas
-                if g.get('_source') == 'serp':
-                    response['utilities']['gas_note'] = f"Found via web search (not in database). {g.get('_notes', '')}"
-                elif g.get('_confidence') == 'medium' or not g.get('_serp_verified'):
-                    response['utilities']['gas_note'] = "Gas data may be less accurate in some areas. Verify with the provider."
+                primary = gas
+            
+            # Build gas note with verification info
+            primary_name = primary.get('NAME', 'Unknown')
+            confidence = primary.get('_confidence', 'medium')
+            selection_reason = primary.get('_selection_reason', '')
+            verification_source = primary.get('_verification_source', '')
+            
+            # Get alternative names
+            others = gas[1:] if isinstance(gas, list) and len(gas) > 1 else []
+            other_names = [g.get('NAME', 'Unknown') for g in others]
+            
+            if confidence == 'verified':
+                note = f"✓ Verified: {primary_name}."
+                if selection_reason:
+                    note += f" {selection_reason}"
+            elif confidence == 'high':
+                note = f"{primary_name} (high confidence)."
+                if selection_reason:
+                    note += f" {selection_reason}"
+            else:
+                note = f"Most likely: {primary_name}."
+                if selection_reason:
+                    note += f" {selection_reason}"
+            
+            if other_names:
+                note += f" Other providers in area: {', '.join(other_names)}."
+            
+            response['utilities']['gas_note'] = note
+            response['utilities']['gas_confidence'] = confidence
+            if verification_source:
+                response['utilities']['gas_source'] = verification_source
+        elif gas_no_service:
+            response['utilities']['gas_note'] = gas_no_service
         else:
             response['utilities']['gas_note'] = "No piped natural gas provider found. This area may use propane or have no gas service."
         

@@ -636,6 +636,303 @@ def rank_candidates_generic(candidates: List[Dict], city: str = None, county: st
 
 
 # =============================================================================
+# GAS UTILITY VERIFICATION
+# =============================================================================
+
+# Texas Gas LDCs - ZIP prefix mapping
+TEXAS_GAS_LDCS = {
+    "ATMOS": {
+        "name": "Atmos Energy",
+        "phone": "1-888-286-6700",
+        "website": "https://www.atmosenergy.com",
+        "service_area": "Dallas/Fort Worth, West Texas, North Texas"
+    },
+    "CENTERPOINT": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": "https://www.centerpointenergy.com",
+        "service_area": "Houston metropolitan area"
+    },
+    "TEXAS_GAS_SERVICE": {
+        "name": "Texas Gas Service",
+        "phone": "1-800-700-2443",
+        "website": "https://www.texasgasservice.com",
+        "service_area": "Austin, Central Texas, El Paso"
+    }
+}
+
+# Texas ZIP prefix to gas LDC mapping
+TEXAS_GAS_ZIP_PREFIX = {
+    # Dallas/Fort Worth area - Atmos Energy
+    "750": "ATMOS", "751": "ATMOS", "752": "ATMOS", "753": "ATMOS",
+    "754": "ATMOS", "755": "ATMOS", "760": "ATMOS", "761": "ATMOS",
+    "762": "ATMOS", "763": "ATMOS", "764": "ATMOS", "765": "ATMOS",
+    "766": "ATMOS", "767": "ATMOS", "768": "ATMOS", "769": "ATMOS",
+    # Waco area - Atmos
+    "766": "ATMOS", "767": "ATMOS",
+    # Amarillo/Lubbock - Atmos
+    "790": "ATMOS", "791": "ATMOS", "792": "ATMOS", "793": "ATMOS",
+    "794": "ATMOS", "795": "ATMOS", "796": "ATMOS",
+    
+    # Houston area - CenterPoint
+    "770": "CENTERPOINT", "771": "CENTERPOINT", "772": "CENTERPOINT",
+    "773": "CENTERPOINT", "774": "CENTERPOINT", "775": "CENTERPOINT",
+    "776": "CENTERPOINT", "777": "CENTERPOINT", "778": "CENTERPOINT",
+    "779": "CENTERPOINT",
+    
+    # Austin area - Texas Gas Service
+    "786": "TEXAS_GAS_SERVICE", "787": "TEXAS_GAS_SERVICE",
+    "788": "TEXAS_GAS_SERVICE", "789": "TEXAS_GAS_SERVICE",
+    # El Paso - Texas Gas Service
+    "798": "TEXAS_GAS_SERVICE", "799": "TEXAS_GAS_SERVICE",
+}
+
+# Major gas LDCs by state (for verification)
+STATE_GAS_LDCS = {
+    "AL": ["Spire Alabama", "Alagasco"],
+    "AK": ["ENSTAR Natural Gas", "Alaska Pipeline"],
+    "AZ": ["Southwest Gas", "UNS Gas"],
+    "AR": ["CenterPoint Energy", "Black Hills Energy", "Arkansas Oklahoma Gas"],
+    "CA": ["Pacific Gas & Electric", "SoCalGas", "San Diego Gas & Electric"],
+    "CO": ["Xcel Energy", "Black Hills Energy", "Atmos Energy"],
+    "CT": ["Eversource", "Southern Connecticut Gas", "Connecticut Natural Gas"],
+    "DE": ["Chesapeake Utilities", "Delmarva Power"],
+    "FL": ["TECO Peoples Gas", "Florida City Gas", "Florida Public Utilities"],
+    "GA": ["Atlanta Gas Light", "Liberty Utilities"],
+    "HI": ["Hawaii Gas", "The Gas Company"],
+    "ID": ["Intermountain Gas", "Avista"],
+    "IL": ["Nicor Gas", "Peoples Gas", "Ameren Illinois", "MidAmerican Energy"],
+    "IN": ["CenterPoint Energy", "Vectren", "NIPSCO"],
+    "IA": ["MidAmerican Energy", "Black Hills Energy", "Alliant Energy"],
+    "KS": ["Kansas Gas Service", "Black Hills Energy", "Atmos Energy"],
+    "KY": ["LG&E", "Duke Energy Kentucky", "Columbia Gas", "Atmos Energy"],
+    "LA": ["Atmos Energy", "CenterPoint Energy", "Entergy"],
+    "ME": ["Summit Natural Gas", "Bangor Gas", "Maine Natural Gas"],
+    "MD": ["BGE", "Washington Gas", "Columbia Gas"],
+    "MA": ["National Grid", "Eversource", "Columbia Gas", "Liberty Utilities"],
+    "MI": ["DTE Gas", "Consumers Energy", "SEMCO Energy"],
+    "MN": ["CenterPoint Energy", "Xcel Energy", "Minnesota Energy Resources"],
+    "MS": ["Spire Mississippi", "Atmos Energy"],
+    "MO": ["Spire Missouri", "Ameren Missouri", "Liberty Utilities"],
+    "MT": ["NorthWestern Energy", "Montana-Dakota Utilities"],
+    "NE": ["Black Hills Energy", "Metropolitan Utilities District", "NorthWestern Energy"],
+    "NV": ["Southwest Gas", "NV Energy"],
+    "NH": ["Liberty Utilities", "Northern Utilities"],
+    "NJ": ["PSE&G", "New Jersey Natural Gas", "South Jersey Industries", "Elizabethtown Gas"],
+    "NM": ["New Mexico Gas Company", "Xcel Energy"],
+    "NY": ["Con Edison", "National Grid", "National Fuel Gas", "Central Hudson", "NYSEG", "RG&E"],
+    "NC": ["Piedmont Natural Gas", "Dominion Energy", "PSNC Energy"],
+    "ND": ["Montana-Dakota Utilities", "Xcel Energy"],
+    "OH": ["Columbia Gas", "Dominion Energy", "Duke Energy Ohio", "CenterPoint Energy"],
+    "OK": ["Oklahoma Natural Gas", "CenterPoint Energy"],
+    "OR": ["NW Natural", "Avista", "Cascade Natural Gas"],
+    "PA": ["PECO", "Columbia Gas", "UGI", "National Fuel Gas", "Peoples Gas"],
+    "RI": ["National Grid"],
+    "SC": ["Piedmont Natural Gas", "Dominion Energy", "SCE&G"],
+    "SD": ["Black Hills Energy", "MidAmerican Energy", "Montana-Dakota Utilities"],
+    "TN": ["Piedmont Natural Gas", "Atmos Energy", "Nashville Gas"],
+    "TX": ["Atmos Energy", "CenterPoint Energy", "Texas Gas Service"],
+    "UT": ["Dominion Energy", "Questar Gas"],
+    "VT": ["Vermont Gas Systems"],
+    "VA": ["Washington Gas", "Columbia Gas", "Dominion Energy", "Roanoke Gas"],
+    "WA": ["Puget Sound Energy", "Avista", "Cascade Natural Gas", "NW Natural"],
+    "WV": ["Mountaineer Gas", "Dominion Energy", "Hope Gas"],
+    "WI": ["We Energies", "Xcel Energy", "Madison Gas & Electric", "Alliant Energy"],
+    "WY": ["Black Hills Energy", "Montana-Dakota Utilities", "SourceGas"],
+    "DC": ["Washington Gas"],
+}
+
+# States with limited gas infrastructure
+LIMITED_GAS_STATES = ["FL", "HI", "VT", "ME"]
+
+
+def get_texas_gas_ldc(zip_code: str, city: str = None) -> Dict:
+    """Get the gas LDC for a Texas ZIP code."""
+    zip_prefix = zip_code[:3] if len(zip_code) >= 3 else None
+    
+    if zip_prefix and zip_prefix in TEXAS_GAS_ZIP_PREFIX:
+        ldc_key = TEXAS_GAS_ZIP_PREFIX[zip_prefix]
+        ldc = TEXAS_GAS_LDCS.get(ldc_key)
+        
+        if ldc:
+            return {
+                "primary": {
+                    "name": ldc["name"],
+                    "phone": ldc["phone"],
+                    "website": ldc["website"],
+                },
+                "confidence": "verified",
+                "source": "Texas Railroad Commission territory data",
+                "selection_reason": f"ZIP {zip_code} is in {ldc['name']} territory ({ldc['service_area']}).",
+                "alternatives": []
+            }
+    
+    # ZIP not in mapping - may not have gas service
+    return {
+        "primary": None,
+        "confidence": "low",
+        "source": "Texas gas mapping",
+        "selection_reason": f"ZIP {zip_code} not found in major Texas gas LDC territories. May use propane or have limited gas service.",
+        "alternatives": []
+    }
+
+
+def verify_gas_provider(
+    state: str,
+    zip_code: str,
+    city: str,
+    county: str,
+    candidates: List[Dict]
+) -> Dict:
+    """
+    Verify and select the correct gas provider using state-specific data.
+    
+    Args:
+        state: Two-letter state code
+        zip_code: ZIP code
+        city: City name
+        county: County name
+        candidates: List of gas utility dicts from HIFLD
+    
+    Returns:
+        Dict with primary provider, confidence, source, alternatives, selection_reason
+    """
+    state = (state or "").upper()
+    
+    # Check if no candidates - likely no gas service
+    if not candidates:
+        if state in LIMITED_GAS_STATES:
+            return {
+                "primary": None,
+                "confidence": "none",
+                "source": "HIFLD",
+                "selection_reason": f"No natural gas service found. {state} has limited gas infrastructure - this area likely uses propane or is all-electric.",
+                "no_service_note": "No natural gas service - area likely uses propane or heating oil",
+                "alternatives": []
+            }
+        return {
+            "primary": None,
+            "confidence": "none",
+            "source": "HIFLD",
+            "selection_reason": "No natural gas service found at this address. Area may use propane or be all-electric.",
+            "no_service_note": "No natural gas service available",
+            "alternatives": []
+        }
+    
+    # Texas has specific gas LDC mapping
+    if state == "TX":
+        tx_result = get_texas_gas_ldc(zip_code, city)
+        if tx_result["primary"]:
+            # Try to match with HIFLD candidate
+            tx_name = tx_result["primary"]["name"].upper()
+            matched = None
+            alternatives = []
+            
+            for c in candidates:
+                c_name = (c.get("NAME") or "").upper()
+                if any(word in c_name for word in tx_name.split()):
+                    matched = c
+                else:
+                    alternatives.append(c)
+            
+            if matched:
+                return {
+                    "primary": {**matched, "verified_name": tx_result["primary"]["name"]},
+                    "confidence": "verified",
+                    "source": tx_result["source"],
+                    "selection_reason": tx_result["selection_reason"],
+                    "alternatives": alternatives
+                }
+            else:
+                # Use TX data directly
+                return {
+                    "primary": {
+                        "NAME": tx_result["primary"]["name"],
+                        "TELEPHONE": tx_result["primary"]["phone"],
+                        "WEBSITE": tx_result["primary"]["website"],
+                        "STATE": "TX",
+                    },
+                    "confidence": "verified",
+                    "source": tx_result["source"],
+                    "selection_reason": tx_result["selection_reason"],
+                    "alternatives": candidates
+                }
+    
+    # For other states, try to match HIFLD candidates with known LDCs
+    state_ldcs = STATE_GAS_LDCS.get(state, [])
+    
+    if state_ldcs and candidates:
+        # Score candidates based on matching known LDCs
+        scored = []
+        city_upper = (city or "").upper()
+        
+        for c in candidates:
+            score = 50
+            name = (c.get("NAME") or "").upper()
+            
+            # Match against known state LDCs
+            for ldc in state_ldcs:
+                ldc_words = ldc.upper().split()
+                if any(word in name for word in ldc_words if len(word) > 3):
+                    score += 30
+                    break
+            
+            # City match
+            if city_upper and city_upper in name:
+                score += 25
+            
+            # Deprioritize wholesale/transmission
+            if "WHOLESALE" in name or "TRANSMISSION" in name or "PIPELINE" in name:
+                score -= 40
+            
+            c["_score"] = score
+            scored.append(c)
+        
+        scored.sort(key=lambda x: x.get("_score", 0), reverse=True)
+        primary = scored[0]
+        alternatives = scored[1:]
+        
+        # Determine confidence
+        if len(scored) > 1:
+            gap = primary.get("_score", 0) - scored[1].get("_score", 0)
+            if gap >= 20:
+                confidence = "high"
+            elif gap >= 10:
+                confidence = "medium"
+            else:
+                confidence = "low"
+        else:
+            confidence = "high"
+        
+        return {
+            "primary": primary,
+            "confidence": confidence,
+            "source": "HIFLD (matched with state LDC database)",
+            "selection_reason": f"Selected {primary.get('NAME')} as most likely gas provider for this area.",
+            "alternatives": alternatives
+        }
+    
+    # Single candidate
+    if len(candidates) == 1:
+        return {
+            "primary": candidates[0],
+            "confidence": "high",
+            "source": "HIFLD (single result)",
+            "selection_reason": "Only one gas utility serves this location.",
+            "alternatives": []
+        }
+    
+    # Multiple candidates, no state-specific data - use first
+    return {
+        "primary": candidates[0],
+        "confidence": "medium",
+        "source": "HIFLD",
+        "selection_reason": f"Multiple gas utilities may serve this area. {candidates[0].get('NAME')} selected as primary.",
+        "alternatives": candidates[1:]
+    }
+
+
+# =============================================================================
 # TEST
 # =============================================================================
 

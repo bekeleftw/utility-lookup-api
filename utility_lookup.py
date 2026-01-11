@@ -27,7 +27,7 @@ from urllib.parse import quote
 from bs4 import BeautifulSoup
 
 # Import state-specific utility verification
-from state_utility_verification import verify_electric_provider
+from state_utility_verification import verify_electric_provider, verify_gas_provider
 
 # Try to load dotenv for API keys
 try:
@@ -1253,6 +1253,29 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         primary_electric["_selection_reason"] = verification_result.get("selection_reason")
         primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
     
+    # Step 4b: Verify gas provider using state-specific data
+    gas_candidates = gas if isinstance(gas, list) else ([gas] if gas else [])
+    
+    gas_verification = verify_gas_provider(
+        state=state,
+        zip_code=zip_code,
+        city=city,
+        county=county,
+        candidates=gas_candidates
+    )
+    
+    primary_gas = gas_verification.get("primary")
+    other_gas = gas_verification.get("alternatives", [])
+    
+    # Add verification metadata to gas
+    if primary_gas:
+        primary_gas["_confidence"] = gas_verification.get("confidence", "medium")
+        primary_gas["_verification_source"] = gas_verification.get("source")
+        primary_gas["_selection_reason"] = gas_verification.get("selection_reason")
+    
+    # Handle no gas service case
+    gas_no_service = gas_verification.get("no_service_note")
+    
     # Step 5: Query water utility
     water = lookup_water_utility(city, county, state, full_address=address)
     
@@ -1351,9 +1374,18 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         else:
             electric_result = primary_electric
     
+    # Build gas result - primary first, then others
+    gas_result = None
+    if primary_gas:
+        if other_gas:
+            gas_result = [primary_gas] + other_gas
+        else:
+            gas_result = primary_gas
+    
     result = {
         "electric": electric_result,
-        "gas": gas,
+        "gas": gas_result,
+        "gas_no_service": gas_no_service,  # Set if no gas service available
         "water": water,
         "internet": internet,
         "location": {

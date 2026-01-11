@@ -9,6 +9,8 @@ from flask_cors import CORS
 from utility_lookup import lookup_utilities_by_address, lookup_utility_json
 from state_utility_verification import check_problem_area, add_problem_area, load_problem_areas
 from special_districts import lookup_special_district, format_district_for_response, get_available_states, has_special_district_data
+from utility_scrapers import get_available_scrapers, get_scrapers_for_state, verify_with_utility_api_sync
+from cross_validation import cross_validate, SourceResult, format_for_response as format_cv_response, get_disagreements, providers_match
 from datetime import datetime
 import hashlib
 import json
@@ -912,6 +914,264 @@ def lookup_special_district_endpoint():
             'found': False,
             'message': 'No special district found for this location'
         })
+
+
+# =============================================================================
+# UTILITY SCRAPERS
+# =============================================================================
+
+@app.route('/api/scrapers', methods=['GET'])
+def list_scrapers():
+    """List available utility company scrapers."""
+    scrapers = get_available_scrapers()
+    return jsonify({
+        'scrapers': scrapers,
+        'count': len(scrapers),
+        'note': 'Scrapers verify addresses directly with utility company websites'
+    })
+
+
+@app.route('/api/scrapers/verify', methods=['GET', 'POST'])
+def verify_with_scraper():
+    """
+    Verify address with utility company scraper.
+    
+    Query params / JSON body:
+        address: Full street address
+        state: 2-letter state code
+        utility_type: 'electric' or 'gas' (default: electric)
+        expected_provider: Provider name to verify (optional)
+    """
+    if request.method == 'POST':
+        data = request.get_json()
+        address = data.get('address')
+        state = data.get('state', '').upper()
+        utility_type = data.get('utility_type', 'electric')
+        expected_provider = data.get('expected_provider')
+    else:
+        address = request.args.get('address')
+        state = request.args.get('state', '').upper()
+        utility_type = request.args.get('utility_type', 'electric')
+        expected_provider = request.args.get('expected_provider')
+    
+    if not address:
+        return jsonify({'error': 'address is required'}), 400
+    if not state:
+        return jsonify({'error': 'state is required'}), 400
+    
+    # Check if we have scrapers for this state
+    available = get_scrapers_for_state(state, utility_type)
+    if not available:
+        return jsonify({
+            'verified': False,
+            'message': f'No {utility_type} scrapers available for {state}',
+            'available_scrapers': list(get_available_scrapers().keys())
+        })
+    
+    # Run verification
+    result = verify_with_utility_api_sync(
+        address=address,
+        state=state,
+        expected_provider=expected_provider,
+        utility_type=utility_type
+    )
+    
+    if result:
+        return jsonify({
+            'verified': result.get('serves') is True,
+            'result': result
+        })
+    else:
+        return jsonify({
+            'verified': False,
+            'message': 'Could not verify with utility company website'
+        })
+
+
+# =============================================================================
+# CROSS-VALIDATION
+# =============================================================================
+
+@app.route('/api/cross-validate', methods=['POST'])
+def cross_validate_endpoint():
+    """
+    Cross-validate provider results from multiple sources.
+    
+    JSON body:
+    {
+        "results": [
+            {"source_name": "EIA", "provider_name": "Oncor", "confidence": "high"},
+            {"source_name": "HIFLD", "provider_name": "Oncor Electric Delivery", "confidence": "medium"},
+            {"source_name": "SERP", "provider_name": "Oncor", "confidence": "high"}
+        ]
+    }
+    """
+    data = request.get_json()
+    results_data = data.get('results', [])
+    
+    if not results_data:
+        return jsonify({'error': 'results array is required'}), 400
+    
+    # Convert to SourceResult objects
+    results = []
+    for r in results_data:
+        results.append(SourceResult(
+            source_name=r.get('source_name', 'Unknown'),
+            provider_name=r.get('provider_name'),
+            confidence=r.get('confidence', 'medium')
+        ))
+    
+    cv_result = cross_validate(results)
+    
+    return jsonify({
+        'cross_validation': format_cv_response(cv_result)
+    })
+
+
+@app.route('/api/disagreements', methods=['GET'])
+def list_disagreements():
+    """List cross-validation disagreements for review."""
+    limit = request.args.get('limit', 100, type=int)
+    disagreements = get_disagreements(limit)
+    
+    return jsonify({
+        'count': len(disagreements),
+        'disagreements': disagreements
+    })
+
+
+@app.route('/api/providers/match', methods=['GET'])
+def check_provider_match():
+    """
+    Check if two provider names match (for testing normalization).
+    
+    Query params:
+        name1: First provider name
+        name2: Second provider name
+    """
+    name1 = request.args.get('name1', '')
+    name2 = request.args.get('name2', '')
+    
+    if not name1 or not name2:
+        return jsonify({'error': 'name1 and name2 are required'}), 400
+    
+    match = providers_match(name1, name2)
+    
+    return jsonify({
+        'name1': name1,
+        'name2': name2,
+        'match': match
+    })
+
+
+# =============================================================================
+# VALIDATION REPORTS
+# =============================================================================
+
+import glob
+
+VALIDATION_REPORTS_DIR = os.path.join(os.path.dirname(__file__), 'data', 'validation_reports')
+LOOKUPS_LOG_FILE = os.path.join(os.path.dirname(__file__), 'data', 'lookup_log.json')
+
+@app.route('/api/validation-reports', methods=['GET'])
+def list_validation_reports():
+    """List available validation reports."""
+    if not os.path.exists(VALIDATION_REPORTS_DIR):
+        return jsonify({'reports': [], 'count': 0})
+    
+    reports = []
+    for filepath in glob.glob(os.path.join(VALIDATION_REPORTS_DIR, '*.json')):
+        filename = os.path.basename(filepath)
+        
+        try:
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+            
+            reports.append({
+                'filename': filename,
+                'generated_at': data.get('generated_at'),
+                'sample_size': data.get('sample_size'),
+                'summary': data.get('summary'),
+                'alerts': data.get('alerts', [])
+            })
+        except (json.JSONDecodeError, IOError):
+            continue
+    
+    # Sort by date descending
+    reports.sort(key=lambda x: x.get('generated_at', ''), reverse=True)
+    
+    return jsonify({'reports': reports, 'count': len(reports)})
+
+
+@app.route('/api/validation-reports/<filename>', methods=['GET'])
+def get_validation_report(filename):
+    """Get a specific validation report."""
+    # Sanitize filename
+    if '..' in filename or '/' in filename:
+        return jsonify({'error': 'Invalid filename'}), 400
+    
+    filepath = os.path.join(VALIDATION_REPORTS_DIR, filename)
+    
+    if not os.path.exists(filepath):
+        return jsonify({'error': 'Report not found'}), 404
+    
+    with open(filepath, 'r') as f:
+        report = json.load(f)
+    
+    return jsonify(report)
+
+
+@app.route('/api/accuracy-trend', methods=['GET'])
+def get_accuracy_trend():
+    """Get accuracy trend over time from validation reports."""
+    if not os.path.exists(VALIDATION_REPORTS_DIR):
+        return jsonify({'trend': []})
+    
+    trend = []
+    for filepath in sorted(glob.glob(os.path.join(VALIDATION_REPORTS_DIR, '*.json'))):
+        try:
+            with open(filepath, 'r') as f:
+                data = json.load(f)
+            
+            trend.append({
+                'date': data.get('generated_at', '')[:10],
+                'electric': data.get('summary', {}).get('electric_accuracy'),
+                'gas': data.get('summary', {}).get('gas_accuracy'),
+                'water': data.get('summary', {}).get('water_accuracy')
+            })
+        except (json.JSONDecodeError, IOError):
+            continue
+    
+    return jsonify({'trend': trend})
+
+
+@app.route('/api/lookup-log', methods=['GET'])
+def get_lookup_log():
+    """Get recent lookup log entries."""
+    limit = request.args.get('limit', 100, type=int)
+    state = request.args.get('state', '').upper()
+    
+    if not os.path.exists(LOOKUPS_LOG_FILE):
+        return jsonify({'lookups': [], 'count': 0})
+    
+    try:
+        with open(LOOKUPS_LOG_FILE, 'r') as f:
+            lookups = json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return jsonify({'lookups': [], 'count': 0})
+    
+    # Filter by state if specified
+    if state:
+        lookups = [l for l in lookups if l.get('state', '').upper() == state]
+    
+    # Sort by timestamp descending and limit
+    lookups.sort(key=lambda x: x.get('timestamp', ''), reverse=True)
+    lookups = lookups[:limit]
+    
+    return jsonify({
+        'lookups': lookups,
+        'count': len(lookups)
+    })
 
 
 if __name__ == '__main__':

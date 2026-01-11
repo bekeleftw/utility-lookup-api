@@ -455,6 +455,56 @@ def save_water_cache(cache: Dict) -> None:
 
 WATER_SUPPLEMENTAL_FILE = Path(__file__).parent / "water_utilities_supplemental.json"
 WATER_MISSING_CITIES_FILE = Path(__file__).parent / "water_missing_cities.json"
+LOOKUPS_LOG_FILE = Path(__file__).parent / "data" / "lookup_log.json"
+MAX_LOG_ENTRIES = 10000  # Keep last 10k lookups
+
+
+def log_lookup(
+    address: str,
+    city: str,
+    county: str,
+    state: str,
+    zip_code: str,
+    electric_provider: str = None,
+    gas_provider: str = None,
+    water_provider: str = None,
+    internet_count: int = None
+):
+    """Log a lookup for later validation."""
+    from datetime import datetime
+    
+    try:
+        LOOKUPS_LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+        
+        if LOOKUPS_LOG_FILE.exists():
+            with open(LOOKUPS_LOG_FILE, 'r') as f:
+                lookups = json.load(f)
+        else:
+            lookups = []
+        
+        entry = {
+            'timestamp': datetime.now().isoformat(),
+            'address': address,
+            'city': city,
+            'county': county,
+            'state': state,
+            'zip_code': zip_code,
+            'electric_provider': electric_provider,
+            'gas_provider': gas_provider,
+            'water_provider': water_provider,
+            'internet_count': internet_count
+        }
+        
+        lookups.append(entry)
+        
+        # Trim to max entries
+        if len(lookups) > MAX_LOG_ENTRIES:
+            lookups = lookups[-MAX_LOG_ENTRIES:]
+        
+        with open(LOOKUPS_LOG_FILE, 'w') as f:
+            json.dump(lookups, f)
+    except Exception:
+        pass  # Don't fail if logging fails
 
 def log_missing_water_city(state: str, city: str, county: str, match_type: str):
     """Log cities that are missing from EPA SDWIS data for later addition to supplemental file."""
@@ -1625,6 +1675,22 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             "state": state
         }
     }
+    
+    # Log lookup for validation
+    try:
+        log_lookup(
+            address=address,
+            city=city,
+            county=county,
+            state=state,
+            zip_code=zip_code,
+            electric_provider=primary_electric.get('NAME') if primary_electric else None,
+            gas_provider=primary_gas.get('NAME') if primary_gas else None,
+            water_provider=water.get('name') if water else None,
+            internet_count=internet.get('provider_count') if internet else None
+        )
+    except Exception:
+        pass  # Don't fail lookup if logging fails
     
     return result
 

@@ -5,3 +5,4 @@ beautifulsoup4
 python-dotenv
 gunicorn
 playwright>=1.57.0
+shapely>=2.0.0

@@ -1,0 +1,20 @@
+{
+  "district": {
+    "district_id": "string (e.g., TX-MUD-001234)",
+    "name": "string",
+    "state": "string (2-letter)",
+    "type": "string (MUD, CDD, PUD, etc.)",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "polygon | zip_list | subdivision_list",
+      "data": "GeoJSON polygon OR array of ZIPs OR array of subdivision names"
+    },
+    "contact": {
+      "phone": "string",
+      "website": "string",
+      "address": "string"
+    },
+    "data_source": "string (e.g., TCEQ)",
+    "last_updated": "ISO date string"
+  }
+}

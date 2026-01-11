@@ -8,6 +8,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from utility_lookup import lookup_utilities_by_address, lookup_utility_json
 from state_utility_verification import check_problem_area, add_problem_area, load_problem_areas
+from special_districts import lookup_special_district, format_district_for_response, get_available_states, has_special_district_data
 from datetime import datetime
 import hashlib
 import json
@@ -844,6 +845,73 @@ def add_problem_area_endpoint():
     )
     
     return jsonify({'status': 'added', 'level': data['level'], 'key': data['key']})
+
+
+# =============================================================================
+# SPECIAL DISTRICTS
+# =============================================================================
+
+@app.route('/api/special-districts', methods=['GET'])
+def list_special_districts_info():
+    """Get info about available special district data."""
+    available_states = get_available_states()
+    
+    return jsonify({
+        'available_states': available_states,
+        'total_states': len(available_states),
+        'note': 'Special districts include MUDs (TX), CDDs (FL), Metro Districts (CO), etc.'
+    })
+
+
+@app.route('/api/special-districts/lookup', methods=['GET'])
+def lookup_special_district_endpoint():
+    """
+    Look up special district for coordinates.
+    
+    Query params:
+        lat: Latitude
+        lon: Longitude
+        state: 2-letter state code
+        zip: ZIP code (optional, fallback)
+        subdivision: Subdivision name (optional)
+        service: 'water' or 'sewer' (default: water)
+    """
+    lat = request.args.get('lat', type=float)
+    lon = request.args.get('lon', type=float)
+    state = request.args.get('state', '').upper()
+    zip_code = request.args.get('zip')
+    subdivision = request.args.get('subdivision')
+    service = request.args.get('service', 'water')
+    
+    if not state:
+        return jsonify({'error': 'state is required'}), 400
+    
+    if not has_special_district_data(state):
+        return jsonify({
+            'found': False,
+            'message': f'No special district data available for {state}',
+            'available_states': get_available_states()
+        })
+    
+    result = lookup_special_district(
+        lat=lat,
+        lon=lon,
+        state=state,
+        zip_code=zip_code,
+        subdivision=subdivision,
+        service=service
+    )
+    
+    if result:
+        return jsonify({
+            'found': True,
+            'district': format_district_for_response(result)
+        })
+    else:
+        return jsonify({
+            'found': False,
+            'message': 'No special district found for this location'
+        })
 
 
 if __name__ == '__main__':

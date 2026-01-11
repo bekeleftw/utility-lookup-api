@@ -1,0 +1,92 @@
+[
+  {
+    "district_id": "TX-MUD-000001",
+    "name": "Travis County MUD No. 4",
+    "state": "TX",
+    "type": "MUD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": ["78653"]
+    },
+    "contact": {
+      "phone": "512-246-0498",
+      "website": "https://www.tcmud4.org/",
+      "address": null
+    },
+    "data_source": "Manual Entry",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "TX-MUD-000002",
+    "name": "Plum Creek Conservation District",
+    "state": "TX",
+    "type": "WCID",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": ["78640"]
+    },
+    "contact": {
+      "phone": "512-262-0000",
+      "website": null,
+      "address": null
+    },
+    "data_source": "Manual Entry",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "TX-MUD-000003",
+    "name": "Hays County WCID No. 1",
+    "state": "TX",
+    "type": "WCID",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": ["78610", "78640"]
+    },
+    "contact": {
+      "phone": "512-312-0084",
+      "website": null,
+      "address": null
+    },
+    "data_source": "Manual Entry",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "TX-MUD-000004",
+    "name": "Williamson County MUD No. 9",
+    "state": "TX",
+    "type": "MUD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": ["78681", "78717"]
+    },
+    "contact": {
+      "phone": "512-246-0498",
+      "website": null,
+      "address": null
+    },
+    "data_source": "Manual Entry",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "TX-MUD-000005",
+    "name": "North Austin MUD No. 1",
+    "state": "TX",
+    "type": "MUD",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": ["78758", "78759"]
+    },
+    "contact": {
+      "phone": "512-491-7070",
+      "website": "https://www.namud1.org/",
+      "address": null
+    },
+    "data_source": "Manual Entry",
+    "last_updated": "2026-01-11"
+  }
+]

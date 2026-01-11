@@ -1391,8 +1391,42 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         gas_no_service = gas_verification.get("no_service_note")
     
     # Step 4: Water lookup - only if selected
+    # For water, we use SERP as primary source when verify_with_serp=True
+    # because EPA SDWIS data has many gaps (missing cities like Kyle, TX)
     if 'water' in selected_utilities:
-        water = lookup_water_utility(city, county, state, full_address=address)
+        water = None
+        
+        if verify_with_serp:
+            # SERP-first approach for water - Google is more reliable than EPA for many cities
+            print(f"Looking up water provider via Google search...")
+            serp_result = verify_utility_with_serp(address, "water", None)
+            if serp_result and serp_result.get("serp_provider"):
+                serp_provider = serp_result.get("serp_provider")
+                serp_confidence = serp_result.get("confidence", "medium")
+                print(f"  SERP found: {serp_provider} (confidence: {serp_confidence})")
+                
+                # Create water result from SERP
+                water = {
+                    "name": serp_provider,
+                    "id": None,
+                    "state": state,
+                    "phone": None,
+                    "address": None,
+                    "city": city,
+                    "zip": None,
+                    "population_served": None,
+                    "source_type": None,
+                    "owner_type": None,
+                    "service_connections": None,
+                    "_confidence": "high" if serp_confidence == "high" else "medium",
+                    "_source": "google_serp",
+                    "_serp_verified": True,
+                    "_note": serp_result.get("notes", "Found via Google search")
+                }
+        
+        # Fall back to EPA/supplemental data if SERP didn't find anything
+        if not water:
+            water = lookup_water_utility(city, county, state, full_address=address)
     
     # Step 5: Internet lookup - only if selected
     if 'internet' in selected_utilities:
@@ -1467,21 +1501,44 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     }
                     print(f"  Found via SERP: {serp_result.get('serp_provider')}")
         
-        # Verify water - only if selected
+        # Verify water - only if selected AND not already from SERP
         if 'water' in selected_utilities and water:
-            water_name = water.get("name") if isinstance(water, dict) else None
-            if water_name:
-                print(f"Verifying water provider with SERP search...")
-                serp_result = verify_utility_with_serp(address, "water", water_name)
-                if serp_result:
-                    if serp_result.get("verified"):
-                        water["_serp_verified"] = True
-                        water["_confidence"] = "high"
-                        print(f"  ✓ SERP verified: {water_name}")
-                    else:
-                        water["_serp_verified"] = False
-                        water["_serp_suggestions"] = serp_result.get("serp_suggestions", [])
-                        print(f"  ⚠ SERP suggests: {', '.join(serp_result.get('serp_suggestions', []))}")
+            # Skip verification if water was already found via SERP (it's already verified)
+            if water.get("_source") == "google_serp":
+                pass  # Already verified via SERP
+            else:
+                water_name = water.get("name") if isinstance(water, dict) else None
+                if water_name:
+                    print(f"Verifying water provider with SERP search...")
+                    serp_result = verify_utility_with_serp(address, "water", water_name)
+                    if serp_result:
+                        if serp_result.get("verified"):
+                            water["_serp_verified"] = True
+                            water["_confidence"] = "high"
+                            print(f"  ✓ SERP verified: {water_name}")
+                        else:
+                            # SERP found a different provider - use that instead
+                            serp_provider = serp_result.get("serp_provider")
+                            if serp_provider:
+                                print(f"  ⚠ SERP suggests different provider: {serp_provider}")
+                                # Replace with SERP result
+                                water = {
+                                    "name": serp_provider,
+                                    "id": None,
+                                    "state": water.get("state"),
+                                    "phone": None,
+                                    "address": None,
+                                    "city": water.get("city"),
+                                    "zip": None,
+                                    "population_served": None,
+                                    "source_type": None,
+                                    "owner_type": None,
+                                    "service_connections": None,
+                                    "_confidence": serp_result.get("confidence", "medium"),
+                                    "_source": "google_serp",
+                                    "_serp_verified": True,
+                                    "_note": f"SERP override: {serp_result.get('notes', '')}"
+                                }
     
     # Build electric result - primary first, then others
     electric_result = None

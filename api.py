@@ -877,6 +877,7 @@ def lookup_special_district_endpoint():
         zip: ZIP code (optional, fallback)
         subdivision: Subdivision name (optional)
         service: 'water' or 'sewer' (default: water)
+        debug: Include debug info (optional)
     """
     lat = request.args.get('lat', type=float)
     lon = request.args.get('lon', type=float)
@@ -884,16 +885,48 @@ def lookup_special_district_endpoint():
     zip_code = request.args.get('zip')
     subdivision = request.args.get('subdivision')
     service = request.args.get('service', 'water')
+    debug = request.args.get('debug', '').lower() == 'true'
     
     if not state:
         return jsonify({'error': 'state is required'}), 400
     
+    # Import here to get debug info
+    from special_districts import load_state_districts, SHAPELY_AVAILABLE
+    
+    debug_info = {}
+    if debug:
+        districts = load_state_districts(state)
+        debug_info = {
+            'shapely_available': SHAPELY_AVAILABLE,
+            'districts_loaded': len(districts),
+            'has_data': has_special_district_data(state),
+            'lat': lat,
+            'lon': lon
+        }
+        # Check if any district has valid geometry
+        if districts and SHAPELY_AVAILABLE:
+            from shapely.geometry import shape
+            valid_geom_count = 0
+            for d in districts[:100]:  # Check first 100
+                try:
+                    boundary = d.get('boundary', {})
+                    if boundary.get('data'):
+                        geom = shape(boundary['data'])
+                        if geom.is_valid:
+                            valid_geom_count += 1
+                except:
+                    pass
+            debug_info['valid_geometries_sample'] = valid_geom_count
+    
     if not has_special_district_data(state):
-        return jsonify({
+        response = {
             'found': False,
             'message': f'No special district data available for {state}',
             'available_states': get_available_states()
-        })
+        }
+        if debug:
+            response['debug'] = debug_info
+        return jsonify(response)
     
     result = lookup_special_district(
         lat=lat,
@@ -905,15 +938,21 @@ def lookup_special_district_endpoint():
     )
     
     if result:
-        return jsonify({
+        response = {
             'found': True,
             'district': format_district_for_response(result)
-        })
+        }
+        if debug:
+            response['debug'] = debug_info
+        return jsonify(response)
     else:
-        return jsonify({
+        response = {
             'found': False,
             'message': 'No special district found for this location'
-        })
+        }
+        if debug:
+            response['debug'] = debug_info
+        return jsonify(response)
 
 
 # =============================================================================

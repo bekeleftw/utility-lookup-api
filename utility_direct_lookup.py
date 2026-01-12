@@ -13,193 +13,153 @@ from urllib.parse import quote
 
 
 # Utility lookup endpoints and configurations
+# VERIFIED WORKING ENDPOINTS - tested and confirmed
 UTILITY_LOOKUP_CONFIGS = {
-    # Electric Utilities
+    # ==========================================================================
+    # VERIFIED WORKING - Austin Energy (City of Austin GIS)
+    # ==========================================================================
     "austin_energy": {
         "name": "Austin Energy",
         "type": "electric",
         "state": "TX",
         "method": "gis",
-        "url": "https://services.arcgis.com/0L95CJ0VTaxqcmED/arcgis/rest/services/COA_Electric_Service_Area/FeatureServer/0/query",
+        "verified": True,
+        "url": "https://maps.austintexas.gov/arcgis/rest/services/Shared/BoundariesGrids_2/MapServer/1/query",
         "params": lambda lat, lon: {
             "geometry": f"{lon},{lat}",
             "geometryType": "esriGeometryPoint",
+            "inSR": "4326",
             "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "*",
             "returnGeometry": "false",
             "f": "json"
-        }
+        },
+        "result_field": "SERVICE_AREA"
     },
+    
+    # ==========================================================================
+    # VERIFIED WORKING - California Energy Commission Gas Service Areas
+    # Covers: PG&E, SoCalGas, SDG&E, Southwest Gas in CA
+    # ==========================================================================
+    "ca_gas_service": {
+        "name": "California Gas Service Areas (CEC)",
+        "type": "gas",
+        "state": "CA",
+        "method": "gis",
+        "verified": True,
+        "url": "https://services3.arcgis.com/bWPjFyq029ChCGur/arcgis/rest/services/Natural_Gas_Service_Area/FeatureServer/0/query",
+        "params": lambda lat, lon: {
+            "geometry": f"{lon},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "inSR": "4326",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "SERVICE,ABR",
+            "returnGeometry": "false",
+            "f": "json"
+        },
+        "result_field": "SERVICE"
+    },
+    
+    # ==========================================================================
+    # PLACEHOLDER ENDPOINTS - Need verification/discovery
+    # These use common ArcGIS patterns but URLs need to be verified
+    # ==========================================================================
     "oncor": {
         "name": "Oncor Electric Delivery",
         "type": "electric",
         "state": "TX",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/Oncor_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "Oncor does not have public GIS API - use ZIP-based lookup instead"
     },
     "centerpoint_electric": {
         "name": "CenterPoint Energy",
         "type": "electric",
         "state": "TX",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/CenterPoint_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "CenterPoint does not have public GIS API - use ZIP-based lookup instead"
     },
     "ladwp": {
         "name": "Los Angeles Department of Water and Power",
         "type": "electric",
         "state": "CA",
-        "method": "gis",
-        "url": "https://services1.arcgis.com/RyKAc5Uc0JGfHnHU/arcgis/rest/services/LADWP_Service_Area/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
-    },
-    "sce": {
-        "name": "Southern California Edison",
-        "type": "electric",
-        "state": "CA",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/SCE_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "LADWP has GIS but requires authentication - use city boundary check"
     },
     "pge": {
         "name": "Pacific Gas and Electric",
         "type": "electric",
         "state": "CA",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/PGE_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "PG&E service area available via CEC data"
+    },
+    "sce": {
+        "name": "Southern California Edison",
+        "type": "electric",
+        "state": "CA",
+        "method": "placeholder",
+        "verified": False,
+        "note": "SCE service area available via CEC data"
     },
     "sdge": {
         "name": "San Diego Gas & Electric",
         "type": "electric",
         "state": "CA",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/SDGE_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "SDG&E service area available via CEC data"
     },
     "aps": {
         "name": "Arizona Public Service",
         "type": "electric",
         "state": "AZ",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/APS_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "APS does not have public GIS API"
     },
     "srp": {
         "name": "Salt River Project",
         "type": "electric",
         "state": "AZ",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/SRP_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "SRP has maps but no public API"
     },
-    
-    # Gas Utilities
     "socalgas": {
         "name": "Southern California Gas Company",
         "type": "gas",
         "state": "CA",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/SoCalGas_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "redirect",
+        "verified": True,
+        "redirect_to": "ca_gas_service",
+        "note": "Use CEC gas service layer"
     },
     "southwest_gas": {
         "name": "Southwest Gas Corporation",
         "type": "gas",
         "state": "AZ",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/SWGas_Service_Territory/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "Southwest Gas does not have public GIS API"
     },
-    
-    # Water Utilities
     "denver_water": {
         "name": "Denver Water",
         "type": "water",
         "state": "CO",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/DenverWater_Service_Area/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "Denver Water requires data request form"
     },
     "phoenix_water": {
         "name": "City of Phoenix Water Services",
         "type": "water",
         "state": "AZ",
-        "method": "gis",
-        "url": "https://services.arcgis.com/jIL9msH9OI208GCb/arcgis/rest/services/PhoenixWater_Service_Area/FeatureServer/0/query",
-        "params": lambda lat, lon: {
-            "geometry": f"{lon},{lat}",
-            "geometryType": "esriGeometryPoint",
-            "spatialRel": "esriSpatialRelIntersects",
-            "returnGeometry": "false",
-            "f": "json"
-        }
+        "method": "placeholder",
+        "verified": False,
+        "note": "Phoenix Water does not have public GIS API"
     },
 }
 
@@ -305,6 +265,21 @@ def check_utility_serves_address(
             "confirmed": None,
             "error": f"Utility type mismatch: expected {utility_type}, got {config.get('type')}",
             "utility_name": utility_name
+        }
+    
+    # Handle redirect to another config
+    if config.get("method") == "redirect":
+        redirect_key = config.get("redirect_to")
+        if redirect_key:
+            config = UTILITY_LOOKUP_CONFIGS.get(redirect_key, config)
+    
+    # Check if this is a placeholder (not verified)
+    if config.get("method") == "placeholder" or not config.get("verified"):
+        return {
+            "confirmed": None,
+            "error": f"No verified API available: {config.get('note', 'Endpoint not verified')}",
+            "utility_name": config.get("name", utility_name),
+            "verified": False
         }
     
     # Query the service

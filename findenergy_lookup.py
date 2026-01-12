@@ -182,13 +182,11 @@ def query_findenergy_serp(
     Returns:
         Dict with provider info extracted from SERP results
     """
-    import os
-    
-    # Get BrightData credentials from environment
-    proxy_user = os.getenv('BRIGHTDATA_PROXY_USER', '')
-    proxy_pass = os.getenv('BRIGHTDATA_PROXY_PASS', '')
-    proxy_host = os.getenv('BRIGHTDATA_PROXY_HOST', 'brd.superproxy.io')
-    proxy_port = os.getenv('BRIGHTDATA_PROXY_PORT', '22225')
+    # BrightData credentials (same as utility_lookup.py)
+    proxy_host = "brd.superproxy.io"
+    proxy_port = "33335"
+    proxy_user = "brd-customer-hl_6cc76bc7-zone-address_search"
+    proxy_pass = "n59dskgnctqr"
     
     if not proxy_pass:
         # No proxy available - can't do SERP lookup

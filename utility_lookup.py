@@ -32,6 +32,15 @@ from special_districts import lookup_special_district, format_district_for_respo
 from confidence_scoring import calculate_confidence, source_to_score_key
 from municipal_utilities import lookup_municipal_electric, lookup_municipal_gas, lookup_municipal_water
 
+# Import new Phase 12-14 modules
+from deregulated_markets import is_deregulated_state, get_deregulated_market_info, adjust_electric_result_for_deregulation
+from special_areas import get_special_area_info, check_tribal_land, check_incorporated_status, check_military_installation
+from building_types import detect_building_type_from_address, adjust_result_for_building_type, get_utility_arrangement
+from address_inference import infer_utility_from_nearby, add_verified_address
+from ml_enhancements import ensemble_prediction, detect_anomalies, get_source_weight
+from propane_service import is_likely_propane_area, get_no_gas_response
+from well_septic import get_well_septic_likelihood, is_likely_rural
+
 # Try to load dotenv for API keys
 try:
     from dotenv import load_dotenv
@@ -1561,10 +1570,28 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     zip_code = geo_result.get("zip") or ""
     if not zip_code and geo_result.get("matched_address"):
         # Try to extract ZIP from matched address
-        import re
         zip_match = re.search(r'\b(\d{5})\b', geo_result.get("matched_address", ""))
         if zip_match:
             zip_code = zip_match.group(1)
+    
+    # ==========================================================================
+    # NEW: Detect special areas (tribal lands, military bases, unincorporated)
+    # ==========================================================================
+    special_areas = get_special_area_info(
+        lat=lat, lon=lon, zip_code=zip_code, city=city, state=state
+    )
+    
+    # ==========================================================================
+    # NEW: Detect building type for metering arrangement info
+    # ==========================================================================
+    building_type = detect_building_type_from_address(address)
+    
+    # ==========================================================================
+    # NEW: Check if deregulated electricity market
+    # ==========================================================================
+    deregulated_info = None
+    if is_deregulated_state(state):
+        deregulated_info = get_deregulated_market_info(state)
     
     # Initialize results
     primary_electric = None
@@ -1623,6 +1650,12 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 primary_electric["_verification_source"] = verification_result.get("source")
                 primary_electric["_selection_reason"] = verification_result.get("selection_reason")
                 primary_electric["_is_deregulated"] = verification_result.get("is_deregulated")
+                
+                # NEW: Add deregulated market info if applicable
+                if deregulated_info:
+                    primary_electric = adjust_electric_result_for_deregulation(
+                        primary_electric, state, zip_code
+                    )
     
     # Step 3: Gas lookup - only if selected
     if 'gas' in selected_utilities:
@@ -1670,6 +1703,12 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             
             # Handle no gas service case
             gas_no_service = gas_verification.get("no_service_note")
+            
+            # NEW: If no gas service, check if propane area
+            if gas_no_service or not primary_gas:
+                propane_info = is_likely_propane_area(state, zip_code, city)
+                if propane_info.get("propane_likely"):
+                    gas_no_service = get_no_gas_response(state, zip_code)
     
     # Step 4: Water lookup - only if selected
     # Priority: Municipal utilities > Special districts > SERP > EPA SDWIS
@@ -1964,9 +2003,39 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         "location": {
             "city": city,
             "county": county,
-            "state": state
+            "state": state,
+            "zip_code": zip_code
+        },
+        # NEW: Phase 12-14 metadata
+        "_metadata": {
+            "building_type": building_type.value if building_type else None,
+            "deregulated_market": deregulated_info is not None,
+            "deregulated_info": deregulated_info,
+            "special_areas": special_areas.get("special_areas", []),
+            "requires_special_handling": special_areas.get("requires_special_handling", False)
         }
     }
+    
+    # NEW: Add special area notes if applicable
+    if special_areas.get("notes"):
+        result["_special_area_notes"] = special_areas["notes"]
+    
+    # NEW: Add tribal land info if applicable
+    if special_areas.get("tribal_info"):
+        result["_tribal_info"] = special_areas["tribal_info"]
+    
+    # NEW: Add military base info if applicable
+    if special_areas.get("military_info"):
+        result["_military_info"] = special_areas["military_info"]
+    
+    # NEW: Adjust results for building type (add metering notes)
+    if building_type:
+        result = adjust_result_for_building_type(result, address, building_type)
+    
+    # NEW: Detect anomalies (results that differ from ZIP patterns)
+    anomalies = detect_anomalies(result, zip_code)
+    if anomalies:
+        result["_anomalies"] = anomalies
     
     # Log lookup for validation
     try:

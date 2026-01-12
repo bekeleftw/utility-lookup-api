@@ -165,25 +165,35 @@ def adjust_result_for_building_type(
     
     # Add metering info for each utility type
     for utility_type in ["electric", "gas", "water"]:
-        if utility_type in result:
+        if utility_type in result and result[utility_type] is not None:
+            # Handle both dict and list results
+            utility_data = result[utility_type]
+            if isinstance(utility_data, list):
+                if len(utility_data) > 0:
+                    utility_data = utility_data[0]
+                else:
+                    continue
+            if not isinstance(utility_data, dict):
+                continue
+                
             arrangement = defaults.get(utility_type, {})
             metering = arrangement.get("metering", MeteringType.UNKNOWN)
             
             if metering == MeteringType.MASTER_METERED:
-                result[utility_type]["_metering_note"] = (
+                utility_data["_metering_note"] = (
                     "This utility is often master-metered in this building type. "
                     "May be included in rent or billed through property management."
                 )
-                result[utility_type]["_tenant_action"] = "Contact property management"
+                utility_data["_tenant_action"] = "Contact property management"
             elif metering == MeteringType.SUBMETERED:
-                result[utility_type]["_metering_note"] = (
+                utility_data["_metering_note"] = (
                     "This utility may be submetered. Billing often handled by "
                     "property management or third-party billing company."
                 )
-                result[utility_type]["_tenant_action"] = "Contact property management"
+                utility_data["_tenant_action"] = "Contact property management"
             
             if arrangement.get("may_vary"):
-                result[utility_type]["_arrangement_varies"] = True
+                utility_data["_arrangement_varies"] = True
     
     return result
 

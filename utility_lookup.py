@@ -460,6 +460,80 @@ WATER_MISSING_CITIES_FILE = Path(__file__).parent / "water_missing_cities.json"
 LOOKUPS_LOG_FILE = Path(__file__).parent / "data" / "lookup_log.json"
 MAX_LOG_ENTRIES = 10000  # Keep last 10k lookups
 
+# Authoritative sources that don't need SERP verification (cost optimization)
+AUTHORITATIVE_SOURCES = {
+    'special_district',
+    'special_district_boundary',
+    'municipal_utility',
+    'municipal_utility_database',
+    'user_confirmed',
+    'zip_override',
+    'electric_cooperative_polygon',
+    'verified',
+    'texas_railroad_commission',
+    'state_puc_territory',
+    'puc territory',
+}
+
+# Sources that should always be SERP verified
+ALWAYS_VERIFY_SOURCES = {
+    'eia_861',
+    'hifld',
+    'hifld_polygon',
+    'hifld_iou_polygon',
+    'epa_sdwis',
+    'heuristic',
+    'heuristic_city_match',
+    'county_match',
+}
+
+
+def should_skip_serp(result: Dict, utility_type: str) -> tuple:
+    """
+    Determine if SERP verification can be skipped based on source authority.
+    Returns (skip: bool, reason: str)
+    
+    This saves ~$0.01 per lookup when we have authoritative data.
+    """
+    if not result:
+        return False, "No result to verify"
+    
+    # Get source from various possible fields
+    source = (
+        result.get('_source') or 
+        result.get('_verification_source') or 
+        result.get('source') or 
+        ''
+    ).lower()
+    
+    confidence_score = result.get('confidence_score', 0)
+    confidence_level = result.get('_confidence', '').lower()
+    
+    # Always skip for authoritative sources
+    for auth_source in AUTHORITATIVE_SOURCES:
+        if auth_source in source:
+            return True, f"Authoritative source: {source}"
+    
+    # Skip if confidence is already very high (90+)
+    if confidence_score >= 90:
+        return True, f"High confidence score: {confidence_score}"
+    
+    # Skip if marked as verified
+    if confidence_level == 'verified':
+        return True, "Already verified"
+    
+    # Don't skip for sources that need verification
+    for verify_source in ALWAYS_VERIFY_SOURCES:
+        if verify_source in source:
+            return False, f"Non-authoritative source: {source}"
+    
+    # Default: skip if confidence >= 85 (our threshold for "verified" level)
+    if confidence_score >= 85:
+        return True, f"Good confidence: {confidence_score}"
+    
+    # Default: verify
+    return False, "Default behavior"
+
 
 def log_lookup(
     address: str,
@@ -1673,54 +1747,74 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             print("  Could not retrieve internet provider data")
     
     # Step 6: Optional SERP verification for electric, gas, and water
+    # Cost optimization: Skip SERP for authoritative sources (saves ~$0.01/lookup)
+    serp_calls = 0
+    serp_skipped = {'electric': False, 'gas': False, 'water': False}
+    
     if verify_with_serp:
-        # Verify electric - only if selected
+        # Verify electric - only if selected and not authoritative
         if 'electric' in selected_utilities and primary_electric:
-            electric_name = primary_electric.get("NAME") if isinstance(primary_electric, dict) else None
-            if electric_name:
-                print(f"Verifying electric provider with SERP search...")
-                serp_result = verify_utility_with_serp(address, "electric", electric_name)
-                if serp_result:
-                    if serp_result.get("verified"):
-                        primary_electric["_serp_verified"] = True
-                        primary_electric["_confidence"] = "high"
-                        print(f"  ✓ SERP verified: {electric_name}")
-                    else:
-                        primary_electric["_serp_verified"] = False
-                        serp_provider = serp_result.get("serp_provider")
-                        if serp_provider and other_electric:
-                            for alt in other_electric:
-                                alt_name = alt.get("NAME", "")
-                                if serp_provider.upper() in alt_name.upper() or alt_name.upper() in serp_provider.upper():
-                                    print(f"  ⚠ SERP suggests: {serp_provider} (swapping primary)")
-                                    other_electric.remove(alt)
-                                    other_electric.insert(0, primary_electric)
-                                    primary_electric = alt
-                                    primary_electric["_serp_verified"] = True
-                                    primary_electric["_confidence"] = "high"
-                                    break
-                            else:
-                                print(f"  ⚠ SERP suggests: {serp_provider}")
-                        else:
-                            print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
-        
-        # Verify gas - only if selected
-        if 'gas' in selected_utilities:
-            if primary_gas:
-                gas_name = primary_gas.get("NAME") if isinstance(primary_gas, dict) else None
-                if gas_name:
-                    print(f"Verifying gas provider with SERP search...")
-                    serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
+            skip_serp, skip_reason = should_skip_serp(primary_electric, 'electric')
+            if skip_serp:
+                print(f"  ⏭ Skipping SERP for electric: {skip_reason}")
+                primary_electric["_serp_skipped"] = True
+                primary_electric["_skip_reason"] = skip_reason
+                serp_skipped['electric'] = True
+            else:
+                electric_name = primary_electric.get("NAME") if isinstance(primary_electric, dict) else None
+                if electric_name:
+                    print(f"Verifying electric provider with SERP search...")
+                    serp_calls += 1
+                    serp_result = verify_utility_with_serp(address, "electric", electric_name)
                     if serp_result:
                         if serp_result.get("verified"):
-                            primary_gas["_serp_verified"] = True
-                            primary_gas["_confidence"] = "high"
-                            print(f"  ✓ SERP verified: {gas_name}")
+                            primary_electric["_serp_verified"] = True
+                            primary_electric["_confidence"] = "high"
+                            print(f"  ✓ SERP verified: {electric_name}")
                         else:
-                            primary_gas["_serp_verified"] = False
-                            primary_gas["_serp_suggestion"] = serp_result.get("serp_provider")
-                            primary_gas["_confidence"] = "low"
-                            print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
+                            primary_electric["_serp_verified"] = False
+                            serp_provider = serp_result.get("serp_provider")
+                            if serp_provider and other_electric:
+                                for alt in other_electric:
+                                    alt_name = alt.get("NAME", "")
+                                    if serp_provider.upper() in alt_name.upper() or alt_name.upper() in serp_provider.upper():
+                                        print(f"  ⚠ SERP suggests: {serp_provider} (swapping primary)")
+                                        other_electric.remove(alt)
+                                        other_electric.insert(0, primary_electric)
+                                        primary_electric = alt
+                                        primary_electric["_serp_verified"] = True
+                                        primary_electric["_confidence"] = "high"
+                                        break
+                                else:
+                                    print(f"  ⚠ SERP suggests: {serp_provider}")
+                            else:
+                                print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
+        
+        # Verify gas - only if selected and not authoritative
+        if 'gas' in selected_utilities:
+            if primary_gas:
+                skip_serp, skip_reason = should_skip_serp(primary_gas, 'gas')
+                if skip_serp:
+                    print(f"  ⏭ Skipping SERP for gas: {skip_reason}")
+                    primary_gas["_serp_skipped"] = True
+                    primary_gas["_skip_reason"] = skip_reason
+                    serp_skipped['gas'] = True
+                else:
+                    gas_name = primary_gas.get("NAME") if isinstance(primary_gas, dict) else None
+                    if gas_name:
+                        print(f"Verifying gas provider with SERP search...")
+                        serp_calls += 1
+                        serp_result = verify_utility_with_serp(address, "natural gas", gas_name)
+                        if serp_result:
+                            if serp_result.get("verified"):
+                                primary_gas["_serp_verified"] = True
+                                primary_gas["_confidence"] = "high"
+                                print(f"  ✓ SERP verified: {gas_name}")
+                            else:
+                                primary_gas["_serp_verified"] = False
+                                primary_gas["_serp_suggestion"] = serp_result.get("serp_provider")
+                                primary_gas["_confidence"] = "low"
+                                print(f"  ⚠ SERP suggests: {serp_result.get('serp_provider', 'unknown')}")
             elif not gas_no_service:
                 # No gas in HIFLD - try to find via SERP
                 print(f"Searching for gas provider via SERP...")
@@ -1738,40 +1832,48 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         if 'water' in selected_utilities and water:
             # Skip verification if water was already found via SERP (it's already verified)
             if water.get("_source") == "google_serp":
-                pass  # Already verified via SERP
+                serp_skipped['water'] = True  # Already verified via SERP
             else:
-                water_name = water.get("name") if isinstance(water, dict) else None
-                if water_name:
-                    print(f"Verifying water provider with SERP search...")
-                    serp_result = verify_utility_with_serp(address, "water", water_name)
-                    if serp_result:
-                        if serp_result.get("verified"):
-                            water["_serp_verified"] = True
-                            water["_confidence"] = "high"
-                            print(f"  ✓ SERP verified: {water_name}")
-                        else:
-                            # SERP found a different provider - use that instead
-                            serp_provider = serp_result.get("serp_provider")
-                            if serp_provider:
-                                print(f"  ⚠ SERP suggests different provider: {serp_provider}")
-                                # Replace with SERP result
-                                water = {
-                                    "name": serp_provider,
-                                    "id": None,
-                                    "state": water.get("state"),
-                                    "phone": None,
-                                    "address": None,
-                                    "city": water.get("city"),
-                                    "zip": None,
-                                    "population_served": None,
-                                    "source_type": None,
-                                    "owner_type": None,
-                                    "service_connections": None,
-                                    "_confidence": serp_result.get("confidence", "medium"),
-                                    "_source": "google_serp",
-                                    "_serp_verified": True,
-                                    "_note": f"SERP override: {serp_result.get('notes', '')}"
-                                }
+                skip_serp, skip_reason = should_skip_serp(water, 'water')
+                if skip_serp:
+                    print(f"  ⏭ Skipping SERP for water: {skip_reason}")
+                    water["_serp_skipped"] = True
+                    water["_skip_reason"] = skip_reason
+                    serp_skipped['water'] = True
+                else:
+                    water_name = water.get("name") if isinstance(water, dict) else None
+                    if water_name:
+                        print(f"Verifying water provider with SERP search...")
+                        serp_calls += 1
+                        serp_result = verify_utility_with_serp(address, "water", water_name)
+                        if serp_result:
+                            if serp_result.get("verified"):
+                                water["_serp_verified"] = True
+                                water["_confidence"] = "high"
+                                print(f"  ✓ SERP verified: {water_name}")
+                            else:
+                                # SERP found a different provider - use that instead
+                                serp_provider = serp_result.get("serp_provider")
+                                if serp_provider:
+                                    print(f"  ⚠ SERP suggests different provider: {serp_provider}")
+                                    # Replace with SERP result
+                                    water = {
+                                        "name": serp_provider,
+                                        "id": None,
+                                        "state": water.get("state"),
+                                        "phone": None,
+                                        "address": None,
+                                        "city": water.get("city"),
+                                        "zip": None,
+                                        "population_served": None,
+                                        "source_type": None,
+                                        "owner_type": None,
+                                        "service_connections": None,
+                                        "_confidence": serp_result.get("confidence", "medium"),
+                                        "_source": "google_serp",
+                                        "_serp_verified": True,
+                                        "_note": f"SERP override: {serp_result.get('notes', '')}"
+                                    }
     
     # Build electric result - primary first, then others
     electric_result = None

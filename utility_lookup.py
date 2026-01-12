@@ -1966,7 +1966,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             source=source_to_score_key(water_source),
             match_level=water_match,
             is_problem_area=is_problem_water,
-            utility_type='water'
+            utility_type='water',
+            state=state
         )
         water['confidence_score'] = water_confidence['score']
         water['confidence_factors'] = [
@@ -1981,7 +1982,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             source=source_to_score_key(elec_source),
             match_level='zip5',
             is_problem_area=is_problem_electric,
-            utility_type='electric'
+            utility_type='electric',
+            state=state
         )
         primary_electric['confidence_score'] = elec_confidence['score']
         primary_electric['confidence_factors'] = [
@@ -1997,7 +1999,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             source=source_to_score_key(gas_source),
             match_level='zip5',
             is_problem_area=is_problem_gas,
-            utility_type='gas'
+            utility_type='gas',
+            state=state
         )
         primary_gas['confidence_score'] = gas_confidence['score']
         primary_gas['confidence_factors'] = [

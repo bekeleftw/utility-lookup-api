@@ -6,6 +6,16 @@ Returns numeric score 0-100 with transparent factor breakdown.
 from datetime import datetime
 from typing import Dict, List, Optional, Any
 
+# Import state data availability (for "best available" boost)
+try:
+    from state_data_quality import calculate_data_availability_boost, get_state_tier
+except ImportError:
+    # Fallback if module not available
+    def calculate_data_availability_boost(state, utility_type, source):
+        return {"boost": 0, "reason": None}
+    def get_state_tier(state):
+        return 3
+
 # Source quality scores (max one applies)
 # Scale: 0-100 where 85+ = high confidence, 65-84 = medium, <65 = low
 # Updated with Phase 12-14 data sources
@@ -67,7 +77,8 @@ def calculate_confidence(
     agreeing_sources: Optional[List[str]] = None,
     data_age_months: int = 6,
     is_problem_area: bool = False,
-    utility_type: str = 'electric'
+    utility_type: str = 'electric',
+    state: str = None
 ) -> Dict[str, Any]:
     """
     Calculate confidence score with breakdown.
@@ -80,6 +91,7 @@ def calculate_confidence(
         data_age_months: How old the data is
         is_problem_area: Whether this ZIP/area is flagged as problematic
         utility_type: 'electric', 'gas', 'water', 'internet'
+        state: State code for data availability adjustment
     
     Returns:
         Dict with score, level, factors, and recommendation
@@ -179,6 +191,20 @@ def calculate_confidence(
             'points': -5,
             'description': 'Data over 1 year old'
         })
+    
+    # === STATE DATA AVAILABILITY BOOST ===
+    # If we're using the best available data for this state, boost confidence
+    # A human couldn't do better without calling the utility directly
+    if state:
+        availability_boost = calculate_data_availability_boost(state, utility_type, source)
+        boost = availability_boost.get("boost", 0)
+        if boost > 0:
+            score += boost
+            factors.append({
+                'category': 'Data Availability',
+                'points': boost,
+                'description': availability_boost.get("reason", "Best available for state")
+            })
     
     # === CALCULATE FINAL SCORE ===
     final_score = max(0, min(100, score))

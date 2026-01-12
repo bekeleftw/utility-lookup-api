@@ -31,6 +31,7 @@ from state_utility_verification import verify_electric_provider, verify_gas_prov
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 from confidence_scoring import calculate_confidence, source_to_score_key
 from municipal_utilities import lookup_municipal_electric, lookup_municipal_gas, lookup_municipal_water
+from brand_resolver import resolve_brand_name_with_fallback
 
 # Import new Phase 12-14 modules
 from deregulated_markets import is_deregulated_state, get_deregulated_market_info, adjust_electric_result_for_deregulation
@@ -2050,6 +2051,25 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     anomalies = detect_anomalies(result, zip_code)
     if anomalies:
         result["_anomalies"] = anomalies
+    
+    # NEW: Resolve legal names to consumer-facing brand names
+    if primary_electric and primary_electric.get('NAME'):
+        brand, legal = resolve_brand_name_with_fallback(primary_electric['NAME'], state)
+        if legal:  # Brand differs from legal name
+            primary_electric['_legal_name'] = legal
+            primary_electric['NAME'] = brand
+    
+    if primary_gas and primary_gas.get('NAME'):
+        brand, legal = resolve_brand_name_with_fallback(primary_gas['NAME'], state)
+        if legal:  # Brand differs from legal name
+            primary_gas['_legal_name'] = legal
+            primary_gas['NAME'] = brand
+    
+    if water and water.get('name'):
+        brand, legal = resolve_brand_name_with_fallback(water['name'], state)
+        if legal:  # Brand differs from legal name
+            water['_legal_name'] = legal
+            water['name'] = brand
     
     # Log lookup for validation
     try:

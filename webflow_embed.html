@@ -725,6 +725,180 @@
     text-decoration: underline;
   }
   
+  /* CSV Upload Section */
+  .up-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+    color: #9ca3af;
+    font-size: 13px;
+  }
+  
+  .up-divider::before,
+  .up-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e5e7eb;
+  }
+  
+  .up-csv-section {
+    background: white;
+    border: 2px dashed #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  
+  .up-csv-section:hover {
+    border-color: #22c55e;
+    background: #f0fdf4;
+  }
+  
+  .up-csv-section.dragover {
+    border-color: #22c55e;
+    background: #dcfce7;
+  }
+  
+  .up-csv-icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  
+  .up-csv-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 4px;
+  }
+  
+  .up-csv-subtitle {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 12px;
+  }
+  
+  .up-csv-input {
+    display: none;
+  }
+  
+  .up-csv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #22c55e;
+    background: white;
+    border: 2px solid #22c55e;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .up-csv-btn:hover {
+    background: #22c55e;
+    color: white;
+  }
+  
+  .up-csv-info {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 12px;
+  }
+  
+  .up-csv-progress {
+    display: none;
+    margin-top: 16px;
+  }
+  
+  .up-csv-progress.show {
+    display: block;
+  }
+  
+  .up-progress-bar {
+    height: 8px;
+    background: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+  
+  .up-progress-fill {
+    height: 100%;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border-radius: 4px;
+    transition: width 0.3s;
+    width: 0%;
+  }
+  
+  .up-progress-text {
+    font-size: 13px;
+    color: #6b7280;
+  }
+  
+  .up-csv-results {
+    display: none;
+    margin-top: 16px;
+    text-align: left;
+  }
+  
+  .up-csv-results.show {
+    display: block;
+  }
+  
+  .up-csv-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+  
+  .up-csv-stat {
+    flex: 1;
+    background: #f9fafb;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  .up-csv-stat-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .up-csv-stat-label {
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .up-csv-stat.success .up-csv-stat-value { color: #16a34a; }
+  .up-csv-stat.error .up-csv-stat-value { color: #dc2626; }
+  
+  .up-csv-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .up-csv-download:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  }
+  
   /* Responsive */
   @media (max-width: 480px) {
     .up-container {
@@ -795,6 +969,42 @@
     <button type="submit" class="up-btn" id="searchBtn">Search</button>
   </form>
   
+  <div class="up-divider">or</div>
+  
+  <div class="up-csv-section" id="csvDropZone">
+    <div class="up-csv-icon">📄</div>
+    <div class="up-csv-title">Bulk Lookup from CSV</div>
+    <div class="up-csv-subtitle">Upload a CSV file with addresses (max 100)</div>
+    <input type="file" class="up-csv-input" id="csvInput" accept=".csv" />
+    <button class="up-csv-btn" id="csvSelectBtn">
+      <span>📁</span> Select CSV File
+    </button>
+    <div class="up-csv-info">
+      CSV must have an "address" column. Optional: city, state, zip columns.
+    </div>
+    <div class="up-csv-progress" id="csvProgress">
+      <div class="up-progress-bar">
+        <div class="up-progress-fill" id="csvProgressFill"></div>
+      </div>
+      <div class="up-progress-text" id="csvProgressText">Processing 0 of 0...</div>
+    </div>
+    <div class="up-csv-results" id="csvResults">
+      <div class="up-csv-stats">
+        <div class="up-csv-stat success">
+          <div class="up-csv-stat-value" id="csvSuccessCount">0</div>
+          <div class="up-csv-stat-label">Successful</div>
+        </div>
+        <div class="up-csv-stat error">
+          <div class="up-csv-stat-value" id="csvErrorCount">0</div>
+          <div class="up-csv-stat-label">Errors</div>
+        </div>
+      </div>
+      <button class="up-csv-download" id="csvDownloadBtn">
+        <span>⬇️</span> Download Results CSV
+      </button>
+    </div>
+  </div>
+  
   <div id="utilityResults"></div>
   
   <div class="up-footer">
@@ -817,31 +1027,123 @@
   const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
   
   // Source to human-readable explanation mapping
+  // Expanded to catch all variations from the API
   const sourceExplanations = {
+    // Municipal utilities
     'municipal_utility': 'Verified municipal utility',
     'municipal_utility_database': 'Verified municipal utility',
     'Municipal Utility Database': 'Verified municipal utility',
+    'municipal': 'Verified municipal utility',
+    
+    // Special districts
     'special_district': 'Special district boundary',
     'special_district_boundary': 'Special district boundary',
+    'texas_mud': 'Texas MUD boundary',
+    'florida_cdd': 'Florida CDD boundary',
+    'colorado_metro_district': 'Colorado Metro District',
+    
+    // User feedback
     'user_confirmed': 'Confirmed by users',
     'user_feedback': 'Confirmed by users',
+    'user_correction': 'Confirmed by users',
+    
+    // State regulatory
     'verified': 'State regulatory data',
     'railroad_commission': 'State regulatory data',
     'Texas Railroad Commission territory data': 'State regulatory data',
+    'texas_railroad_commission': 'State regulatory data',
+    'state_puc': 'State regulatory data',
+    'puc_territory': 'State regulatory data',
+    
+    // Federal - HIFLD
     'hifld_polygon': 'Federal territory data',
+    'hifld': 'Federal territory data',
     'HIFLD': 'Federal territory data',
     'HIFLD Electric Cooperative Territory': 'Electric co-op territory',
+    'hifld_coop': 'Electric co-op territory',
+    'electric_cooperative': 'Electric co-op territory',
+    'electric_cooperative_polygon': 'Electric co-op territory',
+    
+    // Federal - EIA
+    'eia_861': 'Federal utility data',
+    'eia': 'Federal utility data',
+    'EIA': 'Federal utility data',
+    'EIA Form 861': 'Federal utility data',
+    'EIA Form 861 ZIP mapping': 'Federal utility data',
+    'eia_861_zip': 'Federal utility data',
+    'eia_861_zip_mapping': 'Federal utility data',
+    'eia_zip': 'Federal utility data',
+    
+    // SERP / Google
     'google_serp': 'Web search verified',
     'serp': 'Web search verified',
+    'serp_verified': 'Web search verified',
+    'google': 'Web search verified',
+    
+    // EPA water
     'epa_sdwis': 'EPA water data',
     'EPA SDWIS': 'EPA water data',
-    'eia_861': 'Federal utility data',
-    'EIA Form 861': 'Federal utility data',
+    'epa': 'EPA water data',
+    'sdwis': 'EPA water data',
+    
+    // Supplemental/curated
     'supplemental': 'Curated database',
     'Supplemental Data': 'Curated database',
+    'supplemental_file': 'Curated database',
+    'curated': 'Curated database',
+    
+    // Overrides
     'zip_override': 'Verified for this ZIP',
-    'FCC Broadband Map': 'FCC broadband data'
+    'zip_correction': 'Verified for this ZIP',
+    'manual_override': 'Manually verified',
+    
+    // Internet
+    'FCC Broadband Map': 'FCC broadband data',
+    'fcc': 'FCC broadband data',
+    'fcc_broadband': 'FCC broadband data',
+    
+    // State gas mappings
+    'state_gas_mapping': 'State utility territory',
+    'state_ldc': 'State utility territory',
+    'ldc_territory': 'State utility territory'
   };
+  
+  // Fuzzy matching for sources not in the exact map
+  function getSourceExplanation(source) {
+    if (!source) return null;
+    
+    // Try exact match first
+    if (sourceExplanations[source]) {
+      return sourceExplanations[source];
+    }
+    
+    // Try case-insensitive match
+    const sourceLower = source.toLowerCase();
+    for (const [key, value] of Object.entries(sourceExplanations)) {
+      if (key.toLowerCase() === sourceLower) {
+        return value;
+      }
+    }
+    
+    // Try partial/keyword matching
+    if (sourceLower.includes('municipal')) return 'Verified municipal utility';
+    if (sourceLower.includes('eia') || sourceLower.includes('861')) return 'Federal utility data';
+    if (sourceLower.includes('hifld')) return 'Federal territory data';
+    if (sourceLower.includes('coop') || sourceLower.includes('co-op')) return 'Electric co-op territory';
+    if (sourceLower.includes('serp') || sourceLower.includes('google')) return 'Web search verified';
+    if (sourceLower.includes('epa') || sourceLower.includes('sdwis')) return 'EPA water data';
+    if (sourceLower.includes('fcc') || sourceLower.includes('broadband')) return 'FCC broadband data';
+    if (sourceLower.includes('user') || sourceLower.includes('confirmed') || sourceLower.includes('feedback')) return 'Confirmed by users';
+    if (sourceLower.includes('special') || sourceLower.includes('district')) return 'Special district boundary';
+    if (sourceLower.includes('mud')) return 'Texas MUD boundary';
+    if (sourceLower.includes('cdd')) return 'Florida CDD boundary';
+    if (sourceLower.includes('railroad') || sourceLower.includes('puc')) return 'State regulatory data';
+    if (sourceLower.includes('override') || sourceLower.includes('correction')) return 'Verified for this ZIP';
+    if (sourceLower.includes('supplemental') || sourceLower.includes('curated')) return 'Curated database';
+    
+    // No match - return null (we'll handle this in the caller)
+    return null;
+  }
   
   let currentAddress = '';
   let currentZipCode = '';
@@ -1124,21 +1426,25 @@
       badgeLabel = m.label;
     }
     
-    // Get explanation
-    let explanation = sourceExplanations[source];
-    if (!explanation && source) {
-      explanation = source.replace(/_/g, ' ').replace(/([A-Z])/g, ' $1').trim();
-    }
-    if (!explanation) {
-      explanation = 'Based on available data';
-    }
+    // Get explanation using smart matching
+    let explanation = getSourceExplanation(source);
     
     // Build dropdown content
     let dropdownContent = '';
     if (score !== undefined && score !== null) {
-      dropdownContent = `<span class="score">${score}/100</span> · ${explanation}`;
+      if (explanation) {
+        dropdownContent = `<span class="score">${score}/100</span> · ${explanation}`;
+      } else {
+        // Just show score if we can't explain the source
+        dropdownContent = `<span class="score">${score}/100</span> confidence`;
+      }
     } else {
-      dropdownContent = explanation;
+      if (explanation) {
+        dropdownContent = explanation;
+      } else {
+        // No score and no explanation - show generic but honest text
+        dropdownContent = 'Confidence details unavailable';
+      }
     }
     
     return `
@@ -1327,6 +1633,280 @@
         document.getElementById(`${cardId}-done`).classList.add('show');
       });
     });
+  }
+  
+  // ============================================
+  // CSV BULK UPLOAD FUNCTIONALITY
+  // ============================================
+  
+  const csvDropZone = document.getElementById('csvDropZone');
+  const csvInput = document.getElementById('csvInput');
+  const csvSelectBtn = document.getElementById('csvSelectBtn');
+  const csvProgress = document.getElementById('csvProgress');
+  const csvProgressFill = document.getElementById('csvProgressFill');
+  const csvProgressText = document.getElementById('csvProgressText');
+  const csvResults = document.getElementById('csvResults');
+  const csvSuccessCount = document.getElementById('csvSuccessCount');
+  const csvErrorCount = document.getElementById('csvErrorCount');
+  const csvDownloadBtn = document.getElementById('csvDownloadBtn');
+  
+  let csvResultsData = [];
+  
+  // Drag and drop handlers
+  csvDropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    csvDropZone.classList.add('dragover');
+  });
+  
+  csvDropZone.addEventListener('dragleave', () => {
+    csvDropZone.classList.remove('dragover');
+  });
+  
+  csvDropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    csvDropZone.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file && file.name.endsWith('.csv')) {
+      processCSVFile(file);
+    } else {
+      alert('Please upload a CSV file');
+    }
+  });
+  
+  // Click to select file
+  csvSelectBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    csvInput.click();
+  });
+  
+  csvInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      processCSVFile(file);
+    }
+  });
+  
+  // Download results
+  csvDownloadBtn.addEventListener('click', () => {
+    if (csvResultsData.length === 0) return;
+    
+    const headers = Object.keys(csvResultsData[0]);
+    const csvContent = [
+      headers.join(','),
+      ...csvResultsData.map(row => 
+        headers.map(h => {
+          const val = row[h] || '';
+          // Escape quotes and wrap in quotes if contains comma
+          if (val.toString().includes(',') || val.toString().includes('"')) {
+            return `"${val.toString().replace(/"/g, '""')}"`;
+          }
+          return val;
+        }).join(',')
+      )
+    ].join('\n');
+    
+    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'utility_lookup_results.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+  
+  // Parse CSV
+  function parseCSV(text) {
+    const lines = text.split('\n').filter(line => line.trim());
+    if (lines.length < 2) return { headers: [], rows: [] };
+    
+    const parseRow = (line) => {
+      const result = [];
+      let current = '';
+      let inQuotes = false;
+      
+      for (let i = 0; i < line.length; i++) {
+        const char = line[i];
+        if (char === '"') {
+          inQuotes = !inQuotes;
+        } else if (char === ',' && !inQuotes) {
+          result.push(current.trim());
+          current = '';
+        } else {
+          current += char;
+        }
+      }
+      result.push(current.trim());
+      return result;
+    };
+    
+    const headers = parseRow(lines[0]);
+    const rows = lines.slice(1).map(line => {
+      const values = parseRow(line);
+      const obj = {};
+      headers.forEach((h, i) => {
+        obj[h] = values[i] || '';
+      });
+      return obj;
+    });
+    
+    return { headers, rows };
+  }
+  
+  // Find address column
+  function findAddressColumn(headers) {
+    const addressCols = ['address', 'full_address', 'street_address', 'property_address', 'addr', 'location'];
+    const headersLower = headers.map(h => h.toLowerCase().trim());
+    
+    for (const col of addressCols) {
+      const idx = headersLower.indexOf(col);
+      if (idx !== -1) return headers[idx];
+    }
+    return null;
+  }
+  
+  // Process CSV file
+  async function processCSVFile(file) {
+    const text = await file.text();
+    const { headers, rows } = parseCSV(text);
+    
+    if (rows.length === 0) {
+      alert('CSV file is empty');
+      return;
+    }
+    
+    const addressCol = findAddressColumn(headers);
+    if (!addressCol) {
+      alert('Could not find address column. Please include a column named "address", "full_address", or "street_address".');
+      return;
+    }
+    
+    // Limit to 100 rows
+    const MAX_ROWS = 100;
+    const processRows = rows.slice(0, MAX_ROWS);
+    if (rows.length > MAX_ROWS) {
+      alert(`Processing first ${MAX_ROWS} addresses only (${rows.length} total in file)`);
+    }
+    
+    // Get selected utilities
+    const utilities = getSelectedUtilities();
+    if (utilities.length === 0) {
+      alert('Please select at least one utility type');
+      return;
+    }
+    
+    // Show progress
+    csvProgress.classList.add('show');
+    csvResults.classList.remove('show');
+    csvResultsData = [];
+    
+    let successCount = 0;
+    let errorCount = 0;
+    
+    // Process each row
+    for (let i = 0; i < processRows.length; i++) {
+      const row = processRows[i];
+      const address = row[addressCol];
+      
+      // Update progress
+      const pct = Math.round(((i + 1) / processRows.length) * 100);
+      csvProgressFill.style.width = `${pct}%`;
+      csvProgressText.textContent = `Processing ${i + 1} of ${processRows.length}...`;
+      
+      if (!address || !address.trim()) {
+        csvResultsData.push({
+          ...row,
+          _status: 'error',
+          _error: 'Empty address',
+          electric_provider: '',
+          gas_provider: '',
+          water_provider: ''
+        });
+        errorCount++;
+        continue;
+      }
+      
+      try {
+        const params = new URLSearchParams({
+          address: address.trim(),
+          verify: 'true',
+          utilities: utilities.join(',')
+        });
+        
+        const response = await fetch(`${API_URL}?${params}`);
+        const data = await response.json();
+        
+        if (data.error) {
+          csvResultsData.push({
+            ...row,
+            _status: 'error',
+            _error: data.error,
+            electric_provider: '',
+            gas_provider: '',
+            water_provider: ''
+          });
+          errorCount++;
+        } else {
+          const result = {
+            ...row,
+            _status: 'success',
+            _error: ''
+          };
+          
+          // Extract provider names
+          if (utilities.includes('electric') && data.utilities.electric && data.utilities.electric.length > 0) {
+            result.electric_provider = data.utilities.electric[0].name || '';
+            result.electric_confidence = data.utilities.electric[0].confidence_score || '';
+          } else {
+            result.electric_provider = '';
+            result.electric_confidence = '';
+          }
+          
+          if (utilities.includes('gas') && data.utilities.gas && data.utilities.gas.length > 0) {
+            result.gas_provider = data.utilities.gas[0].name || '';
+            result.gas_confidence = data.utilities.gas[0].confidence_score || '';
+          } else {
+            result.gas_provider = '';
+            result.gas_confidence = '';
+          }
+          
+          if (utilities.includes('water') && data.utilities.water && data.utilities.water.length > 0) {
+            result.water_provider = data.utilities.water[0].name || '';
+            result.water_confidence = data.utilities.water[0].confidence_score || '';
+          } else {
+            result.water_provider = '';
+            result.water_confidence = '';
+          }
+          
+          // Location info
+          if (data.location) {
+            result._geocoded_city = data.location.city || '';
+            result._geocoded_state = data.location.state || '';
+          }
+          
+          csvResultsData.push(result);
+          successCount++;
+        }
+      } catch (e) {
+        csvResultsData.push({
+          ...row,
+          _status: 'error',
+          _error: e.message || 'API error',
+          electric_provider: '',
+          gas_provider: '',
+          water_provider: ''
+        });
+        errorCount++;
+      }
+      
+      // Small delay to avoid overwhelming the API
+      await new Promise(r => setTimeout(r, 200));
+    }
+    
+    // Show results
+    csvProgress.classList.remove('show');
+    csvResults.classList.add('show');
+    csvSuccessCount.textContent = successCount;
+    csvErrorCount.textContent = errorCount;
   }
 })();
 </script>

@@ -8,31 +8,49 @@ from typing import Dict, List, Optional, Any
 
 # Source quality scores (max one applies)
 # Scale: 0-100 where 85+ = high confidence, 65-84 = medium, <65 = low
+# Updated with Phase 12-14 data sources
 SOURCE_SCORES = {
-    'user_confirmed': 90,       # Multiple users confirmed this
-    'user_feedback': 85,        # Single user feedback
-    'municipal_utility': 85,    # Municipal utility database (Austin Energy, CPS, LADWP, etc.)
-    'utility_api': 85,          # Direct from utility company lookup
-    'special_district': 80,     # MUD/CDD/PUD boundary data
-    'verified': 80,             # Verified by state-specific data (TX RRC, etc.)
-    'zip_override': 75,         # Manual ZIP correction table
-    'railroad_commission': 75,  # Texas RRC (gas) - authoritative
-    'state_puc': 70,            # State PUC data
-    'eia_861': 65,              # EIA federal data (electric)
-    'supplemental': 65,         # Supplemental data file (curated)
+    # === TIER 1: Authoritative (90+) - Skip SERP verification ===
+    'user_confirmed': 95,       # Multiple users confirmed this - ground truth
+    'utility_direct_api': 92,   # Direct from utility GIS API (Austin Energy, CA CEC, etc.)
+    'franchise_agreement': 92,  # City franchise agreement data
+    'parcel_data': 90,          # County assessor parcel-level data
+    'user_feedback': 88,        # Single user feedback
+    'municipal_utility': 88,    # Municipal utility database (Austin Energy, CPS, LADWP, etc.)
+    
+    # === TIER 2: High Quality (80-89) - Spot-check SERP ===
+    'special_district': 85,     # MUD/CDD/PUD boundary data (TCEQ, FL DEO, etc.)
+    'verified': 85,             # Verified by state-specific data (TX RRC, etc.)
+    'utility_api': 85,          # Direct from utility company lookup (legacy)
+    'state_puc_map': 82,        # State PUC territory maps
+    'zip_override': 80,         # Manual ZIP correction table
+    'railroad_commission': 80,  # Texas RRC (gas) - authoritative
+    
+    # === TIER 3: Good Quality (65-79) - SERP recommended ===
+    'state_puc': 75,            # State PUC data (non-map)
+    'address_inference': 72,    # Inferred from nearby verified addresses
+    'eia_861': 70,              # EIA federal data (electric)
+    'supplemental': 70,         # Supplemental data file (curated)
+    'electric_cooperative': 68, # NRECA cooperative data
+    'state_ldc_mapping': 65,    # State-level gas LDC mapping (JSON files)
+    
+    # === TIER 4: Needs Verification (50-64) - Always SERP ===
     'google_serp': 60,          # Google search as primary source
-    'hifld_polygon': 55,        # HIFLD territory polygon
+    'hifld_polygon': 58,        # HIFLD territory polygon
     'epa_sdwis': 55,            # EPA water systems
-    'state_ldc_mapping': 50,    # State-level gas LDC mapping
-    'serp_only': 45,            # Google search only (no database match)
-    'county_match': 40,         # County-level match (water)
-    'heuristic': 25,            # Name matching / fallback
-    'unknown': 10
+    'serp_only': 50,            # Google search only (no database match)
+    
+    # === TIER 5: Low Confidence (<50) - Requires verification ===
+    'county_match': 45,         # County-level match (water)
+    'heuristic': 30,            # Name matching / fallback
+    'unknown': 15
 }
 
 # Geographic precision scores (additive bonus)
 PRECISION_SCORES = {
-    'address': 10,              # Exact address match
+    'parcel': 15,               # Parcel-level match (assessor data)
+    'address': 12,              # Exact address match
+    'gis_point': 10,            # GIS point-in-polygon query
     'subdivision': 8,           # Subdivision/neighborhood match
     'special_district': 8,      # Within special district boundary
     'zip5': 5,                  # 5-digit ZIP match
@@ -132,8 +150,12 @@ def calculate_confidence(
             })
     
     # === PROBLEM AREA PENALTY ===
-    # Don't penalize high-confidence sources (municipal utilities, user confirmed, etc.)
-    high_confidence_sources = {'user_confirmed', 'user_feedback', 'municipal_utility', 'utility_api', 'verified'}
+    # Don't penalize high-confidence sources (Tier 1 & 2)
+    high_confidence_sources = {
+        'user_confirmed', 'user_feedback', 'municipal_utility', 'utility_api', 
+        'verified', 'utility_direct_api', 'franchise_agreement', 'parcel_data',
+        'special_district', 'state_puc_map', 'zip_override', 'railroad_commission'
+    }
     if is_problem_area and source not in high_confidence_sources:
         score -= 15
         factors.append({
@@ -228,65 +250,54 @@ def source_to_score_key(source_string: str) -> str:
     """Convert source strings from lookup results to score keys."""
     source_lower = source_string.lower() if source_string else 'unknown'
     
-    # Map common source strings to score keys
+    # Map common source strings to score keys (ordered by tier)
     mappings = {
-        # Municipal utilities - highest confidence
+        'user confirmed': 'user_confirmed',
+        'user_confirmed': 'user_confirmed',
+        'utility_direct_api': 'utility_direct_api',
+        'arcgis': 'utility_direct_api',
+        'gis api': 'utility_direct_api',
+        'franchise_agreement': 'franchise_agreement',
+        'parcel_data': 'parcel_data',
+        'assessor': 'parcel_data',
+        'user feedback': 'user_feedback',
+        'user_feedback': 'user_feedback',
         'municipal_utility': 'municipal_utility',
         'municipal utility': 'municipal_utility',
         'municipal_utility_database': 'municipal_utility',
-        'municipal utility database': 'municipal_utility',
-        
-        # Verified state-specific data
-        'verified': 'verified',
-        'texas railroad commission': 'verified',
-        'railroad commission': 'verified',
-        'puc territory': 'verified',
-        'ca puc': 'verified',
-        'il puc': 'verified',
-        'oh puc': 'verified',
-        'ga puc': 'verified',
-        'az puc': 'verified',
-        'state puc': 'state_puc',
-        
-        # User feedback
-        'user feedback': 'user_feedback',
-        'user_feedback': 'user_feedback',
-        'user confirmed': 'user_confirmed',
-        'user_confirmed': 'user_confirmed',
-        
-        # Special districts
         'special_district': 'special_district',
         'special district': 'special_district',
         'mud': 'special_district',
         'wcid': 'special_district',
         'fwsd': 'special_district',
         'cdd': 'special_district',
-        
-        # ZIP overrides
+        'pud': 'special_district',
+        'verified': 'verified',
+        'railroad commission': 'railroad_commission',
+        'state_puc_map': 'state_puc_map',
+        'puc territory': 'state_puc_map',
         'zip override': 'zip_override',
         'zip_override': 'zip_override',
-        'texas gas zip override': 'zip_override',
-        
-        # Federal/state data
+        'state puc': 'state_puc',
+        'state_puc': 'state_puc',
+        'address_inference': 'address_inference',
+        'inferred': 'address_inference',
         'eia': 'eia_861',
         'eia_861': 'eia_861',
-        'epa': 'epa_sdwis',
-        'epa_sdwis': 'epa_sdwis',
         'supplemental': 'supplemental',
-        
-        # SERP
+        'electric_cooperative': 'electric_cooperative',
+        'co-op': 'electric_cooperative',
+        'state ldc': 'state_ldc_mapping',
+        'state_ldc_mapping': 'state_ldc_mapping',
         'google_serp': 'google_serp',
         'serp': 'google_serp',
-        
-        # HIFLD
         'hifld': 'hifld_polygon',
-        
-        # Other
-        'state ldc': 'state_ldc_mapping',
+        'epa': 'epa_sdwis',
+        'epa_sdwis': 'epa_sdwis',
         'county': 'county_match',
         'heuristic': 'heuristic',
+        'utility_api': 'utility_api',
         'fcc': 'utility_api',
-        'fcc broadband': 'utility_api',
     }
     
     for key, value in mappings.items():

@@ -470,21 +470,31 @@ LOOKUPS_LOG_FILE = Path(__file__).parent / "data" / "lookup_log.json"
 MAX_LOG_ENTRIES = 10000  # Keep last 10k lookups
 
 # Authoritative sources that don't need SERP verification (cost optimization)
+# TIER 1 & 2 sources - Skip SERP verification (saves ~$0.01/lookup)
 AUTHORITATIVE_SOURCES = {
-    'special_district',
-    'special_district_boundary',
+    # Tier 1: Ground truth (95+ confidence)
+    'user_confirmed',
+    'utility_direct_api',
+    'arcgis',
+    'franchise_agreement',
+    'parcel_data',
+    'user_feedback',
     'municipal_utility',
     'municipal_utility_database',
-    'user_confirmed',
+    # Tier 2: High quality (80-89 confidence)
+    'special_district',
+    'special_district_boundary',
+    'verified',
     'zip_override',
     'electric_cooperative_polygon',
-    'verified',
     'texas_railroad_commission',
+    'railroad_commission',
     'state_puc_territory',
+    'state_puc_map',
     'puc territory',
 }
 
-# Sources that should always be SERP verified
+# TIER 4 & 5 sources - Always SERP verify
 ALWAYS_VERIFY_SOURCES = {
     'eia_861',
     'hifld',
@@ -494,6 +504,7 @@ ALWAYS_VERIFY_SOURCES = {
     'heuristic',
     'heuristic_city_match',
     'county_match',
+    'unknown',
 }
 
 

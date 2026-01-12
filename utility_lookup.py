@@ -897,12 +897,45 @@ def normalize_address_for_fcc(address: str) -> str:
     return normalized
 
 
-def lookup_internet_providers(address: str) -> Optional[Dict]:
+def generate_neighbor_addresses(address: str, offsets: list = None) -> list:
     """
-    Look up internet providers using Playwright to handle FCC's session requirements.
-    Uses Chromium with stealth settings to bypass bot detection.
-    Loads the FCC broadband map homepage, enters address, clicks autocomplete suggestion,
-    and intercepts the fabric/detail API response.
+    Generate nearby street addresses by adjusting the street number.
+    FCC broadband data has gaps, but neighbors typically have the same providers.
+    
+    Args:
+        address: Original address like "1542 N Hoover St, Los Angeles, CA 90027"
+        offsets: List of offsets to try (default: [-6, -4, -2, +2, +4, +6])
+    
+    Returns:
+        List of (address, offset) tuples to try
+    """
+    import re
+    
+    if offsets is None:
+        offsets = [-6, -4, -2, 2, 4, 6]  # Try nearby even numbers first
+    
+    # Extract street number from beginning of address
+    match = re.match(r'^(\d+)\s+(.+)$', address.strip())
+    if not match:
+        return []
+    
+    street_num = int(match.group(1))
+    rest_of_address = match.group(2)
+    
+    neighbors = []
+    for offset in offsets:
+        new_num = street_num + offset
+        if new_num > 0:
+            new_address = f"{new_num} {rest_of_address}"
+            neighbors.append((new_address, offset))
+    
+    return neighbors
+
+
+def _lookup_internet_single(address: str) -> Optional[Dict]:
+    """
+    Internal function to look up internet providers for a single address.
+    Returns None if address not found in FCC database.
     """
     try:
         from playwright.sync_api import sync_playwright
@@ -910,16 +943,13 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
         print("Playwright not installed, skipping internet lookup")
         return None
     
-    # Normalize address to remove apartment/unit numbers (FCC only accepts building addresses)
+    # Normalize address to remove apartment/unit numbers
     normalized_address = normalize_address_for_fcc(address)
-    if normalized_address != address:
-        print(f"  Normalized address for FCC: {normalized_address}")
     
     result_data = None
     
     def handle_response(response):
         nonlocal result_data
-        # Capture the fabric/detail API (not hex tiles)
         if "fabric/detail" in response.url and "hex" not in response.url and response.status == 200:
             try:
                 result_data = response.json()
@@ -928,22 +958,13 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
     
     try:
         with sync_playwright() as p:
-            # Check if we have a display available (for headed mode)
             import os
             import sys
             display = os.environ.get('DISPLAY')
             use_headed = display is not None and display != ''
             
-            if use_headed:
-                print(f"  Using headed mode with DISPLAY={display}", flush=True)
-            else:
-                print("  No DISPLAY available, falling back to headless (may not work)", flush=True)
-            
-            sys.stdout.flush()
-            
-            # Use Chromium with stealth settings to bypass bot detection
             browser = p.chromium.launch(
-                headless=not use_headed,  # Use headed if DISPLAY available
+                headless=not use_headed,
                 args=[
                     '--disable-blink-features=AutomationControlled',
                     '--no-sandbox',
@@ -959,74 +980,93 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
             )
             page = context.new_page()
             
-            # Remove webdriver property to avoid detection
             page.add_init_script("""
                 Object.defineProperty(navigator, 'webdriver', { get: () => undefined });
             """)
             
-            # Listen for API responses
             page.on("response", handle_response)
             
-            # Go to FCC broadband map HOMEPAGE
-            # Use domcontentloaded instead of networkidle to avoid timeout
-            print("  Loading FCC homepage...", flush=True)
             page.goto("https://broadbandmap.fcc.gov/", timeout=60000, wait_until="domcontentloaded")
-            page.wait_for_timeout(5000)  # Wait for JS to initialize
-            print("  FCC page loaded", flush=True)
+            page.wait_for_timeout(5000)
             
-            # Find and click the address input
             search_input = page.locator('#addrSearch')
             if not search_input.is_visible():
-                print("  FCC: Search input not visible", flush=True)
                 browser.close()
                 return None
             
-            print("  Typing address...", flush=True)
             search_input.click()
             page.wait_for_timeout(500)
-            
-            # Type NORMALIZED address (without apt/unit) to trigger autocomplete
             page.keyboard.type(normalized_address, delay=80)
-            
-            # Wait for autocomplete suggestions to appear
             page.wait_for_timeout(3000)
             
-            # Check if autocomplete appeared by looking for address in page content
             content = page.content()
             address_street = normalized_address.split(',')[0].upper().strip()
             
             if address_street in content.upper():
-                print(f"  Autocomplete found for: {address_street}", flush=True)
-                # Click the suggestion
                 suggestion = page.locator(f'text={address_street}').first
                 if suggestion.is_visible():
                     suggestion.click()
-                    print("  Clicked suggestion, waiting for API...", flush=True)
-                    page.wait_for_timeout(8000)  # Wait for API response
+                    page.wait_for_timeout(8000)
             else:
-                print("  No autocomplete, using keyboard fallback", flush=True)
-                # Fallback: try arrow down + enter
                 page.keyboard.press("ArrowDown")
                 page.wait_for_timeout(500)
                 page.keyboard.press("Enter")
                 page.wait_for_timeout(8000)
             
-            print(f"  API captured: {result_data is not None}", flush=True)
             browser.close()
             
     except Exception as e:
         print(f"Playwright error: {e}")
         return None
     
-    # Process the captured API response
     if not result_data:
-        print("FCC API: No data captured")
         return None
     
     if result_data.get("status") != "successful" or not result_data.get("data"):
-        print("FCC API: No provider data found")
         return None
     
+    return result_data
+
+
+def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optional[Dict]:
+    """
+    Look up internet providers using Playwright to handle FCC's session requirements.
+    Uses Chromium with stealth settings to bypass bot detection.
+    Loads the FCC broadband map homepage, enters address, clicks autocomplete suggestion,
+    and intercepts the fabric/detail API response.
+    
+    If the exact address isn't found and try_neighbors=True, will attempt nearby
+    street numbers as fallback (FCC data has gaps but neighbors usually have same providers).
+    """
+    # Normalize address first
+    normalized_address = normalize_address_for_fcc(address)
+    if normalized_address != address:
+        print(f"  Normalized address for FCC: {normalized_address}")
+    
+    # Try the exact address first
+    print(f"  Trying exact address: {normalized_address}")
+    result_data = _lookup_internet_single(normalized_address)
+    
+    neighbor_used = None
+    
+    # If exact address failed and neighbors enabled, try nearby addresses
+    if not result_data and try_neighbors:
+        neighbors = generate_neighbor_addresses(normalized_address)
+        if neighbors:
+            print(f"  Exact address not in FCC database, trying {len(neighbors)} neighbor addresses...")
+            for neighbor_addr, offset in neighbors:
+                print(f"    Trying neighbor: {neighbor_addr} (offset {offset:+d})")
+                result_data = _lookup_internet_single(neighbor_addr)
+                if result_data:
+                    neighbor_used = (neighbor_addr, offset)
+                    print(f"    Found data from neighbor address!")
+                    break
+    
+    if not result_data:
+        print("FCC API: No data found for address or neighbors")
+        return None
+    
+    # Process the captured API response
     location_data = result_data["data"][0]
     providers_raw = location_data.get("detail", [])
     
@@ -1078,7 +1118,7 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
     
     best_wired = best_fiber or best_cable or best_dsl
     
-    return {
+    result = {
         "location_id": location_data.get("location_id"),
         "address": location_data.get("address_primary"),
         "city": location_data.get("city"),
@@ -1093,6 +1133,15 @@ def lookup_internet_providers(address: str) -> Optional[Dict]:
         "best_wireless": best_wireless,
         "best_satellite": best_satellite,
     }
+    
+    # Add neighbor inference metadata if we used a neighbor address
+    if neighbor_used:
+        result["_neighbor_inference"] = True
+        result["_neighbor_address"] = neighbor_used[0]
+        result["_neighbor_offset"] = neighbor_used[1]
+        result["_note"] = f"Data from nearby address ({neighbor_used[1]:+d} house numbers). Providers should be the same."
+    
+    return result
 # =============================================================================
 # RANKING AND FILTERING FUNCTIONS
 # =============================================================================

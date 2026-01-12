@@ -141,6 +141,39 @@ def format_utility_name(legal_name: str, include_legal: bool = False) -> str:
     return brand
 
 
+# Corporate mergers and acquisitions - maps old names to new entities
+# Updated as companies merge/rebrand
+CORPORATE_MERGERS = {
+    # Chesapeake Energy + Southwestern Energy → Expand Energy (Oct 2024)
+    "chesapeake energy": "Expand Energy",
+    "chesapeake utilities": "Expand Energy",  # Note: Chesapeake Utilities Corp is different, may need verification
+    "southwestern energy": "Expand Energy",
+    
+    # Duke Energy acquisitions
+    "progress energy": "Duke Energy",
+    "piedmont natural gas": "Duke Energy",
+    
+    # Dominion Energy acquisitions
+    "questar": "Dominion Energy",
+    "scana": "Dominion Energy",
+    
+    # WEC Energy Group
+    "integrys energy": "WEC Energy Group",
+    "peoples gas chicago": "WEC Energy Group",
+    
+    # Southern Company acquisitions
+    "agl resources": "Southern Company Gas",
+    "nicor gas": "Southern Company Gas",
+    
+    # Berkshire Hathaway Energy
+    "midamerican energy": "Berkshire Hathaway Energy",
+    "pacificorp": "Berkshire Hathaway Energy",
+    "nv energy": "Berkshire Hathaway Energy",
+    
+    # CenterPoint acquisitions
+    "vectren": "CenterPoint Energy",
+}
+
 # Common brand mappings that might not be in the directory yet
 # These serve as fallbacks
 COMMON_BRAND_MAPPINGS = {
@@ -209,13 +242,23 @@ COMMON_BRAND_MAPPINGS = {
 def resolve_brand_name_with_fallback(legal_name: str, state: str = None) -> Tuple[str, Optional[str]]:
     """
     Resolve brand name using directory first, then fallback mappings.
+    Also handles corporate mergers/acquisitions.
     """
-    # Try directory first
+    if not legal_name:
+        return ("Unknown", None)
+    
+    name_lower = legal_name.lower().strip()
+    
+    # Check corporate mergers first (these take priority as they're most current)
+    for old_name, new_name in CORPORATE_MERGERS.items():
+        if old_name in name_lower:
+            return (new_name, f"{legal_name} (now {new_name})")
+    
+    # Try directory
     brand, legal = resolve_brand_name(legal_name, state)
     
     # If no match, try fallback mappings
-    if legal is None and legal_name:
-        name_lower = legal_name.lower().strip()
+    if legal is None:
         if name_lower in COMMON_BRAND_MAPPINGS:
             return (COMMON_BRAND_MAPPINGS[name_lower], legal_name)
     
@@ -232,6 +275,9 @@ if __name__ == "__main__":
         "Commonwealth Edison",
         "Florida Power & Light",
         "Arizona Public Service",
+        "Chesapeake Energy",  # Merged with Southwestern → Expand Energy (Oct 2024)
+        "Southwestern Energy",  # Merged → Expand Energy
+        "Progress Energy",  # Acquired by Duke Energy
         "Some Unknown Utility",
     ]
     

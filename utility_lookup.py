@@ -1725,6 +1725,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     
     # Step 4: Water lookup - only if selected
     # Priority: Municipal utilities > Special districts > SERP > EPA SDWIS
+    water_no_service = None
     if 'water' in selected_utilities:
         water = None
         
@@ -1786,6 +1787,19 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         if not water:
             water = lookup_water_utility(city, county, state, full_address=address,
                                         lat=lat, lon=lon, zip_code=zip_code)
+        
+        # If still no water provider, check if likely private well area
+        if not water:
+            from well_septic import get_well_septic_likelihood, get_no_public_water_response
+            well_likelihood = get_well_septic_likelihood(state, is_incorporated=True, address=address)
+            if well_likelihood.get('well_likelihood', 0) > 0.15:  # >15% likelihood
+                water_no_service = get_no_public_water_response(state, county)
+                water_no_service['_well_likelihood'] = f"{well_likelihood['well_likelihood']:.0%}"
+            else:
+                water_no_service = {
+                    "note": "No public water provider found for this address. May use private well or small community system.",
+                    "recommendations": ["Contact county health department", "Check property records for well permit"]
+                }
     
     # Step 5: Internet lookup - only if selected
     if 'internet' in selected_utilities:
@@ -2089,6 +2103,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         "gas": gas_result,
         "gas_no_service": gas_no_service,  # Set if no gas service available
         "water": water,
+        "water_no_service": water_no_service,  # Set if no public water (likely private well)
         "internet": internet,
         "location": {
             "city": city,

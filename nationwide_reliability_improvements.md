@@ -1162,3 +1162,645 @@ Track these metrics to ensure accuracy doesn't degrade:
 ```
 
 Alert if `accuracy_without_serp` drops more than 3% below `accuracy_with_serp`.
+
+---
+
+## PHASE 11: Maximalist Accuracy (Every Corner of Every State)
+
+Go beyond "good enough" to definitively correct for every US address.
+
+### 11.1: Parcel-Level Data (County Assessor Records)
+
+County assessor databases often contain utility account information at the parcel level. This is the gold standard.
+
+**Why it's better:**
+- Parcel boundaries are exact (not ZIP approximations)
+- Many counties track which utilities serve each parcel
+- Updated when properties change hands or utilities change
+
+**Challenge:** 3,143 counties, each with different data formats and access methods.
+
+**Implementation approach:**
+
+```
+Priority counties (by SFR rental density):
+1. Maricopa County, AZ (Phoenix) - https://mcassessor.maricopa.gov/
+2. Harris County, TX (Houston) - https://hcad.org/
+3. Los Angeles County, CA - https://assessor.lacounty.gov/
+4. Clark County, NV (Las Vegas) - https://www.clarkcountynv.gov/assessor/
+5. Tarrant County, TX (Fort Worth) - https://www.tad.org/
+6. Bexar County, TX (San Antonio) - https://www.bcad.org/
+7. Dallas County, TX - https://www.dallascad.org/
+8. Orange County, CA - https://www.ocgov.com/gov/assessor
+9. Riverside County, CA - https://www.rivcoassessor.org/
+10. San Bernardino County, CA - https://www.sbcounty.gov/assessor/
+
+For each county:
+1. Check if assessor data is downloadable or has API
+2. Identify fields containing utility info
+3. Build parcel-to-utility mapping
+4. Cross-reference with address geocoding
+```
+
+**Data structure:**
+
+```json
+// /data/parcel_data/harris_county_tx.json
+{
+  "parcels": {
+    "0001234567890": {
+      "address": "123 Main St, Houston, TX 77001",
+      "electric_account": "CenterPoint Energy",
+      "water_account": "City of Houston",
+      "gas_account": "CenterPoint Energy",
+      "last_updated": "2025-12-15"
+    }
+  }
+}
+```
+
+### 11.2: Utility Company Address Lookup Tools
+
+Many utilities have "Do we serve your address?" tools on their websites. Query them directly.
+
+**Utilities with address lookup APIs/tools:**
+
+| Utility | Type | URL | Method |
+|---------|------|-----|--------|
+| Austin Energy | Electric | austinenergy.com/go/service | Form submission |
+| PG&E | Electric/Gas | pge.com/en/account/service | Address lookup |
+| Duke Energy | Electric | duke-energy.com | Service area checker |
+| Dominion Energy | Electric/Gas | dominionenergy.com | Address validation |
+| Xcel Energy | Electric/Gas | xcelenergy.com | Service territory |
+| LADWP | Electric/Water | ladwp.com | Service area map |
+| SoCalGas | Gas | socalgas.com | Service lookup |
+
+**Implementation:**
+
+```python
+# utility_direct_lookup.py
+
+UTILITY_LOOKUP_ENDPOINTS = {
+    'austin_energy': {
+        'url': 'https://austinenergy.com/api/service-area',
+        'method': 'POST',
+        'params': lambda addr: {'address': addr},
+        'parse': lambda r: r.json().get('serves_address', False)
+    },
+    'pge': {
+        'url': 'https://pge.com/api/address-check',
+        'method': 'GET',
+        'params': lambda addr: {'street': addr},
+        'parse': lambda r: 'PG&E' if r.json().get('in_territory') else None
+    }
+}
+
+async def check_utility_direct(utility_key, address):
+    """Query utility company directly to confirm service."""
+    config = UTILITY_LOOKUP_ENDPOINTS.get(utility_key)
+    if not config:
+        return None
+    
+    try:
+        response = await http_client.request(
+            config['method'],
+            config['url'],
+            params=config['params'](address)
+        )
+        return config['parse'](response)
+    except Exception:
+        return None  # Fall back to other methods
+
+def verify_with_utility_direct(address, suspected_utility):
+    """
+    If we think the utility is X, ask X directly if they serve this address.
+    """
+    utility_key = UTILITY_KEY_MAP.get(suspected_utility)
+    if utility_key:
+        confirmed = check_utility_direct(utility_key, address)
+        if confirmed:
+            return {
+                'confirmed': True,
+                'source': 'utility_direct_api',
+                'confidence_boost': 30
+            }
+        elif confirmed is False:
+            return {
+                'confirmed': False,
+                'source': 'utility_direct_api',
+                'confidence_penalty': -40  # They said no!
+            }
+    return None
+```
+
+**Build out for top 50 utilities by customer count.**
+
+### 11.3: State PUC Service Territory Maps
+
+Every state Public Utility Commission has official service territory maps. Digitize them.
+
+**Data sources by state:**
+
+| State | Agency | Data Quality |
+|-------|--------|--------------|
+| Texas | PUCT + Railroad Commission | Good, partially digitized |
+| California | CPUC | PDFs, needs digitization |
+| Florida | PSC | GIS available |
+| New York | PSC | GIS available |
+| Pennsylvania | PUC | PDFs |
+| Ohio | PUCO | GIS available |
+| Illinois | ICC | Mixed |
+| Georgia | PSC | GIS available |
+
+**Implementation:**
+
+```
+For each state:
+1. Find PUC service territory data
+2. If GIS format: ingest directly
+3. If PDF maps: use AI to digitize boundaries
+4. Create state_puc_territories/{state}.geojson
+5. Add point-in-polygon lookup
+```
+
+### 11.4: Enhanced Geocoding (Multi-Source Consensus)
+
+Census geocoder is free but not always accurate. Use multiple sources.
+
+**Geocoding sources:**
+
+| Source | Cost | Accuracy | Speed |
+|--------|------|----------|-------|
+| US Census | Free | Good | Fast |
+| Google Maps | $5/1000 | Excellent | Fast |
+| Smarty (SmartyStreets) | $0.01/lookup | Excellent | Fast |
+| HERE | $0.01/lookup | Very Good | Fast |
+| Mapbox | $0.50/1000 | Very Good | Fast |
+
+**Multi-geocoder approach:**
+
+```python
+# geocoding.py
+
+async def geocode_consensus(address):
+    """
+    Query multiple geocoders, use consensus for accuracy.
+    """
+    results = await asyncio.gather(
+        geocode_census(address),
+        geocode_google(address),  # If budget allows
+        geocode_smarty(address),
+        return_exceptions=True
+    )
+    
+    valid_results = [r for r in results if not isinstance(r, Exception)]
+    
+    if len(valid_results) == 0:
+        raise GeocodingError("All geocoders failed")
+    
+    if len(valid_results) == 1:
+        return valid_results[0]
+    
+    # Check for consensus (within 100 meters)
+    lat_avg = sum(r['lat'] for r in valid_results) / len(valid_results)
+    lon_avg = sum(r['lon'] for r in valid_results) / len(valid_results)
+    
+    # Check if all results are close to average
+    all_close = all(
+        haversine_distance(r['lat'], r['lon'], lat_avg, lon_avg) < 100
+        for r in valid_results
+    )
+    
+    if all_close:
+        # Consensus reached, use average
+        return {
+            'lat': lat_avg,
+            'lon': lon_avg,
+            'confidence': 'high',
+            'method': 'multi_geocoder_consensus',
+            'sources': len(valid_results)
+        }
+    else:
+        # Disagreement - flag for review, use Google if available
+        google_result = next((r for r in valid_results if r.get('source') == 'google'), None)
+        return google_result or valid_results[0]
+```
+
+### 11.5: Address Normalization (USPS CASS)
+
+Standardize addresses before lookup to avoid mismatches.
+
+**Why it matters:**
+- "123 Main Street" vs "123 Main St" vs "123 Main St."
+- "Apt 4" vs "#4" vs "Unit 4"
+- Directionals: "N Main St" vs "North Main Street"
+
+**Implementation:**
+
+```python
+# Use Smarty or similar for CASS-certified normalization
+def normalize_address(raw_address):
+    """
+    Normalize address to USPS standard format.
+    """
+    response = smarty_client.verify(raw_address)
+    
+    if response.is_valid:
+        return {
+            'normalized': response.delivery_line_1,
+            'city': response.city_name,
+            'state': response.state_abbreviation,
+            'zip': response.zipcode,
+            'zip4': response.plus4_code,
+            'dpv_match': response.dpv_match_code,  # Deliverable?
+            'latitude': response.metadata.latitude,
+            'longitude': response.metadata.longitude
+        }
+    else:
+        return {'normalized': raw_address, 'validation_failed': True}
+```
+
+### 11.6: New Construction / Builder Data
+
+New developments often aren't in databases yet. Track them proactively.
+
+**Data sources:**
+
+| Source | What It Provides |
+|--------|------------------|
+| Building permit databases | New construction before occupancy |
+| Builder websites | Subdivision utility assignments |
+| Title company data | Utility commitments at closing |
+| HOA registrations | Master-planned community utilities |
+
+**Implementation:**
+
+```python
+# For new construction addresses that fail lookup:
+
+def handle_new_construction(address, geocode_result):
+    """
+    Special handling for addresses not in standard databases.
+    """
+    # Check if in known new development
+    subdivision = lookup_subdivision(geocode_result)
+    if subdivision:
+        return {
+            'electric': subdivision.get('electric_provider'),
+            'water': subdivision.get('water_provider'),
+            'gas': subdivision.get('gas_provider'),
+            'source': 'subdivision_master_data',
+            'note': f"Part of {subdivision['name']} development"
+        }
+    
+    # Check building permit database
+    permit = lookup_building_permit(address)
+    if permit and permit.get('utility_connections'):
+        return {
+            'source': 'building_permit',
+            'utilities': permit['utility_connections']
+        }
+    
+    # Fall back to SERP with "new construction" context
+    return verify_with_serp(address, context="new construction")
+```
+
+**Track major builders:**
+- D.R. Horton
+- Lennar
+- PulteGroup
+- NVR (Ryan Homes)
+- Meritage Homes
+- Taylor Morrison
+- KB Home
+
+Many publish utility info for their communities.
+
+### 11.7: Bulk Verification Partnerships
+
+Partner with companies that have ground-truth data.
+
+**Potential partners:**
+
+| Partner Type | Data They Have | Value |
+|--------------|----------------|-------|
+| Property management software | Utility accounts for millions of units | Direct verification |
+| Title companies | Utility info at closing | Historical + current |
+| Utility billing aggregators | Actual utility relationships | Ground truth |
+| Real estate data providers | Property utility fields | Bulk data |
+
+**AppFolio/Buildium integration concept:**
+
+```python
+# When a PM connects their AppFolio account:
+
+def ingest_pm_portfolio(pm_account):
+    """
+    Ingest property data from PM software.
+    Verify against our data, flag mismatches.
+    """
+    properties = pm_account.get_properties()
+    
+    for prop in properties:
+        our_result = lookup_utilities(prop.address)
+        
+        # Compare to what PM has on file
+        if prop.electric_provider:
+            if prop.electric_provider != our_result['electric']['name']:
+                log_mismatch('electric', prop.address, 
+                           our_result['electric']['name'], 
+                           prop.electric_provider)
+                # PM data is ground truth - add as user confirmation
+                submit_correction(
+                    address=prop.address,
+                    utility_type='electric',
+                    correct_provider=prop.electric_provider,
+                    source='pm_portfolio_import',
+                    confidence='high'
+                )
+```
+
+### 11.8: Utility Bill OCR
+
+Users upload utility bills = 100% accuracy for that address.
+
+**Implementation:**
+
+```python
+# bill_ocr.py
+
+def extract_utility_info_from_bill(image_or_pdf):
+    """
+    Extract utility provider and service address from bill.
+    """
+    # Use Claude vision or Google Document AI
+    extracted = ocr_service.extract(image_or_pdf, fields=[
+        'utility_company_name',
+        'service_address',
+        'account_number',
+        'service_type'  # electric, gas, water
+    ])
+    
+    if extracted.confidence > 0.9:
+        # Add to verified data
+        add_verified_utility(
+            address=extracted.service_address,
+            utility_type=extracted.service_type,
+            provider=extracted.utility_company_name,
+            source='utility_bill_ocr',
+            confidence_score=98
+        )
+    
+    return extracted
+```
+
+**UI flow:**
+1. User does lookup, sees result
+2. "Have a utility bill? Upload it to verify" option
+3. User uploads bill
+4. We extract and verify
+5. Data improves for everyone
+
+### 11.9: Reverse Lookup (Phone/Website → Service Area)
+
+Build database of utility contact info, then match.
+
+**Approach:**
+
+```
+1. Compile list of all US utilities (electric, gas, water)
+   - ~3,000 electric utilities
+   - ~1,500 gas utilities  
+   - ~50,000+ water systems
+
+2. For each utility, collect:
+   - Official name and variations
+   - Phone numbers (customer service, emergency)
+   - Website URL
+   - Service area description
+   - Cities/counties served
+
+3. Use this for:
+   - Matching SERP results to known utilities
+   - Validating user corrections
+   - Filling in contact info
+```
+
+**Data structure:**
+
+```json
+// /data/utility_directory/master.json
+{
+  "utilities": [
+    {
+      "id": "util_001",
+      "name": "Austin Energy",
+      "aliases": ["City of Austin Electric", "COA Electric"],
+      "type": "electric",
+      "ownership": "municipal",
+      "phone": {
+        "customer_service": "512-494-9400",
+        "outage": "512-322-9100"
+      },
+      "website": "https://austinenergy.com",
+      "service_area": {
+        "type": "municipal",
+        "cities": ["Austin"],
+        "counties": ["Travis", "Williamson"],
+        "state": "TX"
+      },
+      "customers": 500000
+    }
+  ]
+}
+```
+
+### 11.10: Real-Time Utility API Aggregation
+
+Some utilities expose APIs or data feeds. Tap into them.
+
+**Known utility APIs:**
+
+| Utility | API Type | Data Available |
+|---------|----------|----------------|
+| Green Button | Standard | Usage data, account info |
+| PG&E Share My Data | OAuth | Service status |
+| ComEd | API | Outage data, service area |
+| Austin Energy | GIS | Service territory |
+
+**Implementation:**
+
+```python
+# For utilities with public GIS services:
+
+UTILITY_GIS_SERVICES = {
+    'austin_energy': {
+        'type': 'arcgis',
+        'url': 'https://services.arcgis.com/.../AustinEnergy/FeatureServer/0',
+        'query_type': 'point_in_polygon'
+    },
+    'ladwp': {
+        'type': 'arcgis', 
+        'url': 'https://services.arcgis.com/.../LADWP_ServiceArea/FeatureServer/0',
+        'query_type': 'point_in_polygon'
+    }
+}
+
+async def check_utility_gis(utility_key, lat, lon):
+    """Query utility's own GIS service."""
+    config = UTILITY_GIS_SERVICES.get(utility_key)
+    if not config:
+        return None
+    
+    # ArcGIS point-in-polygon query
+    query = {
+        'geometry': f'{lon},{lat}',
+        'geometryType': 'esriGeometryPoint',
+        'spatialRel': 'esriSpatialRelIntersects',
+        'returnGeometry': 'false',
+        'f': 'json'
+    }
+    
+    response = await http_client.get(f"{config['url']}/query", params=query)
+    features = response.json().get('features', [])
+    
+    return len(features) > 0  # True if point is in service area
+```
+
+### 11.11: Boundary Edge Case Handling
+
+Special logic for addresses near utility boundaries.
+
+**Problem:**
+- Utilities have boundaries
+- Addresses near boundaries can be misclassified
+- Same street might have different utilities on each side
+
+**Solution:**
+
+```python
+def is_near_boundary(lat, lon, utility_polygon):
+    """Check if point is within 200m of polygon boundary."""
+    point = Point(lon, lat)
+    boundary = utility_polygon.boundary
+    distance = point.distance(boundary)
+    return distance < 0.002  # ~200 meters
+
+def handle_boundary_address(address, lat, lon, candidates):
+    """
+    Special handling for addresses near utility boundaries.
+    """
+    near_boundary = any(
+        is_near_boundary(lat, lon, c['polygon']) 
+        for c in candidates if c.get('polygon')
+    )
+    
+    if near_boundary:
+        # Flag as boundary case
+        # Run extra verification
+        # Reduce confidence
+        # Add note to response
+        return {
+            'boundary_case': True,
+            'confidence_adjustment': -15,
+            'note': 'Address is near utility service boundary. Verification recommended.',
+            'verification_sources': ['serp', 'utility_direct']  # Always verify these
+        }
+    
+    return {'boundary_case': False}
+```
+
+### 11.12: Historical Change Tracking
+
+Utility territories change. Track them over time.
+
+**Implementation:**
+
+```python
+# /data/territory_changes/log.json
+{
+  "changes": [
+    {
+      "date": "2025-06-15",
+      "type": "annexation",
+      "utility": "Austin Energy",
+      "description": "Annexed portions of Travis County",
+      "affected_zips": ["78653", "78660"],
+      "source": "Austin City Council Resolution"
+    },
+    {
+      "date": "2025-03-01",
+      "type": "new_district",
+      "utility": "Blackhawk MUD",
+      "description": "New MUD created in Hays County",
+      "affected_area": "Polygon...",
+      "source": "TCEQ"
+    }
+  ]
+}
+```
+
+**Monitor for changes:**
+- State PUC announcements
+- Municipal annexation notices
+- New special district formations
+- Utility merger/acquisition news
+
+### Summary: Maximalist Data Stack
+
+```
+TIER 1: Authoritative (Skip SERP)
+├── Special district boundaries (TX, FL, CO, CA, etc.)
+├── Municipal utility database
+├── Electric cooperative polygons
+├── User confirmed (3+ votes)
+├── ZIP overrides (manual corrections)
+├── Utility direct API confirmation
+└── Parcel-level data (where available)
+
+TIER 2: High Quality (Spot-check SERP)
+├── State PUC territory maps
+├── County assessor data
+├── EIA 861 with boundary refinement
+├── Builder/subdivision data
+└── PM portfolio imports
+
+TIER 3: Needs Verification (Always SERP)
+├── EPA SDWIS
+├── HIFLD IOU polygons
+├── Heuristic matches
+└── New construction guesses
+
+TIER 4: Ground Truth Collection
+├── Utility bill OCR
+├── User feedback system
+├── PM software integrations
+└── Title company partnerships
+```
+
+### Target Accuracy by Phase
+
+| Phase | Electric | Gas | Water | Notes |
+|-------|----------|-----|-------|-------|
+| Current | 90% | 85% | 75% | Baseline |
+| After Phase 1-5 | 93% | 88% | 82% | Core improvements |
+| After Phase 6-9 | 95% | 90% | 85% | State expansions |
+| After Phase 10 | 95% | 90% | 85% | Cost optimized |
+| After Phase 11 | 98% | 95% | 92% | Maximalist |
+
+### Implementation Priority for Phase 11
+
+| Task | Effort | Impact | Priority |
+|------|--------|--------|----------|
+| 11.5 Address normalization | Low | High | Do first |
+| 11.9 Utility directory | Medium | High | Do second |
+| 11.4 Multi-geocoder | Low | Medium | Do third |
+| 11.2 Utility direct APIs | High | High | Incremental |
+| 11.7 PM partnerships | Medium | Very High | Strategic |
+| 11.1 Parcel data | Very High | Very High | County by county |
+| 11.3 State PUC maps | High | High | State by state |
+| 11.8 Bill OCR | Medium | Medium | Nice to have |
+| 11.6 Builder data | Medium | Medium | For new construction |
+| 11.10 Utility GIS APIs | Medium | Medium | Where available |
+| 11.11 Boundary handling | Low | Medium | After polygons done |
+| 11.12 Change tracking | Low | Low | Maintenance mode |

@@ -8637,5 +8637,101 @@
     "source": "findenergy_serp",
     "query": "Fargo, ND",
     "confidence": "low"
+  },
+  "ND:grand forks:electric": {
+    "providers": [
+      {
+        "name": "Xcel Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Northern States Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Grand Forks, ND",
+    "confidence": "low"
+  },
+  "ND:grand forks:gas": {
+    "providers": [
+      {
+        "name": "Northern States Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Grand Forks, ND",
+    "confidence": "low"
+  },
+  "ND:minot:electric": {
+    "providers": [
+      {
+        "name": "Northern States Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Xcel Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Minot, ND",
+    "confidence": "low"
+  },
+  "ND:minot:gas": {
+    "providers": [
+      {
+        "name": "Xcel Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Northern States Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Minot, ND",
+    "confidence": "low"
+  },
+  "ND:west fargo:electric": {
+    "providers": [
+      {
+        "name": "Xcel Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Northern States Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "West Fargo, ND",
+    "confidence": "low"
+  },
+  "ND:west fargo:gas": {
+    "providers": [
+      {
+        "name": "Xcel Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Northern States Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "West Fargo, ND",
+    "confidence": "low"
   }
 }

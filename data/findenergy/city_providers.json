@@ -1,0 +1,336 @@
+{
+  "_metadata": {
+    "description": "Cached FindEnergy city-to-provider mappings",
+    "last_updated": "2026-01-12",
+    "source": "findenergy.com"
+  },
+  "TX:austin:electric": {
+    "providers": [
+      {"name": "Austin Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Austin",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TX:houston:electric": {
+    "providers": [
+      {"name": "CenterPoint Energy", "source": "findenergy_cache", "note": "TDU - transmission/distribution"},
+      {"name": "Reliant Energy", "source": "findenergy_cache", "note": "REP - retail provider"},
+      {"name": "TXU Energy", "source": "findenergy_cache", "note": "REP - retail provider"}
+    ],
+    "utility_type": "electric",
+    "city": "Houston",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high",
+    "note": "Deregulated market - CenterPoint is TDU, customers choose REP"
+  },
+  "TX:dallas:electric": {
+    "providers": [
+      {"name": "Oncor", "source": "findenergy_cache", "note": "TDU - transmission/distribution"},
+      {"name": "TXU Energy", "source": "findenergy_cache", "note": "REP - retail provider"},
+      {"name": "Reliant Energy", "source": "findenergy_cache", "note": "REP - retail provider"}
+    ],
+    "utility_type": "electric",
+    "city": "Dallas",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high",
+    "note": "Deregulated market - Oncor is TDU, customers choose REP"
+  },
+  "TX:san antonio:electric": {
+    "providers": [
+      {"name": "CPS Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "San Antonio",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TX:austin:gas": {
+    "providers": [
+      {"name": "Texas Gas Service", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Austin",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TX:houston:gas": {
+    "providers": [
+      {"name": "CenterPoint Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Houston",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TX:dallas:gas": {
+    "providers": [
+      {"name": "Atmos Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Dallas",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TX:san antonio:gas": {
+    "providers": [
+      {"name": "CPS Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "San Antonio",
+    "state": "TX",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CA:los angeles:electric": {
+    "providers": [
+      {"name": "Los Angeles Department of Water and Power", "source": "findenergy_cache"},
+      {"name": "Southern California Edison", "source": "findenergy_cache", "note": "Some areas"}
+    ],
+    "utility_type": "electric",
+    "city": "Los Angeles",
+    "state": "CA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CA:san francisco:electric": {
+    "providers": [
+      {"name": "Pacific Gas and Electric", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "San Francisco",
+    "state": "CA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CA:san diego:electric": {
+    "providers": [
+      {"name": "San Diego Gas & Electric", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "San Diego",
+    "state": "CA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CA:los angeles:gas": {
+    "providers": [
+      {"name": "Southern California Gas Company", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Los Angeles",
+    "state": "CA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CA:san francisco:gas": {
+    "providers": [
+      {"name": "Pacific Gas and Electric", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "San Francisco",
+    "state": "CA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CA:san diego:gas": {
+    "providers": [
+      {"name": "San Diego Gas & Electric", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "San Diego",
+    "state": "CA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "VA:richmond:electric": {
+    "providers": [
+      {"name": "Dominion Energy Virginia", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Richmond",
+    "state": "VA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "VA:richmond:gas": {
+    "providers": [
+      {"name": "Virginia Natural Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Richmond",
+    "state": "VA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "VA:norfolk:gas": {
+    "providers": [
+      {"name": "Virginia Natural Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Norfolk",
+    "state": "VA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WI:milwaukee:electric": {
+    "providers": [
+      {"name": "WE Energies", "source": "findenergy_cache", "legal_name": "Wisconsin Electric Power Co"}
+    ],
+    "utility_type": "electric",
+    "city": "Milwaukee",
+    "state": "WI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WI:milwaukee:gas": {
+    "providers": [
+      {"name": "WE Energies", "source": "findenergy_cache", "legal_name": "Wisconsin Gas LLC"}
+    ],
+    "utility_type": "gas",
+    "city": "Milwaukee",
+    "state": "WI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WI:brookfield:electric": {
+    "providers": [
+      {"name": "WE Energies", "source": "findenergy_cache", "legal_name": "Wisconsin Electric Power Co"}
+    ],
+    "utility_type": "electric",
+    "city": "Brookfield",
+    "state": "WI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WI:brookfield:gas": {
+    "providers": [
+      {"name": "WE Energies", "source": "findenergy_cache", "legal_name": "Wisconsin Gas LLC"}
+    ],
+    "utility_type": "gas",
+    "city": "Brookfield",
+    "state": "WI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "FL:miami:electric": {
+    "providers": [
+      {"name": "Florida Power & Light", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Miami",
+    "state": "FL",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "FL:tampa:electric": {
+    "providers": [
+      {"name": "Tampa Electric", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Tampa",
+    "state": "FL",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "FL:orlando:electric": {
+    "providers": [
+      {"name": "Orlando Utilities Commission", "source": "findenergy_cache"},
+      {"name": "Duke Energy Florida", "source": "findenergy_cache", "note": "Some areas"}
+    ],
+    "utility_type": "electric",
+    "city": "Orlando",
+    "state": "FL",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "AZ:phoenix:electric": {
+    "providers": [
+      {"name": "Arizona Public Service", "source": "findenergy_cache"},
+      {"name": "Salt River Project", "source": "findenergy_cache", "note": "Some areas"}
+    ],
+    "utility_type": "electric",
+    "city": "Phoenix",
+    "state": "AZ",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "AZ:phoenix:gas": {
+    "providers": [
+      {"name": "Southwest Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Phoenix",
+    "state": "AZ",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CO:denver:electric": {
+    "providers": [
+      {"name": "Xcel Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Denver",
+    "state": "CO",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "CO:denver:gas": {
+    "providers": [
+      {"name": "Xcel Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Denver",
+    "state": "CO",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "IL:chicago:electric": {
+    "providers": [
+      {"name": "ComEd", "source": "findenergy_cache", "legal_name": "Commonwealth Edison"}
+    ],
+    "utility_type": "electric",
+    "city": "Chicago",
+    "state": "IL",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "IL:chicago:gas": {
+    "providers": [
+      {"name": "Peoples Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Chicago",
+    "state": "IL",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "GA:atlanta:electric": {
+    "providers": [
+      {"name": "Georgia Power", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Atlanta",
+    "state": "GA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "GA:atlanta:gas": {
+    "providers": [
+      {"name": "Atlanta Gas Light", "source": "findenergy_cache", "note": "Deregulated - AGL owns pipes, customers choose marketer"}
+    ],
+    "utility_type": "gas",
+    "city": "Atlanta",
+    "state": "GA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  }
+}

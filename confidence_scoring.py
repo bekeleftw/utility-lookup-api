@@ -37,6 +37,10 @@ SOURCE_SCORES = {
     'railroad_commission': 80,  # Texas RRC (gas) - authoritative
     
     # === TIER 3: Good Quality (65-79) - SERP recommended ===
+    'findenergy': 78,           # FindEnergy.com (corrected EIA/HIFLD data)
+    'findenergy_cache': 78,     # FindEnergy cached data
+    'findenergy_scrape': 76,    # FindEnergy direct scrape
+    'findenergy_serp': 72,      # FindEnergy via SERP fallback
     'state_puc': 75,            # State PUC data (non-map)
     'address_inference': 72,    # Inferred from nearby verified addresses
     'eia_861': 70,              # EIA federal data (electric)
@@ -304,6 +308,11 @@ def source_to_score_key(source_string: str) -> str:
         'puc territory': 'state_puc_map',
         'zip override': 'zip_override',
         'zip_override': 'zip_override',
+        'findenergy': 'findenergy',
+        'findenergy_cache': 'findenergy_cache',
+        'findenergy_scrape': 'findenergy_scrape',
+        'findenergy_serp': 'findenergy_serp',
+        'find energy': 'findenergy',
         'state puc': 'state_puc',
         'state_puc': 'state_puc',
         'address_inference': 'address_inference',

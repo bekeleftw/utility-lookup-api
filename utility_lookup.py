@@ -32,6 +32,7 @@ from special_districts import lookup_special_district, format_district_for_respo
 from confidence_scoring import calculate_confidence, source_to_score_key
 from municipal_utilities import lookup_municipal_electric, lookup_municipal_gas, lookup_municipal_water
 from brand_resolver import resolve_brand_name_with_fallback
+from findenergy_lookup import lookup_findenergy, verify_against_findenergy
 
 # Import new Phase 12-14 modules
 from deregulated_markets import is_deregulated_state, get_deregulated_market_info, adjust_electric_result_for_deregulation
@@ -1976,6 +1977,80 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             for f in water_confidence['factors']
         ]
     
+    # NEW: FindEnergy verification for electric (cross-check against EIA/HIFLD)
+    findenergy_verification = {}
+    if primary_electric and city:
+        try:
+            elec_name = primary_electric.get('NAME', '')
+            # Also try brand name resolution for verification
+            elec_brand, _ = resolve_brand_name_with_fallback(elec_name, state)
+            
+            fe_verify = verify_against_findenergy(
+                provider_name=elec_name,
+                city=city,
+                state=state,
+                zip_code=zip_code,
+                utility_type='electric'
+            )
+            # If legal name didn't verify, try brand name
+            if fe_verify and not fe_verify.get('verified') and elec_brand != elec_name:
+                fe_verify_brand = verify_against_findenergy(
+                    provider_name=elec_brand,
+                    city=city,
+                    state=state,
+                    zip_code=zip_code,
+                    utility_type='electric'
+                )
+                if fe_verify_brand and fe_verify_brand.get('verified'):
+                    fe_verify = fe_verify_brand
+            
+            if fe_verify:
+                findenergy_verification['electric'] = fe_verify
+                # If FindEnergy disagrees and has high confidence, flag it
+                if not fe_verify.get('verified') and fe_verify.get('recommendation') == 'use_findenergy':
+                    primary_electric['_findenergy_disagrees'] = True
+                    primary_electric['_findenergy_suggestion'] = fe_verify.get('findenergy_providers', [])[:1]
+                elif fe_verify.get('verified'):
+                    primary_electric['_findenergy_verified'] = True
+        except Exception as e:
+            pass  # Don't fail lookup if FindEnergy check fails
+    
+    # NEW: FindEnergy verification for gas
+    if primary_gas and city:
+        try:
+            gas_name = primary_gas.get('NAME', '')
+            # Also try brand name resolution for verification
+            gas_brand, _ = resolve_brand_name_with_fallback(gas_name, state)
+            
+            fe_verify = verify_against_findenergy(
+                provider_name=gas_name,
+                city=city,
+                state=state,
+                zip_code=zip_code,
+                utility_type='gas'
+            )
+            # If legal name didn't verify, try brand name
+            if fe_verify and not fe_verify.get('verified') and gas_brand != gas_name:
+                fe_verify_brand = verify_against_findenergy(
+                    provider_name=gas_brand,
+                    city=city,
+                    state=state,
+                    zip_code=zip_code,
+                    utility_type='gas'
+                )
+                if fe_verify_brand and fe_verify_brand.get('verified'):
+                    fe_verify = fe_verify_brand
+            
+            if fe_verify:
+                findenergy_verification['gas'] = fe_verify
+                if not fe_verify.get('verified') and fe_verify.get('recommendation') == 'use_findenergy':
+                    primary_gas['_findenergy_disagrees'] = True
+                    primary_gas['_findenergy_suggestion'] = fe_verify.get('findenergy_providers', [])[:1]
+                elif fe_verify.get('verified'):
+                    primary_gas['_findenergy_verified'] = True
+        except Exception as e:
+            pass
+    
     # Add confidence score to electric result
     if primary_electric:
         elec_source = primary_electric.get('_verification_source', 'hifld')
@@ -2027,7 +2102,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             "deregulated_market": deregulated_info is not None,
             "deregulated_info": deregulated_info,
             "special_areas": special_areas.get("special_areas", []),
-            "requires_special_handling": special_areas.get("requires_special_handling", False)
+            "requires_special_handling": special_areas.get("requires_special_handling", False),
+            "findenergy_verification": findenergy_verification if findenergy_verification else None
         }
     }
     

@@ -234,26 +234,42 @@ def query_findenergy_serp(
         providers = []
         
         # Look for provider patterns in search results
+        # These patterns match FindEnergy's SERP result format
         provider_patterns = [
-            r"served by ([A-Z][A-Za-z\s&\-]+(?:Energy|Electric|Power|Gas|Utility|Co\.?|Company|Corp\.?))",
-            r"provider[s]?\s+(?:is|are|include[s]?)\s+([A-Z][A-Za-z\s&\-]+)",
-            r"([A-Z][A-Za-z\s&\-]+(?:Energy|Electric|Power|Gas|Utility))\s+serves",
-            r"([A-Z][A-Za-z\s&\-]+(?:Energy|Electric|Power|Gas|Utility))\s+provides",
-            r"electricity from ([A-Z][A-Za-z\s&\-]+)",
-            r"gas from ([A-Z][A-Za-z\s&\-]+)",
+            # Match "Provider Name: Rates, Coverage" format from SERP titles (most reliable)
+            r"([A-Z][A-Za-z\s&\-\']{3,40}(?:Electric|Energy|Power|Gas|Light|Utility|Utilities|Cooperative|Association)):\s*Rates",
+            # Match table entries like "; Provider Name, BUNDLED"
+            r";\s*([A-Z][A-Za-z\s&\-\']{3,40}(?:Electric|Energy|Power|Gas|Cooperative|Association)),\s*BUNDLED",
+            # Match "Provider Name produces/supplies/provides/serves" 
+            r"\b([A-Z][A-Za-z]{2,20}(?:\s+[A-Z][A-Za-z]{2,20}){0,3}\s+(?:Electric|Energy|Power|Gas|Light|Cooperative|Association))\s+(?:produces|supplies|provides|serves)\b",
+            # Match known utility name patterns (2-4 words ending in Electric/Energy/Gas/Power)
+            r"\b([A-Z][a-z]{2,15}(?:\s+[A-Z][a-z]{2,15}){0,2}\s+(?:Electric|Energy|Power|Gas))\b",
         ]
         
         for pattern in provider_patterns:
-            matches = re.findall(pattern, search_text, re.IGNORECASE)
+            matches = re.findall(pattern, search_text)
             for match in matches:
                 provider_name = match.strip()
+                # Clean up the name
+                provider_name = re.sub(r'\s+', ' ', provider_name)
                 # Filter out common false positives
-                if provider_name and len(provider_name) > 3 and len(provider_name) < 50:
-                    if not any(skip in provider_name.lower() for skip in ['findenergy', 'google', 'search', 'click', 'more']):
-                        providers.append({
-                            "name": provider_name,
-                            "source": "findenergy_serp"
-                        })
+                if provider_name and len(provider_name) > 8 and len(provider_name) < 50:
+                    skip_words = ['findenergy', 'google', 'search', 'click', 'more', 'read more', 
+                                  'find energy', 'results', 'electricity', 'different energy',
+                                  'electric rates', 'average electric', 'cities ', 'natural ',
+                                  'many ', 'while ', 'how ', 'what ', 'does ', 'the ', 'your ']
+                    # Also skip if it's just a state abbreviation + "electric/gas"
+                    state_abbrev_pattern = r'^[A-Z]{2}\s+(?:electric|gas)$'
+                    name_lower = provider_name.lower()
+                    if not any(skip in name_lower for skip in skip_words):
+                        if not re.match(state_abbrev_pattern, provider_name, re.IGNORECASE):
+                            # Clean up prefixes
+                            if name_lower.startswith('cities '):
+                                provider_name = provider_name[7:]
+                            providers.append({
+                                "name": provider_name,
+                                "source": "findenergy_serp"
+                            })
         
         if providers:
             # Deduplicate and return

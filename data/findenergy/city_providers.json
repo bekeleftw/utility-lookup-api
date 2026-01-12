@@ -8733,5 +8733,1953 @@
     "source": "findenergy_serp",
     "query": "West Fargo, ND",
     "confidence": "low"
+  },
+  "NJ:paterson:electric": {
+    "providers": [
+      {
+        "name": "Harborside Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "East Coast Power & Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "All American Power and Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "East Coast Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Paterson, NJ",
+    "confidence": "low"
+  },
+  "NJ:paterson:gas": {
+    "providers": [
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Gregory Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Paterson, NJ",
+    "confidence": "low"
+  },
+  "NJ:elizabeth:electric": {
+    "providers": [
+      {
+        "name": "Coverage Map Placeholder Harborside Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Reliant Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "East Coast Power & Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alpha Gas and Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Elizabeth, NJ",
+    "confidence": "low"
+  },
+  "NJ:elizabeth:gas": {
+    "providers": [
+      {
+        "name": "Nextera Energy Service Vistra Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy Service MidAmerican Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Elizabeth, NJ",
+    "confidence": "low"
+  },
+  "NJ:edison:electric": {
+    "providers": [
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "See Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pennsylvania Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Edison, NJ",
+    "confidence": "low"
+  },
+  "NJ:edison:gas": {
+    "providers": [
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "PPL Electric Utilities",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "National Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Retail Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Edison, NJ",
+    "confidence": "low"
+  },
+  "NV:henderson:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Interior Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Henderson, NV",
+    "confidence": "low"
+  },
+  "NV:henderson:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Southwest Gas",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Henderson, NV",
+    "confidence": "low"
+  },
+  "NV:reno:electric": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Intermountain Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Aspen Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Aspen Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Reno, NV",
+    "confidence": "low"
+  },
+  "NV:reno:gas": {
+    "providers": [
+      {
+        "name": "Taalinstellingen Zoekresultaten NV Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Reno, NV",
+    "confidence": "low"
+  },
+  "NV:north las vegas:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Legion Solar Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "North Las Vegas, NV",
+    "confidence": "low"
+  },
+  "NV:north las vegas:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Legion Solar Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "North Las Vegas, NV",
+    "confidence": "low"
+  },
+  "NV:sparks:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Sparks, NV",
+    "confidence": "low"
+  },
+  "NV:sparks:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Southwest Gas",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Sparks, NV",
+    "confidence": "low"
+  },
+  "NY:rochester:electric": {
+    "providers": [
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Liberty Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Renaissance Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Rochester, NY",
+    "confidence": "low"
+  },
+  "NY:rochester:gas": {
+    "providers": [
+      {
+        "name": "Renaissance Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "All American Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "National Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alpha Gas",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Rochester, NY",
+    "confidence": "low"
+  },
+  "NY:yonkers:electric": {
+    "providers": [
+      {
+        "name": "NOCO Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Marathon Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Verde Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Mirabito Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Yonkers, NY",
+    "confidence": "low"
+  },
+  "NY:yonkers:gas": {
+    "providers": [
+      {
+        "name": "NextEra Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Nextera Energy Service MidAmerican Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Agway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Yonkers, NY",
+    "confidence": "low"
+  },
+  "NY:syracuse:electric": {
+    "providers": [
+      {
+        "name": "Marathon Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Verde Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Agway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Syracuse, NY",
+    "confidence": "low"
+  },
+  "NY:syracuse:gas": {
+    "providers": [
+      {
+        "name": "Marathon Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Verde Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Agway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Renaissance Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "All American Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Syracuse, NY",
+    "confidence": "low"
+  },
+  "NY:albany:electric": {
+    "providers": [
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Agway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Renaissance Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Albany, NY",
+    "confidence": "low"
+  },
+  "NY:albany:gas": {
+    "providers": [
+      {
+        "name": "Alpha Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Renaissance Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "All American Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "National Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Abest Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Albany, NY",
+    "confidence": "low"
+  },
+  "NY:new rochelle:electric": {
+    "providers": [
+      {
+        "name": "Columbia Utilities",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "NOCO Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "CenStar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Consolidated Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "New Rochelle, NY",
+    "confidence": "low"
+  },
+  "NY:new rochelle:gas": {
+    "providers": [
+      {
+        "name": "Agway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Gregory Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "New Rochelle, NY",
+    "confidence": "low"
+  },
+  "NY:mount vernon:electric": {
+    "providers": [
+      {
+        "name": "Marathon Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Mirabito Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Providers See Mirabito Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Mount Vernon, NY",
+    "confidence": "low"
+  },
+  "NY:mount vernon:gas": {
+    "providers": [
+      {
+        "name": "Agway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Gregory Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Mount Vernon, NY",
+    "confidence": "low"
+  },
+  "NY:schenectady:electric": {
+    "providers": [
+      {
+        "name": "Columbia Utilities",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alpha Gas and Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Mirabito Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alpha Gas",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Schenectady, NY",
+    "confidence": "low"
+  },
+  "NY:schenectady:gas": {
+    "providers": [
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Gregory Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Schenectady, NY",
+    "confidence": "low"
+  },
+  "NY:utica:electric": {
+    "providers": [
+      {
+        "name": "Renaissance Power and Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Family Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Mirabito Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Renaissance Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Utica, NY",
+    "confidence": "low"
+  },
+  "NY:utica:gas": {
+    "providers": [
+      {
+        "name": "Renaissance Power and Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alpha Gas and Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "National Gas & Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "American Power & Gas",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Utica, NY",
+    "confidence": "low"
+  },
+  "OK:norman:electric": {
+    "providers": [
+      {
+        "name": "Oklahoma Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Oklahoma Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Norman, OK",
+    "confidence": "low"
+  },
+  "OK:norman:gas": {
+    "providers": [
+      {
+        "name": "OGE Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Contents About Oklahoma Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Contents Oge Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Norman, OK",
+    "confidence": "low"
+  },
+  "OK:broken arrow:electric": {
+    "providers": [
+      {
+        "name": "American Electric Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Broken Arrow, OK",
+    "confidence": "low"
+  },
+  "OK:broken arrow:gas": {
+    "providers": [
+      {
+        "name": "American Electric Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Broken Arrow, OK",
+    "confidence": "low"
+  },
+  "OK:edmond:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Rhino Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Edmond, OK",
+    "confidence": "low"
+  },
+  "OK:edmond:gas": {
+    "providers": [
+      {
+        "name": "Oklahoma Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Rhino Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Edmond, OK",
+    "confidence": "low"
+  },
+  "OR:salem:electric": {
+    "providers": [
+      {
+        "name": "Portland General Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Salem, OR",
+    "confidence": "low"
+  },
+  "OR:salem:gas": {
+    "providers": [
+      {
+        "name": "Portland General Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Salem, OR",
+    "confidence": "low"
+  },
+  "OR:eugene:electric": {
+    "providers": [
+      {
+        "name": "Lane Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Advanced Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Eugene, OR",
+    "confidence": "low"
+  },
+  "OR:eugene:gas": {
+    "providers": [
+      {
+        "name": "Portland General Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pacific Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Eugene, OR",
+    "confidence": "low"
+  },
+  "OR:gresham:electric": {
+    "providers": [
+      {
+        "name": "Portland General Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Gresham, OR",
+    "confidence": "low"
+  },
+  "OR:gresham:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Gresham, OR",
+    "confidence": "low"
+  },
+  "OR:hillsboro:electric": {
+    "providers": [
+      {
+        "name": "Portland General Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Hillsboro, OR",
+    "confidence": "low"
+  },
+  "PA:allentown:electric": {
+    "providers": [
+      {
+        "name": "WGL Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Nittany Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Tomorrow Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Allentown, PA",
+    "confidence": "low"
+  },
+  "PA:allentown:gas": {
+    "providers": [
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dynegy Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Allentown, PA",
+    "confidence": "low"
+  },
+  "PA:reading:electric": {
+    "providers": [
+      {
+        "name": "Anthracite Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Nittany Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Tomorrow Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Reading, PA",
+    "confidence": "low"
+  },
+  "PA:reading:gas": {
+    "providers": [
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dynegy Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Vistra Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Reading, PA",
+    "confidence": "low"
+  },
+  "PA:scranton:electric": {
+    "providers": [
+      {
+        "name": "Sales & Customers Marathon Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Nittany Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pure Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Contents First Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Scranton, PA",
+    "confidence": "low"
+  },
+  "PA:scranton:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Facts & Statistics MidAmerican Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "First Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dynegy Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Scranton, PA",
+    "confidence": "low"
+  },
+  "SC:columbia:electric": {
+    "providers": [
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Company South Carolina Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Carolina Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Fairfield Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Columbia, SC",
+    "confidence": "low"
+  },
+  "SC:columbia:gas": {
+    "providers": [
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Columbia, SC",
+    "confidence": "low"
+  },
+  "SC:north charleston:electric": {
+    "providers": [
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "North Charleston, SC",
+    "confidence": "low"
+  },
+  "SC:north charleston:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "South Carolina Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "North Charleston, SC",
+    "confidence": "low"
+  },
+  "SC:mount pleasant:electric": {
+    "providers": [
+      {
+        "name": "Berkeley Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Company South Carolina Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Carolina Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solarair And Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Mount Pleasant, SC",
+    "confidence": "low"
+  },
+  "SC:mount pleasant:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Kuubix Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Mount Pleasant, SC",
+    "confidence": "low"
+  },
+  "SC:rock hill:electric": {
+    "providers": [
+      {
+        "name": "York Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Rock Hill, SC",
+    "confidence": "low"
+  },
+  "SC:rock hill:gas": {
+    "providers": [
+      {
+        "name": "Fairfield Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Rock Hill Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Duke Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "See Duke Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Rock Hill, SC",
+    "confidence": "low"
+  },
+  "TN:knoxville:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Knoxville, TN",
+    "confidence": "low"
+  },
+  "TN:knoxville:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Knoxville, TN",
+    "confidence": "low"
+  },
+  "TN:chattanooga:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Foster Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Chattanooga, TN",
+    "confidence": "low"
+  },
+  "TN:chattanooga:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Chattanooga, TN",
+    "confidence": "low"
+  },
+  "TN:clarksville:electric": {
+    "providers": [
+      {
+        "name": "Cumberland Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Clarksville, TN",
+    "confidence": "low"
+  },
+  "TN:clarksville:gas": {
+    "providers": [
+      {
+        "name": "American Power & Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alpha Gas and Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Spark Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Constellation Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "National Gas",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Clarksville, TN",
+    "confidence": "low"
+  },
+  "UT:west valley city:electric": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Rocky Mountain Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "West Valley City, UT",
+    "confidence": "low"
+  },
+  "UT:west valley city:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Facts About Pacificorp Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "West Valley City, UT",
+    "confidence": "low"
+  },
+  "UT:provo:electric": {
+    "providers": [
+      {
+        "name": "Rocky Mountain Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Green Mountain Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Provo, UT",
+    "confidence": "low"
+  },
+  "UT:provo:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Provo, UT",
+    "confidence": "low"
+  },
+  "UT:west jordan:electric": {
+    "providers": [
+      {
+        "name": "Rocky Mountain Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "West Jordan, UT",
+    "confidence": "low"
+  },
+  "UT:west jordan:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "West Jordan, UT",
+    "confidence": "low"
+  },
+  "UT:orem:electric": {
+    "providers": [
+      {
+        "name": "Rocky Mountain Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Progressive Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Orem, UT",
+    "confidence": "low"
+  },
+  "UT:orem:gas": {
+    "providers": [
+      {
+        "name": "Berkshire Hathaway Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Mountain West Renewable Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Orem, UT",
+    "confidence": "low"
+  },
+  "VA:virginia beach:electric": {
+    "providers": [
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Virginia Beach, VA",
+    "confidence": "low"
+  },
+  "VA:virginia beach:gas": {
+    "providers": [
+      {
+        "name": "Images Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Virginia Beach, VA",
+    "confidence": "low"
+  },
+  "VA:norfolk:electric": {
+    "providers": [
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Company South Carolina Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Carolina Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Images Dominion Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Norfolk, VA",
+    "confidence": "low"
+  },
+  "VA:chesapeake:electric": {
+    "providers": [
+      {
+        "name": "Images Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Chesapeake, VA",
+    "confidence": "low"
+  },
+  "VA:chesapeake:gas": {
+    "providers": [
+      {
+        "name": "Images Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Chesapeake, VA",
+    "confidence": "low"
+  },
+  "VA:newport news:electric": {
+    "providers": [
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Gault Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Newport News, VA",
+    "confidence": "low"
+  },
+  "VA:newport news:gas": {
+    "providers": [
+      {
+        "name": "Images Dominion Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Dominion Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Newport News, VA",
+    "confidence": "low"
+  },
+  "WA:tacoma:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solarside Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "High Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Eye Solar Power",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Tacoma, WA",
+    "confidence": "low"
+  },
+  "WA:tacoma:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Eye Solar Power",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Remote Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Tacoma, WA",
+    "confidence": "low"
+  },
+  "WA:vancouver:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Vancouver, WA",
+    "confidence": "low"
+  },
+  "WA:vancouver:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Vancouver, WA",
+    "confidence": "low"
+  },
+  "WA:bellevue:electric": {
+    "providers": [
+      {
+        "name": "Puget Sound Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Prime Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Bellevue, WA",
+    "confidence": "low"
+  },
+  "WA:bellevue:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Bellevue, WA",
+    "confidence": "low"
+  },
+  "WI:madison:electric": {
+    "providers": [
+      {
+        "name": "Alliant Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Madison Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Arch Electric",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Home Team Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Madison, WI",
+    "confidence": "low"
+  },
+  "WI:madison:gas": {
+    "providers": [
+      {
+        "name": "Madison Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alliant Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Madison, WI",
+    "confidence": "low"
+  },
+  "WI:green bay:electric": {
+    "providers": [
+      {
+        "name": "Madison Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alliant Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Eland Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Green Bay, WI",
+    "confidence": "low"
+  },
+  "WI:green bay:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Eland Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Green Bay, WI",
+    "confidence": "low"
+  },
+  "WI:kenosha:electric": {
+    "providers": [
+      {
+        "name": "Madison Gas",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Alliant Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pieper Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Kenosha, WI",
+    "confidence": "low"
+  },
+  "WI:kenosha:gas": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      },
+      {
+        "name": "Pieper Electric",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "gas",
+    "source": "findenergy_serp",
+    "query": "Kenosha, WI",
+    "confidence": "low"
+  },
+  "WI:racine:electric": {
+    "providers": [
+      {
+        "name": "Solar Energy",
+        "source": "findenergy_serp"
+      }
+    ],
+    "utility_type": "electric",
+    "source": "findenergy_serp",
+    "query": "Racine, WI",
+    "confidence": "low"
   }
 }

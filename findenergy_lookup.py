@@ -38,7 +38,7 @@ LOOKUP_CACHE_FILE = DATA_DIR / "lookup_cache.json"
 
 # Rate limiting
 LAST_REQUEST_TIME = 0
-MIN_REQUEST_INTERVAL = 2.0  # seconds between requests
+MIN_REQUEST_INTERVAL = 3.0  # seconds between requests (increased to avoid rate limiting)
 
 # Headers to mimic browser
 BROWSER_HEADERS = {
@@ -212,15 +212,27 @@ def query_findenergy_serp(
         import urllib3
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         
-        response = requests.get(
-            search_url,
-            proxies=proxies,
-            headers=BROWSER_HEADERS,
-            timeout=15,
-            verify=False
-        )
+        # Retry logic with increasing timeout
+        response = None
+        for attempt in range(3):
+            try:
+                timeout = 20 + (attempt * 10)  # 20s, 30s, 40s
+                response = requests.get(
+                    search_url,
+                    proxies=proxies,
+                    headers=BROWSER_HEADERS,
+                    timeout=timeout,
+                    verify=False
+                )
+                if response.status_code == 200:
+                    break
+            except requests.exceptions.Timeout:
+                if attempt < 2:
+                    time.sleep(2)  # Wait before retry
+                    continue
+                raise
         
-        if response.status_code != 200:
+        if not response or response.status_code != 200:
             return None
         
         soup = BeautifulSoup(response.text, 'html.parser')

@@ -1,1 +1,19 @@
-{}
+{
+  "626 E State St, Milwaukee, WI": {
+    "address": "626 E State St, Milwaukee, WI",
+    "zip_code": "53202",
+    "confirmed_at": "2026-01-11",
+    "source": "resident",
+    "electric": {
+      "name": "WE Energies",
+      "legal_name": "Wisconsin Electric Power Co",
+      "confirmed": true
+    },
+    "gas": {
+      "name": "WE Energies", 
+      "legal_name": "Wisconsin Gas LLC",
+      "confirmed": true
+    },
+    "notes": "Resident confirmed: Wisconsin Electric and Wisconsin Gas are combined as WE Energies. Have been for 20+ years (merged 2000)."
+  }
+}

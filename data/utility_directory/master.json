@@ -369,6 +369,19 @@
       "website": "https://www.dcwater.com",
       "service_area": {"type": "municipal", "cities": ["Washington"], "state": "DC"},
       "customers": 130000
+    },
+    {
+      "id": "we_energies",
+      "name": "WE Energies",
+      "aliases": ["Wisconsin Electric Power Co", "Wisconsin Electric", "Wisconsin Gas", "Wisconsin Gas LLC", "WEPCO", "WEC Energy Group"],
+      "type": "combo",
+      "services": ["electric", "gas"],
+      "ownership": "investor-owned",
+      "phone": {"customer_service": "1-800-242-9137", "outage": "1-800-662-4797"},
+      "website": "https://www.we-energies.com",
+      "service_area": {"type": "territory", "cities": ["Milwaukee", "Racine", "Kenosha", "Waukesha", "Brookfield", "Green Bay"], "state": "WI"},
+      "customers": 1100000,
+      "note": "Wisconsin Electric Power Co (electric) and Wisconsin Gas LLC (gas) merged in 2000, now branded as WE Energies. Part of WEC Energy Group."
     }
   ]
 }

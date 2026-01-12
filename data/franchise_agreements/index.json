@@ -1,0 +1,225 @@
+{
+  "description": "City franchise agreements with utilities - public records defining exclusive service territories",
+  "last_updated": "2026-01-11",
+  "cities": {
+    "austin_tx": {
+      "city": "Austin",
+      "state": "TX",
+      "population": 1000000,
+      "agreements": [
+        {
+          "utility": "Austin Energy",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true,
+          "notes": "City-owned utility, serves all of Austin"
+        },
+        {
+          "utility": "Texas Gas Service",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits",
+          "notes": "Franchise agreement with city"
+        },
+        {
+          "utility": "Austin Water",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    },
+    "dallas_tx": {
+      "city": "Dallas",
+      "state": "TX",
+      "population": 1300000,
+      "agreements": [
+        {
+          "utility": "Oncor Electric Delivery",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits",
+          "notes": "TDU - customers choose REP"
+        },
+        {
+          "utility": "Atmos Energy",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "Dallas Water Utilities",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    },
+    "houston_tx": {
+      "city": "Houston",
+      "state": "TX",
+      "population": 2300000,
+      "agreements": [
+        {
+          "utility": "CenterPoint Energy",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits",
+          "notes": "TDU - customers choose REP"
+        },
+        {
+          "utility": "CenterPoint Energy",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "City of Houston Public Works",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    },
+    "san_antonio_tx": {
+      "city": "San Antonio",
+      "state": "TX",
+      "population": 1500000,
+      "agreements": [
+        {
+          "utility": "CPS Energy",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true,
+          "notes": "Municipal utility - no retail choice"
+        },
+        {
+          "utility": "CPS Energy",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        },
+        {
+          "utility": "San Antonio Water System (SAWS)",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    },
+    "los_angeles_ca": {
+      "city": "Los Angeles",
+      "state": "CA",
+      "population": 4000000,
+      "agreements": [
+        {
+          "utility": "Los Angeles Department of Water and Power (LADWP)",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        },
+        {
+          "utility": "Southern California Gas Company",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "Los Angeles Department of Water and Power (LADWP)",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    },
+    "phoenix_az": {
+      "city": "Phoenix",
+      "state": "AZ",
+      "population": 1600000,
+      "agreements": [
+        {
+          "utility": "Arizona Public Service (APS)",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "most_of_city",
+          "notes": "SRP serves some areas"
+        },
+        {
+          "utility": "Southwest Gas",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "City of Phoenix Water Services",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    },
+    "denver_co": {
+      "city": "Denver",
+      "state": "CO",
+      "population": 700000,
+      "agreements": [
+        {
+          "utility": "Xcel Energy",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "Xcel Energy",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "Denver Water",
+          "type": "water",
+          "exclusive": true,
+          "territory": "service_area",
+          "notes": "Service area extends beyond city limits"
+        }
+      ]
+    },
+    "seattle_wa": {
+      "city": "Seattle",
+      "state": "WA",
+      "population": 750000,
+      "agreements": [
+        {
+          "utility": "Seattle City Light",
+          "type": "electric",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        },
+        {
+          "utility": "Puget Sound Energy",
+          "type": "gas",
+          "exclusive": true,
+          "territory": "city_limits"
+        },
+        {
+          "utility": "Seattle Public Utilities",
+          "type": "water",
+          "exclusive": true,
+          "territory": "city_limits",
+          "municipal_owned": true
+        }
+      ]
+    }
+  }
+}

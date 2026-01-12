@@ -1,0 +1,192 @@
+{
+  "_metadata": {
+    "description": "Washington Public Utility Districts - provide electric and sometimes water",
+    "last_updated": "2026-01-11",
+    "source": "WA PUD Association"
+  },
+  "puds": [
+    {
+      "name": "Snohomish County PUD",
+      "services": ["electric"],
+      "counties": ["Snohomish", "Island", "Camano"],
+      "zips": ["98012", "98020", "98021", "98026", "98036", "98037", "98043", "98046", "98072", "98082", "98087", "98201", "98203", "98204", "98205", "98206", "98207", "98208", "98213", "98220", "98223", "98236", "98239", "98241", "98249", "98252", "98256", "98258", "98260", "98270", "98271", "98272", "98275", "98282", "98287", "98288", "98290", "98291", "98292", "98293", "98294", "98296"],
+      "phone": "425-783-1000",
+      "website": "https://www.snopud.com",
+      "members": 360000,
+      "note": "2nd largest PUD in WA"
+    },
+    {
+      "name": "Clark Public Utilities",
+      "services": ["electric", "water"],
+      "counties": ["Clark"],
+      "zips": ["98601", "98604", "98606", "98607", "98629", "98642", "98660", "98661", "98662", "98663", "98664", "98665", "98666", "98668", "98682", "98683", "98684", "98685", "98686", "98687"],
+      "phone": "360-992-3000",
+      "website": "https://www.clarkpublicutilities.com",
+      "members": 200000
+    },
+    {
+      "name": "Tacoma Public Utilities",
+      "services": ["electric", "water"],
+      "counties": ["Pierce"],
+      "zips": ["98304", "98321", "98323", "98327", "98328", "98329", "98330", "98332", "98333", "98335", "98338", "98349", "98351", "98354", "98360", "98371", "98372", "98373", "98374", "98375", "98387", "98388", "98390", "98391", "98392", "98393", "98394", "98395", "98396", "98397", "98398", "98401", "98402", "98403", "98404", "98405", "98406", "98407", "98408", "98409", "98411", "98412", "98413", "98415", "98416", "98417", "98418", "98419", "98421", "98422", "98424", "98430", "98431", "98433", "98438", "98439", "98443", "98444", "98445", "98446", "98447", "98448", "98464", "98465", "98466", "98467", "98471", "98481", "98490", "98492", "98493", "98496", "98497", "98498", "98499"],
+      "phone": "253-502-8600",
+      "website": "https://www.mytpu.org",
+      "members": 180000
+    },
+    {
+      "name": "Chelan County PUD",
+      "services": ["electric", "water"],
+      "counties": ["Chelan"],
+      "zips": ["98801", "98802", "98807", "98811", "98815", "98816", "98817", "98821", "98822", "98826", "98828", "98831", "98836", "98847"],
+      "phone": "509-663-8121",
+      "website": "https://www.chelanpud.org",
+      "members": 52000
+    },
+    {
+      "name": "Grant County PUD",
+      "services": ["electric"],
+      "counties": ["Grant"],
+      "zips": ["98823", "98832", "98837", "98848", "98850", "98851", "98857"],
+      "phone": "509-766-2505",
+      "website": "https://www.grantpud.org",
+      "members": 47000
+    },
+    {
+      "name": "Cowlitz County PUD",
+      "services": ["electric"],
+      "counties": ["Cowlitz"],
+      "zips": ["98531", "98532", "98538", "98541", "98561", "98564", "98565", "98572", "98581", "98582", "98591", "98596", "98611", "98616", "98625", "98626", "98632", "98645"],
+      "phone": "360-423-2210",
+      "website": "https://www.cowlitzpud.org",
+      "members": 50000
+    },
+    {
+      "name": "Lewis County PUD",
+      "services": ["electric"],
+      "counties": ["Lewis"],
+      "zips": ["98304", "98336", "98355", "98356", "98361", "98377", "98522", "98527", "98530", "98531", "98532", "98533", "98536", "98537", "98538", "98542", "98544", "98547", "98554", "98555", "98556", "98559", "98564", "98565", "98568", "98570", "98572", "98579", "98581", "98582", "98585", "98591", "98593", "98596"],
+      "phone": "360-748-9261",
+      "website": "https://www.lcpud.org",
+      "members": 35000
+    },
+    {
+      "name": "Grays Harbor PUD",
+      "services": ["electric"],
+      "counties": ["Grays Harbor"],
+      "zips": ["98520", "98524", "98526", "98535", "98536", "98537", "98541", "98547", "98550", "98552", "98555", "98557", "98559", "98562", "98563", "98566", "98568", "98569", "98571", "98575", "98583", "98587", "98595"],
+      "phone": "360-532-4220",
+      "website": "https://www.ghpud.org",
+      "members": 42000
+    },
+    {
+      "name": "Benton County PUD",
+      "services": ["electric"],
+      "counties": ["Benton"],
+      "zips": ["99320", "99336", "99337", "99338", "99350", "99352", "99353", "99354"],
+      "phone": "509-582-1234",
+      "website": "https://www.bentonpud.org",
+      "members": 55000
+    },
+    {
+      "name": "Franklin County PUD",
+      "services": ["electric"],
+      "counties": ["Franklin"],
+      "zips": ["99301", "99302", "99326", "99330", "99335", "99343", "99344", "99345", "99346", "99347", "99348", "99349"],
+      "phone": "509-547-5591",
+      "website": "https://www.franklinpud.com",
+      "members": 35000
+    },
+    {
+      "name": "Kitsap County PUD",
+      "services": ["water"],
+      "counties": ["Kitsap"],
+      "zips": ["98310", "98311", "98312", "98314", "98315", "98337", "98340", "98345", "98346", "98353", "98359", "98364", "98366", "98367", "98370", "98378", "98380", "98383", "98384", "98385", "98386"],
+      "phone": "360-779-7656",
+      "website": "https://www.kpud.org",
+      "members": 25000,
+      "note": "Water only - Puget Sound Energy provides electric"
+    },
+    {
+      "name": "Mason County PUD No. 1",
+      "services": ["electric"],
+      "counties": ["Mason"],
+      "zips": ["98524", "98528", "98541", "98546", "98548", "98555", "98557", "98560", "98563", "98575", "98583", "98584", "98588", "98592"],
+      "phone": "360-877-5249",
+      "website": "https://www.masonpud1.org",
+      "members": 15000
+    },
+    {
+      "name": "Mason County PUD No. 3",
+      "services": ["electric"],
+      "counties": ["Mason"],
+      "zips": ["98512", "98524", "98528", "98541", "98546", "98548", "98555", "98557", "98560", "98563", "98575", "98583", "98584", "98588", "98592"],
+      "phone": "360-426-8255",
+      "website": "https://www.masonpud3.org",
+      "members": 35000
+    },
+    {
+      "name": "Clallam County PUD",
+      "services": ["electric"],
+      "counties": ["Clallam"],
+      "zips": ["98305", "98326", "98331", "98343", "98357", "98362", "98363", "98376", "98381", "98382"],
+      "phone": "360-452-9771",
+      "website": "https://www.clallampud.net",
+      "members": 30000
+    },
+    {
+      "name": "Jefferson County PUD",
+      "services": ["electric"],
+      "counties": ["Jefferson"],
+      "zips": ["98320", "98325", "98331", "98339", "98357", "98358", "98362", "98363", "98365", "98368", "98376", "98381", "98382"],
+      "phone": "360-385-5800",
+      "website": "https://www.jeffpud.org",
+      "members": 20000
+    },
+    {
+      "name": "Okanogan County PUD",
+      "services": ["electric"],
+      "counties": ["Okanogan"],
+      "zips": ["98812", "98813", "98814", "98819", "98827", "98829", "98833", "98834", "98840", "98841", "98844", "98846", "98849", "98855", "98856", "98857", "98859", "98862"],
+      "phone": "509-422-3310",
+      "website": "https://www.okanoganpud.org",
+      "members": 20000
+    },
+    {
+      "name": "Douglas County PUD",
+      "services": ["electric"],
+      "counties": ["Douglas"],
+      "zips": ["98802", "98807", "98813", "98830", "98843", "98845", "98850", "98858"],
+      "phone": "509-884-7191",
+      "website": "https://www.douglaspud.org",
+      "members": 20000
+    },
+    {
+      "name": "Klickitat County PUD",
+      "services": ["electric"],
+      "counties": ["Klickitat"],
+      "zips": ["98617", "98619", "98620", "98628", "98635", "98650", "98651", "98670", "98671", "98672", "98673"],
+      "phone": "509-773-5891",
+      "website": "https://www.klickpud.com",
+      "members": 12000
+    },
+    {
+      "name": "Pacific County PUD",
+      "services": ["electric"],
+      "counties": ["Pacific"],
+      "zips": ["98527", "98537", "98547", "98552", "98557", "98562", "98568", "98570", "98577", "98586", "98590", "98591", "98595", "98614", "98624", "98631", "98637", "98638", "98640", "98641", "98644"],
+      "phone": "360-875-5526",
+      "website": "https://www.pacificpud.org",
+      "members": 18000
+    },
+    {
+      "name": "Whatcom County PUD",
+      "services": ["water"],
+      "counties": ["Whatcom"],
+      "zips": ["98220", "98225", "98226", "98229", "98230", "98240", "98244", "98247", "98248", "98262", "98264", "98266", "98267", "98276", "98281", "98283", "98295"],
+      "phone": "360-384-4288",
+      "website": "https://www.wcpud.org",
+      "members": 10000,
+      "note": "Water only - Puget Sound Energy provides electric"
+    }
+  ]
+}

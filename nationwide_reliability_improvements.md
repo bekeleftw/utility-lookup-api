@@ -837,3 +837,328 @@ curl "API_URL?address=1+Dr+Carlton+B+Goodlett+Pl+San+Francisco+CA"
 | 9 | Accuracy monitoring | Medium | High | Yes |
 
 **Recommended order:** 1 → 9 → 5 → 2 → 3 → 4 → 6 → 7 → 8
+
+---
+
+## PHASE 10: Cost Optimization (Skip SERP When Authoritative)
+
+Once data quality is high, skip the ~$0.01 SERP verification for authoritative matches.
+
+### Current Cost Breakdown
+
+| Component | Cost | When Used |
+|-----------|------|-----------|
+| Geocoding | $0 | Every lookup |
+| Electric/Gas/Water DB | $0 | Every lookup |
+| FCC Broadband | ~$0.01 | Every lookup with internet |
+| SERP Verification | ~$0.01 | Every lookup (currently) |
+| **Total** | **~$0.02** | |
+
+### Optimization Goal
+
+Skip SERP when we have authoritative data. Target: 60-70% of lookups skip SERP.
+
+| Scenario | Current Cost | Optimized Cost |
+|----------|--------------|----------------|
+| 1,000 lookups | $20 | $8-12 |
+| 10,000 lookups | $200 | $80-120 |
+
+### Authoritative Sources (No SERP Needed)
+
+These sources are definitive. If we get a match, skip SERP:
+
+| Source | Utility Type | Why Authoritative |
+|--------|--------------|-------------------|
+| Special district boundary match | Water | Legal boundaries, address is inside polygon |
+| Municipal utility (city match) | Electric, Water | City runs utility, address in city limits |
+| Electric cooperative polygon | Electric | HIFLD boundaries are surveyed |
+| User confirmed (3+ votes) | All | Crowdsourced verification |
+| ZIP override table | All | Manual correction, already verified |
+| State regulatory data | Gas | PUC/Railroad Commission territories |
+
+### Non-Authoritative Sources (Still Need SERP)
+
+| Source | Why SERP Still Needed |
+|--------|----------------------|
+| EIA 861 ZIP mapping | ZIP boundaries don't match utility boundaries |
+| HIFLD IOU polygons | Less accurate than co-op polygons |
+| EPA SDWIS | Database gaps, naming inconsistencies |
+| 3-digit ZIP gas mapping | Boundary zones between utilities |
+| Heuristic city match | Guessing, not verified |
+
+### Implementation
+
+```python
+# utility_lookup.py
+
+def should_skip_serp(result, utility_type):
+    """
+    Determine if SERP verification can be skipped based on source authority.
+    Returns (skip: bool, reason: str)
+    """
+    source = result.get('source', '')
+    confidence_score = result.get('confidence_score', 0)
+    
+    # Always skip SERP for these authoritative sources
+    AUTHORITATIVE_SOURCES = {
+        'special_district_boundary',
+        'municipal_utility_database', 
+        'user_confirmed',
+        'zip_override',
+        'electric_cooperative_polygon',
+        'texas_railroad_commission',  # Gas territories
+        'state_puc_territory',
+    }
+    
+    if source in AUTHORITATIVE_SOURCES:
+        return True, f"Authoritative source: {source}"
+    
+    # Skip if confidence already very high from multiple agreeing sources
+    if confidence_score >= 90:
+        return True, f"High confidence: {confidence_score}"
+    
+    # Skip if in a known-good area (opposite of problem area)
+    if is_verified_area(result.get('zip_code')):
+        return True, "Verified area"
+    
+    # Don't skip for these
+    ALWAYS_VERIFY_SOURCES = {
+        'eia_861',
+        'hifld_iou_polygon',
+        'epa_sdwis',
+        'heuristic_city_match',
+        'supplemental_file',  # Until it's been SERP-verified once
+    }
+    
+    if source in ALWAYS_VERIFY_SOURCES:
+        return False, f"Non-authoritative source: {source}"
+    
+    # Don't skip in problem areas
+    if is_problem_area(result.get('zip_code')):
+        return False, "Problem area"
+    
+    # Default: verify
+    return False, "Default behavior"
+
+
+def lookup_with_smart_verification(address, utilities=['electric', 'gas', 'water', 'internet']):
+    """
+    Main lookup function with conditional SERP verification.
+    """
+    # Step 1: Geocode
+    location = geocode(address)
+    
+    # Step 2: Get results from all data sources
+    results = {}
+    serp_skipped = {}
+    
+    for utility_type in utilities:
+        if utility_type == 'internet':
+            # Internet is always authoritative (FCC)
+            results['internet'] = lookup_internet(location)
+            serp_skipped['internet'] = True
+            continue
+        
+        # Get initial result from databases
+        result = lookup_utility_from_databases(utility_type, location)
+        
+        # Decide if SERP is needed
+        skip, reason = should_skip_serp(result, utility_type)
+        
+        if skip:
+            # Mark as verified without SERP
+            result['verification_method'] = 'authoritative_source'
+            result['serp_skipped'] = True
+            result['skip_reason'] = reason
+            serp_skipped[utility_type] = True
+        else:
+            # Run SERP verification
+            serp_result = verify_with_serp(utility_type, location, result)
+            result = merge_with_serp(result, serp_result)
+            result['verification_method'] = 'serp_verified'
+            result['serp_skipped'] = False
+            serp_skipped[utility_type] = False
+        
+        results[utility_type] = result
+    
+    # Add cost tracking
+    serp_calls = sum(1 for v in serp_skipped.values() if not v)
+    estimated_cost = 0.01 * serp_calls  # Only count SERP calls
+    
+    return {
+        'location': location,
+        'utilities': results,
+        'meta': {
+            'serp_calls': serp_calls,
+            'serp_skipped': serp_skipped,
+            'estimated_cost': estimated_cost
+        }
+    }
+```
+
+### Graduated Trust System
+
+Build trust in sources over time:
+
+```python
+# Track source accuracy over time
+SOURCE_TRUST_SCORES = {
+    'special_district_boundary': 0.98,  # Very high
+    'municipal_utility_database': 0.95,
+    'user_confirmed': 0.95,
+    'electric_cooperative_polygon': 0.93,
+    'zip_override': 0.99,  # Manual corrections
+    'eia_861': 0.82,  # ZIP-level, boundary issues
+    'supplemental_file': 0.85,  # Good but not verified
+    'heuristic_city_match': 0.60,  # Guessing
+}
+
+def update_trust_scores():
+    """
+    Run monthly. Compares source results to SERP ground truth.
+    Adjusts trust scores based on actual accuracy.
+    """
+    for source in SOURCE_TRUST_SCORES:
+        # Get all lookups where this source was used
+        lookups = get_lookups_by_source(source, days=30)
+        
+        # Calculate accuracy vs SERP
+        if len(lookups) >= 50:
+            correct = sum(1 for l in lookups if l['serp_agreed'])
+            accuracy = correct / len(lookups)
+            
+            # Update trust score (weighted average with prior)
+            prior = SOURCE_TRUST_SCORES[source]
+            SOURCE_TRUST_SCORES[source] = (prior * 0.7) + (accuracy * 0.3)
+    
+    save_trust_scores(SOURCE_TRUST_SCORES)
+```
+
+### Skip Logic by Utility Type
+
+| Utility | Skip SERP When |
+|---------|----------------|
+| Electric | Co-op polygon match, municipal utility, user confirmed, ZIP override |
+| Gas | State LDC territory match, user confirmed, ZIP override |
+| Water | Special district match, municipal utility, user confirmed |
+| Internet | Always skip (FCC is authoritative) |
+
+### Verified Areas Registry
+
+Track ZIPs where our data has been validated:
+
+```json
+// /data/verified_areas.json
+{
+  "78701": {
+    "verified_date": "2026-01-10",
+    "sample_size": 25,
+    "accuracy": 0.96,
+    "sources_validated": ["municipal_utility_database"]
+  },
+  "80126": {
+    "verified_date": "2026-01-08", 
+    "sample_size": 15,
+    "accuracy": 0.93,
+    "sources_validated": ["special_district_boundary"]
+  }
+}
+```
+
+A ZIP becomes "verified" when:
+- 10+ lookups with SERP verification
+- 90%+ agreement between database and SERP
+- No user corrections submitted in past 30 days
+
+### Fallback: Spot-Check Mode
+
+Even for authoritative sources, randomly verify 5% of lookups to catch drift:
+
+```python
+import random
+
+def should_spot_check():
+    """5% of authoritative matches still get SERP verified."""
+    return random.random() < 0.05
+
+def lookup_with_spot_check(result, utility_type, location):
+    skip, reason = should_skip_serp(result, utility_type)
+    
+    if skip and should_spot_check():
+        # Spot check - verify anyway, but async (don't slow down response)
+        queue_async_verification(result, utility_type, location)
+        result['spot_checked'] = True
+    
+    return result
+```
+
+### API Response Changes
+
+Add transparency about verification method:
+
+```json
+{
+  "utilities": {
+    "electric": {
+      "name": "Austin Energy",
+      "confidence_score": 95,
+      "source": "municipal_utility_database",
+      "verification": {
+        "method": "authoritative_source",
+        "serp_skipped": true,
+        "reason": "Municipal utility database match"
+      }
+    },
+    "water": {
+      "name": "Travis County MUD 4",
+      "confidence_score": 92,
+      "source": "special_district_boundary",
+      "verification": {
+        "method": "authoritative_source", 
+        "serp_skipped": true,
+        "reason": "Special district boundary match"
+      }
+    }
+  },
+  "meta": {
+    "serp_calls": 0,
+    "estimated_cost": 0.00
+  }
+}
+```
+
+### Expected Impact
+
+| Metric | Before | After |
+|--------|--------|-------|
+| SERP calls per lookup | 3 (elec + gas + water) | 0.5-1.0 avg |
+| Cost per lookup | $0.02 | $0.005-0.01 |
+| Latency | 2-3 sec | 0.5-1 sec (no SERP) |
+| Accuracy | ~90% | ~90% (maintained) |
+
+### Implementation Order
+
+1. **Add `should_skip_serp()` function** with initial authoritative sources list
+2. **Track SERP skip rate** in logs/analytics
+3. **Build verified areas registry** from historical data
+4. **Implement spot-check mode** (5% random verification)
+5. **Add trust score tracking** and monthly updates
+6. **Tune skip thresholds** based on actual accuracy data
+
+### Monitoring
+
+Track these metrics to ensure accuracy doesn't degrade:
+
+```python
+# Dashboard metrics
+{
+  "serp_skip_rate": 0.65,  # 65% of lookups skip SERP
+  "accuracy_with_serp": 0.91,
+  "accuracy_without_serp": 0.89,  # Should be close
+  "cost_per_1000_lookups": 8.50,
+  "avg_latency_with_serp": 2.4,
+  "avg_latency_without_serp": 0.6
+}
+```
+
+Alert if `accuracy_without_serp` drops more than 3% below `accuracy_with_serp`.

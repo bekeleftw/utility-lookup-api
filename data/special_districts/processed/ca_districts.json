@@ -1,0 +1,302 @@
+[
+  {
+    "district_id": "CA-CSD-001",
+    "name": "Eastern Municipal Water District",
+    "state": "CA",
+    "county": "Riverside",
+    "type": "Municipal Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "951-928-3777",
+      "website": "https://www.emwd.org"
+    },
+    "zip_codes": ["92220", "92223", "92230", "92234", "92236", "92240", "92241", "92253", "92254", "92260", "92262", "92264", "92270", "92276", "92320", "92501", "92503", "92504", "92505", "92506", "92507", "92508", "92509", "92518", "92530", "92532", "92536", "92539", "92543", "92544", "92545", "92546", "92548", "92549", "92551", "92552", "92553", "92554", "92555", "92556", "92557", "92561", "92562", "92563", "92564", "92567", "92570", "92571", "92582", "92583", "92584", "92585", "92586", "92587", "92590", "92591", "92592", "92595", "92596"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-002",
+    "name": "Irvine Ranch Water District",
+    "state": "CA",
+    "county": "Orange",
+    "type": "Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "949-453-5300",
+      "website": "https://www.irwd.com"
+    },
+    "zip_codes": ["92602", "92603", "92604", "92606", "92612", "92614", "92617", "92618", "92620", "92697"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-003",
+    "name": "Moulton Niguel Water District",
+    "state": "CA",
+    "county": "Orange",
+    "type": "Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "949-831-2500",
+      "website": "https://www.mnwd.com"
+    },
+    "zip_codes": ["92624", "92629", "92637", "92653", "92656", "92675", "92677", "92688", "92691", "92692", "92694"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-004",
+    "name": "Santa Margarita Water District",
+    "state": "CA",
+    "county": "Orange",
+    "type": "Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "949-459-6420",
+      "website": "https://www.smwd.com"
+    },
+    "zip_codes": ["92675", "92688", "92690", "92691", "92692", "92694"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-005",
+    "name": "Otay Water District",
+    "state": "CA",
+    "county": "San Diego",
+    "type": "Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "619-670-2222",
+      "website": "https://www.otaywater.gov"
+    },
+    "zip_codes": ["91902", "91910", "91911", "91913", "91914", "91915", "91932", "91935", "91945", "91950", "91977", "91978", "92019", "92020", "92021"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-006",
+    "name": "Padre Dam Municipal Water District",
+    "state": "CA",
+    "county": "San Diego",
+    "type": "Municipal Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "619-448-3111",
+      "website": "https://www.padredam.org"
+    },
+    "zip_codes": ["91941", "91942", "91977", "92019", "92020", "92021", "92040", "92071", "92119", "92120", "92124"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-007",
+    "name": "Helix Water District",
+    "state": "CA",
+    "county": "San Diego",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "619-466-0585",
+      "website": "https://www.hwd.com"
+    },
+    "zip_codes": ["91941", "91942", "91977", "92019", "92020", "92021", "92040", "92071", "92115", "92119", "92120"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-008",
+    "name": "Vallecitos Water District",
+    "state": "CA",
+    "county": "San Diego",
+    "type": "Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "760-744-0460",
+      "website": "https://www.vwd.org"
+    },
+    "zip_codes": ["92024", "92025", "92026", "92027", "92029", "92056", "92057", "92058", "92059", "92064", "92065", "92069", "92078", "92081", "92082", "92083", "92084", "92127", "92128", "92129"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-009",
+    "name": "Cucamonga Valley Water District",
+    "state": "CA",
+    "county": "San Bernardino",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "909-987-2591",
+      "website": "https://www.cvwdwater.com"
+    },
+    "zip_codes": ["91701", "91730", "91737", "91739", "91761", "91762", "91764", "91784", "91785", "91786"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-010",
+    "name": "Inland Empire Utilities Agency",
+    "state": "CA",
+    "county": "San Bernardino",
+    "type": "Water Agency",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "909-993-1600",
+      "website": "https://www.ieua.org"
+    },
+    "zip_codes": ["91701", "91708", "91709", "91710", "91730", "91737", "91739", "91743", "91750", "91752", "91758", "91759", "91761", "91762", "91763", "91764", "91765", "91766", "91767", "91768", "91784", "91785", "91786"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-011",
+    "name": "West Valley Water District",
+    "state": "CA",
+    "county": "San Bernardino",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "909-875-1804",
+      "website": "https://www.wvwd.org"
+    },
+    "zip_codes": ["92335", "92336", "92337", "92376", "92377", "92401", "92404", "92405", "92407", "92408", "92410", "92411"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-012",
+    "name": "Zone 7 Water Agency",
+    "state": "CA",
+    "county": "Alameda",
+    "type": "Water Agency",
+    "services": ["water"],
+    "contact": {
+      "phone": "925-454-5000",
+      "website": "https://www.zone7water.com"
+    },
+    "zip_codes": ["94550", "94551", "94566", "94568", "94588"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-013",
+    "name": "Dublin San Ramon Services District",
+    "state": "CA",
+    "county": "Alameda",
+    "type": "Services District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "925-828-0515",
+      "website": "https://www.dsrsd.com"
+    },
+    "zip_codes": ["94506", "94526", "94568", "94582", "94583", "94588"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-014",
+    "name": "Contra Costa Water District",
+    "state": "CA",
+    "county": "Contra Costa",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "925-688-8000",
+      "website": "https://www.ccwater.com"
+    },
+    "zip_codes": ["94505", "94506", "94507", "94509", "94511", "94513", "94514", "94516", "94517", "94518", "94519", "94520", "94521", "94522", "94523", "94524", "94525", "94526", "94527", "94528", "94529", "94530", "94531", "94547", "94548", "94549", "94553", "94556", "94561", "94563", "94564", "94565", "94569", "94570", "94572", "94575", "94582", "94583", "94595", "94596", "94597", "94598"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-015",
+    "name": "Santa Clara Valley Water District",
+    "state": "CA",
+    "county": "Santa Clara",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "408-265-2600",
+      "website": "https://www.valleywater.org"
+    },
+    "zip_codes": ["94022", "94024", "94035", "94039", "94040", "94041", "94042", "94043", "94085", "94086", "94087", "94088", "94089", "94301", "94302", "94303", "94304", "94305", "94306", "95002", "95008", "95013", "95014", "95020", "95030", "95031", "95032", "95035", "95037", "95046", "95050", "95051", "95052", "95053", "95054", "95070", "95101", "95110", "95111", "95112", "95113", "95116", "95117", "95118", "95119", "95120", "95121", "95122", "95123", "95124", "95125", "95126", "95127", "95128", "95129", "95130", "95131", "95132", "95133", "95134", "95135", "95136", "95138", "95139", "95140", "95141", "95148"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-016",
+    "name": "Sacramento Suburban Water District",
+    "state": "CA",
+    "county": "Sacramento",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "916-972-7171",
+      "website": "https://www.sswd.org"
+    },
+    "zip_codes": ["95608", "95610", "95621", "95628", "95630", "95652", "95660", "95662", "95670", "95678", "95742", "95821", "95825", "95841", "95842", "95843"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-017",
+    "name": "Carmichael Water District",
+    "state": "CA",
+    "county": "Sacramento",
+    "type": "Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "916-483-2452",
+      "website": "https://www.carmichaelwd.org"
+    },
+    "zip_codes": ["95608", "95821", "95825", "95841", "95864"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-018",
+    "name": "Fresno Irrigation District",
+    "state": "CA",
+    "county": "Fresno",
+    "type": "Irrigation District",
+    "services": ["water"],
+    "contact": {
+      "phone": "559-233-7161",
+      "website": "https://www.fresnoirrigation.com"
+    },
+    "zip_codes": ["93650", "93701", "93702", "93703", "93704", "93705", "93706", "93710", "93711", "93720", "93721", "93722", "93723", "93725", "93726", "93727", "93728", "93730"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-019",
+    "name": "Las Virgenes Municipal Water District",
+    "state": "CA",
+    "county": "Los Angeles",
+    "type": "Municipal Water District",
+    "services": ["water", "sewer"],
+    "contact": {
+      "phone": "818-251-2100",
+      "website": "https://www.lvmwd.com"
+    },
+    "zip_codes": ["91301", "91302", "91311", "91361", "91362", "91377"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CA-CSD-020",
+    "name": "Three Valleys Municipal Water District",
+    "state": "CA",
+    "county": "Los Angeles",
+    "type": "Municipal Water District",
+    "services": ["water"],
+    "contact": {
+      "phone": "909-621-5568",
+      "website": "https://www.threevalleys.com"
+    },
+    "zip_codes": ["91702", "91706", "91711", "91722", "91723", "91724", "91731", "91732", "91740", "91741", "91744", "91745", "91746", "91747", "91748", "91750", "91765", "91766", "91767", "91768", "91770", "91773", "91789", "91790", "91791", "91792"],
+    "data_source": "CA LAFCO",
+    "last_updated": "2026-01-11"
+  }
+]

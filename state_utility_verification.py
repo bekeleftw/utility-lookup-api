@@ -938,6 +938,89 @@ STATE_GAS_LDCS = {
 # States with limited gas infrastructure
 LIMITED_GAS_STATES = ["FL", "HI", "VT", "ME"]
 
+# States with JSON gas mapping files
+GAS_MAPPING_STATES = ["CA", "IL", "OH", "GA", "AZ"]
+_gas_mappings_cache = {}
+
+
+def load_gas_mapping(state: str) -> Dict:
+    """Load gas mapping JSON file for a state."""
+    if state in _gas_mappings_cache:
+        return _gas_mappings_cache[state]
+    
+    state_lower = state.lower()
+    state_names = {
+        'CA': 'california',
+        'IL': 'illinois', 
+        'OH': 'ohio',
+        'GA': 'georgia',
+        'AZ': 'arizona'
+    }
+    
+    filename = state_names.get(state.upper())
+    if not filename:
+        return {}
+    
+    filepath = os.path.join(os.path.dirname(__file__), 'data', 'gas_mappings', f'{filename}.json')
+    if os.path.exists(filepath):
+        with open(filepath, 'r') as f:
+            _gas_mappings_cache[state] = json.load(f)
+            return _gas_mappings_cache[state]
+    
+    return {}
+
+
+def get_state_gas_ldc(state: str, zip_code: str, city: str = None) -> Dict:
+    """Get gas LDC for states with JSON mapping files (CA, IL, OH, GA, AZ)."""
+    state = state.upper() if state else ""
+    if state not in GAS_MAPPING_STATES:
+        return None
+    
+    mapping = load_gas_mapping(state)
+    if not mapping:
+        return None
+    
+    zip_code = str(zip_code).strip()[:5] if zip_code else ""
+    zip_prefix = zip_code[:3] if len(zip_code) >= 3 else None
+    
+    utilities = mapping.get('utilities', {})
+    
+    # Check 5-digit ZIP overrides first
+    if zip_code in mapping.get('zip_overrides', {}):
+        utility_key = mapping['zip_overrides'][zip_code]
+        utility = utilities.get(utility_key, {})
+        if utility:
+            return {
+                "primary": {
+                    "name": utility.get("name", utility_key),
+                    "phone": utility.get("phone"),
+                    "website": utility.get("website"),
+                },
+                "confidence": "verified",
+                "source": f"{state} PUC territory data",
+                "selection_reason": f"ZIP {zip_code} is in {utility.get('name', utility_key)} territory.",
+                "alternatives": []
+            }
+    
+    # Check 3-digit prefix mapping
+    if zip_prefix and zip_prefix in mapping.get('zip_to_utility', {}):
+        utility_key = mapping['zip_to_utility'][zip_prefix]
+        utility = utilities.get(utility_key, {})
+        if utility:
+            return {
+                "primary": {
+                    "name": utility.get("name", utility_key),
+                    "phone": utility.get("phone"),
+                    "website": utility.get("website"),
+                },
+                "confidence": "verified",
+                "source": f"{state} PUC territory data",
+                "selection_reason": f"ZIP {zip_code} is in {utility.get('name', utility_key)} territory ({utility.get('service_area', '')}).",
+                "alternatives": []
+            }
+    
+    return None
+
 
 def get_texas_gas_ldc(zip_code: str, city: str = None) -> Dict:
     """Get the gas LDC for a Texas ZIP code."""
@@ -1070,7 +1153,45 @@ def verify_gas_provider(
             "alternatives": []
         }
     
-    # Texas has specific gas LDC mapping
+    # Check state-specific gas mappings (TX, CA, IL, OH, GA, AZ)
+    state_gas_result = get_state_gas_ldc(state, zip_code, city)
+    if state_gas_result and state_gas_result.get("primary"):
+        # Try to match with HIFLD candidate
+        state_name = state_gas_result["primary"]["name"].upper()
+        matched = None
+        alternatives = []
+        
+        for c in candidates:
+            c_name = (c.get("NAME") or "").upper()
+            if any(word in c_name for word in state_name.split() if len(word) > 3):
+                matched = c
+            else:
+                alternatives.append(c)
+        
+        if matched:
+            return {
+                "primary": {**matched, "verified_name": state_gas_result["primary"]["name"]},
+                "confidence": "verified",
+                "source": state_gas_result["source"],
+                "selection_reason": state_gas_result["selection_reason"],
+                "alternatives": alternatives
+            }
+        else:
+            # Use state data directly
+            return {
+                "primary": {
+                    "NAME": state_gas_result["primary"]["name"],
+                    "TELEPHONE": state_gas_result["primary"].get("phone"),
+                    "WEBSITE": state_gas_result["primary"].get("website"),
+                    "STATE": state,
+                },
+                "confidence": "verified",
+                "source": state_gas_result["source"],
+                "selection_reason": state_gas_result["selection_reason"],
+                "alternatives": candidates
+            }
+    
+    # Legacy Texas-specific handling (fallback)
     if state == "TX":
         tx_result = get_texas_gas_ldc(zip_code, city)
         if tx_result["primary"]:

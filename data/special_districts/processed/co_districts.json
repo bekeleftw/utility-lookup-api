@@ -1,0 +1,382 @@
+[
+  {
+    "district_id": "CO-METRO-001",
+    "name": "Highlands Ranch Metropolitan District",
+    "state": "CO",
+    "county": "Douglas",
+    "type": "Metropolitan District",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-791-0430",
+      "website": "https://highlandsranch.org"
+    },
+    "zip_codes": ["80126", "80129", "80130"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-002",
+    "name": "Castle Rock Water",
+    "state": "CO",
+    "county": "Douglas",
+    "type": "Water District",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-688-8550",
+      "website": "https://crgov.com/water"
+    },
+    "zip_codes": ["80104", "80108", "80109"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-003",
+    "name": "Parker Water & Sanitation District",
+    "state": "CO",
+    "county": "Douglas",
+    "type": "Water and Sanitation District",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-841-4627",
+      "website": "https://www.pwsd.org"
+    },
+    "zip_codes": ["80134", "80138"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-004",
+    "name": "Centennial Water & Sanitation District",
+    "state": "CO",
+    "county": "Arapahoe",
+    "type": "Water and Sanitation District",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-791-2185",
+      "website": "https://www.centennialwater.org"
+    },
+    "zip_codes": ["80112", "80122", "80016"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-005",
+    "name": "Denver Water",
+    "state": "CO",
+    "county": "Denver",
+    "type": "Water District",
+    "services": ["water"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-893-2444",
+      "website": "https://www.denverwater.org"
+    },
+    "zip_codes": ["80202", "80203", "80204", "80205", "80206", "80207", "80209", "80210", "80211", "80212", "80214", "80216", "80218", "80219", "80220", "80221", "80222", "80223", "80224", "80227", "80230", "80231", "80232", "80235", "80236", "80237", "80238", "80239", "80246", "80247", "80249", "80264", "80290", "80293", "80294"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-006",
+    "name": "Aurora Water",
+    "state": "CO",
+    "county": "Arapahoe",
+    "type": "Municipal Water",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-739-7370",
+      "website": "https://www.auroragov.org/water"
+    },
+    "zip_codes": ["80010", "80011", "80012", "80013", "80014", "80015", "80016", "80017", "80018", "80019", "80040", "80041", "80042", "80044", "80045", "80046", "80047"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-007",
+    "name": "Lakewood Water District",
+    "state": "CO",
+    "county": "Jefferson",
+    "type": "Water District",
+    "services": ["water"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-987-7800",
+      "website": "https://www.lakewood.org"
+    },
+    "zip_codes": ["80214", "80215", "80226", "80227", "80228", "80232", "80235"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-008",
+    "name": "Arvada Water",
+    "state": "CO",
+    "county": "Jefferson",
+    "type": "Municipal Water",
+    "services": ["water"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "720-898-7800",
+      "website": "https://www.arvada.org/water"
+    },
+    "zip_codes": ["80002", "80003", "80004", "80005", "80007"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-009",
+    "name": "Westminster Water",
+    "state": "CO",
+    "county": "Adams",
+    "type": "Municipal Water",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-658-2400",
+      "website": "https://www.cityofwestminster.us"
+    },
+    "zip_codes": ["80020", "80021", "80030", "80031", "80234", "80260"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-010",
+    "name": "Thornton Water",
+    "state": "CO",
+    "county": "Adams",
+    "type": "Municipal Water",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-538-7500",
+      "website": "https://www.thorntonwater.com"
+    },
+    "zip_codes": ["80229", "80233", "80241", "80260", "80602"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-011",
+    "name": "Colorado Springs Utilities",
+    "state": "CO",
+    "county": "El Paso",
+    "type": "Municipal Utility",
+    "services": ["water", "sewer", "electric", "gas"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "719-448-4800",
+      "website": "https://www.csu.org"
+    },
+    "zip_codes": ["80901", "80902", "80903", "80904", "80905", "80906", "80907", "80908", "80909", "80910", "80911", "80912", "80913", "80914", "80915", "80916", "80917", "80918", "80919", "80920", "80921", "80922", "80923", "80924", "80925", "80926", "80927", "80928", "80929", "80930", "80938", "80939", "80951"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-012",
+    "name": "Fort Collins Utilities",
+    "state": "CO",
+    "county": "Larimer",
+    "type": "Municipal Utility",
+    "services": ["water", "sewer", "electric"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "970-212-2900",
+      "website": "https://www.fcgov.com/utilities"
+    },
+    "zip_codes": ["80521", "80524", "80525", "80526", "80528"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-013",
+    "name": "Loveland Water & Power",
+    "state": "CO",
+    "county": "Larimer",
+    "type": "Municipal Utility",
+    "services": ["water", "electric"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "970-962-3000",
+      "website": "https://www.cityofloveland.org"
+    },
+    "zip_codes": ["80537", "80538"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-014",
+    "name": "Greeley Water",
+    "state": "CO",
+    "county": "Weld",
+    "type": "Municipal Water",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "970-350-9811",
+      "website": "https://www.greeleygov.com/water"
+    },
+    "zip_codes": ["80631", "80632", "80633", "80634"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-015",
+    "name": "Boulder Water",
+    "state": "CO",
+    "county": "Boulder",
+    "type": "Municipal Water",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-441-3200",
+      "website": "https://www.bouldercolorado.gov/water"
+    },
+    "zip_codes": ["80301", "80302", "80303", "80304", "80305", "80309", "80310"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-016",
+    "name": "Longmont Water",
+    "state": "CO",
+    "county": "Boulder",
+    "type": "Municipal Water",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-651-8355",
+      "website": "https://www.longmontcolorado.gov"
+    },
+    "zip_codes": ["80501", "80503", "80504"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-017",
+    "name": "Pueblo Water",
+    "state": "CO",
+    "county": "Pueblo",
+    "type": "Water District",
+    "services": ["water"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "719-584-0411",
+      "website": "https://www.pueblowater.org"
+    },
+    "zip_codes": ["81001", "81003", "81004", "81005", "81006", "81007", "81008"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-018",
+    "name": "Roxborough Water & Sanitation District",
+    "state": "CO",
+    "county": "Douglas",
+    "type": "Water and Sanitation District",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-979-7286",
+      "website": "https://www.roxwater.org"
+    },
+    "zip_codes": ["80125"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-019",
+    "name": "Inverness Water & Sanitation District",
+    "state": "CO",
+    "county": "Arapahoe",
+    "type": "Water and Sanitation District",
+    "services": ["water", "sewer"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "303-799-1525",
+      "website": "https://www.invernesswater.org"
+    },
+    "zip_codes": ["80112"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  },
+  {
+    "district_id": "CO-METRO-020",
+    "name": "South Metro Water Supply Authority",
+    "state": "CO",
+    "county": "Douglas",
+    "type": "Water Authority",
+    "services": ["water"],
+    "boundary": {
+      "type": "zip_list",
+      "data": null
+    },
+    "contact": {
+      "phone": "720-324-9100",
+      "website": "https://www.southmetrowater.org"
+    },
+    "zip_codes": ["80124", "80126", "80129", "80130", "80134"],
+    "data_source": "DOLA",
+    "last_updated": "2026-01-11"
+  }
+]

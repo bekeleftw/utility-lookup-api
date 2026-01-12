@@ -1,12 +1,19 @@
-<!-- 
-  Utility Lookup Widget for Webflow
+<!--
+  Utility Lookup Widget v3 for Webflow
   Utility Profit - https://utilityprofit.com
+  
+  Features:
+  - Utility type toggles (electric, gas, water, internet)
+  - Simplified confidence display (badge with dropdown)
+  - Compact inline feedback
+  - Problem area warnings
+  - Special district badges
 -->
 
 <style>
   .up-container {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 640px;
+    max-width: 680px;
     margin: 0 auto;
     padding: 32px 24px;
     background: #fafafa;
@@ -64,7 +71,7 @@
   .up-form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     margin-bottom: 24px;
   }
   
@@ -83,6 +90,66 @@
   .up-input:focus {
     border-color: #22c55e;
     box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+  }
+  
+  .up-utility-toggles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .up-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  
+  .up-toggle:hover {
+    border-color: #d1d5db;
+  }
+  
+  .up-toggle.active {
+    border-color: #22c55e;
+    background: #f0fdf4;
+  }
+  
+  .up-toggle-icon {
+    font-size: 16px;
+  }
+  
+  .up-toggle-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .up-toggle-check {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 12px;
+    color: white;
+  }
+  
+  .up-toggle.active .up-toggle-check {
+    background: #22c55e;
+    border-color: #22c55e;
+  }
+  
+  .up-toggle input {
+    display: none;
   }
   
   .up-btn {
@@ -110,6 +177,33 @@
     cursor: not-allowed;
   }
   
+  .up-problem-warning {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: #fef3c7;
+    border: 1px solid #fcd34d;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+  }
+  
+  .up-problem-warning-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  
+  .up-problem-warning-text {
+    font-size: 13px;
+    color: #92400e;
+    line-height: 1.4;
+  }
+  
+  .up-problem-warning-text strong {
+    display: block;
+    margin-bottom: 2px;
+  }
+  
   .up-location {
     display: flex;
     align-items: center;
@@ -133,7 +227,6 @@
     gap: 12px;
   }
   
-  /* Primary utility card */
   .up-card {
     background: white;
     border: 1px solid #e5e7eb;
@@ -152,6 +245,8 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
   }
   
   .up-card-type {
@@ -183,6 +278,14 @@
     color: #6b7280;
   }
   
+  .up-header-badges {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  
   .up-badge {
     display: inline-flex;
     align-items: center;
@@ -191,11 +294,17 @@
     border-radius: 6px;
     font-size: 12px;
     font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  
+  .up-badge:hover {
+    filter: brightness(0.95);
   }
   
   .up-badge-verified {
-    background: #d1fae5;
-    color: #065f46;
+    background: #dcfce7;
+    color: #166534;
   }
   
   .up-badge-high {
@@ -213,26 +322,85 @@
     color: #991b1b;
   }
   
+  .up-badge-district {
+    background: #ede9fe;
+    color: #5b21b6;
+    cursor: default;
+  }
+  
+  .up-badge-district:hover {
+    filter: none;
+  }
+  
+  .up-badge-caret {
+    font-size: 10px;
+    margin-left: 2px;
+    transition: transform 0.15s;
+  }
+  
+  .up-badge.open .up-badge-caret {
+    transform: rotate(180deg);
+  }
+  
+  /* Confidence dropdown */
+  .up-confidence-dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 6px;
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 10;
+    min-width: 200px;
+    font-size: 13px;
+    color: #374151;
+  }
+  
+  .up-confidence-dropdown.open {
+    display: block;
+  }
+  
+  .up-confidence-dropdown .score {
+    font-weight: 700;
+    color: #111827;
+  }
+  
+  .up-provider-section {
+    margin-bottom: 12px;
+  }
+  
   .up-provider-name {
     font-size: 18px;
     font-weight: 700;
     color: #111827;
-    margin-bottom: 4px;
+    margin-bottom: 0;
   }
   
   .up-selection-reason {
     font-size: 13px;
     color: #6b7280;
-    margin-bottom: 12px;
     font-style: italic;
+    margin-top: 4px;
   }
   
+  /* Details grid with inline feedback */
   .up-details {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     gap: 12px;
     padding-top: 12px;
     border-top: 1px solid #f3f4f6;
+    flex-wrap: wrap;
+  }
+  
+  .up-details-left {
+    display: flex;
+    gap: 24px;
   }
   
   .up-detail {
@@ -260,6 +428,125 @@
   
   .up-detail-value a:hover {
     text-decoration: underline;
+  }
+  
+  /* Compact inline feedback */
+  .up-feedback-inline {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+  
+  .up-feedback-inline span {
+    white-space: nowrap;
+  }
+  
+  .up-feedback-btn-small {
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    border: 1px solid #e5e7eb;
+    background: white;
+    color: #6b7280;
+  }
+  
+  .up-feedback-btn-small:hover {
+    border-color: #d1d5db;
+    color: #374151;
+  }
+  
+  .up-feedback-btn-small.yes:hover {
+    background: #f0fdf4;
+    border-color: #22c55e;
+    color: #166534;
+  }
+  
+  .up-feedback-btn-small.no:hover {
+    background: #fef2f2;
+    border-color: #ef4444;
+    color: #991b1b;
+  }
+  
+  .up-feedback-btn-small.selected {
+    pointer-events: none;
+  }
+  
+  .up-feedback-btn-small.yes.selected {
+    background: #22c55e;
+    border-color: #22c55e;
+    color: white;
+  }
+  
+  .up-feedback-btn-small.no.selected {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: white;
+  }
+  
+  .up-feedback-done {
+    display: none;
+    font-size: 11px;
+    color: #059669;
+  }
+  
+  .up-feedback-done.show {
+    display: inline;
+  }
+  
+  /* Feedback correction form */
+  .up-feedback-form {
+    display: none;
+    margin-top: 12px;
+    padding: 12px;
+    background: #fef2f2;
+    border-radius: 8px;
+  }
+  
+  .up-feedback-form.open {
+    display: block;
+  }
+  
+  .up-feedback-form label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 6px;
+  }
+  
+  .up-feedback-form input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .up-feedback-form input:focus {
+    outline: none;
+    border-color: #22c55e;
+  }
+  
+  .up-feedback-submit {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    background: #22c55e;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .up-feedback-submit:hover {
+    background: #16a34a;
   }
   
   /* Alternatives section */
@@ -296,29 +583,7 @@
     color: #4b5563;
   }
   
-  .up-alt-chip-icon {
-    font-size: 12px;
-  }
-  
-  /* Note/warning box */
-  .up-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    background: #fffbeb;
-    border: 1px solid #fde68a;
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-size: 13px;
-    color: #92400e;
-    margin-top: 8px;
-  }
-  
-  .up-note-icon {
-    flex-shrink: 0;
-  }
-  
-  /* No service card */
+  /* Empty state */
   .up-card-empty {
     background: #f9fafb;
     border: 1px dashed #d1d5db;
@@ -329,7 +594,7 @@
     font-weight: 500;
   }
   
-  /* Internet card */
+  /* Internet card specifics */
   .up-internet-stats {
     display: flex;
     gap: 16px;
@@ -352,21 +617,63 @@
     color: #6b7280;
   }
   
-  .up-speed-bar {
-    height: 6px;
-    background: #e5e7eb;
-    border-radius: 3px;
-    overflow: hidden;
-    margin-top: 12px;
+  .up-internet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+  }
+
+  .up-internet-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .up-internet-row-best {
+    background: #ecfdf5;
+    border-color: #a7f3d0;
+  }
+
+  .up-internet-provider {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .up-internet-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #111827;
+  }
+
+  .up-internet-tech {
+    font-size: 12px;
+    color: #6b7280;
+  }
+
+  .up-internet-speed {
+    text-align: right;
+  }
+
+  .up-internet-down {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .up-internet-speed-label {
+    font-size: 12px;
+    color: #6b7280;
   }
   
-  .up-speed-fill {
-    height: 100%;
-    background: linear-gradient(90deg, #22c55e, #16a34a);
-    border-radius: 3px;
-  }
-  
-  /* Loading and error states */
+  /* Loading state */
   .up-loading {
     text-align: center;
     padding: 48px 24px;
@@ -387,6 +694,7 @@
     to { transform: rotate(360deg); }
   }
   
+  /* Error state */
   .up-error {
     background: #fef2f2;
     border: 1px solid #fecaca;
@@ -416,63 +724,26 @@
   .up-footer a:hover {
     text-decoration: underline;
   }
-
-  .up-internet-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #f3f4f6;
-}
-
-.up-internet-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 12px;
-  background: #f9fafb;
-  border-radius: 8px;
-  border: 1px solid #e5e7eb;
-}
-
-.up-internet-row-best {
-  background: #ecfdf5;
-  border-color: #a7f3d0;
-}
-
-.up-internet-provider {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.up-internet-name {
-  font-size: 14px;
-  font-weight: 600;
-  color: #111827;
-}
-
-.up-internet-tech {
-  font-size: 12px;
-  color: #6b7280;
-}
-
-.up-internet-speed {
-  text-align: right;
-}
-
-.up-internet-down {
-  font-size: 16px;
-  font-weight: 700;
-  color: #111827;
-}
-
-.up-internet-speed-label {
-  font-size: 12px;
-  color: #6b7280;
-}
-
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .up-container {
+      padding: 20px 16px;
+    }
+    
+    .up-details {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .up-details-left {
+      width: 100%;
+    }
+    
+    .up-feedback-inline {
+      margin-top: 8px;
+    }
+  }
 </style>
 
 <div class="up-container">
@@ -482,7 +753,7 @@
       <div class="up-logo-text">Utility <span>Profit</span></div>
     </div>
     <h2 class="up-title">Utility Provider Lookup</h2>
-    <p class="up-subtitle">Enter an address to find electric, gas, water, and internet providers.</p>
+    <p class="up-subtitle">Enter an address to find utility providers</p>
   </div>
   
   <form class="up-form" id="utilityForm">
@@ -490,9 +761,37 @@
       type="text" 
       class="up-input" 
       id="addressInput" 
-      placeholder="9706 Burleson Dr, Dallas, TX 75243"
+      placeholder="123 Main St, Dallas, TX 75201"
       required
     />
+    
+    <div class="up-utility-toggles">
+      <label class="up-toggle active" data-utility="electric">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">⚡</span>
+        <span class="up-toggle-label">Electric</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+      <label class="up-toggle active" data-utility="gas">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">🔥</span>
+        <span class="up-toggle-label">Gas</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+      <label class="up-toggle active" data-utility="water">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">💧</span>
+        <span class="up-toggle-label">Water</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+      <label class="up-toggle active" data-utility="internet">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">🌐</span>
+        <span class="up-toggle-label">Internet</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+    </div>
+    
     <button type="submit" class="up-btn" id="searchBtn">Search</button>
   </form>
   
@@ -506,48 +805,139 @@
 <script>
 (function() {
   const API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
+  const FEEDBACK_URL = 'https://web-production-9acc6.up.railway.app/api/feedback';
   
   const form = document.getElementById('utilityForm');
   const input = document.getElementById('addressInput');
   const btn = document.getElementById('searchBtn');
   const results = document.getElementById('utilityResults');
+  const toggles = document.querySelectorAll('.up-toggle');
   
   const icons = { electric: '⚡', gas: '🔥', water: '💧', internet: '🌐' };
+  const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
+  
+  // Source to human-readable explanation mapping
+  const sourceExplanations = {
+    'municipal_utility': 'Verified municipal utility',
+    'municipal_utility_database': 'Verified municipal utility',
+    'Municipal Utility Database': 'Verified municipal utility',
+    'special_district': 'Special district boundary',
+    'special_district_boundary': 'Special district boundary',
+    'user_confirmed': 'Confirmed by users',
+    'user_feedback': 'Confirmed by users',
+    'verified': 'State regulatory data',
+    'railroad_commission': 'State regulatory data',
+    'Texas Railroad Commission territory data': 'State regulatory data',
+    'hifld_polygon': 'Federal territory data',
+    'HIFLD': 'Federal territory data',
+    'HIFLD Electric Cooperative Territory': 'Electric co-op territory',
+    'google_serp': 'Web search verified',
+    'serp': 'Web search verified',
+    'epa_sdwis': 'EPA water data',
+    'EPA SDWIS': 'EPA water data',
+    'eia_861': 'Federal utility data',
+    'EIA Form 861': 'Federal utility data',
+    'supplemental': 'Curated database',
+    'Supplemental Data': 'Curated database',
+    'zip_override': 'Verified for this ZIP',
+    'FCC Broadband Map': 'FCC broadband data'
+  };
+  
+  let currentAddress = '';
+  let currentZipCode = '';
+  
+  // Toggle utility selection
+  toggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      const checkbox = toggle.querySelector('input');
+      checkbox.checked = !checkbox.checked;
+      toggle.classList.toggle('active', checkbox.checked);
+    });
+  });
+  
+  // Get selected utilities
+  function getSelectedUtilities() {
+    const selected = [];
+    toggles.forEach(toggle => {
+      if (toggle.querySelector('input').checked) {
+        selected.push(toggle.dataset.utility);
+      }
+    });
+    return selected;
+  }
+  
+  // Close all dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.up-badge-confidence')) {
+      document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => d.classList.remove('open'));
+      document.querySelectorAll('.up-badge-confidence.open').forEach(b => b.classList.remove('open'));
+    }
+  });
   
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const address = input.value.trim();
     if (!address) return;
     
+    currentAddress = address;
+    
+    const utilities = getSelectedUtilities();
+    if (utilities.length === 0) {
+      results.innerHTML = `<div class="up-error">Please select at least one utility type.</div>`;
+      return;
+    }
+    
     btn.disabled = true;
     btn.textContent = 'Searching...';
     results.innerHTML = `
       <div class="up-loading">
         <div class="up-loading-spinner"></div>
-        Looking up utilities for this address...
+        Looking up ${utilities.join(', ')}...
       </div>
     `;
     
     try {
-      const response = await fetch(`${API_URL}?address=${encodeURIComponent(address)}`);
+      const params = new URLSearchParams({
+        address: address,
+        verify: 'true',
+        utilities: utilities.join(',')
+      });
+      
+      const response = await fetch(`${API_URL}?${params}`);
       const data = await response.json();
       
       if (data.error) {
-        results.innerHTML = `<div class="up-error">⚠️ ${data.error}</div>`;
+        results.innerHTML = `<div class="up-error">${data.error}</div>`;
         return;
       }
       
-      renderResults(data);
+      currentZipCode = data.location?.zip_code || '';
+      renderResults(data, utilities);
     } catch (error) {
-      results.innerHTML = `<div class="up-error">⚠️ Failed to connect to API. Make sure the server is running.</div>`;
+      results.innerHTML = `<div class="up-error">Failed to connect to API. Please try again.</div>`;
     } finally {
       btn.disabled = false;
       btn.textContent = 'Search';
     }
   });
   
-  function renderResults(data) {
+  function renderResults(data, selectedUtilities) {
     let html = '';
+    
+    // Problem area warning (if present)
+    if (data.problem_area_warning) {
+      html += `
+        <div class="up-problem-warning">
+          <span class="up-problem-warning-icon">⚠️</span>
+          <div class="up-problem-warning-text">
+            <strong>This area has known data quality issues</strong>
+            ${data.problem_area_warning}
+            ${data.verification_recommendation ? `<br><em>${data.verification_recommendation}</em>` : ''}
+          </div>
+        </div>
+      `;
+    }
     
     // Location header
     if (data.location) {
@@ -563,111 +953,206 @@
     html += '<div class="up-results">';
     
     // Electric
-    if (data.utilities.electric && data.utilities.electric.length > 0) {
-      const primary = data.utilities.electric[0];
-      const alternatives = data.utilities.electric.slice(1);
-      // Pass confidence and note from top-level API response
-      primary._confidence = data.utilities.electric_confidence;
-      primary._note = data.utilities.electric_note;
-      html += renderPrimaryCard(primary, 'electric', alternatives);
+    if (selectedUtilities.includes('electric') && data.utilities.electric) {
+      if (data.utilities.electric.length > 0) {
+        html += renderUtilityCard(
+          data.utilities.electric[0], 
+          'electric', 
+          data.utilities.electric.slice(1), 
+          data.utilities.electric_source
+        );
+      }
     }
     
     // Gas
-    if (data.utilities.gas && data.utilities.gas.length > 0) {
-      const gasPrimary = data.utilities.gas[0];
-      gasPrimary._confidence = data.utilities.gas_confidence;
-      gasPrimary._note = data.utilities.gas_note;
-      html += renderPrimaryCard(gasPrimary, 'gas', data.utilities.gas.slice(1));
-    } else {
-      html += renderEmptyCard('gas', data.utilities.gas_note || 'No natural gas service found. This area may use propane.');
+    if (selectedUtilities.includes('gas')) {
+      if (data.utilities.gas && data.utilities.gas.length > 0) {
+        html += renderUtilityCard(
+          data.utilities.gas[0], 
+          'gas', 
+          data.utilities.gas.slice(1), 
+          data.utilities.gas_source
+        );
+      } else {
+        html += renderEmptyCard('gas', data.utilities.gas_note || 'No natural gas service found. Area may use propane.');
+      }
     }
     
     // Water
-    if (data.utilities.water && data.utilities.water.length > 0) {
-      html += renderPrimaryCard(data.utilities.water[0], 'water', []);
+    if (selectedUtilities.includes('water') && data.utilities.water) {
+      if (data.utilities.water.length > 0) {
+        html += renderUtilityCard(
+          data.utilities.water[0], 
+          'water', 
+          [], 
+          data.utilities.water_source
+        );
+      }
     }
     
     // Internet
-    if (data.utilities.internet && data.utilities.internet.provider_count > 0) {
-      html += renderInternetCard(data.utilities.internet);
-    } else if (data.utilities.internet_note) {
-      html += renderEmptyCard('internet', data.utilities.internet_note);
+    if (selectedUtilities.includes('internet')) {
+      if (data.utilities.internet && data.utilities.internet.provider_count > 0) {
+        html += renderInternetCard(data.utilities.internet);
+      } else if (data.utilities.internet_note) {
+        html += renderEmptyCard('internet', data.utilities.internet_note);
+      }
     }
     
     html += '</div>';
     results.innerHTML = html;
+    
+    // Attach event listeners
+    attachBadgeListeners();
+    attachFeedbackListeners();
   }
   
-  function renderPrimaryCard(util, type, alternatives) {
-    const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water' };
-    const badge = getBadge(util);
+  function renderUtilityCard(util, type, alternatives, fallbackSource) {
+    const cardId = `card-${type}-${Date.now()}`;
     
-    let html = `
-      <div class="up-card">
+    // Badges
+    let badges = '';
+    
+    // District type badge (MUD, CDD, etc.)
+    if (util.type && ['MUD', 'CDD', 'PUD', 'WCID', 'Metro District'].includes(util.type)) {
+      badges += `<span class="up-badge up-badge-district">${util.type}</span>`;
+    }
+    
+    // Confidence badge with dropdown
+    badges += getConfidenceBadgeWithDropdown(util, fallbackSource, cardId);
+    
+    // Details with inline feedback
+    let detailsLeft = '';
+    if (util.phone && util.phone !== 'NOT AVAILABLE') {
+      detailsLeft += `
+        <div class="up-detail">
+          <span class="up-detail-label">Phone</span>
+          <span class="up-detail-value"><a href="tel:${util.phone}">${util.phone}</a></span>
+        </div>
+      `;
+    }
+    if (util.website && util.website !== 'NOT AVAILABLE') {
+      const url = util.website.startsWith('http') ? util.website : 'https://' + util.website;
+      detailsLeft += `
+        <div class="up-detail">
+          <span class="up-detail-label">Website</span>
+          <span class="up-detail-value"><a href="${url}" target="_blank">Visit site</a></span>
+        </div>
+      `;
+    }
+    
+    // Alternatives
+    let altSection = '';
+    if (alternatives && alternatives.length > 0) {
+      altSection = `
+        <div class="up-alternatives">
+          <div class="up-alternatives-label">Other possible providers</div>
+          <div class="up-alternatives-list">
+            ${alternatives.map(alt => `
+              <div class="up-alt-chip">
+                <span>${icons[type]}</span>
+                ${alt.name}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+    
+    return `
+      <div class="up-card" id="${cardId}">
         <div class="up-card-header">
           <div class="up-card-type">
             <div class="up-icon up-icon-${type}">${icons[type]}</div>
             <span class="up-type-label">${typeLabels[type]}</span>
           </div>
-          ${badge}
+          <div class="up-header-badges">${badges}</div>
         </div>
-        <div class="up-provider-name">${util.name || 'Unknown Provider'}</div>
+        <div class="up-provider-section">
+          <div class="up-provider-name">${util.name || 'Unknown Provider'}</div>
+          ${util.selection_reason ? `<div class="up-selection-reason">${util.selection_reason}</div>` : ''}
+        </div>
         <div class="up-details">
-          ${util.phone && util.phone !== 'NOT AVAILABLE' ? `
-            <div class="up-detail">
-              <span class="up-detail-label">Phone</span>
-              <span class="up-detail-value"><a href="tel:${util.phone}">${util.phone}</a></span>
-            </div>
-          ` : ''}
-          ${util.website && util.website !== 'NOT AVAILABLE' ? `
-            <div class="up-detail">
-              <span class="up-detail-label">Website</span>
-              <span class="up-detail-value"><a href="${util.website.startsWith('http') ? util.website : 'https://' + util.website}" target="_blank">Visit site →</a></span>
-            </div>
-          ` : ''}
-          ${util.city ? `
-            <div class="up-detail">
-              <span class="up-detail-label">Service Area</span>
-              <span class="up-detail-value">${util.city}, ${util.state || ''}</span>
-            </div>
-          ` : ''}
-          ${util.population_served ? `
-            <div class="up-detail">
-              <span class="up-detail-label">Customers</span>
-              <span class="up-detail-value">${util.population_served.toLocaleString()}</span>
-            </div>
-          ` : ''}
+          <div class="up-details-left">${detailsLeft}</div>
+          <div class="up-feedback-inline" data-card="${cardId}" data-type="${type}" data-provider="${util.name || ''}">
+            <span>Correct?</span>
+            <button class="up-feedback-btn-small yes" data-response="yes">Yes</button>
+            <button class="up-feedback-btn-small no" data-response="no">No</button>
+            <span class="up-feedback-done" id="${cardId}-done">Thanks!</span>
+          </div>
         </div>
-        ${alternatives.length > 0 ? renderAlternatives(alternatives, type) : ''}
+        <div class="up-feedback-form" id="${cardId}-form">
+          <label>What's the correct ${typeLabels[type].toLowerCase()} provider?</label>
+          <input type="text" placeholder="Enter correct provider name" id="${cardId}-correction" />
+          <button class="up-feedback-submit" data-card="${cardId}" data-type="${type}">Submit</button>
+        </div>
+        ${altSection}
       </div>
     `;
-    
-    return html;
   }
   
-  function renderAlternatives(alternatives, type) {
-    let html = `
-      <div class="up-alternatives">
-        <div class="up-alternatives-label">Other possible providers</div>
-        <div class="up-alternatives-list">
+  function getConfidenceBadgeWithDropdown(util, fallbackSource, cardId) {
+    const score = util.confidence_score;
+    const source = util._source || util.source || util._verification_source || fallbackSource || '';
+    
+    // Determine badge class and label
+    let badgeClass, badgeLabel;
+    if (score !== undefined && score !== null) {
+      if (score >= 85) {
+        badgeClass = 'up-badge-verified';
+        badgeLabel = 'Verified';
+      } else if (score >= 70) {
+        badgeClass = 'up-badge-high';
+        badgeLabel = 'High Confidence';
+      } else if (score >= 50) {
+        badgeClass = 'up-badge-medium';
+        badgeLabel = 'Medium';
+      } else {
+        badgeClass = 'up-badge-low';
+        badgeLabel = 'Low Confidence';
+      }
+    } else {
+      const confidence = util.confidence || 'medium';
+      const map = {
+        'verified': { class: 'up-badge-verified', label: 'Verified' },
+        'high': { class: 'up-badge-high', label: 'High Confidence' },
+        'medium': { class: 'up-badge-medium', label: 'Medium' },
+        'low': { class: 'up-badge-low', label: 'Low Confidence' }
+      };
+      const m = map[confidence] || map['medium'];
+      badgeClass = m.class;
+      badgeLabel = m.label;
+    }
+    
+    // Get explanation
+    let explanation = sourceExplanations[source];
+    if (!explanation && source) {
+      explanation = source.replace(/_/g, ' ').replace(/([A-Z])/g, ' $1').trim();
+    }
+    if (!explanation) {
+      explanation = 'Based on available data';
+    }
+    
+    // Build dropdown content
+    let dropdownContent = '';
+    if (score !== undefined && score !== null) {
+      dropdownContent = `<span class="score">${score}/100</span> · ${explanation}`;
+    } else {
+      dropdownContent = explanation;
+    }
+    
+    return `
+      <span class="up-badge ${badgeClass} up-badge-confidence" data-dropdown="${cardId}-dropdown">
+        ${badgeLabel}
+        <span class="up-badge-caret">▼</span>
+      </span>
+      <div class="up-confidence-dropdown" id="${cardId}-dropdown">
+        ${dropdownContent}
+      </div>
     `;
-    
-    alternatives.forEach(alt => {
-      html += `
-        <div class="up-alt-chip">
-          <span class="up-alt-chip-icon">${icons[type]}</span>
-          ${alt.name}
-        </div>
-      `;
-    });
-    
-    html += '</div></div>';
-    return html;
   }
   
   function renderEmptyCard(type, note) {
-    const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
-    
     return `
       <div class="up-card up-card-empty">
         <div class="up-card-header">
@@ -683,72 +1168,165 @@
   }
   
   function renderInternetCard(inet) {
-  const providers = inet.providers || [];
-  const best = inet.best_wired;
-  
-  let html = `
-    <div class="up-card">
-      <div class="up-card-header">
-        <div class="up-card-type">
-          <div class="up-icon up-icon-internet">${icons.internet}</div>
-          <span class="up-type-label">Internet</span>
-        </div>
-        ${inet.has_fiber ? '<span class="up-badge up-badge-verified">✓ Fiber Available</span>' : 
-          inet.has_cable ? '<span class="up-badge up-badge-high">Cable Available</span>' : 
-          '<span class="up-badge up-badge-medium">Limited Options</span>'}
-      </div>
-      <div class="up-internet-stats">
-        <div class="up-stat">
-          <span class="up-stat-value">${inet.provider_count}</span>
-          <span class="up-stat-label">Providers</span>
-        </div>
-        ${best ? `
-          <div class="up-stat">
-            <span class="up-stat-value">${best.max_download_mbps}</span>
-            <span class="up-stat-label">Max Mbps</span>
+    const providers = inet.providers || [];
+    const best = inet.best_wired;
+    
+    let badge = '';
+    if (inet.has_fiber) {
+      badge = '<span class="up-badge up-badge-verified">Fiber Available</span>';
+    } else if (inet.has_cable) {
+      badge = '<span class="up-badge up-badge-high">Cable Available</span>';
+    } else {
+      badge = '<span class="up-badge up-badge-medium">Limited Options</span>';
+    }
+    
+    const sortedProviders = [...providers].sort((a, b) => 
+      (b.max_download_mbps || 0) - (a.max_download_mbps || 0)
+    );
+    
+    return `
+      <div class="up-card">
+        <div class="up-card-header">
+          <div class="up-card-type">
+            <div class="up-icon up-icon-internet">${icons.internet}</div>
+            <span class="up-type-label">Internet</span>
           </div>
-        ` : ''}
-      </div>
-      <div class="up-internet-list">
-  `;
-  
-  // Sort providers by download speed descending
-  const sortedProviders = [...providers].sort((a, b) => 
-    (b.max_download_mbps || 0) - (a.max_download_mbps || 0)
-  );
-  
-  sortedProviders.forEach((provider, index) => {
-    const isBest = best && provider.name === best.name;
-    html += `
-      <div class="up-internet-row ${isBest ? 'up-internet-row-best' : ''}">
-        <div class="up-internet-provider">
-          <span class="up-internet-name">${provider.name}</span>
-          <span class="up-internet-tech">${provider.technology || 'Unknown'}</span>
+          <div class="up-header-badges">${badge}</div>
         </div>
-        <div class="up-internet-speed">
-          <span class="up-internet-down">${provider.max_download_mbps || '?'}</span>
-          <span class="up-internet-speed-label">/ ${provider.max_upload_mbps || '?'} Mbps</span>
+        <div class="up-internet-stats">
+          <div class="up-stat">
+            <span class="up-stat-value">${inet.provider_count}</span>
+            <span class="up-stat-label">Providers</span>
+          </div>
+          ${best ? `
+            <div class="up-stat">
+              <span class="up-stat-value">${best.max_download_mbps}</span>
+              <span class="up-stat-label">Max Mbps</span>
+            </div>
+          ` : ''}
+        </div>
+        <div class="up-internet-list">
+          ${sortedProviders.map(provider => {
+            const isBest = best && provider.name === best.name;
+            return `
+              <div class="up-internet-row ${isBest ? 'up-internet-row-best' : ''}">
+                <div class="up-internet-provider">
+                  <span class="up-internet-name">${provider.name}</span>
+                  <span class="up-internet-tech">${provider.technology || 'Unknown'}</span>
+                </div>
+                <div class="up-internet-speed">
+                  <span class="up-internet-down">${provider.max_download_mbps || '?'}</span>
+                  <span class="up-internet-speed-label">/ ${provider.max_upload_mbps || '?'} Mbps</span>
+                </div>
+              </div>
+            `;
+          }).join('')}
         </div>
       </div>
     `;
-  });
+  }
   
-  html += '</div></div>';
-  return html;
-}
+  function attachBadgeListeners() {
+    document.querySelectorAll('.up-badge-confidence').forEach(badge => {
+      badge.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const dropdownId = this.dataset.dropdown;
+        const dropdown = document.getElementById(dropdownId);
+        
+        // Close other dropdowns
+        document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => {
+          if (d.id !== dropdownId) d.classList.remove('open');
+        });
+        document.querySelectorAll('.up-badge-confidence.open').forEach(b => {
+          if (b !== this) b.classList.remove('open');
+        });
+        
+        // Toggle this one
+        dropdown.classList.toggle('open');
+        this.classList.toggle('open');
+      });
+    });
+  }
   
-  function getBadge(util) {
-    const confidence = util._confidence || util.confidence || 'medium';
+  function attachFeedbackListeners() {
+    // Yes/No buttons
+    document.querySelectorAll('.up-feedback-btn-small').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const feedback = this.closest('.up-feedback-inline');
+        const cardId = feedback.dataset.card;
+        const type = feedback.dataset.type;
+        const provider = feedback.dataset.provider;
+        const response = this.dataset.response;
+        
+        // Mark button as selected
+        feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.classList.remove('selected'));
+        this.classList.add('selected');
+        
+        if (response === 'yes') {
+          // Hide buttons, show thanks
+          feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.style.display = 'none');
+          document.getElementById(`${cardId}-done`).classList.add('show');
+          
+          // Send positive feedback to API
+          fetch(FEEDBACK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              address: currentAddress,
+              zip_code: currentZipCode,
+              utility_type: type,
+              returned_provider: provider,
+              is_correct: true,
+              source: 'web_widget'
+            })
+          }).catch(e => console.error('Failed to submit feedback:', e));
+        } else {
+          // Show correction form
+          document.getElementById(`${cardId}-form`).classList.add('open');
+        }
+      });
+    });
     
-    if (confidence === 'verified' || util.verified) {
-      return '<span class="up-badge up-badge-verified">✓ Verified</span>';
-    } else if (confidence === 'high') {
-      return '<span class="up-badge up-badge-high">High Confidence</span>';
-    } else if (confidence === 'medium') {
-      return '<span class="up-badge up-badge-medium">Verify Recommended</span>';
-    } else {
-      return '<span class="up-badge up-badge-low">Estimated</span>';
-    }
+    // Submit correction
+    document.querySelectorAll('.up-feedback-submit').forEach(btn => {
+      btn.addEventListener('click', async function() {
+        const cardId = this.dataset.card;
+        const type = this.dataset.type;
+        const correction = document.getElementById(`${cardId}-correction`).value.trim();
+        
+        if (!correction) {
+          alert('Please enter the correct provider name');
+          return;
+        }
+        
+        const feedback = document.querySelector(`.up-feedback-inline[data-card="${cardId}"]`);
+        const returnedProvider = feedback.dataset.provider;
+        
+        // Send feedback to API
+        try {
+          await fetch(FEEDBACK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              address: currentAddress,
+              zip_code: currentZipCode,
+              utility_type: type,
+              returned_provider: returnedProvider,
+              correct_provider: correction,
+              is_correct: false,
+              source: 'web_widget'
+            })
+          });
+        } catch (e) {
+          console.error('Failed to submit feedback:', e);
+        }
+        
+        // Hide form, hide buttons, show thanks
+        document.getElementById(`${cardId}-form`).classList.remove('open');
+        feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.style.display = 'none');
+        document.getElementById(`${cardId}-done`).classList.add('show');
+      });
+    });
   }
 })();
 </script>

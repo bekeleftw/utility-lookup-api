@@ -240,6 +240,12 @@ def source_to_score_key(source_string: str) -> str:
         'verified': 'verified',
         'texas railroad commission': 'verified',
         'railroad commission': 'verified',
+        'puc territory': 'verified',
+        'ca puc': 'verified',
+        'il puc': 'verified',
+        'oh puc': 'verified',
+        'ga puc': 'verified',
+        'az puc': 'verified',
         'state puc': 'state_puc',
         
         # User feedback

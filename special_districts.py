@@ -55,7 +55,7 @@ def load_zip_index() -> Dict[str, List[str]]:
             _zip_to_districts = json.load(f)
     
     # Also load state-specific ZIP indexes
-    for state in ['tx', 'fl', 'co', 'ca']:
+    for state in ['tx', 'fl', 'co', 'ca', 'az', 'wa']:
         state_filepath = os.path.join(DISTRICTS_DIR, f'{state}_zip_to_district.json')
         if os.path.exists(state_filepath):
             with open(state_filepath, 'r') as f:

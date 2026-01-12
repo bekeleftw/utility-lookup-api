@@ -2,6 +2,60 @@
 
 Implementation guide for Windsurf to systematically improve accuracy across all 50 states.
 
+---
+
+## EXECUTABILITY SUMMARY
+
+**What Windsurf can do RIGHT NOW (no blockers):**
+
+| Phase | Tasks | Status |
+|-------|-------|--------|
+| 1 | Municipal utilities (APPA) | **GO** - public data |
+| 2 | Colorado metro districts | **GO** - DOLA GIS is public |
+| 3 | State gas mappings | **GO** - research + JSON |
+| 4 | Electric co-ops (NRECA) | **GO** - public data |
+| 5 | Water supplemental expansion | **GO** - research + JSON |
+| 6 | California districts | **GO** - LAFCO data public |
+| 7 | Arizona districts | **GO** - county GIS public |
+| 8 | Washington PUDs | **GO** - public data |
+| 9 | Accuracy monitoring | **GO** - pure code |
+| 10 | Skip SERP optimization | **GO** - pure code |
+| 11.1 | Parcel data | **GO** - start with top 10 counties |
+| 11.2 | Utility direct APIs | **GO** - reverse-engineer forms |
+| 11.3 | State PUC maps | **GO** - download what's available |
+| 11.4 | Multi-geocoder | **GO** - free tiers available |
+| 11.5 | Address normalization | **GO** - Smarty free tier |
+| 11.6 | New construction | **GO** - builder websites public |
+| 11.8 | Bill OCR | **GO** - pure code |
+| 11.9 | Utility directory | **GO** - research + JSON |
+| 11.10 | Utility GIS APIs | **GO** - public ArcGIS services |
+| 11.11 | Boundary handling | **GO** - pure code |
+| 11.12 | Change tracking | **GO** - pure code |
+| 12.2 | Property tax records | **GO** - many counties public |
+| 12.3 | Real estate listings | **GO** - scrape public pages |
+| 12.5 | Franchise agreements | **GO** - public records |
+| 12.6 | Bond documents (EMMA) | **GO** - free public database |
+| 12.7 | State environmental data | **GO** - public websites |
+| 12.8 | Propane companies | **GO** - research service areas |
+| 12.9 | Well/septic permits | **GO** - many counties public |
+| 12.10 | Utility imagery | **GO** - Street View + vision |
+| 12.11 | PUC complaints | **GO** - many states publish |
+| 12.12 | Reddit/local social | **GO** - scrapable |
+| 13.1-13.8 | All edge cases | **GO** - pure code + public data |
+| 14.1-14.4 | All ML tasks | **GO** - pure code |
+
+**What requires partnerships/money (cannot do today):**
+
+| Task | Blocker |
+|------|---------|
+| 11.7 - PM software partnerships | Business development |
+| 12.1 - 811 data | Requires partnership |
+| 12.4 - Move-in service partnerships | Business development |
+
+**That's it. 3 tasks out of 50+ require partnerships. Everything else is executable now.**
+
+---
+
 ## Current Status
 
 | Layer | Coverage | Accuracy | Status |
@@ -1169,7 +1223,7 @@ Alert if `accuracy_without_serp` drops more than 3% below `accuracy_with_serp`.
 
 Go beyond "good enough" to definitively correct for every US address.
 
-### 11.1: Parcel-Level Data (County Assessor Records)
+### 11.1: Parcel-Level Data ✅ GO - START WITH TOP 10 COUNTIES
 
 County assessor databases often contain utility account information at the parcel level. This is the gold standard.
 
@@ -1219,7 +1273,7 @@ For each county:
 }
 ```
 
-### 11.2: Utility Company Address Lookup Tools
+### 11.2: Utility Company Address Lookup Tools ✅ GO - REVERSE-ENGINEER FORMS
 
 Many utilities have "Do we serve your address?" tools on their websites. Query them directly.
 
@@ -1295,7 +1349,7 @@ def verify_with_utility_direct(address, suspected_utility):
 
 **Build out for top 50 utilities by customer count.**
 
-### 11.3: State PUC Service Territory Maps
+### 11.3: State PUC Service Territory Maps ✅ GO - DOWNLOAD AVAILABLE
 
 Every state Public Utility Commission has official service territory maps. Digitize them.
 
@@ -1323,7 +1377,7 @@ For each state:
 5. Add point-in-polygon lookup
 ```
 
-### 11.4: Enhanced Geocoding (Multi-Source Consensus)
+### 11.4: Enhanced Geocoding ✅ GO - FREE TIERS AVAILABLE
 
 Census geocoder is free but not always accurate. Use multiple sources.
 
@@ -1386,7 +1440,7 @@ async def geocode_consensus(address):
         return google_result or valid_results[0]
 ```
 
-### 11.5: Address Normalization (USPS CASS)
+### 11.5: Address Normalization ✅ GO - SMARTY FREE TIER
 
 Standardize addresses before lookup to avoid mismatches.
 
@@ -1420,7 +1474,7 @@ def normalize_address(raw_address):
         return {'normalized': raw_address, 'validation_failed': True}
 ```
 
-### 11.6: New Construction / Builder Data
+### 11.6: New Construction / Builder Data ✅ GO - PUBLIC WEBSITES
 
 New developments often aren't in databases yet. Track them proactively.
 
@@ -1476,7 +1530,7 @@ def handle_new_construction(address, geocode_result):
 
 Many publish utility info for their communities.
 
-### 11.7: Bulk Verification Partnerships
+### 11.7: Bulk Verification Partnerships ⛔ REQUIRES PARTNERSHIP
 
 Partner with companies that have ground-truth data.
 
@@ -1520,7 +1574,7 @@ def ingest_pm_portfolio(pm_account):
                 )
 ```
 
-### 11.8: Utility Bill OCR
+### 11.8: Utility Bill OCR ✅ GO - PURE CODE
 
 Users upload utility bills = 100% accuracy for that address.
 
@@ -1561,7 +1615,7 @@ def extract_utility_info_from_bill(image_or_pdf):
 4. We extract and verify
 5. Data improves for everyone
 
-### 11.9: Reverse Lookup (Phone/Website → Service Area)
+### 11.9: Utility Directory ✅ GO - RESEARCH + JSON
 
 Build database of utility contact info, then match.
 
@@ -1615,7 +1669,7 @@ Build database of utility contact info, then match.
 }
 ```
 
-### 11.10: Real-Time Utility API Aggregation
+### 11.10: Utility GIS APIs ✅ GO - PUBLIC ARCGIS SERVICES
 
 Some utilities expose APIs or data feeds. Tap into them.
 
@@ -1667,7 +1721,7 @@ async def check_utility_gis(utility_key, lat, lon):
     return len(features) > 0  # True if point is in service area
 ```
 
-### 11.11: Boundary Edge Case Handling
+### 11.11: Boundary Edge Case Handling ✅ GO - PURE CODE
 
 Special logic for addresses near utility boundaries.
 
@@ -1710,7 +1764,7 @@ def handle_boundary_address(address, lat, lon, candidates):
     return {'boundary_case': False}
 ```
 
-### 11.12: Historical Change Tracking
+### 11.12: Historical Change Tracking ✅ GO - PURE CODE
 
 Utility territories change. Track them over time.
 
@@ -1804,3 +1858,909 @@ TIER 4: Ground Truth Collection
 | 11.10 Utility GIS APIs | Medium | Medium | Where available |
 | 11.11 Boundary handling | Low | Medium | After polygons done |
 | 11.12 Change tracking | Low | Low | Maintenance mode |
+
+---
+
+## PHASE 12: Truly Maxed Out (Everything Else)
+
+Additional data sources and edge cases for 99%+ accuracy.
+
+### 12.1: 811 "Call Before You Dig" Data ⛔ REQUIRES PARTNERSHIP
+
+811 services know exactly which utilities have infrastructure at any address. They have to, for safety.
+
+**Why it's valuable:**
+- Ground truth for gas, electric, water, telecom lines
+- Updated constantly (construction projects)
+- Covers entire US
+
+**Regional 811 centers:**
+
+| Region | States | Contact |
+|--------|--------|---------|
+| Dig Safely New York | NY | digsafelynewyork.com |
+| JULIE | IL | illinois1702call.com |
+| Texas 811 | TX | texas811.org |
+| USA North 811 | CA (North) | usanorth811.org |
+| DigAlert | CA (South) | digalert.org |
+| OKIE811 | OK | okie811.org |
+| Arizona 811 | AZ | arizona811.com |
+| Florida 811 | FL | sunshine811.com |
+
+**Implementation approach:**
+
+```python
+# Most 811 services have ticket lookup or API access for authorized users
+# Partner inquiry or data licensing may be required
+
+def query_811_utilities(address, lat, lon):
+    """
+    Query 811 service to determine which utilities have infrastructure.
+    Returns list of utilities with lines at this location.
+    """
+    # This would require partnership/API access
+    # Returns: ['electric', 'gas', 'water', 'telecom']
+    pass
+```
+
+**Note:** May require business partnership. Worth exploring.
+
+### 12.2: Property Tax Records ✅ GO - PUBLIC DATA
+
+Utility districts (MUDs, CDDs, Metro Districts) are taxing authorities. Tax bills show exactly which district you're in.
+
+**Data sources:**
+
+| Source | Coverage |
+|--------|----------|
+| County tax assessor websites | All counties |
+| State comptroller data | TX, FL, others |
+| Third-party aggregators (CoreLogic, ATTOM) | Nationwide |
+
+**Implementation:**
+
+```python
+# /data/tax_district_mappings/
+
+def get_utility_districts_from_tax_record(address):
+    """
+    Look up property tax record to identify utility districts.
+    """
+    parcel = lookup_parcel(address)
+    tax_record = get_tax_record(parcel['parcel_id'])
+    
+    districts = []
+    for taxing_entity in tax_record['taxing_entities']:
+        if is_utility_district(taxing_entity):
+            districts.append({
+                'name': taxing_entity['name'],
+                'type': classify_district_type(taxing_entity),  # MUD, CDD, etc.
+                'services': infer_services(taxing_entity)  # water, sewer, drainage
+            })
+    
+    return districts
+```
+
+**Texas-specific:** Texas Comptroller publishes special district tax data:
+- https://comptroller.texas.gov/taxes/property-tax/
+
+### 12.3: Real Estate Listings (MLS/Zillow) ✅ GO - SCRAPE PUBLIC PAGES
+
+Listings often include utility information. Bulk data source.
+
+**Fields commonly available:**
+- Electric provider
+- Gas (yes/no, provider)
+- Water source (public/well/MUD)
+- Sewer (public/septic)
+- HOA (often manages utilities in some developments)
+
+**Implementation:**
+
+```python
+# Zillow API, Realtor.com API, or data partnerships
+
+def enrich_from_listing_data(address):
+    """
+    Check real estate listing databases for utility info.
+    """
+    listing = zillow_api.get_property(address)
+    
+    if listing:
+        return {
+            'electric': listing.get('utilities', {}).get('electric'),
+            'gas': listing.get('utilities', {}).get('gas'),
+            'water': listing.get('utilities', {}).get('water'),
+            'sewer': listing.get('utilities', {}).get('sewer'),
+            'source': 'zillow_listing',
+            'confidence': 'medium',  # User-submitted, may be outdated
+            'listing_date': listing.get('last_updated')
+        }
+    return None
+```
+
+**Bulk approach:**
+- Download Zillow research data (ZTRAX) if available
+- Build address → utility mapping from listing history
+- Cross-reference to validate other sources
+
+### 12.4: Move-In Services Partnerships ⛔ REQUIRES PARTNERSHIP
+
+Companies like Updater, Moved, and utility concierge services have already solved this problem.
+
+**Potential partners:**
+
+| Company | What They Do |
+|---------|--------------|
+| Updater | Move-in utility setup for apartments |
+| Moved | Utility connection service |
+| Citizen Home Solutions | Utility concierge |
+| Utility Concierge | Apartment utility setup |
+| SimpleBills | Utility billing for apartments |
+
+**Partnership value:**
+- They have ground-truth data for millions of addresses
+- They verify by actually connecting utilities
+- Potential data licensing or API integration
+
+**Outreach template:**
+```
+Subject: Utility Data Partnership Inquiry
+
+We're building a utility provider lookup API and noticed you've solved 
+the address-to-utility mapping problem. Interested in exploring:
+
+1. Data licensing (we buy your utility mappings)
+2. API integration (we query your system)
+3. Mutual data sharing (we share feedback data)
+
+Our current accuracy is 90%+ for electric, looking to reach 98%+.
+```
+
+### 12.5: Franchise Agreements (Public Records) ✅ GO - PUBLIC RECORDS
+
+Cities grant exclusive franchise agreements to utilities. These are public records that define exact service boundaries.
+
+**Where to find:**
+- City clerk offices
+- City council meeting minutes
+- Municipal code databases (Municode, American Legal)
+
+**Implementation:**
+
+```python
+# /data/franchise_agreements/
+
+# Example: franchise_agreements/austin_tx.json
+{
+  "city": "Austin",
+  "state": "TX",
+  "agreements": [
+    {
+      "utility": "Austin Energy",
+      "type": "electric",
+      "exclusive": true,
+      "territory": "city_limits",
+      "ordinance": "20150423-001",
+      "effective_date": "2015-04-23",
+      "expiration_date": "2025-04-23"
+    },
+    {
+      "utility": "Texas Gas Service",
+      "type": "gas",
+      "exclusive": true,
+      "territory": "city_limits",
+      "ordinance": "20180101-042"
+    }
+  ]
+}
+```
+
+**High-value cities to research:**
+- State capitals
+- Top 100 cities by population
+- Cities with municipal utilities
+
+### 12.6: Special District Bond Documents ✅ GO - EMMA IS FREE
+
+When MUDs, CDDs, and Metro Districts issue bonds, the offering documents precisely define the service area.
+
+**Where to find:**
+- EMMA (Electronic Municipal Market Access): https://emma.msrb.org/
+- District websites
+- State oversight agencies
+
+**What they contain:**
+- Legal boundary description
+- Services provided
+- Developer/builder information
+- Expected buildout timeline
+
+**Implementation:**
+
+```python
+def get_district_boundary_from_bonds(district_name, state):
+    """
+    Search EMMA for district bond documents, extract boundary info.
+    """
+    # Search EMMA
+    bonds = emma_search(issuer=district_name, state=state)
+    
+    for bond in bonds:
+        offering_doc = download_offering_document(bond['cusip'])
+        boundary = extract_boundary_description(offering_doc)
+        if boundary:
+            return {
+                'district': district_name,
+                'boundary': boundary,
+                'source': 'bond_offering_document',
+                'cusip': bond['cusip']
+            }
+    return None
+```
+
+### 12.7: State Environmental Agency Data ✅ GO - PUBLIC WEBSITES
+
+Each state has water system data beyond EPA SDWIS. Often more current.
+
+**State agencies:**
+
+| State | Agency | URL |
+|-------|--------|-----|
+| TX | TCEQ | tceq.texas.gov |
+| CA | SWRCB | waterboards.ca.gov |
+| FL | DEP | floridadep.gov |
+| NY | DOH | health.ny.gov |
+| PA | DEP | dep.pa.gov |
+| OH | EPA | epa.ohio.gov |
+| IL | EPA | epa.illinois.gov |
+| AZ | ADEQ | azdeq.gov |
+| CO | CDPHE | cdphe.colorado.gov |
+| WA | DOH | doh.wa.gov |
+
+**Implementation:**
+- Download state water system registries
+- Cross-reference with EPA SDWIS
+- Use state data when more current
+- Flag discrepancies for review
+
+### 12.8: Propane Delivery Companies ✅ GO - RESEARCH
+
+Areas without natural gas use propane. Confirming "no gas service" is valuable.
+
+**Major propane providers:**
+- AmeriGas
+- Suburban Propane
+- Ferrellgas
+- Blue Rhino (tank exchange, not delivery)
+
+**Implementation:**
+
+```python
+# If gas lookup returns "no service," verify with propane presence
+
+def confirm_no_gas_service(address, zip_code):
+    """
+    Confirm area uses propane instead of natural gas.
+    """
+    # Check if propane companies serve this area
+    propane_providers = lookup_propane_service(zip_code)
+    
+    # Check if any gas infrastructure exists
+    gas_infrastructure = check_811_gas_lines(address)
+    
+    if propane_providers and not gas_infrastructure:
+        return {
+            'gas_service': False,
+            'alternative': 'propane',
+            'propane_providers': propane_providers,
+            'confidence': 'high',
+            'source': 'propane_service_area'
+        }
+    
+    return None
+```
+
+### 12.9: Well/Septic Permit Data ✅ GO - MANY COUNTIES PUBLIC
+
+Areas without public water/sewer have wells and septic systems. County health departments track permits.
+
+**Data sources:**
+- County health department permit databases
+- State environmental agency septic registries
+- Well completion reports (state water resources agencies)
+
+**Implementation:**
+
+```python
+def check_well_septic_permits(address, county, state):
+    """
+    Check if address has well/septic permits (indicating no public service).
+    """
+    parcel = lookup_parcel(address)
+    
+    well_permit = county_health_db.get_well_permit(parcel['parcel_id'])
+    septic_permit = county_health_db.get_septic_permit(parcel['parcel_id'])
+    
+    result = {}
+    
+    if well_permit:
+        result['water'] = {
+            'public_service': False,
+            'source': 'private_well',
+            'permit_number': well_permit['permit_id'],
+            'confidence': 'verified'
+        }
+    
+    if septic_permit:
+        result['sewer'] = {
+            'public_service': False,
+            'source': 'septic_system',
+            'permit_number': septic_permit['permit_id'],
+            'confidence': 'verified'
+        }
+    
+    return result
+```
+
+### 12.10: Utility Pole/Meter Imagery ✅ GO - STREET VIEW + VISION
+
+Utility names are often visible on infrastructure. Google Street View mining.
+
+**What to look for:**
+- Utility poles (company name, ID numbers)
+- Electric meters (utility logo)
+- Gas meters (utility name)
+- Water meter covers (utility/district name)
+- Utility trucks in imagery
+
+**Implementation approach:**
+
+```python
+# Use Google Street View API + Vision AI
+
+async def extract_utility_from_imagery(address):
+    """
+    Analyze Street View imagery for visible utility infrastructure.
+    """
+    # Get Street View image
+    image = await streetview_api.get_image(address)
+    
+    # Run through vision model
+    analysis = await vision_model.analyze(
+        image,
+        prompt="""Identify any utility company names or logos visible in this image.
+        Look for:
+        - Utility poles with company names
+        - Electric/gas meters with logos
+        - Water meter covers
+        - Utility vehicles
+        Return: {"utilities_found": [{"type": "electric", "name": "..."}]}"""
+    )
+    
+    return analysis.get('utilities_found', [])
+```
+
+**Note:** High effort, probably diminishing returns. Good for spot-checking.
+
+### 12.11: PUC Complaint Databases ✅ GO - MANY STATES PUBLISH
+
+People file complaints about their utilities. Complaint = address + utility pairing.
+
+**State PUC complaint portals:**
+- Texas: PUCT complaint database
+- California: CPUC informal complaints
+- New York: DPS complaint system
+- Florida: PSC complaints
+
+**Implementation:**
+
+```python
+# Scrape or FOIA request complaint data
+
+def build_utility_map_from_complaints(state):
+    """
+    Extract address-utility pairs from PUC complaint records.
+    """
+    complaints = get_puc_complaints(state, years=5)
+    
+    mappings = {}
+    for complaint in complaints:
+        address = normalize_address(complaint['service_address'])
+        utility = complaint['utility_name']
+        utility_type = complaint['utility_type']
+        
+        key = f"{address}|{utility_type}"
+        if key not in mappings:
+            mappings[key] = {'utility': utility, 'count': 0}
+        mappings[key]['count'] += 1
+    
+    return mappings
+```
+
+### 12.12: Crowdsourced Local Data ✅ GO - SCRAPABLE
+
+People ask "Who's your electric company?" on local social platforms.
+
+**Sources:**
+- Nextdoor posts
+- Local Facebook groups
+- Reddit city subreddits
+- City-specific forums
+
+**Implementation approach:**
+
+```python
+# This would require careful scraping or API partnerships
+
+def search_local_social_for_utility_info(city, state):
+    """
+    Search local social platforms for utility discussions.
+    """
+    # Search Reddit
+    reddit_results = reddit_search(
+        query=f"{city} {state} electric company OR gas company OR water utility",
+        subreddits=[f"{city.lower()}", f"{state.lower()}"]
+    )
+    
+    # Extract utility mentions
+    utilities = extract_utility_mentions(reddit_results)
+    
+    return utilities
+```
+
+**Note:** Noisy data, good for validation not primary source.
+
+---
+
+## PHASE 13: Edge Cases and Special Handling ✅ ALL GO - PURE CODE + PUBLIC DATA
+
+### 13.1: Multi-Unit Building Types ✅ GO
+
+Different building types have different utility arrangements.
+
+| Building Type | Typical Arrangement |
+|---------------|---------------------|
+| Single-family home | Direct accounts with all utilities |
+| Apartment (garden) | Electric: tenant. Water/gas: often master-metered |
+| Apartment (high-rise) | Often fully master-metered |
+| Condo | Electric: unit. Water: HOA or master |
+| Townhome | Varies widely |
+| Mobile home park | Often park-owned utilities |
+
+**Implementation:**
+
+```python
+def adjust_for_building_type(address, base_result):
+    """
+    Adjust utility response based on building type.
+    """
+    building_type = get_building_type(address)  # From assessor data
+    
+    if building_type == 'apartment':
+        base_result['water']['note'] = 'Apartments often have master-metered water. Check with property manager.'
+        base_result['gas']['note'] = 'Gas may be master-metered or included in rent.'
+    
+    elif building_type == 'condo':
+        base_result['water']['note'] = 'Water may be billed through HOA.'
+    
+    elif building_type == 'mobile_home':
+        base_result['note'] = 'Mobile home parks often have park-owned utilities. Contact park management.'
+    
+    return base_result
+```
+
+### 13.2: Master-Metered Buildings ✅ GO
+
+Building has one utility account. Tenants don't interact with utility directly.
+
+**Detection methods:**
+- Building type (high-rise apartments)
+- Assessor data (single meter for multi-unit)
+- Listing data (utilities included in rent)
+
+**Response handling:**
+
+```python
+if is_master_metered(address, utility_type):
+    return {
+        'name': utility_name,
+        'account_type': 'master_metered',
+        'note': 'This building is master-metered. Contact property management for utility billing.',
+        'tenant_action': 'none_required'
+    }
+```
+
+### 13.3: Submetered Buildings ✅ GO
+
+One utility account, but landlord/RUBS bills tenants separately.
+
+**Implementation:**
+
+```python
+def check_submetering(address):
+    """
+    Check if property uses submetering or RUBS.
+    """
+    # Check state submetering registrations
+    # Texas: PUCT submetering rules
+    # May require registration
+    
+    submeter_registration = state_submeter_registry.lookup(address)
+    if submeter_registration:
+        return {
+            'metering_type': 'submetered',
+            'submeter_company': submeter_registration.get('billing_company'),
+            'note': 'Utilities billed through submeter company, not directly from utility.'
+        }
+    return None
+```
+
+### 13.4: Deregulated Markets ✅ GO - PURE CODE
+
+Texas, Ohio, Pennsylvania, etc. have retail choice. Need to distinguish infrastructure owner from retail provider.
+
+**Texas example:**
+- TDU (Transmission/Distribution Utility): Oncor, CenterPoint, AEP
+- REP (Retail Electric Provider): Chosen by customer
+
+**Implementation:**
+
+```python
+# For deregulated states, return both layers
+
+def lookup_electric_deregulated(address, state):
+    if state == 'TX':
+        tdu = lookup_texas_tdu(address)  # Infrastructure owner
+        return {
+            'tdu': {
+                'name': tdu['name'],
+                'role': 'Transmission/Distribution Utility',
+                'note': 'Owns the power lines and meters'
+            },
+            'rep': {
+                'name': None,
+                'role': 'Retail Electric Provider',
+                'note': 'Customer chooses their REP at powertochoose.org'
+            },
+            'deregulated_market': True,
+            'choice_website': 'https://powertochoose.org'
+        }
+    # Similar for OH, PA, etc.
+```
+
+### 13.5: Commercial vs Residential ✅ GO
+
+Same address can have different utility arrangements for commercial vs residential.
+
+**Implementation:**
+
+```python
+def lookup_with_property_type(address, property_type='residential'):
+    """
+    Adjust lookup based on property type.
+    """
+    base_result = standard_lookup(address)
+    
+    if property_type == 'commercial':
+        # Commercial may have different:
+        # - Rate classes
+        # - Account requirements
+        # - Provider options (in deregulated markets)
+        base_result['rate_class'] = 'commercial'
+        base_result['note'] = 'Commercial accounts may have different requirements. Contact utility directly.'
+    
+    return base_result
+```
+
+### 13.6: Tribal Lands ✅ GO - CENSUS TIGER FREE
+
+Tribal lands have unique utility structures. BIA (Bureau of Indian Affairs) involvement.
+
+**Considerations:**
+- Tribal utilities
+- BIA-administered utilities
+- Sovereign nation status affects regulation
+
+**Implementation:**
+
+```python
+def check_tribal_land(lat, lon):
+    """
+    Check if coordinates are on tribal land.
+    """
+    # Use Census TIGER tribal boundaries
+    tribal_area = lookup_tribal_boundary(lat, lon)
+    
+    if tribal_area:
+        return {
+            'tribal_land': True,
+            'tribe': tribal_area['name'],
+            'note': 'This address is on tribal land. Utility services may be provided by tribal utilities or BIA. Contact tribal administration.',
+            'confidence_adjustment': -20
+        }
+    return {'tribal_land': False}
+```
+
+### 13.7: Military Bases ✅ GO - PUBLIC INFO
+
+Base housing has privatized utilities in many cases.
+
+**Implementation:**
+
+```python
+MILITARY_BASE_UTILITIES = {
+    'Fort Hood': {
+        'electric': 'TXU Energy (privatized)',
+        'housing_manager': 'Lendlease'
+    },
+    'Joint Base San Antonio': {
+        'electric': 'CPS Energy',
+        'housing_manager': 'Balfour Beatty'
+    }
+    # ... etc
+}
+
+def check_military_installation(address, city):
+    """
+    Check if address is on military installation.
+    """
+    # Check against known base addresses/boundaries
+    base = lookup_military_base(address)
+    
+    if base:
+        return {
+            'military_installation': True,
+            'base_name': base['name'],
+            'utilities': MILITARY_BASE_UTILITIES.get(base['name']),
+            'note': 'Military housing utilities are often privatized. Contact housing office.',
+            'housing_office': base.get('housing_office_contact')
+        }
+    return {'military_installation': False}
+```
+
+### 13.8: Unincorporated Areas ✅ GO - CENSUS DATA FREE
+
+Areas outside city limits often have different (or no) utility service.
+
+**Implementation:**
+
+```python
+def check_incorporated_status(lat, lon, county, state):
+    """
+    Determine if address is in incorporated city or unincorporated county.
+    """
+    # Use Census place boundaries
+    city = lookup_incorporated_place(lat, lon)
+    
+    if not city:
+        return {
+            'incorporated': False,
+            'jurisdiction': f"Unincorporated {county} County",
+            'note': 'Unincorporated area. May have limited utility options.',
+            'water_likelihood': 'well_or_special_district',
+            'sewer_likelihood': 'septic_or_special_district'
+        }
+    
+    return {
+        'incorporated': True,
+        'city': city['name']
+    }
+```
+
+---
+
+## PHASE 14: Machine Learning Enhancement ✅ ALL GO - PURE CODE
+
+### 14.1: Address Similarity Inference ✅ GO
+
+If we know 122 Main St, we can infer 124 Main St.
+
+**Implementation:**
+
+```python
+def infer_from_nearby_addresses(address, utility_type):
+    """
+    If we have verified data for nearby addresses, infer this one.
+    """
+    # Parse address
+    parsed = parse_address(address)
+    street = parsed['street_name']
+    city = parsed['city']
+    
+    # Find verified addresses on same street
+    nearby = find_verified_addresses(
+        street=street,
+        city=city,
+        within_numbers=10  # Within 10 house numbers
+    )
+    
+    if len(nearby) >= 3:
+        # Check if all agree
+        utilities = [n[utility_type] for n in nearby]
+        if len(set(utilities)) == 1:
+            return {
+                'inferred': True,
+                'utility': utilities[0],
+                'confidence': 'high',
+                'method': 'nearby_address_inference',
+                'supporting_addresses': len(nearby)
+            }
+    
+    return None
+```
+
+### 14.2: Active Learning ✅ GO
+
+Prioritize SERP verification for lowest-confidence addresses.
+
+```python
+def prioritize_verification_queue():
+    """
+    Build queue of addresses most needing verification.
+    Prioritize by expected information gain.
+    """
+    pending = get_unverified_lookups()
+    
+    # Score by verification value
+    scored = []
+    for lookup in pending:
+        score = calculate_verification_value(
+            confidence=lookup['confidence_score'],
+            source_quality=lookup['source_reliability'],
+            address_uniqueness=lookup['is_unique_area'],  # New development?
+            user_traffic=lookup['lookup_count']  # How often requested?
+        )
+        scored.append((score, lookup))
+    
+    # Return highest-value verifications first
+    return sorted(scored, reverse=True)
+```
+
+### 14.3: Ensemble Model ✅ GO
+
+Combine all sources with learned weights.
+
+```python
+def ensemble_prediction(address, sources_results):
+    """
+    Combine predictions from multiple sources using learned weights.
+    """
+    # Each source has a learned weight based on historical accuracy
+    SOURCE_WEIGHTS = {
+        'special_district': 0.95,
+        'municipal_utility': 0.92,
+        'user_confirmed': 0.90,
+        'eia_861': 0.75,
+        'serp': 0.85,
+        'heuristic': 0.50
+    }
+    
+    # Aggregate predictions
+    predictions = defaultdict(float)
+    for source, result in sources_results.items():
+        if result:
+            weight = SOURCE_WEIGHTS.get(source, 0.5)
+            predictions[result['utility']] += weight
+    
+    # Return highest weighted prediction
+    best = max(predictions.items(), key=lambda x: x[1])
+    
+    return {
+        'utility': best[0],
+        'ensemble_score': best[1],
+        'method': 'ensemble_model'
+    }
+```
+
+### 14.4: Anomaly Detection ✅ GO
+
+Flag lookups that seem wrong based on patterns.
+
+```python
+def detect_anomalies(result, address):
+    """
+    Flag results that seem anomalous based on patterns.
+    """
+    anomalies = []
+    
+    # Check: Is this utility unusual for this ZIP?
+    zip_code = result['zip_code']
+    zip_typical = get_typical_utilities(zip_code)
+    
+    for utility_type in ['electric', 'gas', 'water']:
+        returned = result.get(utility_type, {}).get('name')
+        typical = zip_typical.get(utility_type)
+        
+        if returned and typical and returned != typical:
+            # This address got a different utility than most in ZIP
+            anomalies.append({
+                'type': 'atypical_utility',
+                'utility_type': utility_type,
+                'returned': returned,
+                'typical_for_zip': typical,
+                'action': 'flag_for_review'
+            })
+    
+    return anomalies
+```
+
+---
+
+## Complete Data Source Inventory
+
+After all phases, the system uses:
+
+### Government Sources (Free)
+- US Census Geocoder
+- EPA SDWIS (water systems)
+- EIA Form 861 (electric utilities)
+- HIFLD (utility boundaries)
+- FCC Broadband Map
+- Census TIGER boundaries
+- State PUC territory maps
+- State environmental agencies
+- County assessor records
+- County health departments (well/septic)
+- TCEQ (Texas special districts)
+- FL DEO (Florida CDDs)
+- DOLA (Colorado metro districts)
+- EMMA (municipal bonds)
+
+### Commercial Sources (Paid/Partnership)
+- Google Geocoding API
+- Smarty (address normalization)
+- Google Street View (imagery)
+- Zillow/MLS (listing data)
+- CoreLogic/ATTOM (property data)
+- Move-in service partnerships
+
+### Crowdsourced Sources
+- User feedback system
+- PM software portfolio imports
+- Utility bill OCR uploads
+- PUC complaint data
+- Local social media mining
+
+### Direct Sources
+- Utility company APIs
+- Utility company GIS services
+- 811 Call Before You Dig
+- Franchise agreements
+- Special district bond docs
+
+---
+
+## Final Target Accuracy
+
+| Utility | Current | After All Phases |
+|---------|---------|------------------|
+| Electric | 90% | 99% |
+| Gas | 85% | 97% |
+| Water | 75% | 95% |
+| Sewer | N/A | 93% |
+| Internet | 95% | 98% |
+
+**Edge case handling:**
+- Master-metered buildings: Detected and noted
+- Deregulated markets: Both layers returned
+- Tribal lands: Flagged with guidance
+- Military bases: Special handling
+- New construction: Builder data integration
+- Unincorporated areas: Properly identified
+
+---
+
+## Implementation Timeline (Realistic)
+
+| Phase | Duration | Cumulative Accuracy |
+|-------|----------|---------------------|
+| 1-5 (Core improvements) | 2-3 months | 93% / 88% / 82% |
+| 6-9 (State expansions) | 3-4 months | 95% / 90% / 85% |
+| 10 (Cost optimization) | 2 weeks | Same, 60% cheaper |
+| 11 (Maximalist) | 3-6 months | 98% / 95% / 92% |
+| 12 (Everything else) | 6-12 months | 99% / 97% / 95% |
+| 13 (Edge cases) | Ongoing | Handles all cases |
+| 14 (ML enhancement) | Ongoing | Self-improving |
+
+**Total time to "truly maxed out": 12-18 months of incremental work.**

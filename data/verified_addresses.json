@@ -1,0 +1,108 @@
+{
+  "addresses": {
+    "100 MAIN ST, AUSTIN, TX 78701": {
+      "electric": "Austin Energy",
+      "gas": "Texas Gas Service",
+      "water": "Austin Water",
+      "source": "test",
+      "parsed": {
+        "number": "100",
+        "street": "MAIN",
+        "city": "AUSTIN",
+        "state": "TX",
+        "zip": "78701",
+        "original": "100 MAIN ST, AUSTIN, TX 78701"
+      }
+    },
+    "102 MAIN ST, AUSTIN, TX 78701": {
+      "electric": "Austin Energy",
+      "gas": "Texas Gas Service",
+      "water": "Austin Water",
+      "source": "test",
+      "parsed": {
+        "number": "102",
+        "street": "MAIN",
+        "city": "AUSTIN",
+        "state": "TX",
+        "zip": "78701",
+        "original": "102 MAIN ST, AUSTIN, TX 78701"
+      }
+    },
+    "104 MAIN ST, AUSTIN, TX 78701": {
+      "electric": "Austin Energy",
+      "gas": "Texas Gas Service",
+      "water": "Austin Water",
+      "source": "test",
+      "parsed": {
+        "number": "104",
+        "street": "MAIN",
+        "city": "AUSTIN",
+        "state": "TX",
+        "zip": "78701",
+        "original": "104 MAIN ST, AUSTIN, TX 78701"
+      }
+    },
+    "106 MAIN ST, AUSTIN, TX 78701": {
+      "electric": "Austin Energy",
+      "gas": "Texas Gas Service",
+      "water": "Austin Water",
+      "source": "test",
+      "parsed": {
+        "number": "106",
+        "street": "MAIN",
+        "city": "AUSTIN",
+        "state": "TX",
+        "zip": "78701",
+        "original": "106 MAIN ST, AUSTIN, TX 78701"
+      }
+    },
+    "108 MAIN ST, AUSTIN, TX 78701": {
+      "electric": "Austin Energy",
+      "gas": "Texas Gas Service",
+      "water": "Austin Water",
+      "source": "test",
+      "parsed": {
+        "number": "108",
+        "street": "MAIN",
+        "city": "AUSTIN",
+        "state": "TX",
+        "zip": "78701",
+        "original": "108 MAIN ST, AUSTIN, TX 78701"
+      }
+    }
+  },
+  "streets": {
+    "MAIN|AUSTIN|TX|78701": [
+      {
+        "number": "100",
+        "electric": "Austin Energy",
+        "gas": "Texas Gas Service",
+        "water": "Austin Water"
+      },
+      {
+        "number": "102",
+        "electric": "Austin Energy",
+        "gas": "Texas Gas Service",
+        "water": "Austin Water"
+      },
+      {
+        "number": "104",
+        "electric": "Austin Energy",
+        "gas": "Texas Gas Service",
+        "water": "Austin Water"
+      },
+      {
+        "number": "106",
+        "electric": "Austin Energy",
+        "gas": "Texas Gas Service",
+        "water": "Austin Water"
+      },
+      {
+        "number": "108",
+        "electric": "Austin Energy",
+        "gas": "Texas Gas Service",
+        "water": "Austin Water"
+      }
+    ]
+  }
+}

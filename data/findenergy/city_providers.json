@@ -332,5 +332,645 @@
     "state": "GA",
     "source": "findenergy_cache",
     "confidence": "high"
+  },
+  "NY:new york:electric": {
+    "providers": [
+      {"name": "Con Edison", "source": "findenergy_cache", "legal_name": "Consolidated Edison"}
+    ],
+    "utility_type": "electric",
+    "city": "New York",
+    "state": "NY",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NY:new york:gas": {
+    "providers": [
+      {"name": "Con Edison", "source": "findenergy_cache", "legal_name": "Consolidated Edison"}
+    ],
+    "utility_type": "gas",
+    "city": "New York",
+    "state": "NY",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NY:buffalo:electric": {
+    "providers": [
+      {"name": "National Grid", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Buffalo",
+    "state": "NY",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NY:buffalo:gas": {
+    "providers": [
+      {"name": "National Fuel Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Buffalo",
+    "state": "NY",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "PA:philadelphia:electric": {
+    "providers": [
+      {"name": "PECO", "source": "findenergy_cache", "legal_name": "PECO Energy Company"}
+    ],
+    "utility_type": "electric",
+    "city": "Philadelphia",
+    "state": "PA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "PA:philadelphia:gas": {
+    "providers": [
+      {"name": "Philadelphia Gas Works", "source": "findenergy_cache", "note": "PGW"}
+    ],
+    "utility_type": "gas",
+    "city": "Philadelphia",
+    "state": "PA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "PA:pittsburgh:electric": {
+    "providers": [
+      {"name": "Duquesne Light", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "PA:pittsburgh:gas": {
+    "providers": [
+      {"name": "Peoples Gas", "source": "findenergy_cache", "note": "Peoples Natural Gas"}
+    ],
+    "utility_type": "gas",
+    "city": "Pittsburgh",
+    "state": "PA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OH:columbus:electric": {
+    "providers": [
+      {"name": "AEP Ohio", "source": "findenergy_cache", "legal_name": "American Electric Power Ohio"}
+    ],
+    "utility_type": "electric",
+    "city": "Columbus",
+    "state": "OH",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OH:columbus:gas": {
+    "providers": [
+      {"name": "Columbia Gas of Ohio", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Columbus",
+    "state": "OH",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OH:cleveland:electric": {
+    "providers": [
+      {"name": "FirstEnergy", "source": "findenergy_cache", "note": "Cleveland Electric Illuminating"}
+    ],
+    "utility_type": "electric",
+    "city": "Cleveland",
+    "state": "OH",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OH:cleveland:gas": {
+    "providers": [
+      {"name": "Dominion Energy Ohio", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Cleveland",
+    "state": "OH",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OH:cincinnati:electric": {
+    "providers": [
+      {"name": "Duke Energy Ohio", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Cincinnati",
+    "state": "OH",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OH:cincinnati:gas": {
+    "providers": [
+      {"name": "Duke Energy Ohio", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Cincinnati",
+    "state": "OH",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MI:detroit:electric": {
+    "providers": [
+      {"name": "DTE Energy", "source": "findenergy_cache", "legal_name": "DTE Electric Company"}
+    ],
+    "utility_type": "electric",
+    "city": "Detroit",
+    "state": "MI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MI:detroit:gas": {
+    "providers": [
+      {"name": "DTE Energy", "source": "findenergy_cache", "legal_name": "DTE Gas Company"}
+    ],
+    "utility_type": "gas",
+    "city": "Detroit",
+    "state": "MI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MI:grand rapids:electric": {
+    "providers": [
+      {"name": "Consumers Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Grand Rapids",
+    "state": "MI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MI:grand rapids:gas": {
+    "providers": [
+      {"name": "Consumers Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Grand Rapids",
+    "state": "MI",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NC:charlotte:electric": {
+    "providers": [
+      {"name": "Duke Energy Carolinas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Charlotte",
+    "state": "NC",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NC:charlotte:gas": {
+    "providers": [
+      {"name": "Piedmont Natural Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Charlotte",
+    "state": "NC",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NC:raleigh:electric": {
+    "providers": [
+      {"name": "Duke Energy Progress", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Raleigh",
+    "state": "NC",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NC:raleigh:gas": {
+    "providers": [
+      {"name": "Dominion Energy North Carolina", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Raleigh",
+    "state": "NC",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NJ:newark:electric": {
+    "providers": [
+      {"name": "PSE&G", "source": "findenergy_cache", "legal_name": "Public Service Electric and Gas"}
+    ],
+    "utility_type": "electric",
+    "city": "Newark",
+    "state": "NJ",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NJ:newark:gas": {
+    "providers": [
+      {"name": "PSE&G", "source": "findenergy_cache", "legal_name": "Public Service Electric and Gas"}
+    ],
+    "utility_type": "gas",
+    "city": "Newark",
+    "state": "NJ",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NJ:jersey city:electric": {
+    "providers": [
+      {"name": "PSE&G", "source": "findenergy_cache", "legal_name": "Public Service Electric and Gas"}
+    ],
+    "utility_type": "electric",
+    "city": "Jersey City",
+    "state": "NJ",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NJ:jersey city:gas": {
+    "providers": [
+      {"name": "PSE&G", "source": "findenergy_cache", "legal_name": "Public Service Electric and Gas"}
+    ],
+    "utility_type": "gas",
+    "city": "Jersey City",
+    "state": "NJ",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MA:boston:electric": {
+    "providers": [
+      {"name": "Eversource", "source": "findenergy_cache", "legal_name": "NSTAR Electric"}
+    ],
+    "utility_type": "electric",
+    "city": "Boston",
+    "state": "MA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MA:boston:gas": {
+    "providers": [
+      {"name": "National Grid", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Boston",
+    "state": "MA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WA:seattle:electric": {
+    "providers": [
+      {"name": "Seattle City Light", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Seattle",
+    "state": "WA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WA:seattle:gas": {
+    "providers": [
+      {"name": "Puget Sound Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Seattle",
+    "state": "WA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WA:spokane:electric": {
+    "providers": [
+      {"name": "Avista Utilities", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Spokane",
+    "state": "WA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "WA:spokane:gas": {
+    "providers": [
+      {"name": "Avista Utilities", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Spokane",
+    "state": "WA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OR:portland:electric": {
+    "providers": [
+      {"name": "Portland General Electric", "source": "findenergy_cache", "note": "PGE"}
+    ],
+    "utility_type": "electric",
+    "city": "Portland",
+    "state": "OR",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OR:portland:gas": {
+    "providers": [
+      {"name": "NW Natural", "source": "findenergy_cache", "legal_name": "Northwest Natural Gas"}
+    ],
+    "utility_type": "gas",
+    "city": "Portland",
+    "state": "OR",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MN:minneapolis:electric": {
+    "providers": [
+      {"name": "Xcel Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Minneapolis",
+    "state": "MN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MN:minneapolis:gas": {
+    "providers": [
+      {"name": "CenterPoint Energy", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Minneapolis",
+    "state": "MN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MO:st. louis:electric": {
+    "providers": [
+      {"name": "Ameren Missouri", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "St. Louis",
+    "state": "MO",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MO:st. louis:gas": {
+    "providers": [
+      {"name": "Spire", "source": "findenergy_cache", "legal_name": "Laclede Gas"}
+    ],
+    "utility_type": "gas",
+    "city": "St. Louis",
+    "state": "MO",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MO:kansas city:electric": {
+    "providers": [
+      {"name": "Evergy", "source": "findenergy_cache", "legal_name": "Kansas City Power & Light"}
+    ],
+    "utility_type": "electric",
+    "city": "Kansas City",
+    "state": "MO",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MO:kansas city:gas": {
+    "providers": [
+      {"name": "Spire", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Kansas City",
+    "state": "MO",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NV:las vegas:electric": {
+    "providers": [
+      {"name": "NV Energy", "source": "findenergy_cache", "legal_name": "Nevada Power"}
+    ],
+    "utility_type": "electric",
+    "city": "Las Vegas",
+    "state": "NV",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "NV:las vegas:gas": {
+    "providers": [
+      {"name": "Southwest Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Las Vegas",
+    "state": "NV",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TN:nashville:electric": {
+    "providers": [
+      {"name": "Nashville Electric Service", "source": "findenergy_cache", "note": "NES"}
+    ],
+    "utility_type": "electric",
+    "city": "Nashville",
+    "state": "TN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TN:nashville:gas": {
+    "providers": [
+      {"name": "Piedmont Natural Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Nashville",
+    "state": "TN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TN:memphis:electric": {
+    "providers": [
+      {"name": "Memphis Light, Gas and Water", "source": "findenergy_cache", "note": "MLGW"}
+    ],
+    "utility_type": "electric",
+    "city": "Memphis",
+    "state": "TN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "TN:memphis:gas": {
+    "providers": [
+      {"name": "Memphis Light, Gas and Water", "source": "findenergy_cache", "note": "MLGW"}
+    ],
+    "utility_type": "gas",
+    "city": "Memphis",
+    "state": "TN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "IN:indianapolis:electric": {
+    "providers": [
+      {"name": "AES Indiana", "source": "findenergy_cache", "legal_name": "Indianapolis Power & Light"}
+    ],
+    "utility_type": "electric",
+    "city": "Indianapolis",
+    "state": "IN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "IN:indianapolis:gas": {
+    "providers": [
+      {"name": "CenterPoint Energy", "source": "findenergy_cache", "legal_name": "Vectren"}
+    ],
+    "utility_type": "gas",
+    "city": "Indianapolis",
+    "state": "IN",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MD:baltimore:electric": {
+    "providers": [
+      {"name": "BGE", "source": "findenergy_cache", "legal_name": "Baltimore Gas and Electric"}
+    ],
+    "utility_type": "electric",
+    "city": "Baltimore",
+    "state": "MD",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "MD:baltimore:gas": {
+    "providers": [
+      {"name": "BGE", "source": "findenergy_cache", "legal_name": "Baltimore Gas and Electric"}
+    ],
+    "utility_type": "gas",
+    "city": "Baltimore",
+    "state": "MD",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "LA:new orleans:electric": {
+    "providers": [
+      {"name": "Entergy New Orleans", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "New Orleans",
+    "state": "LA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "LA:new orleans:gas": {
+    "providers": [
+      {"name": "Entergy New Orleans", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "New Orleans",
+    "state": "LA",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OK:oklahoma city:electric": {
+    "providers": [
+      {"name": "OG&E", "source": "findenergy_cache", "legal_name": "Oklahoma Gas and Electric"}
+    ],
+    "utility_type": "electric",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OK:oklahoma city:gas": {
+    "providers": [
+      {"name": "Oklahoma Natural Gas", "source": "findenergy_cache", "note": "ONE Gas"}
+    ],
+    "utility_type": "gas",
+    "city": "Oklahoma City",
+    "state": "OK",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OK:tulsa:electric": {
+    "providers": [
+      {"name": "PSO", "source": "findenergy_cache", "legal_name": "Public Service Company of Oklahoma"}
+    ],
+    "utility_type": "electric",
+    "city": "Tulsa",
+    "state": "OK",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "OK:tulsa:gas": {
+    "providers": [
+      {"name": "Oklahoma Natural Gas", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Tulsa",
+    "state": "OK",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "KY:louisville:electric": {
+    "providers": [
+      {"name": "LG&E", "source": "findenergy_cache", "legal_name": "Louisville Gas and Electric"}
+    ],
+    "utility_type": "electric",
+    "city": "Louisville",
+    "state": "KY",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "KY:louisville:gas": {
+    "providers": [
+      {"name": "LG&E", "source": "findenergy_cache", "legal_name": "Louisville Gas and Electric"}
+    ],
+    "utility_type": "gas",
+    "city": "Louisville",
+    "state": "KY",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "UT:salt lake city:electric": {
+    "providers": [
+      {"name": "Rocky Mountain Power", "source": "findenergy_cache", "note": "PacifiCorp"}
+    ],
+    "utility_type": "electric",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "UT:salt lake city:gas": {
+    "providers": [
+      {"name": "Dominion Energy Utah", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Salt Lake City",
+    "state": "UT",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "SC:charleston:electric": {
+    "providers": [
+      {"name": "Dominion Energy South Carolina", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Charleston",
+    "state": "SC",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "SC:charleston:gas": {
+    "providers": [
+      {"name": "Dominion Energy South Carolina", "source": "findenergy_cache"}
+    ],
+    "utility_type": "gas",
+    "city": "Charleston",
+    "state": "SC",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "AL:birmingham:electric": {
+    "providers": [
+      {"name": "Alabama Power", "source": "findenergy_cache"}
+    ],
+    "utility_type": "electric",
+    "city": "Birmingham",
+    "state": "AL",
+    "source": "findenergy_cache",
+    "confidence": "high"
+  },
+  "AL:birmingham:gas": {
+    "providers": [
+      {"name": "Spire Alabama", "source": "findenergy_cache", "legal_name": "Alagasco"}
+    ],
+    "utility_type": "gas",
+    "city": "Birmingham",
+    "state": "AL",
+    "source": "findenergy_cache",
+    "confidence": "high"
   }
 }

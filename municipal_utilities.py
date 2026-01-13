@@ -74,13 +74,42 @@ def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None
 
 
 def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None) -> Optional[Dict]:
-    """Check if city has municipal gas utility (CPS Energy, MLGW, etc.)."""
+    """Check if city has municipal/regional gas utility (Texas Gas Service, Atmos, CenterPoint, etc.)."""
     data = load_municipal_data()
+    state_upper = state.upper() if state else ''
     
-    # Check electric utilities that also provide gas
-    state_data = data.get('electric', {}).get(state.upper() if state else '', {})
+    # FIRST: Check dedicated gas section (Texas Gas Service, Atmos, CenterPoint, etc.)
+    gas_data = data.get('gas', {}).get(state_upper, {})
     
-    for city_name, utility in state_data.items():
+    for city_name, utility in gas_data.items():
+        # Check ZIP first (most accurate)
+        if zip_code and zip_code in utility.get('zip_codes', []):
+            return {
+                'name': utility['name'],
+                'phone': utility.get('phone'),
+                'website': utility.get('website'),
+                'city': city_name,
+                'source': 'municipal_gas_data',
+                'confidence': 'high',
+                'note': utility.get('note', f"Gas utility serving {city_name}")
+            }
+        
+        # Check city name
+        if city and city_name.upper() in city.upper():
+            return {
+                'name': utility['name'],
+                'phone': utility.get('phone'),
+                'website': utility.get('website'),
+                'city': city_name,
+                'source': 'municipal_gas_data',
+                'confidence': 'medium',
+                'note': utility.get('note', f"Gas utility serving {city_name}")
+            }
+    
+    # SECOND: Check electric utilities that also provide gas (CPS Energy, Colorado Springs, etc.)
+    electric_data = data.get('electric', {}).get(state_upper, {})
+    
+    for city_name, utility in electric_data.items():
         services = utility.get('services', ['electric'])
         if 'gas' not in services:
             continue

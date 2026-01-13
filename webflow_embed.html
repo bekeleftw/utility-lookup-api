@@ -221,6 +221,52 @@
     color: #22c55e;
   }
   
+  /* Streaming status message */
+  .up-status-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #166534;
+  }
+  
+  /* Loading slot placeholders */
+  .up-result-slot {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 20px;
+    min-height: 60px;
+  }
+  
+  .up-loading-slot {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #6b7280;
+    font-size: 14px;
+  }
+  
+  .up-loading-spinner-small {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #e5e7eb;
+    border-top-color: #22c55e;
+    border-radius: 50%;
+    animation: up-spin 0.8s linear infinite;
+  }
+  
+  .up-no-result {
+    color: #6b7280;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+  
   .up-results {
     display: flex;
     flex-direction: column;
@@ -1192,33 +1238,122 @@
     
     btn.disabled = true;
     btn.textContent = 'Searching...';
+    
+    // Use streaming API for progressive results
+    const streamUrl = API_URL.replace('/lookup', '/lookup/stream');
+    const params = new URLSearchParams({
+      address: address,
+      utilities: utilities.join(',')
+    });
+    
+    // Initialize results container with placeholders
     results.innerHTML = `
-      <div class="up-loading">
+      <div class="up-status-message" id="upStatusMsg">
         <div class="up-loading-spinner"></div>
-        Looking up ${utilities.join(', ')}...
+        <span>Starting lookup...</span>
+      </div>
+      <div id="upLocationContainer"></div>
+      <div class="up-results" id="upStreamResults">
+        ${utilities.includes('electric') ? '<div id="upElectricSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up electric...</div>' : ''}
+        ${utilities.includes('gas') ? '<div id="upGasSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up gas...</div>' : ''}
+        ${utilities.includes('water') ? '<div id="upWaterSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up water...</div>' : ''}
+        ${utilities.includes('internet') ? '<div id="upInternetSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up internet...</div>' : ''}
       </div>
     `;
     
+    // Collected data for final render
+    const streamData = { utilities: {}, location: null };
+    
     try {
-      const params = new URLSearchParams({
-        address: address,
-        verify: 'true',
-        utilities: utilities.join(',')
-      });
+      const eventSource = new EventSource(`${streamUrl}?${params}`);
       
-      const response = await fetch(`${API_URL}?${params}`);
-      const data = await response.json();
+      eventSource.onmessage = (event) => {
+        const msg = JSON.parse(event.data);
+        
+        if (msg.event === 'status') {
+          document.getElementById('upStatusMsg').innerHTML = `
+            <div class="up-loading-spinner"></div>
+            <span>${msg.message}</span>
+          `;
+        }
+        else if (msg.event === 'geocode') {
+          streamData.location = msg.data;
+          currentZipCode = msg.data?.zip_code || '';
+          document.getElementById('upLocationContainer').innerHTML = `
+            <div class="up-location">
+              <span class="up-location-icon">📍</span>
+              ${msg.data.city || ''}, ${msg.data.county ? msg.data.county + ' County, ' : ''}${msg.data.state || ''}
+            </div>
+          `;
+        }
+        else if (msg.event === 'electric') {
+          const slot = document.getElementById('upElectricSlot');
+          if (msg.data) {
+            streamData.utilities.electric = [msg.data];
+            slot.outerHTML = renderUtilityCard(msg.data, 'electric', [], null);
+          } else {
+            slot.innerHTML = `<div class="up-no-result">⚡ ${msg.note || 'No electric provider found'}</div>`;
+            slot.classList.remove('up-loading-slot');
+          }
+        }
+        else if (msg.event === 'gas') {
+          const slot = document.getElementById('upGasSlot');
+          if (msg.data) {
+            streamData.utilities.gas = [msg.data];
+            slot.outerHTML = renderUtilityCard(msg.data, 'gas', [], null);
+          } else {
+            slot.innerHTML = `<div class="up-no-result">🔥 ${msg.note || 'No gas provider found'}</div>`;
+            slot.classList.remove('up-loading-slot');
+          }
+        }
+        else if (msg.event === 'water') {
+          const slot = document.getElementById('upWaterSlot');
+          if (msg.data) {
+            streamData.utilities.water = [msg.data];
+            slot.outerHTML = renderUtilityCard(msg.data, 'water', [], null);
+          } else {
+            slot.innerHTML = `<div class="up-no-result">💧 ${msg.note || 'No water provider found'}</div>`;
+            slot.classList.remove('up-loading-slot');
+          }
+        }
+        else if (msg.event === 'internet') {
+          const slot = document.getElementById('upInternetSlot');
+          if (msg.data && msg.data.providers && msg.data.providers.length > 0) {
+            streamData.utilities.internet = msg.data;
+            slot.outerHTML = renderInternetCard(msg.data);
+          } else {
+            slot.innerHTML = `<div class="up-no-result">🌐 ${msg.note || 'No internet data available'}</div>`;
+            slot.classList.remove('up-loading-slot');
+          }
+        }
+        else if (msg.event === 'complete') {
+          document.getElementById('upStatusMsg').remove();
+          eventSource.close();
+          btn.disabled = false;
+          btn.textContent = 'Search';
+        }
+        else if (msg.event === 'error') {
+          results.innerHTML = `<div class="up-error">${msg.message}</div>`;
+          eventSource.close();
+          btn.disabled = false;
+          btn.textContent = 'Search';
+        }
+      };
       
-      if (data.error) {
-        results.innerHTML = `<div class="up-error">${data.error}</div>`;
-        return;
-      }
+      eventSource.onerror = () => {
+        eventSource.close();
+        // If we got some results, keep them; otherwise show error
+        if (!streamData.location) {
+          results.innerHTML = `<div class="up-error">Connection lost. Please try again.</div>`;
+        } else {
+          document.getElementById('upStatusMsg')?.remove();
+        }
+        btn.disabled = false;
+        btn.textContent = 'Search';
+      };
       
-      currentZipCode = data.location?.zip_code || '';
-      renderResults(data, utilities);
     } catch (error) {
       results.innerHTML = `<div class="up-error">Failed to connect to API. Please try again.</div>`;
-    } finally {
       btn.disabled = false;
       btn.textContent = 'Search';
     }

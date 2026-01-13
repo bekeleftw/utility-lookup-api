@@ -2289,6 +2289,195 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
 
 
 # =============================================================================
+# INDIVIDUAL UTILITY LOOKUPS (for streaming API)
+# =============================================================================
+
+def geocode_address(address: str) -> Optional[Dict]:
+    """
+    Geocode an address and return location info.
+    Used by streaming API to get location first, then lookup utilities.
+    """
+    # Try Census geocoder first
+    geocode_result = geocode_census(address)
+    
+    if not geocode_result:
+        # Try Google Maps fallback
+        geocode_result = geocode_google(address)
+    
+    if not geocode_result:
+        return None
+    
+    lat = geocode_result.get("lat")
+    lon = geocode_result.get("lon")
+    city = geocode_result.get("city")
+    county = geocode_result.get("county")
+    state = geocode_result.get("state")
+    zip_code = geocode_result.get("zip")
+    
+    return {
+        "lat": lat,
+        "lon": lon,
+        "city": city,
+        "county": county,
+        "state": state,
+        "zip_code": zip_code,
+        "formatted_address": geocode_result.get("formatted_address")
+    }
+
+
+def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str) -> Optional[Dict]:
+    """Look up electric utility only. Fast - typically < 1 second."""
+    try:
+        # Check municipal first
+        municipal_electric = lookup_municipal_electric(state, city, zip_code)
+        if municipal_electric:
+            return {
+                'NAME': municipal_electric['name'],
+                'TELEPHONE': municipal_electric.get('phone'),
+                'WEBSITE': municipal_electric.get('website'),
+                'STATE': state,
+                'CITY': municipal_electric.get('city', city),
+                '_confidence': municipal_electric['confidence'],
+                '_verification_source': 'municipal_utility_database'
+            }
+        
+        # HIFLD lookup
+        electric = lookup_electric_utility(lon, lat, state=state)
+        if not electric:
+            return None
+        
+        electric_candidates = electric if isinstance(electric, list) else ([electric] if electric else [])
+        
+        # Verify
+        verification = verify_electric_provider(
+            state=state,
+            zip_code=zip_code,
+            city=city,
+            county=county,
+            candidates=electric_candidates
+        )
+        
+        primary = verification.get("primary")
+        if primary:
+            primary["_confidence"] = verification.get("confidence", "medium")
+            primary["_verification_source"] = verification.get("source")
+            
+            # Brand name resolution
+            if primary.get('NAME'):
+                brand, legal = resolve_brand_name_with_fallback(primary['NAME'], state)
+                if legal:
+                    primary['_legal_name'] = legal
+                    primary['NAME'] = brand
+        
+        return primary
+    except Exception as e:
+        print(f"Electric lookup error: {e}")
+        return None
+
+
+def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str) -> Optional[Dict]:
+    """Look up gas utility only. Fast - typically < 1 second."""
+    try:
+        # Check municipal first
+        municipal_gas = lookup_municipal_gas(state, city, zip_code)
+        if municipal_gas:
+            return {
+                'NAME': municipal_gas['name'],
+                'TELEPHONE': municipal_gas.get('phone'),
+                'WEBSITE': municipal_gas.get('website'),
+                'STATE': state,
+                'CITY': municipal_gas.get('city', city),
+                '_confidence': municipal_gas['confidence'],
+                '_verification_source': 'municipal_utility_database'
+            }
+        
+        # HIFLD lookup
+        gas = lookup_gas_utility(lon, lat, state=state)
+        if not gas:
+            # Check if propane area
+            propane_info = is_likely_propane_area(state, zip_code, city)
+            if propane_info.get("propane_likely"):
+                return {
+                    'NAME': 'No piped natural gas',
+                    '_no_service': True,
+                    '_note': get_no_gas_response(state, zip_code)
+                }
+            return None
+        
+        gas_candidates = gas if isinstance(gas, list) else ([gas] if gas else [])
+        
+        # Verify
+        verification = verify_gas_provider(
+            state=state,
+            zip_code=zip_code,
+            city=city,
+            county=county,
+            candidates=gas_candidates
+        )
+        
+        primary = verification.get("primary")
+        if primary:
+            primary["_confidence"] = verification.get("confidence", "medium")
+            primary["_verification_source"] = verification.get("source")
+            
+            # Brand name resolution
+            if primary.get('NAME'):
+                brand, legal = resolve_brand_name_with_fallback(primary['NAME'], state)
+                if legal:
+                    primary['_legal_name'] = legal
+                    primary['NAME'] = brand
+        
+        return primary
+    except Exception as e:
+        print(f"Gas lookup error: {e}")
+        return None
+
+
+def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
+    """Look up water utility only. Fast - typically < 1 second."""
+    try:
+        # Priority 1: Municipal
+        municipal_water = lookup_municipal_water(state, city, zip_code)
+        if municipal_water:
+            return {
+                "name": municipal_water['name'],
+                "phone": municipal_water.get('phone'),
+                "state": state,
+                "city": municipal_water.get('city', city),
+                "_confidence": municipal_water['confidence'],
+                "_source": "municipal_utility"
+            }
+        
+        # Priority 2: Supplemental (city overrides)
+        supplemental = _check_water_supplemental(state, city)
+        if supplemental:
+            return supplemental
+        
+        # Priority 3: Special districts
+        district = lookup_special_district(lat, lon, state, zip_code, 'water')
+        if district:
+            water = format_district_for_response(district)
+            water['_source'] = 'special_district'
+            return water
+        
+        # Priority 4: EPA SDWIS
+        water = lookup_water_utility(city, county, state, full_address=address, lat=lat, lon=lon, zip_code=zip_code)
+        return water
+    except Exception as e:
+        print(f"Water lookup error: {e}")
+        return None
+
+
+def lookup_internet_only(address: str) -> Optional[Dict]:
+    """Look up internet providers. SLOW - typically 10-15 seconds (uses Playwright)."""
+    try:
+        return lookup_internet_providers(address)
+    except Exception as e:
+        print(f"Internet lookup error: {e}")
+        return None
+
+
+# =============================================================================
 # MAIN ENTRY POINT
 # =============================================================================
 

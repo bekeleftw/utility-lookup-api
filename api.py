@@ -4,11 +4,11 @@ Flask API for Utility Lookup
 Run with: python api.py
 """
 
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from utility_lookup import lookup_utilities_by_address, lookup_utility_json
+from utility_lookup import lookup_utilities_by_address, lookup_utility_json, lookup_electric_only, lookup_gas_only, lookup_water_only, lookup_internet_only, geocode_address
 from state_utility_verification import check_problem_area, add_problem_area, load_problem_areas
 from special_districts import lookup_special_district, format_district_for_response, get_available_states, has_special_district_data
 from utility_scrapers import get_available_scrapers, get_scrapers_for_state, verify_with_utility_api_sync
@@ -340,6 +340,112 @@ def rate_limit_status():
         'batch_limit': '10 per day',
         'note': 'Batch endpoint is limited to 10 requests per day (up to 100 addresses each).'
     })
+
+
+@app.route('/api/lookup/stream', methods=['GET', 'POST'])
+@limiter.limit("100 per day")
+def lookup_stream():
+    """
+    Streaming lookup - returns results as Server-Sent Events (SSE).
+    Each utility type is sent as soon as it's found, so users see progress.
+    
+    Events sent:
+    - geocode: Location info (first, fast)
+    - electric: Electric utility (fast)
+    - gas: Gas utility (fast)
+    - water: Water utility (fast)
+    - internet: Internet providers (slow, last)
+    - complete: All done
+    - error: If something fails
+    """
+    if request.method == 'POST':
+        data = request.get_json()
+        address = data.get('address')
+        utilities_param = data.get('utilities', 'electric,gas,water,internet')
+    else:
+        address = request.args.get('address')
+        utilities_param = request.args.get('utilities', 'electric,gas,water,internet')
+    
+    selected_utilities = [u.strip().lower() for u in utilities_param.split(',')]
+    
+    if not address:
+        return jsonify({'error': 'Address is required'}), 400
+    
+    def generate():
+        """Generator that yields SSE events as utilities are found."""
+        try:
+            # Step 1: Geocode (fast)
+            yield f"data: {json.dumps({'event': 'status', 'message': 'Geocoding address...'})}\n\n"
+            
+            location = geocode_address(address)
+            if not location:
+                yield f"data: {json.dumps({'event': 'error', 'message': 'Could not geocode address'})}\n\n"
+                return
+            
+            yield f"data: {json.dumps({'event': 'geocode', 'data': location})}\n\n"
+            
+            lat = location['lat']
+            lon = location['lon']
+            city = location['city']
+            county = location['county']
+            state = location['state']
+            zip_code = location['zip_code']
+            
+            # Step 2: Electric (fast)
+            if 'electric' in selected_utilities:
+                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
+                electric = lookup_electric_only(lat, lon, city, county, state, zip_code)
+                if electric:
+                    yield f"data: {json.dumps({'event': 'electric', 'data': format_utility(electric, 'electric')})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
+            
+            # Step 3: Gas (fast)
+            if 'gas' in selected_utilities:
+                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up gas provider...'})}\n\n"
+                gas = lookup_gas_only(lat, lon, city, county, state, zip_code)
+                if gas:
+                    if gas.get('_no_service'):
+                        yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
+                    else:
+                        yield f"data: {json.dumps({'event': 'gas', 'data': format_utility(gas, 'gas')})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
+            
+            # Step 4: Water (fast)
+            if 'water' in selected_utilities:
+                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up water provider...'})}\n\n"
+                water = lookup_water_only(lat, lon, city, county, state, zip_code, address)
+                if water:
+                    yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water')})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
+            
+            # Step 5: Internet (SLOW - 10-15 seconds)
+            if 'internet' in selected_utilities:
+                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up internet providers (this takes 10-15 seconds)...'})}\n\n"
+                internet = lookup_internet_only(address)
+                if internet:
+                    yield f"data: {json.dumps({'event': 'internet', 'data': format_internet_providers(internet)})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'internet', 'data': None, 'note': 'Could not retrieve internet data from FCC'})}\n\n"
+            
+            # Done!
+            yield f"data: {json.dumps({'event': 'complete', 'message': 'Lookup complete'})}\n\n"
+            
+        except Exception as e:
+            yield f"data: {json.dumps({'event': 'error', 'message': str(e)})}\n\n"
+    
+    return Response(
+        generate(),
+        mimetype='text/event-stream',
+        headers={
+            'Cache-Control': 'no-cache',
+            'Connection': 'keep-alive',
+            'Access-Control-Allow-Origin': '*',
+            'X-Accel-Buffering': 'no'  # Disable nginx buffering
+        }
+    )
 
 
 @app.route('/api/batch', methods=['POST'])

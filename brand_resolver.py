@@ -175,14 +175,28 @@ CORPORATE_MERGERS = {
 }
 
 # Common brand mappings that might not be in the directory yet
-# These serve as fallbacks
+# Maps legal/official names to consumer-facing brand names
+# Format: "legal name (lowercase)": "Consumer Brand"
 COMMON_BRAND_MAPPINGS = {
-    # Wisconsin
+    # Wisconsin - WEC Energy Group subsidiaries
+    # WE Energies = Wisconsin Electric + Wisconsin Gas (merged brand)
     "wisconsin electric power co": "WE Energies",
     "wisconsin electric power company": "WE Energies",
+    "wisconsin electric": "WE Energies",
     "wisconsin gas co": "WE Energies",
     "wisconsin gas llc": "WE Energies",
-    "wisconsin public service": "WPS (WEC Energy)",
+    "wisconsin gas": "WE Energies",
+    "we energies": "WE Energies",
+    # Wisconsin Public Service (separate WEC subsidiary, serves NE Wisconsin)
+    "wisconsin public service": "Wisconsin Public Service (WEC Energy)",
+    "wisconsin public service corp": "Wisconsin Public Service (WEC Energy)",
+    "wps": "Wisconsin Public Service (WEC Energy)",
+    # Other WEC subsidiaries
+    "peoples gas": "Peoples Gas (WEC Energy)",
+    "peoples gas light and coke": "Peoples Gas (WEC Energy)",
+    "north shore gas": "North Shore Gas (WEC Energy)",
+    "michigan gas utilities": "Michigan Gas Utilities (WEC Energy)",
+    "minnesota energy resources": "Minnesota Energy Resources (WEC Energy)",
     
     # California
     "pacific gas and electric": "PG&E",

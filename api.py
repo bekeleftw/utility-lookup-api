@@ -6,6 +6,8 @@ Run with: python api.py
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from flask_limiter import Limiter
+from flask_limiter.util import get_remote_address
 from utility_lookup import lookup_utilities_by_address, lookup_utility_json
 from state_utility_verification import check_problem_area, add_problem_area, load_problem_areas
 from special_districts import lookup_special_district, format_district_for_response, get_available_states, has_special_district_data
@@ -49,7 +51,27 @@ def extract_city_state(address):
 app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests from Webflow
 
+# Rate limiting - 100 lookups per 24 hours per IP
+# Uses in-memory storage by default, can configure Redis for production
+limiter = Limiter(
+    get_remote_address,
+    app=app,
+    default_limits=["100 per day"],
+    storage_uri="memory://",
+    strategy="fixed-window"
+)
+
+# Custom error handler for rate limit exceeded
+@app.errorhandler(429)
+def ratelimit_handler(e):
+    return jsonify({
+        'error': 'Rate limit exceeded',
+        'message': 'You have exceeded the limit of 100 lookups per 24 hours. Please try again tomorrow.',
+        'retry_after': e.description
+    }), 429
+
 @app.route('/api/lookup', methods=['GET', 'POST'])
+@limiter.limit("100 per day")
 def lookup():
     """Look up utilities for an address."""
     if request.method == 'POST':
@@ -301,12 +323,27 @@ def format_internet_providers(internet_data):
 
 
 @app.route('/api/health', methods=['GET'])
+@limiter.exempt
 def health():
     """Health check endpoint."""
     return jsonify({'status': 'ok'})
 
 
+@app.route('/api/rate-limit', methods=['GET'])
+@limiter.exempt
+def rate_limit_status():
+    """Check current rate limit status for the requesting IP."""
+    # This endpoint is exempt from rate limiting
+    return jsonify({
+        'limit': '100 per day',
+        'message': 'Rate limit is 100 lookups per 24 hours per IP address.',
+        'batch_limit': '10 per day',
+        'note': 'Batch endpoint is limited to 10 requests per day (up to 100 addresses each).'
+    })
+
+
 @app.route('/api/batch', methods=['POST'])
+@limiter.limit("10 per day")  # Batch is more expensive, limit to 10 batches/day
 def batch_lookup():
     """
     Batch lookup utilities for multiple addresses from CSV.

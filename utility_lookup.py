@@ -2297,12 +2297,12 @@ def geocode_address(address: str) -> Optional[Dict]:
     Geocode an address and return location info.
     Used by streaming API to get location first, then lookup utilities.
     """
-    # Try Census geocoder first
-    geocode_result = geocode_census(address)
+    # Try Census geocoder first (with geography for city/county/state)
+    geocode_result = geocode_with_census(address, include_geography=True)
     
     if not geocode_result:
         # Try Google Maps fallback
-        geocode_result = geocode_google(address)
+        geocode_result = geocode_with_google(address)
     
     if not geocode_result:
         return None

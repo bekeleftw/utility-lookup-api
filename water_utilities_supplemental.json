@@ -40,6 +40,22 @@
       "_confidence": "high",
       "_source": "supplemental"
     },
+    "TX|KYLE": {
+      "name": "City of Kyle Utilities",
+      "phone": "512-262-3939",
+      "website": "https://www.cityofkyle.com/utilities",
+      "_confidence": "high",
+      "_source": "supplemental",
+      "_note": "City provides water service; MUD boundaries may be outdated"
+    },
+    "TX|KYLE-BUDA": {
+      "name": "City of Kyle Utilities",
+      "phone": "512-262-3939",
+      "website": "https://www.cityofkyle.com/utilities",
+      "_confidence": "high",
+      "_source": "supplemental",
+      "_note": "City provides water service; MUD boundaries may be outdated"
+    },
     "TX|EL PASO": {
       "name": "El Paso Water",
       "phone": "915-594-5500",

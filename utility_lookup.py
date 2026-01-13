@@ -467,6 +467,57 @@ def save_water_cache(cache: Dict) -> None:
 
 
 WATER_SUPPLEMENTAL_FILE = Path(__file__).parent / "water_utilities_supplemental.json"
+
+
+def _check_water_supplemental(state: str, city: str) -> Optional[Dict]:
+    """
+    Check supplemental water file for city-level overrides.
+    This takes priority over MUD/special district data for cities that have
+    taken over water service from MUDs.
+    """
+    if not WATER_SUPPLEMENTAL_FILE.exists() or not city:
+        return None
+    
+    try:
+        with open(WATER_SUPPLEMENTAL_FILE, 'r') as f:
+            supplemental = json.load(f)
+        
+        # Build city variants to check
+        city_upper = city.upper()
+        city_variants = [city_upper]
+        
+        # Handle hyphenated cities (e.g., "Kyle-Buda")
+        if '-' in city_upper:
+            for part in city_upper.split('-'):
+                if part.strip() not in city_variants:
+                    city_variants.append(part.strip())
+        
+        for city_variant in city_variants:
+            city_key = f"{state}|{city_variant}"
+            if city_key in supplemental.get('by_city', {}):
+                entry = supplemental['by_city'][city_key]
+                return {
+                    "name": entry.get('name'),
+                    "id": None,
+                    "state": state,
+                    "phone": entry.get('phone'),
+                    "address": None,
+                    "city": city_variant,
+                    "zip": None,
+                    "population_served": None,
+                    "source_type": None,
+                    "owner_type": "Municipal",
+                    "service_connections": None,
+                    "_confidence": entry.get('_confidence', 'high'),
+                    "_source": "supplemental",
+                    "_note": entry.get('_note', 'City water utility')
+                }
+    except (json.JSONDecodeError, IOError):
+        pass
+    
+    return None
+
+
 WATER_MISSING_CITIES_FILE = Path(__file__).parent / "water_missing_cities.json"
 LOOKUPS_LOG_FILE = Path(__file__).parent / "data" / "lookup_log.json"
 MAX_LOG_ENTRIES = 10000  # Keep last 10k lookups
@@ -1773,7 +1824,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     gas_no_service = get_no_gas_response(state, zip_code)
     
     # Step 4: Water lookup - only if selected
-    # Priority: Municipal utilities > Special districts > SERP > EPA SDWIS
+    # Priority: Municipal utilities > Supplemental (city overrides) > Special districts > SERP > EPA SDWIS
     water_no_service = None
     if 'water' in selected_utilities:
         water = None
@@ -1798,7 +1849,14 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 "_note": f"Municipal utility providing water service"
             }
         
-        # PRIORITY 2: Check special districts (MUDs, CDDs)
+        # PRIORITY 2: Check supplemental file (city-level overrides, takes priority over MUDs)
+        # This handles cases where cities have taken over MUD service areas
+        if not water:
+            supplemental_water = _check_water_supplemental(state, city)
+            if supplemental_water:
+                water = supplemental_water
+        
+        # PRIORITY 3: Check special districts (MUDs, CDDs)
         if not water:
             district = lookup_special_district(lat, lon, state, zip_code, 'water')
             if district:

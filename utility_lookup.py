@@ -2314,6 +2314,20 @@ def geocode_address(address: str) -> Optional[Dict]:
     state = geocode_result.get("state")
     zip_code = geocode_result.get("zip")
     
+    # Extract ZIP from matched_address if not provided directly
+    if not zip_code and geocode_result.get("matched_address"):
+        import re
+        zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\b', geocode_result["matched_address"])
+        if zip_match:
+            zip_code = zip_match.group(1)
+    
+    # Also try extracting from original address if still missing
+    if not zip_code:
+        import re
+        zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\b', address)
+        if zip_match:
+            zip_code = zip_match.group(1)
+    
     return {
         "lat": lat,
         "lon": lon,
@@ -2321,7 +2335,7 @@ def geocode_address(address: str) -> Optional[Dict]:
         "county": county,
         "state": state,
         "zip_code": zip_code,
-        "formatted_address": geocode_result.get("formatted_address")
+        "formatted_address": geocode_result.get("matched_address", geocode_result.get("formatted_address"))
     }
 
 

@@ -2356,7 +2356,7 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
             }
         
         # HIFLD lookup
-        electric = lookup_electric_utility(lon, lat, state=state)
+        electric = lookup_electric_utility(lon, lat)
         if not electric:
             return None
         

@@ -195,6 +195,310 @@ TEST_CASES = [
         },
         "notes": "Small town NC"
     },
+    # Pennsylvania
+    {
+        "address": "1400 John F Kennedy Blvd, Philadelphia, PA 19107",
+        "expected": {
+            "electric": "PECO",
+            "gas": "PECO",
+            "water": None
+        },
+        "notes": "Philadelphia City Hall"
+    },
+    # Ohio
+    {
+        "address": "601 Lakeside Ave, Cleveland, OH 44114",
+        "expected": {
+            "electric": "Cleveland Public Power",
+            "gas": "Dominion Energy",
+            "water": None
+        },
+        "notes": "Cleveland - municipal electric"
+    },
+    {
+        "address": "90 W Broad St, Columbus, OH 43215",
+        "expected": {
+            "electric": "AEP Ohio",
+            "gas": "Columbia Gas",
+            "water": None
+        },
+        "notes": "Columbus OH"
+    },
+    # Michigan
+    {
+        "address": "2 Woodward Ave, Detroit, MI 48226",
+        "expected": {
+            "electric": "DTE Energy",
+            "gas": "DTE Energy",
+            "water": None
+        },
+        "notes": "Detroit - DTE territory"
+    },
+    # Massachusetts
+    {
+        "address": "1 City Hall Square, Boston, MA 02201",
+        "expected": {
+            "electric": "Eversource",
+            "gas": "National Grid",
+            "water": None
+        },
+        "notes": "Boston City Hall"
+    },
+    # Virginia
+    {
+        "address": "900 E Broad St, Richmond, VA 23219",
+        "expected": {
+            "electric": "Dominion Energy",
+            "gas": "Virginia Natural Gas",
+            "water": None
+        },
+        "notes": "Richmond VA"
+    },
+    {
+        "address": "2100 Clarendon Blvd, Arlington, VA 22201",
+        "expected": {
+            "electric": "Dominion Energy",
+            "gas": "Washington Gas",
+            "water": None
+        },
+        "notes": "Arlington VA - DC metro area"
+    },
+    # Maryland
+    {
+        "address": "100 N Holliday St, Baltimore, MD 21202",
+        "expected": {
+            "electric": "BGE",
+            "gas": "BGE",
+            "water": None
+        },
+        "notes": "Baltimore City Hall"
+    },
+    # Tennessee
+    {
+        "address": "1 Public Square, Nashville, TN 37201",
+        "expected": {
+            "electric": "Nashville Electric Service",
+            "gas": "Piedmont Natural Gas",
+            "water": None
+        },
+        "notes": "Nashville - municipal electric"
+    },
+    {
+        "address": "125 N Main St, Memphis, TN 38103",
+        "expected": {
+            "electric": "MLGW",
+            "gas": "MLGW",
+            "water": "MLGW"
+        },
+        "notes": "Memphis - MLGW municipal"
+    },
+    # Minnesota
+    {
+        "address": "350 S 5th St, Minneapolis, MN 55415",
+        "expected": {
+            "electric": "Xcel Energy",
+            "gas": "CenterPoint Energy",
+            "water": None
+        },
+        "notes": "Minneapolis City Hall"
+    },
+    # Missouri
+    {
+        "address": "1200 Market St, St. Louis, MO 63103",
+        "expected": {
+            "electric": "Ameren Missouri",
+            "gas": "Spire",
+            "water": None
+        },
+        "notes": "St. Louis City Hall"
+    },
+    {
+        "address": "414 E 12th St, Kansas City, MO 64106",
+        "expected": {
+            "electric": "Evergy",
+            "gas": "Spire",
+            "water": None
+        },
+        "notes": "Kansas City MO"
+    },
+    # Wisconsin
+    {
+        "address": "200 E Wells St, Milwaukee, WI 53202",
+        "expected": {
+            "electric": "WE Energies",
+            "gas": "WE Energies",
+            "water": None
+        },
+        "notes": "Milwaukee City Hall"
+    },
+    # Indiana
+    {
+        "address": "200 E Washington St, Indianapolis, IN 46204",
+        "expected": {
+            "electric": "AES Indiana",
+            "gas": "Citizens Gas",
+            "water": None
+        },
+        "notes": "Indianapolis"
+    },
+    # Nevada
+    {
+        "address": "495 S Main St, Las Vegas, NV 89101",
+        "expected": {
+            "electric": "NV Energy",
+            "gas": "Southwest Gas",
+            "water": None
+        },
+        "notes": "Las Vegas City Hall"
+    },
+    # Oregon
+    {
+        "address": "1221 SW 4th Ave, Portland, OR 97204",
+        "expected": {
+            "electric": "Portland General Electric",
+            "gas": "NW Natural",
+            "water": None
+        },
+        "notes": "Portland City Hall"
+    },
+    # Utah
+    {
+        "address": "451 S State St, Salt Lake City, UT 84111",
+        "expected": {
+            "electric": "Rocky Mountain Power",
+            "gas": "Dominion Energy",
+            "water": None
+        },
+        "notes": "Salt Lake City"
+    },
+    # Oklahoma
+    {
+        "address": "200 N Walker Ave, Oklahoma City, OK 73102",
+        "expected": {
+            "electric": "OG&E",
+            "gas": "Oklahoma Natural Gas",
+            "water": None
+        },
+        "notes": "Oklahoma City"
+    },
+    # Connecticut
+    {
+        "address": "165 Capitol Ave, Hartford, CT 06106",
+        "expected": {
+            "electric": "Eversource",
+            "gas": "Eversource",
+            "water": None
+        },
+        "notes": "Hartford CT"
+    },
+    # Kentucky
+    {
+        "address": "601 W Jefferson St, Louisville, KY 40202",
+        "expected": {
+            "electric": "LG&E",
+            "gas": "LG&E",
+            "water": None
+        },
+        "notes": "Louisville - LG&E territory"
+    },
+    # Louisiana
+    {
+        "address": "1300 Perdido St, New Orleans, LA 70112",
+        "expected": {
+            "electric": "Entergy New Orleans",
+            "gas": "Entergy New Orleans",
+            "water": None
+        },
+        "notes": "New Orleans City Hall"
+    },
+    # Alabama
+    {
+        "address": "710 20th St N, Birmingham, AL 35203",
+        "expected": {
+            "electric": "Alabama Power",
+            "gas": "Spire",
+            "water": None
+        },
+        "notes": "Birmingham AL"
+    },
+    # South Carolina - additional
+    {
+        "address": "100 Broad St, Charleston, SC 29401",
+        "expected": {
+            "electric": "Dominion Energy",
+            "gas": None,
+            "water": None
+        },
+        "notes": "Charleston SC"
+    },
+    # New Mexico
+    {
+        "address": "1 Civic Plaza NW, Albuquerque, NM 87102",
+        "expected": {
+            "electric": "PNM",
+            "gas": "New Mexico Gas Company",
+            "water": None
+        },
+        "notes": "Albuquerque City Hall"
+    },
+    # Hawaii
+    {
+        "address": "530 S King St, Honolulu, HI 96813",
+        "expected": {
+            "electric": "Hawaiian Electric",
+            "gas": None,  # Hawaii Gas (propane)
+            "water": None
+        },
+        "notes": "Honolulu - Hawaiian Electric"
+    },
+    # Alaska
+    {
+        "address": "632 W 6th Ave, Anchorage, AK 99501",
+        "expected": {
+            "electric": "Chugach Electric",
+            "gas": "ENSTAR Natural Gas",
+            "water": None
+        },
+        "notes": "Anchorage AK"
+    },
+    # Texas - additional rural
+    {
+        "address": "100 E Main St, Fredericksburg, TX 78624",
+        "expected": {
+            "electric": "Pedernales Electric",
+            "gas": None,  # Propane area
+            "water": None
+        },
+        "notes": "Fredericksburg TX - PEC territory"
+    },
+    {
+        "address": "200 E San Antonio St, New Braunfels, TX 78130",
+        "expected": {
+            "electric": "New Braunfels Utilities",
+            "gas": None,
+            "water": "New Braunfels Utilities"
+        },
+        "notes": "New Braunfels - municipal"
+    },
+    # California - additional
+    {
+        "address": "915 I St, Sacramento, CA 95814",
+        "expected": {
+            "electric": "SMUD",
+            "gas": "PG&E",
+            "water": None
+        },
+        "notes": "Sacramento - SMUD municipal electric"
+    },
+    {
+        "address": "202 C St, San Diego, CA 92101",
+        "expected": {
+            "electric": "SDG&E",
+            "gas": "SDG&E",
+            "water": "San Diego"
+        },
+        "notes": "San Diego City Hall"
+    },
 ]
 
 
@@ -244,7 +548,7 @@ def names_match(expected: Optional[str], actual: Optional[str]) -> bool:
     aliases = {
         'LADWP': ['LOS ANGELES DEPARTMENT OF WATER', 'LA DEPT OF WATER', 'LOS ANGELES DWP'],
         'PG&E': ['PACIFIC GAS', 'PACIFIC GAS AND ELECTRIC', 'PG AND E', 'PACIFIC GAS & ELECTRIC', 'PACIFIC'],
-        'PECO': ['PECO ENERGY'],
+        'PECO': ['PECO ENERGY', 'PHILADELPHIA ELECTRIC'],
         'COMED': ['COMMONWEALTH EDISON'],
         'CON EDISON': ['CONSOLIDATED EDISON', 'CON ED'],
         'FPL': ['FLORIDA POWER', 'FLORIDA POWER & LIGHT', 'NEXTERA', 'FLORIDA POWER AND LIGHT', 'FLORIDA'],
@@ -260,6 +564,36 @@ def names_match(expected: Optional[str], actual: Optional[str]) -> bool:
         'ATLANTA GAS LIGHT': ['AGL', 'ATLANTA GAS'],
         'SOCALGAS': ['SOUTHERN CALIFORNIA GAS', 'SO CAL GAS', 'SOCAL GAS'],
         'SOUTHWEST GAS': ['SW GAS'],
+        'DTE': ['DTE ENERGY', 'DETROIT EDISON'],
+        'DOMINION': ['DOMINION ENERGY', 'VIRGINIA POWER', 'DOMINION VIRGINIA'],
+        'BGE': ['BALTIMORE GAS', 'BALTIMORE GAS AND ELECTRIC'],
+        'WE ENERGIES': ['WISCONSIN ELECTRIC', 'WISCONSIN GAS', 'WE'],
+        'AMEREN': ['AMEREN MISSOURI', 'AMEREN ILLINOIS', 'UNION ELECTRIC'],
+        'EVERGY': ['KANSAS CITY POWER', 'KCP&L', 'WESTAR'],
+        'ENTERGY': ['ENTERGY NEW ORLEANS', 'ENTERGY LOUISIANA', 'ENTERGY ARKANSAS'],
+        'AEP': ['AEP OHIO', 'AMERICAN ELECTRIC POWER', 'AEP TEXAS'],
+        'EVERSOURCE': ['NSTAR', 'NORTHEAST UTILITIES', 'CL&P', 'PSNH'],
+        'NATIONAL GRID': ['KEYSPAN', 'NIAGARA MOHAWK'],
+        'NV ENERGY': ['NEVADA POWER', 'SIERRA PACIFIC'],
+        'ROCKY MOUNTAIN': ['ROCKY MOUNTAIN POWER', 'PACIFICORP'],
+        'OG&E': ['OKLAHOMA GAS', 'OKLAHOMA GAS AND ELECTRIC', 'OGE'],
+        'LG&E': ['LOUISVILLE GAS', 'LOUISVILLE GAS AND ELECTRIC', 'LGE', 'LG&E AND KU'],
+        'ALABAMA POWER': ['ALABAMA', 'SOUTHERN COMPANY'],
+        'GEORGIA POWER': ['GEORGIA', 'SOUTHERN COMPANY'],
+        'MLGW': ['MEMPHIS LIGHT', 'MEMPHIS LIGHT GAS AND WATER'],
+        'NES': ['NASHVILLE ELECTRIC', 'NASHVILLE ELECTRIC SERVICE'],
+        'SMUD': ['SACRAMENTO MUNICIPAL', 'SACRAMENTO MUNICIPAL UTILITY'],
+        'SDG&E': ['SAN DIEGO GAS', 'SAN DIEGO GAS AND ELECTRIC', 'SDGE', 'SEMPRA'],
+        'PNM': ['PUBLIC SERVICE OF NEW MEXICO', 'PUBLIC SERVICE NEW MEXICO'],
+        'HAWAIIAN ELECTRIC': ['HECO', 'HAWAIIAN'],
+        'CHUGACH': ['CHUGACH ELECTRIC'],
+        'PEDERNALES': ['PEDERNALES ELECTRIC', 'PEC'],
+        'NEW BRAUNFELS': ['NEW BRAUNFELS UTILITIES', 'NBU'],
+        'SPIRE': ['LACLEDE GAS', 'ALAGASCO'],
+        'PORTLAND GENERAL': ['PORTLAND GENERAL ELECTRIC', 'PGE OREGON'],
+        'NW NATURAL': ['NORTHWEST NATURAL'],
+        'AES INDIANA': ['INDIANAPOLIS POWER', 'IPL', 'AES'],
+        'CITIZENS GAS': ['CITIZENS'],
     }
     
     for canonical, variations in aliases.items():

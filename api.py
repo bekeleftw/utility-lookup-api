@@ -14,6 +14,7 @@ from special_districts import lookup_special_district, format_district_for_respo
 from utility_scrapers import get_available_scrapers, get_scrapers_for_state, verify_with_utility_api_sync
 from cross_validation import cross_validate, SourceResult, format_for_response as format_cv_response, get_disagreements, providers_match
 from municipal_utilities import get_all_municipal_utilities, lookup_municipal_electric, get_municipal_stats
+from address_cache import cache_confirmation, get_cached_utilities, get_cache_stats
 from datetime import datetime
 import hashlib
 import json
@@ -903,6 +904,49 @@ def manually_confirm_feedback(feedback_id):
         "feedback_id": feedback_id,
         "message": "Feedback confirmed and override applied."
     })
+
+
+@app.route('/api/confirm', methods=['POST'])
+def confirm_utility():
+    """
+    User confirms a utility result is correct (clicks "Yes").
+    This caches the confirmation for future lookups.
+    
+    Request body:
+    {
+        "address": "1725 Toomey Rd, Austin, TX 78704",
+        "utility_type": "electric",
+        "utility_name": "Austin Energy",
+        "phone": "512-494-9400",
+        "website": "https://austinenergy.com"
+    }
+    """
+    data = request.get_json()
+    
+    required = ['address', 'utility_type', 'utility_name']
+    for field in required:
+        if not data.get(field):
+            return jsonify({"error": f"Missing required field: {field}"}), 400
+    
+    # Cache the confirmation
+    cache_confirmation(
+        address=data['address'],
+        utility_type=data['utility_type'],
+        utility_name=data['utility_name'],
+        phone=data.get('phone'),
+        website=data.get('website')
+    )
+    
+    return jsonify({
+        "status": "confirmed",
+        "message": "Thank you! Your confirmation helps improve accuracy."
+    })
+
+
+@app.route('/api/cache/stats', methods=['GET'])
+def cache_stats():
+    """Get address cache statistics."""
+    return jsonify(get_cache_stats())
 
 
 @app.route('/api/feedback/<feedback_id>/reject', methods=['POST'])

@@ -141,13 +141,42 @@ def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None) -> 
 
 
 def lookup_municipal_water(state: str, city: str = None, zip_code: str = None) -> Optional[Dict]:
-    """Check if city has municipal water utility (LADWP, MLGW, Austin Water, etc.)."""
+    """Check if city has municipal water utility (SAWS, Denver Water, SFPUC, etc.)."""
     data = load_municipal_data()
+    state_upper = state.upper() if state else ''
     
-    # Check electric utilities that also provide water
-    state_data = data.get('electric', {}).get(state.upper() if state else '', {})
+    # FIRST: Check dedicated water section (standalone water utilities)
+    water_data = data.get('water', {}).get(state_upper, {})
     
-    for city_name, utility in state_data.items():
+    for city_name, utility in water_data.items():
+        # Check ZIP first (most accurate)
+        if zip_code and zip_code in utility.get('zip_codes', []):
+            return {
+                'name': utility['name'],
+                'phone': utility.get('phone'),
+                'website': utility.get('website'),
+                'city': city_name,
+                'source': 'municipal_water_data',
+                'confidence': 'high',
+                'note': utility.get('note', f"Municipal water utility serving {city_name}")
+            }
+        
+        # Check city name
+        if city and city_name.upper() in city.upper():
+            return {
+                'name': utility['name'],
+                'phone': utility.get('phone'),
+                'website': utility.get('website'),
+                'city': city_name,
+                'source': 'municipal_water_data',
+                'confidence': 'medium',
+                'note': utility.get('note', f"Municipal water utility serving {city_name}")
+            }
+    
+    # SECOND: Check electric utilities that also provide water (Austin Energy/Austin Water, OUC, etc.)
+    electric_data = data.get('electric', {}).get(state_upper, {})
+    
+    for city_name, utility in electric_data.items():
         services = utility.get('services', ['electric'])
         if 'water' not in services:
             continue

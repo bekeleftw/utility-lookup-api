@@ -2386,13 +2386,33 @@ def geocode_address(address: str) -> Optional[Dict]:
     }
 
 
+def _add_deregulated_info(result: Dict, state: str, zip_code: str) -> Dict:
+    """Add deregulated market info to electric result if applicable."""
+    if not result:
+        return result
+    from deregulated_markets import is_deregulated_state, adjust_electric_result_for_deregulation
+    if is_deregulated_state(state):
+        # Check if this is a municipal utility (exempt from deregulation)
+        is_municipal = (
+            result.get('_verification_source') == 'municipal_utility_database' or
+            'municipal' in result.get('NAME', '').lower() or
+            'city of' in result.get('NAME', '').lower()
+        )
+        if is_municipal:
+            result['_deregulated_market'] = False
+            result['_note'] = 'Municipal utility - exempt from retail choice'
+        else:
+            result = adjust_electric_result_for_deregulation(result, state, zip_code)
+    return result
+
+
 def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str) -> Optional[Dict]:
     """Look up electric utility only. Fast - typically < 1 second."""
     try:
-        # Check municipal first
+        # Check municipal first (exempt from deregulation)
         municipal_electric = lookup_municipal_electric(state, city, zip_code)
         if municipal_electric:
-            return {
+            result = {
                 'NAME': municipal_electric['name'],
                 'TELEPHONE': municipal_electric.get('phone'),
                 'WEBSITE': municipal_electric.get('website'),
@@ -2401,12 +2421,13 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 '_confidence': municipal_electric['confidence'],
                 '_verification_source': 'municipal_utility_database'
             }
+            return _add_deregulated_info(result, state, zip_code)
         
         # Check electric cooperatives by ZIP (rural areas)
         from rural_utilities import lookup_coop_by_zip, lookup_coop_by_county, lookup_county_default_electric
         coop = lookup_coop_by_zip(zip_code, state)
         if coop:
-            return {
+            result = {
                 'NAME': coop['name'],
                 'TELEPHONE': coop.get('phone'),
                 'WEBSITE': coop.get('website'),
@@ -2415,13 +2436,23 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 '_confidence': coop['confidence'],
                 '_verification_source': coop['source']
             }
+            # Check if this is actually a TDU in a deregulated market (not a true co-op)
+            is_tdu = 'deregulated' in coop.get('note', '').lower() or coop.get('is_tdu', False)
+            if is_tdu:
+                # This is a TDU, apply deregulated market info
+                return _add_deregulated_info(result, state, zip_code)
+            else:
+                # True co-ops are exempt from deregulation
+                result['_deregulated_market'] = False
+                result['_note'] = 'Electric cooperative - exempt from retail choice'
+                return result
         
         # Check EIA ZIP lookup (authoritative source)
         from state_utility_verification import get_eia_utility_by_zip
         eia_result = get_eia_utility_by_zip(zip_code)
         if eia_result:
             eia_primary = eia_result[0]
-            return {
+            result = {
                 'NAME': eia_primary['name'],
                 'TELEPHONE': None,
                 'WEBSITE': None,
@@ -2431,28 +2462,32 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 '_verification_source': 'eia_zip_lookup',
                 '_note': f"Based on ZIP {zip_code} - {eia_primary.get('ownership', 'Unknown')} utility"
             }
+            return _add_deregulated_info(result, state, zip_code)
         
         # HIFLD lookup (requires lat/lon)
         electric = None
         if lat is not None and lon is not None:
             electric = lookup_electric_utility(lon, lat)
         if not electric:
-            # Try co-op by county as fallback
+            # Try co-op by county as fallback (exempt from deregulation)
             coop = lookup_coop_by_county(county, state)
             if coop:
-                return {
+                result = {
                     'NAME': coop['name'],
                     'TELEPHONE': coop.get('phone'),
                     'WEBSITE': coop.get('website'),
                     'STATE': state,
                     'CITY': city,
                     '_confidence': coop['confidence'],
-                    '_verification_source': coop['source']
+                    '_verification_source': coop['source'],
+                    '_deregulated_market': False,
+                    '_note': 'Electric cooperative - exempt from retail choice'
                 }
+                return result
             # Try county default as last resort
             county_default = lookup_county_default_electric(county, state)
             if county_default:
-                return {
+                result = {
                     'NAME': county_default['name'],
                     'TELEPHONE': county_default.get('phone'),
                     'WEBSITE': county_default.get('website'),
@@ -2461,6 +2496,7 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                     '_confidence': county_default['confidence'],
                     '_verification_source': county_default['source']
                 }
+                return _add_deregulated_info(result, state, zip_code)
             return None
         
         electric_candidates = electric if isinstance(electric, list) else ([electric] if electric else [])
@@ -2485,6 +2521,11 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 if legal:
                     primary['_legal_name'] = legal
                     primary['NAME'] = brand
+            
+            # Add deregulated market info if applicable
+            from deregulated_markets import is_deregulated_state, adjust_electric_result_for_deregulation
+            if is_deregulated_state(state):
+                primary = adjust_electric_result_for_deregulation(primary, state, zip_code)
         
         return primary
     except Exception as e:

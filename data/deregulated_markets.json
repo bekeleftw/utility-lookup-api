@@ -1,0 +1,357 @@
+{
+  "description": "Deregulated electricity markets - delivery utility vs retail choice",
+  "states": {
+    "TX": {
+      "name": "Texas",
+      "type": "retail_choice",
+      "notes": "Most of Texas is deregulated (ERCOT territory). Customers choose retail provider, delivery utility is fixed.",
+      "comparison_site": "https://www.powertochoose.org",
+      "comparison_site_name": "Power to Choose",
+      "excluded_areas": [
+        "Austin (Austin Energy - municipal)",
+        "San Antonio (CPS Energy - municipal)",
+        "Lubbock (Lubbock Power & Light - municipal)",
+        "Brownsville (Brownsville PUB - municipal)",
+        "Co-op territories"
+      ],
+      "delivery_utilities": {
+        "CenterPoint Energy": {
+          "territory": "Houston metro",
+          "phone": "713-207-2222",
+          "website": "https://www.centerpointenergy.com"
+        },
+        "Oncor": {
+          "territory": "Dallas-Fort Worth, Waco, Midland-Odessa",
+          "phone": "888-313-4747",
+          "website": "https://www.oncor.com"
+        },
+        "AEP Texas": {
+          "territory": "South and West Texas",
+          "phone": "866-223-8508",
+          "website": "https://www.aeptexas.com"
+        },
+        "Texas-New Mexico Power": {
+          "territory": "Parts of North and Central Texas",
+          "phone": "888-866-7456",
+          "website": "https://www.tnmp.com"
+        }
+      }
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "type": "retail_choice",
+      "notes": "Full retail choice statewide since 2010. Customers can choose supplier or stay with default utility.",
+      "comparison_site": "https://www.papowerswitch.com",
+      "comparison_site_name": "PA Power Switch",
+      "delivery_utilities": {
+        "PECO": {
+          "territory": "Philadelphia and surrounding counties",
+          "phone": "800-494-4000",
+          "website": "https://www.peco.com"
+        },
+        "PPL Electric": {
+          "territory": "Central and Eastern PA",
+          "phone": "800-342-5775",
+          "website": "https://www.pplelectric.com"
+        },
+        "Duquesne Light": {
+          "territory": "Pittsburgh area",
+          "phone": "412-393-7100",
+          "website": "https://www.duquesnelight.com"
+        },
+        "West Penn Power (FirstEnergy)": {
+          "territory": "Western PA",
+          "phone": "800-686-0021",
+          "website": "https://www.firstenergycorp.com"
+        },
+        "Met-Ed (FirstEnergy)": {
+          "territory": "Eastern PA",
+          "phone": "800-545-7741",
+          "website": "https://www.firstenergycorp.com"
+        },
+        "Penelec (FirstEnergy)": {
+          "territory": "Northern PA",
+          "phone": "800-545-7741",
+          "website": "https://www.firstenergycorp.com"
+        }
+      }
+    },
+    "OH": {
+      "name": "Ohio",
+      "type": "retail_choice",
+      "notes": "Full retail choice since 2001. Customers can shop for generation supplier.",
+      "comparison_site": "https://energychoice.ohio.gov",
+      "comparison_site_name": "Energy Choice Ohio",
+      "delivery_utilities": {
+        "AEP Ohio": {
+          "territory": "Central and Southern Ohio",
+          "phone": "800-672-2231",
+          "website": "https://www.aepohio.com"
+        },
+        "Duke Energy Ohio": {
+          "territory": "Cincinnati area",
+          "phone": "800-544-6900",
+          "website": "https://www.duke-energy.com"
+        },
+        "FirstEnergy (Ohio Edison, CEI, Toledo Edison)": {
+          "territory": "Northern Ohio",
+          "phone": "800-633-4766",
+          "website": "https://www.firstenergycorp.com"
+        },
+        "Dayton Power & Light (AES Ohio)": {
+          "territory": "Dayton area",
+          "phone": "800-433-8500",
+          "website": "https://www.aes-ohio.com"
+        }
+      }
+    },
+    "IL": {
+      "name": "Illinois",
+      "type": "retail_choice",
+      "notes": "Retail choice available since 2002. Customers can choose alternative suppliers.",
+      "comparison_site": "https://www.pluginillinois.org",
+      "comparison_site_name": "Plug In Illinois",
+      "delivery_utilities": {
+        "ComEd": {
+          "territory": "Northern Illinois including Chicago",
+          "phone": "800-334-7661",
+          "website": "https://www.comed.com"
+        },
+        "Ameren Illinois": {
+          "territory": "Central and Southern Illinois",
+          "phone": "800-755-5000",
+          "website": "https://www.ameren.com"
+        }
+      }
+    },
+    "NY": {
+      "name": "New York",
+      "type": "retail_choice",
+      "notes": "Retail choice available. ESCO (Energy Service Company) options.",
+      "comparison_site": "https://www.askpsc.com",
+      "comparison_site_name": "NY PSC Power to Choose",
+      "delivery_utilities": {
+        "Con Edison": {
+          "territory": "NYC and Westchester",
+          "phone": "800-752-6633",
+          "website": "https://www.coned.com"
+        },
+        "National Grid": {
+          "territory": "Upstate NY",
+          "phone": "800-642-4272",
+          "website": "https://www.nationalgridus.com"
+        },
+        "NYSEG": {
+          "territory": "Central NY",
+          "phone": "800-572-1111",
+          "website": "https://www.nyseg.com"
+        },
+        "RG&E": {
+          "territory": "Rochester area",
+          "phone": "800-743-2110",
+          "website": "https://www.rge.com"
+        }
+      }
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "type": "retail_choice",
+      "notes": "Full retail choice. Third-party supplier options available.",
+      "comparison_site": "https://www.nj.gov/bpu/residential/shopping.html",
+      "comparison_site_name": "NJ BPU Energy Shopping",
+      "delivery_utilities": {
+        "PSE&G": {
+          "territory": "Northern and Central NJ",
+          "phone": "800-436-7734",
+          "website": "https://www.pseg.com"
+        },
+        "JCP&L (FirstEnergy)": {
+          "territory": "Central NJ",
+          "phone": "800-662-3115",
+          "website": "https://www.firstenergycorp.com"
+        },
+        "Atlantic City Electric": {
+          "territory": "Southern NJ",
+          "phone": "800-642-3780",
+          "website": "https://www.atlanticcityelectric.com"
+        }
+      }
+    },
+    "MD": {
+      "name": "Maryland",
+      "type": "retail_choice",
+      "notes": "Retail choice available since 2000.",
+      "comparison_site": "https://www.mdelectricchoice.com",
+      "comparison_site_name": "MD Electric Choice",
+      "delivery_utilities": {
+        "BGE": {
+          "territory": "Baltimore area",
+          "phone": "800-685-0123",
+          "website": "https://www.bge.com"
+        },
+        "Pepco": {
+          "territory": "DC suburbs",
+          "phone": "202-833-7500",
+          "website": "https://www.pepco.com"
+        },
+        "Delmarva Power": {
+          "territory": "Eastern Shore",
+          "phone": "800-375-7117",
+          "website": "https://www.delmarva.com"
+        }
+      }
+    },
+    "CT": {
+      "name": "Connecticut",
+      "type": "retail_choice",
+      "notes": "Retail choice available. Standard offer or supplier choice.",
+      "comparison_site": "https://energizect.com",
+      "comparison_site_name": "Energize CT",
+      "delivery_utilities": {
+        "Eversource": {
+          "territory": "Most of CT",
+          "phone": "800-286-2000",
+          "website": "https://www.eversource.com"
+        },
+        "United Illuminating": {
+          "territory": "New Haven and Bridgeport areas",
+          "phone": "800-722-5584",
+          "website": "https://www.uinet.com"
+        }
+      }
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "type": "retail_choice",
+      "notes": "Retail choice available since 1998.",
+      "comparison_site": "https://www.mass.gov/competitive-electric-supply",
+      "comparison_site_name": "Mass.gov Electric Choice",
+      "delivery_utilities": {
+        "Eversource": {
+          "territory": "Eastern and Western MA",
+          "phone": "800-592-2000",
+          "website": "https://www.eversource.com"
+        },
+        "National Grid": {
+          "territory": "Central MA and Boston area",
+          "phone": "800-322-3223",
+          "website": "https://www.nationalgridus.com"
+        },
+        "Unitil": {
+          "territory": "Parts of North Shore",
+          "phone": "888-301-7700",
+          "website": "https://www.unitil.com"
+        }
+      }
+    },
+    "ME": {
+      "name": "Maine",
+      "type": "retail_choice",
+      "notes": "Retail choice available. Standard offer or competitive supplier.",
+      "comparison_site": "https://www.maine.gov/mpuc/electricity/choosing_supplier.shtml",
+      "comparison_site_name": "Maine PUC",
+      "delivery_utilities": {
+        "Central Maine Power": {
+          "territory": "Southern and Central Maine",
+          "phone": "800-750-4000",
+          "website": "https://www.cmpco.com"
+        },
+        "Versant Power": {
+          "territory": "Northern and Eastern Maine",
+          "phone": "207-973-2000",
+          "website": "https://www.versantpower.com"
+        }
+      }
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "type": "retail_choice",
+      "notes": "Retail choice available.",
+      "comparison_site": "https://www.puc.nh.gov/consumer/energysuppliers.htm",
+      "comparison_site_name": "NH PUC",
+      "delivery_utilities": {
+        "Eversource": {
+          "territory": "Most of NH",
+          "phone": "800-662-7764",
+          "website": "https://www.eversource.com"
+        },
+        "Unitil": {
+          "territory": "Capital area",
+          "phone": "888-301-7700",
+          "website": "https://www.unitil.com"
+        },
+        "Liberty Utilities": {
+          "territory": "Parts of NH",
+          "phone": "800-375-7413",
+          "website": "https://www.libertyutilities.com"
+        }
+      }
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "type": "retail_choice",
+      "notes": "Retail choice available.",
+      "comparison_site": "http://www.ripuc.ri.gov/utilityinfo/electric.html",
+      "comparison_site_name": "RI PUC",
+      "delivery_utilities": {
+        "Rhode Island Energy": {
+          "territory": "Statewide",
+          "phone": "855-743-1102",
+          "website": "https://www.rienergy.com"
+        }
+      }
+    },
+    "DC": {
+      "name": "District of Columbia",
+      "type": "retail_choice",
+      "notes": "Retail choice available.",
+      "comparison_site": "https://dcpsc.org/Consumers/Electric/Electric-Choice.aspx",
+      "comparison_site_name": "DC PSC",
+      "delivery_utilities": {
+        "Pepco": {
+          "territory": "District of Columbia",
+          "phone": "202-833-7500",
+          "website": "https://www.pepco.com"
+        }
+      }
+    },
+    "DE": {
+      "name": "Delaware",
+      "type": "retail_choice",
+      "notes": "Retail choice available for some customers.",
+      "comparison_site": "https://depsc.delaware.gov",
+      "comparison_site_name": "DE PSC",
+      "delivery_utilities": {
+        "Delmarva Power": {
+          "territory": "Northern Delaware",
+          "phone": "800-375-7117",
+          "website": "https://www.delmarva.com"
+        },
+        "Delaware Electric Cooperative": {
+          "territory": "Southern Delaware",
+          "phone": "302-349-4571",
+          "website": "https://www.delaware.coop"
+        }
+      }
+    },
+    "MI": {
+      "name": "Michigan",
+      "type": "limited_choice",
+      "notes": "Limited retail choice (10% cap on alternative suppliers).",
+      "comparison_site": "https://www.michigan.gov/mpsc/consumer/electricity",
+      "comparison_site_name": "MI PSC",
+      "delivery_utilities": {
+        "DTE Energy": {
+          "territory": "Southeast Michigan",
+          "phone": "800-477-4747",
+          "website": "https://www.dteenergy.com"
+        },
+        "Consumers Energy": {
+          "territory": "Lower Peninsula",
+          "phone": "800-477-5050",
+          "website": "https://www.consumersenergy.com"
+        }
+      }
+    }
+  }
+}

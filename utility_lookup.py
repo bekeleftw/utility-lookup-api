@@ -2355,9 +2355,47 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 '_verification_source': 'municipal_utility_database'
             }
         
+        # Check electric cooperatives by ZIP (rural areas)
+        from rural_utilities import lookup_coop_by_zip, lookup_coop_by_county, lookup_county_default_electric
+        coop = lookup_coop_by_zip(zip_code, state)
+        if coop:
+            return {
+                'NAME': coop['name'],
+                'TELEPHONE': coop.get('phone'),
+                'WEBSITE': coop.get('website'),
+                'STATE': state,
+                'CITY': city,
+                '_confidence': coop['confidence'],
+                '_verification_source': coop['source']
+            }
+        
         # HIFLD lookup
         electric = lookup_electric_utility(lon, lat)
         if not electric:
+            # Try co-op by county as fallback
+            coop = lookup_coop_by_county(county, state)
+            if coop:
+                return {
+                    'NAME': coop['name'],
+                    'TELEPHONE': coop.get('phone'),
+                    'WEBSITE': coop.get('website'),
+                    'STATE': state,
+                    'CITY': city,
+                    '_confidence': coop['confidence'],
+                    '_verification_source': coop['source']
+                }
+            # Try county default as last resort
+            county_default = lookup_county_default_electric(county, state)
+            if county_default:
+                return {
+                    'NAME': county_default['name'],
+                    'TELEPHONE': county_default.get('phone'),
+                    'WEBSITE': county_default.get('website'),
+                    'STATE': state,
+                    'CITY': city,
+                    '_confidence': county_default['confidence'],
+                    '_verification_source': county_default['source']
+                }
             return None
         
         electric_candidates = electric if isinstance(electric, list) else ([electric] if electric else [])
@@ -2408,6 +2446,19 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
         # HIFLD lookup
         gas = lookup_gas_utility(lon, lat, state=state)
         if not gas:
+            # Try county default for gas
+            from rural_utilities import lookup_county_default_gas
+            county_default = lookup_county_default_gas(county, state)
+            if county_default:
+                return {
+                    'NAME': county_default['name'],
+                    'TELEPHONE': county_default.get('phone'),
+                    'WEBSITE': county_default.get('website'),
+                    'STATE': state,
+                    'CITY': city,
+                    '_confidence': county_default['confidence'],
+                    '_verification_source': county_default['source']
+                }
             # Check if propane area
             propane_info = is_likely_propane_area(state, zip_code, city)
             if propane_info.get("propane_likely"):

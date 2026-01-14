@@ -2454,10 +2454,11 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
         municipal_water = lookup_municipal_water(state, city, zip_code)
         if municipal_water:
             return {
-                "name": municipal_water['name'],
-                "phone": municipal_water.get('phone'),
-                "state": state,
-                "city": municipal_water.get('city', city),
+                "NAME": municipal_water['name'],
+                "TELEPHONE": municipal_water.get('phone'),
+                "WEBSITE": municipal_water.get('website'),
+                "STATE": state,
+                "CITY": municipal_water.get('city', city),
                 "_confidence": municipal_water['confidence'],
                 "_source": "municipal_utility"
             }

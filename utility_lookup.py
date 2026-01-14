@@ -2292,10 +2292,52 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
 # INDIVIDUAL UTILITY LOOKUPS (for streaming API)
 # =============================================================================
 
+def _zip_only_fallback(address: str) -> Optional[Dict]:
+    """
+    Fallback when all geocoders fail - extract ZIP code and return partial result.
+    This allows utility lookup by ZIP even for unusual/new addresses.
+    """
+    import re
+    
+    # Extract ZIP code
+    zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\b', address)
+    if not zip_match:
+        return None
+    
+    zip_code = zip_match.group(1)
+    
+    # Try to extract state from address
+    state = None
+    state_match = re.search(r',\s*([A-Z]{2})\s*\d{5}', address.upper())
+    if state_match:
+        state = state_match.group(1)
+    
+    # Try to extract city
+    city = None
+    city_match = re.search(r',\s*([A-Za-z\s]+),\s*[A-Z]{2}\s*\d{5}', address)
+    if city_match:
+        city = city_match.group(1).strip()
+    
+    print(f"Geocoding failed - using ZIP-only fallback for {zip_code}")
+    
+    return {
+        "lat": None,
+        "lon": None,
+        "city": city,
+        "county": None,
+        "state": state,
+        "zip_code": zip_code,
+        "formatted_address": address,
+        "_zip_only_fallback": True,
+        "_note": "Address could not be geocoded - results based on ZIP code only"
+    }
+
+
 def geocode_address(address: str) -> Optional[Dict]:
     """
     Geocode an address and return location info.
     Used by streaming API to get location first, then lookup utilities.
+    Falls back to ZIP-only lookup if all geocoders fail.
     """
     # Try Census geocoder first (with geography for city/county/state)
     geocode_result = geocode_with_census(address, include_geography=True)
@@ -2305,7 +2347,12 @@ def geocode_address(address: str) -> Optional[Dict]:
         geocode_result = geocode_with_google(address)
     
     if not geocode_result:
-        return None
+        # Try Nominatim as third fallback
+        geocode_result = geocode_with_nominatim(address)
+    
+    if not geocode_result:
+        # ZIP-only fallback - extract ZIP and return partial result
+        return _zip_only_fallback(address)
     
     lat = geocode_result.get("lat")
     lon = geocode_result.get("lon")
@@ -2369,8 +2416,26 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 '_verification_source': coop['source']
             }
         
-        # HIFLD lookup
-        electric = lookup_electric_utility(lon, lat)
+        # Check EIA ZIP lookup (authoritative source)
+        from state_utility_verification import get_eia_utility_by_zip
+        eia_result = get_eia_utility_by_zip(zip_code)
+        if eia_result:
+            eia_primary = eia_result[0]
+            return {
+                'NAME': eia_primary['name'],
+                'TELEPHONE': None,
+                'WEBSITE': None,
+                'STATE': state,
+                'CITY': city,
+                '_confidence': 'medium',
+                '_verification_source': 'eia_zip_lookup',
+                '_note': f"Based on ZIP {zip_code} - {eia_primary.get('ownership', 'Unknown')} utility"
+            }
+        
+        # HIFLD lookup (requires lat/lon)
+        electric = None
+        if lat is not None and lon is not None:
+            electric = lookup_electric_utility(lon, lat)
         if not electric:
             # Try co-op by county as fallback
             coop = lookup_coop_by_county(county, state)
@@ -2443,8 +2508,10 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
                 '_verification_source': 'municipal_utility_database'
             }
         
-        # HIFLD lookup
-        gas = lookup_gas_utility(lon, lat, state=state)
+        # HIFLD lookup (requires lat/lon)
+        gas = None
+        if lat is not None and lon is not None:
+            gas = lookup_gas_utility(lon, lat, state=state)
         if not gas:
             # Try county default for gas
             from rural_utilities import lookup_county_default_gas

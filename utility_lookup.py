@@ -2794,7 +2794,21 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
         if lat is not None and lon is not None:
             gas = lookup_gas_utility(lon, lat, state=state)
         if not gas:
-            # Try county default for gas
+            # FIRST: Try state-specific ZIP prefix mappings (most accurate)
+            from state_utility_verification import get_state_gas_ldc
+            state_gas_result = get_state_gas_ldc(state, zip_code, city)
+            if state_gas_result and state_gas_result.get("primary"):
+                return {
+                    'NAME': state_gas_result["primary"]["name"],
+                    'TELEPHONE': state_gas_result["primary"].get("phone"),
+                    'WEBSITE': state_gas_result["primary"].get("website"),
+                    'STATE': state,
+                    'CITY': city,
+                    '_confidence': state_gas_result.get("confidence", "high"),
+                    '_verification_source': state_gas_result["source"]
+                }
+            
+            # SECOND: Try county default for gas
             from rural_utilities import lookup_county_default_gas
             county_default = lookup_county_default_gas(county, state)
             if county_default:

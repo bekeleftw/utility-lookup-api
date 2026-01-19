@@ -938,26 +938,39 @@ STATE_GAS_LDCS = {
 # States with limited gas infrastructure
 LIMITED_GAS_STATES = ["FL", "HI", "VT", "ME"]
 
-# States with JSON gas mapping files
-GAS_MAPPING_STATES = ["CA", "IL", "OH", "GA", "AZ"]
+# States with JSON gas mapping files - ALL 50 states + DC
+GAS_MAPPING_STATES = [
+    "AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DC", "DE", "FL",
+    "GA", "HI", "IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA",
+    "MD", "ME", "MI", "MN", "MO", "MS", "MT", "NC", "ND", "NE",
+    "NH", "NJ", "NM", "NV", "NY", "OH", "OK", "OR", "PA", "RI",
+    "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", "WI", "WV", "WY"
+]
 _gas_mappings_cache = {}
 
 
 def load_gas_mapping(state: str) -> Dict:
     """Load gas mapping JSON file for a state."""
+    state = state.upper() if state else ""
     if state in _gas_mappings_cache:
         return _gas_mappings_cache[state]
     
-    state_lower = state.lower()
+    # Map state codes to filenames
+    # Legacy files use full names, new files use abbreviations
     state_names = {
-        'CA': 'california',
-        'IL': 'illinois', 
-        'OH': 'ohio',
-        'GA': 'georgia',
-        'AZ': 'arizona'
+        'AK': 'ak', 'AL': 'al', 'AR': 'ar', 'AZ': 'arizona', 'CA': 'california',
+        'CO': 'co', 'CT': 'ct', 'DC': 'dc', 'DE': 'de', 'FL': 'fl',
+        'GA': 'georgia', 'HI': 'hi', 'IA': 'ia', 'ID': 'id', 'IL': 'illinois',
+        'IN': 'in', 'KS': 'ks', 'KY': 'ky', 'LA': 'la', 'MA': 'ma',
+        'MD': 'md', 'ME': 'me', 'MI': 'mi', 'MN': 'mn', 'MO': 'mo',
+        'MS': 'ms', 'MT': 'mt', 'NC': 'nc', 'ND': 'nd', 'NE': 'ne',
+        'NH': 'nh', 'NJ': 'nj', 'NM': 'nm', 'NV': 'nv', 'NY': 'ny',
+        'OH': 'ohio', 'OK': 'ok', 'OR': 'or', 'PA': 'pa', 'RI': 'ri',
+        'SC': 'sc', 'SD': 'sd', 'TN': 'tn', 'TX': 'tx', 'UT': 'ut',
+        'VA': 'va', 'VT': 'vt', 'WA': 'wa', 'WI': 'wi', 'WV': 'wv', 'WY': 'wy'
     }
     
-    filename = state_names.get(state.upper())
+    filename = state_names.get(state)
     if not filename:
         return {}
     
@@ -985,7 +998,7 @@ def get_state_gas_ldc(state: str, zip_code: str, city: str = None) -> Dict:
     
     utilities = mapping.get('utilities', {})
     
-    # Check 5-digit ZIP overrides first
+    # Check 5-digit ZIP overrides first (highest confidence)
     if zip_code in mapping.get('zip_overrides', {}):
         utility_key = mapping['zip_overrides'][zip_code]
         utility = utilities.get(utility_key, {})
@@ -1002,7 +1015,42 @@ def get_state_gas_ldc(state: str, zip_code: str, city: str = None) -> Dict:
                 "alternatives": []
             }
     
-    # Check 3-digit prefix mapping
+    # Check ambiguous ZIPs (boundary areas with multiple providers)
+    if zip_code in mapping.get('ambiguous_zips', {}):
+        ambiguous = mapping['ambiguous_zips'][zip_code]
+        providers = ambiguous.get('providers', [])
+        note = ambiguous.get('note', '')
+        
+        if providers:
+            # Return first provider as primary, others as alternatives
+            primary_key = providers[0]
+            primary_utility = utilities.get(primary_key, {})
+            
+            alternatives = []
+            for alt_key in providers[1:]:
+                alt_utility = utilities.get(alt_key, {})
+                if alt_utility:
+                    alternatives.append({
+                        "name": alt_utility.get("name", alt_key),
+                        "phone": alt_utility.get("phone"),
+                        "website": alt_utility.get("website"),
+                    })
+            
+            return {
+                "primary": {
+                    "name": primary_utility.get("name", primary_key),
+                    "phone": primary_utility.get("phone"),
+                    "website": primary_utility.get("website"),
+                },
+                "confidence": "medium",
+                "source": f"{state} PUC territory data (boundary area)",
+                "selection_reason": f"ZIP {zip_code} is in a boundary area. {note}",
+                "alternatives": alternatives,
+                "_ambiguous": True,
+                "_note": note
+            }
+    
+    # Check 3-digit prefix mapping (fallback)
     if zip_prefix and zip_prefix in mapping.get('zip_to_utility', {}):
         utility_key = mapping['zip_to_utility'][zip_prefix]
         utility = utilities.get(utility_key, {})
@@ -1013,7 +1061,7 @@ def get_state_gas_ldc(state: str, zip_code: str, city: str = None) -> Dict:
                     "phone": utility.get("phone"),
                     "website": utility.get("website"),
                 },
-                "confidence": "verified",
+                "confidence": "high",
                 "source": f"{state} PUC territory data",
                 "selection_reason": f"ZIP {zip_code} is in {utility.get('name', utility_key)} territory ({utility.get('service_area', '')}).",
                 "alternatives": []
@@ -1127,7 +1175,23 @@ def verify_gas_provider(
                 "alternatives": []
             }
         
-        # Try to use state LDC database as fallback when HIFLD has no data
+        # FIRST: Try state-specific ZIP prefix mappings (more accurate than state default)
+        state_gas_result = get_state_gas_ldc(state, zip_code, city)
+        if state_gas_result and state_gas_result.get("primary"):
+            return {
+                "primary": {
+                    "NAME": state_gas_result["primary"]["name"],
+                    "TELEPHONE": state_gas_result["primary"].get("phone"),
+                    "WEBSITE": state_gas_result["primary"].get("website"),
+                    "STATE": state,
+                },
+                "confidence": state_gas_result.get("confidence", "high"),
+                "source": state_gas_result["source"],
+                "selection_reason": state_gas_result["selection_reason"],
+                "alternatives": []
+            }
+        
+        # SECOND: Try state LDC database as fallback
         state_ldcs = STATE_GAS_LDCS.get(state, [])
         if state_ldcs:
             # Return the primary LDC for the state with medium confidence

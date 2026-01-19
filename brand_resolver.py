@@ -151,7 +151,8 @@ CORPORATE_MERGERS = {
     
     # Duke Energy acquisitions
     "progress energy": "Duke Energy",
-    "piedmont natural gas": "Duke Energy",
+    # NOTE: Piedmont Natural Gas is owned by Duke but still operates under its own brand for gas
+    # Do NOT map piedmont to Duke - they are separate customer-facing brands
     
     # Dominion Energy acquisitions
     "questar": "Dominion Energy",
@@ -162,8 +163,7 @@ CORPORATE_MERGERS = {
     "peoples gas chicago": "WEC Energy Group",
     
     # Southern Company acquisitions
-    "agl resources": "Southern Company Gas",
-    "nicor gas": "Southern Company Gas",
+    "agl resources": "Atlanta Gas Light",
     
     # Berkshire Hathaway Energy
     "midamerican energy": "Berkshire Hathaway Energy",

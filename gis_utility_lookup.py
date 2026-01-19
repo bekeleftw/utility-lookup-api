@@ -1134,11 +1134,73 @@ def query_oregon_gas(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_michigan_gas(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Michigan Natural Gas Utility Service Areas (MPSC).
+    Verified Jan 2026 - Layer 27.
+    """
+    url = "https://services3.arcgis.com/943LBv9FP414WfDO/arcgis/rest/services/NATURAL_GAS_UTILITY_SERVICE_AREA_MI_WFL1/FeatureServer/27/query"
+    result = _query_arcgis_point(url, lat, lon, "Name,Type,Customers,Website,Phone")
+    
+    if result and result.get("Name"):
+        return {
+            "name": result.get("Name", "").strip(),
+            "utility_type": result.get("Type"),
+            "customers": result.get("Customers"),
+            "website": result.get("Website"),
+            "phone": result.get("Phone"),
+            "confidence": "high",
+            "source": "michigan_mpsc"
+        }
+    return None
+
+
+def query_virginia_gas(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Virginia Natural Gas Service Areas (SCC).
+    Verified Jan 2026 - Layer 3.
+    """
+    url = "https://services3.arcgis.com/Ww6Zhg5FR2pLMf1C/arcgis/rest/services/gas_map_2020/FeatureServer/3/query"
+    result = _query_arcgis_point(url, lat, lon, "PROVIDER,NAME,Type,CertificateLink")
+    
+    if result and result.get("PROVIDER"):
+        return {
+            "name": result.get("PROVIDER", "").strip(),
+            "service_area": result.get("NAME"),
+            "utility_type": result.get("Type"),
+            "certificate_link": result.get("CertificateLink"),
+            "confidence": "high",
+            "source": "virginia_scc"
+        }
+    return None
+
+
+def query_ohio_gas(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Ohio Natural Gas Service Territories.
+    Verified Jan 2026.
+    """
+    url = "https://services3.arcgis.com/ccRMrVzOSHBUG6X2/arcgis/rest/services/Natural_Gas_Territories_Ohio/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "NAME,ADDRESS,CITY,STATE,ZIP,TELEPHONE,TYPE")
+    
+    if result and result.get("NAME"):
+        return {
+            "name": result.get("NAME", "").strip(),
+            "address": result.get("ADDRESS"),
+            "city": result.get("CITY"),
+            "phone": result.get("TELEPHONE"),
+            "utility_type": result.get("TYPE"),
+            "confidence": "high",
+            "source": "ohio_gas"
+        }
+    return None
+
+
 # States with working GIS APIs for electric
 STATES_WITH_ELECTRIC_GIS = {'NJ', 'AR', 'DE', 'HI', 'RI', 'PA', 'WI', 'CO', 'WA', 'OR', 'UT', 'MA', 'VT', 'FL', 'IL', 'MS', 'OH', 'KY', 'AK', 'NE', 'CA', 'MI', 'TX', 'NY', 'ME', 'SC', 'IA', 'VA', 'IN', 'KS', 'DC', 'NC', 'MN'}
 
 # States with working GIS APIs for gas
-STATES_WITH_GAS_GIS = {'NJ', 'MS', 'CA', 'KY', 'WI', 'MA', 'UT', 'WA', 'AK', 'OR'}
+STATES_WITH_GAS_GIS = {'NJ', 'MS', 'CA', 'KY', 'WI', 'MA', 'UT', 'WA', 'AK', 'OR', 'MI', 'VA', 'OH'}
 
 STATE_GAS_APIS = {
     "NJ": query_new_jersey_gas,
@@ -1151,6 +1213,9 @@ STATE_GAS_APIS = {
     "WA": query_washington_gas,
     "AK": query_alaska_gas,
     "OR": query_oregon_gas,
+    "MI": query_michigan_gas,
+    "VA": query_virginia_gas,
+    "OH": query_ohio_gas,
 }
 
 

@@ -1673,7 +1673,8 @@
   }
   
   function attachBadgeListeners() {
-    document.querySelectorAll('.up-badge-confidence').forEach(badge => {
+    document.querySelectorAll('.up-badge-confidence:not([data-listener])').forEach(badge => {
+      badge.setAttribute('data-listener', 'true');
       badge.addEventListener('click', function(e) {
         e.stopPropagation();
         const dropdownId = this.dataset.dropdown;
@@ -1695,8 +1696,9 @@
   }
   
   function attachFeedbackListeners() {
-    // Yes/No buttons
-    document.querySelectorAll('.up-feedback-btn-small').forEach(btn => {
+    // Yes/No buttons - remove old listeners by cloning
+    document.querySelectorAll('.up-feedback-btn-small:not([data-listener])').forEach(btn => {
+      btn.setAttribute('data-listener', 'true');
       btn.addEventListener('click', function() {
         const feedback = this.closest('.up-feedback-inline');
         const cardId = feedback.dataset.card;
@@ -1734,7 +1736,8 @@
     });
     
     // Submit correction
-    document.querySelectorAll('.up-feedback-submit').forEach(btn => {
+    document.querySelectorAll('.up-feedback-submit:not([data-listener])').forEach(btn => {
+      btn.setAttribute('data-listener', 'true');
       btn.addEventListener('click', async function() {
         const cardId = this.dataset.card;
         const type = this.dataset.type;

@@ -246,21 +246,51 @@ class LookupPipeline:
     ) -> SourceResult:
         """
         Select the best result based on confidence and cross-validation.
+        
+        Priority order (highest confidence sources first):
+        1. Municipal utilities (88) - most authoritative for cities they serve
+        2. State GIS (85) - authoritative point-in-polygon
+        3. Co-ops (68) - reliable for rural areas
+        4. EIA (70) - good ZIP-level data
+        5. HIFLD (58) - national coverage but less accurate
+        6. County default (50) - fallback only
         """
         if not results:
             return None
         
+        # Source priority order - higher priority sources win ties
+        SOURCE_PRIORITY = {
+            'municipal': 100,
+            'municipal_gas': 100,
+            'state_gis': 90,
+            'state_gis_gas': 90,
+            'electric_coop': 80,
+            'zip_mapping_gas': 75,
+            'eia_861': 70,
+            'hifld': 40,
+            'hifld_gas': 40,
+            'county_default': 30,
+            'county_default_gas': 30,
+        }
+        
         # Score each result
         scored = []
         for r in results:
+            # Base score from source confidence
             score = r.confidence_score
             
             # Add precision bonus
             score += PRECISION_BONUS.get(r.match_type, 0)
             
-            # Add cross-validation bonus if applicable
+            # Add source priority bonus (scaled down to not overwhelm confidence)
+            priority = SOURCE_PRIORITY.get(r.source_name, 0)
+            score += priority * 0.3  # 30% weight on priority
+            
+            # Cross-validation bonus (reduced weight - don't let bad sources gang up)
             if cv_result and r.source_name in cv_result.get('agreeing_sources', []):
-                score += cv_result.get('confidence_adjustment', 0)
+                # Only add CV bonus for high-quality sources
+                if priority >= 70:
+                    score += cv_result.get('confidence_adjustment', 0) * 0.5
             
             scored.append((score, r))
         

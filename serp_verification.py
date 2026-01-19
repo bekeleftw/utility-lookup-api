@@ -94,6 +94,10 @@ UTILITY_ALIASES = {
     'northwestern': ['northwestern', 'northwestern energy'],
     'questar': ['questar', 'questar gas', 'dominion energy utah', 'dominion energy questar'],
     'metropolitan utilities': ['metropolitan utilities', 'mud', 'metropolitan utilities district'],
+    'ouc': ['ouc', 'orlando utilities commission', 'orlando utilities'],
+    'smud': ['smud', 'sacramento municipal utility district', 'sacramento municipal'],
+    'wyandotte': ['wyandotte', 'wyandotte municipal', 'wyandotte municipal serv'],
+    'psc colorado': ['psc of colorado', 'public service co of colorado', 'xcel energy colorado'],
 }
 
 

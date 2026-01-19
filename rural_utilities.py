@@ -160,8 +160,8 @@ def lookup_county_default_electric(county: str, state: str) -> Optional[Dict]:
             'website': utility.get('website'),
             'state': state,
             'source': 'county_default',
-            'confidence': 'low',
-            'note': f"Primary electric provider for {county} County"
+            'confidence': 'medium',
+            'note': utility.get('note') or f"Primary electric provider for {county} County"
         }
     
     return None

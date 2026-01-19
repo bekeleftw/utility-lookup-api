@@ -2031,14 +2031,14 @@
         "website": "https://www.pplelectric.com"
       },
       "YORK": {
-        "name": "Met-Ed",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com"
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
       },
       "BERKS": {
-        "name": "Met-Ed",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com"
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
       },
       "LEHIGH": {
         "name": "PPL Electric",
@@ -2061,37 +2061,272 @@
         "website": "https://www.pplelectric.com"
       },
       "ERIE": {
-        "name": "Penelec",
+        "name": "Penelec (FirstEnergy)",
         "phone": "800-545-7741",
         "website": "https://www.firstenergycorp.com"
       },
       "WESTMORELAND": {
         "name": "West Penn Power",
-        "phone": "800-545-7741",
+        "phone": "800-686-0021",
         "website": "https://www.firstenergycorp.com"
-      },
-      "CUMBERLAND": {
-        "name": "PPL Electric",
-        "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com"
       },
       "LACKAWANNA": {
         "name": "PPL Electric",
         "phone": "800-342-5775",
         "website": "https://www.pplelectric.com"
       },
-      "WASHINGTON": {
-        "name": "West Penn Power",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com"
+      "CUMBERLAND": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
       },
       "BUTLER": {
         "name": "West Penn Power",
-        "phone": "800-545-7741",
+        "phone": "800-686-0021",
         "website": "https://www.firstenergycorp.com"
       },
       "CAMBRIA": {
-        "name": "Penelec",
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "SCHUYLKILL": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "FAYETTE": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WASHINGTON": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "BEAVER": {
+        "name": "Duquesne Light",
+        "phone": "412-393-7100",
+        "website": "https://www.duquesnelight.com"
+      },
+      "CENTRE": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "BLAIR": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MONROE": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "LEBANON": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "FRANKLIN": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "ADAMS": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "LYCOMING": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "MERCER": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "LAWRENCE": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "INDIANA": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ARMSTRONG": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "SOMERSET": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "BEDFORD": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HUNTINGDON": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MIFFLIN": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "JUNIATA": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "PERRY": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "SNYDER": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "UNION": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "NORTHUMBERLAND": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "MONTOUR": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "COLUMBIA": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "SULLIVAN": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "WYOMING": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "SUSQUEHANNA": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "WAYNE": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "PIKE": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "CARBON": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "BRADFORD": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "TIOGA": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "POTTER": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MCKEAN": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ELK": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "CAMERON": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "CLINTON": {
+        "name": "PPL Electric",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com"
+      },
+      "CLEARFIELD": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "JEFFERSON": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "CLARION": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "VENANGO": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "FOREST": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WARREN": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "CRAWFORD": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "GREENE": {
+        "name": "West Penn Power",
+        "phone": "800-686-0021",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "FULTON": {
+        "name": "Penelec (FirstEnergy)",
         "phone": "800-545-7741",
         "website": "https://www.firstenergycorp.com"
       }
@@ -2444,125 +2679,445 @@
       }
     },
     "OH": {
-      "CUYAHOGA": {
-        "name": "Cleveland Public Power / FirstEnergy",
-        "phone": "800-589-3101",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
-      },
       "FRANKLIN": {
         "name": "AEP Ohio",
         "phone": "800-672-2231",
-        "website": "https://www.aepohio.com",
-        "note": "Deregulated"
+        "website": "https://www.aepohio.com"
+      },
+      "CUYAHOGA": {
+        "name": "Cleveland Public Power / FirstEnergy",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com"
       },
       "HAMILTON": {
         "name": "Duke Energy Ohio",
         "phone": "800-544-6900",
-        "website": "https://www.duke-energy.com",
-        "note": "Deregulated"
+        "website": "https://www.duke-energy.com"
       },
       "SUMMIT": {
         "name": "FirstEnergy (Ohio Edison)",
         "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
       },
       "MONTGOMERY": {
-        "name": "AEP Ohio / DP&L",
-        "phone": "800-433-8500",
-        "website": "https://www.aepohio.com",
-        "note": "Deregulated"
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
       },
       "LUCAS": {
-        "name": "Toledo Edison",
+        "name": "FirstEnergy (Toledo Edison)",
         "phone": "800-447-3333",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
       },
       "STARK": {
-        "name": "Ohio Edison",
+        "name": "FirstEnergy (Ohio Edison)",
         "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
       },
       "BUTLER": {
         "name": "Duke Energy Ohio",
         "phone": "800-544-6900",
-        "website": "https://www.duke-energy.com",
-        "note": "Deregulated"
+        "website": "https://www.duke-energy.com"
       },
       "LORAIN": {
-        "name": "Ohio Edison",
+        "name": "FirstEnergy (Ohio Edison)",
         "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
       },
       "MAHONING": {
-        "name": "Ohio Edison",
+        "name": "FirstEnergy (Ohio Edison)",
         "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
       },
       "LAKE": {
-        "name": "Cleveland Electric Illuminating",
+        "name": "FirstEnergy (CEI)",
         "phone": "800-589-3101",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
-      },
-      "WARREN": {
-        "name": "Duke Energy Ohio",
-        "phone": "800-544-6900",
-        "website": "https://www.duke-energy.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
       },
       "TRUMBULL": {
-        "name": "Ohio Edison",
+        "name": "FirstEnergy (Ohio Edison)",
         "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MEDINA": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "PORTAGE": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
       },
       "CLERMONT": {
         "name": "Duke Energy Ohio",
         "phone": "800-544-6900",
-        "website": "https://www.duke-energy.com",
-        "note": "Deregulated"
+        "website": "https://www.duke-energy.com"
       },
-      "MEDINA": {
-        "name": "Ohio Edison",
-        "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+      "WARREN": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com"
       },
       "DELAWARE": {
         "name": "AEP Ohio",
         "phone": "800-672-2231",
-        "website": "https://www.aepohio.com",
-        "note": "Deregulated"
+        "website": "https://www.aepohio.com"
       },
       "LICKING": {
         "name": "AEP Ohio",
         "phone": "800-672-2231",
-        "website": "https://www.aepohio.com",
-        "note": "Deregulated"
+        "website": "https://www.aepohio.com"
+      },
+      "FAIRFIELD": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
       },
       "GREENE": {
-        "name": "AEP Ohio / DP&L",
-        "phone": "800-433-8500",
-        "website": "https://www.aepohio.com",
-        "note": "Deregulated"
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
       },
-      "PORTAGE": {
-        "name": "Ohio Edison",
+      "CLARK": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MIAMI": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "RICHLAND": {
+        "name": "FirstEnergy (Ohio Edison)",
         "phone": "800-633-4766",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ALLEN": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
       },
       "WOOD": {
-        "name": "Toledo Edison",
+        "name": "FirstEnergy (Toledo Edison)",
         "phone": "800-447-3333",
-        "website": "https://www.firstenergycorp.com",
-        "note": "Deregulated"
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ERIE": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ASHTABULA": {
+        "name": "FirstEnergy (CEI)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "GEAUGA": {
+        "name": "FirstEnergy (CEI)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "COLUMBIANA": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WAYNE": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "TUSCARAWAS": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "ROSS": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "SCIOTO": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MUSKINGUM": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "PICKAWAY": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MARION": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "KNOX": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "HANCOCK": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "SENECA": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "SANDUSKY": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HURON": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ASHLAND": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "CRAWFORD": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "OTTAWA": {
+        "name": "FirstEnergy (Toledo Edison)",
+        "phone": "800-447-3333",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "DEFIANCE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "FULTON": {
+        "name": "FirstEnergy (Toledo Edison)",
+        "phone": "800-447-3333",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HENRY": {
+        "name": "FirstEnergy (Toledo Edison)",
+        "phone": "800-447-3333",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WILLIAMS": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "PUTNAM": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "PAULDING": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "VAN WERT": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MERCER": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "AUGLAIZE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "SHELBY": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "DARKE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "PREBLE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "LOGAN": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "CHAMPAIGN": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "UNION": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MADISON": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "FAYETTE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "CLINTON": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com"
+      },
+      "HIGHLAND": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "BROWN": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com"
+      },
+      "ADAMS": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "PIKE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "JACKSON": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "VINTON": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "HOCKING": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "ATHENS": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MEIGS": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "GALLIA": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "LAWRENCE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "WASHINGTON": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MORGAN": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "NOBLE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MONROE": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "BELMONT": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "JEFFERSON": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HARRISON": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "GUERNSEY": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "COSHOCTON": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "CARROLL": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HOLMES": {
+        "name": "FirstEnergy (Ohio Edison)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "PERRY": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "MORROW": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "WYANDOT": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
+      },
+      "HARDIN": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com"
       }
     },
     "MI": {
@@ -2616,12 +3171,12 @@
         "phone": "800-477-4747",
         "website": "https://www.dteenergy.com"
       },
-      "SAGINAW": {
+      "MUSKEGON": {
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
       },
-      "MUSKEGON": {
+      "SAGINAW": {
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
@@ -2636,12 +3191,17 @@
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
       },
+      "CALHOUN": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
       "BERRIEN": {
         "name": "Indiana Michigan Power",
         "phone": "800-311-4634",
         "website": "https://www.indianamichiganpower.com"
       },
-      "CALHOUN": {
+      "ALLEGAN": {
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
@@ -2651,141 +3211,842 @@
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
       },
-      "MONROE": {
-        "name": "DTE Energy",
-        "phone": "800-477-4747",
-        "website": "https://www.dteenergy.com"
-      },
       "BAY": {
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
       },
-      "ALLEGAN": {
+      "MONROE": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com"
+      },
+      "LENAWEE": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com"
+      },
+      "VAN BUREN": {
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com"
+      },
+      "LAPEER": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com"
+      },
+      "SHIAWASSEE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "CLINTON": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "BARRY": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "BRANCH": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "HILLSDALE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "IONIA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MIDLAND": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "GRATIOT": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "ISABELLA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "TUSCOLA": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com"
+      },
+      "SANILAC": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com"
+      },
+      "HURON": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com"
+      },
+      "NEWAYGO": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MECOSTA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MONTCALM": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "CLARE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "GLADWIN": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "ARENAC": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "IOSCO": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "OGEMAW": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "ROSCOMMON": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "OSCEOLA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "LAKE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MASON": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "OCEANA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MANISTEE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "WEXFORD": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MISSAUKEE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "CRAWFORD": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "OSCODA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "ALCONA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "ALPENA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "MONTMORENCY": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "OTSEGO": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "KALKASKA": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "GRAND TRAVERSE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "BENZIE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "LEELANAU": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "ANTRIM": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "CHARLEVOIX": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "EMMET": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "CHEBOYGAN": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "PRESQUE ISLE": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com"
+      },
+      "CASS": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "ST. JOSEPH": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "MARQUETTE": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "DELTA": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "DICKINSON": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "MENOMINEE": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "IRON": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "GOGEBIC": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "ONTONAGON": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "HOUGHTON": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "BARAGA": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "KEWEENAW": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "ALGER": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "SCHOOLCRAFT": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "LUCE": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "CHIPPEWA": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
+      },
+      "MACKINAC": {
+        "name": "Upper Peninsula Power Company",
+        "phone": "800-562-7680",
+        "website": "https://www.uppco.com"
       }
     },
     "IL": {
       "COOK": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "DUPAGE": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "LAKE": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "WILL": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "KANE": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "MCHENRY": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "WINNEBAGO": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "ST. CLAIR": {
         "name": "Ameren Illinois",
         "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
+        "website": "https://www.ameren.com"
       },
       "MADISON": {
         "name": "Ameren Illinois",
         "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
+        "website": "https://www.ameren.com"
       },
       "CHAMPAIGN": {
         "name": "Ameren Illinois",
         "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
+        "website": "https://www.ameren.com"
       },
       "SANGAMON": {
-        "name": "Ameren Illinois",
-        "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
+        "name": "City Water Light & Power",
+        "phone": "217-789-2121",
+        "website": "https://www.cwlp.com"
       },
       "PEORIA": {
         "name": "Ameren Illinois",
         "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
+        "website": "https://www.ameren.com"
       },
       "KENDALL": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "MCLEAN": {
         "name": "Ameren Illinois",
         "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
+        "website": "https://www.ameren.com"
+      },
+      "TAZEWELL": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
       },
       "ROCK ISLAND": {
         "name": "MidAmerican Energy",
         "phone": "888-427-5632",
         "website": "https://www.midamericanenergy.com"
       },
-      "TAZEWELL": {
-        "name": "Ameren Illinois",
-        "phone": "800-755-5000",
-        "website": "https://www.ameren.com",
-        "note": "Deregulated"
-      },
       "LASALLE": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "KANKAKEE": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
-      },
-      "DEKALB": {
-        "name": "ComEd",
-        "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
       },
       "GRUNDY": {
         "name": "ComEd",
         "phone": "800-334-7661",
-        "website": "https://www.comed.com",
-        "note": "Deregulated"
+        "website": "https://www.comed.com"
+      },
+      "DEKALB": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "BOONE": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "OGLE": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "LEE": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "WHITESIDE": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "HENRY": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com"
+      },
+      "BUREAU": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "PUTNAM": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "MARSHALL": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "STARK": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WOODFORD": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "LIVINGSTON": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "FORD": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "IROQUOIS": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "VERMILION": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "EDGAR": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "DOUGLAS": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "COLES": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CLARK": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CUMBERLAND": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "EFFINGHAM": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "JASPER": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CRAWFORD": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "LAWRENCE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "RICHLAND": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WABASH": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "EDWARDS": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WHITE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "HAMILTON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "SALINE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "GALLATIN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "HARDIN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "POPE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MASSAC": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "PULASKI": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "ALEXANDER": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "UNION": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "JOHNSON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WILLIAMSON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "JACKSON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "PERRY": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "FRANKLIN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "JEFFERSON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WAYNE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MARION": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CLAY": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "FAYETTE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "BOND": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CLINTON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WASHINGTON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "RANDOLPH": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MONROE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "JERSEY": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CALHOUN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "GREENE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MACOUPIN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MONTGOMERY": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CHRISTIAN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "SHELBY": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MOULTRIE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MACON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "DEWITT": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "PIATT": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "LOGAN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MENARD": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MASON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "CASS": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MORGAN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "SCOTT": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "PIKE": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "ADAMS": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "BROWN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "SCHUYLER": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "FULTON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MCDONOUGH": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "HANCOCK": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "HENDERSON": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "WARREN": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "KNOX": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com"
+      },
+      "MERCER": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com"
+      },
+      "JO DAVIESS": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "STEPHENSON": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
+      },
+      "CARROLL": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com"
       }
     },
     "IN": {
@@ -2844,15 +4105,10 @@
         "phone": "800-521-2232",
         "website": "https://www.duke-energy.com"
       },
-      "DELAWARE": {
-        "name": "Indiana Michigan Power",
-        "phone": "800-311-4634",
-        "website": "https://www.indianamichiganpower.com"
-      },
       "MADISON": {
-        "name": "Duke Energy Indiana",
-        "phone": "800-521-2232",
-        "website": "https://www.duke-energy.com"
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com"
       },
       "MONROE": {
         "name": "Duke Energy Indiana",
@@ -2864,7 +4120,22 @@
         "phone": "800-521-2232",
         "website": "https://www.duke-energy.com"
       },
+      "DELAWARE": {
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com"
+      },
+      "KOSCIUSKO": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
       "VIGO": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "BARTHOLOMEW": {
         "name": "Duke Energy Indiana",
         "phone": "800-521-2232",
         "website": "https://www.duke-energy.com"
@@ -2874,17 +4145,362 @@
         "phone": "800-521-2232",
         "website": "https://www.duke-energy.com"
       },
-      "WAYNE": {
-        "name": "Indiana Michigan Power",
-        "phone": "800-311-4634",
-        "website": "https://www.indianamichiganpower.com"
+      "GRANT": {
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com"
       },
-      "KOSCIUSKO": {
-        "name": "Indiana Michigan Power",
-        "phone": "800-311-4634",
-        "website": "https://www.indianamichiganpower.com"
+      "WAYNE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
       },
       "FLOYD": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "WARRICK": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com"
+      },
+      "BOONE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "MORGAN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "HANCOCK": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "LAPORTE": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "SHELBY": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "DEARBORN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "MARSHALL": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "DUBOIS": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "GIBSON": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com"
+      },
+      "JASPER": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "NOBLE": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "DEKALB": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "WHITLEY": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "HUNTINGTON": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "WELLS": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "ADAMS": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "WABASH": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "MIAMI": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "CASS": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "FULTON": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "PULASKI": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "STARKE": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "NEWTON": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com"
+      },
+      "BENTON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "WHITE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "CARROLL": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "CLINTON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "MONTGOMERY": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "FOUNTAIN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "WARREN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "VERMILLION": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "PARKE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "PUTNAM": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "CLAY": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "SULLIVAN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "GREENE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "OWEN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "DAVIESS": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "MARTIN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "LAWRENCE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "ORANGE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "WASHINGTON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "JACKSON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "JENNINGS": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "SCOTT": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "JEFFERSON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "SWITZERLAND": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "OHIO": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "RIPLEY": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "DECATUR": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "RUSH": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "FAYETTE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "UNION": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "FRANKLIN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "HENRY": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "RANDOLPH": {
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com"
+      },
+      "JAY": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "BLACKFORD": {
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com"
+      },
+      "TIPTON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "LAGRANGE": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "STEUBEN": {
+        "name": "Indiana Michigan Power",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com"
+      },
+      "POSEY": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com"
+      },
+      "SPENCER": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com"
+      },
+      "PERRY": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "CRAWFORD": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "HARRISON": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "PIKE": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
+      },
+      "KNOX": {
         "name": "Duke Energy Indiana",
         "phone": "800-521-2232",
         "website": "https://www.duke-energy.com"
@@ -2898,7 +4514,7 @@
       },
       "DANE": {
         "name": "Madison Gas & Electric",
-        "phone": "608-252-7222",
+        "phone": "608-252-7000",
         "website": "https://www.mge.com"
       },
       "WAUKESHA": {
@@ -2907,7 +4523,7 @@
         "website": "https://www.we-energies.com"
       },
       "BROWN": {
-        "name": "WPS (Wisconsin Public Service)",
+        "name": "Wisconsin Public Service",
         "phone": "800-450-7260",
         "website": "https://www.wisconsinpublicservice.com"
       },
@@ -2917,12 +4533,12 @@
         "website": "https://www.we-energies.com"
       },
       "OUTAGAMIE": {
-        "name": "WPS",
+        "name": "Wisconsin Public Service",
         "phone": "800-450-7260",
         "website": "https://www.wisconsinpublicservice.com"
       },
       "WINNEBAGO": {
-        "name": "WPS",
+        "name": "Wisconsin Public Service",
         "phone": "800-450-7260",
         "website": "https://www.wisconsinpublicservice.com"
       },
@@ -2937,31 +4553,21 @@
         "website": "https://www.alliantenergy.com"
       },
       "MARATHON": {
-        "name": "WPS",
+        "name": "Wisconsin Public Service",
         "phone": "800-450-7260",
         "website": "https://www.wisconsinpublicservice.com"
-      },
-      "WASHINGTON": {
-        "name": "We Energies",
-        "phone": "800-242-9137",
-        "website": "https://www.we-energies.com"
       },
       "LA CROSSE": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
+      "WASHINGTON": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com"
+      },
       "SHEBOYGAN": {
-        "name": "WPS",
-        "phone": "800-450-7260",
-        "website": "https://www.wisconsinpublicservice.com"
-      },
-      "FOND DU LAC": {
-        "name": "WPS",
-        "phone": "800-450-7260",
-        "website": "https://www.wisconsinpublicservice.com"
-      },
-      "WALWORTH": {
         "name": "We Energies",
         "phone": "800-242-9137",
         "website": "https://www.we-energies.com"
@@ -2971,25 +4577,295 @@
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
+      "FOND DU LAC": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "WALWORTH": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com"
+      },
       "OZAUKEE": {
         "name": "We Energies",
         "phone": "800-242-9137",
         "website": "https://www.we-energies.com"
       },
-      "WOOD": {
-        "name": "WPS",
-        "phone": "800-450-7260",
-        "website": "https://www.wisconsinpublicservice.com"
+      "ST. CROIX": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
       },
       "JEFFERSON": {
         "name": "We Energies",
         "phone": "800-242-9137",
         "website": "https://www.we-energies.com"
       },
-      "PORTAGE": {
-        "name": "WPS",
+      "CALUMET": {
+        "name": "Wisconsin Public Service",
         "phone": "800-450-7260",
         "website": "https://www.wisconsinpublicservice.com"
+      },
+      "MANITOWOC": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "PORTAGE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "WOOD": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "DODGE": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "SAUK": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "COLUMBIA": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "CHIPPEWA": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "DUNN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "PIERCE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "POLK": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BARRON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "DOUGLAS": {
+        "name": "Superior Water Light & Power",
+        "phone": "715-394-4444",
+        "website": "https://www.swlp.com"
+      },
+      "GRANT": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "GREEN": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "IOWA": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "LAFAYETTE": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "RICHLAND": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "CRAWFORD": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "VERNON": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "MONROE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "JUNEAU": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "ADAMS": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "WAUSHARA": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "MARQUETTE": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "GREEN LAKE": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com"
+      },
+      "WAUPACA": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "SHAWANO": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "OCONTO": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "MARINETTE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "DOOR": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "KEWAUNEE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "LANGLADE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "MENOMINEE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "LINCOLN": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "ONEIDA": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "VILAS": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "FOREST": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "FLORENCE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "IRON": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "PRICE": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "TAYLOR": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "CLARK": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com"
+      },
+      "JACKSON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "TREMPEALEAU": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BUFFALO": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "PEPIN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "RUSK": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "SAWYER": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "WASHBURN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BURNETT": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BAYFIELD": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "ASHLAND": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
       }
     },
     "MN": {
@@ -3023,17 +4899,17 @@
         "phone": "800-228-4966",
         "website": "https://www.mnpower.com"
       },
+      "STEARNS": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
       "OLMSTED": {
         "name": "Rochester Public Utilities",
         "phone": "507-280-1500",
         "website": "https://www.rpu.org"
       },
       "SCOTT": {
-        "name": "Xcel Energy",
-        "phone": "800-895-4999",
-        "website": "https://www.xcelenergy.com"
-      },
-      "STEARNS": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
@@ -3063,17 +4939,12 @@
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
-      "CLAY": {
-        "name": "Xcel Energy",
-        "phone": "800-895-4999",
-        "website": "https://www.xcelenergy.com"
-      },
       "WINONA": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
-      "CHISAGO": {
+      "GOODHUE": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
@@ -3083,7 +4954,7 @@
         "phone": "800-228-4966",
         "website": "https://www.mnpower.com"
       },
-      "GOODHUE": {
+      "CLAY": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
@@ -3092,6 +4963,346 @@
         "name": "Otter Tail Power",
         "phone": "800-257-4044",
         "website": "https://www.otpco.com"
+      },
+      "OTTER TAIL": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "MOWER": {
+        "name": "Austin Utilities",
+        "phone": "507-433-8886",
+        "website": "https://www.austinutilities.com"
+      },
+      "FREEBORN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "STEELE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "DODGE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "WABASHA": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "FILLMORE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "HOUSTON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "NICOLLET": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "LE SUEUR": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "WASECA": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "FARIBAULT": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MARTIN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BROWN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "WATONWAN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "COTTONWOOD": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "JACKSON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "NOBLES": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "ROCK": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "PIPESTONE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MURRAY": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "LYON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "REDWOOD": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "RENVILLE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "SIBLEY": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MCLEOD": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MEEKER": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "KANDIYOHI": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "SWIFT": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "CHIPPEWA": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "LAC QUI PARLE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "YELLOW MEDICINE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "LINCOLN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BIG STONE": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "TRAVERSE": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "STEVENS": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "POPE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "DOUGLAS": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "GRANT": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "WILKIN": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "TODD": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MORRISON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "BENTON": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MILLE LACS": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "KANABEC": {
+        "name": "East Central Energy",
+        "phone": "800-254-7944",
+        "website": "https://www.eastcentralenergy.com"
+      },
+      "ISANTI": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "CHISAGO": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "PINE": {
+        "name": "East Central Energy",
+        "phone": "800-254-7944",
+        "website": "https://www.eastcentralenergy.com"
+      },
+      "CARLTON": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com"
+      },
+      "AITKIN": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com"
+      },
+      "CASS": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com"
+      },
+      "WADENA": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com"
+      },
+      "HUBBARD": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com"
+      },
+      "BELTRAMI": {
+        "name": "Beltrami Electric Cooperative",
+        "phone": "218-444-2540",
+        "website": "https://www.beltramielectric.com"
+      },
+      "CLEARWATER": {
+        "name": "Clearwater-Polk Electric",
+        "phone": "218-694-6122",
+        "website": "https://www.clearwater-polk.com"
+      },
+      "MAHNOMEN": {
+        "name": "Wild Rice Electric Cooperative",
+        "phone": "218-935-2517",
+        "website": "https://www.wildriceelectric.com"
+      },
+      "NORMAN": {
+        "name": "Wild Rice Electric Cooperative",
+        "phone": "218-935-2517",
+        "website": "https://www.wildriceelectric.com"
+      },
+      "POLK": {
+        "name": "Wild Rice Electric Cooperative",
+        "phone": "218-935-2517",
+        "website": "https://www.wildriceelectric.com"
+      },
+      "RED LAKE": {
+        "name": "Red Lake Electric Cooperative",
+        "phone": "218-253-2168",
+        "website": "https://www.redlakeelectric.com"
+      },
+      "PENNINGTON": {
+        "name": "PKM Electric Cooperative",
+        "phone": "218-745-4711",
+        "website": "https://www.pfrec.coop"
+      },
+      "MARSHALL": {
+        "name": "PKM Electric Cooperative",
+        "phone": "218-745-4711",
+        "website": "https://www.pfrec.coop"
+      },
+      "KITTSON": {
+        "name": "PKM Electric Cooperative",
+        "phone": "218-745-4711",
+        "website": "https://www.pfrec.coop"
+      },
+      "ROSEAU": {
+        "name": "Roseau Electric Cooperative",
+        "phone": "218-463-1543",
+        "website": "https://www.rfrec.coop"
+      },
+      "LAKE OF THE WOODS": {
+        "name": "Lake of the Woods Electric",
+        "phone": "218-634-2202",
+        "website": "https://www.lowelectric.com"
+      },
+      "KOOCHICHING": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com"
+      },
+      "ITASCA": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com"
+      },
+      "LAKE": {
+        "name": "Lake Country Power",
+        "phone": "800-421-9959",
+        "website": "https://www.lakecountrypower.coop"
+      },
+      "COOK": {
+        "name": "Arrowhead Electric Cooperative",
+        "phone": "218-663-7239",
+        "website": "https://www.arrowheadcoop.com"
       }
     },
     "IA": {
@@ -3197,12 +5408,12 @@
       }
     },
     "MO": {
-      "ST. LOUIS CITY": {
+      "ST. LOUIS": {
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
-      "ST. LOUIS": {
+      "ST. LOUIS CITY": {
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
@@ -3217,32 +5428,37 @@
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
-      "CLAY": {
-        "name": "Evergy",
-        "phone": "888-471-5275",
-        "website": "https://www.evergy.com"
-      },
       "GREENE": {
         "name": "City Utilities of Springfield",
         "phone": "417-863-9000",
         "website": "https://www.cityutilities.net"
+      },
+      "CLAY": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
       },
       "JEFFERSON": {
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
-      "PLATTE": {
-        "name": "Evergy",
-        "phone": "888-471-5275",
-        "website": "https://www.evergy.com"
-      },
       "BOONE": {
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
+      "JASPER": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
       "CASS": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "PLATTE": {
         "name": "Evergy",
         "phone": "888-471-5275",
         "website": "https://www.evergy.com"
@@ -3251,11 +5467,6 @@
         "name": "Evergy",
         "phone": "888-471-5275",
         "website": "https://www.evergy.com"
-      },
-      "JASPER": {
-        "name": "Empire District Electric",
-        "phone": "800-206-2300",
-        "website": "https://www.empiredistrict.com"
       },
       "FRANKLIN": {
         "name": "Ameren Missouri",
@@ -3277,25 +5488,405 @@
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
-      "ANDREW": {
+      "NEWTON": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "JOHNSON": {
         "name": "Evergy",
         "phone": "888-471-5275",
         "website": "https://www.evergy.com"
+      },
+      "TANEY": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "PETTIS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
       },
       "CALLAWAY": {
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
-      "LINCOLN": {
+      "SCOTT": {
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
       },
-      "NEWTON": {
+      "BARRY": {
         "name": "Empire District Electric",
         "phone": "800-206-2300",
         "website": "https://www.empiredistrict.com"
+      },
+      "STODDARD": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "BUTLER": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "DUNKLIN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "PEMISCOT": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "NEW MADRID": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MISSISSIPPI": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "HOWELL": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "WEBSTER": {
+        "name": "City Utilities of Springfield",
+        "phone": "417-863-9000",
+        "website": "https://www.cityutilities.net"
+      },
+      "LACLEDE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "PULASKI": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MILLER": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "CAMDEN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MORGAN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "BENTON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "HENRY": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "VERNON": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "BARTON": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "CEDAR": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "DADE": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "LAWRENCE": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "MCDONALD": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "STONE": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com"
+      },
+      "POLK": {
+        "name": "City Utilities of Springfield",
+        "phone": "417-863-9000",
+        "website": "https://www.cityutilities.net"
+      },
+      "DALLAS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "HICKORY": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "ST. CLAIR": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "BATES": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "LAFAYETTE": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "RAY": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "CLINTON": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "CALDWELL": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "LIVINGSTON": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "DAVIESS": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "DEKALB": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "ANDREW": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "NODAWAY": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "ATCHISON": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "HOLT": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "GENTRY": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "WORTH": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "HARRISON": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "MERCER": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "GRUNDY": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "SULLIVAN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "LINN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "CHARITON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "CARROLL": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "SALINE": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com"
+      },
+      "COOPER": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MONITEAU": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "OSAGE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "GASCONADE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MARIES": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "PHELPS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "CRAWFORD": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "WASHINGTON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "ST. FRANCOIS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "STE. GENEVIEVE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "PERRY": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "BOLLINGER": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MADISON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "IRON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "REYNOLDS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "WAYNE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "CARTER": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "RIPLEY": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "OREGON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "SHANNON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "TEXAS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "DENT": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "WRIGHT": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "DOUGLAS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "OZARK": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
       }
     },
     "KS": {
@@ -3682,12 +6273,22 @@
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
       },
-      "VIRGINIA BEACH CITY": {
+      "VIRGINIA BEACH": {
         "name": "Dominion Energy",
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
       },
-      "NORFOLK CITY": {
+      "NORFOLK": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CHESAPEAKE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "RICHMOND": {
         "name": "Dominion Energy",
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
@@ -3697,7 +6298,17 @@
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
       },
-      "RICHMOND CITY": {
+      "NEWPORT NEWS": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "HAMPTON": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ALEXANDRIA": {
         "name": "Dominion Energy",
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
@@ -3712,17 +6323,7 @@
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
       },
-      "CHESAPEAKE CITY": {
-        "name": "Dominion Energy",
-        "phone": "866-366-4357",
-        "website": "https://www.dominionenergy.com"
-      },
       "HANOVER": {
-        "name": "Dominion Energy",
-        "phone": "866-366-4357",
-        "website": "https://www.dominionenergy.com"
-      },
-      "ALBEMARLE": {
         "name": "Dominion Energy",
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
@@ -3732,12 +6333,12 @@
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
       },
-      "MONTGOMERY": {
+      "ROANOKE CITY": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
       },
-      "CAMPBELL": {
+      "LYNCHBURG": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
@@ -3747,15 +6348,400 @@
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
       },
+      "CAMPBELL": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
       "PITTSYLVANIA": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
       },
+      "DANVILLE": {
+        "name": "Danville Utilities",
+        "phone": "434-799-5155",
+        "website": "https://www.danvilleva.gov"
+      },
+      "MONTGOMERY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "PULASKI": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "WYTHE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "SMYTH": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "WASHINGTON": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "BRISTOL": {
+        "name": "Bristol Virginia Utilities",
+        "phone": "276-645-7275",
+        "website": "https://www.bvu-optinet.com"
+      },
+      "RUSSELL": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "TAZEWELL": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "BUCHANAN": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "DICKENSON": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "WISE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "LEE": {
+        "name": "Powell Valley Electric Cooperative",
+        "phone": "423-626-5204",
+        "website": "https://www.pve.coop"
+      },
+      "SCOTT": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "GILES": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "BLAND": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "CRAIG": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "ALLEGHANY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "BOTETOURT": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "ROCKBRIDGE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
       "AUGUSTA": {
         "name": "Dominion Energy",
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com"
+      },
+      "STAUNTON": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WAYNESBORO": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "HARRISONBURG": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ROCKINGHAM": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SHENANDOAH": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "PAGE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WARREN": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FREDERICK": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WINCHESTER": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CLARKE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FAUQUIER": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CULPEPER": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ORANGE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "MADISON": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "GREENE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ALBEMARLE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CHARLOTTESVILLE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FLUVANNA": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "LOUISA": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "GOOCHLAND": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "POWHATAN": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "AMELIA": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "NOTTOWAY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "PRINCE EDWARD": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "BUCKINGHAM": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "APPOMATTOX": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "AMHERST": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "NELSON": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "BATH": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "HIGHLAND": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "JAMES CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "YORK": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "GLOUCESTER": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "MATHEWS": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "MIDDLESEX": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "LANCASTER": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "NORTHUMBERLAND": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "RICHMOND COUNTY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WESTMORELAND": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "KING GEORGE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CAROLINE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ESSEX": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "KING AND QUEEN": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "KING WILLIAM": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "NEW KENT": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CHARLES CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "PRINCE GEORGE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "DINWIDDIE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SUSSEX": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SURRY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ISLE OF WIGHT": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SOUTHAMPTON": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SUFFOLK": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "PORTSMOUTH": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "ACCOMACK": {
+        "name": "A&N Electric Cooperative",
+        "phone": "757-787-9750",
+        "website": "https://www.anec.com"
+      },
+      "NORTHAMPTON": {
+        "name": "A&N Electric Cooperative",
+        "phone": "757-787-9750",
+        "website": "https://www.anec.com"
       }
     },
     "WV": {
@@ -5516,7 +8502,7 @@
     },
     "AZ": {
       "MARICOPA": {
-        "name": "APS / SRP",
+        "name": "Arizona Public Service / Salt River Project",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
@@ -5526,17 +8512,17 @@
         "website": "https://www.tep.com"
       },
       "PINAL": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
       "YAVAPAI": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
       "YUMA": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
@@ -5546,7 +8532,7 @@
         "website": "https://www.mohaveelectric.com"
       },
       "COCONINO": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
@@ -5556,17 +8542,17 @@
         "website": "https://www.ssvec.org"
       },
       "NAVAJO": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
       "APACHE": {
-        "name": "APS",
-        "phone": "602-371-7171",
-        "website": "https://www.aps.com"
+        "name": "Navopache Electric Cooperative",
+        "phone": "928-368-5118",
+        "website": "https://www.navopache.org"
       },
       "GILA": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
@@ -5576,17 +8562,17 @@
         "website": "https://www.tep.com"
       },
       "GRAHAM": {
-        "name": "APS",
-        "phone": "602-371-7171",
-        "website": "https://www.aps.com"
+        "name": "Graham County Electric Cooperative",
+        "phone": "928-485-2451",
+        "website": "https://www.gce.coop"
       },
       "LA PAZ": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       },
       "GREENLEE": {
-        "name": "APS",
+        "name": "Arizona Public Service",
         "phone": "602-371-7171",
         "website": "https://www.aps.com"
       }
@@ -5871,12 +8857,12 @@
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
-      "LARIMER": {
+      "DOUGLAS": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
-      "DOUGLAS": {
+      "LARIMER": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
@@ -5911,27 +8897,7 @@
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
-      "LA PLATA": {
-        "name": "La Plata Electric",
-        "phone": "970-247-5786",
-        "website": "https://www.lpea.coop"
-      },
       "EAGLE": {
-        "name": "Xcel Energy",
-        "phone": "800-895-4999",
-        "website": "https://www.xcelenergy.com"
-      },
-      "MONTROSE": {
-        "name": "DMEA",
-        "phone": "877-687-3632",
-        "website": "https://www.dmea.com"
-      },
-      "FREMONT": {
-        "name": "Black Hills Energy",
-        "phone": "888-890-5554",
-        "website": "https://www.blackhillsenergy.com"
-      },
-      "SUMMIT": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
@@ -5941,10 +8907,250 @@
         "phone": "970-945-5491",
         "website": "https://www.holycross.com"
       },
+      "SUMMIT": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
       "ROUTT": {
         "name": "Yampa Valley Electric",
         "phone": "970-879-1160",
         "website": "https://www.yvea.com"
+      },
+      "LA PLATA": {
+        "name": "La Plata Electric",
+        "phone": "970-247-5786",
+        "website": "https://www.lpea.coop"
+      },
+      "MONTROSE": {
+        "name": "Delta-Montrose Electric",
+        "phone": "970-249-4572",
+        "website": "https://www.dmea.com"
+      },
+      "DELTA": {
+        "name": "Delta-Montrose Electric",
+        "phone": "970-249-4572",
+        "website": "https://www.dmea.com"
+      },
+      "MONTEZUMA": {
+        "name": "Empire Electric",
+        "phone": "970-565-4444",
+        "website": "https://www.empireelectric.org"
+      },
+      "SAN MIGUEL": {
+        "name": "San Miguel Power",
+        "phone": "970-626-5549",
+        "website": "https://www.smpa.com"
+      },
+      "OURAY": {
+        "name": "San Miguel Power",
+        "phone": "970-626-5549",
+        "website": "https://www.smpa.com"
+      },
+      "GUNNISON": {
+        "name": "Gunnison County Electric",
+        "phone": "970-641-3520",
+        "website": "https://www.gcea.coop"
+      },
+      "FREMONT": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com"
+      },
+      "TELLER": {
+        "name": "Intermountain REA",
+        "phone": "719-275-0507",
+        "website": "https://www.intermountain-rea.com"
+      },
+      "PARK": {
+        "name": "Intermountain REA",
+        "phone": "719-275-0507",
+        "website": "https://www.intermountain-rea.com"
+      },
+      "CLEAR CREEK": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "GILPIN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "GRAND": {
+        "name": "Mountain Parks Electric",
+        "phone": "970-887-3378",
+        "website": "https://www.mpei.com"
+      },
+      "JACKSON": {
+        "name": "Mountain Parks Electric",
+        "phone": "970-887-3378",
+        "website": "https://www.mpei.com"
+      },
+      "MOFFAT": {
+        "name": "Yampa Valley Electric",
+        "phone": "970-879-1160",
+        "website": "https://www.yvea.com"
+      },
+      "RIO BLANCO": {
+        "name": "White River Electric",
+        "phone": "970-878-5041",
+        "website": "https://www.wrea.org"
+      },
+      "MORGAN": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "LOGAN": {
+        "name": "Highline Electric",
+        "phone": "970-854-2236",
+        "website": "https://www.hea.coop"
+      },
+      "SEDGWICK": {
+        "name": "Highline Electric",
+        "phone": "970-854-2236",
+        "website": "https://www.hea.coop"
+      },
+      "PHILLIPS": {
+        "name": "Highline Electric",
+        "phone": "970-854-2236",
+        "website": "https://www.hea.coop"
+      },
+      "YUMA": {
+        "name": "Y-W Electric",
+        "phone": "970-332-4298",
+        "website": "https://www.ywelectric.coop"
+      },
+      "WASHINGTON": {
+        "name": "Y-W Electric",
+        "phone": "970-332-4298",
+        "website": "https://www.ywelectric.coop"
+      },
+      "KIT CARSON": {
+        "name": "K.C. Electric",
+        "phone": "719-743-2431",
+        "website": "https://www.kcelectric.coop"
+      },
+      "CHEYENNE": {
+        "name": "K.C. Electric",
+        "phone": "719-743-2431",
+        "website": "https://www.kcelectric.coop"
+      },
+      "LINCOLN": {
+        "name": "K.C. Electric",
+        "phone": "719-743-2431",
+        "website": "https://www.kcelectric.coop"
+      },
+      "ELBERT": {
+        "name": "Intermountain REA",
+        "phone": "719-275-0507",
+        "website": "https://www.intermountain-rea.com"
+      },
+      "CROWLEY": {
+        "name": "Southeast Colorado Power",
+        "phone": "719-384-2551",
+        "website": "https://www.secpa.com"
+      },
+      "OTERO": {
+        "name": "Southeast Colorado Power",
+        "phone": "719-384-2551",
+        "website": "https://www.secpa.com"
+      },
+      "BENT": {
+        "name": "Southeast Colorado Power",
+        "phone": "719-384-2551",
+        "website": "https://www.secpa.com"
+      },
+      "PROWERS": {
+        "name": "Southeast Colorado Power",
+        "phone": "719-384-2551",
+        "website": "https://www.secpa.com"
+      },
+      "KIOWA": {
+        "name": "Southeast Colorado Power",
+        "phone": "719-384-2551",
+        "website": "https://www.secpa.com"
+      },
+      "BACA": {
+        "name": "Southeast Colorado Power",
+        "phone": "719-384-2551",
+        "website": "https://www.secpa.com"
+      },
+      "LAS ANIMAS": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com"
+      },
+      "HUERFANO": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com"
+      },
+      "CUSTER": {
+        "name": "Sangre de Cristo Electric",
+        "phone": "719-395-2412",
+        "website": "https://www.myelectric.coop"
+      },
+      "SAGUACHE": {
+        "name": "Sangre de Cristo Electric",
+        "phone": "719-395-2412",
+        "website": "https://www.myelectric.coop"
+      },
+      "CHAFFEE": {
+        "name": "Sangre de Cristo Electric",
+        "phone": "719-395-2412",
+        "website": "https://www.myelectric.coop"
+      },
+      "LAKE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "ALAMOSA": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "RIO GRANDE": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "MINERAL": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "HINSDALE": {
+        "name": "Gunnison County Electric",
+        "phone": "970-641-3520",
+        "website": "https://www.gcea.coop"
+      },
+      "ARCHULETA": {
+        "name": "La Plata Electric",
+        "phone": "970-247-5786",
+        "website": "https://www.lpea.coop"
+      },
+      "CONEJOS": {
+        "name": "San Luis Valley REC",
+        "phone": "719-852-3538",
+        "website": "https://www.slvrec.com"
+      },
+      "COSTILLA": {
+        "name": "San Luis Valley REC",
+        "phone": "719-852-3538",
+        "website": "https://www.slvrec.com"
+      },
+      "DOLORES": {
+        "name": "Empire Electric",
+        "phone": "970-565-4444",
+        "website": "https://www.empireelectric.org"
+      },
+      "SAN JUAN": {
+        "name": "San Miguel Power",
+        "phone": "970-626-5549",
+        "website": "https://www.smpa.com"
       }
     },
     "UT": {

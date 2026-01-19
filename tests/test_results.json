@@ -1,0 +1,1174 @@
+{
+  "total_tests": 68,
+  "electric": {
+    "passed": 57,
+    "failed": 11,
+    "accuracy": 83.8
+  },
+  "gas": {
+    "passed": 57,
+    "failed": 7,
+    "skipped": 4,
+    "accuracy": 89.1
+  },
+  "total_time_ms": 13416,
+  "avg_time_ms": 197,
+  "results": [
+    {
+      "test_id": "tx_austin_001",
+      "address": "1100 Congress Ave, Austin, TX 78701",
+      "city": "Austin",
+      "state": "TX",
+      "electric": {
+        "expected": "Austin Energy",
+        "actual": "Austin Energy",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Texas Gas Service",
+        "actual": "Texas Gas Service",
+        "passed": true
+      },
+      "timing_ms": 0
+    },
+    {
+      "test_id": "tx_houston_001",
+      "address": "1000 Main St, Houston, TX 77002",
+      "city": "Houston",
+      "state": "TX",
+      "electric": {
+        "expected": "CenterPoint Energy",
+        "actual": "CenterPoint Energy",
+        "passed": true
+      },
+      "gas": {
+        "expected": "CenterPoint Energy",
+        "actual": "CenterPoint Energy",
+        "passed": true
+      },
+      "timing_ms": 0
+    },
+    {
+      "test_id": "tx_dallas_001",
+      "address": "1500 Marilla St, Dallas, TX 75201",
+      "city": "Dallas",
+      "state": "TX",
+      "electric": {
+        "expected": "Oncor",
+        "actual": "Oncor Electric Delivery",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Atmos Energy",
+        "actual": "Atmos Energy",
+        "passed": true
+      },
+      "timing_ms": 0
+    },
+    {
+      "test_id": "tx_sanantonio_001",
+      "address": "100 Military Plaza, San Antonio, TX 78205",
+      "city": "San Antonio",
+      "state": "TX",
+      "electric": {
+        "expected": "CPS Energy",
+        "actual": "CPS Energy",
+        "passed": true
+      },
+      "gas": {
+        "expected": "CPS Energy",
+        "actual": "CPS Energy",
+        "passed": true
+      },
+      "timing_ms": 0
+    },
+    {
+      "test_id": "tx_kyle_001",
+      "address": "301 Treasure Trove Path, Kyle, TX 78640",
+      "city": "Kyle",
+      "state": "TX",
+      "electric": {
+        "expected": "Pedernales Electric Cooperative",
+        "actual": "Bluebonnet Electric Cooperative",
+        "passed": false
+      },
+      "gas": {
+        "expected": "Texas Gas Service",
+        "actual": "CenterPoint Energy",
+        "passed": false
+      },
+      "timing_ms": 192
+    },
+    {
+      "test_id": "fl_miami_001",
+      "address": "100 NE 1st Ave, Miami, FL 33132",
+      "city": "Miami",
+      "state": "FL",
+      "electric": {
+        "expected": "Florida Power & Light",
+        "actual": "Florida Power & Light Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": null,
+        "actual": "FLORIDA CITY GAS COMPANY",
+        "passed": false
+      },
+      "timing_ms": 313
+    },
+    {
+      "test_id": "fl_tampa_001",
+      "address": "315 E Kennedy Blvd, Tampa, FL 33602",
+      "city": "Tampa",
+      "state": "FL",
+      "electric": {
+        "expected": "Tampa Electric",
+        "actual": "Tampa Electric Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Peoples Gas",
+        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "passed": true
+      },
+      "timing_ms": 156
+    },
+    {
+      "test_id": "fl_orlando_001",
+      "address": "400 S Orange Ave, Orlando, FL 32801",
+      "city": "Orlando",
+      "state": "FL",
+      "electric": {
+        "expected": "Orlando Utilities Commission",
+        "actual": "Orlando Utilities Commission (OUC)",
+        "passed": true
+      },
+      "gas": {
+        "expected": null,
+        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "passed": false
+      },
+      "timing_ms": 203
+    },
+    {
+      "test_id": "fl_jacksonville_001",
+      "address": "117 W Duval St, Jacksonville, FL 32202",
+      "city": "Jacksonville",
+      "state": "FL",
+      "electric": {
+        "expected": "JEA",
+        "actual": "JEA",
+        "passed": true
+      },
+      "gas": {
+        "expected": null,
+        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "passed": false
+      },
+      "timing_ms": 156
+    },
+    {
+      "test_id": "ga_atlanta_001",
+      "address": "55 Trinity Ave SW, Atlanta, GA 30303",
+      "city": "Atlanta",
+      "state": "GA",
+      "electric": {
+        "expected": "Georgia Power",
+        "actual": "Georgia Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Atlanta Gas Light",
+        "actual": "Atlanta Gas Light",
+        "passed": true
+      },
+      "timing_ms": 178
+    },
+    {
+      "test_id": "nc_charlotte_001",
+      "address": "600 E 4th St, Charlotte, NC 28202",
+      "city": "Charlotte",
+      "state": "NC",
+      "electric": {
+        "expected": "Duke Energy Carolinas",
+        "actual": "Duke Energy Carolinas, LLC",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Piedmont Natural Gas",
+        "actual": "Piedmont Natural Gas",
+        "passed": true
+      },
+      "timing_ms": 189
+    },
+    {
+      "test_id": "nc_raleigh_001",
+      "address": "1 E Edenton St, Raleigh, NC 27601",
+      "city": "Raleigh",
+      "state": "NC",
+      "electric": {
+        "expected": "Duke Energy Progress",
+        "actual": "Duke Energy Progress - (NC)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "PSNC Energy",
+        "actual": "PSNC Energy",
+        "passed": true
+      },
+      "timing_ms": 144
+    },
+    {
+      "test_id": "tn_nashville_001",
+      "address": "1 Public Square, Nashville, TN 37201",
+      "city": "Nashville",
+      "state": "TN",
+      "electric": {
+        "expected": "Nashville Electric Service",
+        "actual": "Nashville Electric Service (NES)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Piedmont Natural Gas",
+        "actual": "PIEDMONT NATURAL GAS",
+        "passed": true
+      },
+      "timing_ms": 159
+    },
+    {
+      "test_id": "tn_memphis_001",
+      "address": "125 N Main St, Memphis, TN 38103",
+      "city": "Memphis",
+      "state": "TN",
+      "electric": {
+        "expected": "MLGW",
+        "actual": "Memphis Light, Gas and Water (MLGW)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "MLGW",
+        "actual": "Memphis Light, Gas and Water (MLGW)",
+        "passed": true
+      },
+      "timing_ms": 0
+    },
+    {
+      "test_id": "ca_losangeles_001",
+      "address": "200 N Spring St, Los Angeles, CA 90012",
+      "city": "Los Angeles",
+      "state": "CA",
+      "electric": {
+        "expected": "LADWP",
+        "actual": "Los Angeles Department of Water and Power (LADWP)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Southern California Gas",
+        "actual": "SOUTHERN CALIFORNIA GAS COMPANY",
+        "passed": true
+      },
+      "timing_ms": 223
+    },
+    {
+      "test_id": "ca_sanfrancisco_001",
+      "address": "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102",
+      "city": "San Francisco",
+      "state": "CA",
+      "electric": {
+        "expected": "Pacific Gas & Electric",
+        "actual": "Pacific Gas and Electric",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Pacific Gas & Electric",
+        "actual": "Pacific Gas and Electric",
+        "passed": true
+      },
+      "timing_ms": 321
+    },
+    {
+      "test_id": "ca_sandiego_001",
+      "address": "202 C St, San Diego, CA 92101",
+      "city": "San Diego",
+      "state": "CA",
+      "electric": {
+        "expected": "San Diego Gas & Electric",
+        "actual": "San Diego Gas & Electric Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "San Diego Gas & Electric",
+        "actual": "SDG&E",
+        "passed": true
+      },
+      "timing_ms": 198
+    },
+    {
+      "test_id": "ca_sacramento_001",
+      "address": "915 I St, Sacramento, CA 95814",
+      "city": "Sacramento",
+      "state": "CA",
+      "electric": {
+        "expected": "SMUD",
+        "actual": "Sacramento Municipal Utility District (SMUD)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Pacific Gas & Electric",
+        "actual": "Pacific Gas and Electric",
+        "passed": true
+      },
+      "timing_ms": 162
+    },
+    {
+      "test_id": "ny_newyork_001",
+      "address": "City Hall, New York, NY 10007",
+      "city": "New York",
+      "state": "NY",
+      "electric": {
+        "expected": "Con Edison",
+        "actual": "Consolidated Edison Co-NY Inc",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Con Edison",
+        "actual": "Con Edison",
+        "passed": true
+      },
+      "timing_ms": 162
+    },
+    {
+      "test_id": "ny_buffalo_001",
+      "address": "65 Niagara Square, Buffalo, NY 14202",
+      "city": "Buffalo",
+      "state": "NY",
+      "electric": {
+        "expected": "National Grid",
+        "actual": "Niagara Mohawk Power Corp.",
+        "passed": true
+      },
+      "gas": {
+        "expected": "National Fuel Gas",
+        "actual": "NATIONAL FUEL GAS DISTRIBUTION",
+        "passed": true
+      },
+      "timing_ms": 198
+    },
+    {
+      "test_id": "il_chicago_001",
+      "address": "121 N LaSalle St, Chicago, IL 60602",
+      "city": "Chicago",
+      "state": "IL",
+      "electric": {
+        "expected": "Commonwealth Edison",
+        "actual": "Commonwealth Edison Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Peoples Gas",
+        "actual": "PEOPLES GAS LT & COKE CO",
+        "passed": true
+      },
+      "timing_ms": 178
+    },
+    {
+      "test_id": "pa_philadelphia_001",
+      "address": "1401 JFK Blvd, Philadelphia, PA 19102",
+      "city": "Philadelphia",
+      "state": "PA",
+      "electric": {
+        "expected": "PECO",
+        "actual": "PECO Energy Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Philadelphia Gas Works",
+        "actual": "PECO",
+        "passed": false
+      },
+      "timing_ms": 178
+    },
+    {
+      "test_id": "pa_pittsburgh_001",
+      "address": "414 Grant St, Pittsburgh, PA 15219",
+      "city": "Pittsburgh",
+      "state": "PA",
+      "electric": {
+        "expected": "Duquesne Light",
+        "actual": "Duquesne Light Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Peoples Gas",
+        "actual": "EQUITABLE GAS CO. (PEOPLES NATURAL GAS",
+        "passed": true
+      },
+      "timing_ms": 267
+    },
+    {
+      "test_id": "oh_columbus_001",
+      "address": "90 W Broad St, Columbus, OH 43215",
+      "city": "Columbus",
+      "state": "OH",
+      "electric": {
+        "expected": "AEP Ohio",
+        "actual": "Columbus Division of Power",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Columbia Gas",
+        "actual": "COLUMBIA GAS OF OHIO",
+        "passed": true
+      },
+      "timing_ms": 152
+    },
+    {
+      "test_id": "oh_cleveland_001",
+      "address": "601 Lakeside Ave, Cleveland, OH 44114",
+      "city": "Cleveland",
+      "state": "OH",
+      "electric": {
+        "expected": "Cleveland Public Power",
+        "actual": "Cleveland Public Power",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Dominion Energy",
+        "actual": "EAST OHIO GAS CO/DOMINION",
+        "passed": true
+      },
+      "timing_ms": 177
+    },
+    {
+      "test_id": "mi_detroit_001",
+      "address": "2 Woodward Ave, Detroit, MI 48226",
+      "city": "Detroit",
+      "state": "MI",
+      "electric": {
+        "expected": "DTE Energy",
+        "actual": "DTE ELECTRIC COMPANY",
+        "passed": true
+      },
+      "gas": {
+        "expected": "DTE Energy",
+        "actual": "DTE Energy",
+        "passed": true
+      },
+      "timing_ms": 617
+    },
+    {
+      "test_id": "az_phoenix_001",
+      "address": "200 W Washington St, Phoenix, AZ 85003",
+      "city": "Phoenix",
+      "state": "AZ",
+      "electric": {
+        "expected": "Arizona Public Service",
+        "actual": "Arizona Public Service (APS)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Southwest Gas",
+        "actual": "Southwest Gas Corporation",
+        "passed": true
+      },
+      "timing_ms": 166
+    },
+    {
+      "test_id": "az_tucson_001",
+      "address": "255 W Alameda St, Tucson, AZ 85701",
+      "city": "Tucson",
+      "state": "AZ",
+      "electric": {
+        "expected": "Tucson Electric Power",
+        "actual": "Tucson Electric Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Southwest Gas",
+        "actual": "Southwest Gas Corporation",
+        "passed": true
+      },
+      "timing_ms": 149
+    },
+    {
+      "test_id": "co_denver_001",
+      "address": "1437 Bannock St, Denver, CO 80202",
+      "city": "Denver",
+      "state": "CO",
+      "electric": {
+        "expected": "Xcel Energy",
+        "actual": "Public Service Co of Colorado",
+        "passed": false
+      },
+      "gas": {
+        "expected": "Xcel Energy",
+        "actual": "Xcel Energy Colorado",
+        "passed": true
+      },
+      "timing_ms": 206
+    },
+    {
+      "test_id": "wa_seattle_001",
+      "address": "600 4th Ave, Seattle, WA 98104",
+      "city": "Seattle",
+      "state": "WA",
+      "electric": {
+        "expected": "Seattle City Light",
+        "actual": "Seattle City Light",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Puget Sound Energy",
+        "actual": "PUGET SOUND ENERGY, INC.",
+        "passed": true
+      },
+      "timing_ms": 151
+    },
+    {
+      "test_id": "or_portland_001",
+      "address": "1221 SW 4th Ave, Portland, OR 97204",
+      "city": "Portland",
+      "state": "OR",
+      "electric": {
+        "expected": "Portland General Electric",
+        "actual": "Portland General Electric Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "NW Natural",
+        "actual": "NORTHWEST NATURAL GAS CO.",
+        "passed": true
+      },
+      "timing_ms": 153
+    },
+    {
+      "test_id": "nv_lasvegas_001",
+      "address": "495 S Main St, Las Vegas, NV 89101",
+      "city": "Las Vegas",
+      "state": "NV",
+      "electric": {
+        "expected": "NV Energy",
+        "actual": "Nevada Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Southwest Gas",
+        "actual": "Southwest Gas Corporation",
+        "passed": true
+      },
+      "timing_ms": 219
+    },
+    {
+      "test_id": "ma_boston_001",
+      "address": "1 City Hall Square, Boston, MA 02201",
+      "city": "Boston",
+      "state": "MA",
+      "electric": {
+        "expected": "Eversource",
+        "actual": "NSTAR Electric Company",
+        "passed": true
+      },
+      "gas": {
+        "expected": "National Grid",
+        "actual": "NATIONAL GRID",
+        "passed": true
+      },
+      "timing_ms": 190
+    },
+    {
+      "test_id": "md_baltimore_001",
+      "address": "100 N Holliday St, Baltimore, MD 21202",
+      "city": "Baltimore",
+      "state": "MD",
+      "electric": {
+        "expected": "BGE",
+        "actual": "Baltimore Gas & Electric Co",
+        "passed": false
+      },
+      "gas": {
+        "expected": "BGE",
+        "actual": "BGE",
+        "passed": true
+      },
+      "timing_ms": 145
+    },
+    {
+      "test_id": "dc_washington_001",
+      "address": "1600 Pennsylvania Ave NW, Washington, DC 20500",
+      "city": "Washington",
+      "state": "DC",
+      "electric": {
+        "expected": "Pepco",
+        "actual": "Potomac Electric Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Washington Gas",
+        "actual": "WASHINGTON GAS",
+        "passed": true
+      },
+      "timing_ms": 189
+    },
+    {
+      "test_id": "va_richmond_001",
+      "address": "900 E Broad St, Richmond, VA 23219",
+      "city": "Richmond",
+      "state": "VA",
+      "electric": {
+        "expected": "Dominion Energy",
+        "actual": "Dominion Energy Virginia",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Virginia Natural Gas",
+        "actual": "COLUMBIA GAS OF VIRGINIA",
+        "passed": false
+      },
+      "timing_ms": 176
+    },
+    {
+      "test_id": "sc_charleston_001",
+      "address": "80 Broad St, Charleston, SC 29401",
+      "city": "Charleston",
+      "state": "SC",
+      "electric": {
+        "expected": "Dominion Energy South Carolina",
+        "actual": "Dominion Energy South Carolina, Inc",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Dominion Energy",
+        "actual": "Dominion Energy SC",
+        "passed": true
+      },
+      "timing_ms": 152
+    },
+    {
+      "test_id": "la_neworleans_001",
+      "address": "1300 Perdido St, New Orleans, LA 70112",
+      "city": "New Orleans",
+      "state": "LA",
+      "electric": {
+        "expected": "Entergy New Orleans",
+        "actual": "Entergy New Orleans, LLC",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Entergy New Orleans",
+        "actual": "ENTERGY - GULF STATES",
+        "passed": true
+      },
+      "timing_ms": 196
+    },
+    {
+      "test_id": "al_birmingham_001",
+      "address": "710 N 20th St, Birmingham, AL 35203",
+      "city": "Birmingham",
+      "state": "AL",
+      "electric": {
+        "expected": "Alabama Power",
+        "actual": "Alabama Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Spire",
+        "actual": "Spire Alabama",
+        "passed": true
+      },
+      "timing_ms": 190
+    },
+    {
+      "test_id": "ms_jackson_001",
+      "address": "219 S President St, Jackson, MS 39201",
+      "city": "Jackson",
+      "state": "MS",
+      "electric": {
+        "expected": "Entergy Mississippi",
+        "actual": "Entergy Mississippi LLC",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Atmos Energy",
+        "actual": "Spire Mississippi",
+        "passed": false
+      },
+      "timing_ms": 157
+    },
+    {
+      "test_id": "ar_littlerock_001",
+      "address": "500 W Markham St, Little Rock, AR 72201",
+      "city": "Little Rock",
+      "state": "AR",
+      "electric": {
+        "expected": "Entergy Arkansas",
+        "actual": "Little Rock Pine Bluff",
+        "passed": true
+      },
+      "gas": {
+        "expected": "CenterPoint Energy",
+        "actual": "CENTERPOINT ENERGY - ARKLA",
+        "passed": true
+      },
+      "timing_ms": 441
+    },
+    {
+      "test_id": "ok_oklahomacity_001",
+      "address": "200 N Walker Ave, Oklahoma City, OK 73102",
+      "city": "Oklahoma City",
+      "state": "OK",
+      "electric": {
+        "expected": "OG&E",
+        "actual": "Oklahoma Gas & Electric Co",
+        "passed": false
+      },
+      "gas": {
+        "expected": "Oklahoma Natural Gas",
+        "actual": "OKLAHOMA NATURAL GAS CO.",
+        "passed": true
+      },
+      "timing_ms": 145
+    },
+    {
+      "test_id": "ks_wichita_001",
+      "address": "455 N Main St, Wichita, KS 67202",
+      "city": "Wichita",
+      "state": "KS",
+      "electric": {
+        "expected": "Evergy",
+        "actual": "Evergy Kansas South, Inc",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Kansas Gas Service",
+        "actual": "Kansas Gas Service",
+        "passed": true
+      },
+      "timing_ms": 248
+    },
+    {
+      "test_id": "mo_kansascity_001",
+      "address": "414 E 12th St, Kansas City, MO 64106",
+      "city": "Kansas City",
+      "state": "MO",
+      "electric": {
+        "expected": "Evergy",
+        "actual": "Evergy Metro",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Spire",
+        "actual": "Spire",
+        "passed": true
+      },
+      "timing_ms": 258
+    },
+    {
+      "test_id": "mo_stlouis_001",
+      "address": "1200 Market St, St. Louis, MO 63103",
+      "city": "St. Louis",
+      "state": "MO",
+      "electric": {
+        "expected": "Ameren Missouri",
+        "actual": "Union Electric Co - (MO)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Spire",
+        "actual": "Spire",
+        "passed": true
+      },
+      "timing_ms": 250
+    },
+    {
+      "test_id": "mn_minneapolis_001",
+      "address": "350 S 5th St, Minneapolis, MN 55415",
+      "city": "Minneapolis",
+      "state": "MN",
+      "electric": {
+        "expected": "Xcel Energy",
+        "actual": "Northern States Power Co - Minnesota",
+        "passed": true
+      },
+      "gas": {
+        "expected": "CenterPoint Energy",
+        "actual": "CENTERPOINT ENERGY",
+        "passed": true
+      },
+      "timing_ms": 150
+    },
+    {
+      "test_id": "wi_milwaukee_001",
+      "address": "200 E Wells St, Milwaukee, WI 53202",
+      "city": "Milwaukee",
+      "state": "WI",
+      "electric": {
+        "expected": "We Energies",
+        "actual": "Wisconsin Electric Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "We Energies",
+        "actual": "WE Energies",
+        "passed": true
+      },
+      "timing_ms": 275
+    },
+    {
+      "test_id": "in_indianapolis_001",
+      "address": "200 E Washington St, Indianapolis, IN 46204",
+      "city": "Indianapolis",
+      "state": "IN",
+      "electric": {
+        "expected": "AES Indiana",
+        "actual": "Indianapolis Power & Light Co",
+        "passed": false
+      },
+      "gas": {
+        "expected": "CenterPoint Energy",
+        "actual": "CITIZENS ENERGY GROUP",
+        "passed": false
+      },
+      "timing_ms": 189
+    },
+    {
+      "test_id": "ky_louisville_001",
+      "address": "601 W Jefferson St, Louisville, KY 40202",
+      "city": "Louisville",
+      "state": "KY",
+      "electric": {
+        "expected": "LG&E",
+        "actual": "Louisville Gas & Electric Co",
+        "passed": false
+      },
+      "gas": {
+        "expected": "LG&E",
+        "actual": "LG&E",
+        "passed": true
+      },
+      "timing_ms": 145
+    },
+    {
+      "test_id": "nj_newark_001",
+      "address": "920 Broad St, Newark, NJ 07102",
+      "city": "Newark",
+      "state": "NJ",
+      "electric": {
+        "expected": "PSE&G",
+        "actual": "Public Service Electric & Gas Co.",
+        "passed": false
+      },
+      "gas": {
+        "expected": "PSE&G",
+        "actual": "PSE&G",
+        "passed": true
+      },
+      "timing_ms": 691
+    },
+    {
+      "test_id": "ct_hartford_001",
+      "address": "550 Main St, Hartford, CT 06103",
+      "city": "Hartford",
+      "state": "CT",
+      "electric": {
+        "expected": "Eversource",
+        "actual": "Connecticut Light & Power Co",
+        "passed": false
+      },
+      "gas": {
+        "expected": "Eversource",
+        "actual": "CONNETICUT NATURAL GAS CORP",
+        "passed": false
+      },
+      "timing_ms": 185
+    },
+    {
+      "test_id": "ri_providence_001",
+      "address": "25 Dorrance St, Providence, RI 02903",
+      "city": "Providence",
+      "state": "RI",
+      "electric": {
+        "expected": "Rhode Island Energy",
+        "actual": "Rhode Island Energy",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Rhode Island Energy",
+        "actual": "National Grid",
+        "passed": true
+      },
+      "timing_ms": 173
+    },
+    {
+      "test_id": "de_wilmington_001",
+      "address": "800 N French St, Wilmington, DE 19801",
+      "city": "Wilmington",
+      "state": "DE",
+      "electric": {
+        "expected": "Delmarva Power",
+        "actual": "Delmarva Power and Light",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Delmarva Power",
+        "actual": "DELMARVA POWER",
+        "passed": true
+      },
+      "timing_ms": 437
+    },
+    {
+      "test_id": "nh_manchester_001",
+      "address": "1 City Hall Plaza, Manchester, NH 03101",
+      "city": "Manchester",
+      "state": "NH",
+      "electric": {
+        "expected": "Eversource",
+        "actual": "Public Service Co of NH",
+        "passed": false
+      },
+      "gas": {
+        "expected": "Liberty Utilities",
+        "actual": "LIBERTY UTILITIES (ENERGYNORTH)",
+        "passed": true
+      },
+      "timing_ms": 250
+    },
+    {
+      "test_id": "vt_burlington_001",
+      "address": "149 Church St, Burlington, VT 05401",
+      "city": "Burlington",
+      "state": "VT",
+      "electric": {
+        "expected": "Burlington Electric Department",
+        "actual": "Green Mountain Power Corp",
+        "passed": false
+      },
+      "gas": {
+        "expected": "Vermont Gas Systems",
+        "actual": "VERMONT GAS SYSTEMS INC.",
+        "passed": true
+      },
+      "timing_ms": 184
+    },
+    {
+      "test_id": "me_portland_001",
+      "address": "389 Congress St, Portland, ME 04101",
+      "city": "Portland",
+      "state": "ME",
+      "electric": {
+        "expected": "Versant Power",
+        "actual": "Central Maine Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": null,
+        "actual": "Summit Natural Gas",
+        "passed": false
+      },
+      "timing_ms": 152
+    },
+    {
+      "test_id": "wv_charleston_001",
+      "address": "1900 Kanawha Blvd E, Charleston, WV 25305",
+      "city": "Charleston",
+      "state": "WV",
+      "electric": {
+        "expected": "Appalachian Power",
+        "actual": "Appalachian Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Mountaineer Gas",
+        "actual": "MOUNTAINEER GAS CO.",
+        "passed": true
+      },
+      "timing_ms": 211
+    },
+    {
+      "test_id": "nm_albuquerque_001",
+      "address": "1 Civic Plaza NW, Albuquerque, NM 87102",
+      "city": "Albuquerque",
+      "state": "NM",
+      "electric": {
+        "expected": "PNM",
+        "actual": "Public Service Co of NM",
+        "passed": false
+      },
+      "gas": {
+        "expected": "New Mexico Gas Company",
+        "actual": "NEW MEXICO GAS COMPANY",
+        "passed": true
+      },
+      "timing_ms": 156
+    },
+    {
+      "test_id": "ut_saltlakecity_001",
+      "address": "451 S State St, Salt Lake City, UT 84111",
+      "city": "Salt Lake City",
+      "state": "UT",
+      "electric": {
+        "expected": "Rocky Mountain Power",
+        "actual": "PacifiCorp",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Dominion Energy",
+        "actual": "Dominion Energy Utah",
+        "passed": true
+      },
+      "timing_ms": 173
+    },
+    {
+      "test_id": "id_boise_001",
+      "address": "150 N Capitol Blvd, Boise, ID 83702",
+      "city": "Boise",
+      "state": "ID",
+      "electric": {
+        "expected": "Idaho Power",
+        "actual": "Idaho Power Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Intermountain Gas",
+        "actual": "INTERMOUNTAIN GAS CO",
+        "passed": true
+      },
+      "timing_ms": 172
+    },
+    {
+      "test_id": "mt_billings_001",
+      "address": "210 N 27th St, Billings, MT 59101",
+      "city": "Billings",
+      "state": "MT",
+      "electric": {
+        "expected": "NorthWestern Energy",
+        "actual": "NorthWestern Energy LLC - (MT)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "NorthWestern Energy",
+        "actual": "MONTANA-DAKOTA UTILITIES",
+        "passed": false
+      },
+      "timing_ms": 175
+    },
+    {
+      "test_id": "wy_cheyenne_001",
+      "address": "2101 O'Neil Ave, Cheyenne, WY 82001",
+      "city": "Cheyenne",
+      "state": "WY",
+      "electric": {
+        "expected": "Black Hills Energy",
+        "actual": "Cheyenne Light Fuel & Power d/b/a Black",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Black Hills Energy",
+        "actual": "BLACK HILLS ENERGY",
+        "passed": true
+      },
+      "timing_ms": 161
+    },
+    {
+      "test_id": "nd_fargo_001",
+      "address": "225 4th St N, Fargo, ND 58102",
+      "city": "Fargo",
+      "state": "ND",
+      "electric": {
+        "expected": "Xcel Energy",
+        "actual": "Northern States Power Co - Minnesota",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Xcel Energy",
+        "actual": "Xcel Energy Colorado",
+        "passed": true
+      },
+      "timing_ms": 189
+    },
+    {
+      "test_id": "sd_siouxfalls_001",
+      "address": "224 W 9th St, Sioux Falls, SD 57104",
+      "city": "Sioux Falls",
+      "state": "SD",
+      "electric": {
+        "expected": "Xcel Energy",
+        "actual": "Northern States Power Co - Minnesota",
+        "passed": true
+      },
+      "gas": {
+        "expected": "MidAmerican Energy",
+        "actual": "Berkshire Hathaway Energy",
+        "passed": true
+      },
+      "timing_ms": 174
+    },
+    {
+      "test_id": "ne_omaha_001",
+      "address": "1819 Farnam St, Omaha, NE 68183",
+      "city": "Omaha",
+      "state": "NE",
+      "electric": {
+        "expected": "OPPD",
+        "actual": "Omaha Public Power District (OPPD)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Black Hills Energy",
+        "actual": "BLACK HILLS ENERGY",
+        "passed": true
+      },
+      "timing_ms": 185
+    },
+    {
+      "test_id": "ia_desmoines_001",
+      "address": "400 Robert D Ray Dr, Des Moines, IA 50309",
+      "city": "Des Moines",
+      "state": "IA",
+      "electric": {
+        "expected": "MidAmerican Energy",
+        "actual": "MidAmerican Energy Co",
+        "passed": true
+      },
+      "gas": {
+        "expected": "MidAmerican Energy",
+        "actual": "Berkshire Hathaway Energy",
+        "passed": true
+      },
+      "timing_ms": 164
+    },
+    {
+      "test_id": "hi_honolulu_001",
+      "address": "530 S King St, Honolulu, HI 96813",
+      "city": "Honolulu",
+      "state": "HI",
+      "electric": {
+        "expected": "Hawaiian Electric",
+        "actual": "Hawaiian Electric Company (HECO)",
+        "passed": true
+      },
+      "gas": {
+        "expected": "Hawaii Gas",
+        "actual": "HAWAII GAS",
+        "passed": true
+      },
+      "timing_ms": 182
+    },
+    {
+      "test_id": "ak_anchorage_001",
+      "address": "632 W 6th Ave, Anchorage, AK 99501",
+      "city": "Anchorage",
+      "state": "AK",
+      "electric": {
+        "expected": "Chugach Electric",
+        "actual": "ANCHORAGE MUNICIPAL LIGHT AND POWER",
+        "passed": true
+      },
+      "gas": {
+        "expected": "ENSTAR Natural Gas",
+        "actual": "ENSTAR NATURAL GAS CO.",
+        "passed": true
+      },
+      "timing_ms": 339
+    }
+  ]
+}

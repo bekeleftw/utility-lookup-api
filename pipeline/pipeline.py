@@ -1,0 +1,362 @@
+"""
+Main pipeline orchestrator for utility lookups.
+
+Coordinates parallel queries to data sources, cross-validation, and result selection.
+"""
+
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed, TimeoutError
+from typing import Dict, List, Optional, Tuple
+
+from .interfaces import (
+    UtilityType,
+    LookupContext,
+    SourceResult,
+    PipelineResult,
+    DataSource,
+    SOURCE_CONFIDENCE,
+    PRECISION_BONUS,
+)
+
+
+class LookupPipeline:
+    """
+    Orchestrates the utility lookup process.
+    
+    Pipeline stages:
+    1. Query all applicable data sources in parallel
+    2. Cross-validate results
+    3. Select best result based on confidence
+    4. Enrich with contact info and brand resolution
+    5. Optional SERP verification for low-confidence results
+    """
+    
+    def __init__(self, sources: List[DataSource] = None, max_workers: int = 5):
+        """
+        Initialize the pipeline.
+        
+        Args:
+            sources: List of DataSource implementations to query
+            max_workers: Maximum parallel queries
+        """
+        self.sources = sources or []
+        self.executor = ThreadPoolExecutor(max_workers=max_workers)
+        
+        # Feature flags for gradual rollout
+        self.enable_cross_validation = True
+        self.enable_serp_verification = True
+        self.serp_confidence_threshold = 70
+    
+    def add_source(self, source: DataSource) -> None:
+        """Add a data source to the pipeline."""
+        self.sources.append(source)
+    
+    def lookup(self, context: LookupContext) -> PipelineResult:
+        """
+        Main entry point for utility lookup.
+        
+        Args:
+            context: LookupContext with address/location info
+            
+        Returns:
+            PipelineResult with the best utility match
+        """
+        start_time = time.time()
+        
+        # 1. Get applicable sources for this utility type
+        applicable_sources = [s for s in self.sources if s.supports(context.utility_type)]
+        
+        if not applicable_sources:
+            return PipelineResult.empty(context.utility_type)
+        
+        # 2. Query all sources in parallel
+        results = self._query_parallel(applicable_sources, context)
+        
+        # Filter to valid results
+        valid_results = [r for r in results if r.is_valid]
+        
+        if not valid_results:
+            result = PipelineResult.empty(context.utility_type)
+            result.timing_ms = int((time.time() - start_time) * 1000)
+            result.all_results = results
+            return result
+        
+        # 3. Cross-validate if enabled
+        if self.enable_cross_validation and len(valid_results) > 1:
+            cv_result = self._cross_validate(valid_results)
+        else:
+            cv_result = None
+        
+        # 4. Select best result
+        primary = self._select_primary(valid_results, cv_result)
+        
+        # 5. Build pipeline result
+        result = self._build_result(primary, context, cv_result)
+        result.all_results = results
+        
+        # 6. Enrich with contact info and brand resolution
+        result = self._enrich(result, context)
+        
+        # 7. Optional SERP verification
+        if (self.enable_serp_verification and 
+            result.confidence_score < self.serp_confidence_threshold):
+            result = self._verify_with_serp(result, context)
+        
+        result.timing_ms = int((time.time() - start_time) * 1000)
+        
+        return result
+    
+    def _query_parallel(
+        self, 
+        sources: List[DataSource], 
+        context: LookupContext
+    ) -> List[SourceResult]:
+        """
+        Query multiple sources in parallel.
+        
+        Implements short-circuit optimization: if a high-confidence result
+        is found early, cancel remaining queries.
+        """
+        futures = {}
+        results = []
+        
+        # Submit all queries
+        for source in sources:
+            future = self.executor.submit(self._safe_query, source, context)
+            futures[future] = source
+        
+        # Collect results as they complete
+        for future in as_completed(futures, timeout=3.0):
+            source = futures[future]
+            try:
+                result = future.result(timeout=0.1)
+                if result:
+                    results.append(result)
+                    
+                    # Short-circuit: if we get a 95+ confidence result, we're done
+                    if result.confidence_score >= 95:
+                        # Cancel remaining futures
+                        for f in futures:
+                            if not f.done():
+                                f.cancel()
+                        break
+                        
+            except TimeoutError:
+                # Source took too long
+                results.append(SourceResult(
+                    source_name=source.name,
+                    utility_name=None,
+                    confidence_score=0,
+                    match_type='none',
+                    error='timeout'
+                ))
+            except Exception as e:
+                results.append(SourceResult(
+                    source_name=source.name,
+                    utility_name=None,
+                    confidence_score=0,
+                    match_type='none',
+                    error=str(e)
+                ))
+        
+        return results
+    
+    def _safe_query(
+        self, 
+        source: DataSource, 
+        context: LookupContext
+    ) -> Optional[SourceResult]:
+        """Query a source with error handling and timing."""
+        start = time.time()
+        try:
+            result = source.query(context)
+            if result:
+                result.query_time_ms = int((time.time() - start) * 1000)
+            return result
+        except Exception as e:
+            return SourceResult(
+                source_name=source.name,
+                utility_name=None,
+                confidence_score=0,
+                match_type='none',
+                error=str(e),
+                query_time_ms=int((time.time() - start) * 1000)
+            )
+    
+    def _cross_validate(self, results: List[SourceResult]) -> Dict:
+        """
+        Cross-validate results from multiple sources.
+        
+        Returns dict with:
+        - agreeing_sources: list of source names that agree
+        - disagreeing_sources: list of source names that disagree
+        - confidence_adjustment: points to add/subtract
+        - primary_name: the utility name most sources agree on
+        """
+        from serp_verification import normalize_utility_name, is_alias
+        
+        # Group results by normalized utility name
+        groups: Dict[str, List[SourceResult]] = {}
+        
+        for result in results:
+            norm_name = normalize_utility_name(result.utility_name)
+            
+            # Check if this matches an existing group
+            matched_group = None
+            for group_name in groups:
+                if is_alias(norm_name, group_name):
+                    matched_group = group_name
+                    break
+            
+            if matched_group:
+                groups[matched_group].append(result)
+            else:
+                groups[norm_name] = [result]
+        
+        # Find the largest group
+        sorted_groups = sorted(groups.items(), key=lambda x: len(x[1]), reverse=True)
+        top_group_name, top_group = sorted_groups[0]
+        
+        agreeing = [r.source_name for r in top_group]
+        disagreeing = [r.source_name for r in results if r.source_name not in agreeing]
+        
+        # Calculate confidence adjustment
+        total = len(results)
+        agree_count = len(agreeing)
+        
+        if agree_count == total:
+            adjustment = 20  # Full agreement
+        elif agree_count > total / 2:
+            adjustment = 10  # Majority agreement
+        else:
+            adjustment = -10  # Split
+        
+        return {
+            'agreeing_sources': agreeing,
+            'disagreeing_sources': disagreeing,
+            'confidence_adjustment': adjustment,
+            'primary_name': top_group[0].utility_name,  # Use original name
+            'sources_agreed': len(disagreeing) == 0,
+        }
+    
+    def _select_primary(
+        self, 
+        results: List[SourceResult], 
+        cv_result: Optional[Dict]
+    ) -> SourceResult:
+        """
+        Select the best result based on confidence and cross-validation.
+        """
+        if not results:
+            return None
+        
+        # Score each result
+        scored = []
+        for r in results:
+            score = r.confidence_score
+            
+            # Add precision bonus
+            score += PRECISION_BONUS.get(r.match_type, 0)
+            
+            # Add cross-validation bonus if applicable
+            if cv_result and r.source_name in cv_result.get('agreeing_sources', []):
+                score += cv_result.get('confidence_adjustment', 0)
+            
+            scored.append((score, r))
+        
+        # Sort by score descending
+        scored.sort(key=lambda x: x[0], reverse=True)
+        
+        return scored[0][1]
+    
+    def _build_result(
+        self, 
+        primary: SourceResult, 
+        context: LookupContext,
+        cv_result: Optional[Dict]
+    ) -> PipelineResult:
+        """Build the final pipeline result from the selected source result."""
+        
+        # Calculate final confidence
+        confidence = primary.confidence_score
+        confidence += PRECISION_BONUS.get(primary.match_type, 0)
+        
+        if cv_result:
+            if primary.source_name in cv_result.get('agreeing_sources', []):
+                confidence += cv_result.get('confidence_adjustment', 0)
+        
+        # Cap at 100
+        confidence = min(100, max(0, confidence))
+        
+        return PipelineResult(
+            utility_name=primary.utility_name,
+            utility_type=context.utility_type,
+            confidence_score=confidence,
+            confidence_level=PipelineResult.confidence_level_from_score(confidence),
+            source=primary.source_name,
+            phone=primary.phone,
+            website=primary.website,
+            sources_agreed=cv_result.get('sources_agreed', True) if cv_result else True,
+            agreeing_sources=cv_result.get('agreeing_sources', []) if cv_result else [],
+            disagreeing_sources=cv_result.get('disagreeing_sources', []) if cv_result else [],
+        )
+    
+    def _enrich(self, result: PipelineResult, context: LookupContext) -> PipelineResult:
+        """Enrich result with brand resolution and deregulated market info."""
+        try:
+            from brand_resolver import resolve_brand_name_with_fallback
+            from deregulated_markets import is_deregulated_state, get_deregulated_note
+            
+            # Brand resolution
+            if result.utility_name:
+                brand, legal = resolve_brand_name_with_fallback(result.utility_name, context.state)
+                if brand:
+                    result.brand_name = brand
+                if legal:
+                    result.legal_name = legal
+            
+            # Deregulated market check (electric only)
+            if context.utility_type == UtilityType.ELECTRIC:
+                result.deregulated_market = is_deregulated_state(context.state)
+                if result.deregulated_market:
+                    result.deregulated_note = get_deregulated_note(context.state)
+                    
+        except ImportError:
+            pass  # Modules not available
+        
+        return result
+    
+    def _verify_with_serp(
+        self, 
+        result: PipelineResult, 
+        context: LookupContext
+    ) -> PipelineResult:
+        """Optional SERP verification for low-confidence results."""
+        try:
+            from serp_verification import verify_utility_via_serp
+            
+            serp_result = verify_utility_via_serp(
+                address=context.address,
+                city=context.city,
+                state=context.state,
+                utility_type=context.utility_type.value,
+                expected_utility=result.utility_name or '',
+                zip_code=context.zip_code
+            )
+            
+            result.serp_verified = serp_result.verified
+            result.serp_utility = serp_result.serp_utility
+            
+            # Adjust confidence based on SERP
+            result.confidence_score += int(serp_result.confidence_boost * 100)
+            result.confidence_score = min(100, max(0, result.confidence_score))
+            result.confidence_level = PipelineResult.confidence_level_from_score(result.confidence_score)
+            
+        except Exception:
+            pass  # SERP verification failed, continue without it
+        
+        return result
+    
+    def shutdown(self):
+        """Shutdown the thread pool executor."""
+        self.executor.shutdown(wait=False)

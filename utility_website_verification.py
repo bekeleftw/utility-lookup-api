@@ -1952,6 +1952,851 @@ def verify_oncor(address: str, city: str, state: str, zip_code: str, county: str
 
 
 # =============================================================================
+# LADWP (LOS ANGELES DEPT OF WATER & POWER) - CA
+# =============================================================================
+
+LADWP_CITIES = ["LOS ANGELES", "OWENS VALLEY"]
+
+def verify_ladwp(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if LADWP serves an address."""
+    if state != "CA":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in LADWP_CITIES or "LOS ANGELES" in city_upper:
+        return {
+            "verified": True,
+            "utility": "Los Angeles Dept of Water & Power",
+            "source": "ladwp_territory_data",
+            "confidence": "high",
+            "phone": "800-342-5397",
+            "website": "https://www.ladwp.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# SMUD (SACRAMENTO MUNICIPAL UTILITY DISTRICT) - CA
+# =============================================================================
+
+SMUD_COUNTIES = ["SACRAMENTO", "PLACER"]
+
+def verify_smud(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if SMUD serves an address."""
+    if state != "CA":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "SACRAMENTO" or (county and county.upper().replace(" COUNTY", "").strip() in SMUD_COUNTIES):
+        return {
+            "verified": True,
+            "utility": "SMUD",
+            "source": "smud_territory_data",
+            "confidence": "high",
+            "phone": "888-742-7683",
+            "website": "https://www.smud.org"
+        }
+    
+    return None
+
+
+# =============================================================================
+# SDG&E (SAN DIEGO GAS & ELECTRIC) - CA
+# =============================================================================
+
+SDGE_COUNTIES = ["SAN DIEGO", "ORANGE"]
+
+def verify_sdge(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if SDG&E serves an address."""
+    if state != "CA":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper == "SAN DIEGO":
+            return {
+                "verified": True,
+                "utility": "San Diego Gas & Electric",
+                "source": "sdge_territory_data",
+                "confidence": "high",
+                "phone": "800-411-7343",
+                "website": "https://www.sdge.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# BGE (BALTIMORE GAS & ELECTRIC) - MD
+# =============================================================================
+
+BGE_COUNTIES = ["BALTIMORE", "BALTIMORE CITY", "ANNE ARUNDEL", "HOWARD", "HARFORD", "CARROLL", "CECIL"]
+
+def verify_bge(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if BGE serves an address."""
+    if state != "MD":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "BALTIMORE" or (county and county.upper().replace(" COUNTY", "").strip() in BGE_COUNTIES):
+        return {
+            "verified": True,
+            "utility": "Baltimore Gas & Electric",
+            "source": "bge_territory_data",
+            "confidence": "high",
+            "phone": "800-685-0123",
+            "website": "https://www.bge.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# PEPCO - MD, DC
+# =============================================================================
+
+PEPCO_COUNTIES = ["MONTGOMERY", "PRINCE GEORGE'S"]
+
+def verify_pepco(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Pepco serves an address."""
+    if state not in ["MD", "DC"]:
+        return None
+    
+    if state == "DC":
+        return {
+            "verified": True,
+            "utility": "Pepco",
+            "source": "pepco_territory_data",
+            "confidence": "high",
+            "phone": "202-833-7500",
+            "website": "https://www.pepco.com"
+        }
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in PEPCO_COUNTIES or "PRINCE GEORGE" in county_upper:
+            return {
+                "verified": True,
+                "utility": "Pepco",
+                "source": "pepco_territory_data",
+                "confidence": "high",
+                "phone": "202-833-7500",
+                "website": "https://www.pepco.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# DELMARVA POWER - DE, MD
+# =============================================================================
+
+DELMARVA_TERRITORY = {
+    "DE": {
+        "counties": ["NEW CASTLE", "KENT", "SUSSEX"],
+        "coverage": "majority"
+    },
+    "MD": {
+        "counties": ["CAROLINE", "CECIL", "DORCHESTER", "KENT", "QUEEN ANNE'S", 
+                     "SOMERSET", "TALBOT", "WICOMICO", "WORCESTER"],
+        "coverage": "partial"
+    }
+}
+
+def verify_delmarva(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Delmarva Power serves an address."""
+    if state not in DELMARVA_TERRITORY:
+        return None
+    
+    territory = DELMARVA_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Delmarva Power",
+                "source": "delmarva_territory_data",
+                "confidence": "high",
+                "phone": "800-375-7117",
+                "website": "https://www.delmarva.com"
+            }
+    
+    if territory["coverage"] == "majority":
+        return {
+            "verified": True,
+            "utility": "Delmarva Power",
+            "source": "delmarva_territory_data",
+            "confidence": "medium"
+        }
+    
+    return None
+
+
+# =============================================================================
+# NYSEG (NEW YORK STATE ELECTRIC & GAS) - NY
+# =============================================================================
+
+NYSEG_COUNTIES = [
+    "BROOME", "TIOGA", "CHEMUNG", "STEUBEN", "SCHUYLER", "TOMPKINS", "CORTLAND",
+    "CHENANGO", "OTSEGO", "DELAWARE", "SULLIVAN", "ULSTER", "GREENE", "COLUMBIA",
+    "RENSSELAER", "WASHINGTON", "WARREN", "ESSEX", "CLINTON", "FRANKLIN",
+    "ST. LAWRENCE", "JEFFERSON", "LEWIS", "OSWEGO", "CAYUGA", "SENECA", "YATES",
+    "ONTARIO", "LIVINGSTON", "ALLEGANY", "CATTARAUGUS", "CHAUTAUQUA"
+]
+
+def verify_nyseg(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if NYSEG serves an address."""
+    if state != "NY":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in NYSEG_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "NYSEG",
+                "source": "nyseg_territory_data",
+                "confidence": "high",
+                "phone": "800-572-1111",
+                "website": "https://www.nyseg.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# RG&E (ROCHESTER GAS & ELECTRIC) - NY
+# =============================================================================
+
+RGE_COUNTIES = ["MONROE", "WAYNE", "ONTARIO", "LIVINGSTON", "GENESEE", "ORLEANS", "WYOMING"]
+
+def verify_rge(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if RG&E serves an address."""
+    if state != "NY":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "ROCHESTER" or (county and county.upper().replace(" COUNTY", "").strip() in RGE_COUNTIES):
+        return {
+            "verified": True,
+            "utility": "Rochester Gas & Electric",
+            "source": "rge_territory_data",
+            "confidence": "high",
+            "phone": "800-743-2110",
+            "website": "https://www.rge.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# CENTRAL HUDSON - NY
+# =============================================================================
+
+CENTRAL_HUDSON_COUNTIES = ["DUTCHESS", "ORANGE", "ULSTER", "SULLIVAN", "GREENE", "COLUMBIA"]
+
+def verify_central_hudson(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Central Hudson serves an address."""
+    if state != "NY":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in CENTRAL_HUDSON_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Central Hudson",
+                "source": "central_hudson_territory_data",
+                "confidence": "high",
+                "phone": "845-452-2700",
+                "website": "https://www.cenhud.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# PSEG LONG ISLAND (LIPA) - NY
+# =============================================================================
+
+LIPA_COUNTIES = ["NASSAU", "SUFFOLK"]
+
+def verify_lipa(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if PSEG Long Island serves an address."""
+    if state != "NY":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in LIPA_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "PSEG Long Island",
+                "source": "lipa_territory_data",
+                "confidence": "high",
+                "phone": "800-490-0025",
+                "website": "https://www.psegliny.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# SWEPCO (SOUTHWESTERN ELECTRIC POWER) - TX, LA, AR
+# =============================================================================
+
+SWEPCO_TERRITORY = {
+    "TX": {
+        "counties": ["BOWIE", "CASS", "MORRIS", "TITUS", "CAMP", "UPSHUR", "GREGG",
+                     "HARRISON", "PANOLA", "RUSK", "SMITH", "CHEROKEE", "NACOGDOCHES",
+                     "SHELBY", "SAN AUGUSTINE", "SABINE", "ANGELINA", "HOUSTON"],
+        "coverage": "partial"
+    },
+    "LA": {
+        "counties": ["CADDO", "BOSSIER", "WEBSTER", "CLAIBORNE", "BIENVILLE", "LINCOLN",
+                     "UNION", "MOREHOUSE", "OUACHITA", "RICHLAND", "MADISON", "TENSAS",
+                     "CONCORDIA", "CATAHOULA", "LA SALLE", "GRANT", "WINN", "JACKSON",
+                     "CALDWELL", "FRANKLIN", "EAST CARROLL", "WEST CARROLL"],
+        "coverage": "partial"
+    },
+    "AR": {
+        "counties": ["MILLER", "LAFAYETTE", "COLUMBIA", "UNION", "CALHOUN", "OUACHITA",
+                     "BRADLEY", "DREW", "ASHLEY", "CHICOT", "DESHA", "CLEVELAND",
+                     "DALLAS", "CLARK", "PIKE", "HOWARD", "SEVIER", "LITTLE RIVER",
+                     "HEMPSTEAD", "NEVADA"],
+        "coverage": "partial"
+    }
+}
+
+def verify_swepco(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if SWEPCO serves an address."""
+    if state not in SWEPCO_TERRITORY:
+        return None
+    
+    territory = SWEPCO_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").replace(" PARISH", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "SWEPCO",
+                "source": "swepco_territory_data",
+                "confidence": "high",
+                "phone": "888-216-3523",
+                "website": "https://www.swepco.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# CLECO - LA
+# =============================================================================
+
+CLECO_PARISHES = [
+    "RAPIDES", "AVOYELLES", "EVANGELINE", "ST. LANDRY", "ALLEN", "BEAUREGARD",
+    "CALCASIEU", "CAMERON", "JEFFERSON DAVIS", "ACADIA", "VERMILION", "IBERIA",
+    "ST. MARTIN", "LAFAYETTE", "ST. MARY", "ASSUMPTION", "TERREBONNE", "LAFOURCHE",
+    "NATCHITOCHES", "SABINE", "VERNON", "ST. TAMMANY", "WASHINGTON", "TANGIPAHOA"
+]
+
+def verify_cleco(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Cleco serves an address."""
+    if state != "LA":
+        return None
+    
+    if county:
+        parish_upper = county.upper().replace(" PARISH", "").strip()
+        if parish_upper in CLECO_PARISHES:
+            return {
+                "verified": True,
+                "utility": "Cleco",
+                "source": "cleco_territory_data",
+                "confidence": "high",
+                "phone": "800-622-6537",
+                "website": "https://www.cleco.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# MISSISSIPPI POWER - MS
+# =============================================================================
+
+MS_POWER_COUNTIES = [
+    "HARRISON", "JACKSON", "HANCOCK", "STONE", "PEARL RIVER", "GEORGE", "GREENE",
+    "WAYNE", "JONES", "FORREST", "LAMAR", "MARION", "PERRY", "COVINGTON", "JEFF DAVIS",
+    "SMITH", "JASPER", "CLARKE", "LAUDERDALE", "NEWTON", "SCOTT", "KEMPER", "NESHOBA"
+]
+
+def verify_mississippi_power(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Mississippi Power serves an address."""
+    if state != "MS":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in MS_POWER_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Mississippi Power",
+                "source": "mississippi_power_territory_data",
+                "confidence": "high",
+                "phone": "800-532-1502",
+                "website": "https://www.mississippipower.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# GULF POWER (NOW FLORIDA POWER & LIGHT) - FL
+# =============================================================================
+
+GULF_POWER_COUNTIES = [
+    "ESCAMBIA", "SANTA ROSA", "OKALOOSA", "WALTON", "HOLMES", "WASHINGTON",
+    "BAY", "JACKSON", "CALHOUN", "GULF", "LIBERTY", "FRANKLIN", "GADSDEN", "LEON"
+]
+
+def verify_gulf_power(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Gulf Power (now FPL) serves an address."""
+    if state != "FL":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in GULF_POWER_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Gulf Power (FPL Northwest)",
+                "source": "gulf_power_territory_data",
+                "confidence": "high",
+                "phone": "800-225-5797",
+                "website": "https://www.gulf power.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# JEA - FL (Jacksonville)
+# =============================================================================
+
+def verify_jea(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if JEA serves an address."""
+    if state != "FL":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "JACKSONVILLE" or (county and county.upper().replace(" COUNTY", "").strip() == "DUVAL"):
+        return {
+            "verified": True,
+            "utility": "JEA",
+            "source": "jea_territory_data",
+            "confidence": "high",
+            "phone": "904-665-6000",
+            "website": "https://www.jea.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# ORLANDO UTILITIES COMMISSION (OUC) - FL
+# =============================================================================
+
+def verify_ouc(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if OUC serves an address."""
+    if state != "FL":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "ORLANDO" or city_upper == "ST. CLOUD":
+        return {
+            "verified": True,
+            "utility": "Orlando Utilities Commission",
+            "source": "ouc_territory_data",
+            "confidence": "high",
+            "phone": "407-423-9018",
+            "website": "https://www.ouc.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# SEATTLE CITY LIGHT - WA
+# =============================================================================
+
+def verify_seattle_city_light(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Seattle City Light serves an address."""
+    if state != "WA":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "SEATTLE" or city_upper == "SHORELINE" or city_upper == "BURIEN" or city_upper == "LAKE FOREST PARK":
+        return {
+            "verified": True,
+            "utility": "Seattle City Light",
+            "source": "seattle_city_light_territory_data",
+            "confidence": "high",
+            "phone": "206-684-3000",
+            "website": "https://www.seattle.gov/city-light"
+        }
+    
+    return None
+
+
+# =============================================================================
+# TACOMA POWER - WA
+# =============================================================================
+
+def verify_tacoma_power(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Tacoma Power serves an address."""
+    if state != "WA":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "TACOMA" or city_upper == "UNIVERSITY PLACE" or city_upper == "FIRCREST":
+        return {
+            "verified": True,
+            "utility": "Tacoma Power",
+            "source": "tacoma_power_territory_data",
+            "confidence": "high",
+            "phone": "253-502-8600",
+            "website": "https://www.mytpu.org/tacomapower"
+        }
+    
+    return None
+
+
+# =============================================================================
+# SNOHOMISH COUNTY PUD - WA
+# =============================================================================
+
+def verify_snopud(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Snohomish County PUD serves an address."""
+    if state != "WA":
+        return None
+    
+    if county and county.upper().replace(" COUNTY", "").strip() == "SNOHOMISH":
+        return {
+            "verified": True,
+            "utility": "Snohomish County PUD",
+            "source": "snopud_territory_data",
+            "confidence": "high",
+            "phone": "425-783-1000",
+            "website": "https://www.snopud.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# CLARK PUBLIC UTILITIES - WA
+# =============================================================================
+
+def verify_clark_pu(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Clark Public Utilities serves an address."""
+    if state != "WA":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "VANCOUVER" or (county and county.upper().replace(" COUNTY", "").strip() == "CLARK"):
+        return {
+            "verified": True,
+            "utility": "Clark Public Utilities",
+            "source": "clark_pu_territory_data",
+            "confidence": "high",
+            "phone": "360-992-3000",
+            "website": "https://www.clarkpublicutilities.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# AUSTIN ENERGY - TX
+# =============================================================================
+
+def verify_austin_energy(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Austin Energy serves an address."""
+    if state != "TX":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "AUSTIN" or city_upper == "PFLUGERVILLE" or city_upper == "MANOR":
+        return {
+            "verified": True,
+            "utility": "Austin Energy",
+            "source": "austin_energy_territory_data",
+            "confidence": "high",
+            "phone": "512-494-9400",
+            "website": "https://www.austinenergy.com",
+            "note": "Municipal utility - not in deregulated ERCOT market"
+        }
+    
+    return None
+
+
+# =============================================================================
+# CPS ENERGY - TX (San Antonio)
+# =============================================================================
+
+def verify_cps_energy(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if CPS Energy serves an address."""
+    if state != "TX":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "SAN ANTONIO" or (county and county.upper().replace(" COUNTY", "").strip() == "BEXAR"):
+        return {
+            "verified": True,
+            "utility": "CPS Energy",
+            "source": "cps_energy_territory_data",
+            "confidence": "high",
+            "phone": "210-353-2222",
+            "website": "https://www.cpsenergy.com",
+            "note": "Municipal utility - not in deregulated ERCOT market"
+        }
+    
+    return None
+
+
+# =============================================================================
+# EPCOR (FORMERLY EL PASO ELECTRIC) - TX, NM
+# =============================================================================
+
+EPCOR_TERRITORY = {
+    "TX": {
+        "counties": ["EL PASO", "HUDSPETH", "CULBERSON"],
+        "coverage": "majority"
+    },
+    "NM": {
+        "counties": ["DONA ANA", "OTERO", "LINCOLN", "SIERRA", "LUNA"],
+        "coverage": "partial"
+    }
+}
+
+def verify_epcor(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if EPCOR (El Paso Electric) serves an address."""
+    if state not in EPCOR_TERRITORY:
+        return None
+    
+    territory = EPCOR_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "El Paso Electric",
+                "source": "epcor_territory_data",
+                "confidence": "high",
+                "phone": "800-351-1621",
+                "website": "https://www.epelectric.com"
+            }
+    
+    if territory["coverage"] == "majority":
+        return {
+            "verified": True,
+            "utility": "El Paso Electric",
+            "source": "epcor_territory_data",
+            "confidence": "medium"
+        }
+    
+    return None
+
+
+# =============================================================================
+# TNMP (TEXAS-NEW MEXICO POWER) - TX
+# =============================================================================
+
+TNMP_COUNTIES = [
+    "GALVESTON", "BRAZORIA", "FORT BEND", "WHARTON", "MATAGORDA", "JACKSON",
+    "CALHOUN", "VICTORIA", "REFUGIO", "ARANSAS", "SAN PATRICIO", "NUECES",
+    "KLEBERG", "KENEDY", "WILLACY", "CAMERON", "HIDALGO", "STARR", "ZAPATA",
+    "WEBB", "DIMMIT", "MAVERICK", "KINNEY", "VAL VERDE", "TERRELL", "BREWSTER",
+    "PRESIDIO", "JEFF DAVIS", "REEVES", "PECOS", "CROCKETT", "SUTTON", "SCHLEICHER",
+    "MENARD", "KIMBLE", "KERR", "REAL", "EDWARDS", "BANDERA", "KENDALL", "COMAL",
+    "GUADALUPE", "GONZALES", "DEWITT", "LAVACA", "COLORADO", "FAYETTE", "BASTROP",
+    "LEE", "BURLESON", "BRAZOS", "GRIMES", "WALKER", "MONTGOMERY", "LIBERTY",
+    "CHAMBERS", "JEFFERSON", "ORANGE", "HARDIN", "TYLER", "JASPER", "NEWTON"
+]
+
+def verify_tnmp(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if TNMP serves an address (TDU in Texas)."""
+    if state != "TX":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in TNMP_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Texas-New Mexico Power",
+                "source": "tnmp_territory_data",
+                "confidence": "medium",  # TNMP has scattered territory
+                "phone": "888-866-7456",
+                "website": "https://www.tnmp.com",
+                "note": "TDU - Choose your retail electric provider at PowerToChoose.org"
+            }
+    
+    return None
+
+
+# =============================================================================
+# UNITIL - NH, MA, ME
+# =============================================================================
+
+UNITIL_TERRITORY = {
+    "NH": {
+        "cities": ["CONCORD", "HAMPTON", "EXETER", "SEABROOK"],
+        "coverage": "partial"
+    },
+    "MA": {
+        "cities": ["FITCHBURG", "LUNENBURG"],
+        "coverage": "partial"
+    },
+    "ME": {
+        "cities": ["PORTLAND", "SOUTH PORTLAND", "WESTBROOK", "CAPE ELIZABETH"],
+        "coverage": "partial"
+    }
+}
+
+def verify_unitil(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Unitil serves an address."""
+    if state not in UNITIL_TERRITORY:
+        return None
+    
+    territory = UNITIL_TERRITORY[state]
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in territory["cities"]:
+        return {
+            "verified": True,
+            "utility": "Unitil",
+            "source": "unitil_territory_data",
+            "confidence": "high",
+            "phone": "888-301-7700",
+            "website": "https://www.unitil.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# LIBERTY UTILITIES - NH, CA, AZ, etc.
+# =============================================================================
+
+LIBERTY_TERRITORY = {
+    "NH": {
+        "cities": ["SALEM", "DERRY", "LONDONDERRY", "WINDHAM", "PELHAM"],
+        "coverage": "partial"
+    },
+    "CA": {
+        "counties": ["ALPINE", "MONO"],
+        "coverage": "partial"
+    }
+}
+
+def verify_liberty(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Liberty Utilities serves an address."""
+    if state not in LIBERTY_TERRITORY:
+        return None
+    
+    territory = LIBERTY_TERRITORY[state]
+    city_upper = city.upper().strip() if city else ""
+    
+    if "cities" in territory and city_upper in territory["cities"]:
+        return {
+            "verified": True,
+            "utility": "Liberty Utilities",
+            "source": "liberty_territory_data",
+            "confidence": "high",
+            "phone": "800-375-7413",
+            "website": "https://www.libertyutilities.com"
+        }
+    
+    if "counties" in territory and county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Liberty Utilities",
+                "source": "liberty_territory_data",
+                "confidence": "high",
+                "phone": "800-782-2506",
+                "website": "https://www.libertyutilities.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# BLACK HILLS ENERGY - WY, SD, CO, NE, MT, AR, KS, IA
+# =============================================================================
+
+BLACK_HILLS_TERRITORY = {
+    "WY": {
+        "counties": ["LARAMIE", "GOSHEN", "PLATTE", "NIOBRARA", "CONVERSE", "WESTON"],
+        "coverage": "partial"
+    },
+    "SD": {
+        "counties": ["PENNINGTON", "MEADE", "LAWRENCE", "CUSTER", "FALL RIVER"],
+        "coverage": "partial"
+    },
+    "CO": {
+        "counties": ["PUEBLO", "HUERFANO", "LAS ANIMAS", "OTERO", "BENT", "PROWERS",
+                     "BACA", "CROWLEY", "KIOWA", "CHEYENNE", "KIT CARSON", "LINCOLN",
+                     "ELBERT", "EL PASO", "TELLER", "FREMONT", "CUSTER", "SAGUACHE"],
+        "coverage": "partial"
+    },
+    "NE": {
+        "counties": ["SCOTTS BLUFF", "BANNER", "KIMBALL", "CHEYENNE", "DEUEL", "GARDEN",
+                     "MORRILL", "BOX BUTTE", "DAWES", "SHERIDAN", "SIOUX"],
+        "coverage": "partial"
+    }
+}
+
+def verify_black_hills(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Black Hills Energy serves an address."""
+    if state not in BLACK_HILLS_TERRITORY:
+        return None
+    
+    territory = BLACK_HILLS_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Black Hills Energy",
+                "source": "black_hills_territory_data",
+                "confidence": "high",
+                "phone": "888-890-5554",
+                "website": "https://www.blackhillsenergy.com"
+            }
+    
+    return None
+
+
+# =============================================================================
 # MAIN VERIFICATION FUNCTION
 # =============================================================================
 
@@ -2104,43 +2949,101 @@ UTILITY_VERIFIERS = {
     "CENTERPOINT ENERGY": verify_centerpoint,
     "ONCOR": verify_oncor,
     "ONCOR ELECTRIC": verify_oncor,
+    # California municipal
+    "LADWP": verify_ladwp,
+    "LOS ANGELES DWP": verify_ladwp,
+    "LOS ANGELES DEPT OF WATER & POWER": verify_ladwp,
+    "SMUD": verify_smud,
+    "SACRAMENTO MUNICIPAL UTILITY DISTRICT": verify_smud,
+    "SDG&E": verify_sdge,
+    "SAN DIEGO GAS & ELECTRIC": verify_sdge,
+    "SAN DIEGO GAS AND ELECTRIC": verify_sdge,
+    # Maryland/DC
+    "BGE": verify_bge,
+    "BALTIMORE GAS & ELECTRIC": verify_bge,
+    "BALTIMORE GAS AND ELECTRIC": verify_bge,
+    "PEPCO": verify_pepco,
+    "POTOMAC ELECTRIC": verify_pepco,
+    "DELMARVA": verify_delmarva,
+    "DELMARVA POWER": verify_delmarva,
+    # New York utilities
+    "NYSEG": verify_nyseg,
+    "NEW YORK STATE ELECTRIC & GAS": verify_nyseg,
+    "RG&E": verify_rge,
+    "RGE": verify_rge,
+    "ROCHESTER GAS & ELECTRIC": verify_rge,
+    "CENTRAL HUDSON": verify_central_hudson,
+    "LIPA": verify_lipa,
+    "PSEG LONG ISLAND": verify_lipa,
+    "LONG ISLAND POWER AUTHORITY": verify_lipa,
+    # Louisiana
+    "SWEPCO": verify_swepco,
+    "SOUTHWESTERN ELECTRIC POWER": verify_swepco,
+    "CLECO": verify_cleco,
+    # Mississippi
+    "MISSISSIPPI POWER": verify_mississippi_power,
+    # Florida municipal
+    "GULF POWER": verify_gulf_power,
+    "JEA": verify_jea,
+    "OUC": verify_ouc,
+    "ORLANDO UTILITIES COMMISSION": verify_ouc,
+    # Washington municipal/PUD
+    "SEATTLE CITY LIGHT": verify_seattle_city_light,
+    "TACOMA POWER": verify_tacoma_power,
+    "SNOHOMISH PUD": verify_snopud,
+    "SNOPUD": verify_snopud,
+    "CLARK PUBLIC UTILITIES": verify_clark_pu,
+    # Texas municipal
+    "AUSTIN ENERGY": verify_austin_energy,
+    "CPS ENERGY": verify_cps_energy,
+    "EL PASO ELECTRIC": verify_epcor,
+    "EPCOR": verify_epcor,
+    "TNMP": verify_tnmp,
+    "TEXAS-NEW MEXICO POWER": verify_tnmp,
+    # New England
+    "UNITIL": verify_unitil,
+    "LIBERTY UTILITIES": verify_liberty,
+    "LIBERTY": verify_liberty,
+    # Black Hills
+    "BLACK HILLS ENERGY": verify_black_hills,
+    "BLACK HILLS": verify_black_hills,
 }
 
 # State to utility verifier mapping for fallback
 STATE_VERIFIERS = {
     "GA": [verify_georgia_power],
     "AL": [verify_alabama_power],
-    "FL": [verify_fpl, verify_duke_energy, verify_teco],
+    "FL": [verify_fpl, verify_duke_energy, verify_teco, verify_gulf_power, verify_jea, verify_ouc],
     "NC": [verify_duke_energy, verify_dominion_energy],
     "SC": [verify_duke_energy, verify_dominion_energy],
     "VA": [verify_dominion_energy, verify_aep],
-    "LA": [verify_entergy],
-    "AR": [verify_entergy, verify_oge],
-    "MS": [verify_entergy, verify_alabama_power],
-    "TX": [verify_oncor, verify_centerpoint, verify_aep, verify_entergy, verify_xcel],
+    "LA": [verify_entergy, verify_cleco, verify_swepco],
+    "AR": [verify_entergy, verify_oge, verify_swepco],
+    "MS": [verify_entergy, verify_mississippi_power, verify_alabama_power],
+    "TX": [verify_oncor, verify_centerpoint, verify_aep, verify_entergy, verify_xcel, verify_austin_energy, verify_cps_energy, verify_epcor, verify_tnmp, verify_swepco],
     "IN": [verify_duke_energy],
     "OH": [verify_duke_energy, verify_aep, verify_firstenergy],
     "KY": [verify_duke_energy],
-    "CA": [verify_pge, verify_sce, verify_pacific_power],
-    "CO": [verify_xcel],
+    "CA": [verify_pge, verify_sce, verify_sdge, verify_ladwp, verify_smud, verify_pacific_power],
+    "CO": [verify_xcel, verify_black_hills],
     "MN": [verify_xcel],
     "WI": [verify_we_energies, verify_alliant, verify_xcel],
-    "NM": [verify_xcel],
+    "NM": [verify_xcel, verify_epcor],
     "MO": [verify_ameren, verify_evergy],
     "IL": [verify_comed, verify_ameren, verify_midamerican],
     "WV": [verify_aep, verify_firstenergy],
     "OK": [verify_oge, verify_aep],
     "PA": [verify_peco, verify_ppl, verify_firstenergy],
     "NJ": [verify_pseg, verify_firstenergy],
-    "NY": [verify_coned, verify_national_grid],
-    "MA": [verify_eversource, verify_national_grid],
+    "NY": [verify_coned, verify_national_grid, verify_nyseg, verify_rge, verify_central_hudson, verify_lipa],
+    "MA": [verify_eversource, verify_national_grid, verify_unitil],
     "RI": [verify_national_grid],
     "CT": [verify_eversource],
-    "NH": [verify_eversource],
+    "NH": [verify_eversource, verify_unitil, verify_liberty],
     "UT": [verify_rocky_mountain_power],
-    "WY": [verify_rocky_mountain_power],
+    "WY": [verify_rocky_mountain_power, verify_black_hills],
     "ID": [verify_idaho_power, verify_rocky_mountain_power, verify_avista],
-    "WA": [verify_pse, verify_avista, verify_pacific_power],
+    "WA": [verify_pse, verify_avista, verify_pacific_power, verify_seattle_city_light, verify_tacoma_power, verify_snopud, verify_clark_pu],
     "OR": [verify_pge_oregon, verify_pacific_power, verify_idaho_power],
     "MT": [verify_avista],
     "NV": [verify_nv_energy],
@@ -2148,9 +3051,12 @@ STATE_VERIFIERS = {
     "MI": [verify_dte, verify_consumers],
     "IA": [verify_alliant, verify_midamerican],
     "KS": [verify_evergy],
-    "SD": [verify_midamerican],
-    "NE": [verify_midamerican],
-    "MD": [verify_firstenergy],
+    "SD": [verify_midamerican, verify_black_hills],
+    "NE": [verify_midamerican, verify_black_hills],
+    "MD": [verify_bge, verify_pepco, verify_delmarva, verify_firstenergy],
+    "DC": [verify_pepco],
+    "DE": [verify_delmarva],
+    "ME": [verify_unitil],
 }
 
 

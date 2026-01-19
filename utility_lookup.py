@@ -51,6 +51,23 @@ try:
 except ImportError:
     GIS_LOOKUP_AVAILABLE = False
 
+# New pipeline integration
+try:
+    from pipeline.pipeline import LookupPipeline
+    from pipeline.interfaces import UtilityType, LookupContext
+    from pipeline.sources.electric import (
+        StateGISElectricSource, MunicipalElectricSource, CoopSource,
+        EIASource, HIFLDElectricSource, CountyDefaultElectricSource
+    )
+    from pipeline.sources.gas import (
+        DirectGasGISSource, HIFLDNationalGasSource, MunicipalGasSource,
+        ZIPMappingGasSource, HIFLDGasSource, CountyDefaultGasSource
+    )
+    PIPELINE_AVAILABLE = True
+except ImportError as e:
+    print(f"Pipeline not available: {e}")
+    PIPELINE_AVAILABLE = False
+
 # Try to load dotenv for API keys
 try:
     from dotenv import load_dotenv
@@ -1722,10 +1739,63 @@ def lookup_utility_json(address: str) -> Dict:
 
 
 # =============================================================================
+# NEW PIPELINE INTEGRATION
+# =============================================================================
+
+_pipeline_instance = None
+
+def _get_pipeline():
+    """Get or create the pipeline instance with all sources."""
+    global _pipeline_instance
+    if _pipeline_instance is None and PIPELINE_AVAILABLE:
+        _pipeline_instance = LookupPipeline()
+        _pipeline_instance.add_source(StateGISElectricSource())
+        _pipeline_instance.add_source(MunicipalElectricSource())
+        _pipeline_instance.add_source(CoopSource())
+        _pipeline_instance.add_source(EIASource())
+        _pipeline_instance.add_source(HIFLDElectricSource())
+        _pipeline_instance.add_source(CountyDefaultElectricSource())
+        _pipeline_instance.add_source(DirectGasGISSource())
+        _pipeline_instance.add_source(HIFLDNationalGasSource())
+        _pipeline_instance.add_source(MunicipalGasSource())
+        _pipeline_instance.add_source(ZIPMappingGasSource())
+        _pipeline_instance.add_source(HIFLDGasSource())
+        _pipeline_instance.add_source(CountyDefaultGasSource())
+    return _pipeline_instance
+
+
+def _pipeline_lookup(lat: float, lon: float, address: str, city: str, county: str, state: str, zip_code: str, utility_type: str) -> Optional[Dict]:
+    """Use the new pipeline for utility lookup."""
+    pipeline = _get_pipeline()
+    if not pipeline:
+        return None
+    try:
+        type_map = {'electric': UtilityType.ELECTRIC, 'gas': UtilityType.GAS, 'water': UtilityType.WATER}
+        if utility_type not in type_map:
+            return None
+        context = LookupContext(lat=lat, lon=lon, address=address, city=city, county=county or '', state=state, zip_code=zip_code, utility_type=type_map[utility_type])
+        result = pipeline.lookup(context)
+        if not result or not result.utility_name:
+            return None
+        return {
+            'NAME': result.utility_name, 'TELEPHONE': result.phone, 'WEBSITE': result.website,
+            'STATE': state, 'CITY': city, '_confidence': result.confidence_level,
+            'confidence_score': result.confidence_score, '_source': result.source,
+            '_verification_source': result.source,
+            '_selection_reason': f"Pipeline: {result.source} ({len(result.agreeing_sources)} sources agreed)" if result.sources_agreed else f"Pipeline: Smart Selector chose {result.source}",
+            '_sources_agreed': result.sources_agreed, '_agreeing_sources': result.agreeing_sources,
+            '_disagreeing_sources': result.disagreeing_sources, '_serp_verified': result.serp_verified,
+        }
+    except Exception as e:
+        print(f"Pipeline lookup error: {e}")
+        return None
+
+
+# =============================================================================
 # MAIN LOOKUP FUNCTION
 # =============================================================================
 
-def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False, selected_utilities: list = None, skip_internet: bool = False) -> Optional[Dict]:
+def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False, selected_utilities: list = None, skip_internet: bool = False, use_pipeline: bool = True) -> Optional[Dict]:
     """
     Main function: takes an address string, returns electric, gas, water, and internet utility info.
     Uses city name to filter out municipal utilities from other cities.
@@ -1832,8 +1902,17 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_is_deregulated': False
             }
             other_electric = []
-        # PRIORITY 1: GIS-based lookup for states with authoritative APIs
-        elif GIS_LOOKUP_AVAILABLE and state in ('NJ', 'AR', 'DE', 'HI', 'RI', 'PA', 'WI', 'CO', 'WA', 'OR', 'UT', 'MA', 'VT', 'FL', 'IL', 'MS', 'OH', 'KY', 'AK', 'NE', 'CA', 'MI', 'TX', 'NY', 'ME', 'SC', 'IA', 'VA', 'IN', 'KS', 'DC', 'NC', 'MN'):
+        # PRIORITY 1: NEW PIPELINE with OpenAI Smart Selector
+        elif use_pipeline and PIPELINE_AVAILABLE:
+            pipeline_result = _pipeline_lookup(lat, lon, address, city, county, state, zip_code, 'electric')
+            if pipeline_result:
+                primary_electric = pipeline_result
+                primary_electric['_is_deregulated'] = is_deregulated_state(state)
+                if deregulated_info:
+                    primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                other_electric = []
+        # PRIORITY 2: GIS-based lookup for states with authoritative APIs (fallback)
+        if primary_electric is None and GIS_LOOKUP_AVAILABLE and state in ('NJ', 'AR', 'DE', 'HI', 'RI', 'PA', 'WI', 'CO', 'WA', 'OR', 'UT', 'MA', 'VT', 'FL', 'IL', 'MS', 'OH', 'KY', 'AK', 'NE', 'CA', 'MI', 'TX', 'NY', 'ME', 'SC', 'IA', 'VA', 'IN', 'KS', 'DC', 'NC', 'MN'):
             gis_electric = lookup_electric_utility_gis(lat, lon, state)
             if gis_electric and gis_electric.get('name'):
                 primary_electric = {
@@ -1919,8 +1998,14 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_selection_reason': f"User-reported correction ({correction.get('_confirmation_count', 1)} confirmations)"
             }
             other_gas = []
-        # PRIORITY 1: Check municipal gas utilities (CPS Energy, MLGW, etc.)
-        elif (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
+        # PRIORITY 1: NEW PIPELINE with OpenAI Smart Selector
+        elif use_pipeline and PIPELINE_AVAILABLE:
+            pipeline_result = _pipeline_lookup(lat, lon, address, city, county, state, zip_code, 'gas')
+            if pipeline_result:
+                primary_gas = pipeline_result
+                other_gas = []
+        # PRIORITY 2: Check municipal gas utilities (fallback)
+        if primary_gas is None and (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
             primary_gas = {
                 'NAME': municipal_gas['name'],
                 'TELEPHONE': municipal_gas.get('phone'),
@@ -1933,8 +2018,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             }
             other_gas = []
             gas_candidates = []
-        else:
-            # PRIORITY 2: HIFLD and state-specific verification
+        # PRIORITY 3: HIFLD and state-specific verification
+        if primary_gas is None:
             gas = lookup_gas_utility(lon, lat, state=state)
             
             # Filter by city to remove irrelevant municipal utilities
@@ -2336,38 +2421,43 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         except Exception as e:
             pass
     
-    # Add confidence score to electric result
+    # Add confidence score to electric result (preserve pipeline score if present)
     if primary_electric:
-        elec_source = primary_electric.get('_verification_source', 'hifld')
-        elec_confidence = calculate_confidence(
-            source=source_to_score_key(elec_source),
-            match_level='zip5',
-            is_problem_area=is_problem_electric,
-            utility_type='electric',
-            state=state
-        )
-        primary_electric['confidence_score'] = elec_confidence['score']
-        primary_electric['confidence_factors'] = [
-            f"{f['points']:+d}: {f['description']}" 
-            for f in elec_confidence['factors']
-        ]
+        if not primary_electric.get('confidence_score'):
+            elec_source = primary_electric.get('_verification_source', 'hifld')
+            elec_confidence = calculate_confidence(
+                source=source_to_score_key(elec_source),
+                match_level='zip5',
+                is_problem_area=is_problem_electric,
+                utility_type='electric',
+                state=state
+            )
+            primary_electric['confidence_score'] = elec_confidence['score']
+            primary_electric['confidence_factors'] = [
+                f"{f['points']:+d}: {f['description']}" 
+                for f in elec_confidence['factors']
+            ]
+        elif not primary_electric.get('confidence_factors'):
+            primary_electric['confidence_factors'] = [f"+{primary_electric['confidence_score']}: Pipeline ({primary_electric.get('_source', 'unknown')})"]
     
-    # Add confidence score to gas result
+    # Add confidence score to gas result (preserve pipeline score if present)
     if primary_gas:
-        # Use _verification_source first, then _source, then default to hifld
-        gas_source = primary_gas.get('_verification_source') or primary_gas.get('_source', 'hifld')
-        gas_confidence = calculate_confidence(
-            source=source_to_score_key(gas_source),
-            match_level='zip5',
-            is_problem_area=is_problem_gas,
-            utility_type='gas',
-            state=state
-        )
-        primary_gas['confidence_score'] = gas_confidence['score']
-        primary_gas['confidence_factors'] = [
-            f"{f['points']:+d}: {f['description']}" 
-            for f in gas_confidence['factors']
-        ]
+        if not primary_gas.get('confidence_score'):
+            gas_source = primary_gas.get('_verification_source') or primary_gas.get('_source', 'hifld')
+            gas_confidence = calculate_confidence(
+                source=source_to_score_key(gas_source),
+                match_level='zip5',
+                is_problem_area=is_problem_gas,
+                utility_type='gas',
+                state=state
+            )
+            primary_gas['confidence_score'] = gas_confidence['score']
+            primary_gas['confidence_factors'] = [
+                f"{f['points']:+d}: {f['description']}" 
+                for f in gas_confidence['factors']
+            ]
+        elif not primary_gas.get('confidence_factors'):
+            primary_gas['confidence_factors'] = [f"+{primary_gas['confidence_score']}: Pipeline ({primary_gas.get('_source', 'unknown')})"]
     
     result = {
         "electric": electric_result,

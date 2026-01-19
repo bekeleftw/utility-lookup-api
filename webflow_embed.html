@@ -1185,6 +1185,9 @@
     if (sourceLower.includes('railroad') || sourceLower.includes('puc')) return 'State regulatory data';
     if (sourceLower.includes('override') || sourceLower.includes('correction')) return 'Verified for this ZIP';
     if (sourceLower.includes('supplemental') || sourceLower.includes('curated')) return 'Curated database';
+    if (sourceLower.includes('territory_data')) return 'Verified utility territory';
+    if (sourceLower.includes('county_fallback') || sourceLower.includes('county_default')) return 'County-level data';
+    if (sourceLower.includes('tva') || sourceLower.includes('distributor')) return 'TVA distributor territory';
     
     // No match - return null (we'll handle this in the caller)
     return null;

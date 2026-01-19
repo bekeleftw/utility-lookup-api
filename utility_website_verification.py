@@ -2797,6 +2797,493 @@ def verify_black_hills(address: str, city: str, state: str, zip_code: str, count
 
 
 # =============================================================================
+# ALASKA UTILITIES
+# =============================================================================
+
+def verify_gvea(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Golden Valley Electric (Fairbanks area) serves an address."""
+    if state != "AK":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in ["FAIRBANKS", "NORTH POLE", "EIELSON AFB", "FORT WAINWRIGHT"]:
+        return {
+            "verified": True,
+            "utility": "Golden Valley Electric Association",
+            "source": "gvea_territory_data",
+            "confidence": "high",
+            "phone": "907-452-1151",
+            "website": "https://www.gvea.com"
+        }
+    
+    return None
+
+
+def verify_mea(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Matanuska Electric (Mat-Su Valley) serves an address."""
+    if state != "AK":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    borough = county.upper() if county else ""
+    
+    if city_upper in ["WASILLA", "PALMER", "BIG LAKE", "HOUSTON"] or "MATANUSKA" in borough:
+        return {
+            "verified": True,
+            "utility": "Matanuska Electric Association",
+            "source": "mea_territory_data",
+            "confidence": "high",
+            "phone": "907-745-3231",
+            "website": "https://www.mea.coop"
+        }
+    
+    return None
+
+
+def verify_chugach(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Chugach Electric (Anchorage area) serves an address."""
+    if state != "AK":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in ["ANCHORAGE", "EAGLE RIVER", "GIRDWOOD", "INDIAN", "BIRD CREEK"]:
+        return {
+            "verified": True,
+            "utility": "Chugach Electric Association",
+            "source": "chugach_territory_data",
+            "confidence": "high",
+            "phone": "907-563-7494",
+            "website": "https://www.chugachelectric.com"
+        }
+    
+    return None
+
+
+def verify_ml_and_p(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if ML&P (Anchorage municipal) serves an address - now part of Chugach."""
+    if state != "AK":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "ANCHORAGE":
+        return {
+            "verified": True,
+            "utility": "Chugach Electric (formerly ML&P)",
+            "source": "mlp_territory_data",
+            "confidence": "medium",
+            "phone": "907-563-7494",
+            "website": "https://www.chugachelectric.com",
+            "note": "ML&P merged with Chugach Electric in 2020"
+        }
+    
+    return None
+
+
+# =============================================================================
+# HAWAII UTILITIES
+# =============================================================================
+
+HECO_ISLANDS = {
+    "OAHU": "Hawaiian Electric",
+    "MAUI": "Maui Electric (MECO)",
+    "HAWAII": "Hawaii Electric Light (HELCO)",
+    "LANAI": "Maui Electric (MECO)",
+    "MOLOKAI": "Maui Electric (MECO)"
+}
+
+HECO_CITIES = {
+    "HONOLULU": "Hawaiian Electric",
+    "PEARL CITY": "Hawaiian Electric",
+    "KAILUA": "Hawaiian Electric",
+    "KANEOHE": "Hawaiian Electric",
+    "WAIPAHU": "Hawaiian Electric",
+    "KAHULUI": "Maui Electric (MECO)",
+    "LAHAINA": "Maui Electric (MECO)",
+    "WAILUKU": "Maui Electric (MECO)",
+    "KIHEI": "Maui Electric (MECO)",
+    "HILO": "Hawaii Electric Light (HELCO)",
+    "KAILUA-KONA": "Hawaii Electric Light (HELCO)",
+    "KONA": "Hawaii Electric Light (HELCO)"
+}
+
+def verify_heco(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Hawaiian Electric serves an address."""
+    if state != "HI":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    county_upper = county.upper().replace(" COUNTY", "").strip() if county else ""
+    
+    # Check by city
+    if city_upper in HECO_CITIES:
+        subsidiary = HECO_CITIES[city_upper]
+        return {
+            "verified": True,
+            "utility": subsidiary,
+            "source": "heco_territory_data",
+            "confidence": "high",
+            "phone": "808-548-7311",
+            "website": "https://www.hawaiianelectric.com"
+        }
+    
+    # Check by county/island
+    if county_upper in HECO_ISLANDS:
+        subsidiary = HECO_ISLANDS[county_upper]
+        return {
+            "verified": True,
+            "utility": subsidiary,
+            "source": "heco_territory_data",
+            "confidence": "high",
+            "phone": "808-548-7311",
+            "website": "https://www.hawaiianelectric.com"
+        }
+    
+    # Default for Hawaii (HECO serves all islands except Kauai)
+    return {
+        "verified": True,
+        "utility": "Hawaiian Electric",
+        "source": "heco_territory_data",
+        "confidence": "medium",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com"
+    }
+
+
+def verify_kiuc(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Kauai Island Utility Cooperative serves an address."""
+    if state != "HI":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    county_upper = county.upper().replace(" COUNTY", "").strip() if county else ""
+    
+    if county_upper == "KAUAI" or city_upper in ["LIHUE", "KAPAA", "POIPU", "PRINCEVILLE", "HANALEI", "KOLOA"]:
+        return {
+            "verified": True,
+            "utility": "Kauai Island Utility Cooperative",
+            "source": "kiuc_territory_data",
+            "confidence": "high",
+            "phone": "808-246-4300",
+            "website": "https://www.kiuc.coop"
+        }
+    
+    return None
+
+
+# =============================================================================
+# VERMONT UTILITIES
+# =============================================================================
+
+GMP_COUNTIES = [
+    "CHITTENDEN", "WASHINGTON", "RUTLAND", "WINDSOR", "WINDHAM", "BENNINGTON",
+    "ADDISON", "ORANGE", "LAMOILLE", "FRANKLIN", "GRAND ISLE", "CALEDONIA"
+]
+
+def verify_gmp(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Green Mountain Power serves an address."""
+    if state != "VT":
+        return None
+    
+    # GMP serves ~75% of Vermont
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in GMP_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Green Mountain Power",
+                "source": "gmp_territory_data",
+                "confidence": "high",
+                "phone": "888-835-4672",
+                "website": "https://www.greenmountainpower.com"
+            }
+    
+    # Default - GMP is dominant utility
+    return {
+        "verified": True,
+        "utility": "Green Mountain Power",
+        "source": "gmp_territory_data",
+        "confidence": "medium",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com"
+    }
+
+
+def verify_vec(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Vermont Electric Cooperative serves an address."""
+    if state != "VT":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    county_upper = county.upper().replace(" COUNTY", "").strip() if county else ""
+    
+    # VEC serves rural areas, especially in Orleans and Essex counties
+    if county_upper in ["ORLEANS", "ESSEX"] or city_upper in ["JOHNSON", "HYDE PARK", "MORRISVILLE"]:
+        return {
+            "verified": True,
+            "utility": "Vermont Electric Cooperative",
+            "source": "vec_territory_data",
+            "confidence": "high",
+            "phone": "800-832-2667",
+            "website": "https://www.vermontelectric.coop"
+        }
+    
+    return None
+
+
+def verify_bED(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Burlington Electric Department serves an address."""
+    if state != "VT":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper == "BURLINGTON":
+        return {
+            "verified": True,
+            "utility": "Burlington Electric Department",
+            "source": "bed_territory_data",
+            "confidence": "high",
+            "phone": "802-658-0300",
+            "website": "https://www.burlingtonelectric.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# NORTH DAKOTA UTILITIES
+# =============================================================================
+
+def verify_mdu(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Montana-Dakota Utilities serves an address."""
+    if state not in ["ND", "MT", "SD", "WY"]:
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    # MDU serves western ND, eastern MT, parts of SD/WY
+    if state == "ND":
+        if city_upper in ["BISMARCK", "MANDAN", "DICKINSON", "WILLISTON", "MINOT", "WATFORD CITY"]:
+            return {
+                "verified": True,
+                "utility": "Montana-Dakota Utilities",
+                "source": "mdu_territory_data",
+                "confidence": "high",
+                "phone": "800-638-3278",
+                "website": "https://www.montana-dakota.com"
+            }
+    elif state == "MT":
+        if city_upper in ["BILLINGS", "GLENDIVE", "MILES CITY", "SIDNEY"]:
+            return {
+                "verified": True,
+                "utility": "Montana-Dakota Utilities",
+                "source": "mdu_territory_data",
+                "confidence": "high",
+                "phone": "800-638-3278",
+                "website": "https://www.montana-dakota.com"
+            }
+    
+    return None
+
+
+def verify_xcel_nd(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Xcel Energy (Northern States Power) serves an address in ND."""
+    if state != "ND":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    # Xcel serves Fargo area
+    if city_upper in ["FARGO", "WEST FARGO", "MOORHEAD", "GRAND FORKS"]:
+        return {
+            "verified": True,
+            "utility": "Xcel Energy (Northern States Power)",
+            "source": "xcel_nd_territory_data",
+            "confidence": "high",
+            "phone": "800-895-4999",
+            "website": "https://www.xcelenergy.com"
+        }
+    
+    return None
+
+
+def verify_otter_tail(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Otter Tail Power serves an address."""
+    if state not in ["ND", "MN", "SD"]:
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in ["FERGUS FALLS", "WAHPETON", "BRECKENRIDGE", "JAMESTOWN", "VALLEY CITY"]:
+        return {
+            "verified": True,
+            "utility": "Otter Tail Power",
+            "source": "otter_tail_territory_data",
+            "confidence": "high",
+            "phone": "800-257-4044",
+            "website": "https://www.otpco.com"
+        }
+    
+    return None
+
+
+# =============================================================================
+# ADDITIONAL MISSING UTILITIES FOR EXISTING STATES
+# =============================================================================
+
+# MONTANA - NorthWestern Energy
+def verify_northwestern(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if NorthWestern Energy serves an address."""
+    if state not in ["MT", "SD", "NE"]:
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if state == "MT":
+        if city_upper in ["BUTTE", "HELENA", "GREAT FALLS", "BOZEMAN", "MISSOULA", "KALISPELL"]:
+            return {
+                "verified": True,
+                "utility": "NorthWestern Energy",
+                "source": "northwestern_territory_data",
+                "confidence": "high",
+                "phone": "888-467-2669",
+                "website": "https://www.northwesternenergy.com"
+            }
+        # NorthWestern is dominant in MT
+        return {
+            "verified": True,
+            "utility": "NorthWestern Energy",
+            "source": "northwestern_territory_data",
+            "confidence": "medium",
+            "phone": "888-467-2669",
+            "website": "https://www.northwesternenergy.com"
+        }
+    
+    if state == "SD" and city_upper in ["RAPID CITY", "SPEARFISH", "STURGIS"]:
+        return {
+            "verified": True,
+            "utility": "NorthWestern Energy",
+            "source": "northwestern_territory_data",
+            "confidence": "high",
+            "phone": "888-467-2669",
+            "website": "https://www.northwesternenergy.com"
+        }
+    
+    return None
+
+
+# KENTUCKY - Kentucky Utilities / LG&E
+def verify_lge_ku(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if LG&E/Kentucky Utilities serves an address."""
+    if state != "KY":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in ["LOUISVILLE", "LEXINGTON", "FRANKFORT", "ELIZABETHTOWN", "BOWLING GREEN"]:
+        utility_name = "LG&E" if city_upper == "LOUISVILLE" else "Kentucky Utilities"
+        return {
+            "verified": True,
+            "utility": utility_name,
+            "source": "lge_ku_territory_data",
+            "confidence": "high",
+            "phone": "800-981-0600",
+            "website": "https://www.lge-ku.com"
+        }
+    
+    return None
+
+
+# TENNESSEE - TVA Distributors
+TVA_DISTRIBUTORS = {
+    "NASHVILLE": ("Nashville Electric Service", "615-736-6900", "https://www.nespower.com"),
+    "MEMPHIS": ("Memphis Light, Gas & Water", "901-544-6549", "https://www.mlgw.com"),
+    "KNOXVILLE": ("Knoxville Utilities Board", "865-524-2911", "https://www.kub.org"),
+    "CHATTANOOGA": ("EPB", "423-648-1372", "https://www.epb.com"),
+    "CLARKSVILLE": ("Clarksville Dept of Electricity", "931-645-7400", "https://www.clarksvilletned.gov"),
+    "MURFREESBORO": ("Murfreesboro Electric Dept", "615-893-5514", "https://www.murfreesborotn.gov"),
+    "JACKSON": ("Jackson Energy Authority", "731-422-7500", "https://www.jaxenergy.com"),
+    "JOHNSON CITY": ("Johnson City Power Board", "423-952-5000", "https://www.jcpb.com"),
+    "COOKEVILLE": ("Cookeville Electric Dept", "931-526-9701", "https://www.cookeville-tn.gov")
+}
+
+def verify_tva_distributor(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if a TVA distributor serves an address in Tennessee."""
+    if state != "TN":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in TVA_DISTRIBUTORS:
+        name, phone, website = TVA_DISTRIBUTORS[city_upper]
+        return {
+            "verified": True,
+            "utility": name,
+            "source": "tva_distributor_data",
+            "confidence": "high",
+            "phone": phone,
+            "website": website,
+            "note": "TVA distributor"
+        }
+    
+    # Default for TN - most areas served by TVA distributors
+    return {
+        "verified": True,
+        "utility": "TVA Distributor",
+        "source": "tva_territory_data",
+        "confidence": "medium",
+        "note": "Tennessee is served by various TVA distributors"
+    }
+
+
+# SOUTH CAROLINA - Santee Cooper, SCE&G
+def verify_santee_cooper(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Santee Cooper serves an address."""
+    if state != "SC":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    county_upper = county.upper().replace(" COUNTY", "").strip() if county else ""
+    
+    if county_upper in ["GEORGETOWN", "HORRY", "BERKELEY", "WILLIAMSBURG"] or \
+       city_upper in ["MYRTLE BEACH", "CONWAY", "GEORGETOWN", "MONCKS CORNER"]:
+        return {
+            "verified": True,
+            "utility": "Santee Cooper",
+            "source": "santee_cooper_territory_data",
+            "confidence": "high",
+            "phone": "843-761-8000",
+            "website": "https://www.santeecooper.com"
+        }
+    
+    return None
+
+
+def verify_sce_g(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Dominion Energy South Carolina (formerly SCE&G) serves an address."""
+    if state != "SC":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    county_upper = county.upper().replace(" COUNTY", "").strip() if county else ""
+    
+    if city_upper in ["COLUMBIA", "CHARLESTON", "NORTH CHARLESTON", "SUMMERVILLE", "AIKEN"] or \
+       county_upper in ["RICHLAND", "LEXINGTON", "CHARLESTON", "AIKEN", "ORANGEBURG"]:
+        return {
+            "verified": True,
+            "utility": "Dominion Energy South Carolina",
+            "source": "sceg_territory_data",
+            "confidence": "high",
+            "phone": "800-251-7234",
+            "website": "https://www.dominionenergy.com"
+        }
+    
+    return None
+
+
 # MAIN VERIFICATION FUNCTION
 # =============================================================================
 
@@ -3007,6 +3494,57 @@ UTILITY_VERIFIERS = {
     # Black Hills
     "BLACK HILLS ENERGY": verify_black_hills,
     "BLACK HILLS": verify_black_hills,
+    # Alaska
+    "CHUGACH ELECTRIC": verify_chugach,
+    "CHUGACH": verify_chugach,
+    "GOLDEN VALLEY ELECTRIC": verify_gvea,
+    "GVEA": verify_gvea,
+    "MATANUSKA ELECTRIC": verify_mea,
+    "MEA": verify_mea,
+    "ML&P": verify_chugach,
+    # Hawaii
+    "HAWAIIAN ELECTRIC": verify_heco,
+    "HECO": verify_heco,
+    "MAUI ELECTRIC": verify_heco,
+    "MECO": verify_heco,
+    "HAWAII ELECTRIC LIGHT": verify_heco,
+    "HELCO": verify_heco,
+    "KIUC": verify_kiuc,
+    "KAUAI ISLAND UTILITY": verify_kiuc,
+    # Vermont
+    "GREEN MOUNTAIN POWER": verify_gmp,
+    "GMP": verify_gmp,
+    "VERMONT ELECTRIC COOPERATIVE": verify_vec,
+    "VEC": verify_vec,
+    "BURLINGTON ELECTRIC": verify_bED,
+    "BED": verify_bED,
+    # North Dakota
+    "MONTANA-DAKOTA UTILITIES": verify_mdu,
+    "MDU": verify_mdu,
+    "OTTER TAIL POWER": verify_otter_tail,
+    "OTTER TAIL": verify_otter_tail,
+    # Montana
+    "NORTHWESTERN ENERGY": verify_northwestern,
+    "NORTHWESTERN": verify_northwestern,
+    # Kentucky
+    "LG&E": verify_lge_ku,
+    "LGE": verify_lge_ku,
+    "KENTUCKY UTILITIES": verify_lge_ku,
+    "KU": verify_lge_ku,
+    # Tennessee TVA
+    "NASHVILLE ELECTRIC SERVICE": verify_tva_distributor,
+    "NES": verify_tva_distributor,
+    "MEMPHIS LIGHT GAS & WATER": verify_tva_distributor,
+    "MLGW": verify_tva_distributor,
+    "KNOXVILLE UTILITIES BOARD": verify_tva_distributor,
+    "KUB": verify_tva_distributor,
+    "EPB": verify_tva_distributor,
+    "TVA": verify_tva_distributor,
+    # South Carolina
+    "SANTEE COOPER": verify_santee_cooper,
+    "SCE&G": verify_sce_g,
+    "SCEG": verify_sce_g,
+    "DOMINION ENERGY SOUTH CAROLINA": verify_sce_g,
 }
 
 # State to utility verifier mapping for fallback
@@ -3015,7 +3553,7 @@ STATE_VERIFIERS = {
     "AL": [verify_alabama_power],
     "FL": [verify_fpl, verify_duke_energy, verify_teco, verify_gulf_power, verify_jea, verify_ouc],
     "NC": [verify_duke_energy, verify_dominion_energy],
-    "SC": [verify_duke_energy, verify_dominion_energy],
+    "SC": [verify_duke_energy, verify_dominion_energy, verify_santee_cooper, verify_sce_g],
     "VA": [verify_dominion_energy, verify_aep],
     "LA": [verify_entergy, verify_cleco, verify_swepco],
     "AR": [verify_entergy, verify_oge, verify_swepco],
@@ -3023,10 +3561,10 @@ STATE_VERIFIERS = {
     "TX": [verify_oncor, verify_centerpoint, verify_aep, verify_entergy, verify_xcel, verify_austin_energy, verify_cps_energy, verify_epcor, verify_tnmp, verify_swepco],
     "IN": [verify_duke_energy],
     "OH": [verify_duke_energy, verify_aep, verify_firstenergy],
-    "KY": [verify_duke_energy],
+    "KY": [verify_duke_energy, verify_lge_ku],
     "CA": [verify_pge, verify_sce, verify_sdge, verify_ladwp, verify_smud, verify_pacific_power],
     "CO": [verify_xcel, verify_black_hills],
-    "MN": [verify_xcel],
+    "MN": [verify_xcel, verify_otter_tail],
     "WI": [verify_we_energies, verify_alliant, verify_xcel],
     "NM": [verify_xcel, verify_epcor],
     "MO": [verify_ameren, verify_evergy],
@@ -3041,22 +3579,27 @@ STATE_VERIFIERS = {
     "CT": [verify_eversource],
     "NH": [verify_eversource, verify_unitil, verify_liberty],
     "UT": [verify_rocky_mountain_power],
-    "WY": [verify_rocky_mountain_power, verify_black_hills],
+    "WY": [verify_rocky_mountain_power, verify_black_hills, verify_mdu],
     "ID": [verify_idaho_power, verify_rocky_mountain_power, verify_avista],
     "WA": [verify_pse, verify_avista, verify_pacific_power, verify_seattle_city_light, verify_tacoma_power, verify_snopud, verify_clark_pu],
     "OR": [verify_pge_oregon, verify_pacific_power, verify_idaho_power],
-    "MT": [verify_avista],
+    "MT": [verify_northwestern, verify_avista, verify_mdu],
     "NV": [verify_nv_energy],
     "AZ": [verify_aps, verify_srp, verify_tep],
     "MI": [verify_dte, verify_consumers],
     "IA": [verify_alliant, verify_midamerican],
     "KS": [verify_evergy],
-    "SD": [verify_midamerican, verify_black_hills],
+    "SD": [verify_midamerican, verify_black_hills, verify_northwestern, verify_otter_tail],
     "NE": [verify_midamerican, verify_black_hills],
     "MD": [verify_bge, verify_pepco, verify_delmarva, verify_firstenergy],
     "DC": [verify_pepco],
     "DE": [verify_delmarva],
     "ME": [verify_unitil],
+    "AK": [verify_chugach, verify_gvea, verify_mea],
+    "HI": [verify_heco, verify_kiuc],
+    "VT": [verify_gmp, verify_vec, verify_bED],
+    "ND": [verify_mdu, verify_xcel_nd, verify_otter_tail],
+    "TN": [verify_tva_distributor],
 }
 
 

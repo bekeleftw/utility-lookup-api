@@ -161,13 +161,23 @@ def geocode_with_census(address: str, include_geography: bool = False) -> Option
         match = matches[0]
         coords = match["coordinates"]
         
+        # Extract ZIP code from matched address (format: "123 MAIN ST, CITY, ST, 12345")
+        matched_addr = match["matchedAddress"]
+        zip_code = None
+        if matched_addr:
+            import re
+            zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\s*$', matched_addr)
+            if zip_match:
+                zip_code = zip_match.group(1)
+        
         result = {
             "lon": coords["x"],
             "lat": coords["y"],
-            "matched_address": match["matchedAddress"],
+            "matched_address": matched_addr,
             "city": None,
             "county": None,
             "state": None,
+            "zip_code": zip_code,
             "source": "Census"
         }
         

@@ -1290,6 +1290,8 @@
           if (msg.data) {
             streamData.utilities.electric = [msg.data];
             slot.outerHTML = renderUtilityCard(msg.data, 'electric', [], null);
+            attachBadgeListeners();
+            attachFeedbackListeners();
           } else {
             slot.innerHTML = `<div class="up-no-result">⚡ ${msg.note || 'No electric provider found'}</div>`;
             slot.classList.remove('up-loading-slot');
@@ -1300,6 +1302,8 @@
           if (msg.data) {
             streamData.utilities.gas = [msg.data];
             slot.outerHTML = renderUtilityCard(msg.data, 'gas', [], null);
+            attachBadgeListeners();
+            attachFeedbackListeners();
           } else {
             slot.innerHTML = `<div class="up-no-result">🔥 ${msg.note || 'No gas provider found'}</div>`;
             slot.classList.remove('up-loading-slot');
@@ -1310,6 +1314,8 @@
           if (msg.data) {
             streamData.utilities.water = [msg.data];
             slot.outerHTML = renderUtilityCard(msg.data, 'water', [], null);
+            attachBadgeListeners();
+            attachFeedbackListeners();
           } else {
             slot.innerHTML = `<div class="up-no-result">💧 ${msg.note || 'No water provider found'}</div>`;
             slot.classList.remove('up-loading-slot');

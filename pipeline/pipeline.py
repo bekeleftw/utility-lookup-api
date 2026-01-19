@@ -97,9 +97,14 @@ class LookupPipeline:
         # 6. Enrich with contact info and brand resolution
         result = self._enrich(result, context)
         
-        # 7. Optional SERP verification
-        if (self.enable_serp_verification and 
-            result.confidence_score < self.serp_confidence_threshold):
+        # 7. SERP verification - only when sources have a meaningful disagreement
+        # Simple rule: clear majority = done, close split = ask the internet
+        needs_serp = (
+            self.enable_serp_verification and 
+            not result.sources_agreed and
+            len(result.disagreeing_sources) >= len(result.agreeing_sources)  # True tie or minority wins
+        )
+        if needs_serp:
             result = self._verify_with_serp(result, context)
         
         result.timing_ms = int((time.time() - start_time) * 1000)
@@ -361,9 +366,13 @@ class LookupPipeline:
         result: PipelineResult, 
         context: LookupContext
     ) -> PipelineResult:
-        """Optional SERP verification for low-confidence results."""
+        """
+        SERP verification to break ties when sources disagree.
+        
+        Simple rule: if SERP finds a utility, use it to validate or override.
+        """
         try:
-            from serp_verification import verify_utility_via_serp
+            from serp_verification import verify_utility_via_serp, is_alias
             
             serp_result = verify_utility_via_serp(
                 address=context.address,
@@ -377,13 +386,35 @@ class LookupPipeline:
             result.serp_verified = serp_result.verified
             result.serp_utility = serp_result.serp_utility
             
-            # Adjust confidence based on SERP
-            result.confidence_score += int(serp_result.confidence_boost * 100)
-            result.confidence_score = min(100, max(0, result.confidence_score))
-            result.confidence_level = PipelineResult.confidence_level_from_score(result.confidence_score)
+            if serp_result.serp_utility:
+                # SERP found something - use it to break the tie
+                if serp_result.verified:
+                    # SERP confirms our selection - boost confidence
+                    result.confidence_score = min(100, result.confidence_score + 15)
+                    result.confidence_level = 'verified'
+                else:
+                    # SERP disagrees - check if SERP utility matches any disagreeing source
+                    for source_result in result.all_results:
+                        if source_result.utility_name and is_alias(serp_result.serp_utility, source_result.utility_name):
+                            # SERP agrees with a different source - switch to it
+                            result.utility_name = source_result.utility_name
+                            result.source = f"{source_result.source_name}+serp"
+                            result.phone = source_result.phone
+                            result.website = source_result.website
+                            result.confidence_score = 85  # SERP-verified
+                            result.confidence_level = 'verified'
+                            result.serp_verified = True
+                            break
+                    else:
+                        # SERP found something new - use it directly
+                        result.utility_name = serp_result.serp_utility
+                        result.source = 'serp'
+                        result.confidence_score = 75  # SERP-only
+                        result.confidence_level = 'high'
             
-        except Exception:
-            pass  # SERP verification failed, continue without it
+        except Exception as e:
+            # SERP failed - keep original result but note the failure
+            result.serp_verified = None
         
         return result
     

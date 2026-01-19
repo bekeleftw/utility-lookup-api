@@ -98,6 +98,9 @@ UTILITY_ALIASES = {
     'smud': ['smud', 'sacramento municipal utility district', 'sacramento municipal'],
     'wyandotte': ['wyandotte', 'wyandotte municipal', 'wyandotte municipal serv'],
     'psc colorado': ['psc of colorado', 'public service co of colorado', 'xcel energy colorado'],
+    'wec energy': ['wec energy', 'we energies', 'wisconsin energy', 'wec energy group'],
+    'virginia natural gas': ['virginia natural gas', 'columbia gas of virginia', 'vng'],
+    'psnc': ['psnc', 'psnc energy', 'piedmont natural gas nc'],
 }
 
 

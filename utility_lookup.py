@@ -28,6 +28,7 @@ from bs4 import BeautifulSoup
 
 # Import state-specific utility verification
 from state_utility_verification import verify_electric_provider, verify_gas_provider, check_problem_area
+from utility_website_verification import enhance_lookup_with_verification, verify_address_utility, get_supported_states
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 from confidence_scoring import calculate_confidence, source_to_score_key
 from municipal_utilities import lookup_municipal_electric, lookup_municipal_gas, lookup_municipal_water
@@ -2622,8 +2623,12 @@ def _add_deregulated_info(result: Dict, state: str, zip_code: str) -> Dict:
     return result
 
 
-def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str) -> Optional[Dict]:
-    """Look up electric utility only. Fast - typically < 1 second."""
+def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
+    """Look up electric utility only. Fast - typically < 1 second.
+    
+    If address is provided and state supports website verification, 
+    the result will be enhanced with utility website verification.
+    """
     try:
         # Priority 0: GIS-based lookup for states with authoritative APIs (NJ, AR, DE, HI, RI)
         if GIS_LOOKUP_AVAILABLE and lat and lon and state in ('NJ', 'AR', 'DE', 'HI', 'RI'):
@@ -2755,6 +2760,12 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
             from deregulated_markets import is_deregulated_state, adjust_electric_result_for_deregulation
             if is_deregulated_state(state):
                 primary = adjust_electric_result_for_deregulation(primary, state, zip_code)
+            
+            # Enhance with utility website verification if address provided
+            if address and state in get_supported_states():
+                primary = enhance_lookup_with_verification(
+                    primary, address, city, state, zip_code
+                )
         
         return primary
     except Exception as e:

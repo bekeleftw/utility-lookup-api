@@ -264,7 +264,7 @@ def format_utility(util, util_type):
             'zip': util.get('ZIP', util.get('zip')),
             'id': util.get('ID') or util.get('SVCTERID') or util.get('id'),
             'type': util.get('TYPE'),
-            'confidence': util.get('_confidence', 'high' if util_type == 'electric' else 'medium'),
+            'confidence': util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium'),
             'confidence_score': util.get('confidence_score'),
             'confidence_factors': util.get('confidence_factors'),
             'verified': util.get('_serp_verified', False)

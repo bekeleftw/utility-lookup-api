@@ -2842,14 +2842,56 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
         if GIS_LOOKUP_AVAILABLE and lat and lon:
             gis_water = lookup_water_utility_gis(lat, lon, state)
             if gis_water and gis_water.get('name'):
-                return {
-                    "NAME": gis_water['name'],
-                    "PWSID": gis_water.get('pwsid'),
-                    "STATE": gis_water.get('state') or state,
-                    "CITY": city,
-                    "_confidence": gis_water.get('confidence', 'high'),
-                    "_source": gis_water.get('source', 'gis_epa')
-                }
+                gis_name = gis_water['name'].upper()
+                city_upper = (city or '').upper()
+                
+                # Validate: if GIS result doesn't match city, check if we should use municipal instead
+                # This handles boundary edge cases (e.g., point near Chicago returning Evanston)
+                city_matches = (
+                    city_upper in gis_name or 
+                    gis_name in city_upper or
+                    city_upper.replace(' ', '') in gis_name.replace(' ', '')
+                )
+                
+                if city_matches:
+                    # GIS result matches city - use it, but try to enrich with contact info
+                    result = {
+                        "NAME": gis_water['name'],
+                        "PWSID": gis_water.get('pwsid'),
+                        "STATE": gis_water.get('state') or state,
+                        "CITY": city,
+                        "_confidence": gis_water.get('confidence', 'high'),
+                        "_source": gis_water.get('source', 'gis_epa')
+                    }
+                    # Try to enrich with contact info from municipal database
+                    municipal_water = lookup_municipal_water(state, city, zip_code)
+                    if municipal_water:
+                        result["TELEPHONE"] = municipal_water.get('phone')
+                        result["WEBSITE"] = municipal_water.get('website')
+                    return result
+                else:
+                    # GIS result doesn't match city - check municipal first
+                    municipal_water = lookup_municipal_water(state, city, zip_code)
+                    if municipal_water:
+                        return {
+                            "NAME": municipal_water['name'],
+                            "TELEPHONE": municipal_water.get('phone'),
+                            "WEBSITE": municipal_water.get('website'),
+                            "STATE": state,
+                            "CITY": municipal_water.get('city', city),
+                            "_confidence": municipal_water['confidence'],
+                            "_source": "municipal_utility"
+                        }
+                    # No municipal match - use GIS result anyway (it's still authoritative)
+                    return {
+                        "NAME": gis_water['name'],
+                        "PWSID": gis_water.get('pwsid'),
+                        "STATE": gis_water.get('state') or state,
+                        "CITY": city,
+                        "_confidence": 'medium',  # Lower confidence due to city mismatch
+                        "_source": gis_water.get('source', 'gis_epa'),
+                        "_note": f"GIS boundary lookup - verify with {city} water department"
+                    }
         
         # Priority 2: Municipal
         municipal_water = lookup_municipal_water(state, city, zip_code)

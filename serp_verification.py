@@ -92,6 +92,8 @@ UTILITY_ALIASES = {
     'citizens gas': ['citizens energy group', 'citizens gas', 'citizens energy'],
     'connecticut natural gas': ['connecticut natural gas', 'conneticut natural gas', 'cng'],
     'northwestern': ['northwestern', 'northwestern energy'],
+    'questar': ['questar', 'questar gas', 'dominion energy utah', 'dominion energy questar'],
+    'metropolitan utilities': ['metropolitan utilities', 'mud', 'metropolitan utilities district'],
 }
 
 

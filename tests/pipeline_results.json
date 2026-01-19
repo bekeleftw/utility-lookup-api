@@ -1,22 +1,23 @@
 {
   "total_tests": 68,
   "electric": {
-    "passed": 57,
-    "failed": 11,
-    "accuracy": 83.8
+    "passed": 51,
+    "failed": 17,
+    "accuracy": 75.0,
+    "total_time_ms": 35674,
+    "avg_time_ms": 525
   },
   "gas": {
-    "passed": 57,
-    "failed": 7,
+    "passed": 50,
+    "failed": 14,
     "skipped": 4,
-    "accuracy": 89.1
+    "accuracy": 78.1,
+    "total_time_ms": 11638,
+    "avg_time_ms": 171
   },
-  "total_time_ms": 11906,
-  "avg_time_ms": 175,
   "results": [
     {
       "test_id": "tx_austin_001",
-      "address": "1100 Congress Ave, Austin, TX 78701",
       "city": "Austin",
       "state": "TX",
       "electric": {
@@ -29,16 +30,27 @@
         "actual": "Texas Gas Service",
         "passed": true
       },
-      "timing_ms": 0
+      "electric_timing_ms": 720,
+      "gas_timing_ms": 191,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "municipal",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "municipal_gas",
+        "county_default_gas",
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "tx_houston_001",
-      "address": "1000 Main St, Houston, TX 77002",
       "city": "Houston",
       "state": "TX",
       "electric": {
         "expected": "CenterPoint Energy",
-        "actual": "CenterPoint Energy",
+        "actual": "CenterPoint Energy Houston Electric, LLC",
         "passed": true
       },
       "gas": {
@@ -46,16 +58,28 @@
         "actual": "CenterPoint Energy",
         "passed": true
       },
-      "timing_ms": 0
+      "electric_timing_ms": 190,
+      "gas_timing_ms": 150,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "municipal_gas",
+        "zip_mapping_gas",
+        "county_default_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "tx_dallas_001",
-      "address": "1500 Marilla St, Dallas, TX 75201",
       "city": "Dallas",
       "state": "TX",
       "electric": {
         "expected": "Oncor",
-        "actual": "Oncor Electric Delivery",
+        "actual": "Oncor Electric Delivery Company LLC",
         "passed": true
       },
       "gas": {
@@ -63,11 +87,24 @@
         "actual": "Atmos Energy",
         "passed": true
       },
-      "timing_ms": 0
+      "electric_timing_ms": 548,
+      "gas_timing_ms": 171,
+      "electric_sources": [
+        "electric_coop",
+        "eia_861",
+        "county_default",
+        "state_gis",
+        "hifld"
+      ],
+      "gas_sources": [
+        "municipal_gas",
+        "zip_mapping_gas",
+        "county_default_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "tx_sanantonio_001",
-      "address": "100 Military Plaza, San Antonio, TX 78205",
       "city": "San Antonio",
       "state": "TX",
       "electric": {
@@ -80,28 +117,47 @@
         "actual": "CPS Energy",
         "passed": true
       },
-      "timing_ms": 0
+      "electric_timing_ms": 313,
+      "gas_timing_ms": 193,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "municipal_gas",
+        "county_default_gas"
+      ]
     },
     {
       "test_id": "tx_kyle_001",
-      "address": "301 Treasure Trove Path, Kyle, TX 78640",
       "city": "Kyle",
       "state": "TX",
       "electric": {
         "expected": "Pedernales Electric Cooperative",
-        "actual": "Bluebonnet Electric Cooperative",
-        "passed": false
+        "actual": "Pedernales Electric Cooperative, Inc.",
+        "passed": true
       },
       "gas": {
         "expected": "Texas Gas Service",
-        "actual": "CenterPoint Energy",
-        "passed": false
+        "actual": "Texas Gas Service",
+        "passed": true
       },
-      "timing_ms": 247
+      "electric_timing_ms": 570,
+      "gas_timing_ms": 154,
+      "electric_sources": [
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "county_default_gas"
+      ]
     },
     {
       "test_id": "fl_miami_001",
-      "address": "100 NE 1st Ave, Miami, FL 33132",
       "city": "Miami",
       "state": "FL",
       "electric": {
@@ -111,14 +167,22 @@
       },
       "gas": {
         "expected": null,
-        "actual": "FLORIDA CITY GAS COMPANY",
+        "actual": "Florida City Gas",
         "passed": false
       },
-      "timing_ms": 176
+      "electric_timing_ms": 540,
+      "gas_timing_ms": 232,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "fl_tampa_001",
-      "address": "315 E Kennedy Blvd, Tampa, FL 33602",
       "city": "Tampa",
       "state": "FL",
       "electric": {
@@ -128,31 +192,48 @@
       },
       "gas": {
         "expected": "Peoples Gas",
-        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "actual": "TECO Peoples Gas",
         "passed": true
       },
-      "timing_ms": 180
+      "electric_timing_ms": 366,
+      "gas_timing_ms": 183,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "fl_orlando_001",
-      "address": "400 S Orange Ave, Orlando, FL 32801",
       "city": "Orlando",
       "state": "FL",
       "electric": {
         "expected": "Orlando Utilities Commission",
-        "actual": "Orlando Utilities Commission (OUC)",
-        "passed": true
+        "actual": "OUC",
+        "passed": false
       },
       "gas": {
         "expected": null,
-        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "actual": "TECO Peoples Gas",
         "passed": false
       },
-      "timing_ms": 148
+      "electric_timing_ms": 299,
+      "gas_timing_ms": 144,
+      "electric_sources": [
+        "municipal",
+        "eia_861"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "fl_jacksonville_001",
-      "address": "117 W Duval St, Jacksonville, FL 32202",
       "city": "Jacksonville",
       "state": "FL",
       "electric": {
@@ -162,65 +243,96 @@
       },
       "gas": {
         "expected": null,
-        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "actual": "TECO Peoples Gas",
         "passed": false
       },
-      "timing_ms": 148
+      "electric_timing_ms": 306,
+      "gas_timing_ms": 144,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ga_atlanta_001",
-      "address": "55 Trinity Ave SW, Atlanta, GA 30303",
       "city": "Atlanta",
       "state": "GA",
       "electric": {
         "expected": "Georgia Power",
-        "actual": "Georgia Power Co",
-        "passed": true
+        "actual": "CITY OF EAST POINT - (GA)",
+        "passed": false
       },
       "gas": {
         "expected": "Atlanta Gas Light",
         "actual": "Atlanta Gas Light",
         "passed": true
       },
-      "timing_ms": 143
+      "electric_timing_ms": 561,
+      "gas_timing_ms": 214,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "county_default_gas",
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "nc_charlotte_001",
-      "address": "600 E 4th St, Charlotte, NC 28202",
       "city": "Charlotte",
       "state": "NC",
       "electric": {
         "expected": "Duke Energy Carolinas",
-        "actual": "Duke Energy Carolinas, LLC",
-        "passed": true
+        "actual": "TOWN OF HUNTERSVILLE - (NC)",
+        "passed": false
       },
       "gas": {
         "expected": "Piedmont Natural Gas",
         "actual": "Piedmont Natural Gas",
         "passed": true
       },
-      "timing_ms": 181
+      "electric_timing_ms": 321,
+      "gas_timing_ms": 160,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": []
     },
     {
       "test_id": "nc_raleigh_001",
-      "address": "1 E Edenton St, Raleigh, NC 27601",
       "city": "Raleigh",
       "state": "NC",
       "electric": {
         "expected": "Duke Energy Progress",
-        "actual": "Duke Energy Progress - (NC)",
-        "passed": true
+        "actual": "NORTH CAROLINA EASTERN M P A",
+        "passed": false
       },
       "gas": {
         "expected": "PSNC Energy",
         "actual": "PSNC Energy",
         "passed": true
       },
-      "timing_ms": 180
+      "electric_timing_ms": 955,
+      "gas_timing_ms": 174,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "tn_nashville_001",
-      "address": "1 Public Square, Nashville, TN 37201",
       "city": "Nashville",
       "state": "TN",
       "electric": {
@@ -230,14 +342,24 @@
       },
       "gas": {
         "expected": "Piedmont Natural Gas",
-        "actual": "PIEDMONT NATURAL GAS",
+        "actual": "Piedmont Natural Gas",
         "passed": true
       },
-      "timing_ms": 152
+      "electric_timing_ms": 207,
+      "gas_timing_ms": 153,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "tn_memphis_001",
-      "address": "125 N Main St, Memphis, TN 38103",
       "city": "Memphis",
       "state": "TN",
       "electric": {
@@ -250,33 +372,50 @@
         "actual": "Memphis Light, Gas and Water (MLGW)",
         "passed": true
       },
-      "timing_ms": 0
+      "electric_timing_ms": 296,
+      "gas_timing_ms": 163,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "municipal_gas"
+      ]
     },
     {
       "test_id": "ca_losangeles_001",
-      "address": "200 N Spring St, Los Angeles, CA 90012",
       "city": "Los Angeles",
       "state": "CA",
       "electric": {
         "expected": "LADWP",
-        "actual": "Los Angeles Department of Water and Power (LADWP)",
-        "passed": true
+        "actual": "Los Angeles Department of Water & Power",
+        "passed": false
       },
       "gas": {
         "expected": "Southern California Gas",
-        "actual": "SOUTHERN CALIFORNIA GAS COMPANY",
+        "actual": "Southern California Gas Company",
         "passed": true
       },
-      "timing_ms": 155
+      "electric_timing_ms": 517,
+      "gas_timing_ms": 170,
+      "electric_sources": [
+        "municipal",
+        "eia_861"
+      ],
+      "gas_sources": [
+        "county_default_gas",
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ca_sanfrancisco_001",
-      "address": "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102",
       "city": "San Francisco",
       "state": "CA",
       "electric": {
         "expected": "Pacific Gas & Electric",
-        "actual": "Pacific Gas and Electric",
+        "actual": "Pacific Gas & Electric Company",
         "passed": true
       },
       "gas": {
@@ -284,45 +423,77 @@
         "actual": "Pacific Gas and Electric",
         "passed": true
       },
-      "timing_ms": 362
+      "electric_timing_ms": 246,
+      "gas_timing_ms": 152,
+      "electric_sources": [
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "county_default_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ca_sandiego_001",
-      "address": "202 C St, San Diego, CA 92101",
       "city": "San Diego",
       "state": "CA",
       "electric": {
         "expected": "San Diego Gas & Electric",
-        "actual": "San Diego Gas & Electric Co",
+        "actual": "San Diego Gas & Electric",
         "passed": true
       },
       "gas": {
         "expected": "San Diego Gas & Electric",
-        "actual": "SDG&E",
+        "actual": "San Diego Gas & Electric",
         "passed": true
       },
-      "timing_ms": 144
+      "electric_timing_ms": 1706,
+      "gas_timing_ms": 166,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "county_default_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ca_sacramento_001",
-      "address": "915 I St, Sacramento, CA 95814",
       "city": "Sacramento",
       "state": "CA",
       "electric": {
         "expected": "SMUD",
-        "actual": "Sacramento Municipal Utility District (SMUD)",
-        "passed": true
+        "actual": "Sacramento Municipal Utility District",
+        "passed": false
       },
       "gas": {
         "expected": "Pacific Gas & Electric",
         "actual": "Pacific Gas and Electric",
         "passed": true
       },
-      "timing_ms": 178
+      "electric_timing_ms": 1572,
+      "gas_timing_ms": 167,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "county_default_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ny_newyork_001",
-      "address": "City Hall, New York, NY 10007",
       "city": "New York",
       "state": "NY",
       "electric": {
@@ -335,11 +506,20 @@
         "actual": "Con Edison",
         "passed": true
       },
-      "timing_ms": 162
+      "electric_timing_ms": 651,
+      "gas_timing_ms": 178,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ny_buffalo_001",
-      "address": "65 Niagara Square, Buffalo, NY 14202",
       "city": "Buffalo",
       "state": "NY",
       "electric": {
@@ -352,11 +532,19 @@
         "actual": "NATIONAL FUEL GAS DISTRIBUTION",
         "passed": true
       },
-      "timing_ms": 166
+      "electric_timing_ms": 435,
+      "gas_timing_ms": 153,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "il_chicago_001",
-      "address": "121 N LaSalle St, Chicago, IL 60602",
       "city": "Chicago",
       "state": "IL",
       "electric": {
@@ -366,14 +554,22 @@
       },
       "gas": {
         "expected": "Peoples Gas",
-        "actual": "PEOPLES GAS LT & COKE CO",
+        "actual": "Peoples Gas",
         "passed": true
       },
-      "timing_ms": 181
+      "electric_timing_ms": 197,
+      "gas_timing_ms": 165,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "pa_philadelphia_001",
-      "address": "1401 JFK Blvd, Philadelphia, PA 19102",
       "city": "Philadelphia",
       "state": "PA",
       "electric": {
@@ -386,11 +582,19 @@
         "actual": "PECO",
         "passed": false
       },
-      "timing_ms": 177
+      "electric_timing_ms": 303,
+      "gas_timing_ms": 144,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "pa_pittsburgh_001",
-      "address": "414 Grant St, Pittsburgh, PA 15219",
       "city": "Pittsburgh",
       "state": "PA",
       "electric": {
@@ -400,14 +604,22 @@
       },
       "gas": {
         "expected": "Peoples Gas",
-        "actual": "EQUITABLE GAS CO. (PEOPLES NATURAL GAS",
+        "actual": "Peoples Gas",
         "passed": true
       },
-      "timing_ms": 171
+      "electric_timing_ms": 293,
+      "gas_timing_ms": 154,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "oh_columbus_001",
-      "address": "90 W Broad St, Columbus, OH 43215",
       "city": "Columbus",
       "state": "OH",
       "electric": {
@@ -417,14 +629,23 @@
       },
       "gas": {
         "expected": "Columbia Gas",
-        "actual": "COLUMBIA GAS OF OHIO",
+        "actual": "Columbia Gas of Ohio",
         "passed": true
       },
-      "timing_ms": 292
+      "electric_timing_ms": 227,
+      "gas_timing_ms": 162,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "oh_cleveland_001",
-      "address": "601 Lakeside Ave, Cleveland, OH 44114",
       "city": "Cleveland",
       "state": "OH",
       "electric": {
@@ -434,48 +655,71 @@
       },
       "gas": {
         "expected": "Dominion Energy",
-        "actual": "EAST OHIO GAS CO/DOMINION",
-        "passed": true
+        "actual": "ORWELL NATURAL GAS",
+        "passed": false
       },
-      "timing_ms": 195
+      "electric_timing_ms": 218,
+      "gas_timing_ms": 189,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "mi_detroit_001",
-      "address": "2 Woodward Ave, Detroit, MI 48226",
       "city": "Detroit",
       "state": "MI",
       "electric": {
         "expected": "DTE Energy",
-        "actual": "DTE ELECTRIC COMPANY",
-        "passed": true
+        "actual": "WYANDOTTE MUNICIPAL SERV COMM",
+        "passed": false
       },
       "gas": {
         "expected": "DTE Energy",
         "actual": "DTE Energy",
         "passed": true
       },
-      "timing_ms": 290
+      "electric_timing_ms": 165,
+      "gas_timing_ms": 169,
+      "electric_sources": [
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "az_phoenix_001",
-      "address": "200 W Washington St, Phoenix, AZ 85003",
       "city": "Phoenix",
       "state": "AZ",
       "electric": {
         "expected": "Arizona Public Service",
-        "actual": "Arizona Public Service (APS)",
-        "passed": true
+        "actual": "WAPA-- WESTERN AREA POWER ADMINISTRATION",
+        "passed": false
       },
       "gas": {
         "expected": "Southwest Gas",
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "timing_ms": 235
+      "electric_timing_ms": 429,
+      "gas_timing_ms": 147,
+      "electric_sources": [
+        "electric_coop",
+        "eia_861"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "az_tucson_001",
-      "address": "255 W Alameda St, Tucson, AZ 85701",
       "city": "Tucson",
       "state": "AZ",
       "electric": {
@@ -488,62 +732,97 @@
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "timing_ms": 192
+      "electric_timing_ms": 157,
+      "gas_timing_ms": 148,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "co_denver_001",
-      "address": "1437 Bannock St, Denver, CO 80202",
       "city": "Denver",
       "state": "CO",
       "electric": {
         "expected": "Xcel Energy",
-        "actual": "Public Service Co of Colorado",
+        "actual": "PSC of Colorado",
         "passed": false
       },
       "gas": {
         "expected": "Xcel Energy",
-        "actual": "Xcel Energy Colorado",
+        "actual": "Xcel Energy",
         "passed": true
       },
-      "timing_ms": 169
+      "electric_timing_ms": 448,
+      "gas_timing_ms": 177,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "county_default_gas",
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "wa_seattle_001",
-      "address": "600 4th Ave, Seattle, WA 98104",
       "city": "Seattle",
       "state": "WA",
       "electric": {
         "expected": "Seattle City Light",
-        "actual": "Seattle City Light",
+        "actual": "SEATTLE CITY LIGHT",
         "passed": true
       },
       "gas": {
         "expected": "Puget Sound Energy",
-        "actual": "PUGET SOUND ENERGY, INC.",
+        "actual": "Puget Sound Energy",
         "passed": true
       },
-      "timing_ms": 158
+      "electric_timing_ms": 835,
+      "gas_timing_ms": 187,
+      "electric_sources": [
+        "municipal",
+        "eia_861",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "or_portland_001",
-      "address": "1221 SW 4th Ave, Portland, OR 97204",
       "city": "Portland",
       "state": "OR",
       "electric": {
         "expected": "Portland General Electric",
-        "actual": "Portland General Electric Co",
+        "actual": "Portland General Electric",
         "passed": true
       },
       "gas": {
         "expected": "NW Natural",
-        "actual": "NORTHWEST NATURAL GAS CO.",
+        "actual": "NW Natural",
         "passed": true
       },
-      "timing_ms": 150
+      "electric_timing_ms": 415,
+      "gas_timing_ms": 137,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "nv_lasvegas_001",
-      "address": "495 S Main St, Las Vegas, NV 89101",
       "city": "Las Vegas",
       "state": "NV",
       "electric": {
@@ -553,14 +832,22 @@
       },
       "gas": {
         "expected": "Southwest Gas",
-        "actual": "Southwest Gas Corporation",
+        "actual": "Southwest Gas",
         "passed": true
       },
-      "timing_ms": 153
+      "electric_timing_ms": 245,
+      "gas_timing_ms": 130,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ma_boston_001",
-      "address": "1 City Hall Square, Boston, MA 02201",
       "city": "Boston",
       "state": "MA",
       "electric": {
@@ -570,14 +857,22 @@
       },
       "gas": {
         "expected": "National Grid",
-        "actual": "NATIONAL GRID",
+        "actual": "National Grid",
         "passed": true
       },
-      "timing_ms": 173
+      "electric_timing_ms": 732,
+      "gas_timing_ms": 143,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "md_baltimore_001",
-      "address": "100 N Holliday St, Baltimore, MD 21202",
       "city": "Baltimore",
       "state": "MD",
       "electric": {
@@ -590,62 +885,97 @@
         "actual": "BGE",
         "passed": true
       },
-      "timing_ms": 148
+      "electric_timing_ms": 932,
+      "gas_timing_ms": 152,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "dc_washington_001",
-      "address": "1600 Pennsylvania Ave NW, Washington, DC 20500",
       "city": "Washington",
       "state": "DC",
       "electric": {
         "expected": "Pepco",
-        "actual": "Potomac Electric Power Co",
+        "actual": "Pepco",
         "passed": true
       },
       "gas": {
         "expected": "Washington Gas",
-        "actual": "WASHINGTON GAS",
+        "actual": "Washington Gas",
         "passed": true
       },
-      "timing_ms": 179
+      "electric_timing_ms": 206,
+      "gas_timing_ms": 162,
+      "electric_sources": [
+        "state_gis",
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "va_richmond_001",
-      "address": "900 E Broad St, Richmond, VA 23219",
       "city": "Richmond",
       "state": "VA",
       "electric": {
         "expected": "Dominion Energy",
-        "actual": "Dominion Energy Virginia",
+        "actual": "Dominion Virginia Power",
         "passed": true
       },
       "gas": {
         "expected": "Virginia Natural Gas",
-        "actual": "COLUMBIA GAS OF VIRGINIA",
+        "actual": "Columbia Gas of Virginia",
         "passed": false
       },
-      "timing_ms": 172
+      "electric_timing_ms": 306,
+      "gas_timing_ms": 183,
+      "electric_sources": [
+        "electric_coop",
+        "county_default",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "sc_charleston_001",
-      "address": "80 Broad St, Charleston, SC 29401",
       "city": "Charleston",
       "state": "SC",
       "electric": {
         "expected": "Dominion Energy South Carolina",
-        "actual": "Dominion Energy South Carolina, Inc",
+        "actual": "Dominion Energy South Carolina",
         "passed": true
       },
       "gas": {
         "expected": "Dominion Energy",
-        "actual": "Dominion Energy SC",
-        "passed": true
+        "actual": "SOUTH CAROLINA ELECTRIC & GAS",
+        "passed": false
       },
-      "timing_ms": 230
+      "electric_timing_ms": 459,
+      "gas_timing_ms": 169,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "la_neworleans_001",
-      "address": "1300 Perdido St, New Orleans, LA 70112",
       "city": "New Orleans",
       "state": "LA",
       "electric": {
@@ -655,14 +985,23 @@
       },
       "gas": {
         "expected": "Entergy New Orleans",
-        "actual": "ENTERGY - GULF STATES",
+        "actual": "Entergy",
         "passed": true
       },
-      "timing_ms": 158
+      "electric_timing_ms": 713,
+      "gas_timing_ms": 146,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "al_birmingham_001",
-      "address": "710 N 20th St, Birmingham, AL 35203",
       "city": "Birmingham",
       "state": "AL",
       "electric": {
@@ -675,28 +1014,43 @@
         "actual": "Spire Alabama",
         "passed": true
       },
-      "timing_ms": 152
+      "electric_timing_ms": 173,
+      "gas_timing_ms": 159,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": []
     },
     {
       "test_id": "ms_jackson_001",
-      "address": "219 S President St, Jackson, MS 39201",
       "city": "Jackson",
       "state": "MS",
       "electric": {
         "expected": "Entergy Mississippi",
-        "actual": "Entergy Mississippi LLC",
+        "actual": "Entergy Mississippi, Inc.",
         "passed": true
       },
       "gas": {
         "expected": "Atmos Energy",
-        "actual": "Spire Mississippi",
-        "passed": false
+        "actual": "ATMOS ENERGY CORPORATION",
+        "passed": true
       },
-      "timing_ms": 184
+      "electric_timing_ms": 329,
+      "gas_timing_ms": 167,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "ar_littlerock_001",
-      "address": "500 W Markham St, Little Rock, AR 72201",
       "city": "Little Rock",
       "state": "AR",
       "electric": {
@@ -706,48 +1060,74 @@
       },
       "gas": {
         "expected": "CenterPoint Energy",
-        "actual": "CENTERPOINT ENERGY - ARKLA",
+        "actual": "CenterPoint Energy",
         "passed": true
       },
-      "timing_ms": 356
+      "electric_timing_ms": 222,
+      "gas_timing_ms": 143,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ok_oklahomacity_001",
-      "address": "200 N Walker Ave, Oklahoma City, OK 73102",
       "city": "Oklahoma City",
       "state": "OK",
       "electric": {
         "expected": "OG&E",
-        "actual": "Oklahoma Gas & Electric Co",
+        "actual": "Oklahoma Electric Cooperative",
         "passed": false
       },
       "gas": {
         "expected": "Oklahoma Natural Gas",
-        "actual": "OKLAHOMA NATURAL GAS CO.",
+        "actual": "Oklahoma Natural Gas",
         "passed": true
       },
-      "timing_ms": 141
+      "electric_timing_ms": 5925,
+      "gas_timing_ms": 176,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ks_wichita_001",
-      "address": "455 N Main St, Wichita, KS 67202",
       "city": "Wichita",
       "state": "KS",
       "electric": {
         "expected": "Evergy",
-        "actual": "Evergy Kansas South, Inc",
+        "actual": "EVERGY KANSAS SOUTH, INC.",
         "passed": true
       },
       "gas": {
         "expected": "Kansas Gas Service",
-        "actual": "Kansas Gas Service",
-        "passed": true
+        "actual": "BLACK HILLS ENERGY",
+        "passed": false
       },
-      "timing_ms": 219
+      "electric_timing_ms": 416,
+      "gas_timing_ms": 149,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "mo_kansascity_001",
-      "address": "414 E 12th St, Kansas City, MO 64106",
       "city": "Kansas City",
       "state": "MO",
       "electric": {
@@ -760,11 +1140,16 @@
         "actual": "Spire",
         "passed": true
       },
-      "timing_ms": 149
+      "electric_timing_ms": 200,
+      "gas_timing_ms": 186,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": []
     },
     {
       "test_id": "mo_stlouis_001",
-      "address": "1200 Market St, St. Louis, MO 63103",
       "city": "St. Louis",
       "state": "MO",
       "electric": {
@@ -774,14 +1159,22 @@
       },
       "gas": {
         "expected": "Spire",
-        "actual": "Spire",
-        "passed": true
+        "actual": "AMEREN ILLINOIS",
+        "passed": false
       },
-      "timing_ms": 150
+      "electric_timing_ms": 476,
+      "gas_timing_ms": 186,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "mn_minneapolis_001",
-      "address": "350 S 5th St, Minneapolis, MN 55415",
       "city": "Minneapolis",
       "state": "MN",
       "electric": {
@@ -791,14 +1184,23 @@
       },
       "gas": {
         "expected": "CenterPoint Energy",
-        "actual": "CENTERPOINT ENERGY",
+        "actual": "CenterPoint Energy",
         "passed": true
       },
-      "timing_ms": 149
+      "electric_timing_ms": 777,
+      "gas_timing_ms": 185,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "wi_milwaukee_001",
-      "address": "200 E Wells St, Milwaukee, WI 53202",
       "city": "Milwaukee",
       "state": "WI",
       "electric": {
@@ -808,14 +1210,22 @@
       },
       "gas": {
         "expected": "We Energies",
-        "actual": "WE Energies",
-        "passed": true
+        "actual": "WISCONSIN GAS CO",
+        "passed": false
       },
-      "timing_ms": 167
+      "electric_timing_ms": 203,
+      "gas_timing_ms": 232,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "in_indianapolis_001",
-      "address": "200 E Washington St, Indianapolis, IN 46204",
       "city": "Indianapolis",
       "state": "IN",
       "electric": {
@@ -825,31 +1235,46 @@
       },
       "gas": {
         "expected": "CenterPoint Energy",
-        "actual": "CITIZENS ENERGY GROUP",
+        "actual": "Citizens Gas",
         "passed": false
       },
-      "timing_ms": 157
+      "electric_timing_ms": 261,
+      "gas_timing_ms": 164,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ky_louisville_001",
-      "address": "601 W Jefferson St, Louisville, KY 40202",
       "city": "Louisville",
       "state": "KY",
       "electric": {
         "expected": "LG&E",
-        "actual": "Louisville Gas & Electric Co",
-        "passed": false
+        "actual": "Louisville Gas and Electric Company",
+        "passed": true
       },
       "gas": {
         "expected": "LG&E",
-        "actual": "LG&E",
-        "passed": true
+        "actual": "LOUISVILLE GAS & ELECTRIC",
+        "passed": false
       },
-      "timing_ms": 183
+      "electric_timing_ms": 751,
+      "gas_timing_ms": 226,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "nj_newark_001",
-      "address": "920 Broad St, Newark, NJ 07102",
       "city": "Newark",
       "state": "NJ",
       "electric": {
@@ -862,11 +1287,18 @@
         "actual": "PSE&G",
         "passed": true
       },
-      "timing_ms": 346
+      "electric_timing_ms": 293,
+      "gas_timing_ms": 163,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "ct_hartford_001",
-      "address": "550 Main St, Hartford, CT 06103",
       "city": "Hartford",
       "state": "CT",
       "electric": {
@@ -876,14 +1308,22 @@
       },
       "gas": {
         "expected": "Eversource",
-        "actual": "CONNETICUT NATURAL GAS CORP",
+        "actual": "Connecticut Natural Gas",
         "passed": false
       },
-      "timing_ms": 154
+      "electric_timing_ms": 294,
+      "gas_timing_ms": 166,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ri_providence_001",
-      "address": "25 Dorrance St, Providence, RI 02903",
       "city": "Providence",
       "state": "RI",
       "electric": {
@@ -893,14 +1333,21 @@
       },
       "gas": {
         "expected": "Rhode Island Energy",
-        "actual": "National Grid",
-        "passed": true
+        "actual": "NARRAGANSETT ELECTRIC CO (GAS DIVISION OF RI)",
+        "passed": false
       },
-      "timing_ms": 165
+      "electric_timing_ms": 285,
+      "gas_timing_ms": 187,
+      "electric_sources": [
+        "state_gis",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "de_wilmington_001",
-      "address": "800 N French St, Wilmington, DE 19801",
       "city": "Wilmington",
       "state": "DE",
       "electric": {
@@ -910,14 +1357,23 @@
       },
       "gas": {
         "expected": "Delmarva Power",
-        "actual": "DELMARVA POWER",
+        "actual": "Delmarva Power",
         "passed": true
       },
-      "timing_ms": 429
+      "electric_timing_ms": 282,
+      "gas_timing_ms": 187,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "nh_manchester_001",
-      "address": "1 City Hall Plaza, Manchester, NH 03101",
       "city": "Manchester",
       "state": "NH",
       "electric": {
@@ -927,14 +1383,22 @@
       },
       "gas": {
         "expected": "Liberty Utilities",
-        "actual": "LIBERTY UTILITIES (ENERGYNORTH)",
+        "actual": "Liberty Utilities",
         "passed": true
       },
-      "timing_ms": 173
+      "electric_timing_ms": 266,
+      "gas_timing_ms": 157,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "vt_burlington_001",
-      "address": "149 Church St, Burlington, VT 05401",
       "city": "Burlington",
       "state": "VT",
       "electric": {
@@ -944,14 +1408,23 @@
       },
       "gas": {
         "expected": "Vermont Gas Systems",
-        "actual": "VERMONT GAS SYSTEMS INC.",
+        "actual": "Vermont Gas Systems",
         "passed": true
       },
-      "timing_ms": 152
+      "electric_timing_ms": 356,
+      "gas_timing_ms": 168,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "me_portland_001",
-      "address": "389 Congress St, Portland, ME 04101",
       "city": "Portland",
       "state": "ME",
       "electric": {
@@ -961,14 +1434,22 @@
       },
       "gas": {
         "expected": null,
-        "actual": "Summit Natural Gas",
+        "actual": "NORTHERN UTILITIES INC. (UNITIL)",
         "passed": false
       },
-      "timing_ms": 177
+      "electric_timing_ms": 296,
+      "gas_timing_ms": 171,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "wv_charleston_001",
-      "address": "1900 Kanawha Blvd E, Charleston, WV 25305",
       "city": "Charleston",
       "state": "WV",
       "electric": {
@@ -978,14 +1459,23 @@
       },
       "gas": {
         "expected": "Mountaineer Gas",
-        "actual": "MOUNTAINEER GAS CO.",
+        "actual": "Mountaineer Gas",
         "passed": true
       },
-      "timing_ms": 150
+      "electric_timing_ms": 304,
+      "gas_timing_ms": 161,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "nm_albuquerque_001",
-      "address": "1 Civic Plaza NW, Albuquerque, NM 87102",
       "city": "Albuquerque",
       "state": "NM",
       "electric": {
@@ -995,31 +1485,48 @@
       },
       "gas": {
         "expected": "New Mexico Gas Company",
-        "actual": "NEW MEXICO GAS COMPANY",
+        "actual": "New Mexico Gas Company",
         "passed": true
       },
-      "timing_ms": 137
+      "electric_timing_ms": 182,
+      "gas_timing_ms": 163,
+      "electric_sources": [
+        "eia_861",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ut_saltlakecity_001",
-      "address": "451 S State St, Salt Lake City, UT 84111",
       "city": "Salt Lake City",
       "state": "UT",
       "electric": {
         "expected": "Rocky Mountain Power",
-        "actual": "PacifiCorp",
+        "actual": "Rocky Mountain Power",
         "passed": true
       },
       "gas": {
         "expected": "Dominion Energy",
-        "actual": "Dominion Energy Utah",
-        "passed": true
+        "actual": "QUESTAR GAS CO",
+        "passed": false
       },
-      "timing_ms": 168
+      "electric_timing_ms": 468,
+      "gas_timing_ms": 183,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "id_boise_001",
-      "address": "150 N Capitol Blvd, Boise, ID 83702",
       "city": "Boise",
       "state": "ID",
       "electric": {
@@ -1029,14 +1536,23 @@
       },
       "gas": {
         "expected": "Intermountain Gas",
-        "actual": "INTERMOUNTAIN GAS CO",
+        "actual": "Intermountain Gas",
         "passed": true
       },
-      "timing_ms": 146
+      "electric_timing_ms": 188,
+      "gas_timing_ms": 142,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "mt_billings_001",
-      "address": "210 N 27th St, Billings, MT 59101",
       "city": "Billings",
       "state": "MT",
       "electric": {
@@ -1046,14 +1562,22 @@
       },
       "gas": {
         "expected": "NorthWestern Energy",
-        "actual": "MONTANA-DAKOTA UTILITIES",
+        "actual": "Montana-Dakota Utilities",
         "passed": false
       },
-      "timing_ms": 171
+      "electric_timing_ms": 158,
+      "gas_timing_ms": 151,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "wy_cheyenne_001",
-      "address": "2101 O'Neil Ave, Cheyenne, WY 82001",
       "city": "Cheyenne",
       "state": "WY",
       "electric": {
@@ -1063,14 +1587,22 @@
       },
       "gas": {
         "expected": "Black Hills Energy",
-        "actual": "BLACK HILLS ENERGY",
+        "actual": "Black Hills Energy",
         "passed": true
       },
-      "timing_ms": 148
+      "electric_timing_ms": 473,
+      "gas_timing_ms": 179,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "nd_fargo_001",
-      "address": "225 4th St N, Fargo, ND 58102",
       "city": "Fargo",
       "state": "ND",
       "electric": {
@@ -1080,14 +1612,22 @@
       },
       "gas": {
         "expected": "Xcel Energy",
-        "actual": "Xcel Energy Colorado",
+        "actual": "Xcel Energy",
         "passed": true
       },
-      "timing_ms": 211
+      "electric_timing_ms": 598,
+      "gas_timing_ms": 157,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "sd_siouxfalls_001",
-      "address": "224 W 9th St, Sioux Falls, SD 57104",
       "city": "Sioux Falls",
       "state": "SD",
       "electric": {
@@ -1097,31 +1637,47 @@
       },
       "gas": {
         "expected": "MidAmerican Energy",
-        "actual": "Berkshire Hathaway Energy",
+        "actual": "MIDAMERICAN ENERGY",
         "passed": true
       },
-      "timing_ms": 149
+      "electric_timing_ms": 232,
+      "gas_timing_ms": 394,
+      "electric_sources": [
+        "eia_861",
+        "county_default"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "ne_omaha_001",
-      "address": "1819 Farnam St, Omaha, NE 68183",
       "city": "Omaha",
       "state": "NE",
       "electric": {
         "expected": "OPPD",
-        "actual": "Omaha Public Power District (OPPD)",
+        "actual": "OPPD",
         "passed": true
       },
       "gas": {
         "expected": "Black Hills Energy",
-        "actual": "BLACK HILLS ENERGY",
-        "passed": true
+        "actual": "METROPOLITAN UTILITIES DISTRICT OF OMAHA",
+        "passed": false
       },
-      "timing_ms": 181
+      "electric_timing_ms": 2117,
+      "gas_timing_ms": 173,
+      "electric_sources": [
+        "municipal",
+        "county_default",
+        "hifld",
+        "state_gis"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas"
+      ]
     },
     {
       "test_id": "ia_desmoines_001",
-      "address": "400 Robert D Ray Dr, Des Moines, IA 50309",
       "city": "Des Moines",
       "state": "IA",
       "electric": {
@@ -1131,14 +1687,23 @@
       },
       "gas": {
         "expected": "MidAmerican Energy",
-        "actual": "Berkshire Hathaway Energy",
+        "actual": "MidAmerican Energy",
         "passed": true
       },
-      "timing_ms": 174
+      "electric_timing_ms": 192,
+      "gas_timing_ms": 170,
+      "electric_sources": [
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "hi_honolulu_001",
-      "address": "530 S King St, Honolulu, HI 96813",
       "city": "Honolulu",
       "state": "HI",
       "electric": {
@@ -1148,14 +1713,24 @@
       },
       "gas": {
         "expected": "Hawaii Gas",
-        "actual": "HAWAII GAS",
+        "actual": "Hawaii Gas",
         "passed": true
       },
-      "timing_ms": 192
+      "electric_timing_ms": 210,
+      "gas_timing_ms": 173,
+      "electric_sources": [
+        "state_gis",
+        "eia_861",
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     },
     {
       "test_id": "ak_anchorage_001",
-      "address": "632 W 6th Ave, Anchorage, AK 99501",
       "city": "Anchorage",
       "state": "AK",
       "electric": {
@@ -1165,10 +1740,19 @@
       },
       "gas": {
         "expected": "ENSTAR Natural Gas",
-        "actual": "ENSTAR NATURAL GAS CO.",
+        "actual": "ENSTAR Natural Gas",
         "passed": true
       },
-      "timing_ms": 331
+      "electric_timing_ms": 148,
+      "gas_timing_ms": 144,
+      "electric_sources": [
+        "county_default",
+        "hifld"
+      ],
+      "gas_sources": [
+        "zip_mapping_gas",
+        "hifld_gas"
+      ]
     }
   ]
 }

@@ -378,7 +378,7 @@ def lookup_stream():
             # Step 1: Geocode (fast)
             yield f"data: {json.dumps({'event': 'status', 'message': 'Geocoding address...'})}\n\n"
             
-            location = geocode_address(address)
+            location = geocode_address(address, include_geography=True)
             if not location:
                 yield f"data: {json.dumps({'event': 'error', 'message': 'Could not geocode address'})}\n\n"
                 return

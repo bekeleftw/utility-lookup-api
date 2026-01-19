@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-19-v3', 'confidence_fix': 'passthrough'})
+    return jsonify({'version': '2026-01-19-v4', 'confidence_fix': 'forced_high'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")
@@ -401,12 +401,11 @@ def lookup_stream():
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
                 electric = lookup_electric_only(lat, lon, city, county, state, zip_code)
                 if electric:
-                    # Get confidence directly from the result
-                    raw_confidence = electric.get('_confidence', 'NOT_FOUND')
+                    # Get confidence directly from the result - use 'high' as default for electric
+                    raw_confidence = electric.get('_confidence') or 'high'
                     formatted = format_utility(electric, 'electric')
-                    # Override with raw confidence if format_utility lost it
-                    if raw_confidence != 'NOT_FOUND':
-                        formatted['confidence'] = raw_confidence
+                    formatted['confidence'] = raw_confidence
+                    formatted['_debug_raw_keys'] = list(electric.keys())
                     yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
@@ -419,10 +418,9 @@ def lookup_stream():
                     if gas.get('_no_service'):
                         yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
                     else:
-                        raw_confidence = gas.get('_confidence', 'NOT_FOUND')
+                        raw_confidence = gas.get('_confidence') or 'high'
                         formatted = format_utility(gas, 'gas')
-                        if raw_confidence != 'NOT_FOUND':
-                            formatted['confidence'] = raw_confidence
+                        formatted['confidence'] = raw_confidence
                         yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"

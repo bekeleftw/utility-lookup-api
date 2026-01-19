@@ -1015,10 +1015,28 @@ def query_california_gas(lat: float, lon: float) -> Optional[Dict]:
 
 def query_kentucky_gas(lat: float, lon: float) -> Optional[Dict]:
     """
-    Query Kentucky Gas Distribution Utilities (KyGIS/PSC).
+    Query Kentucky Gas Distribution Utilities (KY PSC via watermaps.ky.gov).
+    Updated Jan 2026 - uses state-hosted endpoint with more detailed data.
+    Layers: 1=Overlapping, 2=Municipal, 3=LDCs
     """
-    url = "https://services3.arcgis.com/ghsX9CKghMvyYjBU/arcgis/rest/services/Gas_Distribution_Utilities/FeatureServer/0/query"
-    result = _query_arcgis_point(url, lat, lon, "NAME,TYPE_CODE")
+    # Primary: State-hosted endpoint (more detailed)
+    url = "https://watermaps.ky.gov/arcgis/rest/services/WebMapServices/KY_Gas_Utility_Territories_WGS85WM/MapServer/3/query"
+    result = _query_arcgis_point(url, lat, lon, "NAME,ABBREV,PSC_ID,PSC_Reg,TYPE_CODE")
+    
+    if result and result.get("NAME"):
+        return {
+            "name": result.get("NAME", "").strip(),
+            "abbreviation": result.get("ABBREV"),
+            "psc_id": result.get("PSC_ID"),
+            "psc_regulated": result.get("PSC_Reg"),
+            "type_code": result.get("TYPE_CODE"),
+            "confidence": "high",
+            "source": "kentucky_psc"
+        }
+    
+    # Fallback: ArcGIS Online endpoint
+    url_fallback = "https://services3.arcgis.com/ghsX9CKghMvyYjBU/arcgis/rest/services/Gas_Distribution_Utilities/FeatureServer/0/query"
+    result = _query_arcgis_point(url_fallback, lat, lon, "NAME,TYPE_CODE")
     
     if result and result.get("NAME"):
         return {

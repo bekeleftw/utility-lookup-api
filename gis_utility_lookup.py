@@ -12,6 +12,8 @@ Data sources:
 """
 
 import requests
+import json
+import os
 from typing import Dict, Optional, List
 from functools import lru_cache
 
@@ -1194,6 +1196,82 @@ def query_ohio_gas(lat: float, lon: float) -> Optional[Dict]:
             "source": "ohio_gas"
         }
     return None
+
+
+# County-based gas utility lookup data
+_GAS_COUNTY_LOOKUP_DATA = None
+
+def _load_gas_county_lookups() -> Dict:
+    """Load county-based gas utility lookup data."""
+    global _GAS_COUNTY_LOOKUP_DATA
+    if _GAS_COUNTY_LOOKUP_DATA is None:
+        data_path = os.path.join(os.path.dirname(__file__), "data", "gas_county_lookups.json")
+        try:
+            with open(data_path, 'r') as f:
+                _GAS_COUNTY_LOOKUP_DATA = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            _GAS_COUNTY_LOOKUP_DATA = {}
+    return _GAS_COUNTY_LOOKUP_DATA
+
+
+def lookup_gas_by_county(state: str, county: str, city: str = None) -> Optional[Dict]:
+    """
+    Look up gas utility by county for states without GIS APIs.
+    
+    Args:
+        state: State abbreviation (IL, PA, NY, TX)
+        county: County name
+        city: City name (optional, for city-specific overrides)
+        
+    Returns:
+        Dict with gas utility info, or None
+    """
+    data = _load_gas_county_lookups()
+    
+    if state not in data:
+        return None
+    
+    state_data = data[state]
+    
+    # Check city-specific override first
+    if city and "cities" in state_data:
+        city_key = city.title()
+        if city_key in state_data["cities"]:
+            city_info = state_data["cities"][city_key]
+            return {
+                "name": city_info["utility"],
+                "confidence": "high",
+                "source": f"{state.lower()}_county_lookup",
+                "notes": city_info.get("notes", "")
+            }
+    
+    # Check county lookup
+    if "counties" in state_data:
+        # Normalize county name
+        county_key = county.replace(" County", "").replace(" county", "").title()
+        if county_key in state_data["counties"]:
+            county_info = state_data["counties"][county_key]
+            return {
+                "name": county_info["utility"],
+                "confidence": "medium",
+                "source": f"{state.lower()}_county_lookup",
+                "notes": county_info.get("notes", "")
+            }
+    
+    # Return default if available
+    if "_default" in state_data:
+        return {
+            "name": state_data["_default"],
+            "confidence": "low",
+            "source": f"{state.lower()}_county_lookup",
+            "notes": "Default utility for state"
+        }
+    
+    return None
+
+
+# States with county-based gas lookups
+STATES_WITH_GAS_COUNTY_LOOKUP = {'IL', 'PA', 'NY', 'TX'}
 
 
 # States with working GIS APIs for electric

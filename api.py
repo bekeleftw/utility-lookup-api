@@ -71,6 +71,10 @@ def ratelimit_handler(e):
         'retry_after': e.description
     }), 429
 
+@app.route('/api/version')
+def version():
+    return jsonify({'version': '2026-01-19-v2', 'confidence_fix': True})
+
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")
 def lookup():

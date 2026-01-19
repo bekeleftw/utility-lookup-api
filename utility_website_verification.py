@@ -1127,6 +1127,831 @@ def verify_peco(address: str, city: str, state: str, zip_code: str, county: str 
 
 
 # =============================================================================
+# TAMPA ELECTRIC (TECO) - FL (Tampa Bay area)
+# =============================================================================
+
+TECO_COUNTIES = ["HILLSBOROUGH", "POLK", "PASCO"]
+
+def verify_teco(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Tampa Electric serves an address."""
+    if state != "FL":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in TECO_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Tampa Electric",
+                "source": "teco_territory_data",
+                "confidence": "high",
+                "phone": "813-223-0800",
+                "website": "https://www.tampaelectric.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# ROCKY MOUNTAIN POWER - UT, WY, ID
+# =============================================================================
+
+ROCKY_MOUNTAIN_TERRITORY = {
+    "UT": {
+        "counties": ["SALT LAKE", "UTAH", "DAVIS", "WEBER", "WASHINGTON", "CACHE",
+                     "TOOELE", "BOX ELDER", "IRON", "SUMMIT", "SANPETE", "SEVIER",
+                     "CARBON", "EMERY", "GRAND", "SAN JUAN", "KANE", "GARFIELD",
+                     "WAYNE", "BEAVER", "MILLARD", "JUAB", "PIUTE", "MORGAN", "RICH",
+                     "WASATCH", "DAGGETT"],
+        "coverage": "majority"
+    },
+    "WY": {
+        "counties": ["LARAMIE", "NATRONA", "SWEETWATER", "FREMONT", "ALBANY",
+                     "SHERIDAN", "PARK", "UINTA", "LINCOLN", "CARBON", "SUBLETTE",
+                     "HOT SPRINGS", "WASHAKIE"],
+        "coverage": "majority"
+    },
+    "ID": {
+        "counties": ["ADA", "CANYON", "BONNEVILLE", "TWIN FALLS", "BANNOCK",
+                     "BINGHAM", "JEROME", "CASSIA", "MINIDOKA", "POWER", "ONEIDA",
+                     "FRANKLIN", "BEAR LAKE", "CARIBOU"],
+        "coverage": "partial"
+    }
+}
+
+def verify_rocky_mountain_power(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Rocky Mountain Power serves an address."""
+    if state not in ROCKY_MOUNTAIN_TERRITORY:
+        return None
+    
+    territory = ROCKY_MOUNTAIN_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Rocky Mountain Power",
+                "source": "rocky_mountain_territory_data",
+                "confidence": "high",
+                "phone": "888-221-7070",
+                "website": "https://www.rockymountainpower.net"
+            }
+    
+    if territory["coverage"] == "majority":
+        return {
+            "verified": True,
+            "utility": "Rocky Mountain Power",
+            "source": "rocky_mountain_territory_data",
+            "confidence": "medium"
+        }
+    
+    return None
+
+
+# =============================================================================
+# IDAHO POWER - ID, OR
+# =============================================================================
+
+IDAHO_POWER_TERRITORY = {
+    "ID": {
+        "counties": ["ADA", "CANYON", "ELMORE", "OWYHEE", "GEM", "PAYETTE",
+                     "WASHINGTON", "ADAMS", "VALLEY", "BOISE", "CUSTER", "BLAINE",
+                     "CAMAS", "GOODING", "LINCOLN", "JEROME", "TWIN FALLS", "CASSIA",
+                     "MINIDOKA", "POWER"],
+        "coverage": "majority"
+    },
+    "OR": {
+        "counties": ["MALHEUR", "BAKER"],
+        "coverage": "partial"
+    }
+}
+
+def verify_idaho_power(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Idaho Power serves an address."""
+    if state not in IDAHO_POWER_TERRITORY:
+        return None
+    
+    territory = IDAHO_POWER_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Idaho Power",
+                "source": "idaho_power_territory_data",
+                "confidence": "high",
+                "phone": "800-488-6151",
+                "website": "https://www.idahopower.com"
+            }
+    
+    if territory["coverage"] == "majority":
+        return {
+            "verified": True,
+            "utility": "Idaho Power",
+            "source": "idaho_power_territory_data",
+            "confidence": "medium"
+        }
+    
+    return None
+
+
+# =============================================================================
+# AVISTA - WA, ID, OR, MT
+# =============================================================================
+
+AVISTA_TERRITORY = {
+    "WA": {
+        "counties": ["SPOKANE", "WHITMAN", "ASOTIN", "STEVENS", "PEND OREILLE",
+                     "LINCOLN", "FERRY", "ADAMS"],
+        "coverage": "partial"
+    },
+    "ID": {
+        "counties": ["KOOTENAI", "BONNER", "BOUNDARY", "SHOSHONE", "BENEWAH",
+                     "LATAH", "NEZ PERCE", "LEWIS", "CLEARWATER", "IDAHO"],
+        "coverage": "partial"
+    },
+    "MT": {
+        "counties": ["MISSOULA", "RAVALLI", "MINERAL", "SANDERS", "LAKE",
+                     "FLATHEAD", "LINCOLN"],
+        "coverage": "partial"
+    },
+    "OR": {
+        "counties": ["KLAMATH"],
+        "coverage": "partial"
+    }
+}
+
+def verify_avista(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Avista serves an address."""
+    if state not in AVISTA_TERRITORY:
+        return None
+    
+    territory = AVISTA_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Avista",
+                "source": "avista_territory_data",
+                "confidence": "high",
+                "phone": "800-227-9187",
+                "website": "https://www.avistautilities.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# PORTLAND GENERAL ELECTRIC - OR
+# =============================================================================
+
+PGE_OR_COUNTIES = [
+    "MULTNOMAH", "WASHINGTON", "CLACKAMAS", "MARION", "YAMHILL", "POLK",
+    "COLUMBIA", "HOOD RIVER", "WASCO", "JEFFERSON", "CROOK", "DESCHUTES"
+]
+
+def verify_pge_oregon(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Portland General Electric serves an address."""
+    if state != "OR":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in PGE_OR_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Portland General Electric",
+                "source": "pge_oregon_territory_data",
+                "confidence": "high",
+                "phone": "800-542-8818",
+                "website": "https://www.portlandgeneral.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# PACIFIC POWER - OR, WA, CA
+# =============================================================================
+
+PACIFIC_POWER_TERRITORY = {
+    "OR": {
+        "counties": ["LANE", "JACKSON", "DESCHUTES", "LINN", "DOUGLAS", "JOSEPHINE",
+                     "BENTON", "UMATILLA", "KLAMATH", "COOS", "LINCOLN", "CLATSOP",
+                     "TILLAMOOK", "CURRY", "WASCO", "JEFFERSON", "CROOK", "MORROW",
+                     "UNION", "GRANT", "HARNEY", "LAKE", "WALLOWA", "GILLIAM",
+                     "SHERMAN", "WHEELER"],
+        "coverage": "partial"
+    },
+    "WA": {
+        "counties": ["YAKIMA", "WALLA WALLA", "BENTON", "KLICKITAT", "SKAMANIA",
+                     "COLUMBIA", "GARFIELD"],
+        "coverage": "partial"
+    },
+    "CA": {
+        "counties": ["SISKIYOU", "MODOC"],
+        "coverage": "partial"
+    }
+}
+
+def verify_pacific_power(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Pacific Power serves an address."""
+    if state not in PACIFIC_POWER_TERRITORY:
+        return None
+    
+    territory = PACIFIC_POWER_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Pacific Power",
+                "source": "pacific_power_territory_data",
+                "confidence": "high",
+                "phone": "888-221-7070",
+                "website": "https://www.pacificpower.net"
+            }
+    
+    return None
+
+
+# =============================================================================
+# PUGET SOUND ENERGY - WA
+# =============================================================================
+
+PSE_COUNTIES = [
+    "KING", "PIERCE", "THURSTON", "KITSAP", "WHATCOM", "SKAGIT", "ISLAND",
+    "SNOHOMISH", "LEWIS", "MASON", "JEFFERSON", "CLALLAM", "GRAYS HARBOR",
+    "KITTITAS", "CHELAN"
+]
+
+PSE_EXCLUDED_CITIES = [
+    "SEATTLE",      # Seattle City Light
+    "TACOMA",       # Tacoma Power
+]
+
+def verify_pse(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Puget Sound Energy serves an address."""
+    if state != "WA":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in PSE_EXCLUDED_CITIES:
+        return {
+            "verified": False,
+            "utility": "Puget Sound Energy",
+            "source": "pse_territory_data",
+            "reason": f"{city} has a municipal electric utility"
+        }
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in PSE_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Puget Sound Energy",
+                "source": "pse_territory_data",
+                "confidence": "high",
+                "phone": "888-225-5773",
+                "website": "https://www.pse.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# NV ENERGY - NV
+# =============================================================================
+
+NV_ENERGY_COUNTIES = [
+    "CLARK", "WASHOE", "CARSON CITY", "DOUGLAS", "LYON", "STOREY", "CHURCHILL",
+    "PERSHING", "HUMBOLDT", "LANDER", "EUREKA", "ELKO", "WHITE PINE", "NYE",
+    "LINCOLN", "ESMERALDA", "MINERAL"
+]
+
+def verify_nv_energy(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if NV Energy serves an address."""
+    if state != "NV":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in NV_ENERGY_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "NV Energy",
+                "source": "nv_energy_territory_data",
+                "confidence": "high",
+                "phone": "702-402-5555",
+                "website": "https://www.nvenergy.com"
+            }
+    
+    # NV Energy serves ~90% of Nevada
+    return {
+        "verified": True,
+        "utility": "NV Energy",
+        "source": "nv_energy_territory_data",
+        "confidence": "high",
+        "phone": "702-402-5555",
+        "website": "https://www.nvenergy.com"
+    }
+
+
+# =============================================================================
+# ARIZONA PUBLIC SERVICE (APS) - AZ
+# =============================================================================
+
+APS_COUNTIES = [
+    "MARICOPA", "PINAL", "YAVAPAI", "COCONINO", "MOHAVE", "NAVAJO", "APACHE",
+    "GILA", "GRAHAM", "GREENLEE", "LA PAZ"
+]
+
+APS_EXCLUDED_CITIES = [
+    "PHOENIX",      # Salt River Project (SRP) serves parts
+    "TEMPE",        # SRP
+    "SCOTTSDALE",   # SRP (parts)
+    "MESA",         # SRP (parts)
+    "CHANDLER",     # SRP (parts)
+    "GILBERT",      # SRP (parts)
+]
+
+def verify_aps(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Arizona Public Service serves an address."""
+    if state != "AZ":
+        return None
+    
+    # Note: APS and SRP have overlapping territories in Phoenix metro
+    # This is a simplified check
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in APS_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Arizona Public Service",
+                "source": "aps_territory_data",
+                "confidence": "medium",  # Medium due to SRP overlap
+                "phone": "602-371-7171",
+                "website": "https://www.aps.com",
+                "note": "Salt River Project (SRP) also serves parts of Phoenix metro"
+            }
+    
+    return None
+
+
+# =============================================================================
+# SALT RIVER PROJECT (SRP) - AZ (Phoenix metro)
+# =============================================================================
+
+SRP_CITIES = [
+    "PHOENIX", "TEMPE", "SCOTTSDALE", "MESA", "CHANDLER", "GILBERT",
+    "GLENDALE", "PEORIA", "SURPRISE", "GOODYEAR", "AVONDALE", "BUCKEYE",
+    "FOUNTAIN HILLS", "PARADISE VALLEY", "CAVE CREEK", "CAREFREE"
+]
+
+def verify_srp(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Salt River Project serves an address."""
+    if state != "AZ":
+        return None
+    
+    city_upper = city.upper().strip() if city else ""
+    
+    if city_upper in SRP_CITIES:
+        return {
+            "verified": True,
+            "utility": "Salt River Project",
+            "source": "srp_territory_data",
+            "confidence": "medium",  # Medium due to APS overlap
+            "phone": "602-236-8888",
+            "website": "https://www.srpnet.com",
+            "note": "APS also serves parts of Phoenix metro"
+        }
+    
+    return None
+
+
+# =============================================================================
+# TUCSON ELECTRIC POWER (TEP) - AZ (Tucson area)
+# =============================================================================
+
+TEP_COUNTIES = ["PIMA", "COCHISE", "SANTA CRUZ"]
+
+def verify_tep(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Tucson Electric Power serves an address."""
+    if state != "AZ":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in TEP_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Tucson Electric Power",
+                "source": "tep_territory_data",
+                "confidence": "high",
+                "phone": "520-623-7711",
+                "website": "https://www.tep.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# DTE ENERGY - MI (Southeast)
+# =============================================================================
+
+DTE_COUNTIES = [
+    "WAYNE", "OAKLAND", "MACOMB", "WASHTENAW", "LIVINGSTON", "MONROE",
+    "LENAWEE", "ST. CLAIR", "LAPEER", "GENESEE", "SHIAWASSEE", "INGHAM",
+    "JACKSON", "HILLSDALE", "BRANCH", "CALHOUN", "EATON", "CLINTON",
+    "GRATIOT", "SAGINAW", "BAY", "MIDLAND", "ISABELLA", "CLARE", "GLADWIN",
+    "ARENAC", "IOSCO", "OGEMAW", "ROSCOMMON", "CRAWFORD", "OSCODA", "ALCONA",
+    "HURON", "TUSCOLA", "SANILAC"
+]
+
+def verify_dte(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if DTE Energy serves an address."""
+    if state != "MI":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in DTE_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "DTE Energy",
+                "source": "dte_territory_data",
+                "confidence": "high",
+                "phone": "800-477-4747",
+                "website": "https://www.dteenergy.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# CONSUMERS ENERGY - MI (West/Central)
+# =============================================================================
+
+CONSUMERS_COUNTIES = [
+    "KENT", "OTTAWA", "MUSKEGON", "ALLEGAN", "KALAMAZOO", "VAN BUREN",
+    "BERRIEN", "CASS", "ST. JOSEPH", "BARRY", "IONIA", "MONTCALM", "NEWAYGO",
+    "OCEANA", "MASON", "LAKE", "OSCEOLA", "MECOSTA", "WEXFORD", "MISSAUKEE",
+    "GRAND TRAVERSE", "LEELANAU", "BENZIE", "MANISTEE", "KALKASKA", "ANTRIM",
+    "CHARLEVOIX", "EMMET", "CHEBOYGAN", "PRESQUE ISLE", "OTSEGO", "MONTMORENCY",
+    "ALPENA", "CHIPPEWA", "MACKINAC", "LUCE", "SCHOOLCRAFT", "ALGER", "DELTA",
+    "MENOMINEE", "DICKINSON", "IRON", "MARQUETTE", "BARAGA", "HOUGHTON",
+    "KEWEENAW", "ONTONAGON", "GOGEBIC"
+]
+
+def verify_consumers(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Consumers Energy serves an address."""
+    if state != "MI":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in CONSUMERS_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Consumers Energy",
+                "source": "consumers_territory_data",
+                "confidence": "high",
+                "phone": "800-477-5050",
+                "website": "https://www.consumersenergy.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# WE ENERGIES - WI (Southeast)
+# =============================================================================
+
+WE_ENERGIES_COUNTIES = [
+    "MILWAUKEE", "WAUKESHA", "RACINE", "KENOSHA", "OZAUKEE", "WASHINGTON",
+    "SHEBOYGAN", "FOND DU LAC", "DODGE", "JEFFERSON", "WALWORTH"
+]
+
+def verify_we_energies(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if WE Energies serves an address."""
+    if state != "WI":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in WE_ENERGIES_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "WE Energies",
+                "source": "we_energies_territory_data",
+                "confidence": "high",
+                "phone": "800-242-9137",
+                "website": "https://www.we-energies.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# ALLIANT ENERGY - WI, IA
+# =============================================================================
+
+ALLIANT_TERRITORY = {
+    "WI": {
+        "counties": ["DANE", "ROCK", "GREEN", "IOWA", "LAFAYETTE", "GRANT",
+                     "RICHLAND", "SAUK", "COLUMBIA", "JUNEAU", "ADAMS", "MARQUETTE",
+                     "WAUSHARA", "PORTAGE", "WOOD", "MARATHON", "CLARK", "TAYLOR",
+                     "PRICE", "ONEIDA", "VILAS", "FOREST", "FLORENCE", "MARINETTE",
+                     "OCONTO", "SHAWANO", "WAUPACA", "OUTAGAMIE", "BROWN", "DOOR",
+                     "KEWAUNEE", "MANITOWOC", "CALUMET", "WINNEBAGO", "GREEN LAKE"],
+        "coverage": "partial"
+    },
+    "IA": {
+        "counties": ["POLK", "LINN", "SCOTT", "BLACK HAWK", "DUBUQUE", "JOHNSON",
+                     "STORY", "WOODBURY", "POTTAWATTAMIE", "DALLAS", "WARREN",
+                     "CLINTON", "MARSHALL", "CERRO GORDO", "WEBSTER", "WAPELLO",
+                     "JASPER", "MARION", "MUSCATINE", "DES MOINES", "LEE", "HENRY",
+                     "JEFFERSON", "WASHINGTON", "LOUISA", "IOWA", "BENTON", "TAMA",
+                     "POWESHIEK", "MAHASKA", "KEOKUK", "MONROE", "LUCAS", "WAYNE",
+                     "APPANOOSE", "DAVIS", "VAN BUREN"],
+        "coverage": "partial"
+    }
+}
+
+def verify_alliant(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Alliant Energy serves an address."""
+    if state not in ALLIANT_TERRITORY:
+        return None
+    
+    territory = ALLIANT_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Alliant Energy",
+                "source": "alliant_territory_data",
+                "confidence": "high",
+                "phone": "800-255-4268",
+                "website": "https://www.alliantenergy.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# MIDAMERICAN ENERGY - IA, IL, SD, NE
+# =============================================================================
+
+MIDAMERICAN_TERRITORY = {
+    "IA": {
+        "counties": ["POLK", "DALLAS", "WARREN", "MADISON", "GUTHRIE", "ADAIR",
+                     "CASS", "POTTAWATTAMIE", "MILLS", "FREMONT", "PAGE", "TAYLOR",
+                     "RINGGOLD", "DECATUR", "CLARKE", "UNION", "ADAMS", "MONTGOMERY",
+                     "HARRISON", "SHELBY", "AUDUBON", "CARROLL", "GREENE", "BOONE",
+                     "WEBSTER", "HAMILTON", "HARDIN", "GRUNDY", "BUTLER", "BREMER",
+                     "CHICKASAW", "HOWARD", "WINNESHIEK", "ALLAMAKEE", "CLAYTON",
+                     "FAYETTE", "BUCHANAN", "DELAWARE", "JONES", "JACKSON", "CEDAR",
+                     "SCOTT", "CLINTON", "MUSCATINE"],
+        "coverage": "partial"
+    },
+    "IL": {
+        "counties": ["ROCK ISLAND", "HENRY", "MERCER", "HENDERSON", "WARREN",
+                     "KNOX", "PEORIA", "TAZEWELL", "MCLEAN"],
+        "coverage": "partial"
+    },
+    "SD": {
+        "counties": ["MINNEHAHA", "LINCOLN", "UNION", "CLAY", "YANKTON", "BON HOMME",
+                     "HUTCHINSON", "TURNER", "MCCOOK", "HANSON", "DAVISON", "AURORA",
+                     "BRULE", "BUFFALO", "JERAULD", "SANBORN", "MINER", "LAKE",
+                     "MOODY", "BROOKINGS", "KINGSBURY", "BEADLE", "SPINK", "CLARK",
+                     "CODINGTON", "DEUEL", "HAMLIN", "GRANT", "ROBERTS"],
+        "coverage": "partial"
+    },
+    "NE": {
+        "counties": ["DOUGLAS", "SARPY", "WASHINGTON", "DODGE", "SAUNDERS", "CASS",
+                     "OTOE", "LANCASTER", "SEWARD", "BUTLER", "POLK", "YORK", "FILLMORE",
+                     "SALINE", "JEFFERSON", "GAGE", "JOHNSON", "NEMAHA", "PAWNEE",
+                     "RICHARDSON"],
+        "coverage": "partial"
+    }
+}
+
+def verify_midamerican(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if MidAmerican Energy serves an address."""
+    if state not in MIDAMERICAN_TERRITORY:
+        return None
+    
+    territory = MIDAMERICAN_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "MidAmerican Energy",
+                "source": "midamerican_territory_data",
+                "confidence": "high",
+                "phone": "888-427-5632",
+                "website": "https://www.midamericanenergy.com"
+            }
+    
+    return None
+
+
+# =============================================================================
+# KCPL / EVERGY - KS, MO
+# =============================================================================
+
+EVERGY_TERRITORY = {
+    "KS": {
+        "counties": ["JOHNSON", "WYANDOTTE", "DOUGLAS", "SHAWNEE", "SEDGWICK",
+                     "LEAVENWORTH", "MIAMI", "FRANKLIN", "OSAGE", "LYON", "COFFEY",
+                     "ANDERSON", "ALLEN", "BOURBON", "CRAWFORD", "CHEROKEE", "LABETTE",
+                     "NEOSHO", "WILSON", "MONTGOMERY", "ELK", "CHAUTAUQUA", "COWLEY",
+                     "BUTLER", "HARVEY", "MCPHERSON", "MARION", "CHASE", "MORRIS",
+                     "WABAUNSEE", "GEARY", "RILEY", "POTTAWATOMIE", "JACKSON",
+                     "JEFFERSON", "ATCHISON", "DONIPHAN", "BROWN", "NEMAHA", "MARSHALL"],
+        "coverage": "majority"
+    },
+    "MO": {
+        "counties": ["JACKSON", "CLAY", "PLATTE", "CASS", "RAY", "LAFAYETTE",
+                     "JOHNSON", "HENRY", "BATES", "VERNON", "BARTON", "JASPER",
+                     "NEWTON", "MCDONALD", "BARRY", "LAWRENCE", "DADE", "CEDAR",
+                     "ST. CLAIR", "BENTON", "PETTIS", "SALINE", "COOPER", "MONITEAU",
+                     "MORGAN", "MILLER", "CAMDEN", "HICKORY", "POLK", "DALLAS",
+                     "LACLEDE", "PULASKI", "TEXAS", "WRIGHT", "WEBSTER", "GREENE",
+                     "CHRISTIAN", "STONE", "TANEY", "OZARK", "DOUGLAS", "HOWELL",
+                     "OREGON", "SHANNON"],
+        "coverage": "partial"
+    }
+}
+
+def verify_evergy(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Evergy serves an address."""
+    if state not in EVERGY_TERRITORY:
+        return None
+    
+    territory = EVERGY_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "Evergy",
+                "source": "evergy_territory_data",
+                "confidence": "high",
+                "phone": "888-471-5275",
+                "website": "https://www.evergy.com"
+            }
+    
+    if territory["coverage"] == "majority":
+        return {
+            "verified": True,
+            "utility": "Evergy",
+            "source": "evergy_territory_data",
+            "confidence": "medium"
+        }
+    
+    return None
+
+
+# =============================================================================
+# OG&E (OKLAHOMA GAS & ELECTRIC) - OK, AR
+# =============================================================================
+
+OGE_TERRITORY = {
+    "OK": {
+        "counties": ["OKLAHOMA", "CANADIAN", "CLEVELAND", "MCCLAIN", "GRADY",
+                     "CADDO", "COMANCHE", "STEPHENS", "GARVIN", "MURRAY", "CARTER",
+                     "LOVE", "JEFFERSON", "COTTON", "TILLMAN", "KIOWA", "WASHITA",
+                     "CUSTER", "BLAINE", "KINGFISHER", "LOGAN", "LINCOLN", "PAYNE",
+                     "PAWNEE", "NOBLE", "KAY", "GRANT", "GARFIELD", "MAJOR", "WOODS",
+                     "ALFALFA", "WOODWARD", "HARPER", "ELLIS", "DEWEY", "ROGER MILLS",
+                     "BECKHAM", "GREER", "HARMON", "JACKSON"],
+        "coverage": "majority"
+    },
+    "AR": {
+        "counties": ["BENTON", "WASHINGTON", "CRAWFORD", "SEBASTIAN", "FRANKLIN",
+                     "JOHNSON", "POPE", "YELL", "LOGAN", "SCOTT", "POLK"],
+        "coverage": "partial"
+    }
+}
+
+def verify_oge(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if OG&E serves an address."""
+    if state not in OGE_TERRITORY:
+        return None
+    
+    territory = OGE_TERRITORY[state]
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in territory["counties"]:
+            return {
+                "verified": True,
+                "utility": "OG&E",
+                "source": "oge_territory_data",
+                "confidence": "high",
+                "phone": "800-272-9741",
+                "website": "https://www.oge.com"
+            }
+    
+    if territory["coverage"] == "majority":
+        return {
+            "verified": True,
+            "utility": "OG&E",
+            "source": "oge_territory_data",
+            "confidence": "medium"
+        }
+    
+    return None
+
+
+# =============================================================================
+# CENTERPOINT ENERGY - TX (Houston area)
+# =============================================================================
+
+CENTERPOINT_COUNTIES = [
+    "HARRIS", "FORT BEND", "MONTGOMERY", "BRAZORIA", "GALVESTON", "LIBERTY",
+    "CHAMBERS", "WALLER", "AUSTIN", "COLORADO", "WHARTON", "MATAGORDA",
+    "JACKSON", "LAVACA", "FAYETTE", "WASHINGTON", "GRIMES", "WALKER", "SAN JACINTO"
+]
+
+def verify_centerpoint(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if CenterPoint Energy serves an address (TDU in Texas)."""
+    if state != "TX":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in CENTERPOINT_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "CenterPoint Energy",
+                "source": "centerpoint_territory_data",
+                "confidence": "high",
+                "phone": "800-332-7143",
+                "website": "https://www.centerpointenergy.com",
+                "note": "TDU - Choose your retail electric provider at PowerToChoose.org"
+            }
+    
+    return None
+
+
+# =============================================================================
+# ONCOR - TX (Dallas/Fort Worth area)
+# =============================================================================
+
+ONCOR_COUNTIES = [
+    "DALLAS", "TARRANT", "COLLIN", "DENTON", "ELLIS", "JOHNSON", "PARKER",
+    "ROCKWALL", "KAUFMAN", "HUNT", "HOOD", "SOMERVELL", "ERATH", "PALO PINTO",
+    "WISE", "COOKE", "GRAYSON", "FANNIN", "LAMAR", "DELTA", "HOPKINS", "RAINS",
+    "VAN ZANDT", "HENDERSON", "NAVARRO", "HILL", "BOSQUE", "MCLENNAN", "FALLS",
+    "LIMESTONE", "FREESTONE", "LEON", "ROBERTSON", "BRAZOS", "BURLESON", "MILAM",
+    "BELL", "CORYELL", "HAMILTON", "LAMPASAS", "BURNET", "WILLIAMSON", "TRAVIS",
+    "BASTROP", "LEE", "CALDWELL", "HAYS", "BLANCO", "LLANO", "MASON", "MCCULLOCH",
+    "SAN SABA", "MILLS", "BROWN", "COMANCHE", "EASTLAND", "CALLAHAN", "TAYLOR",
+    "JONES", "SHACKELFORD", "STEPHENS", "YOUNG", "JACK", "MONTAGUE", "CLAY",
+    "WICHITA", "ARCHER", "BAYLOR", "THROCKMORTON", "HASKELL", "KNOX", "FOARD",
+    "HARDEMAN", "WILBARGER", "CHILDRESS", "COTTLE", "KING", "STONEWALL", "FISHER",
+    "NOLAN", "MITCHELL", "SCURRY", "BORDEN", "HOWARD", "MARTIN", "MIDLAND", "ECTOR",
+    "ANDREWS", "GAINES", "DAWSON", "LYNN", "GARZA", "KENT", "DICKENS", "CROSBY",
+    "LUBBOCK", "HOCKLEY", "TERRY", "YOAKUM", "COCHRAN", "LAMB", "HALE", "FLOYD",
+    "MOTLEY", "BRISCOE", "HALL", "DONLEY", "COLLINGSWORTH", "WHEELER", "GRAY",
+    "ARMSTRONG", "SWISHER", "CASTRO", "PARMER", "BAILEY"
+]
+
+def verify_oncor(address: str, city: str, state: str, zip_code: str, county: str = None) -> Optional[Dict]:
+    """Verify if Oncor serves an address (TDU in Texas)."""
+    if state != "TX":
+        return None
+    
+    if county:
+        county_upper = county.upper().replace(" COUNTY", "").strip()
+        if county_upper in ONCOR_COUNTIES:
+            return {
+                "verified": True,
+                "utility": "Oncor",
+                "source": "oncor_territory_data",
+                "confidence": "high",
+                "phone": "888-313-4747",
+                "website": "https://www.oncor.com",
+                "note": "TDU - Choose your retail electric provider at PowerToChoose.org"
+            }
+    
+    return None
+
+
+# =============================================================================
 # MAIN VERIFICATION FUNCTION
 # =============================================================================
 
@@ -1214,32 +2039,97 @@ UTILITY_VERIFIERS = {
     # PECO
     "PECO": verify_peco,
     "PECO ENERGY": verify_peco,
+    # Tampa Electric
+    "TAMPA ELECTRIC": verify_teco,
+    "TECO": verify_teco,
+    "TECO ENERGY": verify_teco,
+    # Rocky Mountain Power
+    "ROCKY MOUNTAIN POWER": verify_rocky_mountain_power,
+    # Idaho Power
+    "IDAHO POWER": verify_idaho_power,
+    # Avista
+    "AVISTA": verify_avista,
+    "AVISTA UTILITIES": verify_avista,
+    # Portland General Electric
+    "PORTLAND GENERAL ELECTRIC": verify_pge_oregon,
+    "PORTLAND GENERAL": verify_pge_oregon,
+    "PGE OREGON": verify_pge_oregon,
+    # Pacific Power
+    "PACIFIC POWER": verify_pacific_power,
+    "PACIFICORP": verify_pacific_power,
+    # Puget Sound Energy
+    "PUGET SOUND ENERGY": verify_pse,
+    "PSE": verify_pse,
+    # NV Energy
+    "NV ENERGY": verify_nv_energy,
+    "NEVADA POWER": verify_nv_energy,
+    "SIERRA PACIFIC POWER": verify_nv_energy,
+    # Arizona utilities
+    "APS": verify_aps,
+    "ARIZONA PUBLIC SERVICE": verify_aps,
+    "SRP": verify_srp,
+    "SALT RIVER PROJECT": verify_srp,
+    "TEP": verify_tep,
+    "TUCSON ELECTRIC POWER": verify_tep,
+    # Michigan utilities
+    "DTE": verify_dte,
+    "DTE ENERGY": verify_dte,
+    "DETROIT EDISON": verify_dte,
+    "CONSUMERS ENERGY": verify_consumers,
+    "CONSUMERS POWER": verify_consumers,
+    # Wisconsin utilities
+    "WE ENERGIES": verify_we_energies,
+    "WISCONSIN ELECTRIC": verify_we_energies,
+    "WISCONSIN ENERGY": verify_we_energies,
+    # Alliant
+    "ALLIANT ENERGY": verify_alliant,
+    "ALLIANT": verify_alliant,
+    "INTERSTATE POWER": verify_alliant,
+    "WISCONSIN POWER AND LIGHT": verify_alliant,
+    # MidAmerican
+    "MIDAMERICAN ENERGY": verify_midamerican,
+    "MIDAMERICAN": verify_midamerican,
+    # Evergy (Kansas/Missouri)
+    "EVERGY": verify_evergy,
+    "KCPL": verify_evergy,
+    "KANSAS CITY POWER & LIGHT": verify_evergy,
+    "WESTAR ENERGY": verify_evergy,
+    # OG&E
+    "OG&E": verify_oge,
+    "OGE": verify_oge,
+    "OKLAHOMA GAS & ELECTRIC": verify_oge,
+    "OKLAHOMA GAS AND ELECTRIC": verify_oge,
+    # Texas TDUs
+    "CENTERPOINT": verify_centerpoint,
+    "CENTERPOINT ENERGY": verify_centerpoint,
+    "ONCOR": verify_oncor,
+    "ONCOR ELECTRIC": verify_oncor,
 }
 
 # State to utility verifier mapping for fallback
 STATE_VERIFIERS = {
     "GA": [verify_georgia_power],
     "AL": [verify_alabama_power],
-    "FL": [verify_fpl, verify_duke_energy],
+    "FL": [verify_fpl, verify_duke_energy, verify_teco],
     "NC": [verify_duke_energy, verify_dominion_energy],
     "SC": [verify_duke_energy, verify_dominion_energy],
     "VA": [verify_dominion_energy, verify_aep],
     "LA": [verify_entergy],
-    "AR": [verify_entergy],
+    "AR": [verify_entergy, verify_oge],
     "MS": [verify_entergy, verify_alabama_power],
-    "TX": [verify_entergy, verify_aep, verify_xcel],
+    "TX": [verify_oncor, verify_centerpoint, verify_aep, verify_entergy, verify_xcel],
     "IN": [verify_duke_energy],
     "OH": [verify_duke_energy, verify_aep, verify_firstenergy],
     "KY": [verify_duke_energy],
-    "CA": [verify_pge, verify_sce],
+    "CA": [verify_pge, verify_sce, verify_pacific_power],
     "CO": [verify_xcel],
     "MN": [verify_xcel],
-    "WI": [verify_xcel],
+    "WI": [verify_we_energies, verify_alliant, verify_xcel],
     "NM": [verify_xcel],
-    "MO": [verify_ameren],
-    "IL": [verify_comed, verify_ameren],
+    "MO": [verify_ameren, verify_evergy],
+    "IL": [verify_comed, verify_ameren, verify_midamerican],
     "WV": [verify_aep, verify_firstenergy],
-    "OK": [verify_aep],
+    "OK": [verify_oge, verify_aep],
     "PA": [verify_peco, verify_ppl, verify_firstenergy],
     "NJ": [verify_pseg, verify_firstenergy],
     "NY": [verify_coned, verify_national_grid],
@@ -1247,6 +2137,19 @@ STATE_VERIFIERS = {
     "RI": [verify_national_grid],
     "CT": [verify_eversource],
     "NH": [verify_eversource],
+    "UT": [verify_rocky_mountain_power],
+    "WY": [verify_rocky_mountain_power],
+    "ID": [verify_idaho_power, verify_rocky_mountain_power, verify_avista],
+    "WA": [verify_pse, verify_avista, verify_pacific_power],
+    "OR": [verify_pge_oregon, verify_pacific_power, verify_idaho_power],
+    "MT": [verify_avista],
+    "NV": [verify_nv_energy],
+    "AZ": [verify_aps, verify_srp, verify_tep],
+    "MI": [verify_dte, verify_consumers],
+    "IA": [verify_alliant, verify_midamerican],
+    "KS": [verify_evergy],
+    "SD": [verify_midamerican],
+    "NE": [verify_midamerican],
     "MD": [verify_firstenergy],
 }
 

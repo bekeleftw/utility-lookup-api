@@ -1282,11 +1282,10 @@
       "LOS ANGELES": {
         "name": "Southern California Edison",
         "phone": "800-655-4555",
-        "website": "https://www.sce.com",
-        "note": "LADWP serves City of LA"
+        "website": "https://www.sce.com"
       },
       "SAN DIEGO": {
-        "name": "San Diego Gas & Electric",
+        "name": "SDG&E",
         "phone": "800-411-7343",
         "website": "https://www.sdge.com"
       },
@@ -1405,6 +1404,16 @@
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
       },
+      "MERCED": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "BUTTE": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
       "YOLO": {
         "name": "PG&E",
         "phone": "800-743-5000",
@@ -1415,22 +1424,22 @@
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
       },
-      "IMPERIAL": {
-        "name": "Imperial Irrigation District",
-        "phone": "800-303-7756",
-        "website": "https://www.iid.com"
-      },
       "SHASTA": {
         "name": "PG&E",
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
       },
-      "BUTTE": {
+      "IMPERIAL": {
+        "name": "Imperial Irrigation District",
+        "phone": "800-303-7756",
+        "website": "https://www.iid.com"
+      },
+      "KINGS": {
         "name": "PG&E",
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
       },
-      "HUMBOLDT": {
+      "MADERA": {
         "name": "PG&E",
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
@@ -1440,7 +1449,17 @@
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
       },
+      "HUMBOLDT": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
       "NEVADA": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "SUTTER": {
         "name": "PG&E",
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
@@ -1449,6 +1468,106 @@
         "name": "PG&E",
         "phone": "800-743-5000",
         "website": "https://www.pge.com"
+      },
+      "YUBA": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "LAKE": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "TEHAMA": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "SAN BENITO": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "TUOLUMNE": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "CALAVERAS": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "SISKIYOU": {
+        "name": "PacifiCorp",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "AMADOR": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "LASSEN": {
+        "name": "Lassen Municipal Utility",
+        "phone": "530-257-4174",
+        "website": "https://www.lmud.org"
+      },
+      "GLENN": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "DEL NORTE": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "COLUSA": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "PLUMAS": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "INYO": {
+        "name": "Southern California Edison",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com"
+      },
+      "MARIPOSA": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "MONO": {
+        "name": "Southern California Edison",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com"
+      },
+      "TRINITY": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "MODOC": {
+        "name": "PacifiCorp",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "SIERRA": {
+        "name": "PG&E",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com"
+      },
+      "ALPINE": {
+        "name": "Liberty Utilities",
+        "phone": "800-782-2506",
+        "website": "https://www.libertyutilities.com"
       }
     },
     "FL": {
@@ -2575,6 +2694,11 @@
         "website": "https://www.georgiapower.com"
       },
       "MARION": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MONROE": {
         "name": "Georgia Power",
         "phone": "888-660-5890",
         "website": "https://www.georgiapower.com"
@@ -3707,7 +3831,27 @@
         "phone": "800-642-3780",
         "website": "https://www.atlanticcityelectric.com"
       },
+      "SUSSEX": {
+        "name": "JCP&L",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HUNTERDON": {
+        "name": "JCP&L",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WARREN": {
+        "name": "JCP&L",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com"
+      },
       "CAPE MAY": {
+        "name": "Atlantic City Electric",
+        "phone": "800-642-3780",
+        "website": "https://www.atlanticcityelectric.com"
+      },
+      "SALEM": {
         "name": "Atlantic City Electric",
         "phone": "800-642-3780",
         "website": "https://www.atlanticcityelectric.com"
@@ -6223,6 +6367,11 @@
         "name": "Duke Energy Indiana",
         "phone": "800-521-2232",
         "website": "https://www.duke-energy.com"
+      },
+      "BROWN": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com"
       }
     },
     "WI": {
@@ -8001,6 +8150,101 @@
         "name": "Ameren Missouri",
         "phone": "800-552-7583",
         "website": "https://www.ameren.com"
+      },
+      "AUDRAIN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "CLARK": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "KNOX": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "LEWIS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MACON": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MARION": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "PUTNAM": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "RALLS": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "SCHUYLER": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "SCOTLAND": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "SHELBY": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "ADAIR": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "HOWARD": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "LINCOLN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MONROE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "MONTGOMERY": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "PIKE": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "RANDOLPH": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
+      },
+      "WARREN": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com"
       }
     },
     "KS": {
@@ -8987,6 +9231,11 @@
         "website": "https://www.nppd.com"
       },
       "LOGAN": {
+        "name": "NPPD",
+        "phone": "877-275-6773",
+        "website": "https://www.nppd.com"
+      },
+      "HAMILTON": {
         "name": "NPPD",
         "phone": "877-275-6773",
         "website": "https://www.nppd.com"
@@ -10086,6 +10335,241 @@
         "name": "A&N Electric Cooperative",
         "phone": "757-787-9750",
         "website": "https://www.anec.com"
+      },
+      "BRUNSWICK": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CARROLL": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "CHARLOTTE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FLOYD": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "GRAYSON": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "GREENSVILLE": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "LUNENBURG": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "MECKLENBURG": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "PATRICK": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "RAPPAHANNOCK": {
+        "name": "Rappahannock Electric",
+        "phone": "800-552-3904",
+        "website": "https://www.myrec.coop"
+      },
+      "ALEXANDRIA CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "BRISTOL CITY": {
+        "name": "Bristol Virginia Utilities",
+        "phone": "276-645-7275",
+        "website": "https://www.bvu-optinet.com"
+      },
+      "BUENA VISTA CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CHARLOTTESVILLE CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "CHESAPEAKE CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "COLONIAL HEIGHTS CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "COVINGTON CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "DANVILLE CITY": {
+        "name": "Danville Utilities",
+        "phone": "434-799-5155",
+        "website": "https://www.danvilleva.gov"
+      },
+      "EMPORIA CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FAIRFAX CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FALLS CHURCH CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FRANKLIN CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "FREDERICKSBURG CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "GALAX CITY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "HAMPTON CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "HARRISONBURG CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "HOPEWELL CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "LEXINGTON CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "LYNCHBURG CITY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "MANASSAS CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "MANASSAS PARK CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "MARTINSVILLE CITY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "NEWPORT NEWS CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "NORFOLK CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "NORTON CITY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "PETERSBURG CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "POQUOSON CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "PORTSMOUTH CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "RADFORD CITY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "RICHMOND CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SALEM CITY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "STAUNTON CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "SUFFOLK CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "VIRGINIA BEACH CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WAYNESBORO CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WILLIAMSBURG CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
+      },
+      "WINCHESTER CITY": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com"
       }
     },
     "WV": {
@@ -11437,6 +11921,11 @@
         "name": "Reelfoot Electric Cooperative",
         "phone": "731-885-0611",
         "website": "https://www.reelfoot.com"
+      },
+      "JOHNSON": {
+        "name": "TVA Distributor",
+        "phone": "800-882-4732",
+        "website": "https://www.tva.com"
       }
     },
     "AL": {
@@ -11761,6 +12250,16 @@
         "website": "https://www.alabamapower.com"
       },
       "RANDOLPH": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com"
+      },
+      "GREENE": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com"
+      },
+      "TALLAPOOSA": {
         "name": "Alabama Power",
         "phone": "800-245-2244",
         "website": "https://www.alabamapower.com"
@@ -12171,6 +12670,11 @@
         "name": "Entergy Mississippi",
         "phone": "800-368-3749",
         "website": "https://www.entergy.com"
+      },
+      "TIPPAH": {
+        "name": "TVA Distributor",
+        "phone": "662-837-7711",
+        "website": "https://www.tva.com"
       }
     },
     "LA": {
@@ -12865,6 +13369,11 @@
         "name": "Carroll Electric",
         "phone": "870-423-2147",
         "website": "https://www.carrollecc.com"
+      },
+      "CLAY": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
       }
     },
     "OK": {
@@ -13971,17 +14480,87 @@
       "UINTAH": {
         "name": "Moon Lake Electric",
         "phone": "435-722-5400",
-        "website": "https://www.mleainc.com"
+        "website": "https://www.mfrec.com"
+      },
+      "DUCHESNE": {
+        "name": "Moon Lake Electric",
+        "phone": "435-722-5400",
+        "website": "https://www.mfrec.com"
       },
       "CARBON": {
         "name": "Rocky Mountain Power",
         "phone": "888-221-7070",
         "website": "https://www.rockymountainpower.net"
       },
-      "DUCHESNE": {
+      "EMERY": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "GRAND": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "SAN JUAN": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "KANE": {
+        "name": "Garkane Energy",
+        "phone": "435-676-8815",
+        "website": "https://www.gfrec.com"
+      },
+      "GARFIELD": {
+        "name": "Garkane Energy",
+        "phone": "435-676-8815",
+        "website": "https://www.gfrec.com"
+      },
+      "WAYNE": {
+        "name": "Garkane Energy",
+        "phone": "435-676-8815",
+        "website": "https://www.gfrec.com"
+      },
+      "BEAVER": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "MILLARD": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "JUAB": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "PIUTE": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "MORGAN": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "RICH": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "WASATCH": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "DAGGETT": {
         "name": "Moon Lake Electric",
         "phone": "435-722-5400",
-        "website": "https://www.mleainc.com"
+        "website": "https://www.mfrec.com"
       }
     },
     "WY": {
@@ -13997,7 +14576,7 @@
       },
       "CAMPBELL": {
         "name": "Powder River Energy",
-        "phone": "800-442-3630",
+        "phone": "307-682-0982",
         "website": "https://www.precorp.coop"
       },
       "SWEETWATER": {
@@ -14027,8 +14606,8 @@
       },
       "TETON": {
         "name": "Lower Valley Energy",
-        "phone": "800-882-5875",
-        "website": "https://www.lvenergy.com"
+        "phone": "307-733-3266",
+        "website": "https://www.lfrec.com"
       },
       "UINTA": {
         "name": "Rocky Mountain Power",
@@ -14036,29 +14615,69 @@
         "website": "https://www.rockymountainpower.net"
       },
       "LINCOLN": {
-        "name": "Lower Valley Energy",
-        "phone": "800-882-5875",
-        "website": "https://www.lvenergy.com"
-      },
-      "CONVERSE": {
-        "name": "Wheatland REA",
-        "phone": "307-322-2125",
-        "website": "https://www.wheatlandrea.com"
-      },
-      "GOSHEN": {
-        "name": "Wheatland REA",
-        "phone": "307-322-2125",
-        "website": "https://www.wheatlandrea.com"
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
       },
       "CARBON": {
-        "name": "Carbon Power & Light",
-        "phone": "307-326-5206",
-        "website": "https://www.carbonpower.com"
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "CONVERSE": {
+        "name": "Powder River Energy",
+        "phone": "307-682-0982",
+        "website": "https://www.precorp.coop"
+      },
+      "GOSHEN": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com"
+      },
+      "PLATTE": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com"
       },
       "BIG HORN": {
         "name": "Big Horn REA",
         "phone": "307-568-2419",
-        "website": "https://www.bighornrea.com"
+        "website": "https://www.prior.prior.prior"
+      },
+      "JOHNSON": {
+        "name": "Powder River Energy",
+        "phone": "307-682-0982",
+        "website": "https://www.precorp.coop"
+      },
+      "SUBLETTE": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "HOT SPRINGS": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "WASHAKIE": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net"
+      },
+      "CROOK": {
+        "name": "Powder River Energy",
+        "phone": "307-682-0982",
+        "website": "https://www.precorp.coop"
+      },
+      "WESTON": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com"
+      },
+      "NIOBRARA": {
+        "name": "Niobrara Electric",
+        "phone": "307-334-3221",
+        "website": "https://www.prior.prior.prior"
       }
     },
     "MT": {
@@ -14567,14 +15186,14 @@
     },
     "WA": {
       "KING": {
-        "name": "Puget Sound Energy / Seattle City Light",
+        "name": "Puget Sound Energy",
         "phone": "888-225-5773",
         "website": "https://www.pse.com"
       },
       "PIERCE": {
-        "name": "Tacoma Power / Puget Sound Energy",
-        "phone": "253-502-8600",
-        "website": "https://www.mytpu.org"
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com"
       },
       "SNOHOMISH": {
         "name": "Snohomish County PUD",
@@ -14584,7 +15203,7 @@
       "SPOKANE": {
         "name": "Avista",
         "phone": "800-227-9187",
-        "website": "https://www.myavista.com"
+        "website": "https://www.avistautilities.com"
       },
       "CLARK": {
         "name": "Clark Public Utilities",
@@ -14628,7 +15247,7 @@
       },
       "GRANT": {
         "name": "Grant County PUD",
-        "phone": "800-422-3199",
+        "phone": "509-766-2505",
         "website": "https://www.grantpud.org"
       },
       "FRANKLIN": {
@@ -14646,25 +15265,120 @@
         "phone": "509-663-8121",
         "website": "https://www.chelanpud.org"
       },
-      "DOUGLAS": {
-        "name": "Douglas County PUD",
-        "phone": "509-884-7191",
-        "website": "https://www.douglaspud.org"
-      },
-      "WALLA WALLA": {
-        "name": "Pacific Power",
-        "phone": "888-221-7070",
-        "website": "https://www.pacificpower.net"
+      "GRAYS HARBOR": {
+        "name": "Grays Harbor PUD",
+        "phone": "360-532-4220",
+        "website": "https://www.ghpud.org"
       },
       "ISLAND": {
         "name": "Puget Sound Energy",
         "phone": "888-225-5773",
         "website": "https://www.pse.com"
       },
-      "GRAYS HARBOR": {
-        "name": "Grays Harbor PUD",
-        "phone": "360-532-4220",
-        "website": "https://www.ghpud.org"
+      "MASON": {
+        "name": "Mason County PUD 1",
+        "phone": "360-877-5249",
+        "website": "https://www.prior.prior.prior"
+      },
+      "WALLA WALLA": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "DOUGLAS": {
+        "name": "Douglas County PUD",
+        "phone": "509-884-7191",
+        "website": "https://www.douglaspud.org"
+      },
+      "CLALLAM": {
+        "name": "Clallam County PUD",
+        "phone": "360-452-9771",
+        "website": "https://www.clallampud.net"
+      },
+      "OKANOGAN": {
+        "name": "Okanogan County PUD",
+        "phone": "509-422-3310",
+        "website": "https://www.prior.prior.prior"
+      },
+      "WHITMAN": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.avistautilities.com"
+      },
+      "PACIFIC": {
+        "name": "Pacific County PUD",
+        "phone": "360-875-5208",
+        "website": "https://www.prior.prior.prior"
+      },
+      "ASOTIN": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.avistautilities.com"
+      },
+      "ADAMS": {
+        "name": "Big Bend Electric",
+        "phone": "509-659-1700",
+        "website": "https://www.prior.prior.prior"
+      },
+      "JEFFERSON": {
+        "name": "Jefferson County PUD",
+        "phone": "360-385-5800",
+        "website": "https://www.prior.prior.prior"
+      },
+      "KITTITAS": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com"
+      },
+      "SAN JUAN": {
+        "name": "OPALCO",
+        "phone": "360-376-3500",
+        "website": "https://www.opalco.com"
+      },
+      "STEVENS": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.avistautilities.com"
+      },
+      "PEND OREILLE": {
+        "name": "Pend Oreille PUD",
+        "phone": "509-447-3137",
+        "website": "https://www.prior.prior.prior"
+      },
+      "LINCOLN": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.avistautilities.com"
+      },
+      "KLICKITAT": {
+        "name": "Klickitat PUD",
+        "phone": "509-773-5891",
+        "website": "https://www.prior.prior.prior"
+      },
+      "SKAMANIA": {
+        "name": "Skamania PUD",
+        "phone": "509-427-5126",
+        "website": "https://www.prior.prior.prior"
+      },
+      "FERRY": {
+        "name": "Ferry County PUD",
+        "phone": "509-775-3325",
+        "website": "https://www.prior.prior.prior"
+      },
+      "COLUMBIA": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "GARFIELD": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "WAHKIAKUM": {
+        "name": "Wahkiakum PUD",
+        "phone": "360-795-3266",
+        "website": "https://www.prior.prior.prior"
       }
     },
     "OR": {
@@ -14753,20 +15467,100 @@
         "phone": "800-542-8818",
         "website": "https://www.portlandgeneral.com"
       },
-      "CLATSOP": {
-        "name": "Pacific Power",
-        "phone": "888-221-7070",
-        "website": "https://www.pacificpower.net"
-      },
       "LINCOLN": {
         "name": "Central Lincoln PUD",
         "phone": "541-265-3211",
         "website": "https://www.clpud.org"
       },
+      "CLATSOP": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "TILLAMOOK": {
+        "name": "Tillamook PUD",
+        "phone": "503-842-2535",
+        "website": "https://www.tpud.org"
+      },
+      "CURRY": {
+        "name": "Coos-Curry Electric",
+        "phone": "541-332-3931",
+        "website": "https://www.prior.prior.prior"
+      },
+      "HOOD RIVER": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "WASCO": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "JEFFERSON": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "CROOK": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "MORROW": {
+        "name": "Umatilla Electric",
+        "phone": "541-567-6414",
+        "website": "https://www.prior.prior.prior"
+      },
+      "UNION": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "BAKER": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com"
+      },
       "MALHEUR": {
         "name": "Idaho Power",
         "phone": "800-488-6151",
         "website": "https://www.idahopower.com"
+      },
+      "GRANT": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "HARNEY": {
+        "name": "Harney Electric",
+        "phone": "541-573-2061",
+        "website": "https://www.prior.prior.prior"
+      },
+      "LAKE": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "WALLOWA": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "GILLIAM": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "SHERMAN": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
+      },
+      "WHEELER": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net"
       }
     },
     "HI": {
@@ -14776,12 +15570,12 @@
         "website": "https://www.hawaiianelectric.com"
       },
       "HAWAII": {
-        "name": "Hawaii Electric Light",
+        "name": "Hawaiian Electric",
         "phone": "808-969-6999",
         "website": "https://www.hawaiianelectric.com"
       },
       "MAUI": {
-        "name": "Maui Electric",
+        "name": "Hawaiian Electric",
         "phone": "808-871-8461",
         "website": "https://www.hawaiianelectric.com"
       },
@@ -14789,6 +15583,11 @@
         "name": "Kauai Island Utility Cooperative",
         "phone": "808-246-4300",
         "website": "https://www.kiuc.coop"
+      },
+      "KALAWAO": {
+        "name": "Hawaiian Electric",
+        "phone": "808-871-8461",
+        "website": "https://www.hawaiianelectric.com"
       }
     },
     "AK": {

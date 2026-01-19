@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-19-v4', 'confidence_fix': 'forced_high'})
+    return jsonify({'version': '2026-01-19-v5', 'confidence_fix': 'debug_value'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")
@@ -401,11 +401,13 @@ def lookup_stream():
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
                 electric = lookup_electric_only(lat, lon, city, county, state, zip_code)
                 if electric:
-                    # Get confidence directly from the result - use 'high' as default for electric
-                    raw_confidence = electric.get('_confidence') or 'high'
+                    # Get confidence directly - debug what the actual value is
+                    raw_conf_value = electric.get('_confidence')
+                    raw_confidence = raw_conf_value if raw_conf_value else 'high'
                     formatted = format_utility(electric, 'electric')
                     formatted['confidence'] = raw_confidence
-                    formatted['_debug_raw_keys'] = list(electric.keys())
+                    formatted['_debug_raw_conf'] = str(raw_conf_value)
+                    formatted['_debug_raw_conf_type'] = str(type(raw_conf_value).__name__)
                     yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"

@@ -43,6 +43,13 @@ from ml_enhancements import ensemble_prediction, detect_anomalies, get_source_we
 from propane_service import is_likely_propane_area, get_no_gas_response
 from well_septic import get_well_septic_likelihood, is_likely_rural
 
+# GIS-based utility lookups
+try:
+    from gis_utility_lookup import lookup_water_utility_gis, lookup_electric_utility_gis, lookup_gas_utility_gis
+    GIS_LOOKUP_AVAILABLE = True
+except ImportError:
+    GIS_LOOKUP_AVAILABLE = False
+
 # Try to load dotenv for API keys
 try:
     from dotenv import load_dotenv
@@ -567,6 +574,11 @@ def should_skip_serp(result: Dict, utility_type: str) -> tuple:
     Returns (skip: bool, reason: str)
     
     This saves ~$0.01 per lookup when we have authoritative data.
+    
+    SELECTIVE SERP STRATEGY (Phase 3):
+    - Skip SERP for HIGH confidence results (verified, user-confirmed, municipal)
+    - Use SERP for LOW/MEDIUM confidence results (especially gas)
+    - Gas territories are complex but we now have comprehensive ZIP mappings
     """
     if not result:
         return False, "No result to verify"
@@ -582,8 +594,16 @@ def should_skip_serp(result: Dict, utility_type: str) -> tuple:
     confidence_score = result.get('confidence_score', 0)
     confidence_level = result.get('_confidence', '').lower()
     
-    # Always skip for authoritative sources
-    for auth_source in AUTHORITATIVE_SOURCES:
+    # ALWAYS skip for user-reported corrections (highest authority)
+    if 'correction_db' in source or 'user_feedback' in source or 'user_confirmed' in source:
+        return True, f"User-reported correction: {source}"
+    
+    # Skip for truly authoritative sources (municipal, direct API, etc.)
+    truly_authoritative = {
+        'municipal_utility', 'municipal_utility_database', 'utility_direct_api',
+        'arcgis', 'franchise_agreement', 'parcel_data'
+    }
+    for auth_source in truly_authoritative:
         if auth_source in source:
             return True, f"Authoritative source: {source}"
     
@@ -594,6 +614,15 @@ def should_skip_serp(result: Dict, utility_type: str) -> tuple:
     # Skip if marked as verified
     if confidence_level == 'verified':
         return True, "Already verified"
+    
+    # For gas: Skip SERP if we have a high-confidence ZIP mapping
+    if utility_type == 'gas':
+        # Skip if from state PUC territory data with high confidence
+        if 'puc' in source or 'territory' in source:
+            if confidence_level == 'high' or confidence_score >= 80:
+                return True, f"High-confidence gas mapping: {source}"
+        # Otherwise, use SERP for gas (complex territories)
+        return False, "Gas lookup needs SERP verification (medium/low confidence)"
     
     # Don't skip for sources that need verification
     for verify_source in ALWAYS_VERIFY_SOURCES:
@@ -1081,14 +1110,44 @@ def _lookup_internet_single(address: str) -> Optional[Dict]:
 
 def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optional[Dict]:
     """
-    Look up internet providers using Playwright to handle FCC's session requirements.
-    Uses Chromium with stealth settings to bypass bot detection.
-    Loads the FCC broadband map homepage, enters address, clicks autocomplete suggestion,
-    and intercepts the fabric/detail API response.
+    Look up internet providers using local BDC data first (fast), then Playwright fallback (slow).
+    
+    BDC (Broadband Data Collection) lookup: ~1s using census block GEOID
+    Playwright fallback: ~25-30s scraping FCC website
     
     If the exact address isn't found and try_neighbors=True, will attempt nearby
     street numbers as fallback (FCC data has gaps but neighbors usually have same providers).
     """
+    # Try fast BDC local lookup first
+    try:
+        from bdc_internet_lookup import lookup_internet_fast, get_available_states
+        bdc_states = get_available_states()
+        if bdc_states:
+            print(f"  Trying fast BDC lookup (available states: {', '.join(bdc_states)})...")
+            bdc_result = lookup_internet_fast(address)
+            if bdc_result and bdc_result.get('providers'):
+                print(f"  BDC lookup found {len(bdc_result['providers'])} providers")
+                # Format to match Playwright output
+                return {
+                    "providers": bdc_result['providers'],
+                    "provider_count": bdc_result['provider_count'],
+                    "max_download": max((p.get('max_download_mbps', 0) for p in bdc_result['providers']), default=0),
+                    "max_upload": max((p.get('max_upload_mbps', 0) for p in bdc_result['providers']), default=0),
+                    "has_fiber": any(p.get('technology') == 'Fiber' for p in bdc_result['providers']),
+                    "has_cable": any(p.get('technology') == 'Cable' for p in bdc_result['providers']),
+                    "_source": bdc_result.get('source', 'fcc_bdc_local'),
+                    "_block_geoid": bdc_result.get('block_geoid')
+                }
+            elif bdc_result:
+                print(f"  BDC lookup: no providers for this block (may need more state data)")
+    except ImportError:
+        pass  # BDC module not available
+    except Exception as e:
+        print(f"  BDC lookup error: {e}")
+    
+    # Fall back to slow Playwright scraping
+    print("  Falling back to Playwright (slow)...")
+    
     # Normalize address first
     normalized_address = normalize_address_for_fcc(address)
     if normalized_address != address:
@@ -1369,7 +1428,7 @@ def verify_utility_with_serp(address: str, utility_type: str, candidate_name: st
         response = requests.get(
             search_url,
             proxies=proxies,
-            timeout=15,
+            timeout=5,  # Phase 3: Hard timeout to avoid slowing down lookups
             verify=False
         )
         response.raise_for_status()
@@ -1655,7 +1714,7 @@ def lookup_utility_json(address: str) -> Dict:
 # MAIN LOOKUP FUNCTION
 # =============================================================================
 
-def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False, selected_utilities: list = None) -> Optional[Dict]:
+def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verify_with_serp: bool = False, selected_utilities: list = None, skip_internet: bool = False) -> Optional[Dict]:
     """
     Main function: takes an address string, returns electric, gas, water, and internet utility info.
     Uses city name to filter out municipal utilities from other cities.
@@ -1663,10 +1722,15 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     
     Args:
         selected_utilities: List of utility types to look up. Default is all: ['electric', 'gas', 'water', 'internet']
+        skip_internet: If True, skip internet lookup (faster)
     """
     # Default to all utilities if not specified
     if selected_utilities is None:
         selected_utilities = ['electric', 'gas', 'water', 'internet']
+    
+    # Remove internet from selected if skip_internet is True
+    if skip_internet and 'internet' in selected_utilities:
+        selected_utilities = [u for u in selected_utilities if u != 'internet']
     
     # Step 1: Geocode with geography info for filtering
     geo_result = geocode_address(address, include_geography=filter_by_city)
@@ -1682,8 +1746,9 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     # Get ZIP code from geocoded address for verification
     zip_code = geo_result.get("zip") or ""
     if not zip_code and geo_result.get("matched_address"):
-        # Try to extract ZIP from matched address
-        zip_match = re.search(r'\b(\d{5})\b', geo_result.get("matched_address", ""))
+        # Try to extract ZIP from END of matched address (avoid matching street numbers)
+        # ZIP codes appear at the end, optionally with +4 extension
+        zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\s*$', geo_result.get("matched_address", ""))
         if zip_match:
             zip_code = zip_match.group(1)
     
@@ -1715,11 +1780,68 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     water = None
     internet = None
     
+    # ==========================================================================
+    # PRIORITY 0: Check corrections database FIRST
+    # User-reported corrections override all other data sources
+    # ==========================================================================
+    corrections_applied = {}
+    try:
+        from corrections_lookup import check_correction
+        
+        for util_type in selected_utilities:
+            correction = check_correction(
+                state=state,
+                zip_code=zip_code,
+                city=city,
+                utility_type=util_type,
+                full_address=address
+            )
+            if correction:
+                corrections_applied[util_type] = correction
+                
+    except ImportError:
+        pass  # corrections_lookup module not available
+    except Exception as e:
+        print(f"Warning: corrections lookup failed: {e}")
+    
     # Step 2: Electric lookup - only if selected
     if 'electric' in selected_utilities:
-        # PRIORITY 1: Check municipal utilities first (Austin Energy, CPS Energy, LADWP, etc.)
-        municipal_electric = lookup_municipal_electric(state, city, zip_code)
-        if municipal_electric:
+        # PRIORITY 0: Check if correction exists
+        if 'electric' in corrections_applied:
+            correction = corrections_applied['electric']
+            primary_electric = {
+                'NAME': correction['name'],
+                'TELEPHONE': correction.get('phone'),
+                'WEBSITE': correction.get('website'),
+                'STATE': state,
+                'CITY': city,
+                '_confidence': correction.get('_confidence', 'user_reported'),
+                '_verification_source': correction.get('_source', 'correction_db'),
+                '_selection_reason': f"User-reported correction ({correction.get('_confirmation_count', 1)} confirmations)",
+                '_is_deregulated': False
+            }
+            other_electric = []
+        # PRIORITY 1: GIS-based lookup for states with authoritative APIs
+        elif GIS_LOOKUP_AVAILABLE and state in ('NJ', 'AR', 'DE', 'HI', 'RI', 'PA', 'WI', 'CO', 'WA', 'OR', 'UT', 'MA', 'VT', 'FL', 'IL', 'MS', 'OH', 'KY', 'AK', 'NE', 'CA', 'MI', 'TX', 'NY', 'ME', 'SC', 'IA', 'VA', 'IN', 'KS', 'DC', 'NC', 'MN'):
+            gis_electric = lookup_electric_utility_gis(lat, lon, state)
+            if gis_electric and gis_electric.get('name'):
+                primary_electric = {
+                    'NAME': gis_electric['name'],
+                    'STATE': state,
+                    'CITY': city,
+                    '_confidence': gis_electric.get('confidence', 'high'),
+                    '_verification_source': gis_electric.get('source', 'gis_state_api'),
+                    '_selection_reason': f"GIS lookup from {gis_electric.get('source', 'state API')}",
+                    '_is_deregulated': is_deregulated_state(state)
+                }
+                if deregulated_info:
+                    primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                other_electric = []
+            else:
+                # Fall through to next priority
+                primary_electric = None
+        # PRIORITY 2: Check municipal utilities first (Austin Energy, CPS Energy, LADWP, etc.)
+        if primary_electric is None and (municipal_electric := lookup_municipal_electric(state, city, zip_code)):
             primary_electric = {
                 'NAME': municipal_electric['name'],
                 'TELEPHONE': municipal_electric.get('phone'),
@@ -1733,7 +1855,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_note': municipal_electric.get('note')
             }
             other_electric = []
-        else:
+        elif primary_electric is None:
             # PRIORITY 2: HIFLD and state-specific verification
             electric_candidates = lookup_electric_utility(lon, lat)
             
@@ -1772,9 +1894,22 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     
     # Step 3: Gas lookup - only if selected
     if 'gas' in selected_utilities:
+        # PRIORITY 0: Check if correction exists
+        if 'gas' in corrections_applied:
+            correction = corrections_applied['gas']
+            primary_gas = {
+                'NAME': correction['name'],
+                'TELEPHONE': correction.get('phone'),
+                'WEBSITE': correction.get('website'),
+                'STATE': state,
+                'CITY': city,
+                '_confidence': correction.get('_confidence', 'user_reported'),
+                '_verification_source': correction.get('_source', 'correction_db'),
+                '_selection_reason': f"User-reported correction ({correction.get('_confirmation_count', 1)} confirmations)"
+            }
+            other_gas = []
         # PRIORITY 1: Check municipal gas utilities (CPS Energy, MLGW, etc.)
-        municipal_gas = lookup_municipal_gas(state, city, zip_code)
-        if municipal_gas:
+        elif (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
             primary_gas = {
                 'NAME': municipal_gas['name'],
                 'TELEPHONE': municipal_gas.get('phone'),
@@ -1824,14 +1959,32 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     gas_no_service = get_no_gas_response(state, zip_code)
     
     # Step 4: Water lookup - only if selected
-    # Priority: Municipal utilities > Supplemental (city overrides) > Special districts > SERP > EPA SDWIS
+    # Priority: Corrections > Municipal utilities > Supplemental (city overrides) > Special districts > SERP > EPA SDWIS
     water_no_service = None
     if 'water' in selected_utilities:
         water = None
         
+        # PRIORITY 0: Check if correction exists
+        if 'water' in corrections_applied:
+            correction = corrections_applied['water']
+            water = {
+                "name": correction['name'],
+                "id": None,
+                "state": state,
+                "phone": correction.get('phone'),
+                "address": None,
+                "city": city,
+                "zip": zip_code,
+                "population_served": None,
+                "source_type": None,
+                "owner_type": "Unknown",
+                "service_connections": None,
+                "_confidence": correction.get('_confidence', 'user_reported'),
+                "_source": correction.get('_source', 'correction_db'),
+                "_note": f"User-reported correction ({correction.get('_confirmation_count', 1)} confirmations)"
+            }
         # PRIORITY 1: Check municipal water utilities (LADWP, MLGW, etc.)
-        municipal_water = lookup_municipal_water(state, city, zip_code)
-        if municipal_water:
+        elif (municipal_water := lookup_municipal_water(state, city, zip_code)):
             water = {
                 "name": municipal_water['name'],
                 "id": None,
@@ -2285,6 +2438,59 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     except Exception:
         pass  # Don't fail lookup if logging fails
     
+    # NEW: LLM reasoning layer - analyze all candidates with geographic context
+    # This catches errors like "North Shore Gas serves north suburbs, Glencoe is a north suburb"
+    try:
+        from llm_analyzer import analyze_utility_candidates, get_openai_key
+        if get_openai_key():
+            # Analyze gas (most error-prone due to complex territories)
+            if primary_gas:
+                gas_candidates = [primary_gas] + (other_gas or [])
+                llm_result = analyze_utility_candidates(
+                    address=address,
+                    city=city,
+                    county=county,
+                    state=state,
+                    zip_code=zip_code,
+                    utility_type="gas",
+                    candidates=gas_candidates,
+                    database_recommendation=primary_gas
+                )
+                if llm_result and llm_result.get("llm_used"):
+                    primary_gas["_llm_analyzed"] = True
+                    if not llm_result.get("matches_database", True):
+                        # LLM disagrees with our recommendation
+                        primary_gas["_llm_override"] = llm_result["provider"]
+                        primary_gas["_llm_reasoning"] = llm_result["reasoning"]
+                        primary_gas["_llm_confidence"] = llm_result["confidence"]
+                        # Add note for user
+                        primary_gas["_note"] = f"AI suggests: {llm_result['provider']}. {llm_result['reasoning']}"
+                    else:
+                        primary_gas["_llm_verified"] = True
+            
+            # Analyze electric (less error-prone but still useful)
+            if primary_electric:
+                elec_candidates = [primary_electric] + (other_electric or [])
+                llm_result = analyze_utility_candidates(
+                    address=address,
+                    city=city,
+                    county=county,
+                    state=state,
+                    zip_code=zip_code,
+                    utility_type="electric",
+                    candidates=elec_candidates,
+                    database_recommendation=primary_electric
+                )
+                if llm_result and llm_result.get("llm_used"):
+                    primary_electric["_llm_analyzed"] = True
+                    if not llm_result.get("matches_database", True):
+                        primary_electric["_llm_override"] = llm_result["provider"]
+                        primary_electric["_llm_reasoning"] = llm_result["reasoning"]
+                    else:
+                        primary_electric["_llm_verified"] = True
+    except Exception as e:
+        pass  # Don't fail lookup if LLM analysis fails
+    
     return result
 
 
@@ -2333,7 +2539,7 @@ def _zip_only_fallback(address: str) -> Optional[Dict]:
     }
 
 
-def geocode_address(address: str) -> Optional[Dict]:
+def geocode_address_streaming(address: str) -> Optional[Dict]:
     """
     Geocode an address and return location info.
     Used by streaming API to get location first, then lookup utilities.
@@ -2409,6 +2615,19 @@ def _add_deregulated_info(result: Dict, state: str, zip_code: str) -> Dict:
 def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str) -> Optional[Dict]:
     """Look up electric utility only. Fast - typically < 1 second."""
     try:
+        # Priority 0: GIS-based lookup for states with authoritative APIs (NJ, AR, DE, HI, RI)
+        if GIS_LOOKUP_AVAILABLE and lat and lon and state in ('NJ', 'AR', 'DE', 'HI', 'RI'):
+            gis_electric = lookup_electric_utility_gis(lat, lon, state)
+            if gis_electric and gis_electric.get('name'):
+                result = {
+                    'NAME': gis_electric['name'],
+                    'STATE': state,
+                    'CITY': city,
+                    '_confidence': gis_electric.get('confidence', 'high'),
+                    '_verification_source': gis_electric.get('source', 'gis_state_api')
+                }
+                return _add_deregulated_info(result, state, zip_code)
+        
         # Check municipal first (exempt from deregulation)
         municipal_electric = lookup_municipal_electric(state, city, zip_code)
         if municipal_electric:
@@ -2609,7 +2828,20 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
 def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
     """Look up water utility only. Fast - typically < 1 second."""
     try:
-        # Priority 1: Municipal
+        # Priority 1: GIS-based lookup (EPA CWS boundaries - most authoritative)
+        if GIS_LOOKUP_AVAILABLE and lat and lon:
+            gis_water = lookup_water_utility_gis(lat, lon, state)
+            if gis_water and gis_water.get('name'):
+                return {
+                    "NAME": gis_water['name'],
+                    "PWSID": gis_water.get('pwsid'),
+                    "STATE": gis_water.get('state') or state,
+                    "CITY": city,
+                    "_confidence": gis_water.get('confidence', 'high'),
+                    "_source": gis_water.get('source', 'gis_epa')
+                }
+        
+        # Priority 2: Municipal
         municipal_water = lookup_municipal_water(state, city, zip_code)
         if municipal_water:
             return {
@@ -2622,19 +2854,19 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
                 "_source": "municipal_utility"
             }
         
-        # Priority 2: Supplemental (city overrides)
+        # Priority 3: Supplemental (city overrides)
         supplemental = _check_water_supplemental(state, city)
         if supplemental:
             return supplemental
         
-        # Priority 3: Special districts
+        # Priority 4: Special districts
         district = lookup_special_district(lat, lon, state, zip_code, 'water')
         if district:
             water = format_district_for_response(district)
             water['_source'] = 'special_district'
             return water
         
-        # Priority 4: EPA SDWIS
+        # Priority 5: EPA SDWIS
         water = lookup_water_utility(city, county, state, full_address=address, lat=lat, lon=lon, zip_code=zip_code)
         return water
     except Exception as e:

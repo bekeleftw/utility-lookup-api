@@ -78,16 +78,16 @@ def lookup():
     if request.method == 'POST':
         data = request.get_json()
         address = data.get('address')
-        # SERP verification is now enabled by default
-        verify = data.get('verify', True)
-        # Parse utilities parameter - default to all if not specified
-        utilities_param = data.get('utilities', 'electric,gas,water,internet')
+        # SERP verification disabled by default - LLM analyzer handles verification now
+        verify = data.get('verify', False)
+        # Parse utilities parameter - default excludes internet (slow Playwright)
+        utilities_param = data.get('utilities', 'electric,gas,water')
     else:
         address = request.args.get('address')
-        # SERP verification is now enabled by default (pass verify=false to disable)
-        verify = request.args.get('verify', 'true').lower() != 'false'
-        # Parse utilities parameter - default to all if not specified
-        utilities_param = request.args.get('utilities', 'electric,gas,water,internet')
+        # SERP verification disabled by default - LLM analyzer handles verification now
+        verify = request.args.get('verify', 'false').lower() == 'true'
+        # Parse utilities parameter - default excludes internet (slow Playwright)
+        utilities_param = request.args.get('utilities', 'electric,gas,water')
     
     # Parse comma-separated utilities into list
     selected_utilities = [u.strip().lower() for u in utilities_param.split(',')]
@@ -385,12 +385,12 @@ def lookup_stream():
             
             yield f"data: {json.dumps({'event': 'geocode', 'data': location})}\n\n"
             
-            lat = location['lat']
-            lon = location['lon']
-            city = location['city']
-            county = location['county']
-            state = location['state']
-            zip_code = location['zip_code']
+            lat = location.get('lat')
+            lon = location.get('lon')
+            city = location.get('city')
+            county = location.get('county')
+            state = location.get('state')
+            zip_code = location.get('zip_code', '')
             
             # Step 2: Electric (fast)
             if 'electric' in selected_utilities:
@@ -662,7 +662,7 @@ def submit_feedback():
     data = request.get_json()
     
     # Validate required fields
-    required = ['address', 'utility_type', 'returned_provider', 'correct_provider']
+    required = ['address', 'utility_type', 'correct_provider']
     for field in required:
         if not data.get(field):
             return jsonify({"error": f"Missing required field: {field}"}), 400
@@ -676,12 +676,60 @@ def submit_feedback():
     zip_code = data.get('zip_code') or extract_zip(data['address'])
     city, state = extract_city_state(data['address'])
     
-    # Generate feedback ID
+    if not state:
+        return jsonify({"error": "Could not determine state from address"}), 400
+    if not zip_code:
+        return jsonify({"error": "Could not determine ZIP code from address"}), 400
+    
+    # Use SQLite corrections database
+    try:
+        from corrections_lookup import add_correction, init_db
+        
+        # Ensure DB exists
+        init_db()
+        
+        result = add_correction(
+            utility_type=data['utility_type'],
+            correct_provider=data['correct_provider'],
+            state=state,
+            zip_code=zip_code,
+            street=data.get('address'),
+            city=city,
+            incorrect_provider=data.get('returned_provider'),
+            source=data.get('source', 'user_feedback'),
+            full_address=data.get('address')
+        )
+        
+        if result['status'] == 'updated':
+            if result['confirmation_count'] >= 3:
+                return jsonify({
+                    "status": "verified",
+                    "message": f"Correction verified with {result['confirmation_count']} confirmations and is now active.",
+                    "confirmation_count": result['confirmation_count']
+                })
+            else:
+                return jsonify({
+                    "status": "confirmation_added",
+                    "message": f"Thanks! {result['confirmation_count']}/3 confirmations for this correction.",
+                    "confirmation_count": result['confirmation_count']
+                })
+        else:
+            return jsonify({
+                "status": "received",
+                "message": "Thank you. This correction will be applied after additional confirmations.",
+                "correction_id": result['id']
+            })
+            
+    except Exception as e:
+        print(f"Error adding correction to SQLite: {e}")
+        # Fall back to JSON-based system
+        pass
+    
+    # Fallback: JSON-based system
     feedback_id = 'fb_' + hashlib.md5(
         f"{data['address']}_{data['utility_type']}_{datetime.now().isoformat()}".encode()
     ).hexdigest()[:12]
     
-    # Create feedback record
     feedback_record = {
         "feedback_id": feedback_id,
         "address": data['address'],
@@ -689,7 +737,7 @@ def submit_feedback():
         "city": city,
         "state": state,
         "utility_type": data['utility_type'],
-        "returned_provider": data['returned_provider'],
+        "returned_provider": data.get('returned_provider'),
         "correct_provider": data['correct_provider'],
         "source": data.get('source', 'unknown'),
         "email": data.get('email'),
@@ -699,7 +747,6 @@ def submit_feedback():
         "addresses": [data['address']]
     }
     
-    # Load pending feedback
     pending = load_feedback('pending.json')
     
     # Check if similar feedback already exists (same ZIP + utility + correction)
@@ -836,7 +883,17 @@ def add_water_override(city, state, provider_name):
 def feedback_dashboard():
     """
     Internal dashboard showing feedback status.
+    Shows data from both SQLite corrections DB and legacy JSON files.
     """
+    # Get SQLite stats
+    sqlite_stats = {}
+    try:
+        from corrections_lookup import get_corrections_stats
+        sqlite_stats = get_corrections_stats()
+    except Exception as e:
+        sqlite_stats = {"error": str(e)}
+    
+    # Legacy JSON data
     pending = load_feedback('pending.json')
     confirmed = load_feedback('confirmed.json')
     
@@ -873,10 +930,15 @@ def feedback_dashboard():
     )[:10]
     
     return jsonify({
-        "summary": {
+        "sqlite_corrections": sqlite_stats,
+        "legacy_json": {
             "pending_count": len(pending),
             "confirmed_count": len(confirmed),
             "total_feedback": len(pending) + len(confirmed)
+        },
+        "summary": {
+            "total_corrections": sqlite_stats.get('total', 0) + len(pending) + len(confirmed),
+            "verified_corrections": sqlite_stats.get('address_verified', 0) + sqlite_stats.get('zip_verified', 0) + len(confirmed)
         },
         "pending": pending_sorted[:20],
         "recent_confirmed": confirmed_sorted,

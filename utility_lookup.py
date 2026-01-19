@@ -2849,14 +2849,12 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
 def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
     """Look up water utility only. Fast - typically < 1 second."""
     try:
-        # Priority 0: Special districts for states that heavily use them (TX, FL, CO)
-        # MUDs/CDDs are often the PRIMARY water provider in new developments
-        if state in ['TX', 'FL', 'CO', 'AZ', 'NV'] and has_special_district_data(state):
-            district = lookup_special_district(lat, lon, state, zip_code, service='water')
-            if district and not district.get('multiple_matches'):
-                water = format_district_for_response(district)
-                water['_source'] = 'special_district'
-                return water
+        # Note: Special districts (MUDs/CDDs) are checked AFTER municipal/GIS
+        # because major cities (Houston, Austin, Dallas) provide municipal water
+        # even in areas that have MUD boundaries. MUDs are primarily for:
+        # - New developments outside city limits
+        # - Unincorporated areas
+        # We'll add MUD info as a note when relevant, not as primary provider
         
         # Priority 1: GIS-based lookup (EPA CWS boundaries - most authoritative)
         if GIS_LOOKUP_AVAILABLE and lat and lon:
@@ -2931,12 +2929,20 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
         if supplemental:
             return supplemental
         
-        # Priority 4: Special districts
-        district = lookup_special_district(lat, lon, state, zip_code, 'water')
-        if district:
-            water = format_district_for_response(district)
-            water['_source'] = 'special_district'
-            return water
+        # Priority 4: Special districts (MUDs/CDDs) - only for unincorporated areas
+        # Major Texas cities (Houston, Austin, Dallas, San Antonio, Fort Worth) have municipal water
+        # MUDs are primarily for new developments OUTSIDE city limits
+        major_tx_cities = ['HOUSTON', 'AUSTIN', 'DALLAS', 'SAN ANTONIO', 'FORT WORTH', 'EL PASO', 
+                          'ARLINGTON', 'PLANO', 'IRVING', 'FRISCO', 'MCKINNEY', 'DENTON']
+        city_upper = (city or '').upper()
+        
+        # Only use MUD if NOT in a major city
+        if city_upper not in major_tx_cities:
+            district = lookup_special_district(lat, lon, state, zip_code, service='water')
+            if district and not district.get('multiple_matches'):
+                water = format_district_for_response(district)
+                water['_source'] = 'special_district'
+                return water
         
         # Priority 5: EPA SDWIS
         water = lookup_water_utility(city, county, state, full_address=address, lat=lat, lon=lon, zip_code=zip_code)

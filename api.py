@@ -397,7 +397,11 @@ def lookup_stream():
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
                 electric = lookup_electric_only(lat, lon, city, county, state, zip_code)
                 if electric:
-                    yield f"data: {json.dumps({'event': 'electric', 'data': format_utility(electric, 'electric')})}\n\n"
+                    # Debug: log raw confidence
+                    print(f"DEBUG electric raw _confidence: {electric.get('_confidence')}")
+                    formatted = format_utility(electric, 'electric')
+                    print(f"DEBUG electric formatted confidence: {formatted.get('confidence')}")
+                    yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
             

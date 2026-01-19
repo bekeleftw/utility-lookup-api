@@ -2,3 +2,4 @@ SDWA_latest_downloads/
 *.csv
 __pycache__/
 .env
+bdc_internet_new.db

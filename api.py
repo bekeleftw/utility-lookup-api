@@ -401,10 +401,12 @@ def lookup_stream():
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
                 electric = lookup_electric_only(lat, lon, city, county, state, zip_code)
                 if electric:
-                    # Debug: log raw confidence
-                    print(f"DEBUG electric raw _confidence: {electric.get('_confidence')}")
+                    # Get confidence directly from the result
+                    raw_confidence = electric.get('_confidence', 'NOT_FOUND')
                     formatted = format_utility(electric, 'electric')
-                    print(f"DEBUG electric formatted confidence: {formatted.get('confidence')}")
+                    # Override with raw confidence if format_utility lost it
+                    if raw_confidence != 'NOT_FOUND':
+                        formatted['confidence'] = raw_confidence
                     yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
@@ -417,7 +419,11 @@ def lookup_stream():
                     if gas.get('_no_service'):
                         yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
                     else:
-                        yield f"data: {json.dumps({'event': 'gas', 'data': format_utility(gas, 'gas')})}\n\n"
+                        raw_confidence = gas.get('_confidence', 'NOT_FOUND')
+                        formatted = format_utility(gas, 'gas')
+                        if raw_confidence != 'NOT_FOUND':
+                            formatted['confidence'] = raw_confidence
+                        yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
             

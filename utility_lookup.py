@@ -1136,17 +1136,66 @@ def _lookup_internet_single(address: str) -> Optional[Dict]:
     return result_data
 
 
+def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
+    """Look up internet providers from PostgreSQL database."""
+    database_url = os.environ.get('DATABASE_URL')
+    if not database_url or not block_geoid:
+        return None
+    try:
+        import psycopg2
+        conn = psycopg2.connect(database_url)
+        cursor = conn.cursor()
+        cursor.execute("SELECT providers FROM internet_providers WHERE block_geoid = %s", (block_geoid,))
+        row = cursor.fetchone()
+        conn.close()
+        if row and row[0]:
+            providers_json = row[0] if isinstance(row[0], list) else json.loads(row[0])
+            providers = []
+            for p in providers_json:
+                providers.append({
+                    'name': p.get('name'),
+                    'technology': p.get('tech'),
+                    'max_download_mbps': p.get('down', 0),
+                    'max_upload_mbps': p.get('up', 0),
+                    'low_latency': p.get('low_lat', 0)
+                })
+            return {
+                "providers": providers,
+                "provider_count": len(providers),
+                "max_download": max((p.get('max_download_mbps', 0) for p in providers), default=0),
+                "max_upload": max((p.get('max_upload_mbps', 0) for p in providers), default=0),
+                "has_fiber": any('fiber' in str(p.get('technology', '')).lower() for p in providers),
+                "has_cable": any('cable' in str(p.get('technology', '')).lower() for p in providers),
+                "_source": "fcc_bdc_postgres",
+                "_block_geoid": block_geoid
+            }
+    except Exception as e:
+        print(f"  PostgreSQL lookup error: {e}")
+    return None
+
+
 def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optional[Dict]:
     """
-    Look up internet providers using local BDC data first (fast), then Playwright fallback (slow).
+    Look up internet providers using PostgreSQL (Railway), local SQLite, or Playwright fallback.
     
-    BDC (Broadband Data Collection) lookup: ~1s using census block GEOID
-    Playwright fallback: ~25-30s scraping FCC website
-    
-    If the exact address isn't found and try_neighbors=True, will attempt nearby
-    street numbers as fallback (FCC data has gaps but neighbors usually have same providers).
+    Priority:
+    1. PostgreSQL (if DATABASE_URL set) - fast, works on Railway
+    2. Local SQLite BDC data - fast, local only
+    3. Playwright FCC scraping - slow fallback (~25-30s)
     """
-    # Try fast BDC local lookup first
+    # First, get the census block GEOID for this address
+    geo_result = geocode_address(address, include_geography=True)
+    block_geoid = geo_result.get('block_geoid') if geo_result else None
+    
+    # Try PostgreSQL first (Railway deployment)
+    if block_geoid and os.environ.get('DATABASE_URL'):
+        print(f"  Trying PostgreSQL lookup for block {block_geoid}...")
+        pg_result = _lookup_internet_postgres(block_geoid)
+        if pg_result and pg_result.get('providers'):
+            print(f"  PostgreSQL found {len(pg_result['providers'])} providers")
+            return pg_result
+    
+    # Try fast BDC local lookup (SQLite)
     try:
         from bdc_internet_lookup import lookup_internet_fast, get_available_states
         bdc_states = get_available_states()
@@ -1155,7 +1204,6 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
             bdc_result = lookup_internet_fast(address)
             if bdc_result and bdc_result.get('providers'):
                 print(f"  BDC lookup found {len(bdc_result['providers'])} providers")
-                # Format to match Playwright output
                 return {
                     "providers": bdc_result['providers'],
                     "provider_count": bdc_result['provider_count'],

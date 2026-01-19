@@ -7,3 +7,4 @@ python-dotenv
 gunicorn
 playwright>=1.57.0
 shapely>=2.0.0
+psycopg2-binary

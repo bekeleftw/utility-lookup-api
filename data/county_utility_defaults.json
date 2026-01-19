@@ -547,6 +547,186 @@
         "name": "Florida Power & Light",
         "phone": "800-468-8243",
         "website": "https://www.fpl.com"
+      },
+      "HENDRY": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "GLADES": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "OKEECHOBEE": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "HIGHLANDS": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "DESOTO": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "HARDEE": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "FLAGLER": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "PUTNAM": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "NASSAU": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "BAKER": {
+        "name": "Florida Power & Light",
+        "phone": "800-468-8243",
+        "website": "https://www.fpl.com"
+      },
+      "MONROE": {
+        "name": "Florida Keys Electric Cooperative",
+        "phone": "305-852-2431",
+        "website": "https://www.fkec.com"
+      },
+      "CITRUS": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "SUMTER": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "LEVY": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "GILCHRIST": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "DIXIE": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "TAYLOR": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "LAFAYETTE": {
+        "name": "Tri-County Electric Cooperative",
+        "phone": "850-973-2285",
+        "website": "https://www.tcec.com"
+      },
+      "SUWANNEE": {
+        "name": "Suwannee Valley Electric Cooperative",
+        "phone": "386-362-2226",
+        "website": "https://www.svec-coop.com"
+      },
+      "COLUMBIA": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "HAMILTON": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "MADISON": {
+        "name": "Tri-County Electric Cooperative",
+        "phone": "850-973-2285",
+        "website": "https://www.tcec.com"
+      },
+      "JEFFERSON": {
+        "name": "Tri-County Electric Cooperative",
+        "phone": "850-973-2285",
+        "website": "https://www.tcec.com"
+      },
+      "WAKULLA": {
+        "name": "Talquin Electric Cooperative",
+        "phone": "850-627-7651",
+        "website": "https://www.talquinelectric.com"
+      },
+      "GADSDEN": {
+        "name": "Talquin Electric Cooperative",
+        "phone": "850-627-7651",
+        "website": "https://www.talquinelectric.com"
+      },
+      "LIBERTY": {
+        "name": "Talquin Electric Cooperative",
+        "phone": "850-627-7651",
+        "website": "https://www.talquinelectric.com"
+      },
+      "CALHOUN": {
+        "name": "Gulf Coast Electric Cooperative",
+        "phone": "800-333-9392",
+        "website": "https://www.gcec.com"
+      },
+      "JACKSON": {
+        "name": "Gulf Coast Electric Cooperative",
+        "phone": "800-333-9392",
+        "website": "https://www.gcec.com"
+      },
+      "HOLMES": {
+        "name": "West Florida Electric Cooperative",
+        "phone": "850-263-3231",
+        "website": "https://www.westflorida.coop"
+      },
+      "WASHINGTON": {
+        "name": "West Florida Electric Cooperative",
+        "phone": "850-263-3231",
+        "website": "https://www.westflorida.coop"
+      },
+      "BAY": {
+        "name": "Gulf Power",
+        "phone": "800-225-5797",
+        "website": "https://www.gulfpower.com"
+      },
+      "GULF": {
+        "name": "Gulf Coast Electric Cooperative",
+        "phone": "800-333-9392",
+        "website": "https://www.gcec.com"
+      },
+      "FRANKLIN": {
+        "name": "Duke Energy Florida",
+        "phone": "800-700-8744",
+        "website": "https://www.duke-energy.com"
+      },
+      "WALTON": {
+        "name": "Chelco",
+        "phone": "850-892-2111",
+        "website": "https://www.chelco.com"
+      },
+      "UNION": {
+        "name": "Clay Electric Cooperative",
+        "phone": "800-224-4917",
+        "website": "https://www.clayelectric.com"
+      },
+      "BRADFORD": {
+        "name": "Clay Electric Cooperative",
+        "phone": "800-224-4917",
+        "website": "https://www.clayelectric.com"
       }
     },
     "GA": {
@@ -709,6 +889,636 @@
         "name": "Jackson EMC",
         "phone": "706-367-5281",
         "website": "https://www.jacksonemc.com"
+      },
+      "TROUP": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "HEARD": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MERIWETHER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "SPALDING": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "PIKE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "LAMAR": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BUTTS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "JASPER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MORGAN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "PUTNAM": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "JONES": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BALDWIN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "HANCOCK": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WARREN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MCDUFFIE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "LINCOLN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WILKES": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "ELBERT": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "HART": {
+        "name": "Hart EMC",
+        "phone": "706-376-4714",
+        "website": "https://www.hartemc.com"
+      },
+      "FRANKLIN": {
+        "name": "Hart EMC",
+        "phone": "706-376-4714",
+        "website": "https://www.hartemc.com"
+      },
+      "STEPHENS": {
+        "name": "Habersham EMC",
+        "phone": "706-754-2114",
+        "website": "https://www.habershamemc.com"
+      },
+      "HABERSHAM": {
+        "name": "Habersham EMC",
+        "phone": "706-754-2114",
+        "website": "https://www.habershamemc.com"
+      },
+      "RABUN": {
+        "name": "Habersham EMC",
+        "phone": "706-754-2114",
+        "website": "https://www.habershamemc.com"
+      },
+      "WHITE": {
+        "name": "Habersham EMC",
+        "phone": "706-754-2114",
+        "website": "https://www.habershamemc.com"
+      },
+      "LUMPKIN": {
+        "name": "Habersham EMC",
+        "phone": "706-754-2114",
+        "website": "https://www.habershamemc.com"
+      },
+      "DAWSON": {
+        "name": "Sawnee EMC",
+        "phone": "770-887-2363",
+        "website": "https://www.sawnee.com"
+      },
+      "PICKENS": {
+        "name": "Amicalola EMC",
+        "phone": "706-253-5200",
+        "website": "https://www.amicalolaemc.com"
+      },
+      "GILMER": {
+        "name": "Amicalola EMC",
+        "phone": "706-253-5200",
+        "website": "https://www.amicalolaemc.com"
+      },
+      "FANNIN": {
+        "name": "Blue Ridge Mountain EMC",
+        "phone": "706-632-3174",
+        "website": "https://www.brmemc.com"
+      },
+      "UNION": {
+        "name": "Blue Ridge Mountain EMC",
+        "phone": "706-632-3174",
+        "website": "https://www.brmemc.com"
+      },
+      "TOWNS": {
+        "name": "Blue Ridge Mountain EMC",
+        "phone": "706-632-3174",
+        "website": "https://www.brmemc.com"
+      },
+      "MURRAY": {
+        "name": "North Georgia EMC",
+        "phone": "706-259-9441",
+        "website": "https://www.ngemc.com"
+      },
+      "GORDON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CHATTOOGA": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WALKER": {
+        "name": "North Georgia EMC",
+        "phone": "706-259-9441",
+        "website": "https://www.ngemc.com"
+      },
+      "DADE": {
+        "name": "North Georgia EMC",
+        "phone": "706-259-9441",
+        "website": "https://www.ngemc.com"
+      },
+      "CATOOSA": {
+        "name": "North Georgia EMC",
+        "phone": "706-259-9441",
+        "website": "https://www.ngemc.com"
+      },
+      "POLK": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "HARALSON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BANKS": {
+        "name": "Jackson EMC",
+        "phone": "706-367-5281",
+        "website": "https://www.jacksonemc.com"
+      },
+      "MADISON": {
+        "name": "Jackson EMC",
+        "phone": "706-367-5281",
+        "website": "https://www.jacksonemc.com"
+      },
+      "OGLETHORPE": {
+        "name": "Walton EMC",
+        "phone": "770-267-2505",
+        "website": "https://www.waltonemc.com"
+      },
+      "GREENE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TALIAFERRO": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "GLASCOCK": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "JEFFERSON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BURKE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "JENKINS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "SCREVEN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "EFFINGHAM": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BRYAN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "LIBERTY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "LONG": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MCINTOSH": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WAYNE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BRANTLEY": {
+        "name": "Okefenoke REMC",
+        "phone": "912-462-6173",
+        "website": "https://www.oremc.com"
+      },
+      "CAMDEN": {
+        "name": "Okefenoke REMC",
+        "phone": "912-462-6173",
+        "website": "https://www.oremc.com"
+      },
+      "CHARLTON": {
+        "name": "Okefenoke REMC",
+        "phone": "912-462-6173",
+        "website": "https://www.oremc.com"
+      },
+      "WARE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "PIERCE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "APPLING": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BACON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "JEFF DAVIS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "COFFEE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "ATKINSON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CLINCH": {
+        "name": "Okefenoke REMC",
+        "phone": "912-462-6173",
+        "website": "https://www.oremc.com"
+      },
+      "LANIER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "ECHOLS": {
+        "name": "Okefenoke REMC",
+        "phone": "912-462-6173",
+        "website": "https://www.oremc.com"
+      },
+      "BERRIEN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "COOK": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TIFT": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "IRWIN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BEN HILL": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WILCOX": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "DODGE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TELFAIR": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WHEELER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MONTGOMERY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TOOMBS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TATTNALL": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "EVANS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CANDLER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BULLOCH": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "EMANUEL": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "JOHNSON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "LAURENS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TREUTLEN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BLECKLEY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "PULASKI": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "HOUSTON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "PEACH": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CRAWFORD": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TAYLOR": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MACON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "SCHLEY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "SUMTER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WEBSTER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "STEWART": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "QUITMAN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "RANDOLPH": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CLAY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CALHOUN": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "EARLY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MILLER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BAKER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MITCHELL": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "COLQUITT": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "THOMAS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "GRADY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "DECATUR": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "SEMINOLE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "BROOKS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WORTH": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "LEE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TERRELL": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CRISP": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "DOOLY": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TURNER": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TWIGGS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WILKINSON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "WASHINGTON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "UPSON": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "TALBOT": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "HARRIS": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "CHATTAHOOCHEE": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
+      },
+      "MARION": {
+        "name": "Georgia Power",
+        "phone": "888-660-5890",
+        "website": "https://www.georgiapower.com"
       }
     },
     "NC": {
@@ -2954,12 +3764,22 @@
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
       },
+      "CABELL": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
       "BERKELEY": {
         "name": "Potomac Edison",
         "phone": "800-686-0011",
         "website": "https://www.firstenergycorp.com"
       },
-      "CABELL": {
+      "RALEIGH": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "WOOD": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
@@ -2969,12 +3789,7 @@
         "phone": "800-686-0022",
         "website": "https://www.firstenergycorp.com"
       },
-      "WOOD": {
-        "name": "Appalachian Power",
-        "phone": "800-956-4237",
-        "website": "https://www.appalachianpower.com"
-      },
-      "RALEIGH": {
+      "PUTNAM": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
@@ -2983,11 +3798,6 @@
         "name": "Mon Power",
         "phone": "800-686-0022",
         "website": "https://www.firstenergycorp.com"
-      },
-      "PUTNAM": {
-        "name": "Appalachian Power",
-        "phone": "800-956-4237",
-        "website": "https://www.appalachianpower.com"
       },
       "MARION": {
         "name": "Mon Power",
@@ -3005,11 +3815,6 @@
         "website": "https://www.firstenergycorp.com"
       },
       "OHIO": {
-        "name": "Mon Power",
-        "phone": "800-686-0022",
-        "website": "https://www.firstenergycorp.com"
-      },
-      "FAYETTE": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
@@ -3019,7 +3824,212 @@
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
       },
+      "FAYETTE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "LOGAN": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "MINGO": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "BOONE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "LINCOLN": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
       "GREENBRIER": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "WYOMING": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "MCDOWELL": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "NICHOLAS": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "SUMMERS": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "MONROE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "POCAHONTAS": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "RANDOLPH": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "UPSHUR": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "LEWIS": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "BARBOUR": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "TAYLOR": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "PRESTON": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "TUCKER": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "GRANT": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MINERAL": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HAMPSHIRE": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "HARDY": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "PENDLETON": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MORGAN": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "BRAXTON": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WEBSTER": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "CLAY": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "CALHOUN": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "GILMER": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "ROANE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "JACKSON": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "MASON": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "WIRT": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "RITCHIE": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "DODDRIDGE": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "TYLER": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "PLEASANTS": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "WETZEL": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "MARSHALL": {
+        "name": "Mon Power",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "BROOKE": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com"
+      },
+      "HANCOCK": {
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com"
@@ -3151,17 +4161,17 @@
       "RUTHERFORD": {
         "name": "Middle Tennessee Electric",
         "phone": "877-777-9020",
-        "website": "https://www.mte.com"
+        "website": "https://www.mtemc.com"
       },
       "WILLIAMSON": {
         "name": "Middle Tennessee Electric",
         "phone": "877-777-9020",
-        "website": "https://www.mte.com"
+        "website": "https://www.mtemc.com"
       },
       "SUMNER": {
         "name": "Sumner-Robertson REMC",
-        "phone": "615-452-4522",
-        "website": "https://www.sre.coop"
+        "phone": "615-452-2013",
+        "website": "https://www.sremc.com"
       },
       "MONTGOMERY": {
         "name": "CDE Lightband",
@@ -3171,12 +4181,12 @@
       "WILSON": {
         "name": "Middle Tennessee Electric",
         "phone": "877-777-9020",
-        "website": "https://www.mte.com"
+        "website": "https://www.mtemc.com"
       },
       "BLOUNT": {
-        "name": "Alcoa Electric",
-        "phone": "865-379-2160",
-        "website": "https://www.alcoautilities.com"
+        "name": "Alcoa Electric Department",
+        "phone": "865-380-4600",
+        "website": "https://www.cityofalcoa-tn.gov"
       },
       "SULLIVAN": {
         "name": "Bristol Tennessee Essential Services",
@@ -3189,19 +4199,19 @@
         "website": "https://www.jcpb.com"
       },
       "MAURY": {
-        "name": "Columbia Power & Water",
+        "name": "Columbia Power & Water Systems",
         "phone": "931-388-4833",
         "website": "https://www.cpws.com"
       },
       "SEVIER": {
         "name": "Sevier County Electric System",
         "phone": "865-453-2887",
-        "website": "https://www.sces.org"
+        "website": "https://www.sces.com"
       },
       "MADISON": {
         "name": "Jackson Energy Authority",
         "phone": "731-422-7500",
-        "website": "https://www.jea.com"
+        "website": "https://www.jea-tn.com"
       },
       "BRADLEY": {
         "name": "Cleveland Utilities",
@@ -3214,19 +4224,389 @@
         "website": "https://www.clintonutilitiesboard.com"
       },
       "PUTNAM": {
-        "name": "Upper Cumberland EMC",
-        "phone": "800-261-2940",
-        "website": "https://www.ucemc.com"
+        "name": "Cookeville Electric Department",
+        "phone": "931-526-9771",
+        "website": "https://www.cookeville-tn.gov"
       },
       "ROBERTSON": {
         "name": "Sumner-Robertson REMC",
-        "phone": "615-452-4522",
-        "website": "https://www.sre.coop"
+        "phone": "615-452-2013",
+        "website": "https://www.sremc.com"
       },
       "LOUDON": {
         "name": "Lenoir City Utilities Board",
-        "phone": "865-986-5561",
+        "phone": "865-986-2596",
         "website": "https://www.lcub.com"
+      },
+      "COFFEE": {
+        "name": "Duck River Electric",
+        "phone": "931-680-5881",
+        "website": "https://www.dremc.com"
+      },
+      "BEDFORD": {
+        "name": "Duck River Electric",
+        "phone": "931-680-5881",
+        "website": "https://www.dremc.com"
+      },
+      "WARREN": {
+        "name": "Warren RECC",
+        "phone": "931-473-3116",
+        "website": "https://www.warrenrecc.com"
+      },
+      "MCMINN": {
+        "name": "Athens Utilities Board",
+        "phone": "423-745-4501",
+        "website": "https://www.athensub.com"
+      },
+      "ROANE": {
+        "name": "Harriman Utility Board",
+        "phone": "865-882-3242",
+        "website": "https://www.hub-tn.com"
+      },
+      "JEFFERSON": {
+        "name": "Appalachian Electric Cooperative",
+        "phone": "865-475-2032",
+        "website": "https://www.aecoop.org"
+      },
+      "HAMBLEN": {
+        "name": "Morristown Utility Systems",
+        "phone": "423-586-5611",
+        "website": "https://www.mus4u.org"
+      },
+      "GREENE": {
+        "name": "Greeneville Light & Power",
+        "phone": "423-639-7171",
+        "website": "https://www.greenevillelight.com"
+      },
+      "HAWKINS": {
+        "name": "Hawkins County Electric",
+        "phone": "423-272-8821",
+        "website": "https://www.hcec.net"
+      },
+      "CARTER": {
+        "name": "Mountain Electric Cooperative",
+        "phone": "423-543-3131",
+        "website": "https://www.mountainelectric.com"
+      },
+      "UNICOI": {
+        "name": "Erwin Utilities",
+        "phone": "423-743-1800",
+        "website": "https://www.erwinutilities.com"
+      },
+      "COCKE": {
+        "name": "Newport Utilities",
+        "phone": "423-623-2176",
+        "website": "https://www.newportutilities.com"
+      },
+      "GRAINGER": {
+        "name": "Appalachian Electric Cooperative",
+        "phone": "865-475-2032",
+        "website": "https://www.aecoop.org"
+      },
+      "CLAIBORNE": {
+        "name": "Powell Valley Electric Cooperative",
+        "phone": "423-626-5204",
+        "website": "https://www.pve.coop"
+      },
+      "HANCOCK": {
+        "name": "Powell Valley Electric Cooperative",
+        "phone": "423-626-5204",
+        "website": "https://www.pve.coop"
+      },
+      "UNION": {
+        "name": "Powell Valley Electric Cooperative",
+        "phone": "423-626-5204",
+        "website": "https://www.pve.coop"
+      },
+      "CAMPBELL": {
+        "name": "LaFollette Utilities",
+        "phone": "423-562-3316",
+        "website": "https://www.lafolletteutilities.com"
+      },
+      "SCOTT": {
+        "name": "Oneida Municipal Electric",
+        "phone": "423-569-4014",
+        "website": "https://www.oneidatn.gov"
+      },
+      "MORGAN": {
+        "name": "Plateau Electric Cooperative",
+        "phone": "931-484-7108",
+        "website": "https://www.plateauelectric.com"
+      },
+      "CUMBERLAND": {
+        "name": "Plateau Electric Cooperative",
+        "phone": "931-484-7108",
+        "website": "https://www.plateauelectric.com"
+      },
+      "FENTRESS": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "OVERTON": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "PICKETT": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "CLAY": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "JACKSON": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "SMITH": {
+        "name": "Caney Fork Electric Cooperative",
+        "phone": "615-735-2940",
+        "website": "https://www.caneyforkec.com"
+      },
+      "DEKALB": {
+        "name": "Caney Fork Electric Cooperative",
+        "phone": "615-735-2940",
+        "website": "https://www.caneyforkec.com"
+      },
+      "WHITE": {
+        "name": "Caney Fork Electric Cooperative",
+        "phone": "615-735-2940",
+        "website": "https://www.caneyforkec.com"
+      },
+      "VAN BUREN": {
+        "name": "Caney Fork Electric Cooperative",
+        "phone": "615-735-2940",
+        "website": "https://www.caneyforkec.com"
+      },
+      "CANNON": {
+        "name": "Middle Tennessee Electric",
+        "phone": "877-777-9020",
+        "website": "https://www.mtemc.com"
+      },
+      "MACON": {
+        "name": "Tri-County Electric",
+        "phone": "615-666-2111",
+        "website": "https://www.tcemc.org"
+      },
+      "TROUSDALE": {
+        "name": "Tri-County Electric",
+        "phone": "615-666-2111",
+        "website": "https://www.tcemc.org"
+      },
+      "CHEATHAM": {
+        "name": "Cumberland Electric",
+        "phone": "800-987-2362",
+        "website": "https://www.cemc.org"
+      },
+      "DICKSON": {
+        "name": "Dickson Electric System",
+        "phone": "615-446-2576",
+        "website": "https://www.dicksonelectric.org"
+      },
+      "HOUSTON": {
+        "name": "Cumberland Electric",
+        "phone": "800-987-2362",
+        "website": "https://www.cemc.org"
+      },
+      "HUMPHREYS": {
+        "name": "Meriwether Lewis Electric",
+        "phone": "931-729-3558",
+        "website": "https://www.mlec.com"
+      },
+      "STEWART": {
+        "name": "Cumberland Electric",
+        "phone": "800-987-2362",
+        "website": "https://www.cemc.org"
+      },
+      "HICKMAN": {
+        "name": "Meriwether Lewis Electric",
+        "phone": "931-729-3558",
+        "website": "https://www.mlec.com"
+      },
+      "LEWIS": {
+        "name": "Meriwether Lewis Electric",
+        "phone": "931-729-3558",
+        "website": "https://www.mlec.com"
+      },
+      "PERRY": {
+        "name": "Meriwether Lewis Electric",
+        "phone": "931-729-3558",
+        "website": "https://www.mlec.com"
+      },
+      "WAYNE": {
+        "name": "Meriwether Lewis Electric",
+        "phone": "931-729-3558",
+        "website": "https://www.mlec.com"
+      },
+      "LAWRENCE": {
+        "name": "Lawrenceburg Utility Systems",
+        "phone": "931-762-7161",
+        "website": "https://www.lawrenceburgutility.com"
+      },
+      "GILES": {
+        "name": "Pulaski Electric System",
+        "phone": "931-363-2522",
+        "website": "https://www.pulaskielectric.org"
+      },
+      "MARSHALL": {
+        "name": "Duck River Electric",
+        "phone": "931-680-5881",
+        "website": "https://www.dremc.com"
+      },
+      "LINCOLN": {
+        "name": "Fayetteville Public Utilities",
+        "phone": "931-433-1522",
+        "website": "https://www.fpu-tn.com"
+      },
+      "MOORE": {
+        "name": "Duck River Electric",
+        "phone": "931-680-5881",
+        "website": "https://www.dremc.com"
+      },
+      "FRANKLIN": {
+        "name": "Duck River Electric",
+        "phone": "931-680-5881",
+        "website": "https://www.dremc.com"
+      },
+      "GRUNDY": {
+        "name": "Sequachee Valley Electric",
+        "phone": "423-837-8605",
+        "website": "https://www.svalleyec.com"
+      },
+      "MARION": {
+        "name": "Sequachee Valley Electric",
+        "phone": "423-837-8605",
+        "website": "https://www.svalleyec.com"
+      },
+      "SEQUATCHIE": {
+        "name": "Sequachee Valley Electric",
+        "phone": "423-837-8605",
+        "website": "https://www.svalleyec.com"
+      },
+      "BLEDSOE": {
+        "name": "Sequachee Valley Electric",
+        "phone": "423-837-8605",
+        "website": "https://www.svalleyec.com"
+      },
+      "RHEA": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "MEIGS": {
+        "name": "Volunteer Energy Cooperative",
+        "phone": "423-334-5441",
+        "website": "https://www.vec.org"
+      },
+      "POLK": {
+        "name": "Polk County Electric Cooperative",
+        "phone": "423-338-2622",
+        "website": "https://www.polkec.org"
+      },
+      "MONROE": {
+        "name": "Fort Loudoun Electric Cooperative",
+        "phone": "423-442-3836",
+        "website": "https://www.flec.org"
+      },
+      "MCNAIRY": {
+        "name": "Pickwick Electric Cooperative",
+        "phone": "731-645-3411",
+        "website": "https://www.pickwickec.com"
+      },
+      "HARDIN": {
+        "name": "Pickwick Electric Cooperative",
+        "phone": "731-645-3411",
+        "website": "https://www.pickwickec.com"
+      },
+      "DECATUR": {
+        "name": "Meriwether Lewis Electric",
+        "phone": "931-729-3558",
+        "website": "https://www.mlec.com"
+      },
+      "HENDERSON": {
+        "name": "Southwest Tennessee Electric",
+        "phone": "731-989-2236",
+        "website": "https://www.stemc.com"
+      },
+      "CHESTER": {
+        "name": "Southwest Tennessee Electric",
+        "phone": "731-989-2236",
+        "website": "https://www.stemc.com"
+      },
+      "HARDEMAN": {
+        "name": "Southwest Tennessee Electric",
+        "phone": "731-989-2236",
+        "website": "https://www.stemc.com"
+      },
+      "FAYETTE": {
+        "name": "Southwest Tennessee Electric",
+        "phone": "731-989-2236",
+        "website": "https://www.stemc.com"
+      },
+      "TIPTON": {
+        "name": "Southwest Tennessee Electric",
+        "phone": "731-989-2236",
+        "website": "https://www.stemc.com"
+      },
+      "LAUDERDALE": {
+        "name": "Forked Deer Electric Cooperative",
+        "phone": "731-855-2222",
+        "website": "https://www.forkeddeerec.com"
+      },
+      "HAYWOOD": {
+        "name": "Forked Deer Electric Cooperative",
+        "phone": "731-855-2222",
+        "website": "https://www.forkeddeerec.com"
+      },
+      "CROCKETT": {
+        "name": "Forked Deer Electric Cooperative",
+        "phone": "731-855-2222",
+        "website": "https://www.forkeddeerec.com"
+      },
+      "GIBSON": {
+        "name": "Gibson Electric",
+        "phone": "731-855-4740",
+        "website": "https://www.gibsonelectric.com"
+      },
+      "DYER": {
+        "name": "Dyersburg Electric System",
+        "phone": "731-285-2616",
+        "website": "https://www.dyersburgelectric.com"
+      },
+      "OBION": {
+        "name": "Gibson Electric",
+        "phone": "731-855-4740",
+        "website": "https://www.gibsonelectric.com"
+      },
+      "WEAKLEY": {
+        "name": "Weakley County Municipal Electric",
+        "phone": "731-587-9511",
+        "website": "https://www.wcmes.org"
+      },
+      "HENRY": {
+        "name": "Paris Board of Public Utilities",
+        "phone": "731-642-1322",
+        "website": "https://www.paristn.gov"
+      },
+      "CARROLL": {
+        "name": "Carroll County Electric",
+        "phone": "731-986-8284",
+        "website": "https://www.carrollcountyelectric.com"
+      },
+      "BENTON": {
+        "name": "Tennessee Valley Electric Cooperative",
+        "phone": "731-584-4841",
+        "website": "https://www.tvec.com"
+      },
+      "LAKE": {
+        "name": "Reelfoot Electric Cooperative",
+        "phone": "731-885-0611",
+        "website": "https://www.reelfoot.com"
       }
     },
     "AL": {
@@ -3675,9 +5055,9 @@
         "website": "https://www.lus.org"
       },
       "TANGIPAHOA": {
-        "name": "Florida Parishes Electric",
-        "phone": "800-738-7232",
-        "website": "https://www.fpemc.com"
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
       },
       "RAPIDES": {
         "name": "Cleco",
@@ -3705,9 +5085,9 @@
         "website": "https://www.entergy.com"
       },
       "IBERIA": {
-        "name": "Cleco",
-        "phone": "800-622-6537",
-        "website": "https://www.cleco.com"
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
       },
       "LAFOURCHE": {
         "name": "Entergy Louisiana",
@@ -3720,19 +5100,239 @@
         "website": "https://www.cleco.com"
       },
       "VERMILION": {
-        "name": "SLEMCO",
-        "phone": "337-896-5384",
-        "website": "https://www.slemco.com"
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
       },
       "ST. MARTIN": {
-        "name": "SLEMCO",
-        "phone": "337-896-5384",
-        "website": "https://www.slemco.com"
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
       },
       "ACADIA": {
-        "name": "SLEMCO",
-        "phone": "337-896-5384",
-        "website": "https://www.slemco.com"
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "WEBSTER": {
+        "name": "SWEPCO",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com"
+      },
+      "ST. MARY": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "WASHINGTON": {
+        "name": "Washington-St. Tammany Electric",
+        "phone": "985-839-3562",
+        "website": "https://www.wste.coop"
+      },
+      "NATCHITOCHES": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "LINCOLN": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "ALLEN": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "BEAUREGARD": {
+        "name": "Beauregard Electric Cooperative",
+        "phone": "337-463-6221",
+        "website": "https://www.bfrec.com"
+      },
+      "VERNON": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "EVANGELINE": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "AVOYELLES": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "ST. CHARLES": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "ST. JOHN THE BAPTIST": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "ST. JAMES": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "ASSUMPTION": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "POINTE COUPEE": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "WEST BATON ROUGE": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "IBERVILLE": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "WEST FELICIANA": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "EAST FELICIANA": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "ST. HELENA": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "DE SOTO": {
+        "name": "SWEPCO",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com"
+      },
+      "RED RIVER": {
+        "name": "SWEPCO",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com"
+      },
+      "SABINE": {
+        "name": "SWEPCO",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com"
+      },
+      "BIENVILLE": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "CLAIBORNE": {
+        "name": "Claiborne Electric Cooperative",
+        "phone": "318-927-3504",
+        "website": "https://www.claiborneecc.com"
+      },
+      "UNION": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "MOREHOUSE": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "RICHLAND": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "FRANKLIN": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "MADISON": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "TENSAS": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "CONCORDIA": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "CATAHOULA": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "LA SALLE": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "GRANT": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "WINN": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com"
+      },
+      "JACKSON": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "CALDWELL": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "WEST CARROLL": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "EAST CARROLL": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "CAMERON": {
+        "name": "Jefferson Davis Electric Cooperative",
+        "phone": "337-824-2488",
+        "website": "https://www.jdec.org"
+      },
+      "JEFFERSON DAVIS": {
+        "name": "Jefferson Davis Electric Cooperative",
+        "phone": "337-824-2488",
+        "website": "https://www.jdec.org"
+      },
+      "PLAQUEMINES": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
+      },
+      "ST. BERNARD": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com"
       }
     },
     "AR": {
@@ -4094,12 +5694,12 @@
         "phone": "888-342-5766",
         "website": "https://www.pnm.com"
       },
-      "SANDOVAL": {
+      "SAN JUAN": {
         "name": "PNM",
         "phone": "888-342-5766",
         "website": "https://www.pnm.com"
       },
-      "SAN JUAN": {
+      "SANDOVAL": {
         "name": "PNM",
         "phone": "888-342-5766",
         "website": "https://www.pnm.com"
@@ -4109,17 +5709,22 @@
         "phone": "888-342-5766",
         "website": "https://www.pnm.com"
       },
-      "LEA": {
-        "name": "Xcel Energy",
-        "phone": "800-895-4999",
-        "website": "https://www.xcelenergy.com"
-      },
       "MCKINLEY": {
         "name": "PNM",
         "phone": "888-342-5766",
         "website": "https://www.pnm.com"
       },
+      "LEA": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
       "CHAVES": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
+      },
+      "EDDY": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
@@ -4129,30 +5734,115 @@
         "phone": "915-543-5711",
         "website": "https://www.epelectric.com"
       },
-      "EDDY": {
-        "name": "Xcel Energy",
-        "phone": "800-895-4999",
-        "website": "https://www.xcelenergy.com"
-      },
       "CURRY": {
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
       },
-      "RIO ARRIBA": {
-        "name": "Jemez Mountains Electric",
-        "phone": "888-755-2105",
-        "website": "https://www.jemezcoop.org"
-      },
-      "TAOS": {
-        "name": "Kit Carson Electric",
-        "phone": "800-688-5254",
-        "website": "https://www.kitcarson.com"
+      "ROOSEVELT": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com"
       },
       "CIBOLA": {
         "name": "Continental Divide Electric",
-        "phone": "800-800-2334",
+        "phone": "505-285-6656",
         "website": "https://www.cdec.coop"
+      },
+      "RIO ARRIBA": {
+        "name": "Kit Carson Electric",
+        "phone": "575-758-2258",
+        "website": "https://www.kitcarson.com"
+      },
+      "TAOS": {
+        "name": "Kit Carson Electric",
+        "phone": "575-758-2258",
+        "website": "https://www.kitcarson.com"
+      },
+      "COLFAX": {
+        "name": "Springer Electric Cooperative",
+        "phone": "575-483-2421",
+        "website": "https://www.springercoop.com"
+      },
+      "MORA": {
+        "name": "Mora-San Miguel Electric",
+        "phone": "505-425-3351",
+        "website": "https://www.morasanmiguel.coop"
+      },
+      "SAN MIGUEL": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com"
+      },
+      "GRANT": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com"
+      },
+      "LUNA": {
+        "name": "El Paso Electric",
+        "phone": "915-543-5711",
+        "website": "https://www.epelectric.com"
+      },
+      "SIERRA": {
+        "name": "Sierra Electric Cooperative",
+        "phone": "575-894-3631",
+        "website": "https://www.sfrec.coop"
+      },
+      "SOCORRO": {
+        "name": "Socorro Electric Cooperative",
+        "phone": "575-835-0560",
+        "website": "https://www.socorroelectric.com"
+      },
+      "LINCOLN": {
+        "name": "Otero County Electric",
+        "phone": "575-682-5533",
+        "website": "https://www.oterocountyelectric.com"
+      },
+      "TORRANCE": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com"
+      },
+      "GUADALUPE": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com"
+      },
+      "QUAY": {
+        "name": "Farmers Electric Cooperative",
+        "phone": "575-461-1541",
+        "website": "https://www.fecnm.org"
+      },
+      "DE BACA": {
+        "name": "Farmers Electric Cooperative",
+        "phone": "575-461-1541",
+        "website": "https://www.fecnm.org"
+      },
+      "UNION": {
+        "name": "Springer Electric Cooperative",
+        "phone": "575-483-2421",
+        "website": "https://www.springercoop.com"
+      },
+      "HARDING": {
+        "name": "Springer Electric Cooperative",
+        "phone": "575-483-2421",
+        "website": "https://www.springercoop.com"
+      },
+      "LOS ALAMOS": {
+        "name": "Los Alamos County",
+        "phone": "505-662-8333",
+        "website": "https://www.losalamosnm.us"
+      },
+      "CATRON": {
+        "name": "Continental Divide Electric",
+        "phone": "505-285-6656",
+        "website": "https://www.cdec.coop"
+      },
+      "HIDALGO": {
+        "name": "Columbus Electric Cooperative",
+        "phone": "575-546-8838",
+        "website": "https://www.columbuselectric.org"
       }
     },
     "CO": {
@@ -4947,6 +6637,41 @@
         "website": "https://www.delmarva.com"
       },
       "TALBOT": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com"
+      },
+      "PRINCE GEORGES": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com"
+      },
+      "ST. MARYS": {
+        "name": "SMECO",
+        "phone": "888-440-3311",
+        "website": "https://www.smeco.coop"
+      },
+      "GARRETT": {
+        "name": "Potomac Edison",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com"
+      },
+      "KENT": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com"
+      },
+      "QUEEN ANNES": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com"
+      },
+      "CAROLINE": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com"
+      },
+      "SOMERSET": {
         "name": "Delmarva Power",
         "phone": "800-375-7117",
         "website": "https://www.delmarva.com"

@@ -2849,6 +2849,15 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
 def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
     """Look up water utility only. Fast - typically < 1 second."""
     try:
+        # Priority 0: Special districts for states that heavily use them (TX, FL, CO)
+        # MUDs/CDDs are often the PRIMARY water provider in new developments
+        if state in ['TX', 'FL', 'CO', 'AZ', 'NV'] and has_special_district_data(state):
+            district = lookup_special_district(lat, lon, state, zip_code, service='water')
+            if district and not district.get('multiple_matches'):
+                water = format_district_for_response(district)
+                water['_source'] = 'special_district'
+                return water
+        
         # Priority 1: GIS-based lookup (EPA CWS boundaries - most authoritative)
         if GIS_LOOKUP_AVAILABLE and lat and lon:
             gis_water = lookup_water_utility_gis(lat, lon, state)

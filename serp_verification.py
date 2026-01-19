@@ -101,6 +101,7 @@ UTILITY_ALIASES = {
     'wec energy': ['wec energy', 'we energies', 'wisconsin energy', 'wec energy group'],
     'virginia natural gas': ['virginia natural gas', 'columbia gas of virginia', 'vng'],
     'psnc': ['psnc', 'psnc energy', 'piedmont natural gas nc'],
+    'connecticut light power': ['connecticut light & power', 'connecticut light and power', 'cl&p', 'eversource connecticut'],
 }
 
 

@@ -4,16 +4,16 @@
     "passed": 55,
     "failed": 13,
     "accuracy": 80.9,
-    "total_time_ms": 15988,
-    "avg_time_ms": 235
+    "total_time_ms": 14605,
+    "avg_time_ms": 215
   },
   "gas": {
     "passed": 56,
     "failed": 8,
     "skipped": 4,
     "accuracy": 87.5,
-    "total_time_ms": 11218,
-    "avg_time_ms": 165
+    "total_time_ms": 13348,
+    "avg_time_ms": 196
   },
   "results": [
     {
@@ -30,11 +30,11 @@
         "actual": "Texas Gas Service",
         "passed": true
       },
-      "electric_timing_ms": 659,
-      "gas_timing_ms": 177,
+      "electric_timing_ms": 601,
+      "gas_timing_ms": 1182,
       "electric_sources": [
-        "eia_861",
         "county_default",
+        "eia_861",
         "municipal",
         "state_gis"
       ],
@@ -58,8 +58,8 @@
         "actual": "CenterPoint Energy",
         "passed": true
       },
-      "electric_timing_ms": 312,
-      "gas_timing_ms": 142,
+      "electric_timing_ms": 182,
+      "gas_timing_ms": 165,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -87,8 +87,8 @@
         "actual": "Atmos Energy",
         "passed": true
       },
-      "electric_timing_ms": 301,
-      "gas_timing_ms": 152,
+      "electric_timing_ms": 184,
+      "gas_timing_ms": 158,
       "electric_sources": [
         "electric_coop",
         "eia_861",
@@ -117,8 +117,8 @@
         "actual": "CPS Energy",
         "passed": true
       },
-      "electric_timing_ms": 420,
-      "gas_timing_ms": 164,
+      "electric_timing_ms": 356,
+      "gas_timing_ms": 283,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -144,8 +144,8 @@
         "actual": "Texas Gas Service",
         "passed": true
       },
-      "electric_timing_ms": 560,
-      "gas_timing_ms": 169,
+      "electric_timing_ms": 551,
+      "gas_timing_ms": 180,
       "electric_sources": [
         "county_default",
         "hifld",
@@ -170,8 +170,8 @@
         "actual": "Florida City Gas",
         "passed": false
       },
-      "electric_timing_ms": 249,
-      "gas_timing_ms": 173,
+      "electric_timing_ms": 185,
+      "gas_timing_ms": 176,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -194,8 +194,8 @@
         "actual": "TECO Peoples Gas",
         "passed": true
       },
-      "electric_timing_ms": 180,
-      "gas_timing_ms": 171,
+      "electric_timing_ms": 182,
+      "gas_timing_ms": 229,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -219,7 +219,7 @@
         "actual": "TECO Peoples Gas",
         "passed": false
       },
-      "electric_timing_ms": 179,
+      "electric_timing_ms": 189,
       "gas_timing_ms": 165,
       "electric_sources": [
         "municipal",
@@ -246,8 +246,8 @@
         "actual": "TECO Peoples Gas",
         "passed": false
       },
-      "electric_timing_ms": 181,
-      "gas_timing_ms": 170,
+      "electric_timing_ms": 190,
+      "gas_timing_ms": 148,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -273,8 +273,8 @@
         "actual": "Atlanta Gas Light",
         "passed": true
       },
-      "electric_timing_ms": 192,
-      "gas_timing_ms": 165,
+      "electric_timing_ms": 136,
+      "gas_timing_ms": 173,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -300,8 +300,8 @@
         "actual": "Piedmont Natural Gas",
         "passed": true
       },
-      "electric_timing_ms": 358,
-      "gas_timing_ms": 161,
+      "electric_timing_ms": 369,
+      "gas_timing_ms": 147,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -322,8 +322,8 @@
         "actual": "OR ELECTRIC",
         "passed": false
       },
-      "electric_timing_ms": 297,
-      "gas_timing_ms": 173,
+      "electric_timing_ms": 349,
+      "gas_timing_ms": 156,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -346,8 +346,8 @@
         "actual": "Piedmont Natural Gas",
         "passed": true
       },
-      "electric_timing_ms": 180,
-      "gas_timing_ms": 151,
+      "electric_timing_ms": 139,
+      "gas_timing_ms": 156,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -373,8 +373,8 @@
         "actual": "Memphis Light, Gas and Water (MLGW)",
         "passed": true
       },
-      "electric_timing_ms": 164,
-      "gas_timing_ms": 188,
+      "electric_timing_ms": 198,
+      "gas_timing_ms": 194,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -398,8 +398,8 @@
         "actual": "Southern California Gas Company",
         "passed": true
       },
-      "electric_timing_ms": 346,
-      "gas_timing_ms": 145,
+      "electric_timing_ms": 287,
+      "gas_timing_ms": 163,
       "electric_sources": [
         "municipal",
         "eia_861"
@@ -424,8 +424,8 @@
         "actual": "Pacific Gas and Electric",
         "passed": true
       },
-      "electric_timing_ms": 751,
-      "gas_timing_ms": 169,
+      "electric_timing_ms": 384,
+      "gas_timing_ms": 181,
       "electric_sources": [
         "county_default",
         "hifld",
@@ -451,8 +451,8 @@
         "actual": "San Diego Gas & Electric",
         "passed": true
       },
-      "electric_timing_ms": 192,
-      "gas_timing_ms": 142,
+      "electric_timing_ms": 271,
+      "gas_timing_ms": 196,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -479,8 +479,8 @@
         "actual": "Pacific Gas and Electric",
         "passed": true
       },
-      "electric_timing_ms": 402,
-      "gas_timing_ms": 178,
+      "electric_timing_ms": 260,
+      "gas_timing_ms": 179,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -507,8 +507,8 @@
         "actual": "Con Edison",
         "passed": true
       },
-      "electric_timing_ms": 175,
-      "gas_timing_ms": 149,
+      "electric_timing_ms": 141,
+      "gas_timing_ms": 152,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -533,8 +533,8 @@
         "actual": "CERTIFIED  GAS",
         "passed": false
       },
-      "electric_timing_ms": 167,
-      "gas_timing_ms": 195,
+      "electric_timing_ms": 147,
+      "gas_timing_ms": 168,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -558,8 +558,8 @@
         "actual": "Peoples Gas",
         "passed": true
       },
-      "electric_timing_ms": 168,
-      "gas_timing_ms": 175,
+      "electric_timing_ms": 137,
+      "gas_timing_ms": 173,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -584,8 +584,8 @@
         "actual": "PECO",
         "passed": false
       },
-      "electric_timing_ms": 157,
-      "gas_timing_ms": 150,
+      "electric_timing_ms": 143,
+      "gas_timing_ms": 152,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -609,7 +609,7 @@
         "actual": "Peoples Gas",
         "passed": true
       },
-      "electric_timing_ms": 161,
+      "electric_timing_ms": 155,
       "gas_timing_ms": 168,
       "electric_sources": [
         "eia_861",
@@ -634,8 +634,8 @@
         "actual": "Columbia Gas of Ohio",
         "passed": true
       },
-      "electric_timing_ms": 152,
-      "gas_timing_ms": 133,
+      "electric_timing_ms": 167,
+      "gas_timing_ms": 166,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -660,8 +660,8 @@
         "actual": "Dominion Energy Ohio",
         "passed": true
       },
-      "electric_timing_ms": 146,
-      "gas_timing_ms": 147,
+      "electric_timing_ms": 147,
+      "gas_timing_ms": 161,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -685,8 +685,8 @@
         "actual": "DTE Energy",
         "passed": true
       },
-      "electric_timing_ms": 173,
-      "gas_timing_ms": 144,
+      "electric_timing_ms": 225,
+      "gas_timing_ms": 143,
       "electric_sources": [
         "county_default"
       ],
@@ -709,8 +709,8 @@
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "electric_timing_ms": 147,
-      "gas_timing_ms": 157,
+      "electric_timing_ms": 165,
+      "gas_timing_ms": 177,
       "electric_sources": [
         "electric_coop",
         "eia_861"
@@ -734,8 +734,8 @@
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "electric_timing_ms": 158,
-      "gas_timing_ms": 157,
+      "electric_timing_ms": 152,
+      "gas_timing_ms": 147,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -759,8 +759,8 @@
         "actual": "Xcel Energy",
         "passed": true
       },
-      "electric_timing_ms": 928,
-      "gas_timing_ms": 153,
+      "electric_timing_ms": 178,
+      "gas_timing_ms": 412,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -784,8 +784,8 @@
         "actual": "Puget Sound Energy",
         "passed": true
       },
-      "electric_timing_ms": 233,
-      "gas_timing_ms": 155,
+      "electric_timing_ms": 275,
+      "gas_timing_ms": 396,
       "electric_sources": [
         "municipal",
         "eia_861",
@@ -811,13 +811,13 @@
         "actual": "NW Natural",
         "passed": true
       },
-      "electric_timing_ms": 182,
-      "gas_timing_ms": 156,
+      "electric_timing_ms": 447,
+      "gas_timing_ms": 173,
       "electric_sources": [
         "eia_861",
         "county_default",
-        "hifld",
-        "state_gis"
+        "state_gis",
+        "hifld"
       ],
       "gas_sources": [
         "zip_mapping_gas",
@@ -838,8 +838,8 @@
         "actual": "Southwest Gas",
         "passed": true
       },
-      "electric_timing_ms": 204,
-      "gas_timing_ms": 168,
+      "electric_timing_ms": 313,
+      "gas_timing_ms": 146,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -863,8 +863,8 @@
         "actual": "National Grid",
         "passed": true
       },
-      "electric_timing_ms": 190,
-      "gas_timing_ms": 163,
+      "electric_timing_ms": 178,
+      "gas_timing_ms": 276,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -888,8 +888,8 @@
         "actual": "BGE",
         "passed": true
       },
-      "electric_timing_ms": 163,
-      "gas_timing_ms": 167,
+      "electric_timing_ms": 187,
+      "gas_timing_ms": 164,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -913,8 +913,8 @@
         "actual": "Washington Gas",
         "passed": true
       },
-      "electric_timing_ms": 252,
-      "gas_timing_ms": 160,
+      "electric_timing_ms": 145,
+      "gas_timing_ms": 177,
       "electric_sources": [
         "state_gis",
         "eia_861",
@@ -940,8 +940,8 @@
         "actual": "Columbia Gas of Virginia",
         "passed": true
       },
-      "electric_timing_ms": 271,
-      "gas_timing_ms": 167,
+      "electric_timing_ms": 266,
+      "gas_timing_ms": 143,
       "electric_sources": [
         "electric_coop",
         "county_default",
@@ -965,8 +965,8 @@
         "actual": "Dominion Energy SC",
         "passed": true
       },
-      "electric_timing_ms": 544,
-      "gas_timing_ms": 175,
+      "electric_timing_ms": 440,
+      "gas_timing_ms": 160,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -991,8 +991,8 @@
         "actual": "Entergy",
         "passed": true
       },
-      "electric_timing_ms": 157,
-      "gas_timing_ms": 240,
+      "electric_timing_ms": 221,
+      "gas_timing_ms": 173,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1017,8 +1017,8 @@
         "actual": "Spire Alabama",
         "passed": true
       },
-      "electric_timing_ms": 147,
-      "gas_timing_ms": 143,
+      "electric_timing_ms": 138,
+      "gas_timing_ms": 156,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1040,8 +1040,8 @@
         "actual": "ATMOS ENERGY CORPORATION",
         "passed": true
       },
-      "electric_timing_ms": 276,
-      "gas_timing_ms": 162,
+      "electric_timing_ms": 308,
+      "gas_timing_ms": 148,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1066,13 +1066,13 @@
         "actual": "CenterPoint Energy",
         "passed": true
       },
-      "electric_timing_ms": 329,
-      "gas_timing_ms": 154,
+      "electric_timing_ms": 184,
+      "gas_timing_ms": 291,
       "electric_sources": [
         "eia_861",
         "county_default",
-        "state_gis",
-        "hifld"
+        "hifld",
+        "state_gis"
       ],
       "gas_sources": [
         "zip_mapping_gas",
@@ -1093,8 +1093,8 @@
         "actual": "Oklahoma Natural Gas",
         "passed": true
       },
-      "electric_timing_ms": 164,
-      "gas_timing_ms": 153,
+      "electric_timing_ms": 149,
+      "gas_timing_ms": 154,
       "electric_sources": [
         "electric_coop"
       ],
@@ -1117,8 +1117,8 @@
         "actual": "Kansas Gas Service",
         "passed": true
       },
-      "electric_timing_ms": 173,
-      "gas_timing_ms": 166,
+      "electric_timing_ms": 170,
+      "gas_timing_ms": 150,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1142,8 +1142,8 @@
         "actual": "Spire",
         "passed": true
       },
-      "electric_timing_ms": 137,
-      "gas_timing_ms": 160,
+      "electric_timing_ms": 161,
+      "gas_timing_ms": 182,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -1164,8 +1164,8 @@
         "actual": "Spire",
         "passed": true
       },
-      "electric_timing_ms": 161,
-      "gas_timing_ms": 171,
+      "electric_timing_ms": 143,
+      "gas_timing_ms": 184,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1189,8 +1189,8 @@
         "actual": "CenterPoint Energy",
         "passed": true
       },
-      "electric_timing_ms": 140,
-      "gas_timing_ms": 146,
+      "electric_timing_ms": 177,
+      "gas_timing_ms": 174,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1215,8 +1215,8 @@
         "actual": "We Energies",
         "passed": true
       },
-      "electric_timing_ms": 178,
-      "gas_timing_ms": 152,
+      "electric_timing_ms": 168,
+      "gas_timing_ms": 164,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1240,8 +1240,8 @@
         "actual": "Citizens Gas",
         "passed": false
       },
-      "electric_timing_ms": 159,
-      "gas_timing_ms": 166,
+      "electric_timing_ms": 151,
+      "gas_timing_ms": 164,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -1265,8 +1265,8 @@
         "actual": "LG&E",
         "passed": true
       },
-      "electric_timing_ms": 192,
-      "gas_timing_ms": 152,
+      "electric_timing_ms": 231,
+      "gas_timing_ms": 179,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -1289,8 +1289,8 @@
         "actual": "PSE&G",
         "passed": true
       },
-      "electric_timing_ms": 167,
-      "gas_timing_ms": 147,
+      "electric_timing_ms": 296,
+      "gas_timing_ms": 203,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -1313,8 +1313,8 @@
         "actual": "Connecticut Natural Gas",
         "passed": false
       },
-      "electric_timing_ms": 145,
-      "gas_timing_ms": 176,
+      "electric_timing_ms": 143,
+      "gas_timing_ms": 163,
       "electric_sources": [
         "eia_861"
       ],
@@ -1337,8 +1337,8 @@
         "actual": "National Grid",
         "passed": true
       },
-      "electric_timing_ms": 160,
-      "gas_timing_ms": 143,
+      "electric_timing_ms": 182,
+      "gas_timing_ms": 203,
       "electric_sources": [
         "state_gis",
         "county_default"
@@ -1361,8 +1361,8 @@
         "actual": "Delmarva Power",
         "passed": true
       },
-      "electric_timing_ms": 283,
-      "gas_timing_ms": 159,
+      "electric_timing_ms": 221,
+      "gas_timing_ms": 197,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1387,8 +1387,8 @@
         "actual": "Liberty Utilities",
         "passed": true
       },
-      "electric_timing_ms": 165,
-      "gas_timing_ms": 245,
+      "electric_timing_ms": 164,
+      "gas_timing_ms": 287,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -1412,8 +1412,8 @@
         "actual": "Vermont Gas Systems",
         "passed": true
       },
-      "electric_timing_ms": 139,
-      "gas_timing_ms": 168,
+      "electric_timing_ms": 135,
+      "gas_timing_ms": 178,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1438,8 +1438,8 @@
         "actual": "Summit Natural Gas",
         "passed": false
       },
-      "electric_timing_ms": 149,
-      "gas_timing_ms": 151,
+      "electric_timing_ms": 147,
+      "gas_timing_ms": 257,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1463,8 +1463,8 @@
         "actual": "Mountaineer Gas",
         "passed": true
       },
-      "electric_timing_ms": 190,
-      "gas_timing_ms": 156,
+      "electric_timing_ms": 181,
+      "gas_timing_ms": 176,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1489,8 +1489,8 @@
         "actual": "New Mexico Gas Company",
         "passed": true
       },
-      "electric_timing_ms": 146,
-      "gas_timing_ms": 158,
+      "electric_timing_ms": 170,
+      "gas_timing_ms": 157,
       "electric_sources": [
         "eia_861",
         "hifld"
@@ -1514,8 +1514,8 @@
         "actual": "Dominion Energy Utah",
         "passed": true
       },
-      "electric_timing_ms": 202,
-      "gas_timing_ms": 139,
+      "electric_timing_ms": 182,
+      "gas_timing_ms": 152,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1541,8 +1541,8 @@
         "actual": "Intermountain Gas",
         "passed": true
       },
-      "electric_timing_ms": 145,
-      "gas_timing_ms": 145,
+      "electric_timing_ms": 153,
+      "gas_timing_ms": 140,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1567,8 +1567,8 @@
         "actual": "Montana-Dakota Utilities",
         "passed": false
       },
-      "electric_timing_ms": 206,
-      "gas_timing_ms": 292,
+      "electric_timing_ms": 151,
+      "gas_timing_ms": 186,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -1592,8 +1592,8 @@
         "actual": "Black Hills Energy",
         "passed": true
       },
-      "electric_timing_ms": 216,
-      "gas_timing_ms": 165,
+      "electric_timing_ms": 182,
+      "gas_timing_ms": 156,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1618,8 +1618,8 @@
         "actual": "Xcel Energy",
         "passed": true
       },
-      "electric_timing_ms": 163,
-      "gas_timing_ms": 157,
+      "electric_timing_ms": 137,
+      "gas_timing_ms": 155,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -1643,8 +1643,8 @@
         "actual": "NorthWestern Energy",
         "passed": false
       },
-      "electric_timing_ms": 138,
-      "gas_timing_ms": 140,
+      "electric_timing_ms": 156,
+      "gas_timing_ms": 148,
       "electric_sources": [
         "eia_861",
         "county_default"
@@ -1667,8 +1667,8 @@
         "actual": "NEBRASKA UTILITIES",
         "passed": false
       },
-      "electric_timing_ms": 211,
-      "gas_timing_ms": 181,
+      "electric_timing_ms": 266,
+      "gas_timing_ms": 142,
       "electric_sources": [
         "municipal",
         "county_default",
@@ -1693,8 +1693,8 @@
         "actual": "MidAmerican Energy",
         "passed": true
       },
-      "electric_timing_ms": 173,
-      "gas_timing_ms": 185,
+      "electric_timing_ms": 195,
+      "gas_timing_ms": 157,
       "electric_sources": [
         "eia_861",
         "county_default",
@@ -1719,8 +1719,8 @@
         "actual": "Hawaii Gas",
         "passed": true
       },
-      "electric_timing_ms": 132,
-      "gas_timing_ms": 182,
+      "electric_timing_ms": 170,
+      "gas_timing_ms": 157,
       "electric_sources": [
         "state_gis",
         "eia_861",
@@ -1746,8 +1746,8 @@
         "actual": "ENSTAR Natural Gas",
         "passed": true
       },
-      "electric_timing_ms": 151,
-      "gas_timing_ms": 170,
+      "electric_timing_ms": 152,
+      "gas_timing_ms": 130,
       "electric_sources": [
         "county_default",
         "hifld"

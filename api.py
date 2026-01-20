@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-20-v20', 'changes': 'geocoding_zip_validation'})
+    return jsonify({'version': '2026-01-20-v21', 'changes': 'texas_gas_complete'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")

@@ -2663,6 +2663,187 @@
           "76266"
         ],
         "note": "CoServ provides both electric and gas in Denton County - Little Elm, Oak Point, Frisco, Flower Mound, Highland Village, Corinth, Lake Dallas, Hickory Creek, Argyle, Aubrey, Pilot Point, Sanger, Krum"
+      },
+      "Plano": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Arlington": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Irving": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Garland": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Frisco": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "McKinney": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Carrollton": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Denton": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Lewisville": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Richardson": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Midland": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Odessa": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Lubbock": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Amarillo": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Abilene": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Waco": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Wichita Falls": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Pasadena": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Pearland": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Sugar Land": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "League City": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "The Woodlands": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Conroe": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Baytown": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Missouri City": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Beaumont": {
+        "name": "CenterPoint Energy",
+        "phone": "800-752-8036",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "San Marcos": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "New Braunfels": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "Kyle": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "Buda": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "Leander": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "San Antonio": {
+        "name": "CPS Energy",
+        "phone": "210-353-2222",
+        "website": "https://www.cpsenergy.com/",
+        "note": "CPS Energy provides both electric and gas"
+      },
+      "Corpus Christi": {
+        "name": "Southern Union Gas",
+        "phone": "800-959-5325",
+        "website": null
+      },
+      "Laredo": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "McAllen": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
+      },
+      "Brownsville": {
+        "name": "Texas Gas Service",
+        "phone": "800-700-2443",
+        "website": "https://www.texasgasservice.com/"
       }
     },
     "GA": {

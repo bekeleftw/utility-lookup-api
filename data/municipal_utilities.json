@@ -4179,41 +4179,166 @@
       }
     },
     "AR": {
-      "Entergy Arkansas LLC": {
-        "name": "Entergy Arkansas LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (580 ZIP codes)"
+      "Little Rock": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
       },
-      "Oklahoma Gas & Electric Co": {
-        "name": "Oklahoma Gas & Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (50 ZIP codes)"
+      "North Little Rock": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
       },
-      "Arkansas Valley Electric Cooperative": {
-        "name": "Arkansas Valley Electric Cooperative",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (38 ZIP codes)"
+      "Fort Smith": {
+        "name": "OG&E (Oklahoma Gas & Electric)",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
       },
-      "Craighead Electric Cooperative": {
-        "name": "Craighead Electric Cooperative",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (62 ZIP codes)"
+      "Fayetteville": {
+        "name": "SWEPCO (Southwestern Electric Power)",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
       },
-      "Southwestern Electric Power Co": {
-        "name": "Southwestern Electric Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (99 ZIP codes)"
+      "Springdale": {
+        "name": "SWEPCO (Southwestern Electric Power)",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
       },
-      "Empire District Electric Co": {
-        "name": "Empire District Electric Co",
-        "phone": null,
+      "Jonesboro": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Rogers": {
+        "name": "SWEPCO (Southwestern Electric Power)",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
+      },
+      "Conway": {
+        "name": "Conway Corporation",
+        "phone": "501-450-6000",
+        "website": "https://www.conwaycorp.com/",
+        "note": "Municipal"
+      },
+      "Bentonville": {
+        "name": "SWEPCO (Southwestern Electric Power)",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
+      },
+      "Pine Bluff": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Hot Springs": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Texarkana": {
+        "name": "SWEPCO (Southwestern Electric Power)",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
+      },
+      "Benton": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Sherwood": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Jacksonville": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Russellville": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Bella Vista": {
+        "name": "SWEPCO (Southwestern Electric Power)",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
+      },
+      "West Memphis": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Paragould": {
+        "name": "Paragould Light Water & Cable",
+        "phone": "870-236-8558",
+        "website": "https://www.paragouldutilities.com/",
+        "note": "Municipal"
+      },
+      "Cabot": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Searcy": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Van Buren": {
+        "name": "OG&E (Oklahoma Gas & Electric)",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "El Dorado": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Siloam Springs": {
+        "name": "Siloam Springs Electric",
+        "phone": "479-524-4118",
+        "website": "https://www.siloamsprings.com/",
+        "note": "Municipal"
+      },
+      "Bryant": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Maumelle": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Harrison": {
+        "name": "Carroll Electric Cooperative",
+        "phone": "870-423-2147",
+        "website": "https://www.carrollecc.com/",
+        "note": "Co-op"
+      },
+      "Mountain Home": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Blytheville": {
+        "name": "Entergy Arkansas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-arkansas.com/"
+      },
+      "Osceola": {
+        "name": "Osceola Municipal Light & Water",
+        "phone": "870-563-2431",
         "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Hope": {
+        "name": "Hope Water & Light",
+        "phone": "870-777-6181",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "MD": {
@@ -6453,29 +6578,80 @@
       }
     },
     "AR": {
-      "Statewide": {
+      "Little Rock": {
         "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for AR"
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
       },
-      "CenterPoint_Energy": {
+      "North Little Rock": {
         "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in AR"
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
       },
-      "Black_Hills_Energy": {
+      "Fort Smith": {
         "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in AR"
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Oklahoma_Natural_Gas": {
-        "name": "Oklahoma Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in AR"
+      "Fayetteville": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Springdale": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Jonesboro": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Rogers": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Conway": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Bentonville": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Pine Bluff": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Hot Springs": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Texarkana": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Benton": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Russellville": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "El Dorado": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
       }
     },
     "CO": {

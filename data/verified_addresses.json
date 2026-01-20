@@ -107,6 +107,14 @@
   },
   "zip_overrides": {
     "75068": {
+      "electric": {
+        "name": "CoServ Electric",
+        "phone": "940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Little Elm / Oak Point - Denton County",
+        "verified_date": "2026-01-20",
+        "verified_by": "tenant_feedback"
+      },
       "gas": {
         "name": "CoServ Gas",
         "phone": "1-940-321-7800",

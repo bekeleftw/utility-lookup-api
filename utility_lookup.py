@@ -27,8 +27,8 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-# Import geocoding - use the Census geocoder with geography info
-from utility_lookup_v1 import geocode_with_census as geocode_address
+# Import geocoding - use the full geocoding with fallbacks (Census -> Google -> Nominatim)
+from utility_lookup_v1 import geocode_address
 
 # Re-export functions from v1 that api.py needs for backward compatibility
 from utility_lookup_v1 import (
@@ -211,6 +211,17 @@ def lookup_utilities_by_address(
             "_version": "v2"
         }
     
+    # Extract ZIP code from geocode result or original address
+    import re
+    zip_code = geo.get('zip') or geo.get('zip_code')
+    if not zip_code:
+        # Try to extract from matched_address or original address
+        for addr_str in [geo.get('matched_address', ''), address]:
+            zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\b', addr_str)
+            if zip_match:
+                zip_code = zip_match.group(1)
+                break
+    
     # Step 2: Create shared context
     base_context = {
         'lat': geo.get('lat'),
@@ -219,7 +230,7 @@ def lookup_utilities_by_address(
         'city': geo.get('city'),
         'county': geo.get('county'),
         'state': geo.get('state'),
-        'zip_code': geo.get('zip') or geo.get('zip_code')
+        'zip_code': zip_code
     }
     
     # Step 3: Query each utility type via pipeline

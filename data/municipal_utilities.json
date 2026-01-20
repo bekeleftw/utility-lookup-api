@@ -1385,6 +1385,22 @@
         "name": "City of Moore Haven Electric",
         "phone": "863-946-0711",
         "website": null
+      },
+      "Fort Meade": {
+        "name": "Fort Meade Electric",
+        "phone": "863-285-1100",
+        "website": null
+      },
+      "Lake Worth Beach": {
+        "name": "Lake Worth Beach Electric Utility",
+        "phone": "561-586-1730",
+        "website": "https://www.lakeworthbeachfl.gov/"
+      },
+      "Jacksonville Beach": {
+        "name": "Beaches Energy Services",
+        "phone": "904-247-6241",
+        "website": "https://www.beachesenergy.com/",
+        "note": "Serves Jacksonville Beach, Neptune Beach, Atlantic Beach"
       }
     },
     "TN": {
@@ -3330,6 +3346,147 @@
         "name": "TECO Peoples Gas",
         "phone": "877-832-6747",
         "website": "https://www.peoplesgas.com/"
+      },
+      "Boca Raton": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Delray Beach": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Boynton Beach": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Palm Beach Gardens": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Jupiter": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Port St. Lucie": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Cape Coral": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Kissimmee": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Sanford": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Deltona": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Palm Bay": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Titusville": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Cocoa": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Winter Haven": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Bradenton": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Venice": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "North Port": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Punta Gorda": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Panama City": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Fort Walton Beach": {
+        "name": "Okaloosa Gas District",
+        "phone": "850-729-4700",
+        "website": "https://www.prior-lake.mn.us/",
+        "note": "Local gas district"
+      },
+      "Coral Springs": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Pembroke Pines": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Hollywood": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Miramar": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Hialeah": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Sunrise": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Plantation": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Pompano Beach": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
       }
     }
   },

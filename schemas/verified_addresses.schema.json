@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "User-Verified Utility Corrections",
+  "description": "Ground truth from actual tenants/residents - highest priority source",
+  "type": "object",
+  "properties": {
+    "_metadata": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "last_updated": { "type": "string", "format": "date" },
+        "version": { "type": "string" }
+      }
+    },
+    "addresses": {
+      "type": "object",
+      "description": "Exact address matches (normalized to uppercase)",
+      "additionalProperties": {
+        "$ref": "#/definitions/addressCorrection"
+      }
+    },
+    "zip_overrides": {
+      "type": "object",
+      "description": "ZIP-level overrides for entire ZIP codes",
+      "additionalProperties": {
+        "$ref": "#/definitions/zipOverride"
+      }
+    },
+    "streets": {
+      "type": "object",
+      "description": "Street-level corrections (STREET|CITY|STATE|ZIP format)",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "$ref": "#/definitions/streetEntry" }
+      }
+    }
+  },
+  "definitions": {
+    "addressCorrection": {
+      "type": "object",
+      "properties": {
+        "electric": { "type": "string" },
+        "gas": { "type": "string" },
+        "water": { "type": "string" },
+        "source": { "type": "string" },
+        "verified_date": { "type": "string", "format": "date" },
+        "verified_by": { "enum": ["user_report", "tenant", "resident", "manual_check", "test"] },
+        "confidence": { "type": "integer", "minimum": 1, "maximum": 100 },
+        "notes": { "type": "string" },
+        "parsed": {
+          "type": "object",
+          "properties": {
+            "number": { "type": "string" },
+            "street": { "type": "string" },
+            "city": { "type": "string" },
+            "state": { "type": "string" },
+            "zip": { "type": "string" },
+            "original": { "type": "string" }
+          }
+        }
+      }
+    },
+    "zipOverride": {
+      "type": "object",
+      "properties": {
+        "electric": { "$ref": "#/definitions/utilityInfo" },
+        "gas": { "$ref": "#/definitions/utilityInfo" },
+        "water": { "$ref": "#/definitions/utilityInfo" }
+      }
+    },
+    "utilityInfo": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "phone": { "type": "string" },
+        "website": { "type": "string", "format": "uri" },
+        "verified_date": { "type": "string", "format": "date" },
+        "verified_by": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "streetEntry": {
+      "type": "object",
+      "properties": {
+        "number": { "type": "string" },
+        "electric": { "type": "string" },
+        "gas": { "type": "string" },
+        "water": { "type": "string" }
+      }
+    }
+  }
+}

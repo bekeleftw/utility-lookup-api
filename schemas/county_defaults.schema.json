@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "County-Level Default Utilities",
+  "description": "Fallback utilities when point-in-polygon lookup fails",
+  "type": "object",
+  "properties": {
+    "_metadata": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "last_updated": { "type": "string", "format": "date" },
+        "source": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "electric": { "$ref": "#/definitions/stateCountyMap" },
+    "gas": { "$ref": "#/definitions/stateCountyMap" },
+    "water": { "$ref": "#/definitions/stateCountyMap" }
+  },
+  "definitions": {
+    "stateCountyMap": {
+      "type": "object",
+      "description": "Map of state codes to county utilities",
+      "additionalProperties": {
+        "type": "object",
+        "description": "State code",
+        "additionalProperties": {
+          "$ref": "#/definitions/utilityEntry"
+        }
+      }
+    },
+    "utilityEntry": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "phone": { "type": "string" },
+        "website": { "type": "string", "format": "uri" },
+        "confidence": { "enum": ["low", "medium", "high"] },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

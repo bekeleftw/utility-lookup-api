@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Texas Territory Mappings",
+  "description": "Texas-specific utility territory data (TDUs, gas LDCs, ZIP mappings)",
+  "type": "object",
+  "properties": {
+    "_metadata": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "last_updated": { "type": "string", "format": "date" },
+        "source": { "type": "string" },
+        "migrated_from": { "type": "string" }
+      }
+    },
+    "electric": {
+      "type": "object",
+      "properties": {
+        "tdus": {
+          "type": "object",
+          "description": "Texas TDU (Transmission/Distribution Utility) definitions",
+          "additionalProperties": { "$ref": "#/definitions/tduEntry" }
+        },
+        "zip_to_tdu": {
+          "type": "object",
+          "description": "3-digit ZIP prefix to TDU key mapping",
+          "additionalProperties": { "type": "string" }
+        },
+        "municipal_cities": {
+          "type": "object",
+          "description": "Cities with municipal electric utilities (not deregulated)",
+          "additionalProperties": { "type": "string" }
+        },
+        "coops": {
+          "type": "array",
+          "description": "Electric cooperatives in Texas",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "gas": {
+      "type": "object",
+      "properties": {
+        "ldcs": {
+          "type": "object",
+          "description": "Gas LDC (Local Distribution Company) definitions",
+          "additionalProperties": { "$ref": "#/definitions/ldcEntry" }
+        },
+        "zip_to_ldc": {
+          "type": "object",
+          "description": "3-digit ZIP prefix to LDC key mapping",
+          "additionalProperties": { "type": "string" }
+        },
+        "zip_overrides": {
+          "type": "object",
+          "description": "5-digit ZIP overrides where prefix mapping is wrong",
+          "additionalProperties": { "type": "string" }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "tduEntry": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "id": { "type": "string" },
+        "phone": { "type": "string" },
+        "website": { "type": "string", "format": "uri" },
+        "service_area": { "type": "string" }
+      }
+    },
+    "ldcEntry": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "website": { "type": "string", "format": "uri" },
+        "service_area": { "type": "string" }
+      }
+    }
+  }
+}

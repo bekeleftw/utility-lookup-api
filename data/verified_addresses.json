@@ -104,5 +104,142 @@
         "water": "Austin Water"
       }
     ]
+  },
+  "zip_overrides": {
+    "75068": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Little Elm - tenant verified",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75022": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Flower Mound",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75028": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Flower Mound",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75034": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Frisco (partial)",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75056": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "The Colony",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75057": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Lewisville",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75067": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Lewisville",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "75077": {
+      "gas": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "note": "Highland Village",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "78640": {
+      "gas": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": null,
+        "note": "Kyle - user verified",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "78610": {
+      "gas": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": null,
+        "note": "Buda",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "78666": {
+      "gas": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": null,
+        "note": "San Marcos",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "78676": {
+      "gas": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": null,
+        "note": "Wimberley",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    },
+    "78620": {
+      "gas": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": null,
+        "note": "Dripping Springs",
+        "verified_date": "2026-01-20",
+        "verified_by": "migration"
+      }
+    }
+  },
+  "_metadata": {
+    "description": "User-verified utility corrections - highest priority source",
+    "last_updated": "2026-01-20",
+    "version": "2.0"
   }
 }

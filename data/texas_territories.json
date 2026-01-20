@@ -1,0 +1,208 @@
+{
+  "_metadata": {
+    "description": "Texas utility territory mappings - TDUs, gas LDCs, ZIP mappings",
+    "last_updated": "2026-01-20",
+    "source": "Migrated from state_utility_verification.py hardcoded dicts",
+    "migrated_from": "state_utility_verification.py lines 139-743"
+  },
+  "electric": {
+    "tdus": {
+      "ONCOR": {
+        "name": "Oncor Electric Delivery",
+        "id": "oncor",
+        "phone": "1-888-313-4747",
+        "website": "https://www.oncor.com",
+        "service_area": "Dallas/Fort Worth metroplex, North and West Texas"
+      },
+      "CENTERPOINT": {
+        "name": "CenterPoint Energy",
+        "id": "centerpoint",
+        "phone": "1-800-332-7143",
+        "website": "https://www.centerpointenergy.com",
+        "service_area": "Houston metropolitan area"
+      },
+      "AEP_NORTH": {
+        "name": "AEP Texas North",
+        "id": "aep_north",
+        "phone": "1-866-223-8508",
+        "website": "https://www.aeptexas.com",
+        "service_area": "Abilene, Lubbock area (north)"
+      },
+      "AEP_CENTRAL": {
+        "name": "AEP Texas Central",
+        "id": "aep_central",
+        "phone": "1-877-373-4858",
+        "website": "https://www.aeptexas.com",
+        "service_area": "Corpus Christi, South Texas, Rio Grande Valley"
+      },
+      "TNMP": {
+        "name": "Texas-New Mexico Power (TNMP)",
+        "id": "tnmp",
+        "phone": "1-888-866-7456",
+        "website": "https://www.tnmp.com",
+        "service_area": "Various areas across Texas"
+      }
+    },
+    "zip_to_tdu": {
+      "750": "ONCOR",
+      "751": "ONCOR",
+      "752": "ONCOR",
+      "753": "ONCOR",
+      "754": "ONCOR",
+      "755": "ONCOR",
+      "756": "ONCOR",
+      "757": "ONCOR",
+      "758": "ONCOR",
+      "759": "ONCOR",
+      "760": "ONCOR",
+      "761": "ONCOR",
+      "762": "ONCOR",
+      "763": "ONCOR",
+      "764": "ONCOR",
+      "765": "ONCOR",
+      "766": "ONCOR",
+      "767": "ONCOR",
+      "768": "ONCOR",
+      "769": "ONCOR",
+      "770": "CENTERPOINT",
+      "771": "CENTERPOINT",
+      "772": "CENTERPOINT",
+      "773": "CENTERPOINT",
+      "774": "CENTERPOINT",
+      "775": "CENTERPOINT",
+      "776": "CENTERPOINT",
+      "777": "CENTERPOINT",
+      "778": "CENTERPOINT",
+      "779": "CENTERPOINT",
+      "786": "ONCOR",
+      "787": "ONCOR",
+      "788": "ONCOR",
+      "789": "ONCOR",
+      "783": "AEP_CENTRAL",
+      "784": "AEP_CENTRAL",
+      "785": "AEP_CENTRAL",
+      "795": "AEP_NORTH",
+      "796": "AEP_NORTH",
+      "793": "AEP_NORTH",
+      "794": "AEP_NORTH"
+    },
+    "municipal_cities": {
+      "AUSTIN": "Austin Energy",
+      "SAN ANTONIO": "CPS Energy",
+      "LUBBOCK": "Lubbock Power & Light",
+      "BRYAN": "Bryan Texas Utilities",
+      "COLLEGE STATION": "Bryan Texas Utilities",
+      "GARLAND": "Garland Power & Light",
+      "GREENVILLE": "Greenville Electric Utility System",
+      "NEW BRAUNFELS": "New Braunfels Utilities",
+      "GEORGETOWN": "Georgetown Utility Systems",
+      "DENTON": "Denton Municipal Electric",
+      "BOERNE": "Boerne Utilities",
+      "KERRVILLE": "Kerrville Public Utility Board",
+      "FREDERICKSBURG": "Fredericksburg Electric",
+      "SEGUIN": "Seguin Electric",
+      "BROWNSVILLE": "Brownsville Public Utilities Board"
+    },
+    "coops": [
+      "Pedernales Electric Cooperative",
+      "Bluebonnet Electric Cooperative",
+      "Guadalupe Valley Electric Cooperative",
+      "Bandera Electric Cooperative",
+      "Medina Electric Cooperative",
+      "Nueces Electric Cooperative",
+      "South Texas Electric Cooperative",
+      "Magic Valley Electric Cooperative",
+      "Tri-County Electric Cooperative",
+      "CoServ Electric",
+      "United Cooperative Services",
+      "Farmers Electric Cooperative",
+      "Grayson-Collin Electric Cooperative",
+      "Navarro County Electric Cooperative",
+      "Wood County Electric Cooperative"
+    ]
+  },
+  "gas": {
+    "ldcs": {
+      "ATMOS": {
+        "name": "Atmos Energy",
+        "phone": "1-888-286-6700",
+        "website": "https://www.atmosenergy.com",
+        "service_area": "Dallas/Fort Worth, West Texas, North Texas"
+      },
+      "CENTERPOINT": {
+        "name": "CenterPoint Energy",
+        "phone": "1-800-752-8036",
+        "website": "https://www.centerpointenergy.com",
+        "service_area": "Houston metropolitan area"
+      },
+      "TEXAS_GAS_SERVICE": {
+        "name": "Texas Gas Service",
+        "phone": "1-800-700-2443",
+        "website": "https://www.texasgasservice.com",
+        "service_area": "Austin, Central Texas, El Paso"
+      },
+      "COSERV": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "service_area": "Denton County, parts of Collin/Dallas/Tarrant counties"
+      }
+    },
+    "zip_to_ldc": {
+      "750": "ATMOS",
+      "751": "ATMOS",
+      "752": "ATMOS",
+      "753": "ATMOS",
+      "754": "ATMOS",
+      "755": "ATMOS",
+      "760": "ATMOS",
+      "761": "ATMOS",
+      "762": "ATMOS",
+      "763": "ATMOS",
+      "764": "ATMOS",
+      "765": "ATMOS",
+      "766": "ATMOS",
+      "767": "ATMOS",
+      "768": "ATMOS",
+      "769": "ATMOS",
+      "790": "ATMOS",
+      "791": "ATMOS",
+      "792": "ATMOS",
+      "793": "ATMOS",
+      "794": "ATMOS",
+      "795": "ATMOS",
+      "796": "ATMOS",
+      "770": "CENTERPOINT",
+      "771": "CENTERPOINT",
+      "772": "CENTERPOINT",
+      "773": "CENTERPOINT",
+      "774": "CENTERPOINT",
+      "775": "CENTERPOINT",
+      "776": "CENTERPOINT",
+      "777": "CENTERPOINT",
+      "778": "CENTERPOINT",
+      "779": "CENTERPOINT",
+      "786": "TEXAS_GAS_SERVICE",
+      "787": "TEXAS_GAS_SERVICE",
+      "788": "TEXAS_GAS_SERVICE",
+      "789": "TEXAS_GAS_SERVICE",
+      "798": "TEXAS_GAS_SERVICE",
+      "799": "TEXAS_GAS_SERVICE"
+    },
+    "zip_overrides": {
+      "75068": "COSERV",
+      "75022": "COSERV",
+      "75028": "COSERV",
+      "75034": "COSERV",
+      "75056": "COSERV",
+      "75057": "COSERV",
+      "75067": "COSERV",
+      "75077": "COSERV",
+      "78640": "CENTERPOINT",
+      "78610": "CENTERPOINT",
+      "78666": "CENTERPOINT",
+      "78676": "CENTERPOINT",
+      "78620": "CENTERPOINT"
+    }
+  }
+}

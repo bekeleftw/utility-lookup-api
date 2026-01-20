@@ -1,9 +1,9 @@
 {
   "_metadata": {
     "description": "County-level utility defaults for rural areas where point-in-polygon fails",
-    "last_updated": "2026-01-14",
+    "last_updated": "2026-01-20",
     "source": "EIA Form 861, state PUC data",
-    "note": "Used as fallback when HIFLD boundary lookup returns no result"
+    "note": "Includes merged gas county data from gas_county_lookups.json"
   },
   "electric": {
     "TX": {
@@ -15995,6 +15995,98 @@
         "name": "Xcel Energy",
         "phone": "800-895-4999",
         "website": "https://www.xcelenergy.com"
+      },
+      "BRAZORIA": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "GALVESTON": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "CHAMBERS": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "LIBERTY": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "WALLER": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "ROCKWALL": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "KAUFMAN": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "ELLIS": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "JOHNSON": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "PARKER": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "WISE": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "HOOD": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "BASTROP": {
+        "name": "Texas Gas Service",
+        "notes": null
+      },
+      "COMAL": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "GUADALUPE": {
+        "name": "CenterPoint Energy",
+        "notes": null
+      },
+      "NUECES": {
+        "name": "Texas Gas Service",
+        "notes": "Corpus Christi"
+      },
+      "MIDLAND": {
+        "name": "Atmos Energy",
+        "notes": null
+      },
+      "ECTOR": {
+        "name": "Atmos Energy",
+        "notes": "Odessa"
+      },
+      "TOM GREEN": {
+        "name": "Atmos Energy",
+        "notes": "San Angelo"
+      },
+      "TAYLOR": {
+        "name": "Atmos Energy",
+        "notes": "Abilene"
+      },
+      "SMITH": {
+        "name": "Atmos Energy",
+        "notes": "Tyler"
+      },
+      "GREGG": {
+        "name": "Atmos Energy",
+        "notes": "Longview"
+      },
+      "JEFFERSON": {
+        "name": "CenterPoint Energy",
+        "notes": "Beaumont"
       }
     },
     "CA": {
@@ -16201,6 +16293,372 @@
         "name": "Atlanta Gas Light",
         "phone": "877-427-4321",
         "website": "https://www.atlantagaslight.com"
+      }
+    },
+    "IL": {
+      "COOK": {
+        "name": "Peoples Gas",
+        "notes": "Chicago city; suburbs are Nicor"
+      },
+      "DUPAGE": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "LAKE": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "WILL": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "KANE": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "MCHENRY": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "WINNEBAGO": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "KENDALL": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "BOONE": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "DEKALB": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "GRUNDY": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "KANKAKEE": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "LASALLE": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "LIVINGSTON": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "MCLEAN": {
+        "name": "Nicor Gas",
+        "notes": null
+      },
+      "PEORIA": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "TAZEWELL": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "SANGAMON": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "MACON": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "CHAMPAIGN": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "VERMILION": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "MADISON": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "ST. CLAIR": {
+        "name": "Ameren Illinois",
+        "notes": null
+      },
+      "ROCK ISLAND": {
+        "name": "MidAmerican Energy",
+        "notes": null
+      },
+      "HENRY": {
+        "name": "MidAmerican Energy",
+        "notes": null
+      },
+      "MERCER": {
+        "name": "MidAmerican Energy",
+        "notes": null
+      },
+      "WHITESIDE": {
+        "name": "MidAmerican Energy",
+        "notes": null
+      }
+    },
+    "PA": {
+      "PHILADELPHIA": {
+        "name": "Philadelphia Gas Works",
+        "notes": null
+      },
+      "MONTGOMERY": {
+        "name": "PECO Energy",
+        "notes": null
+      },
+      "BUCKS": {
+        "name": "PECO Energy",
+        "notes": null
+      },
+      "CHESTER": {
+        "name": "PECO Energy",
+        "notes": null
+      },
+      "DELAWARE": {
+        "name": "PECO Energy",
+        "notes": null
+      },
+      "ALLEGHENY": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "WESTMORELAND": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "WASHINGTON": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "BUTLER": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "BEAVER": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "FAYETTE": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "ERIE": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "CRAWFORD": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "WARREN": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "MCKEAN": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "VENANGO": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "LANCASTER": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "BERKS": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "LEHIGH": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "NORTHAMPTON": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "LUZERNE": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "LACKAWANNA": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "DAUPHIN": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "YORK": {
+        "name": "Columbia Gas of PA",
+        "notes": null
+      },
+      "CUMBERLAND": {
+        "name": "UGI Utilities",
+        "notes": null
+      },
+      "CENTRE": {
+        "name": "Columbia Gas of PA",
+        "notes": null
+      },
+      "BLAIR": {
+        "name": "Columbia Gas of PA",
+        "notes": null
+      },
+      "CAMBRIA": {
+        "name": "Peoples Natural Gas",
+        "notes": null
+      },
+      "SOMERSET": {
+        "name": "Columbia Gas of PA",
+        "notes": null
+      }
+    },
+    "NY": {
+      "NEW YORK": {
+        "name": "Con Edison",
+        "notes": "Manhattan"
+      },
+      "BRONX": {
+        "name": "Con Edison",
+        "notes": null
+      },
+      "KINGS": {
+        "name": "National Grid",
+        "notes": "Brooklyn"
+      },
+      "QUEENS": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "RICHMOND": {
+        "name": "National Grid",
+        "notes": "Staten Island"
+      },
+      "WESTCHESTER": {
+        "name": "Con Edison",
+        "notes": null
+      },
+      "NASSAU": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "SUFFOLK": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "ROCKLAND": {
+        "name": "Orange and Rockland",
+        "notes": null
+      },
+      "ORANGE": {
+        "name": "Orange and Rockland",
+        "notes": null
+      },
+      "PUTNAM": {
+        "name": "Central Hudson",
+        "notes": null
+      },
+      "DUTCHESS": {
+        "name": "Central Hudson",
+        "notes": null
+      },
+      "ULSTER": {
+        "name": "Central Hudson",
+        "notes": null
+      },
+      "COLUMBIA": {
+        "name": "Central Hudson",
+        "notes": null
+      },
+      "GREENE": {
+        "name": "Central Hudson",
+        "notes": null
+      },
+      "ALBANY": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "SCHENECTADY": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "RENSSELAER": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "SARATOGA": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "ERIE": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "NIAGARA": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "CHAUTAUQUA": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "CATTARAUGUS": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "ALLEGANY": {
+        "name": "National Fuel Gas",
+        "notes": null
+      },
+      "MONROE": {
+        "name": "RG&E",
+        "notes": null
+      },
+      "ONTARIO": {
+        "name": "RG&E",
+        "notes": null
+      },
+      "WAYNE": {
+        "name": "RG&E",
+        "notes": null
+      },
+      "LIVINGSTON": {
+        "name": "RG&E",
+        "notes": null
+      },
+      "ONONDAGA": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "ONEIDA": {
+        "name": "National Grid",
+        "notes": null
+      },
+      "BROOME": {
+        "name": "NYSEG",
+        "notes": null
+      },
+      "TOMPKINS": {
+        "name": "NYSEG",
+        "notes": null
+      },
+      "CHEMUNG": {
+        "name": "NYSEG",
+        "notes": null
+      },
+      "STEUBEN": {
+        "name": "NYSEG",
+        "notes": null
       }
     }
   }

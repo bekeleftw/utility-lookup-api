@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Municipal Utilities Database",
+  "description": "City-owned utilities not in federal databases",
+  "type": "object",
+  "properties": {
+    "_metadata": {
+      "type": "object",
+      "properties": {
+        "description": { "type": "string" },
+        "last_updated": { "type": "string", "format": "date" },
+        "source": { "type": "string" }
+      }
+    },
+    "electric": { "$ref": "#/definitions/utilityStateMap" },
+    "gas": { "$ref": "#/definitions/utilityStateMap" },
+    "water": { "$ref": "#/definitions/utilityStateMap" }
+  },
+  "definitions": {
+    "utilityStateMap": {
+      "type": "object",
+      "description": "Map of state codes to city utilities",
+      "additionalProperties": {
+        "type": "object",
+        "description": "State code (TX, CA, etc.)",
+        "additionalProperties": {
+          "$ref": "#/definitions/utilityEntry"
+        }
+      }
+    },
+    "utilityEntry": {
+      "type": "object",
+      "description": "City utility entry",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "phone": { "type": "string" },
+        "website": { "type": "string", "format": "uri" },
+        "zip_codes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[0-9]{5}$" }
+        },
+        "services": {
+          "type": "array",
+          "items": { "enum": ["electric", "gas", "water"] }
+        },
+        "water_provider": { "type": "string" },
+        "water_phone": { "type": "string" },
+        "water_website": { "type": "string", "format": "uri" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

@@ -253,6 +253,16 @@
         "verified_date": "2026-01-20",
         "verified_by": "tenant_feedback"
       }
+    },
+    "30263": {
+      "electric": {
+        "name": "Coweta Fayette EMC",
+        "phone": "770-502-0226",
+        "website": "https://www.utility.org",
+        "note": "Rural electric cooperative serving Coweta/Fayette counties",
+        "verified_date": "2026-01-20",
+        "verified_by": "tenant_feedback"
+      }
     }
   },
   "_metadata": {

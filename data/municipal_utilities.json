@@ -2194,56 +2194,185 @@
       }
     },
     "SC": {
+      "Charleston": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Columbia": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "North Charleston": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Mount Pleasant": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
       "Rock Hill": {
-        "name": "Rock Hill Utilities",
-        "phone": "803-329-5500",
-        "website": "https://www.cityofrockhill.com",
-        "zip_codes": [
-          "29730",
-          "29731",
-          "29732",
-          "29733",
-          "29734"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Greenville": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Summerville": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Goose Creek": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Hilton Head Island": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Spartanburg": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Florence": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Myrtle Beach": {
+        "name": "Santee Cooper",
+        "phone": "843-761-8000",
+        "website": "https://www.santeecooper.com/"
+      },
+      "Anderson": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Aiken": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Mauldin": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Greer": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Greenwood": {
+        "name": "Greenwood Commissioners of Public Works",
+        "phone": "864-942-8100",
+        "website": "https://www.greenwoodcpw.com/",
+        "note": "Municipal"
+      },
+      "North Augusta": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Easley": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Simpsonville": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Hanahan": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Lexington": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Conway": {
+        "name": "Santee Cooper",
+        "phone": "843-761-8000",
+        "website": "https://www.santeecooper.com/"
+      },
+      "West Columbia": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "North Myrtle Beach": {
+        "name": "Santee Cooper",
+        "phone": "843-761-8000",
+        "website": "https://www.santeecooper.com/"
+      },
+      "Clemson": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
       },
       "Orangeburg": {
         "name": "Orangeburg Department of Public Utilities",
-        "phone": "803-268-4100",
-        "website": "https://www.orbgdpu.com",
-        "zip_codes": [
-          "29115",
-          "29116",
-          "29117",
-          "29118"
-        ]
+        "phone": "803-268-4000",
+        "website": "https://www.orangeburgdpu.org/",
+        "note": "Municipal"
       },
-      "Duke Energy Progress (NC)": {
-        "name": "Duke Energy Progress - (NC)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (93 ZIP codes)"
+      "Cayce": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Duke Energy Carolinas LLC": {
-        "name": "Duke Energy Carolinas, LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (194 ZIP codes)"
+      "Bluffton": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Dominion Energy South Carolina Inc": {
-        "name": "Dominion Energy South Carolina, Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (240 ZIP codes)"
+      "Beaufort": {
+        "name": "Dominion Energy South Carolina",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Lockhart Power Co": {
-        "name": "Lockhart Power Co",
-        "phone": null,
+      "Laurens": {
+        "name": "Laurens Commission of Public Works",
+        "phone": "864-984-3581",
+        "website": "https://www.lcpw.com/",
+        "note": "Municipal"
+      },
+      "Gaffney": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Seneca": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Union": {
+        "name": "Union Commission of Public Works",
+        "phone": "864-429-1700",
         "website": null,
-        "note": "From EIA-861 (14 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Newberry": {
+        "name": "Newberry Electric Cooperative",
+        "phone": "803-276-1121",
+        "website": "https://www.newberryelectric.com/",
+        "note": "Co-op"
       }
     },
     "OH": {
@@ -7271,35 +7400,100 @@
       }
     },
     "SD": {
-      "Montana-Dakota Utilities Co": {
-        "name": "Montana-Dakota Utilities Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (25 ZIP codes)"
+      "Sioux Falls": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "MidAmerican Energy Co": {
-        "name": "MidAmerican Energy Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+      "Rapid City": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Northern States Power Co Minnesota": {
-        "name": "Northern States Power Co - Minnesota",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (45 ZIP codes)"
+      "Aberdeen": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       },
-      "Otter Tail Power Co": {
-        "name": "Otter Tail Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (57 ZIP codes)"
+      "Brookings": {
+        "name": "Brookings Municipal Utilities",
+        "phone": "605-692-2494",
+        "website": "https://www.cityofbrookings.org/",
+        "note": "Municipal"
       },
-      "Black Hills Power Inc d/b/a": {
-        "name": "Black Hills Power, Inc. d/b/a",
-        "phone": null,
+      "Watertown": {
+        "name": "Watertown Municipal Utilities",
+        "phone": "605-882-6233",
+        "website": "https://www.watertownsd.us/",
+        "note": "Municipal"
+      },
+      "Mitchell": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Yankton": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Pierre": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Huron": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Spearfish": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Vermillion": {
+        "name": "Vermillion Light & Power",
+        "phone": "605-677-7050",
+        "website": "https://www.vermillion.us/",
+        "note": "Municipal"
+      },
+      "Brandon": {
+        "name": "Sioux Valley Energy",
+        "phone": "800-234-1960",
+        "website": "https://www.siouxvalleyenergy.com/",
+        "note": "Co-op"
+      },
+      "Box Elder": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Madison": {
+        "name": "Madison Municipal Light",
+        "phone": "605-256-7515",
         "website": null,
-        "note": "From EIA-861 (28 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Sturgis": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Belle Fourche": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Harrisburg": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Tea": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       }
     },
     "MN": {
@@ -7610,11 +7804,77 @@
       }
     },
     "RI": {
-      "The Narragansett Electric Co": {
-        "name": "The Narragansett Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (89 ZIP codes)"
+      "Providence": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Warwick": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Cranston": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Pawtucket": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "East Providence": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Woonsocket": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Newport": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Central Falls": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Westerly": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "North Providence": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "South Kingstown": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Bristol": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Pascoag": {
+        "name": "Pascoag Utility District",
+        "phone": "401-568-6222",
+        "website": "https://www.pud-ri.org/",
+        "note": "Municipal"
+      },
+      "Block Island": {
+        "name": "Block Island Power Company",
+        "phone": "401-466-5851",
+        "website": "https://www.blockislandpowerco.com/",
+        "note": "Municipal"
       }
     },
     "NV": {
@@ -11550,69 +11810,156 @@
       }
     },
     "RI": {
-      "Statewide": {
-        "name": "National Grid",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for RI"
+      "Providence": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
       },
-      "National_Grid": {
-        "name": "National Grid",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in RI"
+      "Warwick": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Cranston": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Pawtucket": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "East Providence": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Woonsocket": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Newport": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Westerly": {
+        "name": "National Grid Gas",
+        "phone": "800-640-1595",
+        "website": "https://www.nationalgridus.com/"
       }
     },
     "SC": {
-      "Statewide": {
+      "Charleston": {
+        "name": "Dominion Energy Gas",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Columbia": {
+        "name": "Dominion Energy Gas",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "North Charleston": {
+        "name": "Dominion Energy Gas",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Rock Hill": {
         "name": "Piedmont Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for SC"
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
       },
-      "Piedmont_Natural_Gas": {
+      "Greenville": {
         "name": "Piedmont Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in SC"
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
       },
-      "Dominion_Energy": {
-        "name": "Dominion Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in SC"
+      "Summerville": {
+        "name": "Dominion Energy Gas",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
       },
-      "SCE&G": {
-        "name": "SCE&G",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in SC"
+      "Spartanburg": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Florence": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Anderson": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Aiken": {
+        "name": "Dominion Energy Gas",
+        "phone": "800-251-7234",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Greenwood": {
+        "name": "Greenwood Commissioners of Public Works Gas",
+        "phone": "864-942-8100",
+        "website": "https://www.greenwoodcpw.com/",
+        "note": "Municipal"
+      },
+      "Orangeburg": {
+        "name": "Orangeburg Department of Public Utilities Gas",
+        "phone": "803-268-4000",
+        "website": "https://www.orangeburgdpu.org/",
+        "note": "Municipal"
       }
     },
     "SD": {
-      "Statewide": {
-        "name": "NorthWestern Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for SD"
-      },
-      "NorthWestern_Energy": {
-        "name": "NorthWestern Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in SD"
-      },
-      "Montana-Dakota_Utilities": {
-        "name": "Montana-Dakota Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in SD"
-      },
-      "MidAmerican_Energy": {
+      "Sioux Falls": {
         "name": "MidAmerican Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in SD"
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Rapid City": {
+        "name": "Black Hills Energy Gas",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Aberdeen": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Watertown": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Mitchell": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Yankton": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Pierre": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Huron": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Spearfish": {
+        "name": "Black Hills Energy Gas",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       }
     },
     "TN": {

@@ -3763,11 +3763,204 @@
       }
     },
     "AL": {
-      "Alabama Power Co": {
-        "name": "Alabama Power Co",
-        "phone": null,
+      "Birmingham": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Montgomery": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Mobile": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Tuscaloosa": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Hoover": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Dothan": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Auburn": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Opelika": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Gadsden": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Anniston": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Phenix City": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Prattville": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Selma": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Enterprise": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Daphne": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Fairhope": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Pelham": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Alabaster": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Bessemer": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Homewood": {
+        "name": "Alabama Power",
+        "phone": "800-245-2244",
+        "website": "https://www.alabamapower.com/"
+      },
+      "Huntsville": {
+        "name": "Huntsville Utilities",
+        "phone": "256-535-1200",
+        "website": "https://www.hsvutil.org/",
+        "note": "TVA municipal"
+      },
+      "Madison": {
+        "name": "Huntsville Utilities",
+        "phone": "256-535-1200",
+        "website": "https://www.hsvutil.org/",
+        "note": "TVA municipal"
+      },
+      "Decatur": {
+        "name": "Decatur Utilities",
+        "phone": "256-552-1400",
+        "website": "https://www.decaturutilities.com/",
+        "note": "TVA municipal"
+      },
+      "Florence": {
+        "name": "Florence Utilities",
+        "phone": "256-760-6500",
+        "website": "https://www.florenceutilities.com/",
+        "note": "TVA municipal"
+      },
+      "Athens": {
+        "name": "Athens Utilities",
+        "phone": "256-232-1492",
+        "website": "https://www.athensutilities.com/",
+        "note": "TVA municipal"
+      },
+      "Muscle Shoals": {
+        "name": "Muscle Shoals Electric Board",
+        "phone": "256-383-3206",
         "website": null,
-        "note": "From EIA-861 (594 ZIP codes)"
+        "note": "TVA municipal"
+      },
+      "Sheffield": {
+        "name": "Sheffield Utilities",
+        "phone": "256-389-2000",
+        "website": "https://www.sheffieldutilities.org/",
+        "note": "TVA municipal"
+      },
+      "Tuscumbia": {
+        "name": "Tuscumbia Electric",
+        "phone": "256-383-0234",
+        "website": null,
+        "note": "TVA municipal"
+      },
+      "Scottsboro": {
+        "name": "Scottsboro Electric Power Board",
+        "phone": "256-574-2346",
+        "website": "https://sepb.net/",
+        "note": "TVA municipal"
+      },
+      "Guntersville": {
+        "name": "Guntersville Electric Board",
+        "phone": "256-582-3165",
+        "website": null,
+        "note": "TVA municipal"
+      },
+      "Hartselle": {
+        "name": "Hartselle Utilities",
+        "phone": "256-773-2525",
+        "website": "https://www.hartselleutilities.com/",
+        "note": "TVA municipal"
+      },
+      "Cullman": {
+        "name": "Cullman Electric Cooperative",
+        "phone": "256-737-3200",
+        "website": "https://www.cullmanec.com/",
+        "note": "Co-op"
+      },
+      "Fort Payne": {
+        "name": "Fort Payne Improvement Authority",
+        "phone": "256-845-1524",
+        "website": null,
+        "note": "TVA municipal"
+      },
+      "Albertville": {
+        "name": "Albertville Municipal Utilities Board",
+        "phone": "256-891-8250",
+        "website": null,
+        "note": "TVA municipal"
+      },
+      "Sylacauga": {
+        "name": "Tallapoosa River Electric Cooperative",
+        "phone": "256-825-9811",
+        "website": "https://www.trec.coop/"
+      },
+      "Alexander City": {
+        "name": "Central Alabama Electric Cooperative",
+        "phone": "256-234-3461",
+        "website": "https://www.caec.coop/"
+      },
+      "Jasper": {
+        "name": "Walker County Electric Cooperative",
+        "phone": "205-221-2131",
+        "website": null
       }
     },
     "AK": {
@@ -5941,23 +6134,105 @@
       }
     },
     "AL": {
-      "Statewide": {
-        "name": "Spire Alabama",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for AL"
+      "Birmingham": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
       },
-      "Spire_Alabama": {
-        "name": "Spire Alabama",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in AL"
+      "Montgomery": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
       },
-      "Alagasco": {
-        "name": "Alagasco",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in AL"
+      "Mobile": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Huntsville": {
+        "name": "Huntsville Utilities Gas",
+        "phone": "256-535-1200",
+        "website": "https://www.hsvutil.org/"
+      },
+      "Tuscaloosa": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Hoover": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Dothan": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Decatur": {
+        "name": "Decatur Utilities Gas",
+        "phone": "256-552-1400",
+        "website": "https://www.decaturutilities.com/"
+      },
+      "Auburn": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Florence": {
+        "name": "Florence Utilities Gas",
+        "phone": "256-760-6500",
+        "website": "https://www.florenceutilities.com/"
+      },
+      "Gadsden": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Madison": {
+        "name": "Huntsville Utilities Gas",
+        "phone": "256-535-1200",
+        "website": "https://www.hsvutil.org/"
+      },
+      "Athens": {
+        "name": "Athens Utilities Gas",
+        "phone": "256-232-1492",
+        "website": "https://www.athensutilities.com/"
+      },
+      "Prattville": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Anniston": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Phenix City": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Opelika": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Selma": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Bessemer": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Enterprise": {
+        "name": "Spire Alabama (Alagasco)",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
       }
     },
     "AK": {

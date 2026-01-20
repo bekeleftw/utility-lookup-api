@@ -649,6 +649,176 @@ def query_mississippi_gas(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_michigan_electric(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Michigan PSC Electric Utility Service Areas.
+    Source: Michigan Public Service Commission
+    """
+    url = "https://services3.arcgis.com/943LBv9FP414WfDO/arcgis/rest/services/ELECTRIC_UTILITY_SERVICE_AREA_MI_WFL1/FeatureServer/16/query"
+    result = _query_arcgis_point(url, lat, lon, "Name,Type,Customers,Website")
+    
+    if result and result.get("Name"):
+        return {
+            "name": result.get("Name", "").strip(),
+            "type": result.get("Type"),
+            "customers": result.get("Customers"),
+            "website": result.get("Website"),
+            "confidence": "high",
+            "source": "michigan_psc"
+        }
+    return None
+
+
+def query_michigan_gas(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Michigan PSC Natural Gas Utility Service Areas.
+    Source: Michigan Public Service Commission
+    """
+    url = "https://services3.arcgis.com/943LBv9FP414WfDO/arcgis/rest/services/NATURAL_GAS_UTILITY_SERVICE_AREA_MI_WFL1/FeatureServer/27/query"
+    result = _query_arcgis_point(url, lat, lon, "Name,Type,Customers")
+    
+    if result and result.get("Name"):
+        return {
+            "name": result.get("Name", "").strip(),
+            "type": result.get("Type"),
+            "customers": result.get("Customers"),
+            "confidence": "high",
+            "source": "michigan_psc"
+        }
+    return None
+
+
+def query_kentucky_electric(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Kentucky Electric Service Areas.
+    Source: Kentucky Geography Network
+    """
+    url = "https://kygisserver.ky.gov/arcgis/rest/services/WGS84WM_Services/Ky_Electric_Service_Areas_WGS84WM/MapServer/1/query"
+    result = _query_arcgis_point(url, lat, lon, "COMPANY_NA,UTILITY_TY,ELEC_TYPE")
+    
+    if result and result.get("COMPANY_NA"):
+        return {
+            "name": result.get("COMPANY_NA", "").strip(),
+            "utility_type": result.get("UTILITY_TY"),
+            "electric_type": result.get("ELEC_TYPE"),
+            "confidence": "high",
+            "source": "kentucky_gis"
+        }
+    return None
+
+
+def query_indiana_electric(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Indiana IURC Electric Service Territories.
+    Source: Indiana Utility Regulatory Commission
+    """
+    url = "https://gisdata.in.gov/server/rest/services/Hosted/IURC_Prod_Boundaries_View/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "utilityname,utilitytype,name_abreviations")
+    
+    if result and result.get("utilityname"):
+        return {
+            "name": result.get("utilityname", "").strip(),
+            "abbreviation": result.get("name_abreviations"),
+            "utility_type": result.get("utilitytype"),
+            "confidence": "high",
+            "source": "indiana_iurc"
+        }
+    return None
+
+
+def query_wisconsin_psc_electric(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Wisconsin PSC Electric Service Territories.
+    Checks IOU (Layer 1), Municipal (Layer 0), and Cooperative (Layer 2) layers.
+    Source: Wisconsin Public Service Commission
+    """
+    base_url = "https://maps.psc.wi.gov/server/rest/services/Electric/PSC_ElectricServiceTerritories/MapServer"
+    
+    # Layer 1 = IOUs, Layer 0 = Municipal, Layer 2 = Coops
+    for layer_id in [1, 0, 2]:
+        url = f"{base_url}/{layer_id}/query"
+        result = _query_arcgis_point(url, lat, lon, "UTIL_NAME,UTIL_ID")
+        if result and result.get("UTIL_NAME"):
+            return {
+                "name": result.get("UTIL_NAME", "").strip(),
+                "util_id": result.get("UTIL_ID"),
+                "confidence": "high",
+                "source": "wisconsin_psc"
+            }
+    return None
+
+
+def query_wisconsin_gas(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Wisconsin PSC Natural Gas Service Areas.
+    Source: Wisconsin Public Service Commission
+    """
+    url = "https://services8.arcgis.com/IqcU3SH8HrYEvDe4/arcgis/rest/services/WI_Utilities_Natural_Gas_Service_Areas_(PSC_Data)/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "Util_Name,Util_ID")
+    
+    if result and result.get("Util_Name"):
+        return {
+            "name": result.get("Util_Name", "").strip(),
+            "util_id": result.get("Util_ID"),
+            "confidence": "high",
+            "source": "wisconsin_psc"
+        }
+    return None
+
+
+def query_new_jersey_gas(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query New Jersey DEP Gas Utilities Territory Map.
+    """
+    url = "https://mapsdep.nj.gov/arcgis/rest/services/Features/Utilities/MapServer/11/query"
+    result = _query_arcgis_point(url, lat, lon, "NAME,LABEL")
+    
+    if result and result.get("NAME"):
+        return {
+            "name": result.get("NAME", "").strip(),
+            "label": result.get("LABEL"),
+            "confidence": "high",
+            "source": "new_jersey_dep"
+        }
+    return None
+
+
+def query_ohio_electric(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Ohio PUCO Electric Certified Territories.
+    Source: Public Utilities Commission of Ohio
+    """
+    url = "https://maps.puco.ohio.gov/arcgis/rest/services/electric/Electric_Certified_Territory/MapServer/2/query"
+    result = _query_arcgis_point(url, lat, lon, "EL_BoundaryID,EL_CompanyID")
+    
+    if result and result.get("EL_CompanyID"):
+        return {
+            "company_id": result.get("EL_CompanyID"),
+            "boundary_id": result.get("EL_BoundaryID"),
+            "confidence": "high",
+            "source": "ohio_puco"
+        }
+    return None
+
+
+def query_arkansas_electric_v2(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Arkansas Electric Utility Service Territories (Layer 12).
+    Source: Arkansas GIS Office
+    """
+    url = "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Utilities/FeatureServer/12/query"
+    result = _query_arcgis_point(url, lat, lon, "name,source,label")
+    
+    if result and result.get("name"):
+        return {
+            "name": result.get("name", "").strip(),
+            "label": result.get("label"),
+            "confidence": "high",
+            "source": "arkansas_gis"
+        }
+    return None
+
+
 def query_mississippi_water(lat: float, lon: float) -> Optional[Dict]:
     """
     Query Mississippi PSC Water Certificated Areas (Layer 1).

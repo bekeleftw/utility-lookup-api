@@ -328,6 +328,29 @@ def geocode_with_nominatim(address: str) -> Optional[Dict]:
         return None
 
 
+def _get_census_block_geoid(lat: float, lon: float) -> Optional[str]:
+    """Get Census block GEOID from coordinates using Census TIGERweb API."""
+    try:
+        url = "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/10/query"
+        params = {
+            "geometry": f"{lon},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "inSR": "4326",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "GEOID",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        response = requests.get(url, params=params, timeout=10)
+        data = response.json()
+        features = data.get("features", [])
+        if features:
+            return features[0].get("attributes", {}).get("GEOID")
+    except Exception as e:
+        print(f"  Census block lookup error: {e}")
+    return None
+
+
 def geocode_address(address: str, include_geography: bool = False) -> Optional[Dict]:
     """
     Geocode an address using a three-tier fallback system:
@@ -355,6 +378,12 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
         print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
         if result.get('city') or result.get('county'):
             print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
+        # Try to get block_geoid from Census using coordinates (for internet lookup)
+        if result.get('lat') and result.get('lon') and not result.get('block_geoid'):
+            block_geoid = _get_census_block_geoid(result['lat'], result['lon'])
+            if block_geoid:
+                result['block_geoid'] = block_geoid
+                print(f"  Added Census block_geoid: {block_geoid}")
         return result
     
     print("Google geocoder failed, trying Nominatim...")

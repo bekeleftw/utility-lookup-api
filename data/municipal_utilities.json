@@ -2521,6 +2521,68 @@
           "84791"
         ]
       }
+    },
+    "PA": {
+      "Philadelphia": {
+        "name": "PECO Energy",
+        "phone": "800-494-4000",
+        "website": "https://www.peco.com/"
+      },
+      "Pittsburgh": {
+        "name": "Duquesne Light",
+        "phone": "412-393-7100",
+        "website": "https://www.duquesnelight.com/"
+      },
+      "Allentown": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com/"
+      },
+      "Reading": {
+        "name": "Met-Ed (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Scranton": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com/"
+      },
+      "Bethlehem": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com/"
+      },
+      "Lancaster": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com/"
+      },
+      "Harrisburg": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com/"
+      },
+      "Erie": {
+        "name": "Penelec (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "York": {
+        "name": "Met-Ed (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Wilkes-Barre": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "https://www.pplelectric.com/"
+      },
+      "State College": {
+        "name": "West Penn Power (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com/"
+      }
     }
   },
   "gas": {
@@ -3621,6 +3683,88 @@
         "name": "Southwest Gas",
         "phone": "877-860-6020",
         "website": "https://www.swgas.com/"
+      }
+    },
+    "PA": {
+      "Philadelphia": {
+        "name": "Philadelphia Gas Works (PGW)",
+        "phone": "215-235-1000",
+        "website": "https://www.pgworks.com/"
+      },
+      "Pittsburgh": {
+        "name": "Peoples Gas",
+        "phone": "800-764-0111",
+        "website": "https://www.peoples-gas.com/"
+      },
+      "Allentown": {
+        "name": "UGI Utilities",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Reading": {
+        "name": "UGI Utilities",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Scranton": {
+        "name": "UGI Penn Natural Gas",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Bethlehem": {
+        "name": "UGI Utilities",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Lancaster": {
+        "name": "UGI Utilities",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Harrisburg": {
+        "name": "UGI Utilities",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Erie": {
+        "name": "National Fuel Gas",
+        "phone": "800-365-3234",
+        "website": "https://www.natfuel.com/"
+      },
+      "York": {
+        "name": "Columbia Gas of Pennsylvania",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagaspa.com/"
+      },
+      "Wilkes-Barre": {
+        "name": "UGI Penn Natural Gas",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "State College": {
+        "name": "Columbia Gas of Pennsylvania",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagaspa.com/"
+      },
+      "Johnstown": {
+        "name": "Peoples Gas",
+        "phone": "800-764-0111",
+        "website": "https://www.peoples-gas.com/"
+      },
+      "Williamsport": {
+        "name": "UGI Penn Natural Gas",
+        "phone": "800-276-2722",
+        "website": "https://www.ugi.com/"
+      },
+      "Chester": {
+        "name": "PECO Energy Gas",
+        "phone": "800-494-4000",
+        "website": "https://www.peco.com/"
+      },
+      "Norristown": {
+        "name": "PECO Energy Gas",
+        "phone": "800-494-4000",
+        "website": "https://www.peco.com/"
       }
     }
   },

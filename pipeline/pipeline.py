@@ -100,7 +100,14 @@ class LookupPipeline:
         # 4. Select best result - use SmartSelector if sources disagree
         sources_disagree = cv_result and not cv_result.get('sources_agreed', True)
         
-        if sources_disagree and self._smart_selector:
+        # SCALABLE FIX: Skip SmartSelector for municipal vs special_district water conflicts
+        # Texas cities typically take over MUD services but MUD boundaries remain in TCEQ data
+        # In this case, trust municipal over special_district without asking OpenAI
+        has_municipal_water = any(r.source_name == 'municipal_water' and r.utility_name for r in valid_results)
+        has_special_district = any(r.source_name == 'special_district_water' and r.utility_name for r in valid_results)
+        skip_smart_selector = has_municipal_water and has_special_district
+        
+        if sources_disagree and self._smart_selector and not skip_smart_selector:
             # Use OpenAI Smart Selector for disagreement resolution
             selection = self._smart_selector.select_utility(context, valid_results)
             
@@ -136,10 +143,12 @@ class LookupPipeline:
         
         # 7. SERP verification - only when sources have a meaningful disagreement
         # Simple rule: clear majority = done, close split = ask the internet
+        # But skip SERP for municipal vs special_district water conflicts (scalable fix)
         needs_serp = (
             self.enable_serp_verification and 
             not result.sources_agreed and
-            len(result.disagreeing_sources) >= len(result.agreeing_sources)  # True tie or minority wins
+            len(result.disagreeing_sources) >= len(result.agreeing_sources) and  # True tie or minority wins
+            not skip_smart_selector  # Don't SERP verify municipal vs special_district conflicts
         )
         if needs_serp:
             result = self._verify_with_serp(result, context)
@@ -317,6 +326,13 @@ class LookupPipeline:
         
         # Score each result
         scored = []
+        
+        # Check for municipal vs special_district conflict for water in Texas
+        # Texas cities often take over MUD services but MUD boundaries remain in TCEQ data
+        has_municipal_water = any(r.source_name == 'municipal_water' and r.utility_name for r in results)
+        has_special_district = any(r.source_name == 'special_district_water' and r.utility_name for r in results)
+        prefer_municipal_over_special = has_municipal_water and has_special_district
+        
         for r in results:
             # Base score from source confidence
             score = r.confidence_score
@@ -327,6 +343,15 @@ class LookupPipeline:
             # Add source priority bonus (scaled down to not overwhelm confidence)
             priority = SOURCE_PRIORITY.get(r.source_name, 0)
             score += priority * 0.3  # 30% weight on priority
+            
+            # SCALABLE FIX: When both municipal and special_district match for water,
+            # prefer municipal because Texas cities typically take over MUD services
+            # even though MUD boundaries remain in TCEQ records
+            if prefer_municipal_over_special:
+                if r.source_name == 'municipal_water':
+                    score += 15  # Boost municipal to win over special district
+                elif r.source_name == 'special_district_water':
+                    score -= 10  # Penalize special district when municipal exists
             
             # Cross-validation bonus (reduced weight - don't let bad sources gang up)
             if cv_result and r.source_name in cv_result.get('agreeing_sources', []):

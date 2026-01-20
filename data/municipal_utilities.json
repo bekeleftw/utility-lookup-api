@@ -2280,8 +2280,7 @@
         "zip_codes": [
           "78640"
         ],
-        "note": "City of Kyle water service - serves entire city including former MUD areas",
-        "priority_over_special_districts": true
+        "note": "City of Kyle water service"
       },
       "Houston": {
         "name": "City of Houston Public Works",

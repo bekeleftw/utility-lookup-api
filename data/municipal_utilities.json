@@ -6180,35 +6180,106 @@
       }
     },
     "WY": {
-      "Cheyenne Light Fuel & Power d/b/a Black": {
-        "name": "Cheyenne Light Fuel & Power d/b/a Black",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (14 ZIP codes)"
+      "Cheyenne": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "PacifiCorp": {
-        "name": "PacifiCorp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (94 ZIP codes)"
+      "Casper": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
       },
-      "Montana-Dakota Utilities Co": {
-        "name": "Montana-Dakota Utilities Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (9 ZIP codes)"
+      "Laramie": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
       },
-      "NorthWestern Energy LLC (MT)": {
-        "name": "NorthWestern Energy LLC - (MT)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (13 ZIP codes)"
+      "Gillette": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
       },
-      "Black Hills Power Inc d/b/a": {
-        "name": "Black Hills Power, Inc. d/b/a",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (4 ZIP codes)"
+      "Rock Springs": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Sheridan": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Green River": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Evanston": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Riverton": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Cody": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Rawlins": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Lander": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Powell": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Douglas": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Worland": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Torrington": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Jackson": {
+        "name": "Lower Valley Energy",
+        "phone": "307-733-3266",
+        "website": "https://www.lvenergy.com/",
+        "note": "Co-op"
+      },
+      "Thermopolis": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Buffalo": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Wheatland": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       }
     },
     "CT": {
@@ -6344,77 +6415,213 @@
       }
     },
     "WI": {
-      "Consolidated Water Power Co": {
-        "name": "Consolidated Water Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (5 ZIP codes)"
+      "Milwaukee": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "Wisconsin Power & Light Co": {
-        "name": "Wisconsin Power & Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (320 ZIP codes)"
+      "Madison": {
+        "name": "Madison Gas & Electric",
+        "phone": "608-252-7000",
+        "website": "https://www.mge.com/"
       },
-      "Wisconsin Public Service Corp": {
-        "name": "Wisconsin Public Service Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (189 ZIP codes)"
+      "Green Bay": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
       },
-      "Dahlberg Light & Power Co": {
-        "name": "Dahlberg Light & Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (19 ZIP codes)"
+      "Kenosha": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "Superior Water and Light Co": {
-        "name": "Superior Water and Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (2 ZIP codes)"
+      "Racine": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "Northern States Power Co": {
-        "name": "Northern States Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (207 ZIP codes)"
+      "Appleton": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
       },
-      "Northwestern Wisconsin Elec Co": {
-        "name": "Northwestern Wisconsin Elec Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (17 ZIP codes)"
+      "Waukesha": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "North Central Power Co Inc": {
-        "name": "North Central Power Co Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (18 ZIP codes)"
+      "Eau Claire": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Madison Gas & Electric Co": {
-        "name": "Madison Gas & Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (49 ZIP codes)"
+      "Oshkosh": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
       },
-      "Wisconsin Electric Power Co": {
-        "name": "Wisconsin Electric Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (262 ZIP codes)"
+      "Janesville": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
       },
-      "Pioneer Power and Light Co": {
-        "name": "Pioneer Power and Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (6 ZIP codes)"
+      "West Allis": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "Westfield Electric Company": {
-        "name": "Westfield Electric Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (1 ZIP codes)"
+      "La Crosse": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Sheboygan": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Wauwatosa": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Fond du Lac": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "New Berlin": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Wausau": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Brookfield": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Beloit": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Greenfield": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Franklin": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Oak Creek": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Manitowoc": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "West Bend": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Sun Prairie": {
+        "name": "Madison Gas & Electric",
+        "phone": "608-252-7000",
+        "website": "https://www.mge.com/"
+      },
+      "Superior": {
+        "name": "Superior Water Light & Power",
+        "phone": "715-394-7620",
+        "website": "https://www.swlp.com/",
+        "note": "Municipal"
+      },
+      "Stevens Point": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Neenah": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Fitchburg": {
+        "name": "Madison Gas & Electric",
+        "phone": "608-252-7000",
+        "website": "https://www.mge.com/"
+      },
+      "Muskego": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "De Pere": {
+        "name": "Wisconsin Public Service",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Mequon": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Watertown": {
+        "name": "Watertown Utilities",
+        "phone": "920-262-4080",
+        "website": "https://www.watertownutilities.com/",
+        "note": "Municipal"
+      },
+      "South Milwaukee": {
+        "name": "We Energies",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Marshfield": {
+        "name": "Marshfield Utilities",
+        "phone": "715-387-1195",
+        "website": "https://www.marshfieldutilities.org/",
+        "note": "Municipal"
+      },
+      "Wisconsin Rapids": {
+        "name": "Wisconsin Rapids Water Works & Lighting",
+        "phone": "715-421-8200",
+        "website": "https://www.wirapids.org/",
+        "note": "Municipal"
+      },
+      "Menasha": {
+        "name": "Menasha Utilities",
+        "phone": "920-967-3425",
+        "website": "https://www.menashautilities.com/",
+        "note": "Municipal"
+      },
+      "Kaukauna": {
+        "name": "Kaukauna Utilities",
+        "phone": "920-462-0251",
+        "website": "https://www.kaukaunautilities.com/",
+        "note": "Municipal"
+      },
+      "River Falls": {
+        "name": "River Falls Municipal Utilities",
+        "phone": "715-425-0906",
+        "website": "https://www.rfmu.org/",
+        "note": "Municipal"
+      },
+      "Sturgeon Bay": {
+        "name": "Sturgeon Bay Utilities",
+        "phone": "920-746-2812",
+        "website": "https://www.sturgeonbayutilities.com/",
+        "note": "Municipal"
       }
     },
     "DE": {
@@ -12909,61 +13116,153 @@
       }
     },
     "WI": {
-      "Statewide": {
-        "name": "We Energies",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for WI"
+      "Milwaukee": {
+        "name": "We Energies Gas",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "We_Energies": {
-        "name": "We Energies",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WI"
+      "Madison": {
+        "name": "Madison Gas & Electric",
+        "phone": "608-252-7000",
+        "website": "https://www.mge.com/"
       },
-      "Xcel_Energy": {
-        "name": "Xcel Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WI"
+      "Green Bay": {
+        "name": "Wisconsin Public Service Gas",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
       },
-      "Alliant_Energy": {
-        "name": "Alliant Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WI"
+      "Kenosha": {
+        "name": "We Energies Gas",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
       },
-      "Wisconsin_Public_Service": {
-        "name": "Wisconsin Public Service",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WI"
+      "Racine": {
+        "name": "We Energies Gas",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Appleton": {
+        "name": "Wisconsin Public Service Gas",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Waukesha": {
+        "name": "We Energies Gas",
+        "phone": "800-242-9137",
+        "website": "https://www.we-energies.com/"
+      },
+      "Eau Claire": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Oshkosh": {
+        "name": "Wisconsin Public Service Gas",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Janesville": {
+        "name": "Alliant Energy Gas",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "La Crosse": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Sheboygan": {
+        "name": "Alliant Energy Gas",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Fond du Lac": {
+        "name": "Alliant Energy Gas",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Wausau": {
+        "name": "Wisconsin Public Service Gas",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Beloit": {
+        "name": "Alliant Energy Gas",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Manitowoc": {
+        "name": "Wisconsin Public Service Gas",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
+      },
+      "Superior": {
+        "name": "Superior Water Light & Power Gas",
+        "phone": "715-394-7620",
+        "website": "https://www.swlp.com/",
+        "note": "Municipal"
+      },
+      "Stevens Point": {
+        "name": "Wisconsin Public Service Gas",
+        "phone": "800-450-7260",
+        "website": "https://www.wisconsinpublicservice.com/"
       }
     },
     "WY": {
-      "Statewide": {
-        "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for WY"
+      "Cheyenne": {
+        "name": "Black Hills Energy Gas",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Black_Hills_Energy": {
-        "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WY"
+      "Casper": {
+        "name": "Black Hills Energy Gas",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Dominion_Energy_Wyoming": {
+      "Laramie": {
+        "name": "Black Hills Energy Gas",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Gillette": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Rock Springs": {
         "name": "Dominion Energy Wyoming",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WY"
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Montana-Dakota_Utilities": {
-        "name": "Montana-Dakota Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WY"
+      "Sheridan": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Green River": {
+        "name": "Dominion Energy Wyoming",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Evanston": {
+        "name": "Dominion Energy Wyoming",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Riverton": {
+        "name": "Black Hills Energy Gas",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Cody": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Rawlins": {
+        "name": "Dominion Energy Wyoming",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
       }
     }
   },

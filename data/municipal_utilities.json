@@ -670,456 +670,322 @@
       }
     },
     "CA": {
-      "Los Angeles": {
-        "name": "Los Angeles Department of Water and Power (LADWP)",
-        "phone": "800-342-5397",
-        "website": "https://www.ladwp.com",
-        "zip_codes": [
-          "90001",
-          "90002",
-          "90003",
-          "90004",
-          "90005",
-          "90006",
-          "90007",
-          "90008",
-          "90010",
-          "90011",
-          "90012",
-          "90013",
-          "90014",
-          "90015",
-          "90016",
-          "90017",
-          "90018",
-          "90019",
-          "90020",
-          "90021",
-          "90022",
-          "90023",
-          "90024",
-          "90025",
-          "90026",
-          "90027",
-          "90028",
-          "90029",
-          "90031",
-          "90032",
-          "90033",
-          "90034",
-          "90035",
-          "90036",
-          "90037",
-          "90038",
-          "90039",
-          "90041",
-          "90042",
-          "90043",
-          "90044",
-          "90045",
-          "90046",
-          "90047",
-          "90048",
-          "90049",
-          "90056",
-          "90057",
-          "90058",
-          "90059",
-          "90061",
-          "90062",
-          "90063",
-          "90064",
-          "90065",
-          "90066",
-          "90067",
-          "90068",
-          "90069",
-          "90071",
-          "90077",
-          "90089",
-          "90090",
-          "90094",
-          "90095",
-          "90210",
-          "90211",
-          "90212",
-          "90230",
-          "90232",
-          "90247",
-          "90248",
-          "90272",
-          "90291",
-          "90292",
-          "90293",
-          "90402",
-          "90403",
-          "90404",
-          "90405"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ],
-        "note": "Largest municipal utility in US"
+      "San Francisco": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "San Jose": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Oakland": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Fresno": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Bakersfield": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Stockton": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Modesto": {
+        "name": "Modesto Irrigation District",
+        "phone": "209-526-7337",
+        "website": "https://www.mid.org/",
+        "note": "Municipal"
+      },
+      "Santa Rosa": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Fremont": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Hayward": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Sunnyvale": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Concord": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Santa Clara": {
+        "name": "Silicon Valley Power",
+        "phone": "408-615-2300",
+        "website": "https://www.siliconvalleypower.com/",
+        "note": "Municipal"
+      },
+      "Palo Alto": {
+        "name": "City of Palo Alto Utilities",
+        "phone": "650-329-2161",
+        "website": "https://www.cityofpaloalto.org/utilities",
+        "note": "Municipal"
+      },
+      "Alameda": {
+        "name": "Alameda Municipal Power",
+        "phone": "510-748-3900",
+        "website": "https://www.alamedamp.com/",
+        "note": "Municipal"
+      },
+      "Berkeley": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Roseville": {
+        "name": "Roseville Electric Utility",
+        "phone": "916-774-5300",
+        "website": "https://www.roseville.ca.us/electric",
+        "note": "Municipal"
+      },
+      "Redding": {
+        "name": "Redding Electric Utility",
+        "phone": "530-339-7200",
+        "website": "https://www.cityofredding.org/",
+        "note": "Municipal"
+      },
+      "Turlock": {
+        "name": "Turlock Irrigation District",
+        "phone": "209-883-8300",
+        "website": "https://www.tid.org/",
+        "note": "Irrigation District"
+      },
+      "Lodi": {
+        "name": "Lodi Electric Utility",
+        "phone": "209-333-6762",
+        "website": "https://www.lodi.gov/",
+        "note": "Municipal"
+      },
+      "Healdsburg": {
+        "name": "Healdsburg Electric",
+        "phone": "707-431-3346",
+        "website": "https://www.ci.healdsburg.ca.us/",
+        "note": "Municipal"
+      },
+      "Ukiah": {
+        "name": "Ukiah Electric",
+        "phone": "707-463-6233",
+        "website": "https://www.cityofukiah.com/",
+        "note": "Municipal"
       },
       "Sacramento": {
         "name": "Sacramento Municipal Utility District (SMUD)",
         "phone": "888-742-7683",
-        "website": "https://www.smud.org",
-        "zip_codes": [
-          "95608",
-          "95610",
-          "95615",
-          "95621",
-          "95624",
-          "95626",
-          "95628",
-          "95630",
-          "95632",
-          "95638",
-          "95641",
-          "95652",
-          "95655",
-          "95660",
-          "95662",
-          "95670",
-          "95673",
-          "95683",
-          "95693",
-          "95742",
-          "95757",
-          "95758",
-          "95811",
-          "95812",
-          "95813",
-          "95814",
-          "95815",
-          "95816",
-          "95817",
-          "95818",
-          "95819",
-          "95820",
-          "95821",
-          "95822",
-          "95823",
-          "95824",
-          "95825",
-          "95826",
-          "95827",
-          "95828",
-          "95829",
-          "95830",
-          "95831",
-          "95832",
-          "95833",
-          "95834",
-          "95835",
-          "95836",
-          "95837",
-          "95838",
-          "95841",
-          "95842",
-          "95843",
-          "95864"
-        ],
-        "note": "6th largest municipal utility in US"
+        "website": "https://www.smud.org/",
+        "note": "Municipal"
+      },
+      "Elk Grove": {
+        "name": "Sacramento Municipal Utility District (SMUD)",
+        "phone": "888-742-7683",
+        "website": "https://www.smud.org/"
+      },
+      "Rancho Cordova": {
+        "name": "Sacramento Municipal Utility District (SMUD)",
+        "phone": "888-742-7683",
+        "website": "https://www.smud.org/"
+      },
+      "Folsom": {
+        "name": "Sacramento Municipal Utility District (SMUD)",
+        "phone": "888-742-7683",
+        "website": "https://www.smud.org/"
+      },
+      "Citrus Heights": {
+        "name": "Sacramento Municipal Utility District (SMUD)",
+        "phone": "888-742-7683",
+        "website": "https://www.smud.org/"
+      },
+      "Los Angeles": {
+        "name": "Los Angeles Department of Water & Power (LADWP)",
+        "phone": "800-342-5397",
+        "website": "https://www.ladwp.com/",
+        "note": "Municipal"
+      },
+      "Long Beach": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Anaheim": {
+        "name": "Anaheim Public Utilities",
+        "phone": "714-765-3300",
+        "website": "https://www.anaheim.net/utilities",
+        "note": "Municipal"
+      },
+      "Santa Ana": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Irvine": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
       },
       "Riverside": {
         "name": "Riverside Public Utilities",
         "phone": "951-826-5485",
         "website": "https://www.riversideca.gov/utilities",
-        "zip_codes": [
-          "92501",
-          "92502",
-          "92503",
-          "92504",
-          "92505",
-          "92506",
-          "92507",
-          "92508",
-          "92509"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "note": "Municipal"
       },
-      "Anaheim": {
-        "name": "Anaheim Public Utilities",
-        "phone": "714-765-3300",
-        "website": "https://www.anaheim.net/165/Public-Utilities",
-        "zip_codes": [
-          "92801",
-          "92802",
-          "92803",
-          "92804",
-          "92805",
-          "92806",
-          "92807",
-          "92808",
-          "92809"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+      "San Bernardino": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Ontario": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Fontana": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Rancho Cucamonga": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Corona": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
+      },
+      "Pomona": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com/"
       },
       "Pasadena": {
-        "name": "Pasadena Water and Power",
+        "name": "Pasadena Water & Power",
         "phone": "626-744-4005",
-        "website": "https://www.pwpweb.com",
-        "zip_codes": [
-          "91101",
-          "91102",
-          "91103",
-          "91104",
-          "91105",
-          "91106",
-          "91107",
-          "91108",
-          "91109"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "website": "https://www.cityofpasadena.net/water-and-power/",
+        "note": "Municipal"
       },
       "Glendale": {
         "name": "Glendale Water & Power",
         "phone": "818-548-2107",
         "website": "https://www.glendaleca.gov/gwp",
-        "zip_codes": [
-          "91201",
-          "91202",
-          "91203",
-          "91204",
-          "91205",
-          "91206",
-          "91207",
-          "91208",
-          "91210"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "note": "Municipal"
       },
       "Burbank": {
-        "name": "Burbank Water and Power",
+        "name": "Burbank Water & Power",
         "phone": "818-238-3700",
-        "website": "https://www.burbankwaterandpower.com",
-        "zip_codes": [
-          "91501",
-          "91502",
-          "91503",
-          "91504",
-          "91505",
-          "91506"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
-      },
-      "Palo Alto": {
-        "name": "City of Palo Alto Utilities",
-        "phone": "650-329-2161",
-        "website": "https://www.cityofpaloalto.org/Departments/Utilities",
-        "zip_codes": [
-          "94301",
-          "94302",
-          "94303",
-          "94304",
-          "94306"
-        ],
-        "services": [
-          "electric",
-          "gas",
-          "water"
-        ]
-      },
-      "Santa Clara": {
-        "name": "Silicon Valley Power",
-        "phone": "408-615-2300",
-        "website": "https://www.siliconvalleypower.com",
-        "zip_codes": [
-          "95050",
-          "95051",
-          "95052",
-          "95054"
-        ],
-        "note": "City of Santa Clara municipal utility"
-      },
-      "Alameda": {
-        "name": "Alameda Municipal Power",
-        "phone": "510-748-3900",
-        "website": "https://www.alamedamp.com",
-        "zip_codes": [
-          "94501",
-          "94502"
-        ]
-      },
-      "Roseville": {
-        "name": "Roseville Electric Utility",
-        "phone": "916-774-5300",
-        "website": "https://www.roseville.ca.us/government/departments/electric_utility",
-        "zip_codes": [
-          "95661",
-          "95678",
-          "95746",
-          "95747"
-        ]
-      },
-      "Redding": {
-        "name": "Redding Electric Utility",
-        "phone": "530-339-7200",
-        "website": "https://www.cityofredding.org",
-        "zip_codes": [
-          "96001",
-          "96002",
-          "96003"
-        ]
-      },
-      "Lodi": {
-        "name": "Lodi Electric Utility",
-        "phone": "209-333-6762",
-        "website": "https://www.lodi.gov",
-        "zip_codes": [
-          "95240",
-          "95241",
-          "95242"
-        ]
+        "website": "https://www.burbankwaterandpower.com/",
+        "note": "Municipal"
       },
       "Azusa": {
         "name": "Azusa Light & Water",
         "phone": "626-812-5225",
-        "website": "https://www.azusalw.com/"
+        "website": "https://www.azusalw.com/",
+        "note": "Municipal"
+      },
+      "Colton": {
+        "name": "Colton Electric Utility",
+        "phone": "909-370-5104",
+        "website": "https://www.coltonca.gov/",
+        "note": "Municipal"
       },
       "Banning": {
         "name": "Banning Electric Utility",
         "phone": "951-922-3125",
-        "website": "https://www.ci.banning.ca.us/"
-      },
-      "Biggs": {
-        "name": "City of Biggs Electric",
-        "phone": "530-868-5493",
-        "website": null
-      },
-      "Colton": {
-        "name": "Colton Electric Utility",
-        "phone": "909-370-5044",
-        "website": "https://www.coltonca.gov/"
-      },
-      "Corona": {
-        "name": "Corona Department of Water & Power",
-        "phone": "951-736-2259",
-        "website": "https://www.coronaca.gov/"
-      },
-      "Healdsburg": {
-        "name": "Healdsburg Electric",
-        "phone": "707-431-3346",
-        "website": "https://www.ci.healdsburg.ca.us/"
-      },
-      "Lompoc": {
-        "name": "City of Lompoc Electric",
-        "phone": "805-875-8252",
-        "website": "https://www.cityoflompoc.com/"
-      },
-      "Modesto": {
-        "name": "Modesto Irrigation District",
-        "phone": "209-526-7337",
-        "website": "https://www.mid.org/"
-      },
-      "Needles": {
-        "name": "Needles Public Utility Authority",
-        "phone": "760-326-5700",
-        "website": null
-      },
-      "Shasta Lake": {
-        "name": "City of Shasta Lake Electric",
-        "phone": "530-275-7400",
-        "website": null
-      },
-      "Turlock": {
-        "name": "Turlock Irrigation District",
-        "phone": "209-883-8300",
-        "website": "https://www.tid.org/"
-      },
-      "Ukiah": {
-        "name": "Ukiah Electric Utility",
-        "phone": "707-463-6233",
-        "website": "https://www.cityofukiah.com/"
+        "website": "https://www.ci.banning.ca.us/",
+        "note": "Municipal"
       },
       "Vernon": {
         "name": "Vernon Public Utilities",
         "phone": "323-583-8811",
-        "website": "https://www.cityofvernon.org/"
+        "website": "https://www.cityofvernon.org/",
+        "note": "Municipal"
       },
-      "Victorville": {
-        "name": "City of Victorville Electric",
-        "phone": "760-955-5000",
-        "website": "https://www.victorvilleca.gov/"
+      "San Diego": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
       },
-      "Imperial": {
+      "Chula Vista": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Oceanside": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Escondido": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Carlsbad": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "El Cajon": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Vista": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "San Marcos": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Encinitas": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "National City": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "El Centro": {
         "name": "Imperial Irrigation District",
-        "phone": "760-339-9144",
+        "phone": "800-303-7756",
+        "website": "https://www.iid.com/",
+        "note": "Irrigation District"
+      },
+      "Brawley": {
+        "name": "Imperial Irrigation District",
+        "phone": "800-303-7756",
         "website": "https://www.iid.com/"
       },
-      "Merced": {
-        "name": "Merced Irrigation District",
-        "phone": "209-722-5761",
-        "website": "https://www.mercedid.com/"
-      },
-      "Trinity County": {
-        "name": "Trinity Public Utilities District",
-        "phone": "530-623-5536",
-        "website": "https://www.trinitypud.com/"
-      },
-      "Gridley": {
-        "name": "City of Gridley Electric",
-        "phone": "530-846-3631",
-        "website": null
-      },
-      "Rancho Cucamonga": {
-        "name": "Rancho Cucamonga Municipal Utility",
-        "phone": "909-477-2700",
-        "website": "https://www.cityofrc.us/"
-      },
-      "Pacific Gas & Electric Co": {
-        "name": "Pacific Gas & Electric Co.",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (1140 ZIP codes)"
-      },
-      "Southern California Edison Co": {
-        "name": "Southern California Edison Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (801 ZIP codes)"
-      },
-      "PacifiCorp": {
-        "name": "PacifiCorp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (53 ZIP codes)"
-      },
-      "Liberty Utilities": {
-        "name": "Liberty Utilities",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (23 ZIP codes)"
-      },
-      "San Diego Gas & Electric Co": {
-        "name": "San Diego Gas & Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (210 ZIP codes)"
-      },
-      "Bear Valley Electric Service": {
-        "name": "Bear Valley Electric Service",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+      "Calexico": {
+        "name": "Imperial Irrigation District",
+        "phone": "800-303-7756",
+        "website": "https://www.iid.com/"
       }
     },
     "FL": {
@@ -5616,22 +5482,7 @@
       }
     },
     "CA": {
-      "Los Angeles": {
-        "name": "Southern California Gas Company (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
-      },
-      "San Diego": {
-        "name": "San Diego Gas & Electric",
-        "phone": "800-411-7343",
-        "website": "https://www.sdge.com/"
-      },
       "San Francisco": {
-        "name": "Pacific Gas & Electric (PG&E)",
-        "phone": "800-743-5000",
-        "website": "https://www.pge.com/"
-      },
-      "Sacramento": {
         "name": "Pacific Gas & Electric (PG&E)",
         "phone": "800-743-5000",
         "website": "https://www.pge.com/"
@@ -5651,36 +5502,15 @@
         "phone": "800-743-5000",
         "website": "https://www.pge.com/"
       },
-      "Long Beach": {
-        "name": "Long Beach Gas & Oil",
-        "phone": "562-570-2140",
-        "website": "https://www.longbeach.gov/",
-        "note": "Municipal gas utility"
-      },
-      "Anaheim": {
-        "name": "Southern California Gas Company (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
-      },
-      "Santa Ana": {
-        "name": "Southern California Gas Company (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
-      },
-      "Riverside": {
-        "name": "Southern California Gas Company (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
-      },
-      "Irvine": {
-        "name": "Southern California Gas Company (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
+      "Sacramento": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
       },
       "Bakersfield": {
-        "name": "Southern California Gas Company (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
       },
       "Stockton": {
         "name": "Pacific Gas & Electric (PG&E)",
@@ -5692,11 +5522,177 @@
         "phone": "800-743-5000",
         "website": "https://www.pge.com/"
       },
+      "Santa Rosa": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Fremont": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Hayward": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Sunnyvale": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Concord": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Santa Clara": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Berkeley": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
       "Palo Alto": {
-        "name": "City of Palo Alto Gas",
+        "name": "City of Palo Alto Utilities Gas",
         "phone": "650-329-2161",
-        "website": "https://www.cityofpaloalto.org/",
-        "note": "Municipal gas utility"
+        "website": "https://www.cityofpaloalto.org/utilities",
+        "note": "Municipal gas"
+      },
+      "Los Angeles": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Long Beach": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Anaheim": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Santa Ana": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Irvine": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Riverside": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "San Bernardino": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Ontario": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Fontana": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Rancho Cucamonga": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Corona": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Pomona": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Pasadena": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Glendale": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Burbank": {
+        "name": "Southern California Gas (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "San Diego": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Chula Vista": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Oceanside": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Escondido": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Carlsbad": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "El Cajon": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Vista": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "San Marcos": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Encinitas": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "National City": {
+        "name": "San Diego Gas & Electric (SDG&E)",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "Long Beach_Gas": {
+        "name": "Long Beach Gas & Oil",
+        "phone": "562-570-2140",
+        "website": "https://www.longbeach.gov/lbgo/",
+        "note": "Municipal gas"
       }
     },
     "FL": {

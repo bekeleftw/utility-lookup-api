@@ -225,8 +225,104 @@ def query_new_jersey_water(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_washington_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Washington DOH Drinking Water Service Areas.
+    """
+    url = "https://services8.arcgis.com/rGGrs6HCnw87OFOT/ArcGIS/rest/services/Drinking_Water_Service_Areas/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "WS_ID,WS_Name,County,Contact_Phone")
+    
+    if result:
+        return {
+            "name": result.get("WS_Name", "").strip(),
+            "pws_id": result.get("WS_ID"),
+            "county": result.get("County"),
+            "phone": result.get("Contact_Phone"),
+            "confidence": "high",
+            "source": "washington_doh"
+        }
+    return None
+
+
+def query_utah_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Utah Culinary Water Service Areas.
+    Source: Utah Division of Water Resources
+    """
+    url = "https://services.arcgis.com/ZzrwjTRez6FJiOq4/ArcGIS/rest/services/CulinaryWaterServiceAreas/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "WRENAME,DWNAME,SYSTEMTYPE")
+    
+    if result:
+        name = result.get("WRENAME") or result.get("DWNAME", "")
+        return {
+            "name": name.strip() if name else "",
+            "system_type": result.get("SYSTEMTYPE"),
+            "confidence": "high",
+            "source": "utah_dwre"
+        }
+    return None
+
+
+def query_tennessee_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Tennessee Public Water System Service Area Boundaries.
+    Source: TDEC (Tennessee Dept of Environment & Conservation)
+    """
+    url = "https://services5.arcgis.com/bPacKTm9cauMXVfn/arcgis/rest/services/TN_Public_Water_System_Service_Area_Boundaries_WFL1/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "PWSID,MA_NAME,PL_TYPE,PL_POPL")
+    
+    if result:
+        return {
+            "name": result.get("MA_NAME", "").strip(),
+            "pws_id": result.get("PWSID"),
+            "system_type": result.get("PL_TYPE"),
+            "population": result.get("PL_POPL"),
+            "confidence": "high",
+            "source": "tennessee_tdec"
+        }
+    return None
+
+
+def query_north_carolina_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query North Carolina Water System Service Areas.
+    Note: Data from 2004, covers Type A systems only (~23% coverage)
+    """
+    url = "https://services.nconemap.gov/secure/rest/services/NC1Map_Water_Sewer_2004/MapServer/3/query"
+    result = _query_arcgis_point(url, lat, lon, "wasyname,wasyid,waphn")
+    
+    if result:
+        return {
+            "name": result.get("wasyname", "").strip(),
+            "system_id": result.get("wasyid"),
+            "phone": result.get("waphn"),
+            "confidence": "medium",  # Older data
+            "source": "north_carolina_onemap"
+        }
+    return None
+
+
+def query_new_mexico_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query New Mexico Public Water System Boundaries.
+    Source: NM Office of the State Engineer (OSE)
+    Coverage: 93% (526 of 564 active CWS)
+    """
+    url = "https://services2.arcgis.com/qXZbWTdPDbTjl7Dy/arcgis/rest/services/New_Mexico_Public_Water_Systems_Download/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "Water_System_ID,PublicSystemName")
+    
+    if result:
+        return {
+            "name": result.get("PublicSystemName", "").strip(),
+            "pws_id": result.get("Water_System_ID"),
+            "confidence": "high",
+            "source": "new_mexico_ose"
+        }
+    return None
+
+
 # States with state-specific water APIs (more authoritative than EPA)
-STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ'}
+STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM'}
 
 
 def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optional[Dict]:
@@ -267,6 +363,26 @@ def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optio
             return result
     elif state == "NJ":
         result = query_new_jersey_water(lat, lon)
+        if result:
+            return result
+    elif state == "WA":
+        result = query_washington_water(lat, lon)
+        if result:
+            return result
+    elif state == "UT":
+        result = query_utah_water(lat, lon)
+        if result:
+            return result
+    elif state == "TN":
+        result = query_tennessee_water(lat, lon)
+        if result:
+            return result
+    elif state == "NC":
+        result = query_north_carolina_water(lat, lon)
+        if result:
+            return result
+    elif state == "NM":
+        result = query_new_mexico_water(lat, lon)
         if result:
             return result
     elif state == "MS":

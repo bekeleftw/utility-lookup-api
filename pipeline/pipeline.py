@@ -18,6 +18,7 @@ from .interfaces import (
     PRECISION_BONUS,
 )
 from .smart_selector import get_smart_selector, SmartSelector
+from .ai_selector import get_ai_selector, AISelector
 
 
 class LookupPipeline:
@@ -46,12 +47,21 @@ class LookupPipeline:
         # Feature flags for gradual rollout
         self.enable_cross_validation = True
         self.enable_serp_verification = True
-        self.enable_smart_selector = True  # Use OpenAI for disagreement resolution
+        self.enable_smart_selector = True  # Legacy - use SmartSelector for tie-breaking
+        self.enable_ai_selector = True     # NEW: AI-first selection (data sources as advisors)
         self.serp_confidence_threshold = 70
         
-        # Initialize smart selector
+        # Initialize selectors
         self._smart_selector = None
-        if self.enable_smart_selector:
+        self._ai_selector = None
+        
+        if self.enable_ai_selector:
+            try:
+                self._ai_selector = get_ai_selector()
+            except Exception as e:
+                print(f"Failed to initialize AISelector: {e}")
+        
+        if self.enable_smart_selector and not self._ai_selector:
             try:
                 self._smart_selector = get_smart_selector()
             except Exception as e:
@@ -91,20 +101,44 @@ class LookupPipeline:
             result.all_results = results
             return result
         
-        # 3. Cross-validate if enabled
+        # 3. Cross-validate if enabled (for reporting, not decision making)
         if self.enable_cross_validation and len(valid_results) > 1:
             cv_result = self._cross_validate(valid_results)
         else:
             cv_result = None
         
-        # 4. Select best result - use SmartSelector if sources disagree
-        sources_disagree = cv_result and not cv_result.get('sources_agreed', True)
-        
-        if sources_disagree and self._smart_selector:
-            # Use OpenAI Smart Selector for disagreement resolution
-            selection = self._smart_selector.select_utility(context, valid_results)
+        # 4. Select best result
+        # NEW: AI-first selection - AI evaluates ALL candidates with full context
+        if self._ai_selector and len(valid_results) > 1:
+            # AI-first: Let AI evaluate all candidates and make the decision
+            ai_decision = self._ai_selector.select(context, valid_results)
             
             # Find the matching source result
+            primary = None
+            for r in valid_results:
+                if r.utility_name == ai_decision.utility_name or r.source_name == ai_decision.selected_source:
+                    primary = r
+                    break
+            
+            if not primary:
+                # AI chose something not in results (shouldn't happen but handle it)
+                primary = SourceResult(
+                    source_name=ai_decision.selected_source,
+                    utility_name=ai_decision.utility_name,
+                    confidence_score=int(ai_decision.confidence * 100),
+                    match_type='ai_selector'
+                )
+            
+            # Store AI reasoning
+            if cv_result is None:
+                cv_result = {}
+            cv_result['ai_selector_used'] = True
+            cv_result['ai_selector_reasoning'] = ai_decision.reasoning
+            
+        elif self._smart_selector and cv_result and not cv_result.get('sources_agreed', True):
+            # Legacy: Use SmartSelector for disagreement resolution
+            selection = self._smart_selector.select_utility(context, valid_results)
+            
             primary = None
             for r in valid_results:
                 if r.utility_name == selection.utility_name or r.source_name == selection.selected_source:
@@ -112,7 +146,6 @@ class LookupPipeline:
                     break
             
             if not primary:
-                # SmartSelector chose a utility not in results, create synthetic result
                 primary = SourceResult(
                     source_name=selection.selected_source,
                     utility_name=selection.utility_name,
@@ -120,11 +153,11 @@ class LookupPipeline:
                     match_type='smart_selector'
                 )
             
-            # Update cv_result with SmartSelector's analysis
             cv_result['smart_selector_used'] = True
             cv_result['smart_selector_reasoning'] = selection.reasoning
-            cv_result['confidence_adjustment'] = int((selection.confidence - 0.7) * 50)  # Adjust based on LLM confidence
+            cv_result['confidence_adjustment'] = int((selection.confidence - 0.7) * 50)
         else:
+            # Fallback: rule-based selection
             primary = self._select_primary(valid_results, cv_result)
         
         # 5. Build pipeline result

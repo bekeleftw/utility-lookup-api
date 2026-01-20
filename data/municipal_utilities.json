@@ -1290,6 +1290,101 @@
           "32968",
           "32969"
         ]
+      },
+      "Homestead": {
+        "name": "Homestead Public Services",
+        "phone": "305-224-4800",
+        "website": "https://www.cityofhomestead.com/"
+      },
+      "New Smyrna Beach": {
+        "name": "New Smyrna Beach Utilities Commission",
+        "phone": "386-427-1361",
+        "website": "https://www.nsbuc.com/"
+      },
+      "Starke": {
+        "name": "City of Starke Electric",
+        "phone": "904-964-5027",
+        "website": null
+      },
+      "Green Cove Springs": {
+        "name": "Green Cove Springs Electric",
+        "phone": "904-297-7500",
+        "website": "https://www.greencovesprings.com/"
+      },
+      "Bartow": {
+        "name": "City of Bartow Electric",
+        "phone": "863-534-0100",
+        "website": "https://www.cityofbartow.net/"
+      },
+      "Wauchula": {
+        "name": "City of Wauchula Electric",
+        "phone": "863-773-3131",
+        "website": null
+      },
+      "Quincy": {
+        "name": "City of Quincy Electric",
+        "phone": "850-627-7681",
+        "website": "https://www.myquincy.net/"
+      },
+      "Blountstown": {
+        "name": "City of Blountstown Electric",
+        "phone": "850-674-5488",
+        "website": null
+      },
+      "Chattahoochee": {
+        "name": "City of Chattahoochee Electric",
+        "phone": "850-663-4475",
+        "website": null
+      },
+      "Havana": {
+        "name": "City of Havana Electric",
+        "phone": "850-539-2689",
+        "website": null
+      },
+      "Bushnell": {
+        "name": "City of Bushnell Electric",
+        "phone": "352-793-2591",
+        "website": null
+      },
+      "Williston": {
+        "name": "City of Williston Electric",
+        "phone": "352-528-3060",
+        "website": null
+      },
+      "Alachua": {
+        "name": "City of Alachua Electric",
+        "phone": "386-418-6100",
+        "website": "https://www.cityofalachua.com/"
+      },
+      "Newberry": {
+        "name": "City of Newberry Electric",
+        "phone": "352-472-2161",
+        "website": null
+      },
+      "Mount Dora": {
+        "name": "City of Mount Dora Electric",
+        "phone": "352-735-7100",
+        "website": "https://www.cityofmountdora.com/"
+      },
+      "Winter Park": {
+        "name": "City of Winter Park Electric",
+        "phone": "407-599-3364",
+        "website": "https://www.cityofwinterpark.org/"
+      },
+      "St. Cloud": {
+        "name": "St. Cloud Utilities",
+        "phone": "407-957-7344",
+        "website": "https://www.stcloud.org/"
+      },
+      "Clewiston": {
+        "name": "City of Clewiston Electric",
+        "phone": "863-983-1484",
+        "website": null
+      },
+      "Moore Haven": {
+        "name": "City of Moore Haven Electric",
+        "phone": "863-946-0711",
+        "website": null
       }
     },
     "TN": {
@@ -3141,6 +3236,100 @@
         "phone": "650-329-2161",
         "website": "https://www.cityofpaloalto.org/",
         "note": "Municipal gas utility"
+      }
+    },
+    "FL": {
+      "Miami": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Fort Lauderdale": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "West Palm Beach": {
+        "name": "Florida City Gas",
+        "phone": "888-352-5325",
+        "website": "https://www.floridacitygas.com/"
+      },
+      "Tampa": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Orlando": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Jacksonville": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "St. Petersburg": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Clearwater": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Tallahassee": {
+        "name": "City of Tallahassee Gas",
+        "phone": "850-891-4968",
+        "website": "https://www.talgov.com/",
+        "note": "Municipal gas utility"
+      },
+      "Gainesville": {
+        "name": "Gainesville Regional Utilities Gas",
+        "phone": "352-334-3434",
+        "website": "https://www.gru.com/",
+        "note": "Municipal gas utility"
+      },
+      "Lakeland": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Sarasota": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Fort Myers": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Naples": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Pensacola": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Ocala": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Daytona Beach": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
+      },
+      "Melbourne": {
+        "name": "TECO Peoples Gas",
+        "phone": "877-832-6747",
+        "website": "https://www.peoplesgas.com/"
       }
     }
   },
@@ -11151,6 +11340,246 @@
           "32839"
         ],
         "note": "OUC provides electric and water"
+      },
+      "Fort Lauderdale": {
+        "name": "City of Fort Lauderdale Water",
+        "phone": "954-828-8000",
+        "website": "https://www.fortlauderdale.gov/"
+      },
+      "West Palm Beach": {
+        "name": "City of West Palm Beach Water",
+        "phone": "561-822-2222",
+        "website": "https://www.wpb.org/"
+      },
+      "Tampa": {
+        "name": "City of Tampa Water",
+        "phone": "813-274-8811",
+        "website": "https://www.tampa.gov/"
+      },
+      "Jacksonville": {
+        "name": "JEA Water",
+        "phone": "904-665-6000",
+        "website": "https://www.jea.com/"
+      },
+      "St. Petersburg": {
+        "name": "City of St. Petersburg Water",
+        "phone": "727-893-7261",
+        "website": "https://www.stpete.org/"
+      },
+      "Clearwater": {
+        "name": "City of Clearwater Water",
+        "phone": "727-562-4600",
+        "website": "https://www.myclearwater.com/"
+      },
+      "Tallahassee": {
+        "name": "City of Tallahassee Water",
+        "phone": "850-891-4968",
+        "website": "https://www.talgov.com/"
+      },
+      "Gainesville": {
+        "name": "Gainesville Regional Utilities (GRU)",
+        "phone": "352-334-3434",
+        "website": "https://www.gru.com/"
+      },
+      "Lakeland": {
+        "name": "City of Lakeland Water",
+        "phone": "863-834-6000",
+        "website": "https://www.lakelandgov.net/"
+      },
+      "Sarasota": {
+        "name": "Sarasota County Utilities",
+        "phone": "941-861-6790",
+        "website": "https://www.scgov.net/"
+      },
+      "Fort Myers": {
+        "name": "City of Fort Myers Utilities",
+        "phone": "239-321-7990",
+        "website": "https://www.cityftmyers.com/"
+      },
+      "Naples": {
+        "name": "City of Naples Utilities",
+        "phone": "239-213-4700",
+        "website": "https://www.naplesgov.com/"
+      },
+      "Pensacola": {
+        "name": "Emerald Coast Utilities Authority",
+        "phone": "850-476-0480",
+        "website": "https://www.ecua.fl.gov/"
+      },
+      "Ocala": {
+        "name": "City of Ocala Water",
+        "phone": "352-629-8421",
+        "website": "https://www.ocalafl.org/"
+      },
+      "Daytona Beach": {
+        "name": "City of Daytona Beach Water",
+        "phone": "386-671-8850",
+        "website": "https://www.codb.us/"
+      },
+      "Melbourne": {
+        "name": "City of Melbourne Water",
+        "phone": "321-608-5000",
+        "website": "https://www.melbourneflorida.org/"
+      },
+      "Coral Springs": {
+        "name": "City of Coral Springs Water",
+        "phone": "954-344-1000",
+        "website": "https://www.coralsprings.org/"
+      },
+      "Pembroke Pines": {
+        "name": "City of Pembroke Pines Water",
+        "phone": "954-435-6500",
+        "website": "https://www.ppines.com/"
+      },
+      "Hollywood": {
+        "name": "City of Hollywood Water",
+        "phone": "954-967-4230",
+        "website": "https://www.hollywoodfl.org/"
+      },
+      "Miramar": {
+        "name": "City of Miramar Water",
+        "phone": "954-602-4357",
+        "website": "https://www.miramarfl.gov/"
+      },
+      "Hialeah": {
+        "name": "City of Hialeah Water",
+        "phone": "305-883-8075",
+        "website": "https://www.hialeahfl.gov/"
+      },
+      "Sunrise": {
+        "name": "City of Sunrise Water",
+        "phone": "954-746-3400",
+        "website": "https://www.sunrisefl.gov/"
+      },
+      "Plantation": {
+        "name": "City of Plantation Water",
+        "phone": "954-797-2200",
+        "website": "https://www.plantation.org/"
+      },
+      "Pompano Beach": {
+        "name": "City of Pompano Beach Water",
+        "phone": "954-545-7000",
+        "website": "https://www.pompanobeachfl.gov/"
+      },
+      "Boca Raton": {
+        "name": "City of Boca Raton Water",
+        "phone": "561-338-7300",
+        "website": "https://www.myboca.us/"
+      },
+      "Delray Beach": {
+        "name": "City of Delray Beach Water",
+        "phone": "561-243-7000",
+        "website": "https://www.delraybeachfl.gov/"
+      },
+      "Boynton Beach": {
+        "name": "City of Boynton Beach Water",
+        "phone": "561-742-6300",
+        "website": "https://www.boynton-beach.org/"
+      },
+      "Palm Beach Gardens": {
+        "name": "Seacoast Utility Authority",
+        "phone": "561-627-2920",
+        "website": "https://www.sua.com/"
+      },
+      "Jupiter": {
+        "name": "Loxahatchee River District",
+        "phone": "561-747-5700",
+        "website": "https://www.lfrwmd.org/"
+      },
+      "Port St. Lucie": {
+        "name": "City of Port St. Lucie Utilities",
+        "phone": "772-871-5100",
+        "website": "https://www.cityofpsl.com/"
+      },
+      "Cape Coral": {
+        "name": "City of Cape Coral Utilities",
+        "phone": "239-574-0700",
+        "website": "https://www.capecoral.gov/"
+      },
+      "Kissimmee": {
+        "name": "Toho Water Authority",
+        "phone": "407-944-5000",
+        "website": "https://www.tohowater.com/"
+      },
+      "Sanford": {
+        "name": "City of Sanford Water",
+        "phone": "407-688-5000",
+        "website": "https://www.sanfordfl.gov/"
+      },
+      "Deltona": {
+        "name": "City of Deltona Water",
+        "phone": "386-878-8100",
+        "website": "https://www.deltonafl.gov/"
+      },
+      "Palm Bay": {
+        "name": "City of Palm Bay Utilities",
+        "phone": "321-952-3400",
+        "website": "https://www.palmbayflorida.org/"
+      },
+      "Titusville": {
+        "name": "City of Titusville Water",
+        "phone": "321-567-3700",
+        "website": "https://www.titusville.com/"
+      },
+      "Cocoa": {
+        "name": "City of Cocoa Water",
+        "phone": "321-433-8400",
+        "website": "https://www.cocoafl.org/"
+      },
+      "Rockledge": {
+        "name": "City of Rockledge Water",
+        "phone": "321-690-3978",
+        "website": "https://www.cityofrockledge.org/"
+      },
+      "Winter Haven": {
+        "name": "City of Winter Haven Water",
+        "phone": "863-291-5656",
+        "website": "https://www.mywinterhaven.com/"
+      },
+      "Bartow": {
+        "name": "City of Bartow Water",
+        "phone": "863-534-0100",
+        "website": "https://www.cityofbartow.net/"
+      },
+      "Bradenton": {
+        "name": "City of Bradenton Water",
+        "phone": "941-932-9400",
+        "website": "https://www.cityofbradenton.com/"
+      },
+      "Venice": {
+        "name": "City of Venice Water",
+        "phone": "941-486-2626",
+        "website": "https://www.venicegov.com/"
+      },
+      "North Port": {
+        "name": "City of North Port Water",
+        "phone": "941-429-7000",
+        "website": "https://www.cityofnorthport.com/"
+      },
+      "Punta Gorda": {
+        "name": "City of Punta Gorda Water",
+        "phone": "941-575-3300",
+        "website": "https://www.pgorda.us/"
+      },
+      "Key West": {
+        "name": "Florida Keys Aqueduct Authority",
+        "phone": "305-296-2454",
+        "website": "https://www.fkaa.com/"
+      },
+      "Panama City": {
+        "name": "City of Panama City Water",
+        "phone": "850-872-3100",
+        "website": "https://www.pcgov.org/"
+      },
+      "Fort Walton Beach": {
+        "name": "City of Fort Walton Beach Water",
+        "phone": "850-833-9500",
+        "website": "https://www.fwb.org/"
+      },
+      "Destin": {
+        "name": "Destin Water Users",
+        "phone": "850-837-6146",
+        "website": "https://www.destinwaterusers.org/"
       }
     }
   }

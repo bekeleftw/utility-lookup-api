@@ -168,7 +168,12 @@ class ZIPMappingGasSource(DataSource):
 
 
 class HIFLDGasSource(DataSource):
-    """Query HIFLD gas utility polygons."""
+    """
+    Query HIFLD gas utility polygons.
+    
+    FIXED: Now returns all candidates when multiple utilities overlap,
+    allowing the Smart Selector to choose the best one.
+    """
     
     @property
     def name(self) -> str:
@@ -195,14 +200,18 @@ class HIFLDGasSource(DataSource):
                 return None
             
             # HIFLD can return a list or single result
+            # FIXED: Store all candidates in raw_data for Smart Selector
             if isinstance(result, list):
+                candidates = result
                 primary = result[0] if result else None
             else:
+                candidates = [result]
                 primary = result
             
             if not primary or not primary.get('NAME'):
                 return None
             
+            # Store all candidates for Smart Selector to evaluate
             return SourceResult(
                 source_name=self.name,
                 utility_name=primary.get('NAME'),
@@ -210,7 +219,12 @@ class HIFLDGasSource(DataSource):
                 match_type='point',
                 phone=primary.get('TELEPHONE'),
                 website=primary.get('WEBSITE'),
-                raw_data=primary
+                raw_data={
+                    'primary': primary,
+                    'all_candidates': candidates,
+                    'candidate_count': len(candidates),
+                    'candidate_names': [c.get('NAME') for c in candidates if c.get('NAME')]
+                }
             )
         except Exception as e:
             return SourceResult(

@@ -1257,6 +1257,294 @@
           "30045",
           "30046"
         ]
+      },
+      "Acworth": {
+        "name": "City of Acworth Electric",
+        "phone": "770-974-3112",
+        "website": "http://www.acworth.org/",
+        "note": "MEAG Power participant"
+      },
+      "Adel": {
+        "name": "City of Adel Electric",
+        "phone": "229-896-4504",
+        "website": "http://www.cityofadel.us/",
+        "note": "MEAG Power participant"
+      },
+      "Albany": {
+        "name": "Albany Utility Board",
+        "phone": "229-883-8330",
+        "website": "http://www.albanyutil.org/",
+        "note": "MEAG Power participant"
+      },
+      "Barnesville": {
+        "name": "City of Barnesville Electric",
+        "phone": "770-358-0181",
+        "website": "http://www.cityofbarnesville.com/",
+        "note": "MEAG Power participant"
+      },
+      "Blakely": {
+        "name": "City of Blakely Electric",
+        "phone": "229-723-3677",
+        "website": "http://www.cityofblakely.net/",
+        "note": "MEAG Power participant"
+      },
+      "Brinson": {
+        "name": "City of Brinson Electric",
+        "phone": "229-248-1752",
+        "website": null,
+        "note": "MEAG Power participant"
+      },
+      "Buford": {
+        "name": "City of Buford Electric",
+        "phone": "770-945-6761",
+        "website": "http://www.cityofbuford.com/",
+        "note": "MEAG Power participant"
+      },
+      "Cairo": {
+        "name": "City of Cairo Electric",
+        "phone": "229-377-1722",
+        "website": "http://www.syrupcity.net/",
+        "note": "MEAG Power participant"
+      },
+      "Calhoun": {
+        "name": "City of Calhoun Electric",
+        "phone": "706-629-0151",
+        "website": "http://www.cityofcalhoun-ga.com/",
+        "note": "MEAG Power participant"
+      },
+      "Camilla": {
+        "name": "City of Camilla Electric",
+        "phone": "229-336-2220",
+        "website": "http://www.camillaga.net/",
+        "note": "MEAG Power participant"
+      },
+      "Cartersville": {
+        "name": "Cartersville Electric System",
+        "phone": "770-387-5656",
+        "website": "http://www.cityofcartersville.org/",
+        "note": "MEAG Power participant"
+      },
+      "College Park": {
+        "name": "City of College Park Electric",
+        "phone": "404-767-1537",
+        "website": "http://www.collegeparkga.com/",
+        "note": "MEAG Power participant"
+      },
+      "Commerce": {
+        "name": "City of Commerce Electric",
+        "phone": "706-335-3100",
+        "website": "http://www.commercega.org/",
+        "note": "MEAG Power participant"
+      },
+      "Covington": {
+        "name": "City of Covington Electric",
+        "phone": "770-385-2000",
+        "website": "http://www.cityofcovington.org/",
+        "note": "MEAG Power participant"
+      },
+      "Crisp County": {
+        "name": "Crisp County Power Commission",
+        "phone": "229-276-2200",
+        "website": "http://www.crispcountypower.com/",
+        "note": "MEAG Power participant"
+      },
+      "Doerun": {
+        "name": "City of Doerun Electric",
+        "phone": "229-782-5456",
+        "website": null,
+        "note": "MEAG Power participant"
+      },
+      "Douglas": {
+        "name": "City of Douglas Electric",
+        "phone": "912-384-2225",
+        "website": "http://www.cityofdouglasga.com/",
+        "note": "MEAG Power participant"
+      },
+      "East Point": {
+        "name": "City of East Point Electric",
+        "phone": "404-270-7000",
+        "website": "http://www.eastpointcity.org/",
+        "note": "MEAG Power participant"
+      },
+      "Elberton": {
+        "name": "City of Elberton Electric",
+        "phone": "706-283-2000",
+        "website": "http://www.cityofelberton.net/",
+        "note": "MEAG Power participant"
+      },
+      "Ellaville": {
+        "name": "City of Ellaville Electric",
+        "phone": "229-937-2231",
+        "website": null,
+        "note": "MEAG Power participant"
+      },
+      "Fairburn": {
+        "name": "City of Fairburn Electric",
+        "phone": "770-964-2244",
+        "website": "http://www.fairburn.com/",
+        "note": "MEAG Power participant"
+      },
+      "Fitzgerald": {
+        "name": "City of Fitzgerald Electric",
+        "phone": "229-426-5000",
+        "website": "http://www.fitzgeraldga.org/",
+        "note": "MEAG Power participant"
+      },
+      "Forsyth": {
+        "name": "City of Forsyth Electric",
+        "phone": "478-994-5647",
+        "website": "http://www.cityofforsyth.com/",
+        "note": "MEAG Power participant"
+      },
+      "Fort Valley": {
+        "name": "Fort Valley Utility Commission",
+        "phone": "478-825-7701",
+        "website": "http://www.fortvalleyga.org/",
+        "note": "MEAG Power participant"
+      },
+      "Grantville": {
+        "name": "City of Grantville Electric",
+        "phone": "770-583-2365",
+        "website": "http://www.grantvillega.org/",
+        "note": "MEAG Power participant"
+      },
+      "Griffin": {
+        "name": "City of Griffin Electric",
+        "phone": "770-229-6400",
+        "website": "http://www.cityofgriffin.com/",
+        "note": "MEAG Power participant"
+      },
+      "Hogansville": {
+        "name": "City of Hogansville Electric",
+        "phone": "706-637-8629",
+        "website": "http://www.cityofhogansville.org/",
+        "note": "MEAG Power participant"
+      },
+      "Jackson": {
+        "name": "City of Jackson Electric",
+        "phone": "770-775-7535",
+        "website": "http://www.cityofjacksonga.com/",
+        "note": "MEAG Power participant"
+      },
+      "LaFayette": {
+        "name": "City of LaFayette Electric",
+        "phone": "706-638-1920",
+        "website": "http://www.lafayettega.gov/",
+        "note": "MEAG Power participant"
+      },
+      "LaGrange": {
+        "name": "City of LaGrange Electric",
+        "phone": "706-883-2010",
+        "website": "http://www.lagrangega.org/",
+        "note": "MEAG Power participant"
+      },
+      "Mansfield": {
+        "name": "City of Mansfield Electric",
+        "phone": "770-786-3100",
+        "website": null,
+        "note": "MEAG Power participant"
+      },
+      "Monroe": {
+        "name": "City of Monroe Electric",
+        "phone": "770-267-7536",
+        "website": "http://www.monroega.com/",
+        "note": "MEAG Power participant"
+      },
+      "Monticello": {
+        "name": "City of Monticello Electric",
+        "phone": "706-468-6922",
+        "website": "http://www.monticelloga.us/",
+        "note": "MEAG Power participant"
+      },
+      "Moultrie": {
+        "name": "City of Moultrie Electric",
+        "phone": "229-985-1974",
+        "website": "http://www.moultriega.com/",
+        "note": "MEAG Power participant"
+      },
+      "Newnan": {
+        "name": "Newnan Utilities",
+        "phone": "770-254-2355",
+        "website": "http://www.newnanutilities.org/",
+        "note": "MEAG Power participant"
+      },
+      "Norcross": {
+        "name": "City of Norcross Electric",
+        "phone": "770-448-2122",
+        "website": "http://www.norcrossga.net/",
+        "note": "MEAG Power participant"
+      },
+      "Oxford": {
+        "name": "City of Oxford Electric",
+        "phone": "770-786-7004",
+        "website": "http://www.oxfordgeorgia.org/",
+        "note": "MEAG Power participant"
+      },
+      "Palmetto": {
+        "name": "City of Palmetto Electric",
+        "phone": "770-463-3377",
+        "website": "http://www.cityofpalmetto.com/",
+        "note": "MEAG Power participant"
+      },
+      "Quitman": {
+        "name": "City of Quitman Electric",
+        "phone": "229-263-4166",
+        "website": "http://www.quitmanga.org/",
+        "note": "MEAG Power participant"
+      },
+      "Sandersville": {
+        "name": "City of Sandersville Electric",
+        "phone": "478-553-0110",
+        "website": "http://www.sandersville.net/",
+        "note": "MEAG Power participant"
+      },
+      "Sylvania": {
+        "name": "City of Sylvania Electric",
+        "phone": "912-564-7411",
+        "website": "http://www.cityofsylvania.com/",
+        "note": "MEAG Power participant"
+      },
+      "Sylvester": {
+        "name": "City of Sylvester Electric",
+        "phone": "229-776-8505",
+        "website": "http://www.sylvesterga.net/",
+        "note": "MEAG Power participant"
+      },
+      "Thomaston": {
+        "name": "City of Thomaston Electric",
+        "phone": "706-647-4242",
+        "website": "http://www.thomaston-ga.gov/",
+        "note": "MEAG Power participant"
+      },
+      "Thomasville": {
+        "name": "City of Thomasville Electric",
+        "phone": "229-227-7001",
+        "website": "http://www.thomasville.org/",
+        "note": "MEAG Power participant"
+      },
+      "Washington": {
+        "name": "City of Washington Electric",
+        "phone": "706-678-3277",
+        "website": "http://www.washingtonwilkes.org/",
+        "note": "MEAG Power participant"
+      },
+      "West Point": {
+        "name": "City of West Point Electric",
+        "phone": "706-645-3451",
+        "website": "http://www.cityofwestpointga.com/",
+        "note": "MEAG Power participant"
+      },
+      "Whigham": {
+        "name": "City of Whigham Electric",
+        "phone": "229-762-3444",
+        "website": null,
+        "note": "MEAG Power participant"
+      },
+      "Dalton": {
+        "name": "Dalton Utilities",
+        "phone": "706-278-1313",
+        "website": "http://www.dutil.com/",
+        "note": "Independent municipal utility"
       }
     },
     "NC": {

@@ -167,7 +167,9 @@ def lookup_utilities_by_address(
     address: str,
     selected_utilities: Optional[List[str]] = None,
     use_pipeline: bool = True,
-    include_metadata: bool = True
+    include_metadata: bool = True,
+    verify_with_serp: bool = False,  # Kept for API compatibility
+    **kwargs  # Accept any other kwargs for backward compatibility
 ) -> Optional[Dict]:
     """
     Main entry point for utility lookups.

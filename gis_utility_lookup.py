@@ -1527,24 +1527,6 @@ def lookup_electric_utility_gis(lat: float, lon: float, state: str = None, use_h
 # GAS UTILITY LOOKUPS
 # =============================================================================
 
-def query_new_jersey_gas(lat: float, lon: float) -> Optional[Dict]:
-    """
-    Query New Jersey DEP Gas Utilities Territory Map.
-    """
-    url = "https://mapsdep.nj.gov/arcgis/rest/services/Features/Utilities/MapServer/11/query"
-    result = _query_arcgis_point(url, lat, lon, "NAME,DISTRICT,TYPE")
-    
-    if result:
-        return {
-            "name": result.get("NAME", "").strip(),
-            "district": result.get("DISTRICT"),
-            "type": result.get("TYPE"),
-            "confidence": "high",
-            "source": "new_jersey_dep"
-        }
-    return None
-
-
 def query_california_gas(lat: float, lon: float) -> Optional[Dict]:
     """
     Query California Natural Gas Service Areas (CalEMA).

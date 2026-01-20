@@ -911,6 +911,76 @@
           "95241",
           "95242"
         ]
+      },
+      "Azusa": {
+        "name": "Azusa Light & Water",
+        "phone": "626-812-5225",
+        "website": "https://www.azusalw.com/"
+      },
+      "Banning": {
+        "name": "Banning Electric Utility",
+        "phone": "951-922-3125",
+        "website": "https://www.ci.banning.ca.us/"
+      },
+      "Biggs": {
+        "name": "City of Biggs Electric",
+        "phone": "530-868-5493",
+        "website": null
+      },
+      "Colton": {
+        "name": "Colton Electric Utility",
+        "phone": "909-370-5044",
+        "website": "https://www.coltonca.gov/"
+      },
+      "Corona": {
+        "name": "Corona Department of Water & Power",
+        "phone": "951-736-2259",
+        "website": "https://www.coronaca.gov/"
+      },
+      "Healdsburg": {
+        "name": "Healdsburg Electric",
+        "phone": "707-431-3346",
+        "website": "https://www.ci.healdsburg.ca.us/"
+      },
+      "Lompoc": {
+        "name": "City of Lompoc Electric",
+        "phone": "805-875-8252",
+        "website": "https://www.cityoflompoc.com/"
+      },
+      "Modesto": {
+        "name": "Modesto Irrigation District",
+        "phone": "209-526-7337",
+        "website": "https://www.mid.org/"
+      },
+      "Needles": {
+        "name": "Needles Public Utility Authority",
+        "phone": "760-326-5700",
+        "website": null
+      },
+      "Shasta Lake": {
+        "name": "City of Shasta Lake Electric",
+        "phone": "530-275-7400",
+        "website": null
+      },
+      "Turlock": {
+        "name": "Turlock Irrigation District",
+        "phone": "209-883-8300",
+        "website": "https://www.tid.org/"
+      },
+      "Ukiah": {
+        "name": "Ukiah Electric Utility",
+        "phone": "707-463-6233",
+        "website": "https://www.cityofukiah.com/"
+      },
+      "Vernon": {
+        "name": "Vernon Public Utilities",
+        "phone": "323-583-8811",
+        "website": "https://www.cityofvernon.org/"
+      },
+      "Victorville": {
+        "name": "City of Victorville Electric",
+        "phone": "760-955-5000",
+        "website": "https://www.victorvilleca.gov/"
       }
     },
     "FL": {
@@ -2963,6 +3033,90 @@
         "website": "https://georgia.libertyutilities.com/",
         "note": "Serves Gainesville area"
       }
+    },
+    "CA": {
+      "Los Angeles": {
+        "name": "Southern California Gas Company (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "San Diego": {
+        "name": "San Diego Gas & Electric",
+        "phone": "800-411-7343",
+        "website": "https://www.sdge.com/"
+      },
+      "San Francisco": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Sacramento": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "San Jose": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Oakland": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Fresno": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Long Beach": {
+        "name": "Long Beach Gas & Oil",
+        "phone": "562-570-2140",
+        "website": "https://www.longbeach.gov/",
+        "note": "Municipal gas utility"
+      },
+      "Anaheim": {
+        "name": "Southern California Gas Company (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Santa Ana": {
+        "name": "Southern California Gas Company (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Riverside": {
+        "name": "Southern California Gas Company (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Irvine": {
+        "name": "Southern California Gas Company (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Bakersfield": {
+        "name": "Southern California Gas Company (SoCalGas)",
+        "phone": "800-427-2200",
+        "website": "https://www.socalgas.com/"
+      },
+      "Stockton": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Modesto": {
+        "name": "Pacific Gas & Electric (PG&E)",
+        "phone": "800-743-5000",
+        "website": "https://www.pge.com/"
+      },
+      "Palo Alto": {
+        "name": "City of Palo Alto Gas",
+        "phone": "650-329-2161",
+        "website": "https://www.cityofpaloalto.org/",
+        "note": "Municipal gas utility"
+      }
     }
   },
   "water": {
@@ -3626,6 +3780,136 @@
           "92155"
         ],
         "note": "San Diego city water"
+      },
+      "Sacramento": {
+        "name": "City of Sacramento Utilities",
+        "phone": "916-264-5011",
+        "website": "https://www.cityofsacramento.org/"
+      },
+      "San Jose": {
+        "name": "San Jose Water Company",
+        "phone": "408-279-7900",
+        "website": "https://www.sjwater.com/"
+      },
+      "Oakland": {
+        "name": "East Bay Municipal Utility District (EBMUD)",
+        "phone": "866-403-2683",
+        "website": "https://www.ebmud.com/"
+      },
+      "Fresno": {
+        "name": "City of Fresno Water Division",
+        "phone": "559-621-5300",
+        "website": "https://www.fresno.gov/"
+      },
+      "Long Beach": {
+        "name": "Long Beach Water Department",
+        "phone": "562-570-2300",
+        "website": "https://www.lbwater.org/"
+      },
+      "Anaheim": {
+        "name": "Anaheim Public Utilities - Water",
+        "phone": "714-765-3300",
+        "website": "https://www.anaheim.net/"
+      },
+      "Santa Ana": {
+        "name": "City of Santa Ana Water",
+        "phone": "714-647-5400",
+        "website": "https://www.santa-ana.org/"
+      },
+      "Riverside": {
+        "name": "Riverside Public Utilities - Water",
+        "phone": "951-826-5485",
+        "website": "https://www.riversideca.gov/"
+      },
+      "Irvine": {
+        "name": "Irvine Ranch Water District",
+        "phone": "949-453-5300",
+        "website": "https://www.irwd.com/"
+      },
+      "Bakersfield": {
+        "name": "California Water Service",
+        "phone": "310-257-1400",
+        "website": "https://www.calwater.com/"
+      },
+      "Stockton": {
+        "name": "City of Stockton Municipal Utilities",
+        "phone": "209-937-8750",
+        "website": "https://www.stocktonca.gov/"
+      },
+      "Modesto": {
+        "name": "City of Modesto Water",
+        "phone": "209-577-5395",
+        "website": "https://www.modestogov.com/"
+      },
+      "Glendale": {
+        "name": "Glendale Water & Power",
+        "phone": "818-548-2107",
+        "website": "https://www.glendaleca.gov/"
+      },
+      "Pasadena": {
+        "name": "Pasadena Water and Power",
+        "phone": "626-744-4005",
+        "website": "https://www.cityofpasadena.net/"
+      },
+      "Burbank": {
+        "name": "Burbank Water and Power",
+        "phone": "818-238-3700",
+        "website": "https://www.burbankwaterandpower.com/"
+      },
+      "Santa Monica": {
+        "name": "City of Santa Monica Water",
+        "phone": "310-458-8224",
+        "website": "https://www.santamonica.gov/"
+      },
+      "Torrance": {
+        "name": "City of Torrance Water",
+        "phone": "310-781-6900",
+        "website": "https://www.torranceca.gov/"
+      },
+      "Pomona": {
+        "name": "City of Pomona Water",
+        "phone": "909-620-2241",
+        "website": "https://www.ci.pomona.ca.us/"
+      },
+      "Escondido": {
+        "name": "City of Escondido Water",
+        "phone": "760-839-4668",
+        "website": "https://www.escondido.org/"
+      },
+      "Sunnyvale": {
+        "name": "City of Sunnyvale Water",
+        "phone": "408-730-7400",
+        "website": "https://www.sunnyvale.ca.gov/"
+      },
+      "Santa Clara": {
+        "name": "City of Santa Clara Water",
+        "phone": "408-615-2000",
+        "website": "https://www.santaclaraca.gov/"
+      },
+      "Roseville": {
+        "name": "City of Roseville Water",
+        "phone": "916-774-5750",
+        "website": "https://www.roseville.ca.us/"
+      },
+      "Fremont": {
+        "name": "Alameda County Water District",
+        "phone": "510-668-4200",
+        "website": "https://www.acwd.org/"
+      },
+      "Hayward": {
+        "name": "City of Hayward Water",
+        "phone": "510-583-4700",
+        "website": "https://www.hayward-ca.gov/"
+      },
+      "Concord": {
+        "name": "City of Concord Water",
+        "phone": "925-671-3269",
+        "website": "https://www.cityofconcord.org/"
+      },
+      "Berkeley": {
+        "name": "East Bay Municipal Utility District (EBMUD)",
+        "phone": "866-403-2683",
+        "website": "https://www.ebmud.com/"
       }
     },
     "CO": {

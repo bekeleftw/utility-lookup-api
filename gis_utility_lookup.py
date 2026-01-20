@@ -321,8 +321,28 @@ def query_new_mexico_water(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_oklahoma_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Oklahoma OWRB PWS Approximate System Service Areas.
+    Coverage: ~80% (707 of 880 active CWS)
+    Note: Based on 1995 rural water survey with updates, approximate boundaries
+    """
+    url = "https://owrb.csa.ou.edu/server/rest/services/Water_Supply/Water_Systems/MapServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "name,pwsid,county")
+    
+    if result:
+        return {
+            "name": result.get("name", "").strip(),
+            "pws_id": result.get("pwsid"),
+            "county": result.get("county"),
+            "confidence": "medium",  # Approximate boundaries
+            "source": "oklahoma_owrb"
+        }
+    return None
+
+
 # States with state-specific water APIs (more authoritative than EPA)
-STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM'}
+STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM', 'OK'}
 
 
 def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optional[Dict]:
@@ -383,6 +403,10 @@ def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optio
             return result
     elif state == "NM":
         result = query_new_mexico_water(lat, lon)
+        if result:
+            return result
+    elif state == "OK":
+        result = query_oklahoma_water(lat, lon)
         if result:
             return result
     elif state == "MS":

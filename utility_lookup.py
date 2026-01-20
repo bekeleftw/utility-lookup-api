@@ -1162,23 +1162,26 @@ def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
                 50: 'Fiber', 40: 'Cable', 10: 'DSL',
                 70: 'Fixed Wireless', 60: 'Satellite'
             }
-            # Deduplicate by (name, technology, download, upload)
-            seen = set()
-            providers = []
+            # Keep only fastest plan per provider (by download speed)
+            best_by_provider = {}
             for p in providers_json:
+                name = p.get('name')
+                down = p.get('down', 0)
+                if name not in best_by_provider or down > best_by_provider[name].get('down', 0):
+                    best_by_provider[name] = p
+            
+            providers = []
+            for p in best_by_provider.values():
                 tech_code = p.get('tech')
                 tech_name = tech_names.get(tech_code, tech_code)
-                key = (p.get('name'), tech_code, p.get('down', 0), p.get('up', 0))
-                if key not in seen:
-                    seen.add(key)
-                    providers.append({
-                        'name': p.get('name'),
-                        'technology': tech_name,
-                        'technology_code': tech_code,
-                        'max_download_mbps': p.get('down', 0),
-                        'max_upload_mbps': p.get('up', 0),
-                        'low_latency': p.get('low_lat', 0)
-                    })
+                providers.append({
+                    'name': p.get('name'),
+                    'technology': tech_name,
+                    'technology_code': tech_code,
+                    'max_download_mbps': p.get('down', 0),
+                    'max_upload_mbps': p.get('up', 0),
+                    'low_latency': p.get('low_lat', 0)
+                })
             return {
                 "providers": providers,
                 "provider_count": len(providers),

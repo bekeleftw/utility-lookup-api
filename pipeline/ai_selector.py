@@ -47,41 +47,58 @@ def _load_openai_key():
     return None
 
 
-# State-specific context that helps AI make better decisions
-STATE_CONTEXT = {
-    "TX": """TEXAS UTILITY CONTEXT:
-- Electric: Deregulated retail market in ERCOT areas. Oncor, CenterPoint, AEP are transmission/distribution (TDUs), not retail providers. For residential, report the TDU as the "electric company" since that's who handles outages/connections.
-- Gas: Regulated. Atmos Energy serves most of North/Central TX. CenterPoint serves Houston area. Texas Gas Service serves Austin area.
-- Water: Texas has 1,000+ MUDs (Municipal Utility Districts) created for development financing. CRITICAL: Cities often annex MUD areas and take over water service. TCEQ MUD boundary data may be stale - the MUD exists legally but the CITY provides actual service. If a city has municipal water AND the address is within city limits, the city almost always serves.
-- Co-ops: Many rural electric cooperatives (Pedernales, Bluebonnet, CoServ, etc.) serve areas outside major cities.""",
+# Load state utility knowledge from JSON file
+def _load_state_knowledge():
+    """Load state utility knowledge base from JSON file."""
+    knowledge_path = Path(__file__).parent.parent / 'data' / 'state_utility_knowledge.json'
+    if knowledge_path.exists():
+        try:
+            with open(knowledge_path, 'r') as f:
+                return json.load(f)
+        except (json.JSONDecodeError, IOError):
+            pass
+    return {}
 
-    "CA": """CALIFORNIA UTILITY CONTEXT:
-- Electric: Mix of large IOUs (PG&E in north, SCE in south, SDG&E in San Diego) and municipal utilities (LADWP, SMUD, etc.). Municipal utilities serve their city limits only.
-- Gas: SoCalGas serves most of Southern CA. PG&E provides gas in Northern CA.
-- Water: Highly fragmented. Many municipal water districts, irrigation districts, and private water companies. Los Angeles DWP serves LA city.""",
+STATE_KNOWLEDGE = _load_state_knowledge()
 
-    "FL": """FLORIDA UTILITY CONTEXT:
-- Electric: FPL (Florida Power & Light) serves most of the state. Duke Energy Florida serves central/north. Tampa Electric (TECO) serves Tampa Bay. Municipal utilities exist in some cities (JEA in Jacksonville, OUC in Orlando).
-- Gas: TECO Peoples Gas and Florida City Gas are main providers. Many areas have no piped natural gas.
-- Water: Mostly municipal. Many cities have their own water utilities.""",
-
-    "AZ": """ARIZONA UTILITY CONTEXT:
-- Electric: APS (Arizona Public Service) serves most of the state. Salt River Project (SRP) serves Phoenix metro east side. Tucson Electric Power serves Tucson area. SRP and APS territories are very specific - address location matters.
-- Gas: Southwest Gas serves most of the state.
-- Water: Municipal in cities. Many private water companies in unincorporated areas.""",
-
-    "PA": """PENNSYLVANIA UTILITY CONTEXT:
-- Electric: Deregulated retail market. PECO serves Philadelphia area (electric only in Philly proper). PPL serves central/eastern PA. Duquesne Light serves Pittsburgh.
-- Gas: PECO provides gas in suburbs but NOT Philadelphia city. Philadelphia Gas Works (PGW) is the gas utility for Philadelphia city proper. This is a common point of confusion.
-- Water: Municipal utilities in most cities. Philadelphia Water Department, Pittsburgh Water, etc.""",
-
-    "DEFAULT": """GENERAL UTILITY CONTEXT:
-- Municipal utilities serve their specific city limits only - don't assume they serve neighboring cities
-- Large IOUs (investor-owned utilities) serve most of a region except where municipals/co-ops exist
-- Rural electric cooperatives serve areas outside city limits
-- Special districts (MUDs, PUDs, water districts) may have stale boundary data if cities have annexed the area
-- When in doubt between a city utility and a special district for an address IN that city, prefer the city utility"""
-}
+def _get_state_context(state: str, utility_type: str) -> str:
+    """Build context string from knowledge base for a specific state and utility type."""
+    state_data = STATE_KNOWLEDGE.get(state, {})
+    
+    if not state_data:
+        return """GENERAL UTILITY CONTEXT:
+- Municipal utilities serve their specific city limits only
+- Large IOUs serve most of a region except where municipals/co-ops exist
+- Rural electric cooperatives (EMCs, RECs) serve areas outside city limits
+- Special districts may have stale boundary data if cities have annexed the area"""
+    
+    util_data = state_data.get(utility_type, {})
+    landscape = util_data.get('landscape', {})
+    data_status = util_data.get('data_status', {})
+    
+    # Build context string
+    lines = [f"{state} {utility_type.upper()} CONTEXT:"]
+    
+    if landscape.get('description'):
+        lines.append(f"- Overview: {landscape['description']}")
+    
+    if landscape.get('major_players'):
+        players = landscape['major_players']
+        player_strs = [f"{p['name']} ({p['type']}, {p.get('coverage', 'various areas')})" for p in players[:5]]
+        lines.append(f"- Major providers: {', '.join(player_strs)}")
+    
+    if landscape.get('key_insight'):
+        lines.append(f"- KEY INSIGHT: {landscape['key_insight']}")
+    
+    if data_status.get('confidence'):
+        conf = data_status['confidence']
+        if conf in ['low', 'very_low', 'low_for_rural']:
+            lines.append(f"- DATA WARNING: Our data confidence is {conf}. Consider that the correct provider may not be in our candidates.")
+    
+    if data_status.get('missing'):
+        lines.append(f"- Known data gaps: {', '.join(data_status['missing'][:3])}")
+    
+    return "\n".join(lines)
 
 
 @dataclass
@@ -237,8 +254,8 @@ class AISelector:
         
         utility_type = context.utility_type.value.upper()
         
-        # Get state-specific context
-        state_context = STATE_CONTEXT.get(context.state, STATE_CONTEXT["DEFAULT"])
+        # Get state-specific context from knowledge base
+        state_context = _get_state_context(context.state, context.utility_type.value)
         
         # Build candidate list with rich details
         candidates_text = []

@@ -1,0 +1,397 @@
+{
+  "_metadata": {
+    "description": "State-by-state utility knowledge base. Guides AI decisions AND identifies data gaps.",
+    "purpose": [
+      "1. Tell AI what utility structures exist in each state",
+      "2. Identify data gaps (what we're missing)",
+      "3. Document data sources to scrape/acquire"
+    ],
+    "last_updated": "2026-01-20"
+  },
+  
+  "GA": {
+    "electric": {
+      "landscape": {
+        "description": "Mix of large IOU (Georgia Power) and 41 rural EMCs (Electric Membership Corporations)",
+        "major_players": [
+          {"name": "Georgia Power", "type": "IOU", "coverage": "Urban/suburban Atlanta metro and major cities"},
+          {"name": "Georgia EMCs", "type": "cooperative", "count": 41, "coverage": "Rural and some suburban areas"}
+        ],
+        "key_insight": "EMCs serve significant portions of suburban counties. Don't assume Georgia Power for addresses outside Atlanta core."
+      },
+      "data_status": {
+        "have": ["Georgia Power boundaries (EIA/HIFLD)"],
+        "missing": ["EMC service territory boundaries"],
+        "confidence": "low_for_rural"
+      },
+      "data_sources_to_acquire": [
+        {
+          "name": "Georgia EMC Association",
+          "url": "https://www.georgiaemc.com/",
+          "data_type": "Member EMC list with service areas",
+          "priority": "high"
+        },
+        {
+          "name": "Georgia PSC",
+          "url": "https://psc.ga.gov/",
+          "data_type": "Official service territory maps",
+          "priority": "medium"
+        }
+      ]
+    },
+    "gas": {
+      "landscape": {
+        "description": "Atlanta Gas Light is primary provider, some areas have no piped gas",
+        "major_players": [
+          {"name": "Atlanta Gas Light", "type": "utility", "coverage": "Most of metro Atlanta and urban areas"}
+        ],
+        "key_insight": "Rural areas often have no piped natural gas - propane is common"
+      },
+      "data_status": {
+        "have": ["Atlanta Gas Light ZIP mapping"],
+        "missing": ["Precise service boundaries", "Propane-only areas"],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Highly fragmented - county water authorities, city utilities, private companies",
+        "major_players": [
+          {"name": "County Water Authorities", "type": "municipal", "coverage": "Varies by county"},
+          {"name": "City utilities", "type": "municipal", "coverage": "Within city limits"}
+        ],
+        "key_insight": "Water is very local - need county-level data"
+      },
+      "data_status": {
+        "have": [],
+        "missing": ["County water authority boundaries", "City water service areas"],
+        "confidence": "very_low"
+      },
+      "data_sources_to_acquire": [
+        {
+          "name": "Georgia EPD",
+          "url": "https://epd.georgia.gov/",
+          "data_type": "Water system boundaries",
+          "priority": "medium"
+        }
+      ]
+    }
+  },
+
+  "TX": {
+    "electric": {
+      "landscape": {
+        "description": "Deregulated retail market in ERCOT. TDUs handle delivery, REPs handle retail. Outside ERCOT: traditional utilities and co-ops.",
+        "major_players": [
+          {"name": "Oncor", "type": "TDU", "coverage": "North/Central Texas including Dallas"},
+          {"name": "CenterPoint", "type": "TDU", "coverage": "Houston metro"},
+          {"name": "AEP Texas", "type": "TDU", "coverage": "South/West Texas"},
+          {"name": "TNMP", "type": "TDU", "coverage": "Parts of Central/East Texas"},
+          {"name": "Rural Co-ops", "type": "cooperative", "count": 75, "coverage": "Rural areas, some not in ERCOT"}
+        ],
+        "key_insight": "For residential, report the TDU as 'electric company' - they handle outages/connections. Co-ops like CoServ, Pedernales serve specific areas."
+      },
+      "data_status": {
+        "have": ["TDU boundaries (state GIS)", "Major co-op data"],
+        "missing": ["Complete co-op boundaries", "Municipal utility boundaries"],
+        "confidence": "high_for_urban"
+      },
+      "data_sources_to_acquire": [
+        {
+          "name": "PUCT",
+          "url": "https://www.puc.texas.gov/",
+          "data_type": "Official TDU and retail provider data",
+          "priority": "low"
+        },
+        {
+          "name": "Texas Co-op Power",
+          "url": "https://texascooppower.com/",
+          "data_type": "Co-op service area info",
+          "priority": "medium"
+        }
+      ]
+    },
+    "gas": {
+      "landscape": {
+        "description": "Regulated market. Major providers by region.",
+        "major_players": [
+          {"name": "Atmos Energy", "type": "utility", "coverage": "North/Central Texas, Dallas area"},
+          {"name": "CenterPoint Energy", "type": "utility", "coverage": "Houston metro"},
+          {"name": "Texas Gas Service", "type": "utility", "coverage": "Austin, Central Texas"}
+        ],
+        "key_insight": "Gas is regulated (not deregulated like electric). Provider depends on location."
+      },
+      "data_status": {
+        "have": ["ZIP-level mapping for major providers"],
+        "missing": ["Precise boundaries", "Rural propane-only areas"],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Extremely fragmented. 1000+ MUDs, city utilities, water districts, private companies.",
+        "major_players": [
+          {"name": "City utilities", "type": "municipal", "coverage": "Within city limits"},
+          {"name": "MUDs", "type": "special_district", "count": 1000, "coverage": "Suburban developments"},
+          {"name": "Water districts", "type": "special_district", "coverage": "Various"}
+        ],
+        "key_insight": "MUDs are created for development financing but cities often take over service after annexation. TCEQ MUD boundaries may be stale."
+      },
+      "data_status": {
+        "have": ["TCEQ MUD boundaries", "Major city utilities"],
+        "missing": ["Accurate 'who actually serves' data - MUD vs city"],
+        "confidence": "medium"
+      },
+      "data_sources_to_acquire": [
+        {
+          "name": "TCEQ",
+          "url": "https://www.tceq.texas.gov/",
+          "data_type": "Water district boundaries (have it, but stale)",
+          "priority": "low"
+        }
+      ]
+    }
+  },
+
+  "CA": {
+    "electric": {
+      "landscape": {
+        "description": "Three large IOUs dominate, plus municipal utilities in major cities",
+        "major_players": [
+          {"name": "PG&E", "type": "IOU", "coverage": "Northern and Central California"},
+          {"name": "SCE (Southern California Edison)", "type": "IOU", "coverage": "Southern California except San Diego and LA city"},
+          {"name": "SDG&E", "type": "IOU", "coverage": "San Diego area"},
+          {"name": "LADWP", "type": "municipal", "coverage": "Los Angeles city"},
+          {"name": "SMUD", "type": "municipal", "coverage": "Sacramento area"}
+        ],
+        "key_insight": "Municipal utilities serve their city limits only. LADWP serves LA city, not LA county suburbs."
+      },
+      "data_status": {
+        "have": ["IOU boundaries", "Major municipal boundaries"],
+        "missing": ["Smaller municipal utilities", "CCA (Community Choice Aggregator) boundaries"],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "SoCalGas dominates south, PG&E provides gas in north",
+        "major_players": [
+          {"name": "SoCalGas", "type": "utility", "coverage": "Southern California"},
+          {"name": "PG&E", "type": "utility", "coverage": "Northern California"},
+          {"name": "SDG&E", "type": "utility", "coverage": "San Diego area"}
+        ]
+      },
+      "data_status": {
+        "have": ["Major provider boundaries"],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Extremely fragmented - hundreds of water districts, municipal utilities, private companies",
+        "major_players": [
+          {"name": "LADWP", "type": "municipal", "coverage": "Los Angeles city"},
+          {"name": "MWD member agencies", "type": "various", "coverage": "Southern California"},
+          {"name": "EBMUD", "type": "municipal", "coverage": "East Bay"}
+        ],
+        "key_insight": "Water is very local. Many small districts and private companies."
+      },
+      "data_status": {
+        "have": ["Major municipal utilities"],
+        "missing": ["Small district boundaries", "Private water company service areas"],
+        "confidence": "low"
+      }
+    }
+  },
+
+  "FL": {
+    "electric": {
+      "landscape": {
+        "description": "FPL dominates, plus Duke, TECO, and municipal utilities",
+        "major_players": [
+          {"name": "FPL (Florida Power & Light)", "type": "IOU", "coverage": "Most of Florida"},
+          {"name": "Duke Energy Florida", "type": "IOU", "coverage": "Central/North Florida"},
+          {"name": "TECO (Tampa Electric)", "type": "IOU", "coverage": "Tampa Bay area"},
+          {"name": "JEA", "type": "municipal", "coverage": "Jacksonville"},
+          {"name": "OUC", "type": "municipal", "coverage": "Orlando"}
+        ],
+        "key_insight": "Municipal utilities serve their city limits. JEA serves Jacksonville, OUC serves Orlando."
+      },
+      "data_status": {
+        "have": ["IOU boundaries", "Major municipal boundaries"],
+        "missing": ["Smaller municipal utilities", "Rural co-ops"],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Limited piped gas coverage. TECO Peoples Gas and Florida City Gas are main providers.",
+        "major_players": [
+          {"name": "TECO Peoples Gas", "type": "utility", "coverage": "Various areas"},
+          {"name": "Florida City Gas", "type": "utility", "coverage": "South Florida"}
+        ],
+        "key_insight": "Many areas have no piped natural gas - propane is common in rural/suburban areas"
+      },
+      "data_status": {
+        "have": ["ZIP-level mapping"],
+        "missing": ["Precise boundaries", "Propane-only areas"],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Mostly municipal utilities, some county utilities",
+        "major_players": [
+          {"name": "City utilities", "type": "municipal", "coverage": "Within city limits"},
+          {"name": "County utilities", "type": "municipal", "coverage": "Unincorporated areas"}
+        ]
+      },
+      "data_status": {
+        "have": ["Major city utilities"],
+        "missing": ["County utility boundaries", "Private water companies"],
+        "confidence": "medium"
+      }
+    }
+  },
+
+  "AZ": {
+    "electric": {
+      "landscape": {
+        "description": "APS and SRP split Phoenix metro, TEP serves Tucson",
+        "major_players": [
+          {"name": "APS (Arizona Public Service)", "type": "IOU", "coverage": "Most of Arizona, Phoenix west side"},
+          {"name": "SRP (Salt River Project)", "type": "quasi-municipal", "coverage": "Phoenix metro east side"},
+          {"name": "TEP (Tucson Electric Power)", "type": "IOU", "coverage": "Tucson area"}
+        ],
+        "key_insight": "APS vs SRP boundary is very specific in Phoenix metro. Address location matters a lot."
+      },
+      "data_status": {
+        "have": ["APS/SRP/TEP boundaries"],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Southwest Gas serves most of the state",
+        "major_players": [
+          {"name": "Southwest Gas", "type": "utility", "coverage": "Most of Arizona"}
+        ]
+      },
+      "data_status": {
+        "have": ["Southwest Gas coverage"],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "City utilities in incorporated areas, private companies in unincorporated areas",
+        "major_players": [
+          {"name": "Phoenix Water", "type": "municipal", "coverage": "Phoenix city"},
+          {"name": "Tucson Water", "type": "municipal", "coverage": "Tucson city"},
+          {"name": "Private water companies", "type": "private", "coverage": "Unincorporated areas"}
+        ],
+        "key_insight": "Many private water companies in unincorporated Maricopa County"
+      },
+      "data_status": {
+        "have": ["Major city utilities"],
+        "missing": ["Private water company boundaries"],
+        "confidence": "medium"
+      }
+    }
+  },
+
+  "PA": {
+    "electric": {
+      "landscape": {
+        "description": "Deregulated retail market. PECO, PPL, Duquesne are main distribution utilities.",
+        "major_players": [
+          {"name": "PECO", "type": "utility", "coverage": "Philadelphia area (electric only in Philly proper)"},
+          {"name": "PPL", "type": "utility", "coverage": "Central and Eastern PA"},
+          {"name": "Duquesne Light", "type": "utility", "coverage": "Pittsburgh area"}
+        ],
+        "key_insight": "Deregulated - distribution utility handles delivery, retail suppliers handle energy. Report distribution utility."
+      },
+      "data_status": {
+        "have": ["Distribution utility boundaries"],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "PECO provides gas in suburbs but NOT Philadelphia city. PGW serves Philly.",
+        "major_players": [
+          {"name": "Philadelphia Gas Works (PGW)", "type": "municipal", "coverage": "Philadelphia city proper"},
+          {"name": "PECO", "type": "utility", "coverage": "Philadelphia suburbs (NOT city)"},
+          {"name": "UGI", "type": "utility", "coverage": "Central PA"},
+          {"name": "Columbia Gas", "type": "utility", "coverage": "Western PA"}
+        ],
+        "key_insight": "CRITICAL: PECO is electric-only in Philadelphia city. PGW is the gas utility for Philly. This is a common point of confusion."
+      },
+      "data_status": {
+        "have": ["PGW boundary", "Major utility boundaries"],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities in cities, Pennsylvania American Water in many areas",
+        "major_players": [
+          {"name": "Philadelphia Water Department", "type": "municipal", "coverage": "Philadelphia"},
+          {"name": "Pittsburgh Water", "type": "municipal", "coverage": "Pittsburgh"},
+          {"name": "Pennsylvania American Water", "type": "private", "coverage": "Various areas statewide"}
+        ]
+      },
+      "data_status": {
+        "have": ["Major city utilities"],
+        "missing": ["PA American Water precise boundaries"],
+        "confidence": "medium"
+      }
+    }
+  },
+
+  "_template": {
+    "_comment": "Use this template when adding new states",
+    "electric": {
+      "landscape": {
+        "description": "",
+        "major_players": [],
+        "key_insight": ""
+      },
+      "data_status": {
+        "have": [],
+        "missing": [],
+        "confidence": "unknown"
+      },
+      "data_sources_to_acquire": []
+    },
+    "gas": {
+      "landscape": {
+        "description": "",
+        "major_players": [],
+        "key_insight": ""
+      },
+      "data_status": {
+        "have": [],
+        "missing": [],
+        "confidence": "unknown"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "",
+        "major_players": [],
+        "key_insight": ""
+      },
+      "data_status": {
+        "have": [],
+        "missing": [],
+        "confidence": "unknown"
+      }
+    }
+  }
+}

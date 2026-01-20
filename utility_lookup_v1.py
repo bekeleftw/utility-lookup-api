@@ -360,14 +360,26 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
     """
     print(f"Looking up utilities for: {address}\n")
     
+    # Extract ZIP code from input address for validation
+    import re
+    input_zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\b', address)
+    input_zip = input_zip_match.group(1) if input_zip_match else None
+    
     # Tier 1: Census Geocoder
     result = geocode_with_census(address, include_geography)
     if result:
-        print(f"Geocoded (Census): {result.get('matched_address')}")
-        print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
-        if result.get('city') or result.get('county'):
-            print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
-        return result
+        # Validate ZIP code matches - Census sometimes matches wrong city with similar name
+        returned_zip = result.get('zip_code')
+        if input_zip and returned_zip and input_zip != returned_zip:
+            print(f"Census geocoder returned wrong ZIP ({returned_zip} vs expected {input_zip})")
+            print(f"  Matched: {result.get('matched_address')} - REJECTED, trying fallback...")
+            result = None  # Reject and try fallback
+        else:
+            print(f"Geocoded (Census): {result.get('matched_address')}")
+            print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
+            if result.get('city') or result.get('county'):
+                print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
+            return result
     
     print("Census geocoder failed, trying Google...")
     

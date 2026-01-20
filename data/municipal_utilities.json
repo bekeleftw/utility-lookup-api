@@ -2637,35 +2637,95 @@
       }
     },
     "AZ": {
+      "Phoenix": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Glendale": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Peoria": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Surprise": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Goodyear": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Avondale": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Buckeye": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Prescott": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Prescott Valley": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Flagstaff": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Lake Havasu City": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Kingman": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Bullhead City": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Casa Grande": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Maricopa": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "Yuma": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
+      "San Luis": {
+        "name": "Arizona Public Service (APS)",
+        "phone": "602-371-7171",
+        "website": "https://www.aps.com/"
+      },
       "Mesa": {
         "name": "Salt River Project (SRP)",
         "phone": "602-236-8888",
-        "website": "https://www.srpnet.com",
-        "zip_codes": [
-          "85201",
-          "85202",
-          "85203",
-          "85204",
-          "85205",
-          "85206",
-          "85207",
-          "85208",
-          "85209",
-          "85210",
-          "85211",
-          "85212",
-          "85213",
-          "85214",
-          "85215",
-          "85216"
-        ],
-        "note": "SRP serves much of Phoenix metro area"
-      },
-      "Phoenix": {
-        "name": "Salt River Project (SRP)",
-        "phone": "602-236-8888",
-        "website": "https://www.srpnet.com/",
-        "note": "Serves parts of Phoenix metro"
+        "website": "https://www.srpnet.com/"
       },
       "Tempe": {
         "name": "Salt River Project (SRP)",
@@ -2688,56 +2748,67 @@
         "phone": "602-236-8888",
         "website": "https://www.srpnet.com/"
       },
+      "Queen Creek": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/"
+      },
+      "Apache Junction": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/"
+      },
+      "Tucson": {
+        "name": "Tucson Electric Power (TEP)",
+        "phone": "520-623-7711",
+        "website": "https://www.tep.com/"
+      },
+      "Oro Valley": {
+        "name": "Tucson Electric Power (TEP)",
+        "phone": "520-623-7711",
+        "website": "https://www.tep.com/"
+      },
+      "Marana": {
+        "name": "Tucson Electric Power (TEP)",
+        "phone": "520-623-7711",
+        "website": "https://www.tep.com/"
+      },
+      "Sahuarita": {
+        "name": "Tucson Electric Power (TEP)",
+        "phone": "520-623-7711",
+        "website": "https://www.tep.com/"
+      },
+      "South Tucson": {
+        "name": "Tucson Electric Power (TEP)",
+        "phone": "520-623-7711",
+        "website": "https://www.tep.com/"
+      },
+      "Sierra Vista": {
+        "name": "UNS Electric (UniSource)",
+        "phone": "877-837-4968",
+        "website": "https://www.uesaz.com/"
+      },
+      "Nogales": {
+        "name": "UNS Electric (UniSource)",
+        "phone": "877-837-4968",
+        "website": "https://www.uesaz.com/"
+      },
+      "Douglas": {
+        "name": "UNS Electric (UniSource)",
+        "phone": "877-837-4968",
+        "website": "https://www.uesaz.com/"
+      },
       "Safford": {
         "name": "City of Safford Electric",
         "phone": "928-432-4154",
-        "website": "https://www.cityofsafford.us/"
+        "website": "https://www.cityofsafford.us/",
+        "note": "Municipal"
       },
-      "Benson": {
-        "name": "City of Benson Electric",
-        "phone": "520-586-2245",
-        "website": "https://www.cityofbenson.com/"
-      },
-      "Willcox": {
-        "name": "City of Willcox Electric",
-        "phone": "520-384-4271",
-        "website": null
-      },
-      "Ajo Improvement Co": {
-        "name": "Ajo Improvement Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (1 ZIP codes)"
-      },
-      "Arizona Public Service Co": {
-        "name": "Arizona Public Service Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (276 ZIP codes)"
-      },
-      "Arizona Public Service (APS)": {
-        "name": "Arizona Public Service (APS)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (318 ZIP codes)"
-      },
-      "UNS Electric Inc": {
-        "name": "UNS Electric, Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (46 ZIP codes)"
-      },
-      "Tucson Electric Power Co": {
-        "name": "Tucson Electric Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (64 ZIP codes)"
-      },
-      "Morenci Water and Electric": {
-        "name": "Morenci Water and Electric",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (2 ZIP codes)"
+      "Mesa_Municipal": {
+        "name": "Mesa Utilities",
+        "phone": "480-644-2221",
+        "website": "https://www.mesaaz.gov/",
+        "note": "Some areas"
       }
     },
     "CO": {
@@ -5825,6 +5896,36 @@
         "website": "https://www.swgas.com/"
       },
       "Casa Grande": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Oro Valley": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Marana": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Goodyear": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Avondale": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Buckeye": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Queen Creek": {
         "name": "Southwest Gas",
         "phone": "877-860-6020",
         "website": "https://www.swgas.com/"

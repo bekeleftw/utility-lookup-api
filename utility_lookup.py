@@ -60,7 +60,7 @@ try:
         EIASource, HIFLDElectricSource, CountyDefaultElectricSource
     )
     from pipeline.sources.gas import (
-        DirectGasGISSource, HIFLDNationalGasSource, MunicipalGasSource,
+        StateGISGasSource, MunicipalGasSource,
         ZIPMappingGasSource, HIFLDGasSource, CountyDefaultGasSource
     )
     PIPELINE_AVAILABLE = True
@@ -1807,8 +1807,7 @@ def _get_pipeline():
         _pipeline_instance.add_source(EIASource())
         _pipeline_instance.add_source(HIFLDElectricSource())
         _pipeline_instance.add_source(CountyDefaultElectricSource())
-        _pipeline_instance.add_source(DirectGasGISSource())
-        _pipeline_instance.add_source(HIFLDNationalGasSource())
+        _pipeline_instance.add_source(StateGISGasSource())
         _pipeline_instance.add_source(MunicipalGasSource())
         _pipeline_instance.add_source(ZIPMappingGasSource())
         _pipeline_instance.add_source(HIFLDGasSource())

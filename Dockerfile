@@ -8,6 +8,10 @@ RUN apt-get update && apt-get install -y xvfb dbus dbus-x11 && rm -rf /var/lib/a
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Cache buster - change this to force rebuild
+ARG CACHE_BUST=2026-01-20-v7
+RUN echo "Cache bust: $CACHE_BUST"
+
 COPY . .
 
 EXPOSE 8080

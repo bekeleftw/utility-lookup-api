@@ -4,6 +4,26 @@
 
 State-level electric and gas utility service territory GIS APIs. These are more accurate than HIFLD because they come from state Public Utility Commissions (PUCs/PSCs).
 
+**Status:** 10 states with verified electric endpoints, 5 states with verified gas endpoints.
+
+---
+
+## Summary Table
+
+| State | Electric | Gas | Source |
+|-------|----------|-----|--------|
+| AR | ✅ Layer 12 | ❌ | Arkansas GIS |
+| IN | ✅ | ❌ | Indiana IURC |
+| KY | ✅ | ❌ | Kentucky GIS |
+| MI | ✅ | ✅ | Michigan PSC |
+| MS | ✅ Layer 4 | ✅ Layer 3 | Mississippi PSC |
+| NJ | ✅ Layer 10 | ✅ Layer 11 | NJ DEP |
+| OH | ✅ | ❌ | Ohio PUCO |
+| WI | ✅ | ✅ | Wisconsin PSC |
+| HI | ✅ (hardcoded) | ❌ | Island mapping |
+| RI | ✅ (hardcoded) | ❌ | Single utility |
+| DC | ✅ (hardcoded) | ❌ | Single utility |
+
 ---
 
 ## Verified State Endpoints

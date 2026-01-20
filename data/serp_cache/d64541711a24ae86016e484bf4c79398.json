@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:20:18.851691",
+  "city": "Phoenix",
+  "state": "AZ",
+  "zip_prefix": "850",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "Arizona Public Service (APS)",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Phoenix\" \"AZ\" electric utility provider",
+  "notes": "APS is identified as the primary electric utility provider for the Phoenix area, including the specified address."
+}

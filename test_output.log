@@ -1,0 +1,2674 @@
+/Users/marklindquist/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+
+🧪 Running 49 test cases...
+   Mode: Main lookup function
+   [1/49] Testing: 1725 Toomey Rd, Austin, TX 78704...
+[STARTUP] Pipeline available, DATABASE_URL=NOT SET
+Looking up utilities for: 1725 Toomey Rd, Austin, TX 78704
+
+Geocoded (Census): 1725 TOOMEY RD, AUSTIN, TX, 78704
+Coordinates: 30.264799879708, -97.761574037124
+Location: Austin, Travis County, TX
+Looking up internet providers...
+Looking up utilities for: 1725 Toomey Rd, Austin, TX 78704
+
+Geocoded (Census): 1725 TOOMEY RD, AUSTIN, TX, 78704
+Coordinates: 30.264799879708, -97.761574037124
+Location: Austin, Travis County, TX
+  [Internet] block_geoid=484530013091004, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1725 Toomey Rd, Austin, TX 78704
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1719 Toomey Rd, Austin, TX 78704 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1721 Toomey Rd, Austin, TX 78704 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1723 Toomey Rd, Austin, TX 78704 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1727 Toomey Rd, Austin, TX 78704 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1729 Toomey Rd, Austin, TX 78704 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1731 Toomey Rd, Austin, TX 78704 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [2/49] Testing: 301 Treasure Trove Path, Kyle, TX 78640...
+Looking up utilities for: 301 Treasure Trove Path, Kyle, TX 78640
+
+Geocoded (Census): 301 TREASURE TROVE PATH, KYLE, TX, 78640
+Coordinates: 30.01972128756, -97.816606867503
+Location: Kyle-Buda, Hays County, TX
+Pipeline lookup error: 1 (of 6) futures unfinished
+Looking up internet providers...
+Looking up utilities for: 301 Treasure Trove Path, Kyle, TX 78640
+
+Geocoded (Census): 301 TREASURE TROVE PATH, KYLE, TX, 78640
+Coordinates: 30.01972128756, -97.816606867503
+Location: Kyle-Buda, Hays County, TX
+  [Internet] block_geoid=482090109192001, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 301 Treasure Trove Path, Kyle, TX 78640
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 295 Treasure Trove Path, Kyle, TX 78640 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 297 Treasure Trove Path, Kyle, TX 78640 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 299 Treasure Trove Path, Kyle, TX 78640 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 303 Treasure Trove Path, Kyle, TX 78640 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 305 Treasure Trove Path, Kyle, TX 78640 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 307 Treasure Trove Path, Kyle, TX 78640 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [3/49] Testing: 100 Congress Ave, Austin, TX 78701...
+Looking up utilities for: 100 Congress Ave, Austin, TX 78701
+
+Geocoded (Census): 100 CONGRESS AVE, AUSTIN, TX, 78701
+Coordinates: 30.263458623562, -97.7446099741
+Location: Austin, Travis County, TX
+Looking up internet providers...
+Looking up utilities for: 100 Congress Ave, Austin, TX 78701
+
+Geocoded (Census): 100 CONGRESS AVE, AUSTIN, TX, 78701
+Coordinates: 30.263458623562, -97.7446099741
+Location: Austin, Travis County, TX
+  [Internet] block_geoid=484530011022010, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 100 Congress Ave, Austin, TX 78701
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 94 Congress Ave, Austin, TX 78701 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 Congress Ave, Austin, TX 78701 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 98 Congress Ave, Austin, TX 78701 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 102 Congress Ave, Austin, TX 78701 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 104 Congress Ave, Austin, TX 78701 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 106 Congress Ave, Austin, TX 78701 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [4/49] Testing: 1000 Main St, Houston, TX 77002...
+Looking up utilities for: 1000 Main St, Houston, TX 77002
+
+Geocoded (Census): 1000 MAIN ST, HOUSTON, TX, 77002
+Coordinates: 29.756940918955, -95.365007245443
+Location: Houston, Harris County, TX
+Looking up internet providers...
+Looking up utilities for: 1000 Main St, Houston, TX 77002
+
+Geocoded (Census): 1000 MAIN ST, HOUSTON, TX, 77002
+Coordinates: 29.756940918955, -95.365007245443
+Location: Houston, Harris County, TX
+  [Internet] block_geoid=482019807001096, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1000 Main St, Houston, TX 77002
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 994 Main St, Houston, TX 77002 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 996 Main St, Houston, TX 77002 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 998 Main St, Houston, TX 77002 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1002 Main St, Houston, TX 77002 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1004 Main St, Houston, TX 77002 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1006 Main St, Houston, TX 77002 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [5/49] Testing: 1500 Marilla St, Dallas, TX 75201...
+Looking up utilities for: 1500 Marilla St, Dallas, TX 75201
+
+Geocoded (Census): 1500 MARILLA ST, DALLAS, TX, 75201
+Coordinates: 32.776660700613, -96.795837005431
+Location: Dallas, Dallas County, TX
+Looking up internet providers...
+Looking up utilities for: 1500 Marilla St, Dallas, TX 75201
+
+Geocoded (Census): 1500 MARILLA ST, DALLAS, TX, 75201
+Coordinates: 32.776660700613, -96.795837005431
+Location: Dallas, Dallas County, TX
+  [Internet] block_geoid=481130204021051, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1500 Marilla St, Dallas, TX 75201
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1494 Marilla St, Dallas, TX 75201 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1496 Marilla St, Dallas, TX 75201 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1498 Marilla St, Dallas, TX 75201 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1502 Marilla St, Dallas, TX 75201 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1504 Marilla St, Dallas, TX 75201 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1506 Marilla St, Dallas, TX 75201 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [6/49] Testing: 100 Military Plaza, San Antonio, TX 78205...
+Looking up utilities for: 100 Military Plaza, San Antonio, TX 78205
+
+Geocoded (Census): 100 MILITARY PLZ, SAN ANTONIO, TX, 78205
+Coordinates: 29.424795400508, -98.494679872157
+Location: San Antonio, Bexar County, TX
+Looking up internet providers...
+Looking up utilities for: 100 Military Plaza, San Antonio, TX 78205
+
+Geocoded (Census): 100 MILITARY PLZ, SAN ANTONIO, TX, 78205
+Coordinates: 29.424795400508, -98.494679872157
+Location: San Antonio, Bexar County, TX
+  [Internet] block_geoid=480291101003061, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 100 Military Plaza, San Antonio, TX 78205
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 94 Military Plaza, San Antonio, TX 78205 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 Military Plaza, San Antonio, TX 78205 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 98 Military Plaza, San Antonio, TX 78205 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 102 Military Plaza, San Antonio, TX 78205 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 104 Military Plaza, San Antonio, TX 78205 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 106 Military Plaza, San Antonio, TX 78205 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [7/49] Testing: 1405 Fernwood Glendale Rd, Spartanburg, SC 29307...
+Looking up utilities for: 1405 Fernwood Glendale Rd, Spartanburg, SC 29307
+
+Geocoded (Census): 1405 FERNWOOD GLENDALE RD, SPARTANBURG, SC, 29307
+Coordinates: 34.965115981425, -81.887979575627
+Location: Spartanburg, Spartanburg County, SC
+Looking up internet providers...
+Looking up utilities for: 1405 Fernwood Glendale Rd, Spartanburg, SC 29307
+
+Geocoded (Census): 1405 FERNWOOD GLENDALE RD, SPARTANBURG, SC, 29307
+Coordinates: 34.965115981425, -81.887979575627
+Location: Spartanburg, Spartanburg County, SC
+  [Internet] block_geoid=450830213032017, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1405 Fernwood Glendale Rd, Spartanburg, SC 29307
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1399 Fernwood Glendale Rd, Spartanburg, SC 29307 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1401 Fernwood Glendale Rd, Spartanburg, SC 29307 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1403 Fernwood Glendale Rd, Spartanburg, SC 29307 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1407 Fernwood Glendale Rd, Spartanburg, SC 29307 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1409 Fernwood Glendale Rd, Spartanburg, SC 29307 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1411 Fernwood Glendale Rd, Spartanburg, SC 29307 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [8/49] Testing: 200 N Spring St, Los Angeles, CA 90012...
+Looking up utilities for: 200 N Spring St, Los Angeles, CA 90012
+
+Geocoded (Census): 200 S SPRING ST, LOS ANGELES, CA, 90012
+Coordinates: 34.051621750302, -118.245593600365
+Location: Los Angeles, Los Angeles County, CA
+Pipeline lookup error: 1 (of 6) futures unfinished
+Looking up internet providers...
+Looking up utilities for: 200 N Spring St, Los Angeles, CA 90012
+
+Geocoded (Census): 200 S SPRING ST, LOS ANGELES, CA, 90012
+Coordinates: 34.051621750302, -118.245593600365
+Location: Los Angeles, Los Angeles County, CA
+  [Internet] block_geoid=060372073061000, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 N Spring St, Los Angeles, CA 90012
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 N Spring St, Los Angeles, CA 90012 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 N Spring St, Los Angeles, CA 90012 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 N Spring St, Los Angeles, CA 90012 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 N Spring St, Los Angeles, CA 90012 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 N Spring St, Los Angeles, CA 90012 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 N Spring St, Los Angeles, CA 90012 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [9/49] Testing: 1 Dr Carlton B Goodlett Pl, San Francisco, CA 9410...
+Looking up utilities for: 1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102
+
+Geocoded (Census): 1 DR CARLTON P GOODLETT PL, SAN FRANCISCO, CA, 94102
+Coordinates: 37.778532096981, -122.418308756397
+Location: San Francisco, San Francisco County, CA
+Looking up internet providers...
+Looking up utilities for: 1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102
+
+Geocoded (Census): 1 DR CARLTON P GOODLETT PL, SAN FRANCISCO, CA, 94102
+Coordinates: 37.778532096981, -122.418308756397
+Location: San Francisco, San Francisco County, CA
+  [Internet] block_geoid=060750124053007, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 3 neighbor addresses...
+    Trying neighbor: 3 Dr Carlton B Goodlett Pl, San Francisco, CA 94102 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 5 Dr Carlton B Goodlett Pl, San Francisco, CA 94102 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 7 Dr Carlton B Goodlett Pl, San Francisco, CA 94102 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [10/49] Testing: 350 5th Ave, New York, NY 10118...
+Looking up utilities for: 350 5th Ave, New York, NY 10118
+
+Geocoded (Census): 350 5TH AVE, NEW YORK, NY, 10118
+Coordinates: 40.747848600317, -73.985077152891
+Location: New York, New York County, NY
+Looking up internet providers...
+Looking up utilities for: 350 5th Ave, New York, NY 10118
+
+Geocoded (Census): 350 5TH AVE, NEW YORK, NY, 10118
+Coordinates: 40.747848600317, -73.985077152891
+Location: New York, New York County, NY
+  [Internet] block_geoid=360610076001001, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 350 5th Ave, New York, NY 10118
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 344 5th Ave, New York, NY 10118 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 346 5th Ave, New York, NY 10118 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 348 5th Ave, New York, NY 10118 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 352 5th Ave, New York, NY 10118 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 354 5th Ave, New York, NY 10118 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 356 5th Ave, New York, NY 10118 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [11/49] Testing: 400 S Orange Ave, Orlando, FL 32801...
+Looking up utilities for: 400 S Orange Ave, Orlando, FL 32801
+
+Geocoded (Census): 400 S ORANGE AVE, ORLANDO, FL, 32801
+Coordinates: 28.538315364222, -81.378959459636
+Location: Orlando, Orange County, FL
+Looking up internet providers...
+Looking up utilities for: 400 S Orange Ave, Orlando, FL 32801
+
+Geocoded (Census): 400 S ORANGE AVE, ORLANDO, FL, 32801
+Coordinates: 28.538315364222, -81.378959459636
+Location: Orlando, Orange County, FL
+  [Internet] block_geoid=120950189021048, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Normalized address for FCC: 400 S Orange Ave, Orlando, 
+  Trying exact address: 400 S Orange Ave, Orlando, 
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 394 S Orange Ave, Orlando, (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 396 S Orange Ave, Orlando, (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 398 S Orange Ave, Orlando, (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 402 S Orange Ave, Orlando, (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 404 S Orange Ave, Orlando, (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 406 S Orange Ave, Orlando, (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [12/49] Testing: 100 N Biscayne Blvd, Miami, FL 33132...
+Looking up utilities for: 100 N Biscayne Blvd, Miami, FL 33132
+
+Geocoded (Census): 100 BISCAYNE BLVD, MIAMI, FL, 33132
+Coordinates: 25.775330822179, -80.18783450328
+Location: Miami, Miami-Dade County, FL
+Looking up internet providers...
+Looking up utilities for: 100 N Biscayne Blvd, Miami, FL 33132
+
+Geocoded (Census): 100 BISCAYNE BLVD, MIAMI, FL, 33132
+Coordinates: 25.775330822179, -80.18783450328
+Location: Miami, Miami-Dade County, FL
+  [Internet] block_geoid=120860037041001, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Normalized address for FCC: 100 N Biscayne Blvd, Miami, 
+  Trying exact address: 100 N Biscayne Blvd, Miami, 
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 94 N Biscayne Blvd, Miami, (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 N Biscayne Blvd, Miami, (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 98 N Biscayne Blvd, Miami, (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 102 N Biscayne Blvd, Miami, (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 104 N Biscayne Blvd, Miami, (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 106 N Biscayne Blvd, Miami, (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [13/49] Testing: 200 W Colfax Ave, Denver, CO 80202...
+Looking up utilities for: 200 W Colfax Ave, Denver, CO 80202
+
+Geocoded (Census): 200 W COLFAX AVE, DENVER, CO, 80202
+Coordinates: 39.739949285267, -104.990392402588
+Location: Denver, Denver County, CO
+Looking up internet providers...
+Looking up utilities for: 200 W Colfax Ave, Denver, CO 80202
+
+Geocoded (Census): 200 W COLFAX AVE, DENVER, CO, 80202
+Coordinates: 39.739949285267, -104.990392402588
+Location: Denver, Denver County, CO
+  [Internet] block_geoid=080310020001009, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 W Colfax Ave, Denver, CO 80202
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 W Colfax Ave, Denver, CO 80202 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 W Colfax Ave, Denver, CO 80202 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 W Colfax Ave, Denver, CO 80202 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 W Colfax Ave, Denver, CO 80202 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 W Colfax Ave, Denver, CO 80202 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 W Colfax Ave, Denver, CO 80202 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [14/49] Testing: 200 W Washington St, Phoenix, AZ 85003...
+Looking up utilities for: 200 W Washington St, Phoenix, AZ 85003
+
+Geocoded (Census): 200 W WASHINGTON ST, PHOENIX, AZ, 85003
+Coordinates: 33.448300455978, -112.076399571212
+Location: Phoenix, Maricopa County, AZ
+Looking up internet providers...
+Looking up utilities for: 200 W Washington St, Phoenix, AZ 85003
+
+Geocoded (Census): 200 W WASHINGTON ST, PHOENIX, AZ, 85003
+Coordinates: 33.448300455978, -112.076399571212
+Location: Phoenix, Maricopa County, AZ
+  [Internet] block_geoid=040131141001032, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 W Washington St, Phoenix, AZ 85003
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 W Washington St, Phoenix, AZ 85003 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 W Washington St, Phoenix, AZ 85003 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 W Washington St, Phoenix, AZ 85003 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 W Washington St, Phoenix, AZ 85003 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 W Washington St, Phoenix, AZ 85003 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 W Washington St, Phoenix, AZ 85003 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [15/49] Testing: 600 4th Ave, Seattle, WA 98104...
+Looking up utilities for: 600 4th Ave, Seattle, WA 98104
+
+Geocoded (Census): 600 4TH AVE, SEATTLE, WA, 98104
+Coordinates: 47.603314311191, -122.330270920928
+Location: Seattle, King County, WA
+Looking up internet providers...
+Looking up utilities for: 600 4th Ave, Seattle, WA 98104
+
+Geocoded (Census): 600 4TH AVE, SEATTLE, WA, 98104
+Coordinates: 47.603314311191, -122.330270920928
+Location: Seattle, King County, WA
+  [Internet] block_geoid=530330081022004, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 600 4th Ave, Seattle, WA 98104
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 594 4th Ave, Seattle, WA 98104 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 596 4th Ave, Seattle, WA 98104 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 598 4th Ave, Seattle, WA 98104 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 602 4th Ave, Seattle, WA 98104 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 604 4th Ave, Seattle, WA 98104 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 606 4th Ave, Seattle, WA 98104 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [16/49] Testing: 121 N LaSalle St, Chicago, IL 60602...
+Looking up utilities for: 121 N LaSalle St, Chicago, IL 60602
+
+Geocoded (Census): 121 N LA SALLE ST, CHICAGO, IL, 60602
+Coordinates: 41.883378835076, -87.632333752582
+Location: Chicago, Cook County, IL
+Looking up internet providers...
+Looking up utilities for: 121 N LaSalle St, Chicago, IL 60602
+
+Geocoded (Census): 121 N LA SALLE ST, CHICAGO, IL, 60602
+Coordinates: 41.883378835076, -87.632333752582
+Location: Chicago, Cook County, IL
+  [Internet] block_geoid=170318391001041, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 121 N LaSalle St, Chicago, IL 60602
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 115 N LaSalle St, Chicago, IL 60602 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 117 N LaSalle St, Chicago, IL 60602 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 119 N LaSalle St, Chicago, IL 60602 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 123 N LaSalle St, Chicago, IL 60602 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 125 N LaSalle St, Chicago, IL 60602 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 127 N LaSalle St, Chicago, IL 60602 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [17/49] Testing: 55 Trinity Ave SW, Atlanta, GA 30303...
+Looking up utilities for: 55 Trinity Ave SW, Atlanta, GA 30303
+
+Geocoded (Census): 55 TRINITY AVE SW, ATLANTA, GA, 30303
+Coordinates: 33.747923901588, -84.390278038224
+Location: Atlanta, Fulton County, GA
+Looking up internet providers...
+Looking up utilities for: 55 Trinity Ave SW, Atlanta, GA 30303
+
+Geocoded (Census): 55 TRINITY AVE SW, ATLANTA, GA, 30303
+Coordinates: 33.747923901588, -84.390278038224
+Location: Atlanta, Fulton County, GA
+  [Internet] block_geoid=131210035001017, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 55 Trinity Ave SW, Atlanta, GA 30303
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 49 Trinity Ave SW, Atlanta, GA 30303 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 51 Trinity Ave SW, Atlanta, GA 30303 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 53 Trinity Ave SW, Atlanta, GA 30303 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 57 Trinity Ave SW, Atlanta, GA 30303 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 59 Trinity Ave SW, Atlanta, GA 30303 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 61 Trinity Ave SW, Atlanta, GA 30303 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [18/49] Testing: 1 Main St, Rural Hall, NC 27045...
+Looking up utilities for: 1 Main St, Rural Hall, NC 27045
+
+Census geocoder failed, trying Google...
+Google geocoder failed, trying Nominatim...
+No geocoding results for: 1 Main St, Rural Hall, NC 27045
+   [19/49] Testing: 1400 John F Kennedy Blvd, Philadelphia, PA 19107...
+Looking up utilities for: 1400 John F Kennedy Blvd, Philadelphia, PA 19107
+
+Geocoded (Census): 1400 JOHN F KENNEDY BLVD, PHILADELPHIA, PA, 19107
+Coordinates: 39.953321791765, -75.163486118492
+Location: Philadelphia, Philadelphia County, PA
+Looking up internet providers...
+Looking up utilities for: 1400 John F Kennedy Blvd, Philadelphia, PA 19107
+
+Geocoded (Census): 1400 JOHN F KENNEDY BLVD, PHILADELPHIA, PA, 19107
+Coordinates: 39.953321791765, -75.163486118492
+Location: Philadelphia, Philadelphia County, PA
+  [Internet] block_geoid=421010005002000, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1400 John F Kennedy Blvd, Philadelphia, PA 19107
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1394 John F Kennedy Blvd, Philadelphia, PA 19107 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1396 John F Kennedy Blvd, Philadelphia, PA 19107 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1398 John F Kennedy Blvd, Philadelphia, PA 19107 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1402 John F Kennedy Blvd, Philadelphia, PA 19107 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1404 John F Kennedy Blvd, Philadelphia, PA 19107 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1406 John F Kennedy Blvd, Philadelphia, PA 19107 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [20/49] Testing: 601 Lakeside Ave, Cleveland, OH 44114...
+Looking up utilities for: 601 Lakeside Ave, Cleveland, OH 44114
+
+Geocoded (Census): 601 LAKESIDE AVE E, CLEVELAND, OH, 44114
+Coordinates: 41.504741478512, -81.693241139689
+Location: Cleveland, Cuyahoga County, OH
+Looking up internet providers...
+Looking up utilities for: 601 Lakeside Ave, Cleveland, OH 44114
+
+Geocoded (Census): 601 LAKESIDE AVE E, CLEVELAND, OH, 44114
+Coordinates: 41.504741478512, -81.693241139689
+Location: Cleveland, Cuyahoga County, OH
+  [Internet] block_geoid=390351071012000, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 601 Lakeside Ave, Cleveland, OH 44114
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 595 Lakeside Ave, Cleveland, OH 44114 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 597 Lakeside Ave, Cleveland, OH 44114 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 599 Lakeside Ave, Cleveland, OH 44114 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 603 Lakeside Ave, Cleveland, OH 44114 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 605 Lakeside Ave, Cleveland, OH 44114 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 607 Lakeside Ave, Cleveland, OH 44114 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [21/49] Testing: 90 W Broad St, Columbus, OH 43215...
+Looking up utilities for: 90 W Broad St, Columbus, OH 43215
+
+Geocoded (Census): 90 W BROAD ST, COLUMBUS, OH, 43215
+Coordinates: 39.962072294476, -83.002492794841
+Location: Columbus, Franklin County, OH
+Looking up internet providers...
+Looking up utilities for: 90 W Broad St, Columbus, OH 43215
+
+Geocoded (Census): 90 W BROAD ST, COLUMBUS, OH, 43215
+Coordinates: 39.962072294476, -83.002492794841
+Location: Columbus, Franklin County, OH
+  [Internet] block_geoid=390490030004086, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 90 W Broad St, Columbus, OH 43215
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 84 W Broad St, Columbus, OH 43215 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 86 W Broad St, Columbus, OH 43215 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 88 W Broad St, Columbus, OH 43215 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 92 W Broad St, Columbus, OH 43215 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 94 W Broad St, Columbus, OH 43215 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 W Broad St, Columbus, OH 43215 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [22/49] Testing: 2 Woodward Ave, Detroit, MI 48226...
+Looking up utilities for: 2 Woodward Ave, Detroit, MI 48226
+
+Geocoded (Census): 2 WOODWARD AVE, DETROIT, MI, 48226
+Coordinates: 42.328933010906, -83.044505810325
+Location: Detroit, Wayne County, MI
+Looking up internet providers...
+Looking up utilities for: 2 Woodward Ave, Detroit, MI 48226
+
+Geocoded (Census): 2 WOODWARD AVE, DETROIT, MI, 48226
+Coordinates: 42.328933010906, -83.044505810325
+Location: Detroit, Wayne County, MI
+  [Internet] block_geoid=261635172002065, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 2 Woodward Ave, Detroit, MI 48226
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 3 neighbor addresses...
+    Trying neighbor: 4 Woodward Ave, Detroit, MI 48226 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 6 Woodward Ave, Detroit, MI 48226 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 8 Woodward Ave, Detroit, MI 48226 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [23/49] Testing: 1 City Hall Square, Boston, MA 02201...
+Looking up utilities for: 1 City Hall Square, Boston, MA 02201
+
+Geocoded (Census): 1 CITY HALL AVE, BOSTON, MA, 02108
+Coordinates: 42.357789875411, -71.059193787461
+Location: Boston, Suffolk County, MA
+Looking up internet providers...
+Looking up utilities for: 1 City Hall Square, Boston, MA 02201
+
+Geocoded (Census): 1 CITY HALL AVE, BOSTON, MA, 02108
+Coordinates: 42.357789875411, -71.059193787461
+Location: Boston, Suffolk County, MA
+  [Internet] block_geoid=250250303021044, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1 City Hall Square, Boston, MA 02201
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 3 neighbor addresses...
+    Trying neighbor: 3 City Hall Square, Boston, MA 02201 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 5 City Hall Square, Boston, MA 02201 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 7 City Hall Square, Boston, MA 02201 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [24/49] Testing: 900 E Broad St, Richmond, VA 23219...
+Looking up utilities for: 900 E Broad St, Richmond, VA 23219
+
+Geocoded (Census): 900 E BROAD ST, RICHMOND, VA, 23219
+Coordinates: 37.540839954108, -77.43369599761
+Location: Richmond, Richmond County, VA
+Looking up internet providers...
+Looking up utilities for: 900 E Broad St, Richmond, VA 23219
+
+Geocoded (Census): 900 E BROAD ST, RICHMOND, VA, 23219
+Coordinates: 37.540839954108, -77.43369599761
+Location: Richmond, Richmond County, VA
+  [Internet] block_geoid=517600302002047, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 900 E Broad St, Richmond, VA 23219
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 894 E Broad St, Richmond, VA 23219 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 896 E Broad St, Richmond, VA 23219 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 898 E Broad St, Richmond, VA 23219 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 902 E Broad St, Richmond, VA 23219 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 904 E Broad St, Richmond, VA 23219 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 906 E Broad St, Richmond, VA 23219 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [25/49] Testing: 2100 Clarendon Blvd, Arlington, VA 22201...
+Looking up utilities for: 2100 Clarendon Blvd, Arlington, VA 22201
+
+Geocoded (Census): 2100 CLARENDON BLVD, ARLINGTON, VA, 22201
+Coordinates: 38.891364803205, -77.084908829171
+Location: Arlington, Arlington County, VA
+Looking up internet providers...
+Looking up utilities for: 2100 Clarendon Blvd, Arlington, VA 22201
+
+Geocoded (Census): 2100 CLARENDON BLVD, ARLINGTON, VA, 22201
+Coordinates: 38.891364803205, -77.084908829171
+Location: Arlington, Arlington County, VA
+  [Internet] block_geoid=510131018051002, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 2100 Clarendon Blvd, Arlington, VA 22201
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 2094 Clarendon Blvd, Arlington, VA 22201 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 2096 Clarendon Blvd, Arlington, VA 22201 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 2098 Clarendon Blvd, Arlington, VA 22201 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 2102 Clarendon Blvd, Arlington, VA 22201 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 2104 Clarendon Blvd, Arlington, VA 22201 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 2106 Clarendon Blvd, Arlington, VA 22201 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [26/49] Testing: 100 N Holliday St, Baltimore, MD 21202...
+Looking up utilities for: 100 N Holliday St, Baltimore, MD 21202
+
+Geocoded (Census): 100 N HOLLIDAY ST, BALTIMORE, MD, 21202
+Coordinates: 39.290555848248, -76.61035081584
+Location: Baltimore, Baltimore County, MD
+Looking up internet providers...
+Looking up utilities for: 100 N Holliday St, Baltimore, MD 21202
+
+Geocoded (Census): 100 N HOLLIDAY ST, BALTIMORE, MD, 21202
+Coordinates: 39.290555848248, -76.61035081584
+Location: Baltimore, Baltimore County, MD
+  [Internet] block_geoid=245100401003008, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 100 N Holliday St, Baltimore, MD 21202
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 94 N Holliday St, Baltimore, MD 21202 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 N Holliday St, Baltimore, MD 21202 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 98 N Holliday St, Baltimore, MD 21202 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 102 N Holliday St, Baltimore, MD 21202 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 104 N Holliday St, Baltimore, MD 21202 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 106 N Holliday St, Baltimore, MD 21202 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [27/49] Testing: 1 Public Square, Nashville, TN 37201...
+Looking up utilities for: 1 Public Square, Nashville, TN 37201
+
+Census geocoder failed, trying Google...
+Google geocoder failed, trying Nominatim...
+No geocoding results for: 1 Public Square, Nashville, TN 37201
+   [28/49] Testing: 125 N Main St, Memphis, TN 38103...
+Looking up utilities for: 125 N Main St, Memphis, TN 38103
+
+Geocoded (Census): 125 N MAIN ST, MEMPHIS, TN, 38103
+Coordinates: 35.148558377868, -90.051553690438
+Location: Memphis, Shelby County, TN
+Looking up internet providers...
+Looking up utilities for: 125 N Main St, Memphis, TN 38103
+
+Geocoded (Census): 125 N MAIN ST, MEMPHIS, TN, 38103
+Coordinates: 35.148558377868, -90.051553690438
+Location: Memphis, Shelby County, TN
+  [Internet] block_geoid=471570042001012, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 125 N Main St, Memphis, TN 38103
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 119 N Main St, Memphis, TN 38103 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 121 N Main St, Memphis, TN 38103 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 123 N Main St, Memphis, TN 38103 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 127 N Main St, Memphis, TN 38103 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 129 N Main St, Memphis, TN 38103 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 131 N Main St, Memphis, TN 38103 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [29/49] Testing: 350 S 5th St, Minneapolis, MN 55415...
+Looking up utilities for: 350 S 5th St, Minneapolis, MN 55415
+
+Geocoded (Census): 350 S 5TH ST, MINNEAPOLIS, MN, 55415
+Coordinates: 44.976829666296, -93.265786657771
+Location: Minneapolis, Hennepin County, MN
+Looking up internet providers...
+Looking up utilities for: 350 S 5th St, Minneapolis, MN 55415
+
+Geocoded (Census): 350 S 5TH ST, MINNEAPOLIS, MN, 55415
+Coordinates: 44.976829666296, -93.265786657771
+Location: Minneapolis, Hennepin County, MN
+  [Internet] block_geoid=270531261021008, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 350 S 5th St, Minneapolis, MN 55415
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 344 S 5th St, Minneapolis, MN 55415 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 346 S 5th St, Minneapolis, MN 55415 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 348 S 5th St, Minneapolis, MN 55415 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 352 S 5th St, Minneapolis, MN 55415 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 354 S 5th St, Minneapolis, MN 55415 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 356 S 5th St, Minneapolis, MN 55415 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [30/49] Testing: 1200 Market St, St. Louis, MO 63103...
+Looking up utilities for: 1200 Market St, St. Louis, MO 63103
+
+Geocoded (Census): 1200 MARKET ST, SAINT LOUIS, MO, 63103
+Coordinates: 38.627407425881, -90.198428455559
+Location: St. Louis, St. Louis County, MO
+Looking up internet providers...
+Looking up utilities for: 1200 Market St, St. Louis, MO 63103
+
+Geocoded (Census): 1200 MARKET ST, SAINT LOUIS, MO, 63103
+Coordinates: 38.627407425881, -90.198428455559
+Location: St. Louis, St. Louis County, MO
+  [Internet] block_geoid=295101255002011, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1200 Market St, St. Louis, MO 63103
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1194 Market St, St. Louis, MO 63103 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1196 Market St, St. Louis, MO 63103 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1198 Market St, St. Louis, MO 63103 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1202 Market St, St. Louis, MO 63103 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1204 Market St, St. Louis, MO 63103 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1206 Market St, St. Louis, MO 63103 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [31/49] Testing: 414 E 12th St, Kansas City, MO 64106...
+Looking up utilities for: 414 E 12th St, Kansas City, MO 64106
+
+Geocoded (Census): 414 E 12TH ST, KANSAS CITY, MO, 64106
+Coordinates: 39.099812710057, -94.578317756959
+Location: Kansas City, Jackson County, MO
+No natural gas utility found in database for this location.
+No natural gas utility found in database for this location.
+Looking up internet providers...
+Looking up utilities for: 414 E 12th St, Kansas City, MO 64106
+
+Geocoded (Census): 414 E 12TH ST, KANSAS CITY, MO, 64106
+Coordinates: 39.099812710057, -94.578317756959
+Location: Kansas City, Jackson County, MO
+  [Internet] block_geoid=290950159002017, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 414 E 12th St, Kansas City, MO 64106
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 408 E 12th St, Kansas City, MO 64106 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 410 E 12th St, Kansas City, MO 64106 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 412 E 12th St, Kansas City, MO 64106 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 416 E 12th St, Kansas City, MO 64106 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 418 E 12th St, Kansas City, MO 64106 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 420 E 12th St, Kansas City, MO 64106 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [32/49] Testing: 200 E Wells St, Milwaukee, WI 53202...
+Looking up utilities for: 200 E Wells St, Milwaukee, WI 53202
+
+Geocoded (Census): 200 E WELLS ST, MILWAUKEE, WI, 53202
+Coordinates: 43.041116069656, -87.909678226499
+Location: Milwaukee, Milwaukee County, WI
+Looking up internet providers...
+Looking up utilities for: 200 E Wells St, Milwaukee, WI 53202
+
+Geocoded (Census): 200 E WELLS ST, MILWAUKEE, WI, 53202
+Coordinates: 43.041116069656, -87.909678226499
+Location: Milwaukee, Milwaukee County, WI
+  [Internet] block_geoid=550790144001015, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 E Wells St, Milwaukee, WI 53202
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 E Wells St, Milwaukee, WI 53202 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 E Wells St, Milwaukee, WI 53202 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 E Wells St, Milwaukee, WI 53202 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 E Wells St, Milwaukee, WI 53202 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 E Wells St, Milwaukee, WI 53202 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 E Wells St, Milwaukee, WI 53202 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [33/49] Testing: 200 E Washington St, Indianapolis, IN 46204...
+Looking up utilities for: 200 E Washington St, Indianapolis, IN 46204
+
+Geocoded (Census): 200 E WASHINGTON ST, INDIANAPOLIS, IN, 46204
+Coordinates: 39.767052050254, -86.154389202094
+Location: Indianapolis city (balance), Marion County, IN
+Looking up internet providers...
+Looking up utilities for: 200 E Washington St, Indianapolis, IN 46204
+
+Geocoded (Census): 200 E WASHINGTON ST, INDIANAPOLIS, IN, 46204
+Coordinates: 39.767052050254, -86.154389202094
+Location: Indianapolis city (balance), Marion County, IN
+  [Internet] block_geoid=180973542013019, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 E Washington St, Indianapolis, IN 46204
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 E Washington St, Indianapolis, IN 46204 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 E Washington St, Indianapolis, IN 46204 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 E Washington St, Indianapolis, IN 46204 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 E Washington St, Indianapolis, IN 46204 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 E Washington St, Indianapolis, IN 46204 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 E Washington St, Indianapolis, IN 46204 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [34/49] Testing: 495 S Main St, Las Vegas, NV 89101...
+Looking up utilities for: 495 S Main St, Las Vegas, NV 89101
+
+Geocoded (Census): 495 S MAIN ST, LAS VEGAS, NV, 89101
+Coordinates: 36.167103092432, -115.149271652652
+Location: Las Vegas, Clark County, NV
+Looking up internet providers...
+Looking up utilities for: 495 S Main St, Las Vegas, NV 89101
+
+Geocoded (Census): 495 S MAIN ST, LAS VEGAS, NV, 89101
+Coordinates: 36.167103092432, -115.149271652652
+Location: Las Vegas, Clark County, NV
+  [Internet] block_geoid=320030007001001, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 495 S Main St, Las Vegas, NV 89101
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 489 S Main St, Las Vegas, NV 89101 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 491 S Main St, Las Vegas, NV 89101 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 493 S Main St, Las Vegas, NV 89101 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 497 S Main St, Las Vegas, NV 89101 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 499 S Main St, Las Vegas, NV 89101 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 501 S Main St, Las Vegas, NV 89101 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [35/49] Testing: 1221 SW 4th Ave, Portland, OR 97204...
+Looking up utilities for: 1221 SW 4th Ave, Portland, OR 97204
+
+Geocoded (Census): 1221 SW 4TH AVE, PORTLAND, OR, 97204
+Coordinates: 45.515052054323, -122.678545068558
+Location: Portland, Multnomah County, OR
+Looking up internet providers...
+Looking up utilities for: 1221 SW 4th Ave, Portland, OR 97204
+
+Geocoded (Census): 1221 SW 4TH AVE, PORTLAND, OR, 97204
+Coordinates: 45.515052054323, -122.678545068558
+Location: Portland, Multnomah County, OR
+  [Internet] block_geoid=410510106022063, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1221 SW 4th Ave, Portland, OR 97204
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1215 SW 4th Ave, Portland, OR 97204 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1217 SW 4th Ave, Portland, OR 97204 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1219 SW 4th Ave, Portland, OR 97204 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1223 SW 4th Ave, Portland, OR 97204 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1225 SW 4th Ave, Portland, OR 97204 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1227 SW 4th Ave, Portland, OR 97204 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [36/49] Testing: 451 S State St, Salt Lake City, UT 84111...
+Looking up utilities for: 451 S State St, Salt Lake City, UT 84111
+
+Geocoded (Census): 451 S STATE ST, SALT LAKE CITY, UT, 84111
+Coordinates: 40.75954650595, -111.888146621991
+Location: Salt Lake City, Salt Lake County, UT
+Looking up internet providers...
+Looking up utilities for: 451 S State St, Salt Lake City, UT 84111
+
+Geocoded (Census): 451 S STATE ST, SALT LAKE CITY, UT, 84111
+Coordinates: 40.75954650595, -111.888146621991
+Location: Salt Lake City, Salt Lake County, UT
+  [Internet] block_geoid=490351140002009, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 451 S State St, Salt Lake City, UT 84111
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 445 S State St, Salt Lake City, UT 84111 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 447 S State St, Salt Lake City, UT 84111 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 449 S State St, Salt Lake City, UT 84111 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 453 S State St, Salt Lake City, UT 84111 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 455 S State St, Salt Lake City, UT 84111 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 457 S State St, Salt Lake City, UT 84111 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [37/49] Testing: 200 N Walker Ave, Oklahoma City, OK 73102...
+Looking up utilities for: 200 N Walker Ave, Oklahoma City, OK 73102
+
+Geocoded (Census): 200 N WALKER AVE, OKLAHOMA CITY, OK, 73102
+Coordinates: 35.468619579758, -97.521204352075
+Location: Oklahoma City, Oklahoma County, OK
+Looking up internet providers...
+Looking up utilities for: 200 N Walker Ave, Oklahoma City, OK 73102
+
+Geocoded (Census): 200 N WALKER AVE, OKLAHOMA CITY, OK, 73102
+Coordinates: 35.468619579758, -97.521204352075
+Location: Oklahoma City, Oklahoma County, OK
+  [Internet] block_geoid=401091099004001, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 N Walker Ave, Oklahoma City, OK 73102
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 N Walker Ave, Oklahoma City, OK 73102 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 N Walker Ave, Oklahoma City, OK 73102 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 N Walker Ave, Oklahoma City, OK 73102 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 N Walker Ave, Oklahoma City, OK 73102 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 N Walker Ave, Oklahoma City, OK 73102 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 N Walker Ave, Oklahoma City, OK 73102 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [38/49] Testing: 165 Capitol Ave, Hartford, CT 06106...
+Looking up utilities for: 165 Capitol Ave, Hartford, CT 06106
+
+Geocoded (Census): 165 CAPITOL AVE, HARTFORD, CT, 06106
+Coordinates: 41.762612806142, -72.681528837594
+Location: Hartford, Hartford County, CT
+Looking up internet providers...
+Looking up utilities for: 165 Capitol Ave, Hartford, CT 06106
+
+Geocoded (Census): 165 CAPITOL AVE, HARTFORD, CT, 06106
+Coordinates: 41.762612806142, -72.681528837594
+Location: Hartford, Hartford County, CT
+  [Internet] block_geoid=090035021002035, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 165 Capitol Ave, Hartford, CT 06106
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 159 Capitol Ave, Hartford, CT 06106 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 161 Capitol Ave, Hartford, CT 06106 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 163 Capitol Ave, Hartford, CT 06106 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 167 Capitol Ave, Hartford, CT 06106 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 169 Capitol Ave, Hartford, CT 06106 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 171 Capitol Ave, Hartford, CT 06106 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [39/49] Testing: 601 W Jefferson St, Louisville, KY 40202...
+Looking up utilities for: 601 W Jefferson St, Louisville, KY 40202
+
+Geocoded (Census): 601 W JEFFERSON ST, LOUISVILLE, KY, 40202
+Coordinates: 38.254260319364, -85.760382382472
+Location: Louisville, Jefferson County, KY
+Looking up internet providers...
+Looking up utilities for: 601 W Jefferson St, Louisville, KY 40202
+
+Geocoded (Census): 601 W JEFFERSON ST, LOUISVILLE, KY, 40202
+Coordinates: 38.254260319364, -85.760382382472
+Location: Louisville, Jefferson County, KY
+  [Internet] block_geoid=211110049003043, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 601 W Jefferson St, Louisville, KY 40202
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 595 W Jefferson St, Louisville, KY 40202 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 597 W Jefferson St, Louisville, KY 40202 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 599 W Jefferson St, Louisville, KY 40202 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 603 W Jefferson St, Louisville, KY 40202 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 605 W Jefferson St, Louisville, KY 40202 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 607 W Jefferson St, Louisville, KY 40202 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [40/49] Testing: 1300 Perdido St, New Orleans, LA 70112...
+Looking up utilities for: 1300 Perdido St, New Orleans, LA 70112
+
+Geocoded (Census): 1300 PERDIDO ST, NEW ORLEANS, LA, 70112
+Coordinates: 29.952439235888, -90.076572135869
+Location: New Orleans, Orleans County, LA
+Looking up internet providers...
+Looking up utilities for: 1300 Perdido St, New Orleans, LA 70112
+
+Geocoded (Census): 1300 PERDIDO ST, NEW ORLEANS, LA, 70112
+Coordinates: 29.952439235888, -90.076572135869
+Location: New Orleans, Orleans County, LA
+  [Internet] block_geoid=220710134002014, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1300 Perdido St, New Orleans, LA 70112
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 1294 Perdido St, New Orleans, LA 70112 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1296 Perdido St, New Orleans, LA 70112 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1298 Perdido St, New Orleans, LA 70112 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1302 Perdido St, New Orleans, LA 70112 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1304 Perdido St, New Orleans, LA 70112 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 1306 Perdido St, New Orleans, LA 70112 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [41/49] Testing: 710 20th St N, Birmingham, AL 35203...
+Looking up utilities for: 710 20th St N, Birmingham, AL 35203
+
+Geocoded (Census): 710 20TH ST N, BIRMINGHAM, AL, 35203
+Coordinates: 33.519727177722, -86.810284978508
+Location: Birmingham, Jefferson County, AL
+No natural gas utility found in database for this location.
+No natural gas utility found in database for this location.
+Looking up internet providers...
+Looking up utilities for: 710 20th St N, Birmingham, AL 35203
+
+Geocoded (Census): 710 20TH ST N, BIRMINGHAM, AL, 35203
+Coordinates: 33.519727177722, -86.810284978508
+Location: Birmingham, Jefferson County, AL
+  [Internet] block_geoid=010730027025021, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 710 20th St N, Birmingham, AL 35203
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 704 20th St N, Birmingham, AL 35203 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 706 20th St N, Birmingham, AL 35203 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 708 20th St N, Birmingham, AL 35203 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 712 20th St N, Birmingham, AL 35203 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 714 20th St N, Birmingham, AL 35203 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 716 20th St N, Birmingham, AL 35203 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [42/49] Testing: 100 Broad St, Charleston, SC 29401...
+Looking up utilities for: 100 Broad St, Charleston, SC 29401
+
+Geocoded (Census): 100 BROAD ST, CHARLESTON, SC, 29401
+Coordinates: 32.776378250522, -79.932392597053
+Location: Charleston, Charleston County, SC
+Looking up internet providers...
+Looking up utilities for: 100 Broad St, Charleston, SC 29401
+
+Geocoded (Census): 100 BROAD ST, CHARLESTON, SC, 29401
+Coordinates: 32.776378250522, -79.932392597053
+Location: Charleston, Charleston County, SC
+  [Internet] block_geoid=450190002001019, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 100 Broad St, Charleston, SC 29401
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 94 Broad St, Charleston, SC 29401 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 Broad St, Charleston, SC 29401 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 98 Broad St, Charleston, SC 29401 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 102 Broad St, Charleston, SC 29401 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 104 Broad St, Charleston, SC 29401 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 106 Broad St, Charleston, SC 29401 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [43/49] Testing: 1 Civic Plaza NW, Albuquerque, NM 87102...
+Looking up utilities for: 1 Civic Plaza NW, Albuquerque, NM 87102
+
+Census geocoder failed, trying Google...
+Google geocoder failed, trying Nominatim...
+Geocoded (Nominatim): 1, Civic Plaza, Albuquerque, Bernalillo County, New Mexico, 87102, United States
+Coordinates: 35.0877578, -106.6513592
+Location: Albuquerque, Bernalillo County, NM
+Looking up internet providers...
+Looking up utilities for: 1 Civic Plaza NW, Albuquerque, NM 87102
+
+Census geocoder failed, trying Google...
+Google geocoder failed, trying Nominatim...
+Geocoded (Nominatim): 1, Civic Plaza, Albuquerque, Bernalillo County, New Mexico, 87102, United States
+Coordinates: 35.0877578, -106.6513592
+Location: Albuquerque, Bernalillo County, NM
+  [Internet] block_geoid=None, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 1 Civic Plaza NW, Albuquerque, NM 87102
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 3 neighbor addresses...
+    Trying neighbor: 3 Civic Plaza NW, Albuquerque, NM 87102 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 5 Civic Plaza NW, Albuquerque, NM 87102 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 7 Civic Plaza NW, Albuquerque, NM 87102 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [44/49] Testing: 530 S King St, Honolulu, HI 96813...
+Looking up utilities for: 530 S King St, Honolulu, HI 96813
+
+Geocoded (Census): 530 S KING ST, HONOLULU, HI, 96813
+Coordinates: 21.304194350378, -157.856420994051
+Location: Honolulu, Honolulu County, HI
+Looking up internet providers...
+Looking up utilities for: 530 S King St, Honolulu, HI 96813
+
+Geocoded (Census): 530 S KING ST, HONOLULU, HI, 96813
+Coordinates: 21.304194350378, -157.856420994051
+Location: Honolulu, Honolulu County, HI
+  [Internet] block_geoid=150030039001003, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 530 S King St, Honolulu, HI 96813
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 524 S King St, Honolulu, HI 96813 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 526 S King St, Honolulu, HI 96813 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 528 S King St, Honolulu, HI 96813 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 532 S King St, Honolulu, HI 96813 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 534 S King St, Honolulu, HI 96813 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 536 S King St, Honolulu, HI 96813 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [45/49] Testing: 632 W 6th Ave, Anchorage, AK 99501...
+Looking up utilities for: 632 W 6th Ave, Anchorage, AK 99501
+
+Geocoded (Census): 632 W 6TH AVE, ANCHORAGE, AK, 99501
+Coordinates: 61.216528065749, -149.894191341418
+Location: Anchorage, Anchorage County, AK
+Looking up internet providers...
+Looking up utilities for: 632 W 6th Ave, Anchorage, AK 99501
+
+Geocoded (Census): 632 W 6TH AVE, ANCHORAGE, AK, 99501
+Coordinates: 61.216528065749, -149.894191341418
+Location: Anchorage, Anchorage County, AK
+  [Internet] block_geoid=020200011001047, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 632 W 6th Ave, Anchorage, AK 99501
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 626 W 6th Ave, Anchorage, AK 99501 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 628 W 6th Ave, Anchorage, AK 99501 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 630 W 6th Ave, Anchorage, AK 99501 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 634 W 6th Ave, Anchorage, AK 99501 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 636 W 6th Ave, Anchorage, AK 99501 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 638 W 6th Ave, Anchorage, AK 99501 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [46/49] Testing: 100 E Main St, Fredericksburg, TX 78624...
+Looking up utilities for: 100 E Main St, Fredericksburg, TX 78624
+
+Geocoded (Census): 100 E MAIN ST, FREDERICKSBURG, TX, 78624
+Coordinates: 30.27511008663, -98.872188551638
+Location: Fredericksburg, Gillespie County, TX
+Looking up internet providers...
+Looking up utilities for: 100 E Main St, Fredericksburg, TX 78624
+
+Geocoded (Census): 100 E MAIN ST, FREDERICKSBURG, TX, 78624
+Coordinates: 30.27511008663, -98.872188551638
+Location: Fredericksburg, Gillespie County, TX
+  [Internet] block_geoid=481719503023035, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 100 E Main St, Fredericksburg, TX 78624
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 94 E Main St, Fredericksburg, TX 78624 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 96 E Main St, Fredericksburg, TX 78624 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 98 E Main St, Fredericksburg, TX 78624 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 102 E Main St, Fredericksburg, TX 78624 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 104 E Main St, Fredericksburg, TX 78624 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 106 E Main St, Fredericksburg, TX 78624 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [47/49] Testing: 200 E San Antonio St, New Braunfels, TX 78130...
+Looking up utilities for: 200 E San Antonio St, New Braunfels, TX 78130
+
+Geocoded (Census): 200 E SAN ANTONIO ST, NEW BRAUNFELS, TX, 78130
+Coordinates: 29.703971363917, -98.123627915027
+Location: New Braunfels, Comal County, TX
+Looking up internet providers...
+Looking up utilities for: 200 E San Antonio St, New Braunfels, TX 78130
+
+Geocoded (Census): 200 E SAN ANTONIO ST, NEW BRAUNFELS, TX, 78130
+Coordinates: 29.703971363917, -98.123627915027
+Location: New Braunfels, Comal County, TX
+  [Internet] block_geoid=480913101003021, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 200 E San Antonio St, New Braunfels, TX 78130
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 194 E San Antonio St, New Braunfels, TX 78130 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 196 E San Antonio St, New Braunfels, TX 78130 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 E San Antonio St, New Braunfels, TX 78130 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 202 E San Antonio St, New Braunfels, TX 78130 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 E San Antonio St, New Braunfels, TX 78130 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 E San Antonio St, New Braunfels, TX 78130 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [48/49] Testing: 915 I St, Sacramento, CA 95814...
+Looking up utilities for: 915 I St, Sacramento, CA 95814
+
+Geocoded (Census): 915 I ST, SACRAMENTO, CA, 95814
+Coordinates: 38.581751446918, -121.494073847958
+Location: Sacramento, Sacramento County, CA
+Looking up internet providers...
+Looking up utilities for: 915 I St, Sacramento, CA 95814
+
+Geocoded (Census): 915 I ST, SACRAMENTO, CA, 95814
+Coordinates: 38.581751446918, -121.494073847958
+Location: Sacramento, Sacramento County, CA
+  [Internet] block_geoid=060670011031006, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 915 I St, Sacramento, CA 95814
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 909 I St, Sacramento, CA 95814 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 911 I St, Sacramento, CA 95814 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 913 I St, Sacramento, CA 95814 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 917 I St, Sacramento, CA 95814 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 919 I St, Sacramento, CA 95814 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 921 I St, Sacramento, CA 95814 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+   [49/49] Testing: 202 C St, San Diego, CA 92101...
+Looking up utilities for: 202 C St, San Diego, CA 92101
+
+Geocoded (Census): 202 C ST, SAN DIEGO, CA, 92101
+Coordinates: 32.716807534803, -117.162831588333
+Location: San Diego, San Diego County, CA
+Looking up internet providers...
+Looking up utilities for: 202 C St, San Diego, CA 92101
+
+Geocoded (Census): 202 C ST, SAN DIEGO, CA, 92101
+Coordinates: 32.716807534803, -117.162831588333
+Location: San Diego, San Diego County, CA
+  [Internet] block_geoid=060730053021009, DATABASE_URL=NOT SET
+  Falling back to Playwright (slow)...
+  Trying exact address: 202 C St, San Diego, CA 92101
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+  Exact address not in FCC database, trying 6 neighbor addresses...
+    Trying neighbor: 196 C St, San Diego, CA 92101 (offset -6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 198 C St, San Diego, CA 92101 (offset -4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 200 C St, San Diego, CA 92101 (offset -2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 204 C St, San Diego, CA 92101 (offset +2)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 206 C St, San Diego, CA 92101 (offset +4)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+    Trying neighbor: 208 C St, San Diego, CA 92101 (offset +6)
+Playwright error: Page.goto: net::ERR_HTTP2_PROTOCOL_ERROR at https://broadbandmap.fcc.gov/
+Call log:
+  - navigating to "https://broadbandmap.fcc.gov/", waiting until "domcontentloaded"
+
+FCC API: No data found for address or neighbors
+  Could not retrieve internet provider data
+
+======================================================================
+TEST RESULTS: 113/147 passed (76.9%)
+======================================================================
+
+❌ FAILURES:
+----------------------------------------------------------------------
+
+📍 1725 Toomey Rd, Austin, TX 78704
+  ✅ PASS [electric] Austin Energy (verified)
+  ✅ PASS [gas] Texas Gas Service (verified)
+  ❌ FAIL [water] Expected: Austin Water, Got: None
+
+📍 301 Treasure Trove Path, Kyle, TX 78640
+  ✅ PASS [electric] Pedernales Electric Cooperative, Inc. (high)
+  ✅ PASS [gas] CENTERPOINT ENERGY - ENTEX (verified)
+  ❌ FAIL [water] Expected: City of Kyle, Got: None
+
+📍 100 Congress Ave, Austin, TX 78701
+  ✅ PASS [electric] Austin Energy (verified)
+  ✅ PASS [gas] Texas Gas Service (verified)
+  ❌ FAIL [water] Expected: Austin Water, Got: None
+
+📍 100 Military Plaza, San Antonio, TX 78205
+  ✅ PASS [electric] CPS Energy (verified)
+  ✅ PASS [gas] CPS Energy (verified)
+  ❌ FAIL [water] Expected: San Antonio Water System, Got: None
+
+📍 200 N Spring St, Los Angeles, CA 90012
+  ❌ FAIL [electric] Expected: LADWP, Got: Los Angeles Department of Water & Power
+  ✅ PASS [gas] SoCalGas (verified)
+  ❌ FAIL [water] Expected: LADWP, Got: None
+
+📍 1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102
+  ✅ PASS [electric] Pacific Gas and Electric (verified)
+  ✅ PASS [gas] Pacific Gas and Electric (verified)
+  ❌ FAIL [water] Expected: San Francisco, Got: None
+
+📍 400 S Orange Ave, Orlando, FL 32801
+  ✅ PASS [electric] OUC (verified)
+  ✅ PASS [gas] PEOPLES GAS SYSTEMS, INC (high)
+  ❌ FAIL [water] Expected: OUC, Got: None
+
+📍 200 W Colfax Ave, Denver, CO 80202
+  ❌ FAIL [electric] Expected: Xcel Energy, Got: PSC of Colorado
+  ✅ PASS [gas] Xcel Energy Colorado (verified)
+  ❌ FAIL [water] Expected: Denver Water, Got: None
+
+📍 600 4th Ave, Seattle, WA 98104
+  ✅ PASS [electric] SEATTLE CITY LIGHT (verified)
+  ✅ PASS [gas] PUGET SOUND ENERGY, INC. (high)
+  ❌ FAIL [water] Expected: Seattle Public Utilities, Got: None
+
+📍 55 Trinity Ave SW, Atlanta, GA 30303
+  ✅ PASS [electric] Georgia Power (verified)
+  ❌ FAIL [gas] Expected: Atlanta Gas Light, Got: AGL Resources
+  ✅ PASS [water] None (high)
+
+📍 1 Main St, Rural Hall, NC 27045
+  ❌ FAIL [electric] Error: Lookup returned None
+  ✅ PASS [gas] None (None)
+  ✅ PASS [water] None (None)
+
+📍 1400 John F Kennedy Blvd, Philadelphia, PA 19107
+  ✅ PASS [electric] PECO Energy Co (verified)
+  ❌ FAIL [gas] Expected: PECO, Got: PHILADELPHIA GAS WORKS
+  ✅ PASS [water] None (high)
+
+📍 90 W Broad St, Columbus, OH 43215
+  ❌ FAIL [electric] Expected: AEP Ohio, Got: Columbus Division of Power
+  ✅ PASS [gas] COLUMBIA GAS OF OHIO (verified)
+  ✅ PASS [water] None (high)
+
+📍 900 E Broad St, Richmond, VA 23219
+  ✅ PASS [electric] Dominion Virginia Power (verified)
+  ❌ FAIL [gas] Expected: Virginia Natural Gas, Got: COLUMBIA GAS OF VIRGINIA
+  ✅ PASS [water] None (high)
+
+📍 100 N Holliday St, Baltimore, MD 21202
+  ❌ FAIL [electric] Expected: BGE, Got: Baltimore Gas & Electric Co
+  ❌ FAIL [gas] Expected: BGE, Got: BALTIMORE GAS AND ELECTRIC CO
+  ✅ PASS [water] None (high)
+
+📍 1 Public Square, Nashville, TN 37201
+  ❌ FAIL [electric] Error: Lookup returned None
+  ❌ FAIL [gas] Error: Lookup returned None
+  ✅ PASS [water] None (None)
+
+📍 125 N Main St, Memphis, TN 38103
+  ✅ PASS [electric] Memphis Light, Gas and Water (MLGW) (verified)
+  ✅ PASS [gas] Memphis Light, Gas and Water (MLGW) (verified)
+  ❌ FAIL [water] Expected: MLGW, Got: None
+
+📍 350 S 5th St, Minneapolis, MN 55415
+  ❌ FAIL [electric] Expected: Xcel Energy, Got: Northern States Power Co - Minnesota
+  ✅ PASS [gas] CENTERPOINT ENERGY (high)
+  ✅ PASS [water] None (high)
+
+📍 1200 Market St, St. Louis, MO 63103
+  ❌ FAIL [electric] Expected: Ameren Missouri, Got: Union Electric Co - (MO)
+  ❌ FAIL [gas] Expected: Spire, Got: AMEREN ILLINOIS
+  ✅ PASS [water] None (high)
+
+📍 200 E Washington St, Indianapolis, IN 46204
+  ❌ FAIL [electric] Expected: AES Indiana, Got: Indianapolis Power & Light Co
+  ✅ PASS [gas] CITIZENS ENERGY GROUP (high)
+  ✅ PASS [water] None (high)
+
+📍 495 S Main St, Las Vegas, NV 89101
+  ❌ FAIL [electric] Expected: NV Energy, Got: Nevada Power Co
+  ✅ PASS [gas] Southwest Gas Corporation (high)
+  ✅ PASS [water] None (high)
+
+📍 165 Capitol Ave, Hartford, CT 06106
+  ✅ PASS [electric] Eversource (verified)
+  ❌ FAIL [gas] Expected: Eversource, Got: CONNETICUT NATURAL GAS CORP
+  ✅ PASS [water] None (high)
+
+📍 601 W Jefferson St, Louisville, KY 40202
+  ❌ FAIL [electric] Expected: LG&E, Got: Louisville Gas and Electric Company
+  ❌ FAIL [gas] Expected: LG&E, Got: Atmos Energy
+  ✅ PASS [water] None (high)
+
+📍 1 Civic Plaza NW, Albuquerque, NM 87102
+  ❌ FAIL [electric] Expected: PNM, Got: PUBLIC SERVICE CO OF NM
+  ✅ PASS [gas] NEW MEXICO GAS COMPANY (high)
+  ✅ PASS [water] None (high)
+
+📍 632 W 6th Ave, Anchorage, AK 99501
+  ❌ FAIL [electric] Expected: Chugach Electric, Got: ANCHORAGE MUNICIPAL LIGHT AND POWER
+  ✅ PASS [gas] ENSTAR NATURAL GAS CO. (high)
+  ✅ PASS [water] None (high)
+
+📍 100 E Main St, Fredericksburg, TX 78624
+  ❌ FAIL [electric] Expected: Pedernales Electric, Got: Fredericksburg Electric Utility
+  ✅ PASS [gas] Atmos Energy (high)
+  ✅ PASS [water] None (high)
+
+📍 200 E San Antonio St, New Braunfels, TX 78130
+  ✅ PASS [electric] New Braunfels Utilities (verified)
+  ✅ PASS [gas] CENTERPOINT ENERGY - ENTEX (high)
+  ❌ FAIL [water] Expected: New Braunfels Utilities, Got: None
+
+📍 202 C St, San Diego, CA 92101
+  ✅ PASS [electric] SDG&E (verified)
+  ✅ PASS [gas] SDG&E (verified)
+  ❌ FAIL [water] Expected: San Diego, Got: None
+
+✅ PASSES:
+----------------------------------------------------------------------
+
+📍 1000 Main St, Houston, TX 77002
+  ✅ [electric] CenterPoint Energy Houston Electric, LLC (verified)
+  ✅ [gas] CenterPoint Energy (verified)
+  ✅ [water] None (high)
+
+📍 1500 Marilla St, Dallas, TX 75201
+  ✅ [electric] Oncor Electric Delivery Company LLC (verified)
+  ✅ [gas] Atmos Energy (verified)
+  ✅ [water] None (high)
+
+📍 1405 Fernwood Glendale Rd, Spartanburg, SC 29307
+  ✅ [electric] Duke Energy Carolinas (verified)
+  ✅ [gas] PIEDMONT NATURAL GAS (high)
+  ✅ [water] None (high)
+
+📍 350 5th Ave, New York, NY 10118
+  ✅ [electric] Consolidated Edison Co-NY Inc (verified)
+  ✅ [gas] Con Edison (high)
+  ✅ [water] None (high)
+
+📍 100 N Biscayne Blvd, Miami, FL 33132
+  ✅ [electric] Florida Power & Light (verified)
+  ✅ [gas] PEOPLES GAS SYSTEMS, INC (high)
+  ✅ [water] None (high)
+
+📍 200 W Washington St, Phoenix, AZ 85003
+  ✅ [electric] Arizona Public Service (APS) (verified)
+  ✅ [gas] Southwest Gas Corporation (verified)
+  ✅ [water] None (high)
+
+📍 121 N LaSalle St, Chicago, IL 60602
+  ✅ [electric] Commonwealth Edison (verified)
+  ✅ [gas] Peoples Gas (WEC Energy) (verified)
+  ✅ [water] None (high)
+
+📍 601 Lakeside Ave, Cleveland, OH 44114
+  ✅ [electric] Cleveland Public Power (verified)
+  ✅ [gas] EAST OHIO GAS CO/DOMINION (verified)
+  ✅ [water] None (high)
+
+📍 2 Woodward Ave, Detroit, MI 48226
+  ✅ [electric] DTE ELECTRIC COMPANY (verified)
+  ✅ [gas] DTE Gas Company (verified)
+  ✅ [water] None (high)
+
+📍 1 City Hall Square, Boston, MA 02201
+  ✅ [electric] NSTAR Electric Company (verified)
+  ✅ [gas] Eversource Energy (NSTAR Gas), National Grid (Boston Gas) (verified)
+  ✅ [water] None (high)
+
+📍 2100 Clarendon Blvd, Arlington, VA 22201
+  ✅ [electric] Dominion Virginia Power (verified)
+  ✅ [gas] WASHINGTON GAS (high)
+  ✅ [water] None (high)
+
+📍 414 E 12th St, Kansas City, MO 64106
+  ✅ [electric] Evergy Metro (verified)
+  ✅ [gas] Spire Missouri (medium)
+  ✅ [water] None (high)
+
+📍 200 E Wells St, Milwaukee, WI 53202
+  ✅ [electric] WE Energies (verified)
+  ✅ [gas] WE Energies (high)
+  ✅ [water] None (high)
+
+📍 1221 SW 4th Ave, Portland, OR 97204
+  ✅ [electric] Portland General Electric (verified)
+  ✅ [gas] NORTHWEST NATURAL GAS CO. (high)
+  ✅ [water] None (high)
+
+📍 451 S State St, Salt Lake City, UT 84111
+  ✅ [electric] Rocky Mountain Power (verified)
+  ✅ [gas] Dominion Energy (high)
+  ✅ [water] None (high)
+
+📍 200 N Walker Ave, Oklahoma City, OK 73102
+  ✅ [electric] OG&E (verified)
+  ✅ [gas] OKLAHOMA NATURAL GAS CO. (high)
+  ✅ [water] None (high)
+
+📍 1300 Perdido St, New Orleans, LA 70112
+  ✅ [electric] Entergy New Orleans, LLC (verified)
+  ✅ [gas] ENTERGY - GULF STATES (high)
+  ✅ [water] None (high)
+
+📍 710 20th St N, Birmingham, AL 35203
+  ✅ [electric] Alabama Power Co (verified)
+  ✅ [gas] Spire Alabama (medium)
+  ✅ [water] None (high)
+
+📍 100 Broad St, Charleston, SC 29401
+  ✅ [electric] Dominion Energy South Carolina (verified)
+  ✅ [gas] SOUTH CAROLINA ELECTRIC & GAS (high)
+  ✅ [water] None (high)
+
+📍 530 S King St, Honolulu, HI 96813
+  ✅ [electric] Hawaiian Electric Company (HECO) (verified)
+  ✅ [gas] HAWAII GAS (high)
+  ✅ [water] None (high)
+
+📍 915 I St, Sacramento, CA 95814
+  ✅ [electric] Sacramento Municipal Utility District (verified)
+  ✅ [gas] Pacific Gas and Electric (verified)
+  ✅ [water] None (high)
+
+======================================================================
+SUMMARY: 113 passed, 34 failed
+Run with --verbose for more details
+======================================================================

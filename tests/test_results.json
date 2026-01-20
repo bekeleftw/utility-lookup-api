@@ -1,18 +1,18 @@
 {
   "total_tests": 68,
   "electric": {
-    "passed": 57,
-    "failed": 11,
-    "accuracy": 83.8
+    "passed": 63,
+    "failed": 5,
+    "accuracy": 92.6
   },
   "gas": {
-    "passed": 58,
-    "failed": 6,
+    "passed": 50,
+    "failed": 14,
     "skipped": 4,
-    "accuracy": 90.6
+    "accuracy": 78.1
   },
-  "total_time_ms": 11967,
-  "avg_time_ms": 176,
+  "total_time_ms": 15160,
+  "avg_time_ms": 223,
   "results": [
     {
       "test_id": "tx_austin_001",
@@ -63,7 +63,7 @@
         "actual": "Atmos Energy",
         "passed": true
       },
-      "timing_ms": 1
+      "timing_ms": 0
     },
     {
       "test_id": "tx_sanantonio_001",
@@ -97,7 +97,7 @@
         "actual": "CenterPoint Energy",
         "passed": false
       },
-      "timing_ms": 158
+      "timing_ms": 159
     },
     {
       "test_id": "fl_miami_001",
@@ -111,10 +111,10 @@
       },
       "gas": {
         "expected": null,
-        "actual": "FLORIDA CITY GAS COMPANY",
+        "actual": "Peoples Gas Systems,",
         "passed": false
       },
-      "timing_ms": 216
+      "timing_ms": 203
     },
     {
       "test_id": "fl_tampa_001",
@@ -128,10 +128,10 @@
       },
       "gas": {
         "expected": "Peoples Gas",
-        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "actual": "Peoples Gas Systems,",
         "passed": true
       },
-      "timing_ms": 174
+      "timing_ms": 211
     },
     {
       "test_id": "fl_orlando_001",
@@ -145,10 +145,10 @@
       },
       "gas": {
         "expected": null,
-        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "actual": "Peoples Gas Systems,",
         "passed": false
       },
-      "timing_ms": 153
+      "timing_ms": 181
     },
     {
       "test_id": "fl_jacksonville_001",
@@ -162,10 +162,10 @@
       },
       "gas": {
         "expected": null,
-        "actual": "PEOPLES GAS SYSTEMS, INC",
+        "actual": "Peoples Gas Systems,",
         "passed": false
       },
-      "timing_ms": 171
+      "timing_ms": 168
     },
     {
       "test_id": "ga_atlanta_001",
@@ -182,7 +182,7 @@
         "actual": "Atlanta Gas Light",
         "passed": true
       },
-      "timing_ms": 178
+      "timing_ms": 261
     },
     {
       "test_id": "nc_charlotte_001",
@@ -196,10 +196,10 @@
       },
       "gas": {
         "expected": "Piedmont Natural Gas",
-        "actual": "Piedmont Natural Gas",
-        "passed": true
+        "actual": null,
+        "passed": false
       },
-      "timing_ms": 148
+      "timing_ms": 239
     },
     {
       "test_id": "nc_raleigh_001",
@@ -213,10 +213,10 @@
       },
       "gas": {
         "expected": "PSNC Energy",
-        "actual": "PSNC Energy",
-        "passed": true
+        "actual": "Public Service Co. of North Carolina",
+        "passed": false
       },
-      "timing_ms": 147
+      "timing_ms": 276
     },
     {
       "test_id": "tn_nashville_001",
@@ -230,10 +230,10 @@
       },
       "gas": {
         "expected": "Piedmont Natural Gas",
-        "actual": "PIEDMONT NATURAL GAS",
+        "actual": "Piedmont Natural Gas",
         "passed": true
       },
-      "timing_ms": 157
+      "timing_ms": 159
     },
     {
       "test_id": "tn_memphis_001",
@@ -264,10 +264,10 @@
       },
       "gas": {
         "expected": "Southern California Gas",
-        "actual": "SOUTHERN CALIFORNIA GAS COMPANY",
+        "actual": "Southern California Gas Company",
         "passed": true
       },
-      "timing_ms": 153
+      "timing_ms": 224
     },
     {
       "test_id": "ca_sanfrancisco_001",
@@ -284,7 +284,7 @@
         "actual": "Pacific Gas and Electric",
         "passed": true
       },
-      "timing_ms": 286
+      "timing_ms": 344
     },
     {
       "test_id": "ca_sandiego_001",
@@ -301,7 +301,7 @@
         "actual": "SDG&E",
         "passed": true
       },
-      "timing_ms": 141
+      "timing_ms": 178
     },
     {
       "test_id": "ca_sacramento_001",
@@ -318,7 +318,7 @@
         "actual": "Pacific Gas and Electric",
         "passed": true
       },
-      "timing_ms": 150
+      "timing_ms": 162
     },
     {
       "test_id": "ny_newyork_001",
@@ -335,7 +335,7 @@
         "actual": "Con Edison",
         "passed": true
       },
-      "timing_ms": 266
+      "timing_ms": 172
     },
     {
       "test_id": "ny_buffalo_001",
@@ -349,10 +349,10 @@
       },
       "gas": {
         "expected": "National Fuel Gas",
-        "actual": "NATIONAL FUEL GAS DISTRIBUTION",
+        "actual": "National Fuel Gas Distribution",
         "passed": true
       },
-      "timing_ms": 148
+      "timing_ms": 189
     },
     {
       "test_id": "il_chicago_001",
@@ -366,10 +366,10 @@
       },
       "gas": {
         "expected": "Peoples Gas",
-        "actual": "PEOPLES GAS LT & COKE CO",
+        "actual": "Peoples Gas Lt & Coke Co.",
         "passed": true
       },
-      "timing_ms": 137
+      "timing_ms": 242
     },
     {
       "test_id": "pa_philadelphia_001",
@@ -383,10 +383,10 @@
       },
       "gas": {
         "expected": "Philadelphia Gas Works",
-        "actual": "PECO",
-        "passed": false
+        "actual": "Philadelphia Gas Works",
+        "passed": true
       },
-      "timing_ms": 150
+      "timing_ms": 282
     },
     {
       "test_id": "pa_pittsburgh_001",
@@ -400,10 +400,10 @@
       },
       "gas": {
         "expected": "Peoples Gas",
-        "actual": "EQUITABLE GAS CO. (PEOPLES NATURAL GAS",
+        "actual": "Equitable Gas Co. (peoples Natural Gas",
         "passed": true
       },
-      "timing_ms": 142
+      "timing_ms": 156
     },
     {
       "test_id": "oh_columbus_001",
@@ -417,10 +417,10 @@
       },
       "gas": {
         "expected": "Columbia Gas",
-        "actual": "COLUMBIA GAS OF OHIO",
+        "actual": "Columbia Gas of Ohio",
         "passed": true
       },
-      "timing_ms": 162
+      "timing_ms": 197
     },
     {
       "test_id": "oh_cleveland_001",
@@ -434,10 +434,10 @@
       },
       "gas": {
         "expected": "Dominion Energy",
-        "actual": "EAST OHIO GAS CO/DOMINION",
+        "actual": "East Ohio Gas Co/dominion",
         "passed": true
       },
-      "timing_ms": 176
+      "timing_ms": 171
     },
     {
       "test_id": "mi_detroit_001",
@@ -446,15 +446,15 @@
       "state": "MI",
       "electric": {
         "expected": "DTE Energy",
-        "actual": "DTE ELECTRIC COMPANY",
+        "actual": "DTE Electric Company",
         "passed": true
       },
       "gas": {
         "expected": "DTE Energy",
-        "actual": "DTE Energy",
+        "actual": "DTE Gas Company",
         "passed": true
       },
-      "timing_ms": 359
+      "timing_ms": 425
     },
     {
       "test_id": "az_phoenix_001",
@@ -471,7 +471,7 @@
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "timing_ms": 169
+      "timing_ms": 263
     },
     {
       "test_id": "az_tucson_001",
@@ -488,7 +488,7 @@
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "timing_ms": 262
+      "timing_ms": 139
     },
     {
       "test_id": "co_denver_001",
@@ -502,10 +502,10 @@
       },
       "gas": {
         "expected": "Xcel Energy",
-        "actual": "Xcel Energy Colorado",
-        "passed": true
+        "actual": "Public Service Co. of Colorado",
+        "passed": false
       },
-      "timing_ms": 161
+      "timing_ms": 218
     },
     {
       "test_id": "wa_seattle_001",
@@ -519,10 +519,10 @@
       },
       "gas": {
         "expected": "Puget Sound Energy",
-        "actual": "PUGET SOUND ENERGY, INC.",
+        "actual": "Puget Sound Energy, Inc.",
         "passed": true
       },
-      "timing_ms": 168
+      "timing_ms": 146
     },
     {
       "test_id": "or_portland_001",
@@ -536,10 +536,10 @@
       },
       "gas": {
         "expected": "NW Natural",
-        "actual": "NORTHWEST NATURAL GAS CO.",
+        "actual": "Northwest Natural Gas Co.",
         "passed": true
       },
-      "timing_ms": 338
+      "timing_ms": 175
     },
     {
       "test_id": "nv_lasvegas_001",
@@ -556,7 +556,7 @@
         "actual": "Southwest Gas Corporation",
         "passed": true
       },
-      "timing_ms": 177
+      "timing_ms": 200
     },
     {
       "test_id": "ma_boston_001",
@@ -570,10 +570,10 @@
       },
       "gas": {
         "expected": "National Grid",
-        "actual": "NATIONAL GRID",
+        "actual": "National Grid",
         "passed": true
       },
-      "timing_ms": 208
+      "timing_ms": 242
     },
     {
       "test_id": "md_baltimore_001",
@@ -583,14 +583,14 @@
       "electric": {
         "expected": "BGE",
         "actual": "Baltimore Gas & Electric Co",
-        "passed": false
+        "passed": true
       },
       "gas": {
         "expected": "BGE",
-        "actual": "BGE",
+        "actual": "Baltimore Gas and Electric Co.",
         "passed": true
       },
-      "timing_ms": 179
+      "timing_ms": 165
     },
     {
       "test_id": "dc_washington_001",
@@ -604,10 +604,10 @@
       },
       "gas": {
         "expected": "Washington Gas",
-        "actual": "WASHINGTON GAS",
+        "actual": "Washington Gas",
         "passed": true
       },
-      "timing_ms": 161
+      "timing_ms": 236
     },
     {
       "test_id": "va_richmond_001",
@@ -621,10 +621,10 @@
       },
       "gas": {
         "expected": "Virginia Natural Gas",
-        "actual": "COLUMBIA GAS OF VIRGINIA",
+        "actual": "Columbia Gas of Virginia",
         "passed": true
       },
-      "timing_ms": 157
+      "timing_ms": 144
     },
     {
       "test_id": "sc_charleston_001",
@@ -638,10 +638,10 @@
       },
       "gas": {
         "expected": "Dominion Energy",
-        "actual": "Dominion Energy SC",
-        "passed": true
+        "actual": "South Carolina Electric & Gas",
+        "passed": false
       },
-      "timing_ms": 168
+      "timing_ms": 142
     },
     {
       "test_id": "la_neworleans_001",
@@ -655,10 +655,10 @@
       },
       "gas": {
         "expected": "Entergy New Orleans",
-        "actual": "ENTERGY - GULF STATES",
+        "actual": "Entergy - Gulf States",
         "passed": true
       },
-      "timing_ms": 200
+      "timing_ms": 229
     },
     {
       "test_id": "al_birmingham_001",
@@ -672,10 +672,10 @@
       },
       "gas": {
         "expected": "Spire",
-        "actual": "Spire Alabama",
-        "passed": true
+        "actual": null,
+        "passed": false
       },
-      "timing_ms": 175
+      "timing_ms": 138
     },
     {
       "test_id": "ms_jackson_001",
@@ -689,10 +689,10 @@
       },
       "gas": {
         "expected": "Atmos Energy",
-        "actual": "Spire Mississippi",
-        "passed": false
+        "actual": "Atmos Energy",
+        "passed": true
       },
-      "timing_ms": 173
+      "timing_ms": 161
     },
     {
       "test_id": "ar_littlerock_001",
@@ -706,10 +706,10 @@
       },
       "gas": {
         "expected": "CenterPoint Energy",
-        "actual": "CENTERPOINT ENERGY - ARKLA",
+        "actual": "Centerpoint Energy - Arkla",
         "passed": true
       },
-      "timing_ms": 392
+      "timing_ms": 510
     },
     {
       "test_id": "ok_oklahomacity_001",
@@ -719,14 +719,14 @@
       "electric": {
         "expected": "OG&E",
         "actual": "Oklahoma Gas & Electric Co",
-        "passed": false
+        "passed": true
       },
       "gas": {
         "expected": "Oklahoma Natural Gas",
-        "actual": "OKLAHOMA NATURAL GAS CO.",
+        "actual": "Oklahoma Natural Gas Co.",
         "passed": true
       },
-      "timing_ms": 175
+      "timing_ms": 260
     },
     {
       "test_id": "ks_wichita_001",
@@ -740,10 +740,10 @@
       },
       "gas": {
         "expected": "Kansas Gas Service",
-        "actual": "Kansas Gas Service",
-        "passed": true
+        "actual": "Black Hills Energy",
+        "passed": false
       },
-      "timing_ms": 217
+      "timing_ms": 174
     },
     {
       "test_id": "mo_kansascity_001",
@@ -757,10 +757,10 @@
       },
       "gas": {
         "expected": "Spire",
-        "actual": "Spire",
-        "passed": true
+        "actual": null,
+        "passed": false
       },
-      "timing_ms": 172
+      "timing_ms": 216
     },
     {
       "test_id": "mo_stlouis_001",
@@ -774,10 +774,10 @@
       },
       "gas": {
         "expected": "Spire",
-        "actual": "Spire",
-        "passed": true
+        "actual": "Ameren Illinois",
+        "passed": false
       },
-      "timing_ms": 196
+      "timing_ms": 228
     },
     {
       "test_id": "mn_minneapolis_001",
@@ -791,10 +791,10 @@
       },
       "gas": {
         "expected": "CenterPoint Energy",
-        "actual": "CENTERPOINT ENERGY",
+        "actual": "Centerpoint Energy",
         "passed": true
       },
-      "timing_ms": 131
+      "timing_ms": 149
     },
     {
       "test_id": "wi_milwaukee_001",
@@ -811,7 +811,7 @@
         "actual": "WE Energies",
         "passed": true
       },
-      "timing_ms": 154
+      "timing_ms": 1194
     },
     {
       "test_id": "in_indianapolis_001",
@@ -821,14 +821,14 @@
       "electric": {
         "expected": "AES Indiana",
         "actual": "Indianapolis Power & Light Co",
-        "passed": false
+        "passed": true
       },
       "gas": {
         "expected": "CenterPoint Energy",
-        "actual": "CITIZENS ENERGY GROUP",
+        "actual": "Citizens Energy Group",
         "passed": false
       },
-      "timing_ms": 217
+      "timing_ms": 403
     },
     {
       "test_id": "ky_louisville_001",
@@ -838,14 +838,14 @@
       "electric": {
         "expected": "LG&E",
         "actual": "Louisville Gas & Electric Co",
-        "passed": false
+        "passed": true
       },
       "gas": {
         "expected": "LG&E",
-        "actual": "LG&E",
-        "passed": true
+        "actual": "Atmos Energy",
+        "passed": false
       },
-      "timing_ms": 151
+      "timing_ms": 353
     },
     {
       "test_id": "nj_newark_001",
@@ -855,14 +855,14 @@
       "electric": {
         "expected": "PSE&G",
         "actual": "Public Service Electric & Gas Co.",
-        "passed": false
+        "passed": true
       },
       "gas": {
         "expected": "PSE&G",
-        "actual": "PSE&G",
+        "actual": "Public Service Elec. & Gas Co.",
         "passed": true
       },
-      "timing_ms": 341
+      "timing_ms": 435
     },
     {
       "test_id": "ct_hartford_001",
@@ -872,14 +872,14 @@
       "electric": {
         "expected": "Eversource",
         "actual": "Connecticut Light & Power Co",
-        "passed": false
+        "passed": true
       },
       "gas": {
         "expected": "Eversource",
-        "actual": "CONNETICUT NATURAL GAS CORP",
+        "actual": "Conneticut Natural Gas",
         "passed": false
       },
-      "timing_ms": 149
+      "timing_ms": 215
     },
     {
       "test_id": "ri_providence_001",
@@ -893,10 +893,10 @@
       },
       "gas": {
         "expected": "Rhode Island Energy",
-        "actual": "National Grid",
+        "actual": "Narragansett Electric Co. (gas Division of Ri)",
         "passed": true
       },
-      "timing_ms": 172
+      "timing_ms": 188
     },
     {
       "test_id": "de_wilmington_001",
@@ -910,10 +910,10 @@
       },
       "gas": {
         "expected": "Delmarva Power",
-        "actual": "DELMARVA POWER",
+        "actual": "Delmarva Power",
         "passed": true
       },
-      "timing_ms": 380
+      "timing_ms": 500
     },
     {
       "test_id": "nh_manchester_001",
@@ -927,10 +927,10 @@
       },
       "gas": {
         "expected": "Liberty Utilities",
-        "actual": "LIBERTY UTILITIES (ENERGYNORTH)",
+        "actual": "Liberty Utilities (energynorth)",
         "passed": true
       },
-      "timing_ms": 150
+      "timing_ms": 161
     },
     {
       "test_id": "vt_burlington_001",
@@ -944,10 +944,10 @@
       },
       "gas": {
         "expected": "Vermont Gas Systems",
-        "actual": "VERMONT GAS SYSTEMS INC.",
+        "actual": "Vermont Gas Systems Inc.",
         "passed": true
       },
-      "timing_ms": 167
+      "timing_ms": 148
     },
     {
       "test_id": "me_portland_001",
@@ -961,10 +961,10 @@
       },
       "gas": {
         "expected": null,
-        "actual": "Summit Natural Gas",
+        "actual": "Northern Utilities Inc. (unitil)",
         "passed": false
       },
-      "timing_ms": 168
+      "timing_ms": 214
     },
     {
       "test_id": "wv_charleston_001",
@@ -978,10 +978,10 @@
       },
       "gas": {
         "expected": "Mountaineer Gas",
-        "actual": "MOUNTAINEER GAS CO.",
+        "actual": "Mountaineer Gas Co.",
         "passed": true
       },
-      "timing_ms": 142
+      "timing_ms": 168
     },
     {
       "test_id": "nm_albuquerque_001",
@@ -995,10 +995,10 @@
       },
       "gas": {
         "expected": "New Mexico Gas Company",
-        "actual": "NEW MEXICO GAS COMPANY",
+        "actual": "New Mexico Gas Company",
         "passed": true
       },
-      "timing_ms": 141
+      "timing_ms": 152
     },
     {
       "test_id": "ut_saltlakecity_001",
@@ -1012,10 +1012,10 @@
       },
       "gas": {
         "expected": "Dominion Energy",
-        "actual": "Dominion Energy Utah",
+        "actual": "Dominion Energy",
         "passed": true
       },
-      "timing_ms": 197
+      "timing_ms": 204
     },
     {
       "test_id": "id_boise_001",
@@ -1029,10 +1029,10 @@
       },
       "gas": {
         "expected": "Intermountain Gas",
-        "actual": "INTERMOUNTAIN GAS CO",
+        "actual": "Intermountain Gas Co.",
         "passed": true
       },
-      "timing_ms": 147
+      "timing_ms": 165
     },
     {
       "test_id": "mt_billings_001",
@@ -1046,10 +1046,10 @@
       },
       "gas": {
         "expected": "NorthWestern Energy",
-        "actual": "MONTANA-DAKOTA UTILITIES",
+        "actual": "Montana-dakota Utilities",
         "passed": false
       },
-      "timing_ms": 278
+      "timing_ms": 175
     },
     {
       "test_id": "wy_cheyenne_001",
@@ -1063,10 +1063,10 @@
       },
       "gas": {
         "expected": "Black Hills Energy",
-        "actual": "BLACK HILLS ENERGY",
+        "actual": "Black Hills Energy",
         "passed": true
       },
-      "timing_ms": 166
+      "timing_ms": 184
     },
     {
       "test_id": "nd_fargo_001",
@@ -1080,10 +1080,10 @@
       },
       "gas": {
         "expected": "Xcel Energy",
-        "actual": "Xcel Energy Colorado",
+        "actual": "Northern States Power Company",
         "passed": true
       },
-      "timing_ms": 172
+      "timing_ms": 246
     },
     {
       "test_id": "sd_siouxfalls_001",
@@ -1114,10 +1114,10 @@
       },
       "gas": {
         "expected": "Black Hills Energy",
-        "actual": "BLACK HILLS ENERGY",
-        "passed": true
+        "actual": "Metropolitan Utilities District of Omaha",
+        "passed": false
       },
-      "timing_ms": 140
+      "timing_ms": 349
     },
     {
       "test_id": "ia_desmoines_001",
@@ -1134,7 +1134,7 @@
         "actual": "Berkshire Hathaway Energy",
         "passed": true
       },
-      "timing_ms": 181
+      "timing_ms": 343
     },
     {
       "test_id": "hi_honolulu_001",
@@ -1148,10 +1148,10 @@
       },
       "gas": {
         "expected": "Hawaii Gas",
-        "actual": "HAWAII GAS",
+        "actual": "Hawaii Gas",
         "passed": true
       },
-      "timing_ms": 174
+      "timing_ms": 145
     },
     {
       "test_id": "ak_anchorage_001",
@@ -1160,15 +1160,15 @@
       "state": "AK",
       "electric": {
         "expected": "Chugach Electric",
-        "actual": "ANCHORAGE MUNICIPAL LIGHT AND POWER",
+        "actual": "Anchorage Municipal Light and Power",
         "passed": true
       },
       "gas": {
         "expected": "ENSTAR Natural Gas",
-        "actual": "ENSTAR NATURAL GAS CO.",
+        "actual": "Enstar Natural Gas Co.",
         "passed": true
       },
-      "timing_ms": 282
+      "timing_ms": 338
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:20:05.208475",
+  "city": "Denver",
+  "state": "CO",
+  "zip_prefix": "802",
+  "utility_type": "gas",
+  "verified": false,
+  "serp_utility": "Xcel Energy",
+  "confidence_boost": -0.2,
+  "sources": [],
+  "search_query": "\"Denver\" \"CO\" gas utility provider",
+  "notes": "Xcel Energy is identified as the primary gas utility provider for Denver, CO, based on multiple sources in the search results."
+}

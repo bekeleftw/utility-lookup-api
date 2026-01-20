@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:50:45.941856",
+  "city": "Los Angeles",
+  "state": "CA",
+  "zip_prefix": "900",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "Los Angeles Department of Water and Power",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Los Angeles\" \"CA\" electric utility provider",
+  "notes": "The search results consistently identify the Los Angeles Department of Water and Power (LADWP) as the electric utility provider for Los Angeles, CA."
+}

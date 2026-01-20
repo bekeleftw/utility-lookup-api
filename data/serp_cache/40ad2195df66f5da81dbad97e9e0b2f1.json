@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:50:03.767474",
+  "city": "Kyle",
+  "state": "TX",
+  "zip_prefix": "786",
+  "utility_type": "gas",
+  "verified": true,
+  "serp_utility": "Texas Gas Service",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Kyle\" \"TX\" gas utility provider",
+  "notes": "Texas Gas Service is mentioned in the search results as a natural gas company serving the Kyle, TX area."
+}

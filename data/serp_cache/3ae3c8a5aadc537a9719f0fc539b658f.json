@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:20:44.376151",
+  "city": "Atlanta",
+  "state": "GA",
+  "zip_prefix": "303",
+  "utility_type": "electric",
+  "verified": false,
+  "serp_utility": "Georgia Power",
+  "confidence_boost": -0.2,
+  "sources": [],
+  "search_query": "\"Atlanta\" \"GA\" electric utility provider",
+  "notes": "Georgia Power is the primary electric utility provider for Atlanta, GA, as indicated by multiple search results."
+}

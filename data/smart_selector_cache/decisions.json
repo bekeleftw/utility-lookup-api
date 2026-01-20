@@ -1,0 +1,542 @@
+{
+  ":electric:a18501d3": {
+    "utility_name": "CPS Energy",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "electric_coop",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "CPS Energy is the municipal utility for San Antonio, which includes Converse, TX. The state_gis source has the highest confidence level at 85%, making it the most reliable source despite other sources suggesting Guadalupe Valley Electric Cooperative.",
+    "timestamp": 1768883844.864365
+  },
+  ":gas:401a99a5": {
+    "utility_name": "CENTERPOINT ENERGY - ENTEX",
+    "confidence": 0.58,
+    "confidence_level": "low",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas"
+    ],
+    "reasoning": "CPS Energy is a municipal utility, but it does not serve Converse, TX. The address is not within the city limits of San Antonio, where CPS Energy operates. Therefore, the more likely provider based on the available data is CenterPoint Energy - Entex, which serves the area.",
+    "timestamp": 1768883851.128938
+  },
+  "781:electric:35b50c8a": {
+    "utility_name": "CPS Energy",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "hifld"
+    ],
+    "reasoning": "CPS Energy is the municipal utility for San Antonio, which serves Converse, TX. The state_gis source has the highest confidence level of 85%, making it the most reliable choice despite the other sources indicating Guadalupe Valley Electric Cooperative.",
+    "timestamp": 1768883928.194981
+  },
+  "781:electric:21bf56a7": {
+    "utility_name": "CPS Energy",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "county_default",
+      "electric_coop",
+      "hifld"
+    ],
+    "reasoning": "CPS Energy is the municipal utility for San Antonio, which includes Converse, TX. The state_gis source has the highest confidence level at 85%, making it the most reliable source despite other sources indicating Guadalupe Valley Electric Cooperative.",
+    "timestamp": 1768883962.8751621
+  },
+  "781:gas:401a99a5": {
+    "utility_name": "CENTERPOINT ENERGY - ENTEX",
+    "confidence": 0.58,
+    "confidence_level": "low",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas"
+    ],
+    "reasoning": "CPS Energy is a municipal utility but does not serve Converse, TX, as it is not within its city limits. CENTERPOINT ENERGY - ENTEX is the gas utility provider for the area, making it the more likely correct choice despite the lower confidence.",
+    "timestamp": 1768884009.251033
+  },
+  "787:electric:e8b3ea59": {
+    "utility_name": "Austin Energy",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [
+      "electric_coop",
+      "hifld"
+    ],
+    "reasoning": "Austin Energy is the municipal utility for Austin, TX, and the address is within the city limits. The municipal source has the highest confidence and is authoritative for the city.",
+    "timestamp": 1768884584.3528168
+  },
+  "787:gas:cd9df6f2": {
+    "utility_name": "Texas Gas Service",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas",
+      "hifld_gas"
+    ],
+    "reasoning": "Texas Gas Service is the municipal gas utility for Austin, and municipal utilities are authoritative for their city. The high confidence level of 88% supports the selection.",
+    "timestamp": 1768884586.7556312
+  },
+  "770:electric:0e25e850": {
+    "utility_name": "CenterPoint Energy Houston Electric, LLC",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "hifld"
+    ],
+    "reasoning": "The address is in Houston, TX, which is served by CenterPoint Energy. The state_gis source is authoritative and has a high confidence level, making it the most reliable choice despite some dissent from hifld.",
+    "timestamp": 1768884588.896234
+  },
+  "782:electric:e8b3ea59": {
+    "utility_name": "CPS Energy",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "CPS Energy is the municipal utility for San Antonio, and the address is within the city limits. The municipal source has the highest confidence level, making it the most reliable choice.",
+    "timestamp": 1768884591.995138
+  },
+  "782:gas:cd9df6f2": {
+    "utility_name": "CPS Energy",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas",
+      "hifld_gas"
+    ],
+    "reasoning": "CPS Energy is the municipal gas utility for San Antonio, which matches the address city. Therefore, it is the authoritative source despite lower confidence from other sources.",
+    "timestamp": 1768884594.038653
+  },
+  "786:electric:21bf56a7": {
+    "utility_name": "Pedernales Electric Cooperative, Inc.",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "electric_coop",
+      "eia_861",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state GIS source indicates that Pedernales Electric Cooperative, Inc. serves the area, and it has the highest confidence level of 85%. Although Bluebonnet Electric Cooperative is mentioned in other sources, the state GIS data is authoritative and takes precedence.",
+    "timestamp": 1768884597.201337
+  },
+  "786:gas:401a99a5": {
+    "utility_name": "Texas Gas Service",
+    "confidence": 0.5,
+    "confidence_level": "low",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "hifld_gas"
+    ],
+    "reasoning": "Texas Gas Service is the county default gas provider, while CenterPoint Energy - Entex has a higher confidence but does not serve Kyle, TX specifically. Given the lack of a municipal utility for Kyle, Texas Gas Service is the most likely correct provider.",
+    "timestamp": 1768884599.0879092
+  },
+  "331:electric:a2c2b34c": {
+    "utility_name": "Florida Power & Light Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Florida Power & Light Co is the primary electric utility provider for Miami, FL, and is supported by the EIA data. The municipal utility, City of Homestead, does not serve Miami, so it is disregarded. The county_default source has lower confidence.",
+    "timestamp": 1768884607.463792
+  },
+  "336:electric:a2c2b34c": {
+    "utility_name": "Tampa Electric Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Tampa Electric Co is the municipal utility serving Tampa, FL, and is supported by the eia_861 source with the highest confidence. The other sources provide conflicting information, but the municipal utility rule confirms Tampa Electric as the correct provider.",
+    "timestamp": 1768884610.088951
+  },
+  "328:electric:0e25e850": {
+    "utility_name": "Orlando Utilities Commission (OUC)",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "The address is in Orlando, which has a municipal utility named Orlando Utilities Commission (OUC). The municipal source has the highest confidence and is authoritative for the city.",
+    "timestamp": 1768884612.192812
+  },
+  "322:electric:105c4f56": {
+    "utility_name": "JEA",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "The address is in Jacksonville, FL, which is served by JEA, a municipal utility. The municipal source has the highest confidence and is authoritative for the city.",
+    "timestamp": 1768884614.297407
+  },
+  "303:electric:4fb4b23e": {
+    "utility_name": "Georgia Power Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "electric_coop",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Georgia Power Co is the most authoritative source for electric service in Atlanta, GA, based on EIA data, which is trusted over other sources. The other sources have lower confidence and do not provide a stronger claim to service the area.",
+    "timestamp": 1768884617.686035
+  },
+  "282:electric:f1c1efb1": {
+    "utility_name": "Duke Energy Carolinas, LLC",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld",
+      "state_gis"
+    ],
+    "reasoning": "The address is in Charlotte, NC, which does not have a municipal utility serving it. The EIA source indicates Duke Energy Carolinas, LLC as the provider with the highest confidence among the relevant sources, despite the dissenting opinions from other sources.",
+    "timestamp": 1768884622.026248
+  },
+  "276:electric:f1c1efb1": {
+    "utility_name": "Duke Energy Progress - (NC)",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld",
+      "state_gis"
+    ],
+    "reasoning": "Duke Energy Progress is the primary electric utility provider for Raleigh, NC, supported by the eia_861 source with a confidence of 70%. Although the state_gis source indicates a different utility, the higher confidence in the eia_861 source leads to the selection of Duke Energy Progress.",
+    "timestamp": 1768884625.8170319
+  },
+  "381:electric:80143e59": {
+    "utility_name": "Memphis Light, Gas and Water (MLGW)",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "The address is in Memphis, TN, which has a municipal utility named Memphis Light, Gas and Water (MLGW). The municipal source is authoritative for this city, and it has the highest confidence rating.",
+    "timestamp": 1768884632.553833
+  },
+  "381:gas:c74e2d17": {
+    "utility_name": "Memphis Light, Gas and Water (MLGW)",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "hifld_gas"
+    ],
+    "reasoning": "Memphis Light, Gas and Water (MLGW) is the municipal utility for Memphis, TN, and has a high confidence level of 88%. The hifld_gas source has a lower confidence level of 58% and is less authoritative compared to the municipal utility, which is the correct provider for the city.",
+    "timestamp": 1768884637.746527
+  },
+  "900:electric:0e25e850": {
+    "utility_name": "Los Angeles Department of Water and Power (LADWP)",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is within Los Angeles city limits, which has a municipal utility (LADWP). The municipal source has the highest confidence and is authoritative for the city.",
+    "timestamp": 1768884641.042902
+  },
+  "958:electric:0e25e850": {
+    "utility_name": "Sacramento Municipal Utility District (SMUD)",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "The address is in Sacramento, which has a municipal utility named Sacramento Municipal Utility District (SMUD). The municipal source has the highest confidence and is authoritative for the city.",
+    "timestamp": 1768884650.4060109
+  },
+  "152:electric:a2c2b34c": {
+    "utility_name": "Duquesne Light Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Duquesne Light Co is the primary electric utility provider for Pittsburgh, PA, as indicated by the EIA source with the highest confidence. The county_default source has lower confidence and the hifld source does not pertain to the address in question.",
+    "timestamp": 1768884656.465119
+  },
+  "432:electric:80143e59": {
+    "utility_name": "Columbus Division of Power",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "The address is in Columbus, which has a municipal utility named 'Columbus Division of Power'. According to the critical rules, municipal utilities are authoritative for their city, and the confidence level from the municipal source is the highest.",
+    "timestamp": 1768884659.050077
+  },
+  "441:electric:80143e59": {
+    "utility_name": "Cleveland Public Power",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": true,
+    "dissenting_sources": [],
+    "reasoning": "Cleveland Public Power is the municipal utility for Cleveland, OH, and the address is within the city limits, making it the authoritative provider.",
+    "timestamp": 1768884661.3129349
+  },
+  "441:gas:aed12f5c": {
+    "utility_name": "Dominion Energy Ohio",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "zip_mapping_gas",
+      "hifld_gas"
+    ],
+    "reasoning": "The state GIS source indicates 'EAST OHIO GAS CO/DOMINION' with a high confidence of 85%, which aligns with the other source indicating 'Dominion Energy Ohio'. Although there is a dissenting source, the state GIS data is authoritative and provides the highest confidence.",
+    "timestamp": 1768884663.9341671
+  },
+  "482:electric:8ec0b9a2": {
+    "utility_name": "DTE Energy",
+    "confidence": 0.5,
+    "confidence_level": "low",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "hifld"
+    ],
+    "reasoning": "DTE Energy is the primary electric utility provider for Detroit, MI, and while the hifld source suggests a municipal utility, it does not match the city of Detroit. Therefore, DTE Energy is the most likely correct provider despite the lower confidence.",
+    "timestamp": 1768884666.9750469
+  },
+  "850:electric:4fb4b23e": {
+    "utility_name": "Arizona Public Service (APS)",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "electric_coop",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is in Phoenix, AZ, which does not have a municipal utility serving it directly. The EIA source indicates 'Arizona Public Service Co' with a higher confidence than other sources, making it the most reliable choice despite some dissenting sources.",
+    "timestamp": 1768884675.9787462
+  },
+  "857:electric:a2c2b34c": {
+    "utility_name": "Tucson Electric Power Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Tucson Electric Power Co is the municipal utility serving Tucson, AZ, and is supported by the EIA data. The county_default source has lower confidence, and the hifld source is not relevant as it refers to a different project.",
+    "timestamp": 1768884678.845649
+  },
+  "802:electric:f1c1efb1": {
+    "utility_name": "Public Service Co of Colorado",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state_gis source has the highest confidence level (85%) and aligns with the authoritative naming convention for the utility in Colorado. Although other sources provide conflicting information, the state_gis data is prioritized due to its reliability.",
+    "timestamp": 1768884682.11539
+  },
+  "802:gas:401a99a5": {
+    "utility_name": "PUBLIC SERVICE CO OF COLORADO",
+    "confidence": 0.58,
+    "confidence_level": "low",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas"
+    ],
+    "reasoning": "The address is in Denver, CO, which does not have a municipal gas utility. The hifld_gas source indicates 'PUBLIC SERVICE CO OF COLORADO' with a higher confidence than the county_default_gas source, which suggests 'Xcel Energy'. Therefore, I trust the hifld_gas source as the more accurate provider.",
+    "timestamp": 1768884685.3171022
+  },
+  "981:electric:0e25e850": {
+    "utility_name": "Seattle City Light",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Seattle City Light is the municipal utility for Seattle, and the address is within the city limits. The municipal source has the highest confidence and is authoritative for this city.",
+    "timestamp": 1768884689.298922
+  },
+  "891:electric:a2c2b34c": {
+    "utility_name": "Nevada Power Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The EIA source indicates 'Nevada Power Co' with the highest confidence of 70%, while the county default and HIFLD sources provide lower confidence. Since there is no municipal utility for Las Vegas, the EIA data is the most reliable in this case.",
+    "timestamp": 1768884692.21236
+  },
+  "022:electric:a2c2b34c": {
+    "utility_name": "NSTAR Electric Company",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "NSTAR Electric Company is the most reliable source according to EIA data, which is authoritative. Eversource is a broader name that includes NSTAR, but the specific name from EIA is preferred. The HIFLD source is not relevant as it refers to a transportation authority, not an electric utility.",
+    "timestamp": 1768884694.703063
+  },
+  "232:electric:21bf56a7": {
+    "utility_name": "Virginia Electric & Power Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "electric_coop",
+      "county_default",
+      "hifld",
+      "state_gis"
+    ],
+    "reasoning": "The address is in Richmond, VA, which is served by Virginia Electric & Power Co. The eia_861 source has the highest confidence among the relevant sources, and while state_gis indicates Dominion Virginia Power, it is an alias for the same utility. The other sources have lower confidence and do not provide a clear alternative.",
+    "timestamp": 1768884699.586432
+  },
+  "731:electric:4fb4b23e": {
+    "utility_name": "Oklahoma Gas & Electric Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "Oklahoma Electric Cooperative",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is in Oklahoma City, which does not have a municipal utility serving it. The EIA source indicates Oklahoma Gas & Electric Co as the provider with the highest confidence, making it the most likely correct utility provider despite some dissenting sources.",
+    "timestamp": 1768884706.3226922
+  },
+  "672:electric:f1c1efb1": {
+    "utility_name": "Evergy Kansas South, Inc.",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state_gis source has the highest confidence level (85%) and is authoritative, indicating that Evergy Kansas South, Inc. is the correct utility provider for the address in Wichita, KS. Other sources have lower confidence and do not align with the state_gis data.",
+    "timestamp": 1768884709.919776
+  },
+  "641:electric:a2c2b34c": {
+    "utility_name": "Evergy Metro",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Evergy Metro is the most likely correct utility provider based on the EIA data, which has the highest confidence level. The county default source lists 'Evergy' with lower confidence, and the HIFLD source mentions a municipal utility that does not serve Kansas City directly.",
+    "timestamp": 1768884712.805779
+  },
+  "061:electric:a2c2b34c": {
+    "utility_name": "Connecticut Light & Power Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "Connecticut Light & Power Co is the most authoritative source according to EIA data, which is trusted over HIFLD. Although Eversource is a known provider in the area, the EIA data has a higher confidence level.",
+    "timestamp": 1768884718.342043
+  },
+  "029:electric:f1c1efb1": {
+    "utility_name": "Rhode Island Energy",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state_gis source indicates 'Rhode Island Energy' with a high confidence of 85%, which is the most authoritative source. Although 'The Narragansett Electric Co' is mentioned in the eia_861 source, it has a lower confidence of 70%. The other sources provide conflicting information, but the state_gis is prioritized due to its higher confidence and authority.",
+    "timestamp": 1768884722.264339
+  },
+  "198:electric:f1c1efb1": {
+    "utility_name": "Delmarva Power",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state_gis source indicates 'Delmarva Power and Light' with a high confidence of 85%, which is the most authoritative source. Although the eia_861 and county_default also indicate 'Delmarva Power', their lower confidence levels suggest less reliability. The hifld source is disregarded as it does not match the city. Therefore, 'Delmarva Power' is selected as the most likely correct utility provider.",
+    "timestamp": 1768884725.922295
+  },
+  "031:electric:a2c2b34c": {
+    "utility_name": "Public Service Co of NH",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The EIA source indicates 'Public Service Co of NH' with the highest confidence (70%). The county default suggests 'Eversource' with lower confidence (50%), and the HIFLD source also supports 'Public Service Co of NH' but with less confidence (58%). Given the higher confidence from the EIA source, it is selected despite the dissenting sources.",
+    "timestamp": 1768884729.0875049
+  },
+  "871:electric:a2c2b34c": {
+    "utility_name": "Public Service Co of NM",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is in Albuquerque, NM, and the most authoritative source, eia_861, indicates 'Public Service Co of NM' with the highest confidence of 70%. The other sources have lower confidence and do not provide a conflicting municipal utility for Albuquerque.",
+    "timestamp": 1768884733.3790941
+  },
+  "591:electric:a2c2b34c": {
+    "utility_name": "NorthWestern Energy LLC - (MT)",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is in Billings, MT, and the EIA source indicates that NorthWestern Energy LLC is the electric utility provider for Montana with a higher confidence level than the other sources. The county default source has lower confidence, and the HIFLD source refers to a federal entity that does not serve this area.",
+    "timestamp": 1768884737.169136
+  },
+  "820:electric:a2c2b34c": {
+    "utility_name": "Cheyenne Light Fuel & Power d/b/a Black",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is in Cheyenne, which has a municipal utility, Cheyenne Light Fuel & Power. The EIA source is trusted over others due to its higher confidence and the municipal utility's authoritative status for the city.",
+    "timestamp": 1768884740.615157
+  }
+}

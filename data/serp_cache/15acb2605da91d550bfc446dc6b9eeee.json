@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:50:28.853448",
+  "city": "Raleigh",
+  "state": "NC",
+  "zip_prefix": "276",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "Duke Energy Progress",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Raleigh\" \"NC\" electric utility provider",
+  "notes": "Duke Energy Progress is identified as the primary electric utility provider for Raleigh, NC, based on multiple search results."
+}

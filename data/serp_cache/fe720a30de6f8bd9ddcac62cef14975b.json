@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:23:08.918100",
+  "city": "Oklahoma City",
+  "state": "OK",
+  "zip_prefix": "731",
+  "utility_type": "electric",
+  "verified": false,
+  "serp_utility": "Oklahoma Gas and Electric (OG&E)",
+  "confidence_boost": -0.2,
+  "sources": [],
+  "search_query": "\"Oklahoma City\" \"OK\" electric utility provider",
+  "notes": "The search results indicate that OG&E is the primary electric utility provider for Oklahoma City, including the specified address."
+}

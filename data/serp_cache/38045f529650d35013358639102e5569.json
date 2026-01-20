@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:23:19.928694",
+  "city": "Hartford",
+  "state": "CT",
+  "zip_prefix": "061",
+  "utility_type": "electric",
+  "verified": false,
+  "serp_utility": "Eversource",
+  "confidence_boost": -0.2,
+  "sources": [],
+  "search_query": "\"Hartford\" \"CT\" electric utility provider",
+  "notes": "Eversource is identified as the primary electric utility provider for Hartford, CT, based on multiple search results."
+}

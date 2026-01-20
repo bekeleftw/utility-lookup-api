@@ -276,7 +276,154 @@ def resolve_brand_name_with_fallback(legal_name: str, state: str = None) -> Tupl
         if name_lower in COMMON_BRAND_MAPPINGS:
             return (COMMON_BRAND_MAPPINGS[name_lower], legal_name)
     
+    # If still no match and name looks ugly (all caps, weird format), clean it up
+    if legal is None and (legal_name.isupper() or ', ' in legal_name):
+        cleaned = format_utility_name(legal_name)
+        if cleaned != legal_name:
+            return (cleaned, legal_name)
+    
     return (brand, legal)
+
+
+# Cache for OpenAI name formatting
+_name_format_cache: Dict[str, str] = {}
+
+def format_utility_name(raw_name: str) -> str:
+    """
+    Format a utility name for display using rules-based cleanup.
+    Falls back to OpenAI for complex cases.
+    
+    Examples:
+    - "AUSTIN WATER, CITY OF" → "City of Austin Water"
+    - "PUBLIC SERVICE CO OF NM" → "Public Service Co. of NM"
+    - "CENTERPOINT ENERGY - ENTEX" → "CenterPoint Energy"
+    """
+    if not raw_name:
+        return raw_name
+    
+    # Check cache first
+    if raw_name in _name_format_cache:
+        return _name_format_cache[raw_name]
+    
+    # Rule-based cleanup first
+    cleaned = _rules_based_format(raw_name)
+    
+    # If still looks bad (all caps with >3 words), try OpenAI
+    if cleaned.isupper() and len(cleaned.split()) > 2:
+        openai_result = _openai_format_name(raw_name)
+        if openai_result:
+            cleaned = openai_result
+    
+    _name_format_cache[raw_name] = cleaned
+    return cleaned
+
+
+def _rules_based_format(name: str) -> str:
+    """Apply rules-based formatting to utility names."""
+    import re
+    
+    # Handle "NAME, CITY OF" → "City of NAME"
+    if ', CITY OF' in name.upper():
+        parts = re.split(r',\s*CITY OF\s*', name, flags=re.IGNORECASE)
+        if len(parts) == 2:
+            # Title case the name part
+            name_part = parts[0].strip()
+            if name_part.isupper():
+                name_part = name_part.title()
+            name = f"City of {name_part}"
+    
+    # Handle "NAME, TOWN OF" → "Town of NAME"
+    if ', TOWN OF' in name.upper():
+        parts = re.split(r',\s*TOWN OF\s*', name, flags=re.IGNORECASE)
+        if len(parts) == 2:
+            name_part = parts[0].strip()
+            if name_part.isupper():
+                name_part = name_part.title()
+            name = f"Town of {name_part}"
+    
+    # Remove common suffixes that add noise
+    suffixes_to_remove = [' - ENTEX', ' - TEXAS', ' INC', ' LLC', ' CORP']
+    for suffix in suffixes_to_remove:
+        if name.upper().endswith(suffix):
+            name = name[:-len(suffix)]
+    
+    # Title case if all caps
+    if name.isupper():
+        # Smart title case - preserve known abbreviations
+        words = name.split()
+        formatted_words = []
+        # State codes to preserve as uppercase
+        state_codes = {'NV', 'NM', 'TX', 'CA', 'NY', 'FL', 'OH', 'PA', 'IL', 'MI', 'GA', 'NC', 'VA', 'WA', 'OR', 'AZ', 'MO', 'WI', 'MN', 'TN', 'IN', 'MA', 'MD', 'SC', 'AL', 'LA', 'KY', 'OK', 'CT', 'IA', 'MS', 'AR', 'KS', 'UT', 'NE', 'WV', 'ID', 'HI', 'NH', 'ME', 'MT', 'RI', 'DE', 'SD', 'ND', 'AK', 'VT', 'WY', 'DC'}
+        # Utility abbreviations to preserve
+        preserve_caps = {'PG&E', 'SCE', 'SDG&E', 'BGE', 'PSE&G', 'OG&E', 'LG&E', 'AES', 'CPS', 'DTE', 'AEP', 'TVA', 'PNM', 'LADWP', 'SMUD', 'OUC', 'MUD'}
+        lowercase_words = {'of', 'the', 'and', 'for', 'in', 'on', 'at', 'to', 'a', 'an'}
+        # Words that should be "Co." not "CO"
+        company_words = {'CO', 'CO.', 'INC', 'INC.', 'LLC', 'CORP', 'CORP.'}
+        
+        for i, word in enumerate(words):
+            if word in preserve_caps:
+                formatted_words.append(word)
+            elif word in state_codes:
+                formatted_words.append(word)
+            elif word in company_words:
+                formatted_words.append(word.capitalize() + ('.' if not word.endswith('.') else ''))
+            elif word.lower() in lowercase_words and i > 0:
+                formatted_words.append(word.lower())
+            elif word == '&':
+                formatted_words.append('&')
+            else:
+                formatted_words.append(word.capitalize())
+        
+        name = ' '.join(formatted_words)
+        # Clean up double periods
+        name = name.replace('..', '.')
+    
+    return name.strip()
+
+
+def _openai_format_name(raw_name: str) -> Optional[str]:
+    """Use OpenAI to format a utility name nicely."""
+    import os
+    
+    api_key = os.environ.get('OPENAI_API_KEY')
+    if not api_key:
+        return None
+    
+    try:
+        import requests
+        
+        prompt = f"""Format this utility company name for display. Make it readable and professional.
+Rules:
+- Use proper capitalization (title case, but keep abbreviations like "Co." or state codes)
+- Fix inverted names like "AUSTIN WATER, CITY OF" → "City of Austin Water"
+- Remove unnecessary suffixes like "INC", "LLC", "CORP"
+- Keep it concise
+
+Input: {raw_name}
+Output (just the formatted name, nothing else):"""
+
+        response = requests.post(
+            "https://api.openai.com/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json"
+            },
+            json={
+                "model": "gpt-4o-mini",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0,
+                "max_tokens": 50
+            },
+            timeout=5
+        )
+        
+        if response.status_code == 200:
+            result = response.json()
+            return result["choices"][0]["message"]["content"].strip()
+    except Exception:
+        pass
+    
+    return None
 
 
 if __name__ == "__main__":

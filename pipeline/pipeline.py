@@ -17,6 +17,7 @@ from .interfaces import (
     SOURCE_CONFIDENCE,
     PRECISION_BONUS,
 )
+from .smart_selector import get_smart_selector, SmartSelector
 
 
 class LookupPipeline:
@@ -45,7 +46,16 @@ class LookupPipeline:
         # Feature flags for gradual rollout
         self.enable_cross_validation = True
         self.enable_serp_verification = True
+        self.enable_smart_selector = True  # Use OpenAI for disagreement resolution
         self.serp_confidence_threshold = 70
+        
+        # Initialize smart selector
+        self._smart_selector = None
+        if self.enable_smart_selector:
+            try:
+                self._smart_selector = get_smart_selector()
+            except Exception as e:
+                print(f"Failed to initialize SmartSelector: {e}")
     
     def add_source(self, source: DataSource) -> None:
         """Add a data source to the pipeline."""
@@ -87,8 +97,35 @@ class LookupPipeline:
         else:
             cv_result = None
         
-        # 4. Select best result
-        primary = self._select_primary(valid_results, cv_result)
+        # 4. Select best result - use SmartSelector if sources disagree
+        sources_disagree = cv_result and not cv_result.get('sources_agreed', True)
+        
+        if sources_disagree and self._smart_selector:
+            # Use OpenAI Smart Selector for disagreement resolution
+            selection = self._smart_selector.select_utility(context, valid_results)
+            
+            # Find the matching source result
+            primary = None
+            for r in valid_results:
+                if r.utility_name == selection.utility_name or r.source_name == selection.selected_source:
+                    primary = r
+                    break
+            
+            if not primary:
+                # SmartSelector chose a utility not in results, create synthetic result
+                primary = SourceResult(
+                    source_name=selection.selected_source,
+                    utility_name=selection.utility_name,
+                    confidence_score=int(selection.confidence * 100),
+                    match_type='smart_selector'
+                )
+            
+            # Update cv_result with SmartSelector's analysis
+            cv_result['smart_selector_used'] = True
+            cv_result['smart_selector_reasoning'] = selection.reasoning
+            cv_result['confidence_adjustment'] = int((selection.confidence - 0.7) * 50)  # Adjust based on LLM confidence
+        else:
+            primary = self._select_primary(valid_results, cv_result)
         
         # 5. Build pipeline result
         result = self._build_result(primary, context, cv_result)

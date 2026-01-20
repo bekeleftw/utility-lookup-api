@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:22:02.195201",
+  "city": "Memphis",
+  "state": "TN",
+  "zip_prefix": "381",
+  "utility_type": "gas",
+  "verified": true,
+  "serp_utility": "Memphis Light, Gas and Water (MLGW)",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Memphis\" \"TN\" gas utility provider",
+  "notes": "MLGW is the primary gas utility provider for Memphis, TN, as indicated in multiple search results."
+}

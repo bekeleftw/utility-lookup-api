@@ -102,6 +102,32 @@ UTILITY_ALIASES = {
     'virginia natural gas': ['virginia natural gas', 'columbia gas of virginia', 'vng'],
     'psnc': ['psnc', 'psnc energy', 'piedmont natural gas nc'],
     'connecticut light power': ['connecticut light & power', 'connecticut light and power', 'cl&p', 'eversource connecticut'],
+    # Additional aliases for test accuracy
+    'cps energy': ['cps energy', 'city public service', 'cps'],
+    'con edison': ['con edison', 'consolidated edison', 'coned', 'con ed'],
+    'texas gas service': ['texas gas service', 'texas gas', 'tgs', 'one gas'],
+    'psnc energy': ['psnc energy', 'psnc', 'public service co of north carolina', 'public service company of north carolina'],
+    'south carolina electric gas': ['south carolina electric & gas', 'sceg', 'sce&g', 'dominion energy south carolina'],
+    'columbia gas': ['columbia gas', 'columbia gas of pennsylvania', 'columbia gas pa', 'nisource'],
+    'kansas gas service': ['kansas gas service', 'kansas gas', 'one gas kansas'],
+    'narragansett': ['narragansett', 'narragansett electric', 'narragansett electric co', 'rhode island energy'],
+    # More aliases based on test failures
+    'oge': ['og&e', 'oge', 'oklahoma gas & electric', 'oklahoma gas and electric', 'oklahoma gas electric co'],
+    'aes indiana': ['aes indiana', 'indianapolis power & light', 'indianapolis power and light', 'ipl', 'indianapolis power light co'],
+    'lge': ['lg&e', 'lge', 'louisville gas & electric', 'louisville gas and electric', 'louisville gas electric co'],
+    'pseg': ['pseg', 'pse&g', 'public service electric and gas', 'public service electric & gas', 'public service electric gas co', 'public service elec gas co', 'public service elec. & gas co'],
+    'eversource': ['eversource', 'eversource energy', 'nstar', 'nstar electric', 'connecticut light & power', 'connecticut light and power', 'public service co of nh', 'connecticut light power co'],
+    'pnm': ['pnm', 'public service co of nm', 'public service company of new mexico', 'public service co of new mexico'],
+    'burlington electric': ['burlington electric', 'burlington electric department', 'bed', 'burlington electric dept'],
+    'metropolitan utilities omaha': ['metropolitan utilities district', 'mud', 'metropolitan utilities district of omaha', 'mud omaha'],
+    # More aliases for remaining test failures
+    'public service nh': ['public service co of nh', 'public service company of nh', 'eversource nh', 'eversource new hampshire'],
+    'green mountain power': ['green mountain power', 'gmp', 'green mountain power corp'],
+    'montana dakota': ['montana-dakota utilities', 'montana dakota utilities', 'mdu', 'montana-dakota'],
+    # Final naming aliases
+    'xcel energy': ['xcel energy', 'xcel', 'public service co of colorado', 'public service company of colorado', 'northern states power', 'psc of colorado'],
+    'bge': ['bge', 'baltimore gas & electric', 'baltimore gas and electric', 'baltimore gas electric co', 'baltimore gas & electric co'],
+    'psnc': ['psnc energy', 'psnc', 'public service co of north carolina', 'public service company of north carolina', 'public service co. of north carolina'],
 }
 
 

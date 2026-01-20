@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:24:55.633771",
+  "city": "New Braunfels",
+  "state": "TX",
+  "zip_prefix": "781",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "New Braunfels Utilities",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"New Braunfels\" \"TX\" electric utility provider",
+  "notes": "New Braunfels Utilities is identified as the primary electric utility provider for the majority of New Braunfels, TX, including the specified address."
+}

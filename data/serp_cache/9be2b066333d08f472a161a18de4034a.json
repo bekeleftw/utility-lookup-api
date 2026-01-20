@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:23:35.304513",
+  "city": "Louisville",
+  "state": "KY",
+  "zip_prefix": "402",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "Louisville Gas and Electric Company",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Louisville\" \"KY\" electric utility provider",
+  "notes": "The search results consistently mention Louisville Gas and Electric Company (LG&E) as the electric utility provider for the specified address in Louisville, KY."
+}

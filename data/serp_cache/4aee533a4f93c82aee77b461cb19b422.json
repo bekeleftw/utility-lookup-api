@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:18:34.568491",
+  "city": "Kyle-Buda",
+  "state": "TX",
+  "zip_prefix": "786",
+  "utility_type": "gas",
+  "verified": true,
+  "serp_utility": "CenterPoint Energy - Entex",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Kyle-Buda\" \"TX\" gas utility provider",
+  "notes": "The search results indicate that CenterPoint Energy is the gas utility provider for the Kyle-Buda area, which aligns with the database information."
+}

@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:51:11.936184",
+  "city": "Detroit",
+  "state": "MI",
+  "zip_prefix": "482",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "DTE Energy",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Detroit\" \"MI\" electric utility provider",
+  "notes": "DTE Energy is identified as the primary electric utility provider for Detroit, MI, based on multiple search results and references."
+}

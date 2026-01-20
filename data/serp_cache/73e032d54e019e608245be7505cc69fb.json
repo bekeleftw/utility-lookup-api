@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:38:50.415731",
+  "city": "Converse",
+  "state": "TX",
+  "zip_prefix": "781",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "CPS Energy",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Converse\" \"TX\" electric utility provider",
+  "notes": "CPS Energy is identified as the primary electric utility provider for Converse, TX, based on multiple sources in the search results."
+}

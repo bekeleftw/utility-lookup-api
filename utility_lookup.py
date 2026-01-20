@@ -368,7 +368,145 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
             print(f"Location: {result.get('city', 'N/A')}, {result.get('county', 'N/A')} County, {result.get('state', 'N/A')}")
         return result
     
+    print("Nominatim failed, trying city centroid fallback...")
+    
+    # Tier 4: City centroid fallback for new construction
+    result = geocode_city_centroid(address)
+    if result:
+        print(f"Geocoded (City Centroid): {result.get('matched_address')}")
+        print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
+        print(f"WARNING: Using city centroid - exact address not found")
+        return result
+    
     print(f"No geocoding results for: {address}")
+    return None
+
+
+def geocode_city_centroid(address: str) -> Optional[Dict]:
+    """
+    Fallback geocoder that extracts city/state/zip from address and returns city centroid.
+    Used for new construction addresses that don't exist in any geocoder yet.
+    """
+    import re
+    
+    # Parse city, state, zip from address
+    # Pattern: "..., City, ST ZIP" or "..., City, State ZIP"
+    patterns = [
+        r',\s*([^,]+),\s*([A-Z]{2})\s+(\d{5})',  # City, ST 12345
+        r',\s*([^,]+),\s*([A-Za-z]+)\s+(\d{5})',  # City, State 12345
+    ]
+    
+    city = None
+    state = None
+    zip_code = None
+    
+    for pattern in patterns:
+        match = re.search(pattern, address)
+        if match:
+            city = match.group(1).strip()
+            state = match.group(2).strip().upper()
+            zip_code = match.group(3).strip()
+            break
+    
+    if not city or not state:
+        return None
+    
+    # Convert full state name to abbreviation if needed
+    state_abbrevs = {
+        'TEXAS': 'TX', 'CALIFORNIA': 'CA', 'FLORIDA': 'FL', 'NEW YORK': 'NY',
+        'PENNSYLVANIA': 'PA', 'ILLINOIS': 'IL', 'OHIO': 'OH', 'GEORGIA': 'GA',
+        'NORTH CAROLINA': 'NC', 'MICHIGAN': 'MI', 'NEW JERSEY': 'NJ', 'VIRGINIA': 'VA',
+        'WASHINGTON': 'WA', 'ARIZONA': 'AZ', 'MASSACHUSETTS': 'MA', 'TENNESSEE': 'TN',
+        'INDIANA': 'IN', 'MISSOURI': 'MO', 'MARYLAND': 'MD', 'WISCONSIN': 'WI',
+        'COLORADO': 'CO', 'MINNESOTA': 'MN', 'SOUTH CAROLINA': 'SC', 'ALABAMA': 'AL',
+        'LOUISIANA': 'LA', 'KENTUCKY': 'KY', 'OREGON': 'OR', 'OKLAHOMA': 'OK',
+        'CONNECTICUT': 'CT', 'UTAH': 'UT', 'IOWA': 'IA', 'NEVADA': 'NV',
+        'ARKANSAS': 'AR', 'MISSISSIPPI': 'MS', 'KANSAS': 'KS', 'NEW MEXICO': 'NM',
+        'NEBRASKA': 'NE', 'WEST VIRGINIA': 'WV', 'IDAHO': 'ID', 'HAWAII': 'HI',
+        'NEW HAMPSHIRE': 'NH', 'MAINE': 'ME', 'MONTANA': 'MT', 'RHODE ISLAND': 'RI',
+        'DELAWARE': 'DE', 'SOUTH DAKOTA': 'SD', 'NORTH DAKOTA': 'ND', 'ALASKA': 'AK',
+        'VERMONT': 'VT', 'WYOMING': 'WY'
+    }
+    if len(state) > 2:
+        state = state_abbrevs.get(state.upper(), state[:2])
+    
+    # Try to geocode using a generic address in the city (Main St is common)
+    # This gives us approximate coordinates for the city
+    test_addresses = [
+        f"1 Main St, {city}, {state} {zip_code}",
+        f"100 Main St, {city}, {state}",
+        f"1 {city} Rd, {city}, {state}",
+    ]
+    
+    url = "https://geocoding.geo.census.gov/geocoder/geographies/onelineaddress"
+    
+    for test_addr in test_addresses:
+        params = {
+            "address": test_addr,
+            "benchmark": "Public_AR_Current",
+            "vintage": "Census2020_Current",
+            "format": "json"
+        }
+        
+        try:
+            response = requests.get(url, params=params, timeout=10)
+            response.raise_for_status()
+            data = response.json()
+            
+            matches = data.get("result", {}).get("addressMatches", [])
+            if matches:
+                match = matches[0]
+                coords = match.get("coordinates", {})
+                geo = match.get("geographies", {})
+                
+                # Extract county from geographies
+                counties = geo.get("Counties", [])
+                county = counties[0].get("NAME") if counties else None
+                
+                return {
+                    "lon": coords.get("x"),
+                    "lat": coords.get("y"),
+                    "matched_address": f"{city}, {state} (city centroid)",
+                    "city": city,
+                    "county": county,
+                    "state": state,
+                    "zip_code": zip_code,
+                    "source": "Census_CityFallback",
+                    "is_centroid": True  # Flag that this is approximate
+                }
+        except Exception:
+            continue
+    
+    # Last resort: try ZIP centroid via Census ZCTA lookup
+    if zip_code:
+        try:
+            # Use the TIGERweb API for ZIP centroid
+            zcta_url = f"https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/2/query"
+            params = {
+                "where": f"ZCTA5='{zip_code}'",
+                "outFields": "CENTLAT,CENTLON,ZCTA5",
+                "returnGeometry": "false",
+                "f": "json"
+            }
+            response = requests.get(zcta_url, params=params, timeout=10)
+            data = response.json()
+            features = data.get("features", [])
+            if features:
+                attrs = features[0].get("attributes", {})
+                return {
+                    "lon": float(attrs.get("CENTLON", 0)),
+                    "lat": float(attrs.get("CENTLAT", 0)),
+                    "matched_address": f"ZIP {zip_code} centroid",
+                    "city": city,
+                    "county": None,
+                    "state": state,
+                    "zip_code": zip_code,
+                    "source": "Census_ZIPFallback",
+                    "is_centroid": True
+                }
+        except Exception:
+            pass
+    
     return None
 
 
@@ -1900,11 +2038,11 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     county = geo_result.get("county")
     
     # Get ZIP code from geocoded address for verification
-    zip_code = geo_result.get("zip") or ""
+    zip_code = geo_result.get("zip") or geo_result.get("zip_code") or ""
     if not zip_code and geo_result.get("matched_address"):
         # Try to extract ZIP from END of matched address (avoid matching street numbers)
-        # ZIP codes appear at the end, optionally with +4 extension
-        zip_match = re.search(r'\b(\d{5})(?:-\d{4})?\s*$', geo_result.get("matched_address", ""))
+        # ZIP codes appear at the end, optionally with +4 extension and country code
+        zip_match = re.search(r'\b(\d{5})(?:-\d{4})?(?:,?\s*USA)?\s*$', geo_result.get("matched_address", ""))
         if zip_match:
             zip_code = zip_match.group(1)
     
@@ -2788,14 +2926,20 @@ def _add_deregulated_info(result: Dict, state: str, zip_code: str) -> Dict:
     return result
 
 
-def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
+def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None, use_pipeline: bool = True) -> Optional[Dict]:
     """Look up electric utility only. Fast - typically < 1 second.
     
     If address is provided and state supports website verification, 
     the result will be enhanced with utility website verification.
     """
     try:
-        # Priority 0: GIS-based lookup for states with authoritative APIs (NJ, AR, DE, HI, RI)
+        # Priority 0: Use pipeline with SmartSelector for best accuracy
+        if use_pipeline and PIPELINE_AVAILABLE:
+            pipeline_result = _pipeline_lookup(lat, lon, address or '', city, county, state, zip_code, 'electric')
+            if pipeline_result:
+                return _add_deregulated_info(pipeline_result, state, zip_code)
+        
+        # Fallback: GIS-based lookup for states with authoritative APIs (NJ, AR, DE, HI, RI)
         if GIS_LOOKUP_AVAILABLE and lat and lon and state in ('NJ', 'AR', 'DE', 'HI', 'RI'):
             gis_electric = lookup_electric_utility_gis(lat, lon, state)
             if gis_electric and gis_electric.get('name'):
@@ -2938,10 +3082,16 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
         return None
 
 
-def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str) -> Optional[Dict]:
+def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None, use_pipeline: bool = True) -> Optional[Dict]:
     """Look up gas utility only. Fast - typically < 1 second."""
     try:
-        # Check municipal first
+        # Priority 0: Use pipeline with SmartSelector for best accuracy
+        if use_pipeline and PIPELINE_AVAILABLE:
+            pipeline_result = _pipeline_lookup(lat, lon, address or '', city, county, state, zip_code, 'gas')
+            if pipeline_result:
+                return pipeline_result
+        
+        # Fallback: Check municipal first
         municipal_gas = lookup_municipal_gas(state, city, zip_code)
         if municipal_gas:
             return {

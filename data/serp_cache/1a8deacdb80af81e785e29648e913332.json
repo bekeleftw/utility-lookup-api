@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-19T22:20:00.462980",
+  "city": "Denver",
+  "state": "CO",
+  "zip_prefix": "802",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "Xcel Energy",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Denver\" \"CO\" electric utility provider",
+  "notes": "Xcel Energy is identified as the primary electric utility provider for Denver, CO, based on multiple search results."
+}

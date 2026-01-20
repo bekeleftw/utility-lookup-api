@@ -4381,17 +4381,135 @@
       }
     },
     "CT": {
-      "Connecticut Light & Power Co": {
-        "name": "Connecticut Light & Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (378 ZIP codes)"
+      "Bridgeport": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
       },
-      "United Illuminating Co": {
-        "name": "United Illuminating Co",
-        "phone": null,
+      "New Haven": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
+      },
+      "Stamford": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Hartford": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Waterbury": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Norwalk": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Danbury": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "New Britain": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "West Hartford": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Greenwich": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Fairfield": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
+      },
+      "Hamden": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
+      },
+      "Bristol": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Meriden": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Manchester": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "West Haven": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
+      },
+      "Milford": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
+      },
+      "Stratford": {
+        "name": "United Illuminating",
+        "phone": "800-722-5584",
+        "website": "https://www.uinet.com/"
+      },
+      "East Hartford": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Middletown": {
+        "name": "Eversource",
+        "phone": "800-286-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Wallingford": {
+        "name": "Wallingford Electric Division",
+        "phone": "203-294-2020",
+        "website": "https://www.wallingfordelectric.com/",
+        "note": "Municipal"
+      },
+      "Norwich": {
+        "name": "Norwich Public Utilities",
+        "phone": "860-887-2555",
+        "website": "https://www.norwichpublicutilities.com/",
+        "note": "Municipal"
+      },
+      "Groton": {
+        "name": "Groton Utilities",
+        "phone": "860-446-4000",
+        "website": "https://www.grotonutilities.com/",
+        "note": "Municipal"
+      },
+      "South Norwalk": {
+        "name": "Third Taxing District Electric",
+        "phone": "203-866-9271",
         "website": null,
-        "note": "From EIA-861 (78 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Jewett City": {
+        "name": "Jewett City Department of Public Utilities",
+        "phone": "860-376-4521",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "WI": {
@@ -4469,11 +4587,81 @@
       }
     },
     "DE": {
-      "Delmarva Power": {
+      "Wilmington": {
         "name": "Delmarva Power",
-        "phone": null,
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Dover": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Newark": {
+        "name": "City of Newark Electric",
+        "phone": "302-366-7000",
+        "website": "https://www.newarkde.gov/",
+        "note": "Municipal"
+      },
+      "Middletown": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Smyrna": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Milford": {
+        "name": "City of Milford Electric",
+        "phone": "302-422-6616",
+        "website": "https://www.cityofmilford.com/",
+        "note": "Municipal"
+      },
+      "Seaford": {
+        "name": "City of Seaford Electric",
+        "phone": "302-629-9173",
+        "website": "https://www.seafordde.com/",
+        "note": "Municipal"
+      },
+      "Georgetown": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Elsmere": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "New Castle": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Lewes": {
+        "name": "Lewes Board of Public Works",
+        "phone": "302-645-6228",
+        "website": "https://www.lewesbpw.com/",
+        "note": "Municipal"
+      },
+      "Rehoboth Beach": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Clayton": {
+        "name": "Clayton Electric",
+        "phone": "302-653-8279",
         "website": null,
-        "note": "From EIA-861 (86 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Smyrna_Muni": {
+        "name": "Smyrna Electric",
+        "phone": "302-653-9231",
+        "website": null,
+        "note": "Municipal - some areas"
       }
     },
     "NM": {
@@ -4839,11 +5027,10 @@
       }
     },
     "DC": {
-      "Potomac Electric Power Co": {
-        "name": "Potomac Electric Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (282 ZIP codes)"
+      "Washington": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
       }
     },
     "NH": {
@@ -6814,63 +7001,145 @@
       }
     },
     "CT": {
-      "Statewide": {
-        "name": "Eversource",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for CT"
-      },
-      "Eversource": {
-        "name": "Eversource",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CT"
-      },
-      "Southern_Connecticut_Gas": {
+      "Bridgeport": {
         "name": "Southern Connecticut Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CT"
+        "phone": "800-659-8299",
+        "website": "https://www.soconngas.com/"
       },
-      "Connecticut_Natural_Gas": {
+      "New Haven": {
+        "name": "Southern Connecticut Gas",
+        "phone": "800-659-8299",
+        "website": "https://www.soconngas.com/"
+      },
+      "Stamford": {
+        "name": "Southern Connecticut Gas",
+        "phone": "800-659-8299",
+        "website": "https://www.soconngas.com/"
+      },
+      "Hartford": {
         "name": "Connecticut Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CT"
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Waterbury": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Norwalk": {
+        "name": "Southern Connecticut Gas",
+        "phone": "800-659-8299",
+        "website": "https://www.soconngas.com/"
+      },
+      "Danbury": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "New Britain": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "West Hartford": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Greenwich": {
+        "name": "Southern Connecticut Gas",
+        "phone": "800-659-8299",
+        "website": "https://www.soconngas.com/"
+      },
+      "Fairfield": {
+        "name": "Southern Connecticut Gas",
+        "phone": "800-659-8299",
+        "website": "https://www.soconngas.com/"
+      },
+      "Bristol": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Meriden": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Manchester": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Middletown": {
+        "name": "Connecticut Natural Gas",
+        "phone": "860-727-3000",
+        "website": "https://www.cngcorp.com/"
+      },
+      "Norwich": {
+        "name": "Norwich Public Utilities Gas",
+        "phone": "860-887-2555",
+        "website": "https://www.norwichpublicutilities.com/",
+        "note": "Municipal"
       }
     },
     "DE": {
-      "Statewide": {
-        "name": "Delmarva Power",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for DE"
+      "Wilmington": {
+        "name": "Delmarva Power Gas",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
       },
-      "Delmarva_Power": {
-        "name": "Delmarva Power",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in DE"
-      },
-      "Chesapeake_Utilities": {
+      "Dover": {
         "name": "Chesapeake Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in DE"
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Newark": {
+        "name": "Delmarva Power Gas",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Middletown": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Smyrna": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Milford": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Seaford": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Georgetown": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Lewes": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Rehoboth Beach": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
       }
     },
     "DC": {
-      "Statewide": {
+      "Washington": {
         "name": "Washington Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for DC"
-      },
-      "Washington_Gas": {
-        "name": "Washington Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in DC"
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
       }
     },
     "HI": {

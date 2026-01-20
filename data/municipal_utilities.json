@@ -2364,6 +2364,48 @@
           "85216"
         ],
         "note": "SRP serves much of Phoenix metro area"
+      },
+      "Phoenix": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/",
+        "note": "Serves parts of Phoenix metro"
+      },
+      "Tempe": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/"
+      },
+      "Scottsdale": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/",
+        "note": "Parts of Scottsdale"
+      },
+      "Gilbert": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/"
+      },
+      "Chandler": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com/"
+      },
+      "Safford": {
+        "name": "City of Safford Electric",
+        "phone": "928-432-4154",
+        "website": "https://www.cityofsafford.us/"
+      },
+      "Benson": {
+        "name": "City of Benson Electric",
+        "phone": "520-586-2245",
+        "website": "https://www.cityofbenson.com/"
+      },
+      "Willcox": {
+        "name": "City of Willcox Electric",
+        "phone": "520-384-4271",
+        "website": null
       }
     },
     "CO": {
@@ -3487,6 +3529,98 @@
         "name": "Florida City Gas",
         "phone": "888-352-5325",
         "website": "https://www.floridacitygas.com/"
+      }
+    },
+    "AZ": {
+      "Phoenix": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Tucson": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Mesa": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Scottsdale": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Chandler": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Gilbert": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Glendale": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Tempe": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Peoria": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Surprise": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Yuma": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Flagstaff": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Prescott": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Lake Havasu City": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Kingman": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Sierra Vista": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Bullhead City": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Casa Grande": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
       }
     }
   },

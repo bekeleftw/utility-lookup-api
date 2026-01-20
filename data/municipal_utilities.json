@@ -4498,11 +4498,6 @@
       }
     },
     "VA": {
-      "Richmond": {
-        "name": "Dominion Energy Virginia",
-        "phone": "866-366-4357",
-        "website": "https://www.dominionenergy.com/"
-      },
       "Virginia Beach": {
         "name": "Dominion Energy Virginia",
         "phone": "866-366-4357",
@@ -4513,7 +4508,27 @@
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com/"
       },
-      "Arlington": {
+      "Chesapeake": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Richmond": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Newport News": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Alexandria": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Hampton": {
         "name": "Dominion Energy Virginia",
         "phone": "866-366-4357",
         "website": "https://www.dominionenergy.com/"
@@ -4523,29 +4538,125 @@
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com/"
       },
-      "Appalachian Power Co": {
-        "name": "Appalachian Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (289 ZIP codes)"
+      "Portsmouth": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Virginia Electric & Power Co": {
-        "name": "Virginia Electric & Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (749 ZIP codes)"
+      "Suffolk": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Kentucky Utilities Co": {
-        "name": "Kentucky Utilities Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (21 ZIP codes)"
+      "Lynchburg": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
       },
-      "Rappahannock Electric Cooperative": {
-        "name": "Rappahannock Electric Cooperative",
-        "phone": null,
+      "Harrisonburg": {
+        "name": "Harrisonburg Electric Commission",
+        "phone": "540-434-5361",
+        "website": "https://www.harrisonburgva.gov/",
+        "note": "Municipal"
+      },
+      "Leesburg": {
+        "name": "NOVEC",
+        "phone": "703-335-0500",
+        "website": "https://www.novec.com/",
+        "note": "Co-op"
+      },
+      "Charlottesville": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Blacksburg": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Manassas": {
+        "name": "Manassas City Electric",
+        "phone": "703-257-8256",
+        "website": "https://www.manassascity.org/",
+        "note": "Municipal"
+      },
+      "Danville": {
+        "name": "Danville Utilities",
+        "phone": "434-799-5155",
+        "website": "https://www.danvilleva.gov/",
+        "note": "Municipal"
+      },
+      "Fredericksburg": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Manassas Park": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Winchester": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Salem": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Staunton": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Fairfax": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Waynesboro": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Bristol": {
+        "name": "Bristol Virginia Utilities",
+        "phone": "276-645-7275",
+        "website": "https://www.bristolva.org/",
+        "note": "Municipal"
+      },
+      "Martinsville": {
+        "name": "Martinsville Electric",
+        "phone": "276-403-5182",
+        "website": "https://www.martinsville-va.gov/",
+        "note": "Municipal"
+      },
+      "Radford": {
+        "name": "Radford Electric Department",
+        "phone": "540-731-3603",
+        "website": "https://www.radfordva.gov/",
+        "note": "Municipal"
+      },
+      "Bedford": {
+        "name": "Bedford Electric",
+        "phone": "540-587-6001",
+        "website": "https://www.bedfordva.gov/",
+        "note": "Municipal"
+      },
+      "Richlands": {
+        "name": "Richlands Electric",
+        "phone": "276-963-0400",
         "website": null,
-        "note": "From EIA-861 (324 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Franklin": {
+        "name": "Franklin Municipal Power & Light",
+        "phone": "757-562-8561",
+        "website": "https://www.franklinva.com/",
+        "note": "Municipal"
       }
     },
     "MA": {
@@ -6827,11 +6938,160 @@
       }
     },
     "VT": {
-      "Green Mountain Power Corp": {
-        "name": "Green Mountain Power Corp",
-        "phone": null,
+      "Burlington": {
+        "name": "Burlington Electric Department",
+        "phone": "802-658-0300",
+        "website": "https://www.burlingtonelectric.com/",
+        "note": "Municipal"
+      },
+      "South Burlington": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Rutland": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Barre": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Montpelier": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Winooski": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "St. Albans": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Newport": {
+        "name": "Vermont Electric Cooperative",
+        "phone": "800-832-2667",
+        "website": "https://www.vermontelectric.coop/",
+        "note": "Co-op"
+      },
+      "Vergennes": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Brattleboro": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Bennington": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "St. Johnsbury": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Middlebury": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Springfield": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Hartford": {
+        "name": "Green Mountain Power",
+        "phone": "888-835-4672",
+        "website": "https://www.greenmountainpower.com/"
+      },
+      "Morrisville": {
+        "name": "Morrisville Water & Light",
+        "phone": "802-888-3348",
+        "website": "https://www.mwlvt.com/",
+        "note": "Municipal"
+      },
+      "Hardwick": {
+        "name": "Hardwick Electric Department",
+        "phone": "802-472-5201",
+        "website": "https://www.hardwickelectric.com/",
+        "note": "Municipal"
+      },
+      "Ludlow": {
+        "name": "Ludlow Electric Light Department",
+        "phone": "802-228-8808",
         "website": null,
-        "note": "From EIA-861 (225 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Lyndonville": {
+        "name": "Lyndonville Electric Department",
+        "phone": "802-626-3366",
+        "website": "https://www.lyndonvilleelectric.com/",
+        "note": "Municipal"
+      },
+      "Northfield": {
+        "name": "Northfield Electric Department",
+        "phone": "802-485-5531",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Swanton": {
+        "name": "Swanton Village Electric",
+        "phone": "802-868-4555",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Johnson": {
+        "name": "Village of Johnson Electric",
+        "phone": "802-635-2611",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Stowe": {
+        "name": "Stowe Electric Department",
+        "phone": "802-253-7215",
+        "website": "https://www.stoweelectric.com/",
+        "note": "Municipal"
+      },
+      "Hyde Park": {
+        "name": "Hyde Park Electric Department",
+        "phone": "802-888-2060",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Enosburg Falls": {
+        "name": "Enosburg Falls Electric",
+        "phone": "802-933-4421",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Orleans": {
+        "name": "Orleans Electric Department",
+        "phone": "802-754-8579",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Barton": {
+        "name": "Barton Village Electric",
+        "phone": "802-525-3524",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Jacksonville": {
+        "name": "Jacksonville Electric",
+        "phone": "802-368-7747",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "HI": {
@@ -9873,11 +10133,6 @@
       }
     },
     "VA": {
-      "Richmond": {
-        "name": "Virginia Natural Gas",
-        "phone": "866-229-3578",
-        "website": "https://www.virginianaturalgas.com/"
-      },
       "Virginia Beach": {
         "name": "Virginia Natural Gas",
         "phone": "866-229-3578",
@@ -9888,15 +10143,86 @@
         "phone": "866-229-3578",
         "website": "https://www.virginianaturalgas.com/"
       },
-      "Arlington": {
+      "Chesapeake": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Richmond": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Newport News": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Alexandria": {
         "name": "Washington Gas",
         "phone": "844-927-4427",
         "website": "https://www.washingtongas.com/"
+      },
+      "Hampton": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
       },
       "Roanoke": {
         "name": "Roanoke Gas",
         "phone": "540-777-0623",
         "website": "https://www.roanokegas.com/"
+      },
+      "Portsmouth": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Suffolk": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Lynchburg": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Harrisonburg": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Charlottesville": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Danville": {
+        "name": "Danville Utilities Gas",
+        "phone": "434-799-5155",
+        "website": "https://www.danvilleva.gov/",
+        "note": "Municipal"
+      },
+      "Fredericksburg": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Winchester": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Staunton": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/"
+      },
+      "Fairfax": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
       }
     },
     "MA": {
@@ -12195,17 +12521,40 @@
       }
     },
     "VT": {
-      "Statewide": {
+      "Burlington": {
         "name": "Vermont Gas Systems",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for VT"
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
       },
-      "Vermont_Gas_Systems": {
+      "South Burlington": {
         "name": "Vermont Gas Systems",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in VT"
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
+      },
+      "Winooski": {
+        "name": "Vermont Gas Systems",
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
+      },
+      "Essex": {
+        "name": "Vermont Gas Systems",
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
+      },
+      "Colchester": {
+        "name": "Vermont Gas Systems",
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
+      },
+      "Middlebury": {
+        "name": "Vermont Gas Systems",
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
+      },
+      "Vergennes": {
+        "name": "Vermont Gas Systems",
+        "phone": "802-863-4511",
+        "website": "https://www.vermontgas.com/"
       }
     },
     "WA": {

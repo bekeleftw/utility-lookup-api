@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-20-v8', 'changes': 'coserv_electric_fix'})
+    return jsonify({'version': '2026-01-20-v9', 'changes': 'streaming_uses_v2_pipeline'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")
@@ -398,26 +398,26 @@ def lookup_stream():
             state = location.get('state')
             zip_code = location.get('zip_code', '')
             
-            # Step 2: Electric (fast)
+            # Step 2: Electric (fast) - Use v2 pipeline for user corrections support
             if 'electric' in selected_utilities:
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
-                electric = lookup_electric_only(lat, lon, city, county, state, zip_code)
+                # Use v2 lookup which includes UserCorrectionSource
+                v2_result = lookup_utilities_by_address(address, selected_utilities=['electric'])
+                electric = v2_result.get('electric') if v2_result else None
                 if electric:
-                    # Get confidence directly - debug what the actual value is
-                    raw_conf_value = electric.get('_confidence')
-                    raw_confidence = raw_conf_value if raw_conf_value else 'high'
+                    raw_confidence = electric.get('_confidence') or 'high'
                     formatted = format_utility(electric, 'electric')
                     formatted['confidence'] = raw_confidence
-                    formatted['_debug_raw_conf'] = str(raw_conf_value)
-                    formatted['_debug_raw_conf_type'] = str(type(raw_conf_value).__name__)
                     yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
             
-            # Step 3: Gas (fast)
+            # Step 3: Gas (fast) - Use v2 pipeline for user corrections support
             if 'gas' in selected_utilities:
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up gas provider...'})}\n\n"
-                gas = lookup_gas_only(lat, lon, city, county, state, zip_code)
+                # Use v2 lookup which includes UserCorrectionSource
+                v2_result = lookup_utilities_by_address(address, selected_utilities=['gas'])
+                gas = v2_result.get('gas') if v2_result else None
                 if gas:
                     if gas.get('_no_service'):
                         yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"

@@ -409,6 +409,86 @@
         "zip_codes": [
           "78114"
         ]
+      },
+      "Brownsville": {
+        "name": "Brownsville Public Utilities Board",
+        "phone": "956-983-6100",
+        "website": "https://www.brownsville-pub.com/"
+      },
+      "Fredericksburg": {
+        "name": "Fredericksburg Electric",
+        "phone": "830-997-2127",
+        "website": "https://www.fbgtx.org/"
+      },
+      "San Marcos": {
+        "name": "San Marcos Electric Utility",
+        "phone": "512-393-8100",
+        "website": "https://www.sanmarcostx.gov/"
+      },
+      "Weatherford": {
+        "name": "Weatherford Municipal Utility System",
+        "phone": "817-598-4200",
+        "website": "https://www.weatherfordtx.gov/"
+      },
+      "Brenham": {
+        "name": "Brenham Municipal Light & Power",
+        "phone": "979-337-7200",
+        "website": "https://www.cityofbrenham.org/"
+      },
+      "Lockhart": {
+        "name": "Lockhart Power & Light",
+        "phone": "512-398-3461",
+        "website": "https://www.lockhart-tx.org/"
+      },
+      "Cuero": {
+        "name": "Cuero Municipal Utilities",
+        "phone": "361-275-3476",
+        "website": "https://www.cityofcuero.com/"
+      },
+      "Gonzales": {
+        "name": "Gonzales Electric Light & Power",
+        "phone": "830-672-2815",
+        "website": "https://www.gonzales.texas.gov/"
+      },
+      "Giddings": {
+        "name": "Giddings Light & Power",
+        "phone": "979-542-3655",
+        "website": "https://www.giddings.net/"
+      },
+      "Hearne": {
+        "name": "Hearne Municipal Utilities",
+        "phone": "979-279-3461",
+        "website": "https://www.cityofhearne.com/"
+      },
+      "Robstown": {
+        "name": "Robstown Electric",
+        "phone": "361-387-3564",
+        "website": "https://www.cityofrobstown.com/"
+      },
+      "Tulia": {
+        "name": "Tulia Municipal Light & Power",
+        "phone": "806-995-3547",
+        "website": null
+      },
+      "Floydada": {
+        "name": "Floydada Power & Light",
+        "phone": "806-983-2834",
+        "website": null
+      },
+      "Sanger": {
+        "name": "Sanger Electric",
+        "phone": "940-458-7930",
+        "website": "https://www.sangertexas.org/"
+      },
+      "Seymour": {
+        "name": "Seymour Municipal Light & Power",
+        "phone": "940-889-3148",
+        "website": null
+      },
+      "Bartlett": {
+        "name": "Bartlett Electric Cooperative",
+        "phone": "254-527-3551",
+        "website": "https://www.bartlettec.coop/"
       }
     },
     "CA": {
@@ -2853,6 +2933,256 @@
           "75253"
         ],
         "note": "Dallas city water service"
+      },
+      "Austin": {
+        "name": "Austin Water",
+        "phone": "512-972-0000",
+        "website": "https://www.austintexas.gov/department/austin-water"
+      },
+      "Fort Worth": {
+        "name": "Fort Worth Water",
+        "phone": "817-392-4477",
+        "website": "https://www.fortworthtexas.gov/departments/water"
+      },
+      "El Paso": {
+        "name": "El Paso Water",
+        "phone": "915-594-5500",
+        "website": "https://www.epwater.org/"
+      },
+      "Arlington": {
+        "name": "Arlington Water Utilities",
+        "phone": "817-275-5931",
+        "website": "https://www.arlingtontx.gov/"
+      },
+      "Plano": {
+        "name": "City of Plano Water",
+        "phone": "972-769-4150",
+        "website": "https://www.plano.gov/"
+      },
+      "Laredo": {
+        "name": "Laredo Water Utilities",
+        "phone": "956-721-2000",
+        "website": "https://www.cityoflaredo.com/"
+      },
+      "Lubbock": {
+        "name": "Lubbock Water Utilities",
+        "phone": "806-775-2000",
+        "website": "https://www.mylubbock.us/"
+      },
+      "Garland": {
+        "name": "Garland Water Utilities",
+        "phone": "972-205-2671",
+        "website": "https://www.garlandtx.gov/"
+      },
+      "Irving": {
+        "name": "Irving Water Utilities",
+        "phone": "972-721-2281",
+        "website": "https://www.cityofirving.org/"
+      },
+      "Amarillo": {
+        "name": "City of Amarillo Water",
+        "phone": "806-378-3000",
+        "website": "https://www.amarillo.gov/"
+      },
+      "Grand Prairie": {
+        "name": "Grand Prairie Water Utilities",
+        "phone": "972-237-8100",
+        "website": "https://www.gptx.org/"
+      },
+      "McKinney": {
+        "name": "City of McKinney Water",
+        "phone": "972-547-7500",
+        "website": "https://www.mckinneytexas.org/"
+      },
+      "Frisco": {
+        "name": "City of Frisco Water",
+        "phone": "972-292-5800",
+        "website": "https://www.friscotexas.gov/"
+      },
+      "Brownsville": {
+        "name": "Brownsville Public Utilities Board",
+        "phone": "956-983-6100",
+        "website": "https://www.brownsville-pub.com/"
+      },
+      "Pasadena": {
+        "name": "City of Pasadena Water",
+        "phone": "713-475-5555",
+        "website": "https://www.pasadenatx.gov/"
+      },
+      "Mesquite": {
+        "name": "City of Mesquite Water",
+        "phone": "972-216-6208",
+        "website": "https://www.cityofmesquite.com/"
+      },
+      "Killeen": {
+        "name": "City of Killeen Water",
+        "phone": "254-501-7800",
+        "website": "https://www.killeentexas.gov/"
+      },
+      "McAllen": {
+        "name": "McAllen Public Utility",
+        "phone": "956-681-1000",
+        "website": "https://www.mcallen.net/"
+      },
+      "Waco": {
+        "name": "City of Waco Water",
+        "phone": "254-299-2489",
+        "website": "https://www.waco-texas.com/"
+      },
+      "Carrollton": {
+        "name": "City of Carrollton Water",
+        "phone": "972-466-3000",
+        "website": "https://www.cityofcarrollton.com/"
+      },
+      "Denton": {
+        "name": "City of Denton Water",
+        "phone": "940-349-8700",
+        "website": "https://www.cityofdenton.com/"
+      },
+      "Midland": {
+        "name": "City of Midland Water",
+        "phone": "432-685-7100",
+        "website": "https://www.midlandtexas.gov/"
+      },
+      "Abilene": {
+        "name": "City of Abilene Water",
+        "phone": "325-676-6000",
+        "website": "https://www.abilenetx.gov/"
+      },
+      "Odessa": {
+        "name": "City of Odessa Water",
+        "phone": "432-335-3200",
+        "website": "https://www.odessa-tx.gov/"
+      },
+      "Round Rock": {
+        "name": "City of Round Rock Water",
+        "phone": "512-218-5555",
+        "website": "https://www.roundrocktexas.gov/"
+      },
+      "The Woodlands": {
+        "name": "The Woodlands Water",
+        "phone": "281-210-3800",
+        "website": "https://www.thewoodlandstownship-tx.gov/"
+      },
+      "Pearland": {
+        "name": "City of Pearland Water",
+        "phone": "281-652-1600",
+        "website": "https://www.pearlandtx.gov/"
+      },
+      "College Station": {
+        "name": "City of College Station Water",
+        "phone": "979-764-3500",
+        "website": "https://www.cstx.gov/"
+      },
+      "League City": {
+        "name": "City of League City Water",
+        "phone": "281-554-1000",
+        "website": "https://www.leaguecity.com/"
+      },
+      "Sugar Land": {
+        "name": "City of Sugar Land Water",
+        "phone": "281-275-2450",
+        "website": "https://www.sugarlandtx.gov/"
+      },
+      "Allen": {
+        "name": "City of Allen Water",
+        "phone": "214-509-4500",
+        "website": "https://www.cityofallen.org/"
+      },
+      "Tyler": {
+        "name": "City of Tyler Water",
+        "phone": "903-531-1200",
+        "website": "https://www.cityoftyler.org/"
+      },
+      "Beaumont": {
+        "name": "City of Beaumont Water",
+        "phone": "409-880-3100",
+        "website": "https://www.beaumonttexas.gov/"
+      },
+      "Edinburg": {
+        "name": "City of Edinburg Water",
+        "phone": "956-388-8200",
+        "website": "https://www.cityofedinburg.com/"
+      },
+      "Conroe": {
+        "name": "City of Conroe Water",
+        "phone": "936-522-3880",
+        "website": "https://www.cityofconroe.org/"
+      },
+      "New Braunfels": {
+        "name": "New Braunfels Utilities",
+        "phone": "830-629-8400",
+        "website": "https://www.nbutexas.com/"
+      },
+      "Flower Mound": {
+        "name": "Town of Flower Mound Water",
+        "phone": "972-874-6000",
+        "website": "https://www.flower-mound.com/"
+      },
+      "North Richland Hills": {
+        "name": "City of North Richland Hills Water",
+        "phone": "817-427-6000",
+        "website": "https://www.nrhtx.com/"
+      },
+      "Temple": {
+        "name": "City of Temple Water",
+        "phone": "254-298-5700",
+        "website": "https://www.templetx.gov/"
+      },
+      "Lewisville": {
+        "name": "City of Lewisville Water",
+        "phone": "972-219-3400",
+        "website": "https://www.cityoflewisville.com/"
+      },
+      "Little Elm": {
+        "name": "Town of Little Elm Water",
+        "phone": "214-975-0406",
+        "website": "https://www.littleelm.org/"
+      },
+      "Georgetown": {
+        "name": "Georgetown Utility Systems",
+        "phone": "512-930-3640",
+        "website": "https://www.georgetown.org/"
+      },
+      "Pflugerville": {
+        "name": "City of Pflugerville Water",
+        "phone": "512-990-6100",
+        "website": "https://www.pflugervilletx.gov/"
+      },
+      "Cedar Park": {
+        "name": "City of Cedar Park Water",
+        "phone": "512-401-5000",
+        "website": "https://www.cedarparktexas.gov/"
+      },
+      "Mansfield": {
+        "name": "City of Mansfield Water",
+        "phone": "817-276-4200",
+        "website": "https://www.mansfieldtexas.gov/"
+      },
+      "Rowlett": {
+        "name": "City of Rowlett Water",
+        "phone": "972-412-6100",
+        "website": "https://www.rowlett.com/"
+      },
+      "Euless": {
+        "name": "City of Euless Water",
+        "phone": "817-685-1400",
+        "website": "https://www.eulesstx.gov/"
+      },
+      "DeSoto": {
+        "name": "City of DeSoto Water",
+        "phone": "972-230-9600",
+        "website": "https://www.desototexas.gov/"
+      },
+      "Grapevine": {
+        "name": "City of Grapevine Water",
+        "phone": "817-410-3000",
+        "website": "https://www.grapevinetexas.gov/"
+      },
+      "Bedford": {
+        "name": "City of Bedford Water",
+        "phone": "817-952-2100",
+        "website": "https://www.bedfordtx.gov/"
       }
     },
     "CA": {

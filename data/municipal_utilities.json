@@ -11580,6 +11580,2646 @@
         "name": "Destin Water Users",
         "phone": "850-837-6146",
         "website": "https://www.destinwaterusers.org/"
+      },
+      "Callaway": {
+        "name": "CALLAWAY, CITY OF WATER SYSTEM",
+        "phone": "850-215-6691",
+        "website": null,
+        "note": "From EPA SDWIS (8208 connections)"
+      },
+      "Springfield": {
+        "name": "SPRINGFIELD, CITY OF",
+        "phone": "850-872-7570",
+        "website": null,
+        "note": "From EPA SDWIS (6091 connections)"
+      },
+      "Mexico Beach": {
+        "name": "MEXICO BEACH, CITY OF",
+        "phone": "850-648-5700",
+        "website": null,
+        "note": "From EPA SDWIS (2355 connections)"
+      },
+      "Chamblee": {
+        "name": "CREEKSIDE ESTATES PC, LLC",
+        "phone": "404-877-2984",
+        "website": null,
+        "note": "From EPA SDWIS (36 connections)"
+      },
+      "Lynn Haven": {
+        "name": "LYNN HAVEN, CITY OF WATER SYSTEM",
+        "phone": "850-248-0611",
+        "website": null,
+        "note": "From EPA SDWIS (9352 connections)"
+      },
+      "Panama City Beach": {
+        "name": "PANAMA CITY BEACH CITY OF",
+        "phone": "850-233-5100",
+        "website": null,
+        "note": "From EPA SDWIS (25948 connections)"
+      },
+      "Parker": {
+        "name": "PARKER, CITY OF WATER SYSTEM",
+        "phone": "850-871-5599",
+        "website": null,
+        "note": "From EPA SDWIS (2034 connections)"
+      },
+      "Altha": {
+        "name": "ALTHA, TOWN OF WATER SYSTEM",
+        "phone": "850-762-3280",
+        "website": null,
+        "note": "From EPA SDWIS (280 connections)"
+      },
+      "Blountstown": {
+        "name": "BLOUNTSTOWN, CITY OF",
+        "phone": "850-674-5488",
+        "website": null,
+        "note": "From EPA SDWIS (1450 connections)"
+      },
+      "Mcdavid": {
+        "name": "CENTRAL WATER WORKS",
+        "phone": "850-256-3849",
+        "website": null,
+        "note": "From EPA SDWIS (1024 connections)"
+      },
+      "Molino": {
+        "name": "MOLINO UTILITIES, INC.",
+        "phone": "850-587-5538",
+        "website": null,
+        "note": "From EPA SDWIS (2527 connections)"
+      },
+      "Warrington": {
+        "name": "PEOPLES WATER SERVICE COMPANY",
+        "phone": "850-455-8552",
+        "website": null,
+        "note": "From EPA SDWIS (10293 connections)"
+      },
+      "Jay": {
+        "name": "EREC WATER SYSTEM",
+        "phone": "850-366-0227",
+        "website": null,
+        "note": "From EPA SDWIS (1630 connections)"
+      },
+      "Cantonment": {
+        "name": "FARM HILL UTILITIES, INC.",
+        "phone": "850-968-2573",
+        "website": null,
+        "note": "From EPA SDWIS (2956 connections)"
+      },
+      "Century": {
+        "name": "CENTURY, TOWN OF",
+        "phone": "850-602-0651",
+        "website": null,
+        "note": "From EPA SDWIS (893 connections)"
+      },
+      "Nas Pensacola": {
+        "name": "NAS PENSACOLA / CORRY STATION",
+        "phone": "850-452-6336",
+        "website": null,
+        "note": "From EPA SDWIS (539 connections)"
+      },
+      "Panacea": {
+        "name": "PANACEA AREA WATER SYSTEM",
+        "phone": "850-984-5301",
+        "website": null,
+        "note": "From EPA SDWIS (1166 connections)"
+      },
+      "Carrabelle": {
+        "name": "CITY OF CARRABELLE WATER SYSTEM",
+        "phone": "850-697-2727",
+        "website": null,
+        "note": "From EPA SDWIS (1507 connections)"
+      },
+      "Apalachicola": {
+        "name": "APALACHICOLA, CITY OF",
+        "phone": "850-653-9319",
+        "website": null,
+        "note": "From EPA SDWIS (2358 connections)"
+      },
+      "Eastpoint": {
+        "name": "EASTPOINT WATER ; SEWER DIST.",
+        "phone": "850-670-8177",
+        "website": null,
+        "note": "From EPA SDWIS (1051 connections)"
+      },
+      "Chattahoochee": {
+        "name": "CHATTAHOOCHEE, CITY OF",
+        "phone": "850-663-4475",
+        "website": null,
+        "note": "From EPA SDWIS (1131 connections)"
+      },
+      "Havana": {
+        "name": "HAVANA, TOWN OF WATER SYSTEM",
+        "phone": "850-539-2820",
+        "website": null,
+        "note": "From EPA SDWIS (1620 connections)"
+      },
+      "Greensboro": {
+        "name": "GREENSBORO, TOWN OF WATER SYS.",
+        "phone": "850-442-6215",
+        "website": null,
+        "note": "From EPA SDWIS (325 connections)"
+      },
+      "Gretna": {
+        "name": "GRETNA, CITY OF",
+        "phone": "850-856-5257",
+        "website": null,
+        "note": "From EPA SDWIS (648 connections)"
+      },
+      "Quincy": {
+        "name": "GADSDEN CO REGIONAL W/S",
+        "phone": "850-878-4414",
+        "website": null,
+        "note": "From EPA SDWIS (5050 connections)"
+      },
+      "Quncy": {
+        "name": "MEADOWS GROCERY",
+        "phone": "850-559-8280",
+        "website": null,
+        "note": "From EPA SDWIS (15 connections)"
+      },
+      "Wewahitchka": {
+        "name": "WEWAHITCHKA, CITY OF",
+        "phone": "850-639-2605",
+        "website": null,
+        "note": "From EPA SDWIS (1411 connections)"
+      },
+      "Port St Joe": {
+        "name": "PORT ST. JOE, CITY OF",
+        "phone": "850-229-8261",
+        "website": null,
+        "note": "From EPA SDWIS (4997 connections)"
+      },
+      "Port St. Joe": {
+        "name": "GULF COUNTY WATER DEPARTMENT",
+        "phone": "850-227-8971",
+        "website": null,
+        "note": "From EPA SDWIS (2515 connections)"
+      },
+      "Bonifay": {
+        "name": "BONIFAY, CITY OF W/S",
+        "phone": "850-547-2701",
+        "website": null,
+        "note": "From EPA SDWIS (1760 connections)"
+      },
+      "Noma": {
+        "name": "NOMA WATER WORKS",
+        "phone": "850-263-3449",
+        "website": null,
+        "note": "From EPA SDWIS (97 connections)"
+      },
+      "Westville": {
+        "name": "WESTVILLE, TOWN OF",
+        "phone": "850-548-5858",
+        "website": null,
+        "note": "From EPA SDWIS (137 connections)"
+      },
+      "Ponce De Leon": {
+        "name": "PONCE DE LEON, TOWN OF",
+        "phone": "850-836-4361",
+        "website": null,
+        "note": "From EPA SDWIS (434 connections)"
+      },
+      "New Port Richey": {
+        "name": "NEW PORT RICHEY WATER DEPT",
+        "phone": "727-841-4570",
+        "website": null,
+        "note": "From EPA SDWIS (11619 connections)"
+      },
+      "Alford": {
+        "name": "ALFORD, TOWN OF",
+        "phone": "850-579-2040",
+        "website": null,
+        "note": "From EPA SDWIS (215 connections)"
+      },
+      "Campbellton": {
+        "name": "CAMPBELLTON WATER DEPARTMENT",
+        "phone": "850-263-4535",
+        "website": null,
+        "note": "From EPA SDWIS (112 connections)"
+      },
+      "Graceville": {
+        "name": "GRACEVILLE, CITY OF",
+        "phone": "850-263-3250",
+        "website": null,
+        "note": "From EPA SDWIS (1185 connections)"
+      },
+      "Cottondale": {
+        "name": "COTTONDALE WATER SYSTEM",
+        "phone": "850-352-4361",
+        "website": null,
+        "note": "From EPA SDWIS (517 connections)"
+      },
+      "Greenwood": {
+        "name": "GREENWOOD, TOWN OF WATER SYSTEM",
+        "phone": "850-594-1216",
+        "website": null,
+        "note": "From EPA SDWIS (248 connections)"
+      },
+      "Malone": {
+        "name": "MALONE, TOWN OF WATER SYSTEM",
+        "phone": "850-569-2308",
+        "website": null,
+        "note": "From EPA SDWIS (395 connections)"
+      },
+      "Marianna": {
+        "name": "MARIANNA, CITY OF",
+        "phone": "850-693-6893",
+        "website": null,
+        "note": "From EPA SDWIS (3190 connections)"
+      },
+      "Grand Ridge": {
+        "name": "GRAND RIDGE, TOWN OF",
+        "phone": "850-892-4391",
+        "website": null,
+        "note": "From EPA SDWIS (401 connections)"
+      },
+      "Sneads": {
+        "name": "SNEADS, TOWN OF WATER SYSTEM",
+        "phone": "850-593-6636",
+        "website": null,
+        "note": "From EPA SDWIS (872 connections)"
+      },
+      "Jacob": {
+        "name": "JACOB, CITY OF",
+        "phone": "850-263-6636",
+        "website": null,
+        "note": "From EPA SDWIS (86 connections)"
+      },
+      "Monticello": {
+        "name": "MONTICELLO, CITY OF",
+        "phone": "850-342-0153",
+        "website": null,
+        "note": "From EPA SDWIS (1801 connections)"
+      },
+      "Lloyd": {
+        "name": "JEFFERSON COMMUNITIES WATER SYSTEM",
+        "phone": "850-997-0314",
+        "website": null,
+        "note": "From EPA SDWIS (845 connections)"
+      },
+      "Lutz": {
+        "name": "GLENDALE VILLAS / LOL VILLAGE APTS",
+        "phone": "813-996-6393",
+        "website": null,
+        "note": "From EPA SDWIS (256 connections)"
+      },
+      "Rincon": {
+        "name": "LAKE BRADFORD ESTATES MHP",
+        "phone": "912-295-2941",
+        "website": null,
+        "note": "From EPA SDWIS (60 connections)"
+      },
+      "Bristol": {
+        "name": "BRISTOL, CITY OF WATER SYSTEM",
+        "phone": "850-643-2261",
+        "website": null,
+        "note": "From EPA SDWIS (896 connections)"
+      },
+      "Crestview": {
+        "name": "CRESTVIEW, CITY OF WATER DEPT.",
+        "phone": "850-682-6132",
+        "website": null,
+        "note": "From EPA SDWIS (11026 connections)"
+      },
+      "Baker": {
+        "name": "BAKER WATER SYSTEM, INC.",
+        "phone": "850-537-5121",
+        "website": null,
+        "note": "From EPA SDWIS (1172 connections)"
+      },
+      "Niceville": {
+        "name": "NICEVILLE, CITY OF",
+        "phone": "850-729-4064",
+        "website": null,
+        "note": "From EPA SDWIS (8615 connections)"
+      },
+      "Valparaiso": {
+        "name": "VALPARAISO, CITY OF",
+        "phone": "850-389-2095",
+        "website": null,
+        "note": "From EPA SDWIS (2184 connections)"
+      },
+      "Ft. Walton Beach": {
+        "name": "FORT WALTON BEACH, CITY OF",
+        "phone": "850-833-9613",
+        "website": null,
+        "note": "From EPA SDWIS (9645 connections)"
+      },
+      "Holt": {
+        "name": "HOLT WATER WORKS, INC.",
+        "phone": "850-537-4113",
+        "website": null,
+        "note": "From EPA SDWIS (963 connections)"
+      },
+      "Laurel Hill": {
+        "name": "LAUREL HILL, CITY OF",
+        "phone": "850-652-4441",
+        "website": null,
+        "note": "From EPA SDWIS (565 connections)"
+      },
+      "Mary Esther": {
+        "name": "MARY ESTHER, CITY OF",
+        "phone": "423-681-9518",
+        "website": null,
+        "note": "From EPA SDWIS (1867 connections)"
+      },
+      "Hurlburt Field": {
+        "name": "HURLBURT FIELD WATER SYSTEM",
+        "phone": "850-884-7656",
+        "website": null,
+        "note": "From EPA SDWIS (686 connections)"
+      },
+      "Eglin Afb": {
+        "name": "EGLIN WEST/HOUSING",
+        "phone": "850-503-2241",
+        "website": null,
+        "note": "From EPA SDWIS (1000 connections)"
+      },
+      "Milton": {
+        "name": "MILTON, CITY OF WATER SYSTEM",
+        "phone": "850-983-5400",
+        "website": null,
+        "note": "From EPA SDWIS (7193 connections)"
+      },
+      "Gulf Breeze": {
+        "name": "MIDWAY WATER SYSTEM, INC.",
+        "phone": "850-791-1864",
+        "website": null,
+        "note": "From EPA SDWIS (8090 connections)"
+      },
+      "Pace": {
+        "name": "PACE WATER SYSTEM, INC.",
+        "phone": "850-994-5129",
+        "website": null,
+        "note": "From EPA SDWIS (18685 connections)"
+      },
+      "Navarre": {
+        "name": "HOLLEY-NAVARRE WATER SYSTEM",
+        "phone": "850-939-2427",
+        "website": null,
+        "note": "From EPA SDWIS (17900 connections)"
+      },
+      "Sopchoppy": {
+        "name": "CITY OF SOPCHOPPY",
+        "phone": "850-962-4611",
+        "website": null,
+        "note": "From EPA SDWIS (4916 connections)"
+      },
+      "St. Marks": {
+        "name": "ST. MARKS, CITY OF WATER SYS.",
+        "phone": "850-925-6224",
+        "website": null,
+        "note": "From EPA SDWIS (260 connections)"
+      },
+      "Crawfordville": {
+        "name": "MYSTERIOUS WATERS SUBDIVISION",
+        "phone": "770-842-5131",
+        "website": null,
+        "note": "From EPA SDWIS (51 connections)"
+      },
+      "Defuniak Springs": {
+        "name": "DEFUNIAK SPRINGS W/S, CITY OF",
+        "phone": "850-333-6043",
+        "website": null,
+        "note": "From EPA SDWIS (5144 connections)"
+      },
+      "Freeport": {
+        "name": "FREEPORT, CITY OF",
+        "phone": "850-835-2822",
+        "website": null,
+        "note": "From EPA SDWIS (4808 connections)"
+      },
+      "Paxton": {
+        "name": "CITY OF PAXTON",
+        "phone": "850-834-2489",
+        "website": null,
+        "note": "From EPA SDWIS (683 connections)"
+      },
+      "Santa Rosa Beach": {
+        "name": "REGIONAL UTILITIES WATER SYSTEM",
+        "phone": "850-231-5114",
+        "website": null,
+        "note": "From EPA SDWIS (24890 connections)"
+      },
+      "Miramar Beach": {
+        "name": "SOUTH WALTON UTILITY COMPANY",
+        "phone": "850-837-2988",
+        "website": null,
+        "note": "From EPA SDWIS (10668 connections)"
+      },
+      "Caryville": {
+        "name": "CARYVILLE, TOWN OF",
+        "phone": "850-548-5571",
+        "website": null,
+        "note": "From EPA SDWIS (169 connections)"
+      },
+      "Chipley": {
+        "name": "CHIPLEY, CITY OF",
+        "phone": "850-638-6094",
+        "website": null,
+        "note": "From EPA SDWIS (1996 connections)"
+      },
+      "Vernon": {
+        "name": "VERNON, CITY OF",
+        "phone": "850-535-2444",
+        "website": null,
+        "note": "From EPA SDWIS (400 connections)"
+      },
+      "Wausau": {
+        "name": "WAUSAU, TOWN OF",
+        "phone": "850-638-1781",
+        "website": null,
+        "note": "From EPA SDWIS (211 connections)"
+      },
+      "Longwood": {
+        "name": "FLORIDA GOVERNMENTAL UTILITY AUTHORITY",
+        "phone": "407-629-6900",
+        "website": null,
+        "note": "From EPA SDWIS (13981 connections)"
+      },
+      "Archer": {
+        "name": "ARCHER WATER SYSTEM",
+        "phone": "352-495-2880",
+        "website": null,
+        "note": "From EPA SDWIS (576 connections)"
+      },
+      "High Springs": {
+        "name": "HIGH SPRINGS WTP",
+        "phone": "352-756-3657",
+        "website": null,
+        "note": "From EPA SDWIS (2318 connections)"
+      },
+      "Newberry": {
+        "name": "NEWBERRY WTP",
+        "phone": "352-258-4486",
+        "website": null,
+        "note": "From EPA SDWIS (1481 connections)"
+      },
+      "Hawthorne": {
+        "name": "HAWTHORNE WTP",
+        "phone": "352-481-2432",
+        "website": null,
+        "note": "From EPA SDWIS (650 connections)"
+      },
+      "Denver": {
+        "name": "PALMS OF ARCHER",
+        "phone": "303-483-7300",
+        "website": null,
+        "note": "From EPA SDWIS (378 connections)"
+      },
+      "Alachua": {
+        "name": "ALACHUA WTP",
+        "phone": "386-418-6100",
+        "website": null,
+        "note": "From EPA SDWIS (2740 connections)"
+      },
+      "Waldo": {
+        "name": "WALDO WTP",
+        "phone": "352-468-1001",
+        "website": null,
+        "note": "From EPA SDWIS (465 connections)"
+      },
+      "Micanopy": {
+        "name": "MICANOPY WATER SYSTEM",
+        "phone": "352-466-3121",
+        "website": null,
+        "note": "From EPA SDWIS (355 connections)"
+      },
+      "Macclenny": {
+        "name": "CITY OF MACCLENNY",
+        "phone": "904-259-6261",
+        "website": null,
+        "note": "From EPA SDWIS (2486 connections)"
+      },
+      "Brooker": {
+        "name": "TOWN OF BROOKER",
+        "phone": "352-485-1022",
+        "website": null,
+        "note": "From EPA SDWIS (196 connections)"
+      },
+      "Starke": {
+        "name": "CITY OF STARKE WTP",
+        "phone": "904-368-1330",
+        "website": null,
+        "note": "From EPA SDWIS (2589 connections)"
+      },
+      "Hampton": {
+        "name": "CITY OF HAMPTON WTP",
+        "phone": "352-468-1201",
+        "website": null,
+        "note": "From EPA SDWIS (200 connections)"
+      },
+      "Lawtey": {
+        "name": "CITY OF LAWTEY WTP",
+        "phone": "904-782-3454",
+        "website": null,
+        "note": "From EPA SDWIS (350 connections)"
+      },
+      "Glen St. Mary": {
+        "name": "TOWN OF GLEN ST. MARY",
+        "phone": "904-476-8907",
+        "website": null,
+        "note": "From EPA SDWIS (205 connections)"
+      },
+      "Middleburg": {
+        "name": "ORANGE PARK GRID",
+        "phone": "904-213-2477",
+        "website": null,
+        "note": "From EPA SDWIS (46342 connections)"
+      },
+      "Green Cove Springs": {
+        "name": "CITY OF GREEN COVE SPRINGS WTP",
+        "phone": "904-297-7500",
+        "website": null,
+        "note": "From EPA SDWIS (3900 connections)"
+      },
+      "Atlanta": {
+        "name": "ST. JOHNS LANDING APARTMENTS",
+        "phone": "404-591-2900",
+        "website": null,
+        "note": "From EPA SDWIS (392 connections)"
+      },
+      "Fleming Island": {
+        "name": "LAKE GENEVA MHP",
+        "phone": "904-472-1016",
+        "website": null,
+        "note": "From EPA SDWIS (35 connections)"
+      },
+      "Penney Farms": {
+        "name": "TOWN OF PENNEY FARMS WTP",
+        "phone": "904-529-9078",
+        "website": null,
+        "note": "From EPA SDWIS (185 connections)"
+      },
+      "Orange Park": {
+        "name": "TOWN OF ORANGE PARK",
+        "phone": "904-278-3011",
+        "website": null,
+        "note": "From EPA SDWIS (2982 connections)"
+      },
+      "Coral Gables": {
+        "name": "REX UTILITIES INC/REDAVO",
+        "phone": "305-665-7471",
+        "website": null,
+        "note": "From EPA SDWIS (115 connections)"
+      },
+      "Lake City": {
+        "name": "CITY OF LAKE CITY (PRICE CREEK WTP)",
+        "phone": "386-719-5768",
+        "website": null,
+        "note": "From EPA SDWIS (10002 connections)"
+      },
+      "St. Johns": {
+        "name": "SUNDIAL APARTMENTS",
+        "phone": "904-880-0000",
+        "website": null,
+        "note": "From EPA SDWIS (4 connections)"
+      },
+      "Fort White": {
+        "name": "TOWN OF FORT WHITE WTP",
+        "phone": "904-333-3183",
+        "website": null,
+        "note": "From EPA SDWIS (275 connections)"
+      },
+      "Cross City": {
+        "name": "CROSS CITY WTP",
+        "phone": "352-498-3079",
+        "website": null,
+        "note": "From EPA SDWIS (1134 connections)"
+      },
+      "Horseshoe Beach": {
+        "name": "HORSESHOE BEACH WTP",
+        "phone": "352-498-5234",
+        "website": null,
+        "note": "From EPA SDWIS (442 connections)"
+      },
+      "Suwannee": {
+        "name": "SUWANNEE WATER ; SEWER DISTRICT",
+        "phone": "352-542-7570",
+        "website": null,
+        "note": "From EPA SDWIS (949 connections)"
+      },
+      "Baldwin": {
+        "name": "BALDWIN WATER SYSTEM",
+        "phone": "904-266-5030",
+        "website": null,
+        "note": "From EPA SDWIS (706 connections)"
+      },
+      "Atlantic Beach": {
+        "name": "ATLANTIC BEACH WATER SYSTEM",
+        "phone": "904-247-5817",
+        "website": null,
+        "note": "From EPA SDWIS (8091 connections)"
+      },
+      "Neptune Beach": {
+        "name": "NEPTUNE BEACH",
+        "phone": "904-270-2423",
+        "website": null,
+        "note": "From EPA SDWIS (3621 connections)"
+      },
+      "Jacksonville Beach": {
+        "name": "JACKSONVILLE BEACH WTP",
+        "phone": "904-247-6272",
+        "website": null,
+        "note": "From EPA SDWIS (10804 connections)"
+      },
+      "Newport Beach": {
+        "name": "SHARP'S MOBILE HOME PARK",
+        "phone": "407-957-9896",
+        "website": null,
+        "note": "From EPA SDWIS (150 connections)"
+      },
+      "St Louis": {
+        "name": "NEIGHBORHOOD UTILITIES (TIMBER CREEK)",
+        "phone": "314-464-3618",
+        "website": null,
+        "note": "From EPA SDWIS (406 connections)"
+      },
+      "Syosset": {
+        "name": "NORMANDY RYZE LLC",
+        "phone": "904-757-5000",
+        "website": null,
+        "note": "From EPA SDWIS (29 connections)"
+      },
+      "Bunnell": {
+        "name": "BUNNELL WATER PLANT",
+        "phone": "386-283-6072",
+        "website": null,
+        "note": "From EPA SDWIS (2071 connections)"
+      },
+      "Flagler Beach": {
+        "name": "FLAGLER BEACH WTP",
+        "phone": "386-517-2000",
+        "website": null,
+        "note": "From EPA SDWIS (3240 connections)"
+      },
+      "Palm Coast": {
+        "name": "CITY OF PALM COAST UTILITY",
+        "phone": "386-986-2531",
+        "website": null,
+        "note": "From EPA SDWIS (49992 connections)"
+      },
+      "Trenton": {
+        "name": "TRENTON WATER DEPARTMENT",
+        "phone": "352-463-4000",
+        "website": null,
+        "note": "From EPA SDWIS (735 connections)"
+      },
+      "Jasper": {
+        "name": "CITY OF JASPER WTP",
+        "phone": "386-792-7171",
+        "website": null,
+        "note": "From EPA SDWIS (1450 connections)"
+      },
+      "Jennings": {
+        "name": "TOWN OF JENNINGS WTP",
+        "phone": "386-938-4131",
+        "website": null,
+        "note": "From EPA SDWIS (312 connections)"
+      },
+      "White Springs": {
+        "name": "TOWN OF WHITE SPRINGS WTP",
+        "phone": "386-397-2310",
+        "website": null,
+        "note": "From EPA SDWIS (394 connections)"
+      },
+      "Mayo": {
+        "name": "MAYO WTP",
+        "phone": "386-294-1551",
+        "website": null,
+        "note": "From EPA SDWIS (504 connections)"
+      },
+      "Cedar Key": {
+        "name": "CEDAR KEY WTP",
+        "phone": "352-543-5285",
+        "website": null,
+        "note": "From EPA SDWIS (1018 connections)"
+      },
+      "Bronson": {
+        "name": "BRONSON WTP",
+        "phone": "352-486-2354",
+        "website": null,
+        "note": "From EPA SDWIS (635 connections)"
+      },
+      "Chiefland": {
+        "name": "CITY OF CHIEFLAND WTP",
+        "phone": "352-493-6711",
+        "website": null,
+        "note": "From EPA SDWIS (1165 connections)"
+      },
+      "Fanning Springs": {
+        "name": "FANNING SPRINGS WS",
+        "phone": "352-275-7984",
+        "website": null,
+        "note": "From EPA SDWIS (409 connections)"
+      },
+      "Otter Creek": {
+        "name": "OTTER CREEK",
+        "phone": "352-486-4766",
+        "website": null,
+        "note": "From EPA SDWIS (90 connections)"
+      },
+      "Madison": {
+        "name": "MADISON WATER DEPARTMENT",
+        "phone": "850-973-5081",
+        "website": null,
+        "note": "From EPA SDWIS (2100 connections)"
+      },
+      "Greenville": {
+        "name": "GREENVILLE WTP",
+        "phone": "850-948-2251",
+        "website": null,
+        "note": "From EPA SDWIS (460 connections)"
+      },
+      "Lee": {
+        "name": "LEE WTP",
+        "phone": "850-971-5867",
+        "website": null,
+        "note": "From EPA SDWIS (235 connections)"
+      },
+      "Enterprise": {
+        "name": "FUMCH-MADISON YOUTH RANCH",
+        "phone": "386-668-4774",
+        "website": null,
+        "note": "From EPA SDWIS (3 connections)"
+      },
+      "Callahan": {
+        "name": "CALLAHAN WTP",
+        "phone": "904-879-3215",
+        "website": null,
+        "note": "From EPA SDWIS (859 connections)"
+      },
+      "Fernandina Beach": {
+        "name": "FERNANDINA BEACH WTP",
+        "phone": "904-310-3420",
+        "website": null,
+        "note": "From EPA SDWIS (8675 connections)"
+      },
+      "Roanoke": {
+        "name": "TEAKWOOD MHP",
+        "phone": "904-618-0184",
+        "website": null,
+        "note": "From EPA SDWIS (40 connections)"
+      },
+      "Hilliard": {
+        "name": "HILLIARD WTP",
+        "phone": "904-675-9513",
+        "website": null,
+        "note": "From EPA SDWIS (1141 connections)"
+      },
+      "Crescent City": {
+        "name": "CRESCENT CITY WTP",
+        "phone": "386-698-2525",
+        "website": null,
+        "note": "From EPA SDWIS (1124 connections)"
+      },
+      "Lake Como": {
+        "name": "LAKE COMO WATER ASSOCIATION",
+        "phone": "386-649-4300",
+        "website": null,
+        "note": "From EPA SDWIS (189 connections)"
+      },
+      "Palatka": {
+        "name": "R. C. WILLIS WTP (CITY OF PALATKA)",
+        "phone": "386-329-0100",
+        "website": null,
+        "note": "From EPA SDWIS (6175 connections)"
+      },
+      "Interlachen": {
+        "name": "INTERLACHEN WS",
+        "phone": "386-684-3811",
+        "website": null,
+        "note": "From EPA SDWIS (226 connections)"
+      },
+      "Satsuma": {
+        "name": "RIVER VILLAS",
+        "phone": "352-584-3108",
+        "website": null,
+        "note": "From EPA SDWIS (66 connections)"
+      },
+      "Melrose": {
+        "name": "MELROSE WTP",
+        "phone": "352-475-2248",
+        "website": null,
+        "note": "From EPA SDWIS (500 connections)"
+      },
+      "St. Augustine": {
+        "name": "SJCU-CR214 MAINLAND WTP",
+        "phone": "904-209-2703",
+        "website": null,
+        "note": "From EPA SDWIS (24524 connections)"
+      },
+      "Kings Of Prussia": {
+        "name": "ST. JOHN'S RIVER CLUB UTILITIES",
+        "phone": "904-964-7124",
+        "website": null,
+        "note": "From EPA SDWIS (85 connections)"
+      },
+      "Welaka": {
+        "name": "TOWN OF WELAKA",
+        "phone": "386-467-9800",
+        "website": null,
+        "note": "From EPA SDWIS (807 connections)"
+      },
+      "East Palatka": {
+        "name": "EAST PUTNAM REGIONAL",
+        "phone": "386-329-0346",
+        "website": null,
+        "note": "From EPA SDWIS (965 connections)"
+      },
+      "Saint Johns": {
+        "name": "CYPRESS LANDING WTP",
+        "phone": "904-613-6787",
+        "website": null,
+        "note": "From EPA SDWIS (16 connections)"
+      },
+      "Aventura": {
+        "name": "CAMACHEE COVE YACHT HARBOR WTP",
+        "phone": "305-866-7555",
+        "website": null,
+        "note": "From EPA SDWIS (97 connections)"
+      },
+      "Switzerland": {
+        "name": "BAYSIDE ESTATES WTP",
+        "phone": "724-910-6034",
+        "website": null,
+        "note": "From EPA SDWIS (60 connections)"
+      },
+      "St Augustine": {
+        "name": "SJCU-EAGLE CREEK WS",
+        "phone": "904-209-2703",
+        "website": null,
+        "note": "From EPA SDWIS (459 connections)"
+      },
+      "Branford": {
+        "name": "BRANFORD WTP",
+        "phone": "386-935-1146",
+        "website": null,
+        "note": "From EPA SDWIS (479 connections)"
+      },
+      "Live Oak": {
+        "name": "LIVE OAK WTP",
+        "phone": "386-362-2276",
+        "website": null,
+        "note": "From EPA SDWIS (3095 connections)"
+      },
+      "Wellborn": {
+        "name": "WELLBORN WATER SYSTEM",
+        "phone": "386-963-3641",
+        "website": null,
+        "note": "From EPA SDWIS (189 connections)"
+      },
+      "Perry": {
+        "name": "CITY OF PERRY",
+        "phone": "850-843-2211",
+        "website": null,
+        "note": "From EPA SDWIS (3100 connections)"
+      },
+      "Steinhatchee": {
+        "name": "BIG BEND WATER AUTHORITY",
+        "phone": "352-498-3576",
+        "website": null,
+        "note": "From EPA SDWIS (1800 connections)"
+      },
+      "Lake Butler": {
+        "name": "LAKE BUTLER WTP",
+        "phone": "386-496-3401",
+        "website": null,
+        "note": "From EPA SDWIS (750 connections)"
+      },
+      "Viera": {
+        "name": "BAREFOOT BAY",
+        "phone": "321-633-2091",
+        "website": null,
+        "note": "From EPA SDWIS (5717 connections)"
+      },
+      "Dowling Park": {
+        "name": "ADVENT CHRISTIAN VILLAGE",
+        "phone": "386-658-5550",
+        "website": null,
+        "note": "From EPA SDWIS (297 connections)"
+      },
+      "Malabar": {
+        "name": "CAMELOT RV PARK INC",
+        "phone": "321-724-5396",
+        "website": null,
+        "note": "From EPA SDWIS (181 connections)"
+      },
+      "Scottsdale": {
+        "name": "LAKE GRIFFIN ISLES MHP (2 WTPS)",
+        "phone": "480-863-5222",
+        "website": null,
+        "note": "From EPA SDWIS (488 connections)"
+      },
+      "Micco": {
+        "name": "INDIAN RIVER SHORES MHP",
+        "phone": "954-383-4391",
+        "website": null,
+        "note": "From EPA SDWIS (47 connections)"
+      },
+      "The Villages": {
+        "name": "NORTH SUMTER UTILITY 3WPS",
+        "phone": "352-751-3939",
+        "website": null,
+        "note": "From EPA SDWIS (23796 connections)"
+      },
+      "Mims": {
+        "name": "NORTHGATE MOBILE RANCH",
+        "phone": "321-267-0144",
+        "website": null,
+        "note": "From EPA SDWIS (350 connections)"
+      },
+      "Port Orange": {
+        "name": "PORT ORANGE, CITY OF",
+        "phone": "386-506-5759",
+        "website": null,
+        "note": "From EPA SDWIS (28668 connections)"
+      },
+      "Southfield": {
+        "name": "SUN OUTDOORS SARASOTA",
+        "phone": "941-374-5156",
+        "website": null,
+        "note": "From EPA SDWIS (1519 connections)"
+      },
+      "Melbourne Beach": {
+        "name": "SOUTH BREVARD WATER CO-OP",
+        "phone": "321-952-5043",
+        "website": null,
+        "note": "From EPA SDWIS (502 connections)"
+      },
+      "West Melbourne": {
+        "name": "WEST MELBOURNE WTR SYS(CONSEC)",
+        "phone": "321-727-7700",
+        "website": null,
+        "note": "From EPA SDWIS (12185 connections)"
+      },
+      "Vero Beach": {
+        "name": "INDIAN RIVER COUNTY UTILITIES  (2 WTPS)",
+        "phone": "772-226-1835",
+        "website": null,
+        "note": "From EPA SDWIS (52872 connections)"
+      },
+      "Des Peres": {
+        "name": "SUN RAY ESTATES",
+        "phone": "314-736-4672",
+        "website": null,
+        "note": "From EPA SDWIS (596 connections)"
+      },
+      "Patrick Air Force Base": {
+        "name": "PATRICK SPACE FORCE BASE(CONSEC)",
+        "phone": "321-494-2939",
+        "website": null,
+        "note": "From EPA SDWIS (1815 connections)"
+      },
+      "Fellsmere": {
+        "name": "FELLSMERE, CITY OF",
+        "phone": "772-646-6303",
+        "website": null,
+        "note": "From EPA SDWIS (1283 connections)"
+      },
+      "Astor": {
+        "name": "ST. JOHN'S RIVER UTILITY INC",
+        "phone": "352-759-2260",
+        "website": null,
+        "note": "From EPA SDWIS (1636 connections)"
+      },
+      "New York": {
+        "name": "ELDORADO ESTATES",
+        "phone": "813-440-7650",
+        "website": null,
+        "note": "From EPA SDWIS (131 connections)"
+      },
+      "Leesburg": {
+        "name": "LEESBURG, CITY OF",
+        "phone": "352-728-9835",
+        "website": null,
+        "note": "From EPA SDWIS (13235 connections)"
+      },
+      "Chicago": {
+        "name": "NHC UTILITIES",
+        "phone": "941-624-4511",
+        "website": null,
+        "note": "From EPA SDWIS (594 connections)"
+      },
+      "Clermont": {
+        "name": "CLERMONT EAST WATER SYSTEM (2 WPS)",
+        "phone": "352-394-7178",
+        "website": null,
+        "note": "From EPA SDWIS (15464 connections)"
+      },
+      "Winter Park": {
+        "name": "WINTER PARK, CITY OF (3 WPS)",
+        "phone": "407-599-3542",
+        "website": null,
+        "note": "From EPA SDWIS (23791 connections)"
+      },
+      "Fruitland Park": {
+        "name": "FRUITLAND PARK, CITY OF (3 WPS)",
+        "phone": "352-308-6651",
+        "website": null,
+        "note": "From EPA SDWIS (1901 connections)"
+      },
+      "Eustis": {
+        "name": "EUSTIS, CITY OF (4 WTPS)",
+        "phone": "352-357-5618",
+        "website": null,
+        "note": "From EPA SDWIS (11349 connections)"
+      },
+      "Groveland": {
+        "name": "GROVELAND WATER DEPARTMENT",
+        "phone": "352-973-3664",
+        "website": null,
+        "note": "From EPA SDWIS (4352 connections)"
+      },
+      "Ellenton": {
+        "name": "HIGHLANDS MOBILE HOME PARK",
+        "phone": "941-400-8007",
+        "website": null,
+        "note": "From EPA SDWIS (67 connections)"
+      },
+      "Howey In The Hills": {
+        "name": "HOWEY IN THE HILLS (2 WPS)",
+        "phone": "352-805-0205",
+        "website": null,
+        "note": "From EPA SDWIS (881 connections)"
+      },
+      "Lady Lake": {
+        "name": "LADY LAKE CENTRAL - WPS 1,2,3",
+        "phone": "352-751-1526",
+        "website": null,
+        "note": "From EPA SDWIS (2836 connections)"
+      },
+      "Tavares": {
+        "name": "TAVARES WATER DEPARTMENT (4 WPS)",
+        "phone": "352-742-6222",
+        "website": null,
+        "note": "From EPA SDWIS (9591 connections)"
+      },
+      "Montverde": {
+        "name": "MONTVERDE WATER DEPARTMENT (2WPS)",
+        "phone": "407-469-2681",
+        "website": null,
+        "note": "From EPA SDWIS (619 connections)"
+      },
+      "Minneola": {
+        "name": "MINNEOLA WATER DEPARTMENT (2 WPS)",
+        "phone": "352-394-5330",
+        "website": null,
+        "note": "From EPA SDWIS (7187 connections)"
+      },
+      "Dundee": {
+        "name": "DUNDEE, TOWN OF",
+        "phone": "863-438-8330",
+        "website": null,
+        "note": "From EPA SDWIS (1569 connections)"
+      },
+      "Mount Dora": {
+        "name": "MOUNT DORA, CITY OF (2WPS)",
+        "phone": "352-735-7151",
+        "website": null,
+        "note": "From EPA SDWIS (15808 connections)"
+      },
+      "Englewood": {
+        "name": "ENGLEWOOD WATER DIST",
+        "phone": "941-303-0582",
+        "website": null,
+        "note": "From EPA SDWIS (18794 connections)"
+      },
+      "Mascotte": {
+        "name": "MASCOTTE WATER DEPARTMENT",
+        "phone": "352-429-4429",
+        "website": null,
+        "note": "From EPA SDWIS (3358 connections)"
+      },
+      "Yalaha": {
+        "name": "SPRINGS PARK AREA INC",
+        "phone": "352-324-2765",
+        "website": null,
+        "note": "From EPA SDWIS (167 connections)"
+      },
+      "Casselberry": {
+        "name": "CASSELBERRY, CITY OF (3 WPS)",
+        "phone": "407-262-7725",
+        "website": null,
+        "note": "From EPA SDWIS (15642 connections)"
+      },
+      "Ft Lauderdale": {
+        "name": "FORT LAUDERDALE, CITY OF",
+        "phone": "954-828-7809",
+        "website": null,
+        "note": "From EPA SDWIS (63527 connections)"
+      },
+      "Umatilla": {
+        "name": "UMATILLA WATER WORKS (2 WPS)",
+        "phone": "352-669-3125",
+        "website": null,
+        "note": "From EPA SDWIS (1922 connections)"
+      },
+      "Gilbert": {
+        "name": "WEKIVA FALLS RESORT",
+        "phone": "480-966-5454",
+        "website": null,
+        "note": "From EPA SDWIS (807 connections)"
+      },
+      "Mt Dora": {
+        "name": "BAYWOOD CONDOMINIUMS",
+        "phone": "352-357-3525",
+        "website": null,
+        "note": "From EPA SDWIS (100 connections)"
+      },
+      "Winter Garden": {
+        "name": "WINTER GARDEN WATER DEPT (3 WPS)",
+        "phone": "407-466-1375",
+        "website": null,
+        "note": "From EPA SDWIS (20630 connections)"
+      },
+      "Akron": {
+        "name": "BRIGHTWOOD MANOR MHP",
+        "phone": "330-773-3351",
+        "website": null,
+        "note": "From EPA SDWIS (232 connections)"
+      },
+      "Altamonte Springs": {
+        "name": "ALTAMONTE SPRINGS WATER DEPT (2 WPS)",
+        "phone": "407-571-8673",
+        "website": null,
+        "note": "From EPA SDWIS (13000 connections)"
+      },
+      "Sebring": {
+        "name": "SEBRING WATER ; SEWER SYSTEM",
+        "phone": "863-471-5113",
+        "website": null,
+        "note": "From EPA SDWIS (19504 connections)"
+      },
+      "Grand Island": {
+        "name": "WEDGEWOOD SUBDIVISION",
+        "phone": "352-516-5756",
+        "website": null,
+        "note": "From EPA SDWIS (393 connections)"
+      },
+      "Sorrento": {
+        "name": "THE PARK AT WOLF BRANCH OAKS",
+        "phone": "352-383-7461",
+        "website": null,
+        "note": "From EPA SDWIS (116 connections)"
+      },
+      "Montiverde": {
+        "name": "COLINA BAY",
+        "phone": "352-678-8844",
+        "website": null,
+        "note": "From EPA SDWIS (75 connections)"
+      },
+      "Astatula": {
+        "name": "TOWN OF ASTATULA",
+        "phone": "352-742-1100",
+        "website": null,
+        "note": "From EPA SDWIS (800 connections)"
+      },
+      "Belleview": {
+        "name": "WEST SIDE CONSOLIDATED",
+        "phone": "352-307-6000",
+        "website": null,
+        "note": "From EPA SDWIS (22082 connections)"
+      },
+      "Oakbrook Terrace": {
+        "name": "CLIFTWOOD MOBILE HOME PARK",
+        "phone": "352-368-3887",
+        "website": null,
+        "note": "From EPA SDWIS (105 connections)"
+      },
+      "Apopka": {
+        "name": "APOPKA, CITY OF (5 WTPS)",
+        "phone": "407-703-1731",
+        "website": null,
+        "note": "From EPA SDWIS (26973 connections)"
+      },
+      "Silver Springs": {
+        "name": "WILDERNESS RV PARK ESTATES",
+        "phone": "352-625-1122",
+        "website": null,
+        "note": "From EPA SDWIS (440 connections)"
+      },
+      "Belleveiw": {
+        "name": "STONE OAKS MOBILE HOME PARK",
+        "phone": "352-307-6000",
+        "website": null,
+        "note": "From EPA SDWIS (86 connections)"
+      },
+      "Mcintosh": {
+        "name": "MCINTOSH, TOWN OF",
+        "phone": "352-591-1047",
+        "website": null,
+        "note": "From EPA SDWIS (250 connections)"
+      },
+      "Ocklawaha": {
+        "name": "WOODS AND LAKES SUBDIVISION",
+        "phone": "352-625-4312",
+        "website": null,
+        "note": "From EPA SDWIS (120 connections)"
+      },
+      "San Diego": {
+        "name": "TALL TIMBER TRAVEL TRAILER PARK",
+        "phone": "619-296-9000",
+        "website": null,
+        "note": "From EPA SDWIS (193 connections)"
+      },
+      "Anthony": {
+        "name": "VICTORY MOBILE HOME PARK LLC",
+        "phone": "352-401-9189",
+        "website": null,
+        "note": "From EPA SDWIS (99 connections)"
+      },
+      "Boulder": {
+        "name": "GOLDEN POND VILLAGE MHP",
+        "phone": "303-443-0445",
+        "website": null,
+        "note": "From EPA SDWIS (54 connections)"
+      },
+      "Summerfield": {
+        "name": "HILLTOP ESTATES MHP S/D",
+        "phone": "269-274-4710",
+        "website": null,
+        "note": "From EPA SDWIS (115 connections)"
+      },
+      "Debary": {
+        "name": "SUMMERFIELD PINES",
+        "phone": "845-667-9688",
+        "website": null,
+        "note": "From EPA SDWIS (40 connections)"
+      },
+      "Inglis": {
+        "name": "TOWN OF INGLIS",
+        "phone": "352-447-2203",
+        "website": null,
+        "note": "From EPA SDWIS (903 connections)"
+      },
+      "Fort Mccoy": {
+        "name": "VETERANS OF FOREIGN WARS",
+        "phone": "904-344-0049",
+        "website": null,
+        "note": "From EPA SDWIS (2 connections)"
+      },
+      "Maitland": {
+        "name": "MAITLAND, CITY OF (3 WPS)",
+        "phone": "407-339-6216",
+        "website": null,
+        "note": "From EPA SDWIS (3820 connections)"
+      },
+      "Ocoee": {
+        "name": "OCOEE, CITY OF (2 WPS)",
+        "phone": "407-905-3159",
+        "website": null,
+        "note": "From EPA SDWIS (11834 connections)"
+      },
+      "Eatonville": {
+        "name": "TOWN OF EATONVILLE",
+        "phone": "407-623-8901",
+        "website": null,
+        "note": "From EPA SDWIS (779 connections)"
+      },
+      "Temple Terrace": {
+        "name": "CITY OF TEMPLE TERRACE UTILITY",
+        "phone": "813-506-6413",
+        "website": null,
+        "note": "From EPA SDWIS (10540 connections)"
+      },
+      "Gotha": {
+        "name": "HIGHLAND PARK COMMUNITY",
+        "phone": "407-310-7599",
+        "website": null,
+        "note": "From EPA SDWIS (47 connections)"
+      },
+      "Oakland": {
+        "name": "OAKLAND TOWN OF",
+        "phone": "407-656-1117",
+        "website": null,
+        "note": "From EPA SDWIS (1772 connections)"
+      },
+      "Stuart": {
+        "name": "MARTIN CO UTILITIES",
+        "phone": "772-221-1442",
+        "website": null,
+        "note": "From EPA SDWIS (36509 connections)"
+      },
+      "Skokie": {
+        "name": "PARADISE VILLAGE",
+        "phone": "847-626-0400",
+        "website": null,
+        "note": "From EPA SDWIS (599 connections)"
+      },
+      "Zellwood": {
+        "name": "ZELLWOOD STATION (CONSEC)",
+        "phone": "407-886-4606",
+        "website": null,
+        "note": "From EPA SDWIS (1027 connections)"
+      },
+      "Lake Buena Vista": {
+        "name": "CFTOD CENTRAL (4 WPS)",
+        "phone": "407-824-7448",
+        "website": null,
+        "note": "From EPA SDWIS (739 connections)"
+      },
+      "Oviedo": {
+        "name": "OVIEDO, CITY OF",
+        "phone": "407-971-5648",
+        "website": null,
+        "note": "From EPA SDWIS (13695 connections)"
+      },
+      "Pompano": {
+        "name": "COLONIAL MOBILE HOME PARK",
+        "phone": "407-892-3291",
+        "website": null,
+        "note": "From EPA SDWIS (67 connections)"
+      },
+      "Miami Lakes": {
+        "name": "LAKE MARIAN RESORT",
+        "phone": "443-413-4722",
+        "website": null,
+        "note": "From EPA SDWIS (113 connections)"
+      },
+      "Suffern": {
+        "name": "LAKE RUNNYMEADE MOBILE HOME PARK",
+        "phone": "845-364-9238",
+        "website": null,
+        "note": "From EPA SDWIS (76 connections)"
+      },
+      "St. Cloud": {
+        "name": "ST. CLOUD, CITY OF (3 WPS)",
+        "phone": "407-957-7279",
+        "website": null,
+        "note": "From EPA SDWIS (32452 connections)"
+      },
+      "Ben Lomond": {
+        "name": "KING'S MOBILE HOME PARK",
+        "phone": "831-336-2882",
+        "website": null,
+        "note": "From EPA SDWIS (26 connections)"
+      },
+      "Kenansville": {
+        "name": "LAKE MARIAN SHORES",
+        "phone": "772-485-4793",
+        "website": null,
+        "note": "From EPA SDWIS (82 connections)"
+      },
+      "Davenport": {
+        "name": "DAVENPORT, CITY OF",
+        "phone": "863-419-3300",
+        "website": null,
+        "note": "From EPA SDWIS (5538 connections)"
+      },
+      "Celebration": {
+        "name": "ENTERPRISE CDD (CONSECUTIVE)",
+        "phone": "863-222-1981",
+        "website": null,
+        "note": "From EPA SDWIS (2951 connections)"
+      },
+      "Lake Wales": {
+        "name": "LAKE WALES, CITY OF",
+        "phone": "863-678-4182",
+        "website": null,
+        "note": "From EPA SDWIS (7818 connections)"
+      },
+      "Dallas": {
+        "name": "FLORIDA CAMP INN",
+        "phone": "214-432-0276",
+        "website": null,
+        "note": "From EPA SDWIS (503 connections)"
+      },
+      "Palm City": {
+        "name": "HARBOUR RIDGE",
+        "phone": "772-336-3000",
+        "website": null,
+        "note": "From EPA SDWIS (697 connections)"
+      },
+      "Bellair Bluffs": {
+        "name": "THE HARBOR WATERFRONT RESORT",
+        "phone": "727-686-2700",
+        "website": null,
+        "note": "From EPA SDWIS (180 connections)"
+      },
+      "Indian Lake Estates": {
+        "name": "ILE UTILITIES",
+        "phone": "863-692-1433",
+        "website": null,
+        "note": "From EPA SDWIS (216 connections)"
+      },
+      "Lakeshore": {
+        "name": "GOLD COAST UTILITY",
+        "phone": "863-696-0504",
+        "website": null,
+        "note": "From EPA SDWIS (333 connections)"
+      },
+      "Haines City": {
+        "name": "HAINES CITY, CITY OF",
+        "phone": "863-421-3600",
+        "website": null,
+        "note": "From EPA SDWIS (11245 connections)"
+      },
+      "Westport": {
+        "name": "BEDROCK TOWERWOOD MOBILE HOME COMMUNITY",
+        "phone": "917-905-0222",
+        "website": null,
+        "note": "From EPA SDWIS (330 connections)"
+      },
+      "Lexington": {
+        "name": "LAKE KISSIMMEE MHP",
+        "phone": "859-351-6764",
+        "website": null,
+        "note": "From EPA SDWIS (70 connections)"
+      },
+      "Lake Mary": {
+        "name": "LAKE MARY, CITY OF",
+        "phone": "407-585-1453",
+        "website": null,
+        "note": "From EPA SDWIS (7043 connections)"
+      },
+      "Citra": {
+        "name": "ELDER SPRINGS MOBILE HOME PARK",
+        "phone": "407-760-7130",
+        "website": null,
+        "note": "From EPA SDWIS (23 connections)"
+      },
+      "Geneva": {
+        "name": "MULLETT LAKE WATER ASSOCIATION",
+        "phone": "407-592-8700",
+        "website": null,
+        "note": "From EPA SDWIS (309 connections)"
+      },
+      "Homestead": {
+        "name": "HOMESTEAD, CITY OF",
+        "phone": "305-224-4772",
+        "website": null,
+        "note": "From EPA SDWIS (37822 connections)"
+      },
+      "Winter Springs": {
+        "name": "DOVERA (CONSEC.)",
+        "phone": "407-327-6584",
+        "website": null,
+        "note": "From EPA SDWIS (38 connections)"
+      },
+      "Orange City": {
+        "name": "ORANGE CITY UTILITIES",
+        "phone": "386-775-5444",
+        "website": null,
+        "note": "From EPA SDWIS (4092 connections)"
+      },
+      "Phoenix": {
+        "name": "MEADOWLEA ESTATES",
+        "phone": "602-295-6184",
+        "website": null,
+        "note": "From EPA SDWIS (261 connections)"
+      },
+      "Potomac": {
+        "name": "APPLEGATE MOBILE HOME COMMUNITY",
+        "phone": "561-212-2571",
+        "website": null,
+        "note": "From EPA SDWIS (135 connections)"
+      },
+      "Deland": {
+        "name": "DELAND, CITY OF",
+        "phone": "386-626-7250",
+        "website": null,
+        "note": "From EPA SDWIS (19695 connections)"
+      },
+      "Edgewater": {
+        "name": "EDGEWATER, CITY OF",
+        "phone": "386-424-2490",
+        "website": null,
+        "note": "From EPA SDWIS (12414 connections)"
+      },
+      "Deleon Springs": {
+        "name": "HIDDEN VALLEY MHP",
+        "phone": "386-985-4543",
+        "website": null,
+        "note": "From EPA SDWIS (187 connections)"
+      },
+      "Holly Hill": {
+        "name": "CITY OF HOLLY HILL",
+        "phone": "386-248-9463",
+        "website": null,
+        "note": "From EPA SDWIS (5680 connections)"
+      },
+      "Osteen": {
+        "name": "KOVE ESTATES",
+        "phone": "407-322-6539",
+        "website": null,
+        "note": "From EPA SDWIS (276 connections)"
+      },
+      "New Smyrna Beach": {
+        "name": "CITY OF NEW SMYRNA BEACH",
+        "phone": "386-424-3180",
+        "website": null,
+        "note": "From EPA SDWIS (27404 connections)"
+      },
+      "Ormond Beach": {
+        "name": "ORMOND BEACH",
+        "phone": "386-676-3305",
+        "website": null,
+        "note": "From EPA SDWIS (24700 connections)"
+      },
+      "Ponce Inlet": {
+        "name": "TOWN OF PONCE INLET",
+        "phone": "386-322-6729",
+        "website": null,
+        "note": "From EPA SDWIS (1239 connections)"
+      },
+      "South Daytona": {
+        "name": "SOUTH DAYTONA, CITY OF",
+        "phone": "386-322-3082",
+        "website": null,
+        "note": "From EPA SDWIS (5208 connections)"
+      },
+      "Pierson": {
+        "name": "PIERSON, TOWN OF",
+        "phone": "386-749-2661",
+        "website": null,
+        "note": "From EPA SDWIS (736 connections)"
+      },
+      "Sterling Heights": {
+        "name": "PHOENIX ESTATES",
+        "phone": "586-979-6020",
+        "website": null,
+        "note": "From EPA SDWIS (71 connections)"
+      },
+      "Lake Helen": {
+        "name": "CITY OF LAKE HELEN",
+        "phone": "386-228-2121",
+        "website": null,
+        "note": "From EPA SDWIS (1248 connections)"
+      },
+      "Glenwood": {
+        "name": "LAKE REESER COTTAGES",
+        "phone": "386-734-2874",
+        "website": null,
+        "note": "From EPA SDWIS (5 connections)"
+      },
+      "Dania Beach": {
+        "name": "DANIA BEACH, CITY OF",
+        "phone": "954-924-6808",
+        "website": null,
+        "note": "From EPA SDWIS (4895 connections)"
+      },
+      "Deerfield Beach": {
+        "name": "DEERFIELD BEACH, CITY OF",
+        "phone": "954-480-4432",
+        "website": null,
+        "note": "From EPA SDWIS (14081 connections)"
+      },
+      "Cooper City": {
+        "name": "COOPER CITY",
+        "phone": "954-434-5519",
+        "website": null,
+        "note": "From EPA SDWIS (12005 connections)"
+      },
+      "Davie": {
+        "name": "DAVIE, TOWN OF, #3 ; #5",
+        "phone": "954-327-3767",
+        "website": null,
+        "note": "From EPA SDWIS (9701 connections)"
+      },
+      "Hallandale Beach": {
+        "name": "HALLANDALE BEACH, CITY OF",
+        "phone": "954-457-1623",
+        "website": null,
+        "note": "From EPA SDWIS (5955 connections)"
+      },
+      "Lauderhill": {
+        "name": "LAUDERHILL, CITY OF",
+        "phone": "954-730-2961",
+        "website": null,
+        "note": "From EPA SDWIS (11050 connections)"
+      },
+      "Margate": {
+        "name": "CITY OF MARGATE",
+        "phone": "954-972-0828",
+        "website": null,
+        "note": "From EPA SDWIS (16873 connections)"
+      },
+      "North Lauderdale": {
+        "name": "NORTH LAUDERDALE, CITY OF",
+        "phone": "954-722-0900",
+        "website": null,
+        "note": "From EPA SDWIS (8274 connections)"
+      },
+      "Oakland Park": {
+        "name": "OAKLAND PARK CITY OF",
+        "phone": "954-630-4458",
+        "website": null,
+        "note": "From EPA SDWIS (8700 connections)"
+      },
+      "Weston": {
+        "name": "CITY OF WESTON (INDIAN TRACE)",
+        "phone": "954-385-2600",
+        "website": null,
+        "note": "From EPA SDWIS (17239 connections)"
+      },
+      "Tamarac": {
+        "name": "TAMARAC (WEST), CITY OF",
+        "phone": "954-597-3706",
+        "website": null,
+        "note": "From EPA SDWIS (19351 connections)"
+      },
+      "Wilton Manors": {
+        "name": "WILTON MANORS, CITY OF",
+        "phone": "954-390-2190",
+        "website": null,
+        "note": "From EPA SDWIS (4287 connections)"
+      },
+      "Coconut Creek": {
+        "name": "COCONUT CREEK, CITY OF",
+        "phone": "954-973-6786",
+        "website": null,
+        "note": "From EPA SDWIS (11266 connections)"
+      },
+      "Parkland": {
+        "name": "PARKLAND UTILITIES INC",
+        "phone": "954-753-7902",
+        "website": null,
+        "note": "From EPA SDWIS (789 connections)"
+      },
+      "Bal Harbour": {
+        "name": "BAL HARBOUR VILLAGE",
+        "phone": "786-566-3462",
+        "website": null,
+        "note": "From EPA SDWIS (475 connections)"
+      },
+      "Bay Harbor Islands": {
+        "name": "BAY HARBOR ISLANDS TOWN OF",
+        "phone": "305-866-6241",
+        "website": null,
+        "note": "From EPA SDWIS (881 connections)"
+      },
+      "Florida City": {
+        "name": "FLORIDA CITY",
+        "phone": "305-248-6855",
+        "website": null,
+        "note": "From EPA SDWIS (3545 connections)"
+      },
+      "Indian Creek Village": {
+        "name": "INDIAN CREEK VILLAGE",
+        "phone": "305-866-2446",
+        "website": null,
+        "note": "From EPA SDWIS (62 connections)"
+      },
+      "Miami Beach": {
+        "name": "MIAMI BEACH, CITY OF",
+        "phone": "786-295-6861",
+        "website": null,
+        "note": "From EPA SDWIS (14800 connections)"
+      },
+      "North Bay Village": {
+        "name": "NORTH BAY VILLAGE, CITY OF",
+        "phone": "305-756-7171",
+        "website": null,
+        "note": "From EPA SDWIS (608 connections)"
+      },
+      "North Miami": {
+        "name": "NORTH MIAMI, CITY OF",
+        "phone": "305-893-6511",
+        "website": null,
+        "note": "From EPA SDWIS (22650 connections)"
+      },
+      "Opalocka": {
+        "name": "OPA LOCKA, CITY OF",
+        "phone": "305-953-2828",
+        "website": null,
+        "note": "From EPA SDWIS (4800 connections)"
+      },
+      "Surfside": {
+        "name": "SURFSIDE, TOWN OF",
+        "phone": "305-861-4863",
+        "website": null,
+        "note": "From EPA SDWIS (1400 connections)"
+      },
+      "Medley": {
+        "name": "TOWN OF MEDLEY",
+        "phone": "305-889-1915",
+        "website": null,
+        "note": "From EPA SDWIS (1500 connections)"
+      },
+      "Virginia Gardens": {
+        "name": "VIRGINIA GARDENS, VILLAGE OF",
+        "phone": "305-871-6104",
+        "website": null,
+        "note": "From EPA SDWIS (609 connections)"
+      },
+      "West Miami": {
+        "name": "WEST MIAMI, CITY OF",
+        "phone": "305-266-4214",
+        "website": null,
+        "note": "From EPA SDWIS (2000 connections)"
+      },
+      "Miami Garden": {
+        "name": "NORTH MIAMI BEACH",
+        "phone": "786-586-8395",
+        "website": null,
+        "note": "From EPA SDWIS (33428 connections)"
+      },
+      "Hialeah Gardens": {
+        "name": "HIALEAH GARDENS",
+        "phone": "305-822-3017",
+        "website": null,
+        "note": "From EPA SDWIS (5846 connections)"
+      },
+      "Hobe Sound": {
+        "name": "SOUTH MARTIN REGIONAL UTILITIES",
+        "phone": "772-546-6259",
+        "website": null,
+        "note": "From EPA SDWIS (9000 connections)"
+      },
+      "Indiantown": {
+        "name": "VILLAGE OF INDIANTOWN",
+        "phone": "772-597-8282",
+        "website": null,
+        "note": "From EPA SDWIS (1949 connections)"
+      },
+      "Commerce Township": {
+        "name": "ST. LUCIE MOBILE VILLAGE",
+        "phone": "248-363-6111",
+        "website": null,
+        "note": "From EPA SDWIS (210 connections)"
+      },
+      "Port St Lucie": {
+        "name": "PORT ST LUCIE UTILITIES",
+        "phone": "772-873-6400",
+        "website": null,
+        "note": "From EPA SDWIS (89794 connections)"
+      },
+      "Okeechobee": {
+        "name": "OKEECHOBEE UTILITY AUTHORITY",
+        "phone": "863-763-9460",
+        "website": null,
+        "note": "From EPA SDWIS (9300 connections)"
+      },
+      "Wellington": {
+        "name": "WELLINGTON WTP",
+        "phone": "561-791-4000",
+        "website": null,
+        "note": "From EPA SDWIS (20747 connections)"
+      },
+      "Atlantis": {
+        "name": "ATLANTIS, CITY OF",
+        "phone": "561-965-1744",
+        "website": null,
+        "note": "From EPA SDWIS (1644 connections)"
+      },
+      "Town Of Lake Clark Shores": {
+        "name": "SEMINOLE MANOR SUBDIVISION",
+        "phone": "561-964-1515",
+        "website": null,
+        "note": "From EPA SDWIS (968 connections)"
+      },
+      "Lake Clarke Shores": {
+        "name": "LAKE CLARKE SHORES",
+        "phone": "561-964-1515",
+        "website": null,
+        "note": "From EPA SDWIS (730 connections)"
+      },
+      "Gulfstream": {
+        "name": "GULFSTREAM, TOWN OF",
+        "phone": "561-276-5116",
+        "website": null,
+        "note": "From EPA SDWIS (340 connections)"
+      },
+      "Highland Beach": {
+        "name": "HIGHLAND BEACH WATER PLANT",
+        "phone": "561-278-4548",
+        "website": null,
+        "note": "From EPA SDWIS (572 connections)"
+      },
+      "Riviera Beach": {
+        "name": "RIVIERA BEACH UTILITY DISTRICT, CITY OF",
+        "phone": "561-845-4053",
+        "website": null,
+        "note": "From EPA SDWIS (13547 connections)"
+      },
+      "Lake Worth": {
+        "name": "LAKE WORTH BEACH UTILITIES",
+        "phone": "561-586-1675",
+        "website": null,
+        "note": "From EPA SDWIS (13500 connections)"
+      },
+      "Lantana": {
+        "name": "LANTANA WATER TREATMENT PLANT",
+        "phone": "561-540-5764",
+        "website": null,
+        "note": "From EPA SDWIS (3374 connections)"
+      },
+      "Manalapan": {
+        "name": "MANALAPAN WTP (LEROY C.PASLAY)",
+        "phone": "561-383-2540",
+        "website": null,
+        "note": "From EPA SDWIS (305 connections)"
+      },
+      "Mangonia Park": {
+        "name": "MANGONIA PARK, TOWN OF",
+        "phone": "561-848-1235",
+        "website": null,
+        "note": "From EPA SDWIS (540 connections)"
+      },
+      "Palm Springs": {
+        "name": "PALM SPRINGS, VILLAGE OF",
+        "phone": "561-965-5770",
+        "website": null,
+        "note": "From EPA SDWIS (13197 connections)"
+      },
+      "Tequesta": {
+        "name": "TEQUESTA PWS, VILLAGE OF",
+        "phone": "561-575-6200",
+        "website": null,
+        "note": "From EPA SDWIS (5106 connections)"
+      },
+      "Village Of Golf": {
+        "name": "VILLAGE OF GOLF",
+        "phone": "561-732-0236",
+        "website": null,
+        "note": "From EPA SDWIS (1947 connections)"
+      },
+      "Westlake": {
+        "name": "SEMINOLE IMPROVEMENT DISTRICT",
+        "phone": "954-603-0031",
+        "website": null,
+        "note": "From EPA SDWIS (3750 connections)"
+      },
+      "South Bay": {
+        "name": "PELICAN LAKE WATER PLANT",
+        "phone": "832-521-1880",
+        "website": null,
+        "note": "From EPA SDWIS (69 connections)"
+      },
+      "Fort Pierce": {
+        "name": "FT. PIERCE UTILITIES AUTHORITY",
+        "phone": "772-466-1600",
+        "website": null,
+        "note": "From EPA SDWIS (21587 connections)"
+      },
+      "Ft. Pierce": {
+        "name": "NORTH HUTCHINSON ISLAND",
+        "phone": "772-462-1528",
+        "website": null,
+        "note": "From EPA SDWIS (784 connections)"
+      },
+      "Port Saint Lucie": {
+        "name": "SPANISH LAKES FAIRWAYS",
+        "phone": "772-878-5513",
+        "website": null,
+        "note": "From EPA SDWIS (1560 connections)"
+      },
+      "Jensen Beach": {
+        "name": "NETTLES ISLAND",
+        "phone": "772-229-2930",
+        "website": null,
+        "note": "From EPA SDWIS (1578 connections)"
+      },
+      "Ramsey": {
+        "name": "CYPRESS MHP",
+        "phone": "321-252-8095",
+        "website": null,
+        "note": "From EPA SDWIS (75 connections)"
+      },
+      "Port Charlotte": {
+        "name": "CHARLOTTE COUNTY UTILITIES",
+        "phone": "941-764-4502",
+        "website": null,
+        "note": "From EPA SDWIS (69456 connections)"
+      },
+      "Ochopee": {
+        "name": "BIG CYPRESS  PARK HEADQUARTERS",
+        "phone": "239-695-1101",
+        "website": null,
+        "note": "From EPA SDWIS (22 connections)"
+      },
+      "Everglades City": {
+        "name": "EVERGLADES CITY",
+        "phone": "239-695-3791",
+        "website": null,
+        "note": "From EPA SDWIS (1191 connections)"
+      },
+      "Immokalee": {
+        "name": "IMMOKALEE WATER",
+        "phone": "239-658-3630",
+        "website": null,
+        "note": "From EPA SDWIS (5528 connections)"
+      },
+      "Marco Island": {
+        "name": "MARCO ISLAND UTILITIES (CITY OF)",
+        "phone": "239-389-5181",
+        "website": null,
+        "note": "From EPA SDWIS (10301 connections)"
+      },
+      "Moore Haven": {
+        "name": "MOORE HAVEN WTP",
+        "phone": "863-946-0711",
+        "website": null,
+        "note": "From EPA SDWIS (1448 connections)"
+      },
+      "Sw Ranches": {
+        "name": "RIVER OAKS UTILITIES, LLC",
+        "phone": "954-680-1404",
+        "website": null,
+        "note": "From EPA SDWIS (65 connections)"
+      },
+      "Gold River": {
+        "name": "GRANITE WHISPER CREEK R.V. RESORT LL.",
+        "phone": "863-675-6888",
+        "website": null,
+        "note": "From EPA SDWIS (470 connections)"
+      },
+      "Labelle": {
+        "name": "PORT LABELLE",
+        "phone": "863-675-5222",
+        "website": null,
+        "note": "From EPA SDWIS (4208 connections)"
+      },
+      "Clewiston": {
+        "name": "CLEWISTON, CITY OF",
+        "phone": "863-902-3388",
+        "website": null,
+        "note": "From EPA SDWIS (3852 connections)"
+      },
+      "Lehigh Acres": {
+        "name": "PALM AND PINES MOBILE HOME PK",
+        "phone": "863-675-0286",
+        "website": null,
+        "note": "From EPA SDWIS (118 connections)"
+      },
+      "Estero": {
+        "name": "RIVERBEND MOTORCOACH RESORT",
+        "phone": "607-343-2752",
+        "website": null,
+        "note": "From EPA SDWIS (315 connections)"
+      },
+      "Lorida": {
+        "name": "HIDDEN ACRES ESTATES",
+        "phone": "863-763-8266",
+        "website": null,
+        "note": "From EPA SDWIS (205 connections)"
+      },
+      "Lake Placid": {
+        "name": "LAKE PLACID, TOWN OF",
+        "phone": "863-699-3747",
+        "website": null,
+        "note": "From EPA SDWIS (2007 connections)"
+      },
+      "Bonita Springs": {
+        "name": "BONITA SPRINGS UTILITIES",
+        "phone": "239-992-0711",
+        "website": null,
+        "note": "From EPA SDWIS (30413 connections)"
+      },
+      "Captiva": {
+        "name": "ISLAND WATER ASSOCIATION",
+        "phone": "239-472-1502",
+        "website": null,
+        "note": "From EPA SDWIS (5223 connections)"
+      },
+      "Alva": {
+        "name": "OAK PARK MOBILE HOME VILLAGE",
+        "phone": "603-387-0418",
+        "website": null,
+        "note": "From EPA SDWIS (199 connections)"
+      },
+      "Bokeelia": {
+        "name": "GREATER PINE ISLAND WATER ASSOCIATION",
+        "phone": "239-673-0884",
+        "website": null,
+        "note": "From EPA SDWIS (7184 connections)"
+      },
+      "North Fort Myers": {
+        "name": "OLD BRIDGE VILLAGE MOBILE HOME PARK",
+        "phone": "239-543-4000",
+        "website": null,
+        "note": "From EPA SDWIS (670 connections)"
+      },
+      "Fort Myers Beach": {
+        "name": "TOWN OF FORT MYERS BEACH (BEACH WATER)",
+        "phone": "239-765-0202",
+        "website": null,
+        "note": "From EPA SDWIS (3095 connections)"
+      },
+      "N Ft Myers": {
+        "name": "TAMIAMI VILLAGE MOBILE HOME PARK",
+        "phone": "727-863-5161",
+        "website": null,
+        "note": "From EPA SDWIS (745 connections)"
+      },
+      "Nap[Les": {
+        "name": "NORTH CHARLOTTE WATER WORKS",
+        "phone": "239-273-8700",
+        "website": null,
+        "note": "From EPA SDWIS (82 connections)"
+      },
+      "Placida": {
+        "name": "LITTLE GASPARILLA WATER UTILITY INC",
+        "phone": "941-681-2778",
+        "website": null,
+        "note": "From EPA SDWIS (538 connections)"
+      },
+      "St. Louis": {
+        "name": "ROLLING OAKS SUBDIVISION",
+        "phone": "314-736-4743",
+        "website": null,
+        "note": "From EPA SDWIS (5894 connections)"
+      },
+      "Lecanto": {
+        "name": "CITRUS SPRINGS - PINE RIDGE",
+        "phone": "352-527-7653",
+        "website": null,
+        "note": "From EPA SDWIS (11453 connections)"
+      },
+      "Floral City": {
+        "name": "FLORAL CITY WATER ASSN",
+        "phone": "352-726-3366",
+        "website": null,
+        "note": "From EPA SDWIS (2247 connections)"
+      },
+      "Boca Grande": {
+        "name": "GASPARILLA ISLAND WATER ASSOC",
+        "phone": "941-964-2423",
+        "website": null,
+        "note": "From EPA SDWIS (1778 connections)"
+      },
+      "El Jobean": {
+        "name": "EL JOBEAN WATER ASSOCIATION",
+        "phone": "941-625-5548",
+        "website": null,
+        "note": "From EPA SDWIS (700 connections)"
+      },
+      "Gig Harbor": {
+        "name": "HARBOR LIGHTS MOBILE RESORT",
+        "phone": "253-851-1199",
+        "website": null,
+        "note": "From EPA SDWIS (35 connections)"
+      },
+      "Homosassa": {
+        "name": "HOMOSASSA SPECIAL WATER DISTRICT",
+        "phone": "352-628-3740",
+        "website": null,
+        "note": "From EPA SDWIS (2455 connections)"
+      },
+      "Inverness": {
+        "name": "INVERNESS WATER DEPT",
+        "phone": "352-726-2611",
+        "website": null,
+        "note": "From EPA SDWIS (5139 connections)"
+      },
+      "Crystal River": {
+        "name": "CRYSTAL RIVER, CITY OF",
+        "phone": "352-795-3199",
+        "website": null,
+        "note": "From EPA SDWIS (2920 connections)"
+      },
+      "Plant City": {
+        "name": "CITY OF PLANT CITY UTILITY",
+        "phone": "813-757-9191",
+        "website": null,
+        "note": "From EPA SDWIS (12725 connections)"
+      },
+      "Excelsior": {
+        "name": "CROFT BAY VILLAGE",
+        "phone": "952-474-3354",
+        "website": null,
+        "note": "From EPA SDWIS (25 connections)"
+      },
+      "Dunnellon": {
+        "name": "SOUTH DUNNELLON WATER ASSOC",
+        "phone": "352-795-0974",
+        "website": null,
+        "note": "From EPA SDWIS (150 connections)"
+      },
+      "Royal Oaks": {
+        "name": "THUNDERBIRD MHP",
+        "phone": "248-301-8334",
+        "website": null,
+        "note": "From EPA SDWIS (54 connections)"
+      },
+      "Palm Beach": {
+        "name": "AURORA ACRES",
+        "phone": "386-361-8352",
+        "website": null,
+        "note": "From EPA SDWIS (136 connections)"
+      },
+      "Beverly Hills": {
+        "name": "SANDY OAKS RV ; MHP",
+        "phone": "352-465-7233",
+        "website": null,
+        "note": "From EPA SDWIS (122 connections)"
+      },
+      "Hernando": {
+        "name": "GREENBRIAR I",
+        "phone": "352-746-6770",
+        "website": null,
+        "note": "From EPA SDWIS (205 connections)"
+      },
+      "Hudson": {
+        "name": "HUDSON WATER WORKS",
+        "phone": "727-868-1382",
+        "website": null,
+        "note": "From EPA SDWIS (2500 connections)"
+      },
+      "Arcadia": {
+        "name": "ARCADIA WATER DEPT, CITY OF",
+        "phone": "863-993-5533",
+        "website": null,
+        "note": "From EPA SDWIS (5010 connections)"
+      },
+      "Lakewood Ranch": {
+        "name": "PEACE RIVER REG WATER PLANT",
+        "phone": "941-316-1776",
+        "website": null,
+        "note": "From EPA SDWIS (11 connections)"
+      },
+      "Wauchula": {
+        "name": "WAUCHULA CITY WATER DEPARTMENT",
+        "phone": "863-773-3535",
+        "website": null,
+        "note": "From EPA SDWIS (2421 connections)"
+      },
+      "Zolfo Springs": {
+        "name": "ZOLFO SPRINGS WTP",
+        "phone": "863-735-0405",
+        "website": null,
+        "note": "From EPA SDWIS (605 connections)"
+      },
+      "Bowling Green": {
+        "name": "BOWLING GREEN, CITY OF",
+        "phone": "863-222-1981",
+        "website": null,
+        "note": "From EPA SDWIS (830 connections)"
+      },
+      "Tarpon Springs": {
+        "name": "TARPON SPRINGS WATER SYSTEM",
+        "phone": "727-942-5606",
+        "website": null,
+        "note": "From EPA SDWIS (9730 connections)"
+      },
+      "Spring Hill": {
+        "name": "CAMP-A-WYLE LAKE RESORT",
+        "phone": "352-684-1558",
+        "website": null,
+        "note": "From EPA SDWIS (205 connections)"
+      },
+      "Brooksville": {
+        "name": "HERNANDO CO UTL-WEST",
+        "phone": "352-754-4814",
+        "website": null,
+        "note": "From EPA SDWIS (64570 connections)"
+      },
+      "Avon Park": {
+        "name": "AVON PARK, CITY OF",
+        "phone": "863-452-4400",
+        "website": null,
+        "note": "From EPA SDWIS (11006 connections)"
+      },
+      "Circleville": {
+        "name": "ORANGE BLOSSOM FELLOWSHIP",
+        "phone": "863-452-0707",
+        "website": null,
+        "note": "From EPA SDWIS (92 connections)"
+      },
+      "Brooklyn": {
+        "name": "OAK TREE VILLAGE APTS ; CAMPGROUND",
+        "phone": "347-946-5356",
+        "website": null,
+        "note": "From EPA SDWIS (399 connections)"
+      },
+      "Oak Brook": {
+        "name": "WEEKI WACHEE NORTH TP",
+        "phone": "352-596-0300",
+        "website": null,
+        "note": "From EPA SDWIS (180 connections)"
+      },
+      "Rice Lake": {
+        "name": "ESCAPE TAMPA THE OAKS",
+        "phone": "844-696-3722",
+        "website": null,
+        "note": "From EPA SDWIS (22 connections)"
+      },
+      "Pinellas Park": {
+        "name": "PINELLAS PARK WATER DEPT",
+        "phone": "727-369-5622",
+        "website": null,
+        "note": "From EPA SDWIS (35290 connections)"
+      },
+      "Brandon": {
+        "name": "CITRUS HILLS RVP",
+        "phone": "813-737-4770",
+        "website": null,
+        "note": "From EPA SDWIS (283 connections)"
+      },
+      "Windermere": {
+        "name": "BRIARWOOD MOBILE HOME COMMUNITY",
+        "phone": "407-928-6002",
+        "website": null,
+        "note": "From EPA SDWIS (96 connections)"
+      },
+      "Farmington Hills": {
+        "name": "WINTER HAVEN MANUFACTURED HOME COMMUNITY",
+        "phone": "248-626-0737",
+        "website": null,
+        "note": "From EPA SDWIS (238 connections)"
+      },
+      "Thonotosassa": {
+        "name": "CHARLIES MHP",
+        "phone": "813-986-1483",
+        "website": null,
+        "note": "From EPA SDWIS (109 connections)"
+      },
+      "St Petersburg": {
+        "name": "ST PETERSBURG, CITY OF",
+        "phone": "727-893-7261",
+        "website": null,
+        "note": "From EPA SDWIS (97554 connections)"
+      },
+      "Riverview": {
+        "name": "BRANDON POINTE COMMUNITY",
+        "phone": "813-349-6552",
+        "website": null,
+        "note": "From EPA SDWIS (400 connections)"
+      },
+      "Largo": {
+        "name": "PINELLAS COUNTY UTILITIES",
+        "phone": "727-582-2300",
+        "website": null,
+        "note": "From EPA SDWIS (114525 connections)"
+      },
+      "Ruskin": {
+        "name": "RIVER VISTA RV VILLAGE",
+        "phone": "813-645-6037",
+        "website": null,
+        "note": "From EPA SDWIS (350 connections)"
+      },
+      "Wimauma": {
+        "name": "CHURCH OF GOD CAMPGROUND",
+        "phone": "813-634-7537",
+        "website": null,
+        "note": "From EPA SDWIS (349 connections)"
+      },
+      "Odessa": {
+        "name": "OAK HILL VILLAGE MHP",
+        "phone": "727-372-5919",
+        "website": null,
+        "note": "From EPA SDWIS (222 connections)"
+      },
+      "Port Richey": {
+        "name": "PORT RICHEY WATER DEPT-CITY OF",
+        "phone": "727-816-1912",
+        "website": null,
+        "note": "From EPA SDWIS (2952 connections)"
+      },
+      "Seffner": {
+        "name": "SELF MOBILE HOME SITES",
+        "phone": "813-659-0545",
+        "website": null,
+        "note": "From EPA SDWIS (21 connections)"
+      },
+      "Sammamish": {
+        "name": "TERRACE SQUARE APTS",
+        "phone": "425-533-3890",
+        "website": null,
+        "note": "From EPA SDWIS (9 connections)"
+      },
+      "Kirkland": {
+        "name": "RAINBOW ROCK MHP",
+        "phone": "425-820-6563",
+        "website": null,
+        "note": "From EPA SDWIS (70 connections)"
+      },
+      "Eaton Park": {
+        "name": "HIGHLAND PINES MOBILE HOME PK",
+        "phone": "863-559-1999",
+        "website": null,
+        "note": "From EPA SDWIS (25 connections)"
+      },
+      "Mango": {
+        "name": "THE PALMS AT DOVER MHP",
+        "phone": "813-760-6369",
+        "website": null,
+        "note": "From EPA SDWIS (123 connections)"
+      },
+      "Monsey": {
+        "name": "MEADOWS OF COUNTRYWOOD",
+        "phone": "845-285-0970",
+        "website": null,
+        "note": "From EPA SDWIS (1228 connections)"
+      },
+      "Loxahatchee": {
+        "name": "OAKWOOD CT APTS",
+        "phone": "561-613-7981",
+        "website": null,
+        "note": "From EPA SDWIS (14 connections)"
+      },
+      "Dover": {
+        "name": "MUSA MHP #1",
+        "phone": "813-300-7107",
+        "website": null,
+        "note": "From EPA SDWIS (27 connections)"
+      },
+      "Land O Lakes": {
+        "name": "WOODARD MANOR",
+        "phone": "813-220-6437",
+        "website": null,
+        "note": "From EPA SDWIS (30 connections)"
+      },
+      "Thonotsassa": {
+        "name": "BAY HILLS VILLAGE CONDO ASSOCIATION",
+        "phone": "813-968-5665",
+        "website": null,
+        "note": "From EPA SDWIS (87 connections)"
+      },
+      "Wilmington": {
+        "name": "PARKWOOD ESTATES",
+        "phone": "813-752-2222",
+        "website": null,
+        "note": "From EPA SDWIS (213 connections)"
+      },
+      "Durant": {
+        "name": "PLEASANT GROVE ASSEMBLY OF GOD",
+        "phone": "813-737-1012",
+        "website": null,
+        "note": "From EPA SDWIS (41 connections)"
+      },
+      "Lithia": {
+        "name": "GREEN ACRES",
+        "phone": "813-731-3179",
+        "website": null,
+        "note": "From EPA SDWIS (17 connections)"
+      },
+      "La Jolla": {
+        "name": "CYPRESS MOBILE HOME PARK",
+        "phone": "619-991-5006",
+        "website": null,
+        "note": "From EPA SDWIS (32 connections)"
+      },
+      "Apollo Beach": {
+        "name": "SOUTH SHORE FALLS SOUTH MASTER METER #1",
+        "phone": "813-641-3616",
+        "website": null,
+        "note": "From EPA SDWIS (398 connections)"
+      },
+      "Valrico": {
+        "name": "SKIPPER MHP",
+        "phone": "813-401-4212",
+        "website": null,
+        "note": "From EPA SDWIS (20 connections)"
+      },
+      "Williston": {
+        "name": "WILLISTON WTP",
+        "phone": "352-528-3060",
+        "website": null,
+        "note": "From EPA SDWIS (1700 connections)"
+      },
+      "Yankeetown": {
+        "name": "YANKEETOWN WTP",
+        "phone": "352-447-2511",
+        "website": null,
+        "note": "From EPA SDWIS (426 connections)"
+      },
+      "Palmetto": {
+        "name": "CITY OF PALMETTO WATER DEPT.",
+        "phone": "941-723-4570",
+        "website": null,
+        "note": "From EPA SDWIS (4959 connections)"
+      },
+      "Longboat Key": {
+        "name": "TOWN OF LONGBOAT KEY",
+        "phone": "941-316-1988",
+        "website": null,
+        "note": "From EPA SDWIS (3023 connections)"
+      },
+      "New Port Richey Fl": {
+        "name": "SUNNY SHORE WATER COMPANY",
+        "phone": "352-302-7406",
+        "website": null,
+        "note": "From EPA SDWIS (263 connections)"
+      },
+      "Longwood,": {
+        "name": "DUNNELLON, CITY OF (2 WPS)",
+        "phone": "407-629-6900",
+        "website": null,
+        "note": "From EPA SDWIS (1120 connections)"
+      },
+      "San Antonio": {
+        "name": "SAN ANTONIO WATER DEPT-CITY OF",
+        "phone": "352-588-2127",
+        "website": null,
+        "note": "From EPA SDWIS (325 connections)"
+      },
+      "Dade City": {
+        "name": "DADE CITY WATER DEPT",
+        "phone": "352-523-5050",
+        "website": null,
+        "note": "From EPA SDWIS (5985 connections)"
+      },
+      "Zephyrhills": {
+        "name": "ZEPHYRHILLS CITY OF",
+        "phone": "813-780-0008",
+        "website": null,
+        "note": "From EPA SDWIS (12211 connections)"
+      },
+      "Land O' Lakes": {
+        "name": "PCUD-PASCO COUNTY REGIONAL PWS",
+        "phone": "813-929-2755",
+        "website": null,
+        "note": "From EPA SDWIS (127110 connections)"
+      },
+      "Royal Oak": {
+        "name": "TROPIC BREEZE",
+        "phone": "248-301-8335",
+        "website": null,
+        "note": "From EPA SDWIS (116 connections)"
+      },
+      "Holiday": {
+        "name": "ORANGEWOOD WATER SYSTEM",
+        "phone": "407-468-3268",
+        "website": null,
+        "note": "From EPA SDWIS (1847 connections)"
+      },
+      "St Leo": {
+        "name": "ST. LEO ABBEY WATER DEPT",
+        "phone": "352-588-8624",
+        "website": null,
+        "note": "From EPA SDWIS (25 connections)"
+      },
+      "Palm Harbor": {
+        "name": "INNISBROOK RESORT AND GOLF CLUB",
+        "phone": "727-939-3864",
+        "website": null,
+        "note": "From EPA SDWIS (948 connections)"
+      },
+      "Wesley Chapel": {
+        "name": "TIMBER LAKE ESTATES",
+        "phone": "813-788-6647",
+        "website": null,
+        "note": "From EPA SDWIS (481 connections)"
+      },
+      "St. Leo": {
+        "name": "ST. LEO UNIVERSITY",
+        "phone": "352-588-8362",
+        "website": null,
+        "note": "From EPA SDWIS (15 connections)"
+      },
+      "Belleair": {
+        "name": "BELLEAIR WATER PLANT",
+        "phone": "727-588-3795",
+        "website": null,
+        "note": "From EPA SDWIS (1587 connections)"
+      },
+      "Gulfport": {
+        "name": "GULFPORT WATER SYSTEM",
+        "phone": "727-893-1085",
+        "website": null,
+        "note": "From EPA SDWIS (6474 connections)"
+      },
+      "Dunedin": {
+        "name": "DUNEDIN WATER SYSTEM",
+        "phone": "727-298-2409",
+        "website": null,
+        "note": "From EPA SDWIS (11608 connections)"
+      },
+      "Oldsmar": {
+        "name": "OLDSMAR WATER SYSTEM",
+        "phone": "813-749-1134",
+        "website": null,
+        "note": "From EPA SDWIS (5671 connections)"
+      },
+      "Safety Harbor": {
+        "name": "SAFETY HARBOR WATER DEPT",
+        "phone": "727-724-1550",
+        "website": null,
+        "note": "From EPA SDWIS (6184 connections)"
+      },
+      "New Port Richie": {
+        "name": "ALTURAS WATER, LLC",
+        "phone": "863-904-5574",
+        "website": null,
+        "note": "From EPA SDWIS (60 connections)"
+      },
+      "Auburndale": {
+        "name": "AUBURNDALE, CITY OF",
+        "phone": "863-965-5500",
+        "website": null,
+        "note": "From EPA SDWIS (11741 connections)"
+      },
+      "Babson Park": {
+        "name": "BOB'S LANDING MOBILE HOME PARK",
+        "phone": "863-638-1912",
+        "website": null,
+        "note": "From EPA SDWIS (64 connections)"
+      },
+      "Fort Meade": {
+        "name": "CITY OF FORT MEADE",
+        "phone": "863-285-1100",
+        "website": null,
+        "note": "From EPA SDWIS (2194 connections)"
+      },
+      "Lake Alfred": {
+        "name": "LAKE ALFRED, CITY OF",
+        "phone": "863-291-5274",
+        "website": null,
+        "note": "From EPA SDWIS (2284 connections)"
+      },
+      "Eagle Lake": {
+        "name": "WAHNETA WATER SYSTEM",
+        "phone": "863-324-5389",
+        "website": null,
+        "note": "From EPA SDWIS (2071 connections)"
+      },
+      "Frostproof": {
+        "name": "FROSTPROOF, CITY OF",
+        "phone": "863-635-7855",
+        "website": null,
+        "note": "From EPA SDWIS (1652 connections)"
+      },
+      "Lake Hamilton": {
+        "name": "LAKE HAMILTON, TOWN OF",
+        "phone": "863-439-1910",
+        "website": null,
+        "note": "From EPA SDWIS (670 connections)"
+      },
+      "Mulberry": {
+        "name": "MULBERRY, CITY OF",
+        "phone": "863-425-5492",
+        "website": null,
+        "note": "From EPA SDWIS (1956 connections)"
+      },
+      "Polk City": {
+        "name": "MOUNT OLIVE ESTATES",
+        "phone": "863-984-1375",
+        "website": null,
+        "note": "From EPA SDWIS (2851 connections)"
+      },
+      "New Windsor": {
+        "name": "HORSE CREEK VILLAGE",
+        "phone": "518-417-1550",
+        "website": null,
+        "note": "From EPA SDWIS (48 connections)"
+      },
+      "Emmett": {
+        "name": "FAIRVIEW VILLAGE",
+        "phone": "208-871-3357",
+        "website": null,
+        "note": "From EPA SDWIS (102 connections)"
+      },
+      "Swartz Creek": {
+        "name": "GOOD LIFE RV RESORT",
+        "phone": "863-537-1971",
+        "website": null,
+        "note": "From EPA SDWIS (397 connections)"
+      },
+      "Nokomis": {
+        "name": "KINGS GATE CLUB",
+        "phone": "941-484-6119",
+        "website": null,
+        "note": "From EPA SDWIS (335 connections)"
+      },
+      "Bushnell": {
+        "name": "BUSHNELL, CITY OF (2 WPS)",
+        "phone": "352-418-1643",
+        "website": null,
+        "note": "From EPA SDWIS (1248 connections)"
+      },
+      "Center Hill": {
+        "name": "CENTER HILL WATER DEPT-CITY OF",
+        "phone": "352-793-4431",
+        "website": null,
+        "note": "From EPA SDWIS (350 connections)"
+      },
+      "Webster": {
+        "name": "WEBSTER, CITY OF (2 WPS)",
+        "phone": "352-793-2073",
+        "website": null,
+        "note": "From EPA SDWIS (584 connections)"
+      },
+      "Wildwood": {
+        "name": "WILDWOOD, CITY OF (7 WPS)",
+        "phone": "352-330-1346",
+        "website": null,
+        "note": "From EPA SDWIS (7466 connections)"
+      },
+      "Rochester Hills": {
+        "name": "WEBSTER RV RESORT, LLC.",
+        "phone": "248-521-0521",
+        "website": null,
+        "note": "From EPA SDWIS (260 connections)"
+      },
+      "Lake Panasoffkee": {
+        "name": "LAKE PANASOFFKEE WATER ASSN 2WPS",
+        "phone": "352-793-4236",
+        "website": null,
+        "note": "From EPA SDWIS (1857 connections)"
+      },
+      "Windemere": {
+        "name": "ISLEWORTH",
+        "phone": "321-217-7746",
+        "website": null,
+        "note": "From EPA SDWIS (24 connections)"
+      },
+      "Coleman": {
+        "name": "COLEMAN, CITY OF",
+        "phone": "352-748-1017",
+        "website": null,
+        "note": "From EPA SDWIS (386 connections)"
       }
     }
   }

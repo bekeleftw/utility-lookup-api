@@ -64,8 +64,9 @@ try:
         ZIPMappingGasSource, HIFLDGasSource, CountyDefaultGasSource
     )
     PIPELINE_AVAILABLE = True
+    print(f"[STARTUP] Pipeline available, DATABASE_URL={'set' if os.environ.get('DATABASE_URL') else 'NOT SET'}")
 except ImportError as e:
-    print(f"Pipeline not available: {e}")
+    print(f"[STARTUP] Pipeline not available: {e}")
     PIPELINE_AVAILABLE = False
 
 # Try to load dotenv for API keys
@@ -1191,13 +1192,18 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
     geo_result = geocode_address(address, include_geography=True)
     block_geoid = geo_result.get('block_geoid') if geo_result else None
     
+    database_url = os.environ.get('DATABASE_URL')
+    print(f"  [Internet] block_geoid={block_geoid}, DATABASE_URL={'set' if database_url else 'NOT SET'}")
+    
     # Try PostgreSQL first (Railway deployment)
-    if block_geoid and os.environ.get('DATABASE_URL'):
+    if block_geoid and database_url:
         print(f"  Trying PostgreSQL lookup for block {block_geoid}...")
         pg_result = _lookup_internet_postgres(block_geoid)
         if pg_result and pg_result.get('providers'):
             print(f"  PostgreSQL found {len(pg_result['providers'])} providers")
             return pg_result
+        else:
+            print(f"  PostgreSQL returned no providers for this block")
     
     # Try fast BDC local lookup (SQLite)
     try:

@@ -589,6 +589,84 @@
         "name": "City of Anson Electric",
         "phone": "325-823-3333",
         "website": null
+      },
+      "El Paso Electric Co": {
+        "name": "El Paso Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (148 ZIP codes)"
+      },
+      "Southwestern Electric Power Co": {
+        "name": "Southwestern Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (147 ZIP codes)"
+      },
+      "Southwestern Public Service Co": {
+        "name": "Southwestern Public Service Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (159 ZIP codes)"
+      },
+      "Oncor Electric Delivery": {
+        "name": "Oncor Electric Delivery",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (255 ZIP codes)"
+      },
+      "Entergy Texas Inc": {
+        "name": "Entergy Texas Inc.",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (242 ZIP codes)"
+      },
+      "Bluebonnet Electric Cooperative": {
+        "name": "Bluebonnet Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (29 ZIP codes)"
+      },
+      "Sam Houston Electric Cooperative": {
+        "name": "Sam Houston Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (91 ZIP codes)"
+      },
+      "Bandera Electric Cooperative": {
+        "name": "Bandera Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (61 ZIP codes)"
+      },
+      "Guadalupe Valley Electric Cooperative": {
+        "name": "Guadalupe Valley Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (56 ZIP codes)"
+      },
+      "Pedernales Electric Cooperative": {
+        "name": "Pedernales Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (31 ZIP codes)"
+      },
+      "CoServ Electric": {
+        "name": "CoServ Electric",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (30 ZIP codes)"
+      },
+      "Grayson-Collin Electric Cooperative": {
+        "name": "Grayson-Collin Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (30 ZIP codes)"
+      },
+      "Tri-County Electric Cooperative": {
+        "name": "Tri-County Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (71 ZIP codes)"
       }
     },
     "CA": {
@@ -1006,6 +1084,42 @@
         "name": "Rancho Cucamonga Municipal Utility",
         "phone": "909-477-2700",
         "website": "https://www.cityofrc.us/"
+      },
+      "Pacific Gas & Electric Co": {
+        "name": "Pacific Gas & Electric Co.",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (1140 ZIP codes)"
+      },
+      "Southern California Edison Co": {
+        "name": "Southern California Edison Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (801 ZIP codes)"
+      },
+      "PacifiCorp": {
+        "name": "PacifiCorp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (53 ZIP codes)"
+      },
+      "Liberty Utilities": {
+        "name": "Liberty Utilities",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (23 ZIP codes)"
+      },
+      "San Diego Gas & Electric Co": {
+        "name": "San Diego Gas & Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (210 ZIP codes)"
+      },
+      "Bear Valley Electric Service": {
+        "name": "Bear Valley Electric Service",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
       }
     },
     "FL": {
@@ -1401,6 +1515,42 @@
         "phone": "904-247-6241",
         "website": "https://www.beachesenergy.com/",
         "note": "Serves Jacksonville Beach, Neptune Beach, Atlantic Beach"
+      },
+      "Florida Power & Light Co": {
+        "name": "Florida Power & Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (659 ZIP codes)"
+      },
+      "Clay Electric Cooperative": {
+        "name": "Clay Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (117 ZIP codes)"
+      },
+      "Duke Energy Florida LLC": {
+        "name": "Duke Energy Florida, LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (415 ZIP codes)"
+      },
+      "Tampa Electric Co": {
+        "name": "Tampa Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (136 ZIP codes)"
+      },
+      "Florida Public Utilities Co": {
+        "name": "Florida Public Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (24 ZIP codes)"
+      },
+      "Gulf Power Co": {
+        "name": "Gulf Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (103 ZIP codes)"
       }
     },
     "TN": {
@@ -1609,6 +1759,30 @@
           "37424"
         ],
         "note": "Known for gigabit fiber network"
+      },
+      "Entergy Arkansas LLC": {
+        "name": "Entergy Arkansas LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (91 ZIP codes)"
+      },
+      "Kingsport Power Co": {
+        "name": "Kingsport Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (4 ZIP codes)"
+      },
+      "Middle Tennessee Electric": {
+        "name": "Middle Tennessee Electric",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (44 ZIP codes)"
+      },
+      "Gibson Electric Membership Corporation": {
+        "name": "Gibson Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (97 ZIP codes)"
       }
     },
     "GA": {
@@ -1931,6 +2105,42 @@
         "phone": "706-278-1313",
         "website": "http://www.dutil.com/",
         "note": "Independent municipal utility"
+      },
+      "Georgia Power Co": {
+        "name": "Georgia Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (820 ZIP codes)"
+      },
+      "Cobb Electric Membership Corporation": {
+        "name": "Cobb Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (31 ZIP codes)"
+      },
+      "Sawnee Electric Membership Corporation": {
+        "name": "Sawnee Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (92 ZIP codes)"
+      },
+      "Flint Energies": {
+        "name": "Flint Energies",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (87 ZIP codes)"
+      },
+      "Walton Electric Membership Corporation": {
+        "name": "Walton Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (30 ZIP codes)"
+      },
+      "Jackson Electric Membership Corporation": {
+        "name": "Jackson Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (55 ZIP codes)"
       }
     },
     "NC": {
@@ -2003,6 +2213,36 @@
           "28563",
           "28564"
         ]
+      },
+      "Duke Energy Progress (NC)": {
+        "name": "Duke Energy Progress - (NC)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (498 ZIP codes)"
+      },
+      "Duke Energy Carolinas LLC": {
+        "name": "Duke Energy Carolinas, LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (558 ZIP codes)"
+      },
+      "Randolph Electric Membership Corporation": {
+        "name": "Randolph Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (86 ZIP codes)"
+      },
+      "Piedmont Electric Membership Corporation": {
+        "name": "Piedmont Electric Membership Corporation",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (29 ZIP codes)"
+      },
+      "Virginia Electric & Power Co": {
+        "name": "Virginia Electric & Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (96 ZIP codes)"
       }
     },
     "SC": {
@@ -2032,6 +2272,30 @@
           "29117",
           "29118"
         ]
+      },
+      "Duke Energy Progress (NC)": {
+        "name": "Duke Energy Progress - (NC)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (93 ZIP codes)"
+      },
+      "Duke Energy Carolinas LLC": {
+        "name": "Duke Energy Carolinas, LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (194 ZIP codes)"
+      },
+      "Dominion Energy South Carolina Inc": {
+        "name": "Dominion Energy South Carolina, Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (240 ZIP codes)"
+      },
+      "Lockhart Power Co": {
+        "name": "Lockhart Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (14 ZIP codes)"
       }
     },
     "OH": {
@@ -2064,6 +2328,48 @@
         "name": "AES Ohio",
         "phone": "877-437-6237",
         "website": "https://www.aes-ohio.com/"
+      },
+      "Duke Energy Ohio Inc": {
+        "name": "Duke Energy Ohio Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (140 ZIP codes)"
+      },
+      "Dayton Power & Light Co": {
+        "name": "Dayton Power & Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (218 ZIP codes)"
+      },
+      "Cleveland Electric Illum Co": {
+        "name": "Cleveland Electric Illum Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (100 ZIP codes)"
+      },
+      "Ohio Edison Co": {
+        "name": "Ohio Edison Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (353 ZIP codes)"
+      },
+      "Ohio Power Co": {
+        "name": "Ohio Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (446 ZIP codes)"
+      },
+      "The Toledo Edison Co": {
+        "name": "The Toledo Edison Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (128 ZIP codes)"
+      },
+      "Columbus Division of Power": {
+        "name": "Columbus Division of Power",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (28 ZIP codes)"
       }
     },
     "NE": {
@@ -2260,6 +2566,24 @@
           "electric",
           "water"
         ]
+      },
+      "PacifiCorp": {
+        "name": "PacifiCorp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (46 ZIP codes)"
+      },
+      "Avista Corp": {
+        "name": "Avista Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (119 ZIP codes)"
+      },
+      "Puget Sound Energy Inc": {
+        "name": "Puget Sound Energy Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (250 ZIP codes)"
       }
     },
     "OR": {
@@ -2292,6 +2616,24 @@
           "electric",
           "water"
         ]
+      },
+      "Idaho Power Co": {
+        "name": "Idaho Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (29 ZIP codes)"
+      },
+      "PacifiCorp": {
+        "name": "PacifiCorp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (201 ZIP codes)"
+      },
+      "Portland General Electric Co": {
+        "name": "Portland General Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (151 ZIP codes)"
       }
     },
     "AZ": {
@@ -2360,6 +2702,42 @@
         "name": "City of Willcox Electric",
         "phone": "520-384-4271",
         "website": null
+      },
+      "Ajo Improvement Co": {
+        "name": "Ajo Improvement Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (1 ZIP codes)"
+      },
+      "Arizona Public Service Co": {
+        "name": "Arizona Public Service Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (276 ZIP codes)"
+      },
+      "Arizona Public Service (APS)": {
+        "name": "Arizona Public Service (APS)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (318 ZIP codes)"
+      },
+      "UNS Electric Inc": {
+        "name": "UNS Electric, Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (46 ZIP codes)"
+      },
+      "Tucson Electric Power Co": {
+        "name": "Tucson Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (64 ZIP codes)"
+      },
+      "Morenci Water and Electric": {
+        "name": "Morenci Water and Electric",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (2 ZIP codes)"
       }
     },
     "CO": {
@@ -2438,6 +2816,18 @@
           "80503",
           "80504"
         ]
+      },
+      "Public Service Co of Colorado": {
+        "name": "Public Service Co of Colorado",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (344 ZIP codes)"
+      },
+      "Black Hills Colorado Electric LLC": {
+        "name": "Black Hills Colorado Electric, LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (72 ZIP codes)"
       }
     },
     "UT": {
@@ -2474,6 +2864,12 @@
           "84790",
           "84791"
         ]
+      },
+      "PacifiCorp": {
+        "name": "PacifiCorp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (309 ZIP codes)"
       }
     },
     "PA": {
@@ -2536,6 +2932,72 @@
         "name": "West Penn Power (FirstEnergy)",
         "phone": "800-545-7741",
         "website": "https://www.firstenergycorp.com/"
+      },
+      "Citizens Electric Co (PA)": {
+        "name": "Citizens Electric Co - (PA)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
+      },
+      "PPL Electric Utilities Corp": {
+        "name": "PPL Electric Utilities Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (611 ZIP codes)"
+      },
+      "West Penn Power Company": {
+        "name": "West Penn Power Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (513 ZIP codes)"
+      },
+      "Duquesne Light Co": {
+        "name": "Duquesne Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (152 ZIP codes)"
+      },
+      "Pennsylvania Power Co": {
+        "name": "Pennsylvania Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (84 ZIP codes)"
+      },
+      "Metropolitan Edison Co": {
+        "name": "Metropolitan Edison Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (252 ZIP codes)"
+      },
+      "Pennsylvania Electric Co": {
+        "name": "Pennsylvania Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (653 ZIP codes)"
+      },
+      "PECO Energy Co": {
+        "name": "PECO Energy Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (342 ZIP codes)"
+      },
+      "Pike County Light & Power Co": {
+        "name": "Pike County Light & Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (4 ZIP codes)"
+      },
+      "Wellsborough Electric Co": {
+        "name": "Wellsborough Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
+      },
+      "UGI Utilities Inc": {
+        "name": "UGI Utilities, Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (31 ZIP codes)"
       }
     },
     "NY": {
@@ -2568,6 +3030,54 @@
         "name": "PSEG Long Island",
         "phone": "800-490-0025",
         "website": "https://www.psegliny.com/"
+      },
+      "Central Hudson Gas & Elec Corp": {
+        "name": "Central Hudson Gas & Elec Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (195 ZIP codes)"
+      },
+      "New York State Elec & Gas Corp": {
+        "name": "New York State Elec & Gas Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (684 ZIP codes)"
+      },
+      "Orange & Rockland Utils Inc": {
+        "name": "Orange & Rockland Utils Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (96 ZIP codes)"
+      },
+      "Niagara Mohawk Power Corp": {
+        "name": "Niagara Mohawk Power Corp.",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (873 ZIP codes)"
+      },
+      "Consolidated Edison Co-NY Inc": {
+        "name": "Consolidated Edison Co-NY Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (395 ZIP codes)"
+      },
+      "Fishers Island Utility Co Inc": {
+        "name": "Fishers Island Utility Co Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (1 ZIP codes)"
+      },
+      "Rochester Gas & Electric Corp": {
+        "name": "Rochester Gas & Electric Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (150 ZIP codes)"
+      },
+      "Pennsylvania Electric Co": {
+        "name": "Pennsylvania Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (33 ZIP codes)"
       }
     },
     "IL": {
@@ -2590,6 +3100,30 @@
         "name": "Ameren Illinois",
         "phone": "800-755-5000",
         "website": "https://www.ameren.com/"
+      },
+      "Commonwealth Edison Co": {
+        "name": "Commonwealth Edison Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (587 ZIP codes)"
+      },
+      "Ameren Illinois Company": {
+        "name": "Ameren Illinois Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (893 ZIP codes)"
+      },
+      "MidAmerican Energy Co": {
+        "name": "MidAmerican Energy Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (43 ZIP codes)"
+      },
+      "Mt Carmel Public Utility Co": {
+        "name": "Mt Carmel Public Utility Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
       }
     },
     "MI": {
@@ -2617,6 +3151,42 @@
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com/"
+      },
+      "Alpena Power Co": {
+        "name": "Alpena Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (11 ZIP codes)"
+      },
+      "Consumers Energy Co": {
+        "name": "Consumers Energy Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (643 ZIP codes)"
+      },
+      "DTE Electric Company": {
+        "name": "DTE Electric Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (343 ZIP codes)"
+      },
+      "Indiana Michigan Power Co": {
+        "name": "Indiana Michigan Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (55 ZIP codes)"
+      },
+      "Northern States Power Co": {
+        "name": "Northern States Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (10 ZIP codes)"
+      },
+      "Upper Peninsula Power Company": {
+        "name": "Upper Peninsula Power Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (77 ZIP codes)"
       }
     },
     "VA": {
@@ -2644,6 +3214,30 @@
         "name": "Appalachian Power",
         "phone": "800-956-4237",
         "website": "https://www.appalachianpower.com/"
+      },
+      "Appalachian Power Co": {
+        "name": "Appalachian Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (289 ZIP codes)"
+      },
+      "Virginia Electric & Power Co": {
+        "name": "Virginia Electric & Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (749 ZIP codes)"
+      },
+      "Kentucky Utilities Co": {
+        "name": "Kentucky Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (21 ZIP codes)"
+      },
+      "Rappahannock Electric Cooperative": {
+        "name": "Rappahannock Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (324 ZIP codes)"
       }
     },
     "MA": {
@@ -2666,6 +3260,30 @@
         "name": "Eversource",
         "phone": "800-592-2000",
         "website": "https://www.eversource.com/"
+      },
+      "Fitchburg Gas & Elec Light Co": {
+        "name": "Fitchburg Gas & Elec Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (12 ZIP codes)"
+      },
+      "Massachusetts Electric Co": {
+        "name": "Massachusetts Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (383 ZIP codes)"
+      },
+      "NSTAR Electric Company": {
+        "name": "NSTAR Electric Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (289 ZIP codes)"
+      },
+      "Nantucket Electric Co": {
+        "name": "Nantucket Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (3 ZIP codes)"
       }
     },
     "NJ": {
@@ -2688,6 +3306,726 @@
         "name": "Atlantic City Electric",
         "phone": "800-642-3780",
         "website": "https://www.atlanticcityelectric.com/"
+      },
+      "Atlantic City Electric Co": {
+        "name": "Atlantic City Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (137 ZIP codes)"
+      },
+      "Jersey Central Power & Lt Co": {
+        "name": "Jersey Central Power & Lt Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (298 ZIP codes)"
+      },
+      "Public Service Elec & Gas Co": {
+        "name": "Public Service Elec & Gas Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (362 ZIP codes)"
+      },
+      "Rockland Electric Co": {
+        "name": "Rockland Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (47 ZIP codes)"
+      }
+    },
+    "AL": {
+      "Alabama Power Co": {
+        "name": "Alabama Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (594 ZIP codes)"
+      }
+    },
+    "AK": {
+      "Alaska Electric Light&Power Co": {
+        "name": "Alaska Electric Light&Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (8 ZIP codes)"
+      },
+      "Alaska Power and Telephone Co": {
+        "name": "Alaska Power and Telephone Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (22 ZIP codes)"
+      }
+    },
+    "IA": {
+      "Amana Society Service Co": {
+        "name": "Amana Society Service Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (6 ZIP codes)"
+      },
+      "Interstate Power and Light Co": {
+        "name": "Interstate Power and Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (641 ZIP codes)"
+      },
+      "MidAmerican Energy Co": {
+        "name": "MidAmerican Energy Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (507 ZIP codes)"
+      }
+    },
+    "WV": {
+      "Appalachian Power Co": {
+        "name": "Appalachian Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (491 ZIP codes)"
+      },
+      "Monongahela Power Co": {
+        "name": "Monongahela Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (394 ZIP codes)"
+      },
+      "Black Diamond Power Co": {
+        "name": "Black Diamond Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (6 ZIP codes)"
+      },
+      "The Potomac Edison Company": {
+        "name": "The Potomac Edison Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (21 ZIP codes)"
+      },
+      "Wheeling Power Co": {
+        "name": "Wheeling Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (17 ZIP codes)"
+      }
+    },
+    "AR": {
+      "Entergy Arkansas LLC": {
+        "name": "Entergy Arkansas LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (580 ZIP codes)"
+      },
+      "Oklahoma Gas & Electric Co": {
+        "name": "Oklahoma Gas & Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (50 ZIP codes)"
+      },
+      "Arkansas Valley Electric Cooperative": {
+        "name": "Arkansas Valley Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (38 ZIP codes)"
+      },
+      "Craighead Electric Cooperative": {
+        "name": "Craighead Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (62 ZIP codes)"
+      },
+      "Southwestern Electric Power Co": {
+        "name": "Southwestern Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (99 ZIP codes)"
+      },
+      "Empire District Electric Co": {
+        "name": "Empire District Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
+      }
+    },
+    "MD": {
+      "Baltimore Gas & Electric Co": {
+        "name": "Baltimore Gas & Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (225 ZIP codes)"
+      },
+      "Potomac Electric Power Co": {
+        "name": "Potomac Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (120 ZIP codes)"
+      },
+      "Delmarva Power": {
+        "name": "Delmarva Power",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (122 ZIP codes)"
+      },
+      "The Potomac Edison Company": {
+        "name": "The Potomac Edison Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (104 ZIP codes)"
+      }
+    },
+    "ME": {
+      "Versant Power": {
+        "name": "Versant Power",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (112 ZIP codes)"
+      },
+      "Central Maine Power Co": {
+        "name": "Central Maine Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (338 ZIP codes)"
+      }
+    },
+    "LA": {
+      "Cleco Power LLC": {
+        "name": "Cleco Power LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (179 ZIP codes)"
+      },
+      "Entergy Louisiana LLC": {
+        "name": "Entergy Louisiana LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (325 ZIP codes)"
+      },
+      "Southwestern Electric Power Co": {
+        "name": "Southwestern Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (112 ZIP codes)"
+      },
+      "Entergy New Orleans LLC": {
+        "name": "Entergy New Orleans, LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (70 ZIP codes)"
+      }
+    },
+    "WY": {
+      "Cheyenne Light Fuel & Power d/b/a Black": {
+        "name": "Cheyenne Light Fuel & Power d/b/a Black",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (14 ZIP codes)"
+      },
+      "PacifiCorp": {
+        "name": "PacifiCorp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (94 ZIP codes)"
+      },
+      "Montana-Dakota Utilities Co": {
+        "name": "Montana-Dakota Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (9 ZIP codes)"
+      },
+      "NorthWestern Energy LLC (MT)": {
+        "name": "NorthWestern Energy LLC - (MT)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (13 ZIP codes)"
+      },
+      "Black Hills Power Inc d/b/a": {
+        "name": "Black Hills Power, Inc. d/b/a",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (4 ZIP codes)"
+      }
+    },
+    "CT": {
+      "Connecticut Light & Power Co": {
+        "name": "Connecticut Light & Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (378 ZIP codes)"
+      },
+      "United Illuminating Co": {
+        "name": "United Illuminating Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (78 ZIP codes)"
+      }
+    },
+    "WI": {
+      "Consolidated Water Power Co": {
+        "name": "Consolidated Water Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (5 ZIP codes)"
+      },
+      "Wisconsin Power & Light Co": {
+        "name": "Wisconsin Power & Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (320 ZIP codes)"
+      },
+      "Wisconsin Public Service Corp": {
+        "name": "Wisconsin Public Service Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (189 ZIP codes)"
+      },
+      "Dahlberg Light & Power Co": {
+        "name": "Dahlberg Light & Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (19 ZIP codes)"
+      },
+      "Superior Water and Light Co": {
+        "name": "Superior Water and Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (2 ZIP codes)"
+      },
+      "Northern States Power Co": {
+        "name": "Northern States Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (207 ZIP codes)"
+      },
+      "Northwestern Wisconsin Elec Co": {
+        "name": "Northwestern Wisconsin Elec Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (17 ZIP codes)"
+      },
+      "North Central Power Co Inc": {
+        "name": "North Central Power Co Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (18 ZIP codes)"
+      },
+      "Madison Gas & Electric Co": {
+        "name": "Madison Gas & Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (49 ZIP codes)"
+      },
+      "Wisconsin Electric Power Co": {
+        "name": "Wisconsin Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (262 ZIP codes)"
+      },
+      "Pioneer Power and Light Co": {
+        "name": "Pioneer Power and Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (6 ZIP codes)"
+      },
+      "Westfield Electric Company": {
+        "name": "Westfield Electric Company",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (1 ZIP codes)"
+      }
+    },
+    "DE": {
+      "Delmarva Power": {
+        "name": "Delmarva Power",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (86 ZIP codes)"
+      }
+    },
+    "NM": {
+      "El Paso Electric Co": {
+        "name": "El Paso Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (37 ZIP codes)"
+      },
+      "Public Service Co of NM": {
+        "name": "Public Service Co of NM",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (108 ZIP codes)"
+      },
+      "Southwestern Public Service Co": {
+        "name": "Southwestern Public Service Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (25 ZIP codes)"
+      }
+    },
+    "KS": {
+      "Empire District Electric Co": {
+        "name": "Empire District Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (12 ZIP codes)"
+      },
+      "Evergy Kansas Central Inc": {
+        "name": "Evergy Kansas Central, Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (283 ZIP codes)"
+      },
+      "Evergy Kansas South Inc": {
+        "name": "Evergy Kansas South, Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (160 ZIP codes)"
+      },
+      "Evergy Metro": {
+        "name": "Evergy Metro",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (95 ZIP codes)"
+      }
+    },
+    "MO": {
+      "Empire District Electric Co": {
+        "name": "Empire District Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (107 ZIP codes)"
+      },
+      "Evergy Missouri West": {
+        "name": "Evergy Missouri West",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (191 ZIP codes)"
+      },
+      "Evergy Metro": {
+        "name": "Evergy Metro",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (143 ZIP codes)"
+      },
+      "Union Electric Co (MO)": {
+        "name": "Union Electric Co - (MO)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (519 ZIP codes)"
+      }
+    },
+    "OK": {
+      "Empire District Electric Co": {
+        "name": "Empire District Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (11 ZIP codes)"
+      },
+      "Public Service Co of Oklahoma": {
+        "name": "Public Service Co of Oklahoma",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (284 ZIP codes)"
+      },
+      "Oklahoma Gas & Electric Co": {
+        "name": "Oklahoma Gas & Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (397 ZIP codes)"
+      },
+      "Oklahoma Electric Cooperative": {
+        "name": "Oklahoma Electric Cooperative",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (75 ZIP codes)"
+      },
+      "Rural Electric Cooperative (Oklahoma)": {
+        "name": "Rural Electric Cooperative (Oklahoma)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (49 ZIP codes)"
+      }
+    },
+    "VT": {
+      "Green Mountain Power Corp": {
+        "name": "Green Mountain Power Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (225 ZIP codes)"
+      }
+    },
+    "HI": {
+      "Hawaii Electric Light Co Inc": {
+        "name": "Hawaii Electric Light Co Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (32 ZIP codes)"
+      },
+      "Maui Electric Co Ltd": {
+        "name": "Maui Electric Co Ltd",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (19 ZIP codes)"
+      },
+      "Hawaiian Electric Co Inc": {
+        "name": "Hawaiian Electric Co Inc",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (69 ZIP codes)"
+      }
+    },
+    "ID": {
+      "Idaho Power Co": {
+        "name": "Idaho Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (164 ZIP codes)"
+      },
+      "PacifiCorp": {
+        "name": "PacifiCorp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (74 ZIP codes)"
+      },
+      "Avista Corp": {
+        "name": "Avista Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (77 ZIP codes)"
+      }
+    },
+    "IN": {
+      "Indianapolis Power & Light Co": {
+        "name": "Indianapolis Power & Light Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (82 ZIP codes)"
+      },
+      "Indiana Michigan Power Co": {
+        "name": "Indiana Michigan Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (155 ZIP codes)"
+      },
+      "Duke Energy Indiana LLC": {
+        "name": "Duke Energy Indiana, LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (428 ZIP codes)"
+      },
+      "Northern Indiana Pub Serv Co": {
+        "name": "Northern Indiana Pub Serv Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (162 ZIP codes)"
+      },
+      "Southern Indiana Gas & Elec Co": {
+        "name": "Southern Indiana Gas & Elec Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (73 ZIP codes)"
+      }
+    },
+    "KY": {
+      "Kentucky Utilities Co": {
+        "name": "Kentucky Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (355 ZIP codes)"
+      },
+      "Kentucky Power Co": {
+        "name": "Kentucky Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (230 ZIP codes)"
+      },
+      "South Kentucky RECC": {
+        "name": "South Kentucky RECC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (56 ZIP codes)"
+      },
+      "Farmers Electric Cooperative (Kentucky)": {
+        "name": "Farmers Electric Cooperative (Kentucky)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (32 ZIP codes)"
+      },
+      "Louisville Gas & Electric Co": {
+        "name": "Louisville Gas & Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (97 ZIP codes)"
+      },
+      "Duke Energy Kentucky": {
+        "name": "Duke Energy Kentucky",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (33 ZIP codes)"
+      }
+    },
+    "MT": {
+      "Montana-Dakota Utilities Co": {
+        "name": "Montana-Dakota Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (40 ZIP codes)"
+      },
+      "NorthWestern Energy LLC (MT)": {
+        "name": "NorthWestern Energy LLC - (MT)",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (229 ZIP codes)"
+      },
+      "Avista Corp": {
+        "name": "Avista Corp",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (5 ZIP codes)"
+      },
+      "Black Hills Power Inc d/b/a": {
+        "name": "Black Hills Power, Inc. d/b/a",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (1 ZIP codes)"
+      }
+    },
+    "ND": {
+      "Montana-Dakota Utilities Co": {
+        "name": "Montana-Dakota Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (105 ZIP codes)"
+      },
+      "Otter Tail Power Co": {
+        "name": "Otter Tail Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (209 ZIP codes)"
+      },
+      "Northern States Power Co Minnesota": {
+        "name": "Northern States Power Co - Minnesota",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (21 ZIP codes)"
+      }
+    },
+    "SD": {
+      "Montana-Dakota Utilities Co": {
+        "name": "Montana-Dakota Utilities Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (25 ZIP codes)"
+      },
+      "MidAmerican Energy Co": {
+        "name": "MidAmerican Energy Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
+      },
+      "Northern States Power Co Minnesota": {
+        "name": "Northern States Power Co - Minnesota",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (45 ZIP codes)"
+      },
+      "Otter Tail Power Co": {
+        "name": "Otter Tail Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (57 ZIP codes)"
+      },
+      "Black Hills Power Inc d/b/a": {
+        "name": "Black Hills Power, Inc. d/b/a",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (28 ZIP codes)"
+      }
+    },
+    "MN": {
+      "ALLETE Inc": {
+        "name": "ALLETE, Inc.",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (113 ZIP codes)"
+      },
+      "Northern States Power Co Minnesota": {
+        "name": "Northern States Power Co - Minnesota",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (482 ZIP codes)"
+      },
+      "Otter Tail Power Co": {
+        "name": "Otter Tail Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (154 ZIP codes)"
+      },
+      "Northwestern Wisconsin Elec Co": {
+        "name": "Northwestern Wisconsin Elec Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (7 ZIP codes)"
+      }
+    },
+    "MS": {
+      "Entergy Mississippi LLC": {
+        "name": "Entergy Mississippi LLC",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (238 ZIP codes)"
+      },
+      "Mississippi Power Co": {
+        "name": "Mississippi Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (94 ZIP codes)"
+      }
+    },
+    "RI": {
+      "The Narragansett Electric Co": {
+        "name": "The Narragansett Electric Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (89 ZIP codes)"
+      }
+    },
+    "NV": {
+      "Nevada Power Co": {
+        "name": "Nevada Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (118 ZIP codes)"
+      },
+      "Sierra Pacific Power Co": {
+        "name": "Sierra Pacific Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (97 ZIP codes)"
+      }
+    },
+    "DC": {
+      "Potomac Electric Power Co": {
+        "name": "Potomac Electric Power Co",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (282 ZIP codes)"
+      }
+    },
+    "NH": {
+      "Public Service Co of NH": {
+        "name": "Public Service Co of NH",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (244 ZIP codes)"
+      },
+      "Unitil Energy Systems": {
+        "name": "Unitil Energy Systems",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (39 ZIP codes)"
+      },
+      "Liberty Utilities (Granite State Electri": {
+        "name": "Liberty Utilities (Granite State Electri",
+        "phone": null,
+        "website": null,
+        "note": "From EIA-861 (3 ZIP codes)"
       }
     }
   },

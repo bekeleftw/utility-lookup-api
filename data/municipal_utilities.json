@@ -4582,69 +4582,359 @@
       }
     },
     "MD": {
-      "Baltimore Gas & Electric Co": {
-        "name": "Baltimore Gas & Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (225 ZIP codes)"
+      "Baltimore": {
+        "name": "BGE (Baltimore Gas & Electric)",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
       },
-      "Potomac Electric Power Co": {
-        "name": "Potomac Electric Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (120 ZIP codes)"
+      "Frederick": {
+        "name": "Potomac Edison (FirstEnergy)",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "Delmarva Power": {
+      "Rockville": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Gaithersburg": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Bowie": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Hagerstown": {
+        "name": "Potomac Edison (FirstEnergy)",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Annapolis": {
+        "name": "BGE",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "College Park": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Salisbury": {
         "name": "Delmarva Power",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (122 ZIP codes)"
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
       },
-      "The Potomac Edison Company": {
-        "name": "The Potomac Edison Company",
-        "phone": null,
+      "Laurel": {
+        "name": "BGE",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "Greenbelt": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Cumberland": {
+        "name": "Potomac Edison (FirstEnergy)",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Westminster": {
+        "name": "BGE",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "Hyattsville": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Takoma Park": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Easton": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Cambridge": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Elkton": {
+        "name": "Delmarva Power",
+        "phone": "800-375-7117",
+        "website": "https://www.delmarva.com/"
+      },
+      "Towson": {
+        "name": "BGE",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "Bethesda": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Silver Spring": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Columbia": {
+        "name": "BGE",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "Germantown": {
+        "name": "Pepco",
+        "phone": "202-833-7500",
+        "website": "https://www.pepco.com/"
+      },
+      "Berlin": {
+        "name": "Berlin Electric",
+        "phone": "410-641-2770",
         "website": null,
-        "note": "From EIA-861 (104 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Thurmont": {
+        "name": "Thurmont Municipal Light",
+        "phone": "301-271-7313",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "ME": {
-      "Versant Power": {
-        "name": "Versant Power",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (112 ZIP codes)"
+      "Portland": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
       },
-      "Central Maine Power Co": {
-        "name": "Central Maine Power Co",
-        "phone": null,
+      "Lewiston": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Bangor": {
+        "name": "Versant Power",
+        "phone": "207-973-2000",
+        "website": "https://www.versantpower.com/"
+      },
+      "South Portland": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Auburn": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Biddeford": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Sanford": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Augusta": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Saco": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Westbrook": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Waterville": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Presque Isle": {
+        "name": "Versant Power",
+        "phone": "207-973-2000",
+        "website": "https://www.versantpower.com/"
+      },
+      "Brewer": {
+        "name": "Versant Power",
+        "phone": "207-973-2000",
+        "website": "https://www.versantpower.com/"
+      },
+      "Bath": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Ellsworth": {
+        "name": "Versant Power",
+        "phone": "207-973-2000",
+        "website": "https://www.versantpower.com/"
+      },
+      "Old Town": {
+        "name": "Versant Power",
+        "phone": "207-973-2000",
+        "website": "https://www.versantpower.com/"
+      },
+      "Brunswick": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Rockland": {
+        "name": "Central Maine Power (CMP)",
+        "phone": "800-750-4000",
+        "website": "https://www.cmpco.com/"
+      },
+      "Madison": {
+        "name": "Madison Electric Works",
+        "phone": "207-696-4401",
         "website": null,
-        "note": "From EIA-861 (338 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Kennebunk": {
+        "name": "Kennebunk Light & Power",
+        "phone": "207-985-3311",
+        "website": "https://www.klpd.org/",
+        "note": "Municipal"
+      },
+      "Houlton": {
+        "name": "Houlton Water Company",
+        "phone": "207-532-2259",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "LA": {
-      "Cleco Power LLC": {
-        "name": "Cleco Power LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (179 ZIP codes)"
+      "New Orleans": {
+        "name": "Entergy New Orleans",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-neworleans.com/"
       },
-      "Entergy Louisiana LLC": {
-        "name": "Entergy Louisiana LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (325 ZIP codes)"
+      "Baton Rouge": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
       },
-      "Southwestern Electric Power Co": {
-        "name": "Southwestern Electric Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (112 ZIP codes)"
+      "Shreveport": {
+        "name": "SWEPCO",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
       },
-      "Entergy New Orleans LLC": {
-        "name": "Entergy New Orleans, LLC",
-        "phone": null,
+      "Lafayette": {
+        "name": "Lafayette Utilities System",
+        "phone": "337-291-8280",
+        "website": "https://www.lus.org/",
+        "note": "Municipal"
+      },
+      "Lake Charles": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Kenner": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Bossier City": {
+        "name": "SWEPCO",
+        "phone": "888-216-3523",
+        "website": "https://www.swepco.com/"
+      },
+      "Monroe": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Alexandria": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com/"
+      },
+      "Houma": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Marrero": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "New Iberia": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com/"
+      },
+      "Laplace": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Slidell": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Central": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Ruston": {
+        "name": "Ruston Utilities",
+        "phone": "318-251-8640",
+        "website": "https://www.ruston.org/",
+        "note": "Municipal"
+      },
+      "Sulphur": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Hammond": {
+        "name": "Entergy Louisiana",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
+      },
+      "Natchitoches": {
+        "name": "Natchitoches Utilities",
+        "phone": "318-352-2772",
         "website": null,
-        "note": "From EIA-861 (70 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Pineville": {
+        "name": "Cleco",
+        "phone": "800-622-6537",
+        "website": "https://www.cleco.com/"
+      },
+      "Opelousas": {
+        "name": "Opelousas Light & Water",
+        "phone": "337-948-2500",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Morgan City": {
+        "name": "Morgan City Utilities",
+        "phone": "985-380-4600",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "WY": {
@@ -8442,81 +8732,180 @@
       }
     },
     "LA": {
-      "Statewide": {
-        "name": "Entergy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for LA"
+      "New Orleans": {
+        "name": "Entergy New Orleans Gas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-neworleans.com/"
       },
-      "Entergy": {
-        "name": "Entergy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in LA"
+      "Baton Rouge": {
+        "name": "Entergy Louisiana Gas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-louisiana.com/"
       },
-      "Atmos_Energy": {
-        "name": "Atmos Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in LA"
-      },
-      "CenterPoint_Energy": {
+      "Shreveport": {
         "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in LA"
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Lafayette": {
+        "name": "Lafayette Utilities System Gas",
+        "phone": "337-291-8280",
+        "website": "https://www.lus.org/",
+        "note": "Municipal"
+      },
+      "Lake Charles": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Kenner": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Bossier City": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Monroe": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Alexandria": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Houma": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "New Iberia": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Slidell": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
       }
     },
     "ME": {
-      "Statewide": {
-        "name": "Summit Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for ME"
+      "Portland": {
+        "name": "Summit Natural Gas of Maine",
+        "phone": "800-909-7642",
+        "website": "https://www.summitnaturalgasmaine.com/"
       },
-      "Summit_Natural_Gas": {
-        "name": "Summit Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ME"
+      "Lewiston": {
+        "name": "Summit Natural Gas of Maine",
+        "phone": "800-909-7642",
+        "website": "https://www.summitnaturalgasmaine.com/"
       },
-      "Bangor_Gas": {
+      "Bangor": {
         "name": "Bangor Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ME"
+        "phone": "207-941-6229",
+        "website": "https://www.bangorgas.com/"
       },
-      "Maine_Natural_Gas": {
+      "South Portland": {
+        "name": "Summit Natural Gas of Maine",
+        "phone": "800-909-7642",
+        "website": "https://www.summitnaturalgasmaine.com/"
+      },
+      "Auburn": {
+        "name": "Summit Natural Gas of Maine",
+        "phone": "800-909-7642",
+        "website": "https://www.summitnaturalgasmaine.com/"
+      },
+      "Augusta": {
         "name": "Maine Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ME"
+        "phone": "207-689-6400",
+        "website": "https://www.mainenaturalgas.com/"
+      },
+      "Waterville": {
+        "name": "Summit Natural Gas of Maine",
+        "phone": "800-909-7642",
+        "website": "https://www.summitnaturalgasmaine.com/"
       }
     },
     "MD": {
-      "Statewide": {
-        "name": "BGE",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for MD"
+      "Baltimore": {
+        "name": "BGE Gas",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
       },
-      "BGE": {
-        "name": "BGE",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MD"
-      },
-      "Washington_Gas": {
+      "Frederick": {
         "name": "Washington Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MD"
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
       },
-      "Columbia_Gas_of_Maryland": {
+      "Rockville": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Gaithersburg": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Bowie": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Hagerstown": {
         "name": "Columbia Gas of Maryland",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MD"
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasmd.com/"
+      },
+      "Annapolis": {
+        "name": "BGE Gas",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "College Park": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Salisbury": {
+        "name": "Chesapeake Utilities",
+        "phone": "888-678-2660",
+        "website": "https://www.chpk.com/"
+      },
+      "Laurel": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Cumberland": {
+        "name": "Columbia Gas of Maryland",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasmd.com/"
+      },
+      "Towson": {
+        "name": "BGE Gas",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
+      },
+      "Bethesda": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Silver Spring": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Columbia": {
+        "name": "BGE Gas",
+        "phone": "800-685-0123",
+        "website": "https://www.bge.com/"
       }
     },
     "MN": {

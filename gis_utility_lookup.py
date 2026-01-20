@@ -341,8 +341,66 @@ def query_oklahoma_water(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_arizona_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Arizona ADWR Community Water System Service Areas.
+    Coverage: 96% (657 of 672 active CWS)
+    """
+    url = "https://services.arcgis.com/C34zQ7veRS0V1t04/arcgis/rest/services/CWS_Service_Area/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "ADEQ_ID,CWS_NAME,OWNER_NAME,POPULATION")
+    
+    if result:
+        return {
+            "name": result.get("CWS_NAME", "").strip(),
+            "pws_id": result.get("ADEQ_ID"),
+            "owner": result.get("OWNER_NAME"),
+            "population": result.get("POPULATION"),
+            "confidence": "high",
+            "source": "arizona_adwr"
+        }
+    return None
+
+
+def query_connecticut_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Connecticut DPH Exclusive Service Areas.
+    Coverage: 94% (448 of 477 CWS)
+    Method: Buffered approximation based on service lines
+    """
+    url = "https://maps.ct.gov/arcgis/rest/services/Test_Map_ESAa_MIL1/MapServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "Name,Property")
+    
+    if result:
+        return {
+            "name": result.get("Name", "").strip(),
+            "confidence": "high",
+            "source": "connecticut_dph"
+        }
+    return None
+
+
+def query_delaware_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Delaware PSC CPCN (Certificate of Public Convenience and Necessity) boundaries.
+    Note: Jurisdictional boundaries, not actual service areas
+    """
+    url = "https://enterprise.firstmap.delaware.gov/arcgis/rest/services/Boundaries/DE_CPCN/MapServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "COMPANY1,CPCN_,SERVICE_A,COUNTY")
+    
+    if result:
+        return {
+            "name": result.get("COMPANY1", "").strip(),
+            "cpcn": result.get("CPCN_"),
+            "service_area": result.get("SERVICE_A"),
+            "county": result.get("COUNTY"),
+            "confidence": "medium",  # Jurisdictional, not actual service
+            "source": "delaware_psc"
+        }
+    return None
+
+
 # States with state-specific water APIs (more authoritative than EPA)
-STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM', 'OK'}
+STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM', 'OK', 'AZ', 'CT', 'DE'}
 
 
 def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optional[Dict]:
@@ -407,6 +465,18 @@ def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optio
             return result
     elif state == "OK":
         result = query_oklahoma_water(lat, lon)
+        if result:
+            return result
+    elif state == "AZ":
+        result = query_arizona_water(lat, lon)
+        if result:
+            return result
+    elif state == "CT":
+        result = query_connecticut_water(lat, lon)
+        if result:
+            return result
+    elif state == "DE":
+        result = query_delaware_water(lat, lon)
         if result:
             return result
     elif state == "MS":

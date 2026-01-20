@@ -3398,12 +3398,33 @@
         "phone": "800-334-7661",
         "website": "https://www.comed.com/"
       },
-      "Springfield": {
-        "name": "City Water Light & Power",
-        "phone": "217-789-2121",
-        "website": "https://www.cwlp.com/"
+      "Aurora": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Naperville": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Joliet": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
       },
       "Rockford": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Springfield": {
+        "name": "City Water Light & Power (CWLP)",
+        "phone": "217-789-2121",
+        "website": "https://www.cwlp.com/",
+        "note": "Municipal"
+      },
+      "Elgin": {
         "name": "ComEd",
         "phone": "800-334-7661",
         "website": "https://www.comed.com/"
@@ -3413,29 +3434,195 @@
         "phone": "800-755-5000",
         "website": "https://www.ameren.com/"
       },
-      "Commonwealth Edison Co": {
-        "name": "Commonwealth Edison Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (587 ZIP codes)"
+      "Champaign": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
       },
-      "Ameren Illinois Company": {
-        "name": "Ameren Illinois Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (893 ZIP codes)"
+      "Waukegan": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
       },
-      "MidAmerican Energy Co": {
-        "name": "MidAmerican Energy Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (43 ZIP codes)"
+      "Cicero": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
       },
-      "Mt Carmel Public Utility Co": {
-        "name": "Mt Carmel Public Utility Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+      "Bloomington": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Arlington Heights": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Evanston": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Decatur": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Schaumburg": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Bolingbrook": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Palatine": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Skokie": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Des Plaines": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Orland Park": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Tinley Park": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Oak Lawn": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Berwyn": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Mount Prospect": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Normal": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Wheaton": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Hoffman Estates": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Oak Park": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Downers Grove": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Quincy": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Belleville": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Urbana": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Rock Island": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Moline": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "East St. Louis": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Carbondale": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Galesburg": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Danville": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Alton": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Batavia": {
+        "name": "City of Batavia Electric",
+        "phone": "630-454-2000",
+        "website": "https://www.cityofbatavia.net/",
+        "note": "Municipal"
+      },
+      "Geneva": {
+        "name": "Geneva Electric",
+        "phone": "630-232-1503",
+        "website": "https://www.geneva.il.us/",
+        "note": "Municipal"
+      },
+      "St. Charles": {
+        "name": "St. Charles Electric",
+        "phone": "630-377-4407",
+        "website": "https://www.stcharlesil.gov/",
+        "note": "Municipal"
+      },
+      "Naperville_Muni": {
+        "name": "Naperville Electric",
+        "phone": "630-420-6100",
+        "website": "https://www.naperville.il.us/",
+        "note": "Some areas"
+      },
+      "Rochelle": {
+        "name": "Rochelle Municipal Utilities",
+        "phone": "815-562-4155",
+        "website": "https://www.rfrmu.com/",
+        "note": "Municipal"
       }
     },
     "MI": {
@@ -6571,17 +6758,102 @@
         "phone": "866-556-6001",
         "website": "https://www.peoplesgasdelivery.com/"
       },
-      "Springfield": {
-        "name": "Ameren Illinois Gas",
-        "phone": "800-755-5000",
-        "website": "https://www.ameren.com/"
+      "Aurora": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
+      },
+      "Naperville": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
+      },
+      "Joliet": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
       },
       "Rockford": {
         "name": "Nicor Gas",
         "phone": "888-642-6748",
         "website": "https://www.nicorgas.com/"
       },
+      "Springfield": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Elgin": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
+      },
       "Peoria": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Champaign": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Waukegan": {
+        "name": "North Shore Gas",
+        "phone": "866-556-6004",
+        "website": "https://www.northshoregasdelivery.com/"
+      },
+      "Bloomington": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Arlington Heights": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
+      },
+      "Evanston": {
+        "name": "North Shore Gas",
+        "phone": "866-556-6004",
+        "website": "https://www.northshoregasdelivery.com/"
+      },
+      "Decatur": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Schaumburg": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
+      },
+      "Quincy": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Belleville": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Rock Island": {
+        "name": "MidAmerican Energy Gas",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Moline": {
+        "name": "MidAmerican Energy Gas",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Carbondale": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Galesburg": {
         "name": "Ameren Illinois Gas",
         "phone": "800-755-5000",
         "website": "https://www.ameren.com/"

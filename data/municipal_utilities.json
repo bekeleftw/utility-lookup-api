@@ -3636,56 +3636,193 @@
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com/"
       },
-      "Lansing": {
-        "name": "Lansing Board of Water & Light",
-        "phone": "517-702-6006",
-        "website": "https://www.lbwl.com/"
+      "Warren": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Sterling Heights": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
       "Ann Arbor": {
         "name": "DTE Energy",
         "phone": "800-477-4747",
         "website": "https://www.dteenergy.com/"
       },
+      "Lansing": {
+        "name": "Lansing Board of Water & Light",
+        "phone": "517-702-6006",
+        "website": "https://www.lbwl.com/",
+        "note": "Municipal"
+      },
       "Flint": {
         "name": "Consumers Energy",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com/"
       },
-      "Alpena Power Co": {
-        "name": "Alpena Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (11 ZIP codes)"
+      "Dearborn": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
-      "Consumers Energy Co": {
-        "name": "Consumers Energy Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (643 ZIP codes)"
+      "Livonia": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
-      "DTE Electric Company": {
-        "name": "DTE Electric Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (343 ZIP codes)"
+      "Troy": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
-      "Indiana Michigan Power Co": {
-        "name": "Indiana Michigan Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (55 ZIP codes)"
+      "Westland": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
-      "Northern States Power Co": {
-        "name": "Northern States Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (10 ZIP codes)"
+      "Farmington Hills": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
-      "Upper Peninsula Power Company": {
-        "name": "Upper Peninsula Power Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (77 ZIP codes)"
+      "Kalamazoo": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Wyoming": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Rochester Hills": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Southfield": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Taylor": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Pontiac": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "St. Clair Shores": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Royal Oak": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Novi": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Dearborn Heights": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Battle Creek": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Saginaw": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Kentwood": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "East Lansing": {
+        "name": "Lansing Board of Water & Light",
+        "phone": "517-702-6006",
+        "website": "https://www.lbwl.com/",
+        "note": "Municipal"
+      },
+      "Roseville": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Portage": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Midland": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Muskegon": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Holland": {
+        "name": "Holland Board of Public Works",
+        "phone": "616-355-1500",
+        "website": "https://www.hollandbpw.com/",
+        "note": "Municipal"
+      },
+      "Bay City": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Jackson": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Traverse City": {
+        "name": "Traverse City Light & Power",
+        "phone": "231-922-4940",
+        "website": "https://www.tclp.org/",
+        "note": "Municipal"
+      },
+      "Marquette": {
+        "name": "Marquette Board of Light & Power",
+        "phone": "906-228-0311",
+        "website": "https://www.mblp.org/",
+        "note": "Municipal"
+      },
+      "Wyandotte": {
+        "name": "Wyandotte Municipal Services",
+        "phone": "734-324-7190",
+        "website": "https://www.wyan.org/",
+        "note": "Municipal"
+      },
+      "Coldwater": {
+        "name": "Coldwater Board of Public Utilities",
+        "phone": "517-279-9531",
+        "website": "https://www.coldwater.org/",
+        "note": "Municipal"
+      },
+      "Zeeland": {
+        "name": "Zeeland Board of Public Works",
+        "phone": "616-772-6212",
+        "website": "https://www.zeelandbpw.com/",
+        "note": "Municipal"
       }
     },
     "VA": {
@@ -3760,29 +3897,169 @@
         "phone": "800-592-2000",
         "website": "https://www.eversource.com/"
       },
-      "Fitchburg Gas & Elec Light Co": {
-        "name": "Fitchburg Gas & Elec Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (12 ZIP codes)"
+      "Lowell": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
       },
-      "Massachusetts Electric Co": {
-        "name": "Massachusetts Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (383 ZIP codes)"
+      "Brockton": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
       },
-      "NSTAR Electric Company": {
-        "name": "NSTAR Electric Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (289 ZIP codes)"
+      "New Bedford": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
       },
-      "Nantucket Electric Co": {
-        "name": "Nantucket Electric Co",
-        "phone": null,
+      "Quincy": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Lynn": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Fall River": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Newton": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Lawrence": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Somerville": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Framingham": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Haverhill": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Waltham": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Malden": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Brookline": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Plymouth": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Medford": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Taunton": {
+        "name": "Taunton Municipal Lighting Plant",
+        "phone": "508-824-6976",
+        "website": "https://www.tmlp.com/",
+        "note": "Municipal"
+      },
+      "Chicopee": {
+        "name": "Chicopee Electric Light",
+        "phone": "413-598-8311",
+        "website": "https://www.celd.com/",
+        "note": "Municipal"
+      },
+      "Holyoke": {
+        "name": "Holyoke Gas & Electric",
+        "phone": "413-536-9300",
+        "website": "https://www.hged.com/",
+        "note": "Municipal"
+      },
+      "Westfield": {
+        "name": "Westfield Gas & Electric",
+        "phone": "413-572-0100",
+        "website": "https://www.wgeld.org/",
+        "note": "Municipal"
+      },
+      "Peabody": {
+        "name": "Peabody Municipal Light Plant",
+        "phone": "978-531-5975",
+        "website": "https://www.pmlp.com/",
+        "note": "Municipal"
+      },
+      "Reading": {
+        "name": "Reading Municipal Light Department",
+        "phone": "781-944-1340",
+        "website": "https://www.rmld.com/",
+        "note": "Municipal"
+      },
+      "Wellesley": {
+        "name": "Wellesley Municipal Light Plant",
+        "phone": "781-235-7600",
+        "website": "https://www.wellesleyma.gov/",
+        "note": "Municipal"
+      },
+      "Concord": {
+        "name": "Concord Municipal Light Plant",
+        "phone": "978-318-3100",
+        "website": "https://www.concordma.gov/",
+        "note": "Municipal"
+      },
+      "Braintree": {
+        "name": "Braintree Electric Light Department",
+        "phone": "781-348-2500",
+        "website": "https://www.braintreeelectric.com/",
+        "note": "Municipal"
+      },
+      "Norwood": {
+        "name": "Norwood Light Department",
+        "phone": "781-762-3203",
+        "website": "https://www.norwoodlight.com/",
+        "note": "Municipal"
+      },
+      "Shrewsbury": {
+        "name": "Shrewsbury Electric & Cable",
+        "phone": "508-841-8500",
+        "website": "https://www.shrewsburyelectric.com/",
+        "note": "Municipal"
+      },
+      "Hingham": {
+        "name": "Hingham Municipal Lighting Plant",
+        "phone": "781-749-0134",
+        "website": "https://www.hmlp.com/",
+        "note": "Municipal"
+      },
+      "Hull": {
+        "name": "Hull Municipal Lighting Plant",
+        "phone": "781-925-0050",
         "website": null,
-        "note": "From EIA-861 (3 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Belmont": {
+        "name": "Belmont Municipal Light Department",
+        "phone": "617-993-2800",
+        "website": "https://www.belmontlight.com/",
+        "note": "Municipal"
       }
     },
     "NJ": {
@@ -7662,20 +7939,86 @@
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com/"
       },
-      "Lansing": {
-        "name": "Consumers Energy Gas",
-        "phone": "800-477-5050",
-        "website": "https://www.consumersenergy.com/"
+      "Warren": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Sterling Heights": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
       },
       "Ann Arbor": {
         "name": "DTE Gas",
         "phone": "800-477-4747",
         "website": "https://www.dteenergy.com/"
       },
+      "Lansing": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
       "Flint": {
         "name": "Consumers Energy Gas",
         "phone": "800-477-5050",
         "website": "https://www.consumersenergy.com/"
+      },
+      "Dearborn": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Livonia": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Troy": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Kalamazoo": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Rochester Hills": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Southfield": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Battle Creek": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Saginaw": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Holland": {
+        "name": "Holland Board of Public Works Gas",
+        "phone": "616-355-1500",
+        "website": "https://www.hollandbpw.com/",
+        "note": "Municipal"
+      },
+      "Traverse City": {
+        "name": "SEMCO Energy",
+        "phone": "800-624-2019",
+        "website": "https://www.semcoenergy.com/"
+      },
+      "Marquette": {
+        "name": "SEMCO Energy",
+        "phone": "800-624-2019",
+        "website": "https://www.semcoenergy.com/"
       }
     },
     "VA": {
@@ -7725,6 +8068,73 @@
         "name": "Eversource Gas",
         "phone": "800-592-2000",
         "website": "https://www.eversource.com/"
+      },
+      "Lowell": {
+        "name": "National Grid Gas",
+        "phone": "800-233-5325",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Brockton": {
+        "name": "National Grid Gas",
+        "phone": "800-233-5325",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "New Bedford": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Quincy": {
+        "name": "National Grid Gas",
+        "phone": "800-233-5325",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Lynn": {
+        "name": "National Grid Gas",
+        "phone": "800-233-5325",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Fall River": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Newton": {
+        "name": "National Grid Gas",
+        "phone": "800-233-5325",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Lawrence": {
+        "name": "Columbia Gas of Massachusetts",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasma.com/"
+      },
+      "Somerville": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Framingham": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Pittsfield": {
+        "name": "Berkshire Gas",
+        "phone": "800-292-5012",
+        "website": "https://www.berkshiregas.com/"
+      },
+      "Holyoke": {
+        "name": "Holyoke Gas & Electric",
+        "phone": "413-536-9300",
+        "website": "https://www.hged.com/",
+        "note": "Municipal"
+      },
+      "Westfield": {
+        "name": "Westfield Gas & Electric",
+        "phone": "413-572-0100",
+        "website": "https://www.wgeld.org/",
+        "note": "Municipal"
       }
     },
     "NJ": {

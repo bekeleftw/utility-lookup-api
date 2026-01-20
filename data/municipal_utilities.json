@@ -2874,130 +2874,430 @@
     },
     "PA": {
       "Philadelphia": {
-        "name": "PECO Energy",
-        "phone": "800-494-4000",
-        "website": "https://www.peco.com/"
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Chester": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Norristown": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Media": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "West Chester": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Doylestown": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Lansdale": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Pottstown": {
+        "name": "UGI Utilities Inc",
+        "phone": "800-276-2722",
+        "website": "http://www.ugi.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Coatesville": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "King of Prussia": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Conshohocken": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Ardmore": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Bryn Mawr": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "From PA PUC official EDC list"
       },
       "Pittsburgh": {
-        "name": "Duquesne Light",
-        "phone": "412-393-7100",
-        "website": "https://www.duquesnelight.com/"
+        "name": "Duquesne Light Company",
+        "phone": "888-393-7000",
+        "website": "http://www.duquesnelight.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "McKeesport": {
+        "name": "Duquesne Light Company",
+        "phone": "888-393-7000",
+        "website": "http://www.duquesnelight.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Monroeville": {
+        "name": "Duquesne Light Company",
+        "phone": "888-393-7000",
+        "website": "http://www.duquesnelight.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Bethel Park": {
+        "name": "Duquesne Light Company",
+        "phone": "888-393-7000",
+        "website": "http://www.duquesnelight.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Mount Lebanon": {
+        "name": "Duquesne Light Company",
+        "phone": "888-393-7000",
+        "website": "http://www.duquesnelight.com/",
+        "note": "From PA PUC official EDC list"
       },
       "Allentown": {
         "name": "PPL Electric Utilities",
         "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com/"
-      },
-      "Reading": {
-        "name": "Met-Ed (FirstEnergy)",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com/"
-      },
-      "Scranton": {
-        "name": "PPL Electric Utilities",
-        "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com/"
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
       },
       "Bethlehem": {
         "name": "PPL Electric Utilities",
         "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com/"
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
       },
-      "Lancaster": {
+      "Easton": {
         "name": "PPL Electric Utilities",
         "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com/"
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
       },
-      "Harrisburg": {
+      "Scranton": {
         "name": "PPL Electric Utilities",
         "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com/"
-      },
-      "Erie": {
-        "name": "Penelec (FirstEnergy)",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com/"
-      },
-      "York": {
-        "name": "Met-Ed (FirstEnergy)",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com/"
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
       },
       "Wilkes-Barre": {
         "name": "PPL Electric Utilities",
         "phone": "800-342-5775",
-        "website": "https://www.pplelectric.com/"
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Hazleton": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Lancaster": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Harrisburg": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Lebanon": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Pottsville": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Stroudsburg": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Bloomsburg": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Sunbury": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Shamokin": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "York": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Reading": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Gettysburg": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Chambersburg": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Hanover": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Carlisle": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Erie": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
       "State College": {
-        "name": "West Penn Power (FirstEnergy)",
-        "phone": "800-545-7741",
-        "website": "https://www.firstenergycorp.com/"
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "Citizens Electric Co (PA)": {
-        "name": "Citizens Electric Co - (PA)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+      "Altoona": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "PPL Electric Utilities Corp": {
-        "name": "PPL Electric Utilities Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (611 ZIP codes)"
+      "Johnstown": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "West Penn Power Company": {
-        "name": "West Penn Power Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (513 ZIP codes)"
+      "Meadville": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "Duquesne Light Co": {
-        "name": "Duquesne Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (152 ZIP codes)"
+      "DuBois": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "Pennsylvania Power Co": {
-        "name": "Pennsylvania Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (84 ZIP codes)"
+      "Bradford": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "Metropolitan Edison Co": {
-        "name": "Metropolitan Edison Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (252 ZIP codes)"
+      "Warren": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "Pennsylvania Electric Co": {
-        "name": "Pennsylvania Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (653 ZIP codes)"
+      "Oil City": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "From PA PUC official EDC list"
       },
-      "PECO Energy Co": {
-        "name": "PECO Energy Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (342 ZIP codes)"
+      "Greensburg": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "From PA PUC official EDC list"
       },
-      "Pike County Light & Power Co": {
-        "name": "Pike County Light & Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (4 ZIP codes)"
+      "Washington": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "From PA PUC official EDC list"
       },
-      "Wellsborough Electric Co": {
-        "name": "Wellsborough Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+      "Uniontown": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "From PA PUC official EDC list"
       },
-      "UGI Utilities Inc": {
-        "name": "UGI Utilities, Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (31 ZIP codes)"
+      "Connellsville": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "From PA PUC official EDC list"
+      },
+      "Indiana": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "From PA PUC official EDC list"
+      },
+      "Latrobe": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "From PA PUC official EDC list"
+      },
+      "New Castle": {
+        "name": "Pennsylvania Power Company (Penn Power)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penn_Power/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Sharon": {
+        "name": "Pennsylvania Power Company (Penn Power)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penn_Power/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Hermitage": {
+        "name": "Pennsylvania Power Company (Penn Power)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penn_Power/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Grove City": {
+        "name": "Pennsylvania Power Company (Penn Power)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penn_Power/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Lewisburg": {
+        "name": "Citizens Electric of Lewisburg",
+        "phone": "570-524-2231",
+        "website": "http://www.citizenselectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Wellsboro": {
+        "name": "Wellsboro Electric Company",
+        "phone": "570-724-3516",
+        "website": "http://wellsboroelectric.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Milford": {
+        "name": "Pike County Light & Power",
+        "phone": "855-855-2433",
+        "website": "http://pclpeg.com/",
+        "note": "From PA PUC official EDC list"
+      },
+      "Citizens_Electric_of_Lewisburg": {
+        "name": "Citizens Electric of Lewisburg",
+        "phone": "570-524-2231",
+        "website": "http://www.citizenselectric.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "Duquesne_Light_Company": {
+        "name": "Duquesne Light Company",
+        "phone": "888-393-7000",
+        "website": "http://www.duquesnelight.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "Pennsylvania_Power_Company_Penn_Power": {
+        "name": "Pennsylvania Power Company (Penn Power)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penn_Power/",
+        "note": "PA PUC licensed EDC"
+      },
+      "Metropolitan_Edison_Company_Met-Ed": {
+        "name": "Metropolitan Edison Company (Met-Ed)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Met-Ed/",
+        "note": "PA PUC licensed EDC"
+      },
+      "Pennsylvania_Electric_Company_Penelec": {
+        "name": "Pennsylvania Electric Company (Penelec)",
+        "phone": "888-544-4877",
+        "website": "http://www.firstenergycorp.com/Penelec/",
+        "note": "PA PUC licensed EDC"
+      },
+      "PPL_Electric_Utilities": {
+        "name": "PPL Electric Utilities",
+        "phone": "800-342-5775",
+        "website": "http://www.pplelectric.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "PECO_Energy_Company": {
+        "name": "PECO Energy Company",
+        "phone": "800-841-4141",
+        "website": "http://www.peco.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "Pike_County_Light_&_Power": {
+        "name": "Pike County Light & Power",
+        "phone": "855-855-2433",
+        "website": "http://pclpeg.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "UGI_Utilities_Inc": {
+        "name": "UGI Utilities Inc",
+        "phone": "800-276-2722",
+        "website": "http://www.ugi.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "Wellsboro_Electric_Company": {
+        "name": "Wellsboro Electric Company",
+        "phone": "570-724-3516",
+        "website": "http://wellsboroelectric.com/",
+        "note": "PA PUC licensed EDC"
+      },
+      "West_Penn_Power": {
+        "name": "West Penn Power",
+        "phone": "888-544-4877",
+        "website": "https://www.firstenergycorp.com/west_penn_power.html",
+        "note": "PA PUC licensed EDC"
       }
     },
     "NY": {

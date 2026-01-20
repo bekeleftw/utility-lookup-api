@@ -102,11 +102,33 @@ def query_epa_water_service_area(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_texas_water_service_area(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query TWDB Public Water Service Areas - the authoritative source for Texas retail water.
+    
+    This is self-reported by utilities via the Water User Survey program and represents
+    actual retail service boundaries (not just legal CCN territories).
+    """
+    url = "https://services.twdb.texas.gov/arcgis/rest/services/PWS/Public_Water_Service_Areas/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "PWSName,PWSId,PWSCode,Active")
+    
+    if result and result.get("Active") == 1:
+        return {
+            "name": result.get("PWSName", "").strip(),
+            "pws_id": result.get("PWSId"),
+            "pws_code": result.get("PWSCode"),
+            "confidence": "high",
+            "source": "twdb_water_service_areas"
+        }
+    return None
+
+
 def query_texas_water_ccn(lat: float, lon: float) -> Optional[Dict]:
     """
     Query Texas PUC Water CCN (Certificate of Convenience and Necessity).
     
-    Texas has authoritative water service territory data from PUCT.
+    CCN boundaries are legal service territories but may differ from actual service.
+    Used as fallback if TWDB service areas don't have coverage.
     """
     url = "https://services.twdb.texas.gov/arcgis/rest/services/PWS/Public_Utility_Commission_CCN_Water/MapServer/0/query"
     result = _query_arcgis_point(url, lat, lon, "UTILITY,CCN_NO,COUNTY,STATUS")
@@ -117,7 +139,7 @@ def query_texas_water_ccn(lat: float, lon: float) -> Optional[Dict]:
             "ccn_number": result.get("CCN_NO"),
             "county": result.get("COUNTY"),
             "status": result.get("STATUS"),
-            "confidence": "high",
+            "confidence": "medium",
             "source": "texas_puc_ccn"
         }
     return None
@@ -162,6 +184,11 @@ def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optio
     """
     # Try state-specific sources first
     if state == "TX":
+        # Tier 1: TWDB Public Water Service Areas (self-reported retail boundaries)
+        result = query_texas_water_service_area(lat, lon)
+        if result:
+            return result
+        # Tier 2: Texas PUC CCN (legal service territories)
         result = query_texas_water_ccn(lat, lon)
         if result:
             return result

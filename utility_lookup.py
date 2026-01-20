@@ -156,7 +156,7 @@ def geocode_with_census(address: str, include_geography: bool = False) -> Option
         params = {
             "address": address,
             "benchmark": "Public_AR_Current",
-            "vintage": "Current_Current",
+            "vintage": "Census2020_Current",  # Need this vintage to get Census Blocks
             "format": "json"
         }
     else:
@@ -211,6 +211,10 @@ def geocode_with_census(address: str, include_geography: bool = False) -> Option
             states = geo.get("States", [])
             if states:
                 result["state"] = states[0].get("STUSAB")
+            # Extract Census Block GEOID for internet provider lookup
+            blocks = geo.get("Census Blocks", [])
+            if blocks:
+                result["block_geoid"] = blocks[0].get("GEOID")
         
         return result
         

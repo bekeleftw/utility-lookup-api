@@ -100,14 +100,7 @@ class LookupPipeline:
         # 4. Select best result - use SmartSelector if sources disagree
         sources_disagree = cv_result and not cv_result.get('sources_agreed', True)
         
-        # SCALABLE FIX: Skip SmartSelector for municipal vs special_district water conflicts
-        # Texas cities typically take over MUD services but MUD boundaries remain in TCEQ data
-        # In this case, trust municipal over special_district without asking OpenAI
-        has_municipal_water = any(r.source_name == 'municipal_water' and r.utility_name for r in valid_results)
-        has_special_district = any(r.source_name == 'special_district_water' and r.utility_name for r in valid_results)
-        skip_smart_selector = has_municipal_water and has_special_district
-        
-        if sources_disagree and self._smart_selector and not skip_smart_selector:
+        if sources_disagree and self._smart_selector:
             # Use OpenAI Smart Selector for disagreement resolution
             selection = self._smart_selector.select_utility(context, valid_results)
             
@@ -143,12 +136,10 @@ class LookupPipeline:
         
         # 7. SERP verification - only when sources have a meaningful disagreement
         # Simple rule: clear majority = done, close split = ask the internet
-        # But skip SERP for municipal vs special_district water conflicts (scalable fix)
         needs_serp = (
             self.enable_serp_verification and 
             not result.sources_agreed and
-            len(result.disagreeing_sources) >= len(result.agreeing_sources) and  # True tie or minority wins
-            not skip_smart_selector  # Don't SERP verify municipal vs special_district conflicts
+            len(result.disagreeing_sources) >= len(result.agreeing_sources)  # True tie or minority wins
         )
         if needs_serp:
             result = self._verify_with_serp(result, context)
@@ -468,11 +459,12 @@ class LookupPipeline:
                             result.serp_verified = True
                             break
                     else:
-                        # SERP found something new - use it directly
-                        result.utility_name = serp_result.serp_utility
-                        result.source = 'serp'
-                        result.confidence_score = 75  # SERP-only
-                        result.confidence_level = 'high'
+                        # SERP found something new that doesn't match any source
+                        # DON'T override SmartSelector's decision - SERP web scraping is less reliable
+                        # than our curated data sources. Just note the discrepancy.
+                        result.serp_verified = False
+                        result.serp_utility = serp_result.serp_utility
+                        # Keep the SmartSelector's decision but note SERP disagreed
             
         except Exception as e:
             # SERP failed - keep original result but note the failure

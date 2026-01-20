@@ -227,7 +227,7 @@ class SmartSelector:
         
         utility_type = context.utility_type.value
         
-        prompt = f"""You are a utility service territory expert. Given an address and results from multiple data sources, determine the most likely correct {utility_type} utility provider.
+        prompt = f"""You are a utility service territory expert with deep knowledge of how utilities work in the United States. Given an address and conflicting results from data sources, use your expertise to determine the correct {utility_type} utility provider.
 
 ADDRESS:
 {context.address}
@@ -236,17 +236,33 @@ ADDRESS:
 SOURCE RESULTS:
 {sources_text}
 
-CRITICAL RULES:
-1. **Municipal utilities are authoritative for their city** - If the address is IN a city that has a municipal utility with that city's name, the municipal is correct. "Philadelphia Gas Works" serves Philadelphia, "Austin Energy" serves Austin, "Seattle City Light" serves Seattle.
-2. **Municipal utilities ONLY serve their specific city limits** - "City of Homestead" only serves Homestead, NOT Miami. If the address city doesn't match the municipal utility's city, DO NOT select the municipal.
-3. **For gas: PECO is electric-only in PA** - Philadelphia Gas Works (PGW) is the gas utility for Philadelphia. PECO provides electric service, not gas, in Philadelphia city proper.
-4. **Large IOUs serve most of the region** - Florida Power & Light serves most of South Florida, Duke Energy serves most of NC. These are the default unless the address is specifically within a municipal territory.
-5. **Aliases are common** - "FPL" = "Florida Power & Light", "BGE" = "Baltimore Gas & Electric", "PSE&G" = "Public Service Electric & Gas", "Dominion Energy" = "Virginia Electric & Power Co"
-6. **State GIS and EIA data are authoritative** - Trust state_gis and eia sources over hifld for boundary accuracy.
-7. **Ignore garbage results** - Skip results like "OR ELECTRIC", "TOWN OF X - (STATE)", or very short names unless they match the address city exactly.
+THINK STEP BY STEP:
 
-Respond in JSON format ONLY (no markdown):
-{{"selected_utility": "exact utility name to use", "selected_source": "which source you're trusting", "confidence": 0.XX, "sources_agree": false, "dissenting_sources": ["list", "of", "sources", "that", "disagree"], "reasoning": "Brief explanation of your decision"}}"""
+1. **What type of area is this?** Is it urban, suburban, rural? Inside city limits or unincorporated? This affects which utility type is likely.
+
+2. **What do you know about utilities in this region?** Use your knowledge of:
+   - Major utilities in {context.state} (IOUs, co-ops, municipal)
+   - How utility territories work in this state
+   - Common utility structures (e.g., Texas has retail choice for electric but not for transmission)
+
+3. **Evaluate each source result:**
+   - municipal_water: City-owned utilities. Authoritative IF the address is within that city's limits.
+   - special_district_water: MUDs, water districts. IMPORTANT: In Texas, MUDs (Municipal Utility Districts) are often created for new developments but cities frequently take over service when areas are annexed. MUD boundary data from TCEQ may be stale - the MUD legally exists but the city provides actual service.
+   - state_gis: State GIS boundary data. Usually accurate for electric/gas service territories.
+   - hifld: Federal dataset. Good coverage but sometimes outdated.
+   - eia_861: EIA utility data. Good for identifying which utilities serve which areas.
+   - electric_coop: Rural electric cooperatives. Authoritative for their service areas.
+
+4. **Apply domain knowledge:**
+   - Municipal utilities serve their city limits (Austin Energy serves Austin, not Round Rock)
+   - When a city has a municipal utility AND a special district (MUD/PUD) covers the same area, the city usually provides actual service
+   - Large IOUs (Duke, FPL, PG&E, etc.) serve most of their regions except where municipals/co-ops exist
+   - Deregulated states (TX electric, PA, etc.) have separate retail vs delivery companies
+
+5. **Make your decision** based on which result is most likely correct given the address location and your utility knowledge.
+
+Respond in JSON format ONLY:
+{{"selected_utility": "exact utility name", "selected_source": "source_name", "confidence": 0.XX, "sources_agree": false, "dissenting_sources": ["sources", "that", "disagree"], "reasoning": "Your step-by-step reasoning explaining WHY this utility serves this address"}}"""
 
         try:
             import requests
@@ -260,11 +276,11 @@ Respond in JSON format ONLY (no markdown):
                 json={
                     "model": self.model,
                     "messages": [
-                        {"role": "system", "content": "You are a utility service territory analyst. Always respond with valid JSON only, no markdown."},
+                        {"role": "system", "content": "You are a utility service territory expert with deep knowledge of US utility structures, deregulation, municipal utilities, co-ops, MUDs, and how service territories work. Think through problems carefully using your domain expertise. Always respond with valid JSON only."},
                         {"role": "user", "content": prompt}
                     ],
-                    "temperature": 0.1,
-                    "max_tokens": 500
+                    "temperature": 0.2,  # Slightly higher for more reasoning
+                    "max_tokens": 800   # More room for step-by-step reasoning
                 },
                 timeout=15
             )

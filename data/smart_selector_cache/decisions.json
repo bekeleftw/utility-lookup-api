@@ -538,5 +538,29 @@
     ],
     "reasoning": "The address is in Cheyenne, which has a municipal utility, Cheyenne Light Fuel & Power. The EIA source is trusted over others due to its higher confidence and the municipal utility's authoritative status for the city.",
     "timestamp": 1768884740.615157
+  },
+  "750:electric:21bf56a7": {
+    "utility_name": "CoServ Electric",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state_gis source indicates that CoServ Electric Cooperative, Inc. serves the area, and it has the highest confidence level among the sources. Although there are dissenting sources, they have lower confidence levels and do not align with the authoritative state GIS data.",
+    "timestamp": 1768927625.190135
+  },
+  "750:gas:cd9df6f2": {
+    "utility_name": "CoServ Gas",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas",
+      "hifld_gas"
+    ],
+    "reasoning": "CoServ Gas is the municipal gas provider for the area, and the address is within the jurisdiction of Little Elm, which has a municipal utility. The confidence in this source is significantly higher than the others.",
+    "timestamp": 1768927922.3410702
   }
 }

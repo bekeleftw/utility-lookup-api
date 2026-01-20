@@ -2010,105 +2010,187 @@
       }
     },
     "NC": {
+      "Charlotte": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Raleigh": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Greensboro": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Durham": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Winston-Salem": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
       "Fayetteville": {
-        "name": "Fayetteville Public Works Commission (PWC)",
+        "name": "Fayetteville Public Works Commission",
         "phone": "910-483-1382",
-        "website": "https://www.faypwc.com",
-        "zip_codes": [
-          "28301",
-          "28302",
-          "28303",
-          "28304",
-          "28305",
-          "28306",
-          "28307",
-          "28308",
-          "28309",
-          "28310",
-          "28311",
-          "28312",
-          "28314"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "website": "https://www.faypwc.com/",
+        "note": "Municipal"
+      },
+      "Cary": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Wilmington": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "High Point": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Concord": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Asheville": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Gastonia": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Jacksonville": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Chapel Hill": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Huntersville": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Apex": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Hickory": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Wake Forest": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Kannapolis": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Indian Trail": {
+        "name": "Union Power Cooperative",
+        "phone": "704-289-3145",
+        "website": "https://www.unionpower.com/",
+        "note": "Co-op"
+      },
+      "Mooresville": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Burlington": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
       },
       "Wilson": {
         "name": "Wilson Energy",
-        "phone": "252-399-2323",
-        "website": "https://www.wilsonnc.org",
-        "zip_codes": [
-          "27893",
-          "27894",
-          "27895",
-          "27896"
-        ]
+        "phone": "252-399-2424",
+        "website": "https://www.wilsonnc.org/",
+        "note": "Municipal"
+      },
+      "Rocky Mount": {
+        "name": "Rocky Mount Electric",
+        "phone": "252-467-4800",
+        "website": "https://www.rockymountnc.gov/",
+        "note": "Municipal"
       },
       "Greenville": {
         "name": "Greenville Utilities Commission",
         "phone": "252-752-7166",
-        "website": "https://www.gaborrecycles.com",
-        "zip_codes": [
-          "27833",
-          "27834",
-          "27835",
-          "27836",
-          "27858"
-        ]
-      },
-      "Rocky Mount": {
-        "name": "Rocky Mount Public Utilities",
-        "phone": "252-972-1200",
-        "website": "https://www.rockymountnc.gov",
-        "zip_codes": [
-          "27801",
-          "27802",
-          "27803",
-          "27804"
-        ]
+        "website": "https://www.gaborneighbor.com/",
+        "note": "Municipal"
       },
       "New Bern": {
-        "name": "New Bern Electric",
-        "phone": "252-639-7501",
-        "website": "https://www.newbernnc.gov",
-        "zip_codes": [
-          "28560",
-          "28561",
-          "28562",
-          "28563",
-          "28564"
-        ]
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
       },
-      "Duke Energy Progress (NC)": {
-        "name": "Duke Energy Progress - (NC)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (498 ZIP codes)"
+      "Salisbury": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
       },
-      "Duke Energy Carolinas LLC": {
-        "name": "Duke Energy Carolinas, LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (558 ZIP codes)"
+      "Statesville": {
+        "name": "Duke Energy Carolinas",
+        "phone": "800-777-9898",
+        "website": "https://www.duke-energy.com/"
       },
-      "Randolph Electric Membership Corporation": {
-        "name": "Randolph Electric Membership Corporation",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (86 ZIP codes)"
+      "Goldsboro": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
       },
-      "Piedmont Electric Membership Corporation": {
-        "name": "Piedmont Electric Membership Corporation",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (29 ZIP codes)"
+      "Sanford": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
       },
-      "Virginia Electric & Power Co": {
-        "name": "Virginia Electric & Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (96 ZIP codes)"
+      "Lumberton": {
+        "name": "Lumbee River EMC",
+        "phone": "800-683-5571",
+        "website": "https://www.lumbeeriver.com/",
+        "note": "Co-op"
+      },
+      "Kinston": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Lexington": {
+        "name": "City of Lexington Electric",
+        "phone": "336-248-3960",
+        "website": "https://www.lexingtonnc.gov/",
+        "note": "Municipal"
+      },
+      "Laurinburg": {
+        "name": "Duke Energy Progress",
+        "phone": "800-452-2777",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Elizabeth City": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
       }
     },
     "SC": {
@@ -2165,15 +2247,15 @@
       }
     },
     "OH": {
-      "Cleveland": {
-        "name": "Cleveland Public Power",
-        "phone": "216-664-3922",
-        "website": "https://www.cpp.org/"
-      },
       "Columbus": {
         "name": "AEP Ohio",
         "phone": "800-672-2231",
         "website": "https://www.aepohio.com/"
+      },
+      "Cleveland": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
       },
       "Cincinnati": {
         "name": "Duke Energy Ohio",
@@ -2182,12 +2264,12 @@
       },
       "Toledo": {
         "name": "Toledo Edison (FirstEnergy)",
-        "phone": "800-545-7741",
+        "phone": "800-447-3333",
         "website": "https://www.firstenergycorp.com/"
       },
       "Akron": {
         "name": "Ohio Edison (FirstEnergy)",
-        "phone": "800-545-7741",
+        "phone": "800-633-4766",
         "website": "https://www.firstenergycorp.com/"
       },
       "Dayton": {
@@ -2195,47 +2277,180 @@
         "phone": "877-437-6237",
         "website": "https://www.aes-ohio.com/"
       },
-      "Duke Energy Ohio Inc": {
-        "name": "Duke Energy Ohio Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (140 ZIP codes)"
+      "Parma": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "Dayton Power & Light Co": {
-        "name": "Dayton Power & Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (218 ZIP codes)"
+      "Canton": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "Cleveland Electric Illum Co": {
-        "name": "Cleveland Electric Illum Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (100 ZIP codes)"
+      "Youngstown": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "Ohio Edison Co": {
-        "name": "Ohio Edison Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (353 ZIP codes)"
+      "Lorain": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "Ohio Power Co": {
-        "name": "Ohio Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (446 ZIP codes)"
+      "Hamilton": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
       },
-      "The Toledo Edison Co": {
-        "name": "The Toledo Edison Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (128 ZIP codes)"
+      "Springfield": {
+        "name": "AES Ohio",
+        "phone": "877-437-6237",
+        "website": "https://www.aes-ohio.com/"
       },
-      "Columbus Division of Power": {
-        "name": "Columbus Division of Power",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (28 ZIP codes)"
+      "Kettering": {
+        "name": "AES Ohio",
+        "phone": "877-437-6237",
+        "website": "https://www.aes-ohio.com/"
+      },
+      "Elyria": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Lakewood": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Cuyahoga Falls": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Middletown": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Euclid": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Newark": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Mansfield": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Mentor": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Beavercreek": {
+        "name": "AES Ohio",
+        "phone": "877-437-6237",
+        "website": "https://www.aes-ohio.com/"
+      },
+      "Cleveland Heights": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Strongsville": {
+        "name": "Cleveland Illuminating (FirstEnergy)",
+        "phone": "800-589-3101",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Fairfield": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Dublin": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Findlay": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Warren": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-633-4766",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Lancaster": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Lima": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Huber Heights": {
+        "name": "AES Ohio",
+        "phone": "877-437-6237",
+        "website": "https://www.aes-ohio.com/"
+      },
+      "Marion": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Westerville": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Grove City": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Reynoldsburg": {
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Cleveland_Muni": {
+        "name": "Cleveland Public Power",
+        "phone": "216-664-3922",
+        "website": "https://www.cpp.org/",
+        "note": "Municipal - some areas"
+      },
+      "Bowling Green": {
+        "name": "Bowling Green Municipal Utilities",
+        "phone": "419-354-6246",
+        "website": "https://www.bgohio.org/",
+        "note": "Municipal"
+      },
+      "Westerville_Muni": {
+        "name": "Westerville Electric",
+        "phone": "614-901-6700",
+        "website": "https://www.westerville.org/",
+        "note": "Municipal"
+      },
+      "Piqua": {
+        "name": "Piqua Power System",
+        "phone": "937-778-2060",
+        "website": "https://www.piquaoh.org/",
+        "note": "Municipal"
+      },
+      "Orrville": {
+        "name": "Orrville Utilities",
+        "phone": "330-684-5015",
+        "website": "https://www.orrville.com/",
+        "note": "Municipal"
       }
     },
     "NE": {
@@ -6707,23 +6922,77 @@
       }
     },
     "ND": {
-      "Montana-Dakota Utilities Co": {
-        "name": "Montana-Dakota Utilities Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (105 ZIP codes)"
+      "Fargo": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Otter Tail Power Co": {
-        "name": "Otter Tail Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (209 ZIP codes)"
+      "Bismarck": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
       },
-      "Northern States Power Co Minnesota": {
-        "name": "Northern States Power Co - Minnesota",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (21 ZIP codes)"
+      "Grand Forks": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Minot": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "West Fargo": {
+        "name": "Cass County Electric Cooperative",
+        "phone": "701-356-4400",
+        "website": "https://www.kwh.com/",
+        "note": "Co-op"
+      },
+      "Williston": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Dickinson": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Mandan": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Jamestown": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com/"
+      },
+      "Wahpeton": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com/"
+      },
+      "Devils Lake": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com/"
+      },
+      "Valley City": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com/"
+      },
+      "Grafton": {
+        "name": "Nodak Electric Cooperative",
+        "phone": "701-352-0680",
+        "website": "https://www.nodakelectric.com/",
+        "note": "Co-op"
+      },
+      "Beulah": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
       }
     },
     "SD": {
@@ -8823,9 +9092,64 @@
         "website": "https://www.dominionenergy.com/"
       },
       "Dayton": {
-        "name": "Vectren Energy (CenterPoint)",
+        "name": "CenterPoint Energy (Vectren)",
         "phone": "800-227-1376",
-        "website": "https://www.vectren.com/"
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Canton": {
+        "name": "Dominion Energy Ohio",
+        "phone": "800-362-7557",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Youngstown": {
+        "name": "Dominion Energy Ohio",
+        "phone": "800-362-7557",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Springfield": {
+        "name": "CenterPoint Energy (Vectren)",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Kettering": {
+        "name": "CenterPoint Energy (Vectren)",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Elyria": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Lakewood": {
+        "name": "Dominion Energy Ohio",
+        "phone": "800-362-7557",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Newark": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Mansfield": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Dublin": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Findlay": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Lima": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
       }
     },
     "MI": {
@@ -10672,49 +10996,123 @@
       }
     },
     "NC": {
-      "Statewide": {
+      "Charlotte": {
         "name": "Piedmont Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for NC"
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
       },
-      "Piedmont_Natural_Gas": {
-        "name": "Piedmont Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NC"
-      },
-      "Dominion_Energy": {
+      "Raleigh": {
         "name": "Dominion Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NC"
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
       },
-      "PSNC_Energy": {
-        "name": "PSNC Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NC"
+      "Greensboro": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Durham": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Winston-Salem": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Fayetteville": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Cary": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Wilmington": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "High Point": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Asheville": {
+        "name": "Dominion Energy",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Gastonia": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Hickory": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Burlington": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Greenville": {
+        "name": "Greenville Utilities Commission Gas",
+        "phone": "252-752-7166",
+        "website": "https://www.gaborneighbor.com/",
+        "note": "Municipal"
+      },
+      "Salisbury": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
       }
     },
     "ND": {
-      "Statewide": {
-        "name": "Montana-Dakota Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for ND"
+      "Fargo": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Montana-Dakota_Utilities": {
-        "name": "Montana-Dakota Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ND"
+      "Bismarck": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
       },
-      "Xcel_Energy": {
-        "name": "Xcel Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ND"
+      "Grand Forks": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Minot": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Williston": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Dickinson": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Mandan": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Jamestown": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
       }
     },
     "OK": {

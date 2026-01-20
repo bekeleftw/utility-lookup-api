@@ -89,14 +89,20 @@ class MunicipalWaterSource(DataSource):
         return None
     
     def _build_result(self, utility_info: dict, city: str) -> SourceResult:
+        # Boost confidence if this municipal utility has priority over special districts
+        # (e.g., cities that have absorbed MUDs but MUD boundaries still exist in data)
+        confidence = self.base_confidence
+        if utility_info.get('priority_over_special_districts'):
+            confidence = 95  # Higher than special_district (85) to ensure municipal wins
+        
         return SourceResult(
             source_name=self.name,
             utility_name=utility_info.get('name'),
-            confidence_score=self.base_confidence,
-            match_type='city',
+            confidence_score=confidence,
+            match_type='city' if not utility_info.get('priority_over_special_districts') else 'city_priority',
             phone=utility_info.get('phone'),
             website=utility_info.get('website'),
-            raw_data={'city': city}
+            raw_data={'city': city, 'priority_over_special_districts': utility_info.get('priority_over_special_districts', False)}
         )
     
     def _load_data(self) -> dict:

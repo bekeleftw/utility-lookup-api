@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-20-v10', 'changes': 'streaming_electric_gas_water_use_v2'})
+    return jsonify({'version': '2026-01-20-v11', 'changes': 'streaming_single_lookup_performance_fix'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")
@@ -398,47 +398,45 @@ def lookup_stream():
             state = location.get('state')
             zip_code = location.get('zip_code', '')
             
-            # Step 2: Electric (fast) - Use v2 pipeline for user corrections support
-            if 'electric' in selected_utilities:
-                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up electric provider...'})}\n\n"
-                # Use v2 lookup which includes UserCorrectionSource
-                v2_result = lookup_utilities_by_address(address, selected_utilities=['electric'])
-                electric = v2_result.get('electric') if v2_result else None
-                if electric:
-                    raw_confidence = electric.get('_confidence') or 'high'
-                    formatted = format_utility(electric, 'electric')
-                    formatted['confidence'] = raw_confidence
-                    yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
-                else:
-                    yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
-            
-            # Step 3: Gas (fast) - Use v2 pipeline for user corrections support
-            if 'gas' in selected_utilities:
-                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up gas provider...'})}\n\n"
-                # Use v2 lookup which includes UserCorrectionSource
-                v2_result = lookup_utilities_by_address(address, selected_utilities=['gas'])
-                gas = v2_result.get('gas') if v2_result else None
-                if gas:
-                    if gas.get('_no_service'):
-                        yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
-                    else:
-                        raw_confidence = gas.get('_confidence') or 'high'
-                        formatted = format_utility(gas, 'gas')
+            # Step 2: Look up electric, gas, water in ONE call (geocode once)
+            non_internet_utilities = [u for u in selected_utilities if u != 'internet']
+            if non_internet_utilities:
+                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up utility providers...'})}\n\n"
+                # Single v2 lookup for all utilities - geocodes once
+                v2_result = lookup_utilities_by_address(address, selected_utilities=non_internet_utilities)
+                
+                # Stream electric result
+                if 'electric' in selected_utilities:
+                    electric = v2_result.get('electric') if v2_result else None
+                    if electric:
+                        raw_confidence = electric.get('_confidence') or 'high'
+                        formatted = format_utility(electric, 'electric')
                         formatted['confidence'] = raw_confidence
-                        yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
-                else:
-                    yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
-            
-            # Step 4: Water (fast) - Use v2 pipeline for user corrections support
-            if 'water' in selected_utilities:
-                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up water provider...'})}\n\n"
-                # Use v2 lookup which includes UserCorrectionSource
-                v2_result = lookup_utilities_by_address(address, selected_utilities=['water'])
-                water = v2_result.get('water') if v2_result else None
-                if water:
-                    yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water')})}\n\n"
-                else:
-                    yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
+                        yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
+                    else:
+                        yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
+                
+                # Stream gas result
+                if 'gas' in selected_utilities:
+                    gas = v2_result.get('gas') if v2_result else None
+                    if gas:
+                        if gas.get('_no_service'):
+                            yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
+                        else:
+                            raw_confidence = gas.get('_confidence') or 'high'
+                            formatted = format_utility(gas, 'gas')
+                            formatted['confidence'] = raw_confidence
+                            yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
+                    else:
+                        yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
+                
+                # Stream water result
+                if 'water' in selected_utilities:
+                    water = v2_result.get('water') if v2_result else None
+                    if water:
+                        yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water')})}\n\n"
+                    else:
+                        yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
             
             # Step 5: Internet (SLOW - 10-15 seconds)
             if 'internet' in selected_utilities:

@@ -647,6 +647,42 @@ def save_water_cache(cache: Dict) -> None:
 WATER_SUPPLEMENTAL_FILE = Path(__file__).parent / "water_utilities_supplemental.json"
 
 
+def _get_water_gis_confidence_explanation(source: str, confidence: str, state: str) -> str:
+    """Generate confidence explanation for water GIS lookups based on source."""
+    source_descriptions = {
+        'washington_doh': 'Washington DOH Drinking Water Service Areas',
+        'utah_dwre': 'Utah Division of Water Resources Culinary Water Service Areas',
+        'tennessee_tdec': 'Tennessee TDEC Public Water System Boundaries',
+        'north_carolina_onemap': 'North Carolina OneMap Water System (2004 data)',
+        'new_mexico_ose': 'New Mexico OSE Public Water System Boundaries (93% coverage)',
+        'oklahoma_owrb': 'Oklahoma OWRB PWS Approximate Service Areas (~80% coverage)',
+        'arizona_adwr': 'Arizona ADWR Community Water System Service Areas (96% coverage)',
+        'connecticut_dph': 'Connecticut DPH Exclusive Service Areas (94% coverage)',
+        'delaware_psc': 'Delaware PSC CPCN Boundaries (jurisdictional)',
+        'arkansas_adh': 'Arkansas ADH Public Water Systems (98% coverage)',
+        'kansas_kdhe': 'Kansas KDHE Rural Water Districts (~90% coverage)',
+        'florida_sjrwmd': 'Florida SJRWMD Public Water Supply Areas (NE Florida)',
+        'twdb_water_service_areas': 'Texas TWDB Public Water Service Areas (authoritative)',
+        'texas_puc_ccn': 'Texas PUC CCN Water Boundaries',
+        'california_swrcb': 'California SWRCB Drinking Water System Boundaries (98% coverage)',
+        'pennsylvania_dep': 'Pennsylvania DEP Public Water Supply (93% coverage)',
+        'new_york_dec': 'New York DEC Public Water Supply Service Areas',
+        'new_jersey_dep': 'New Jersey DEP Water Purveyor Service Areas (99% coverage)',
+        'mississippi_psc': 'Mississippi PSC Water Districts',
+        'epa_water_boundaries': 'EPA Water System Boundaries (national dataset, 99% coverage)',
+        'gis_epa': 'EPA Water System Boundaries (national dataset)'
+    }
+    
+    source_desc = source_descriptions.get(source, f'State GIS data ({source})')
+    
+    if confidence == 'high':
+        return f"High confidence: Matched from {source_desc}"
+    elif confidence == 'medium':
+        return f"Medium confidence: {source_desc} - boundaries may be approximate"
+    else:
+        return f"Low confidence: {source_desc} - verify with local water department"
+
+
 def _check_water_supplemental(state: str, city: str) -> Optional[Dict]:
     """
     Check supplemental water file for city-level overrides.
@@ -3230,13 +3266,16 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
                 
                 if city_matches:
                     # GIS result matches city - use it, but try to enrich with contact info
+                    gis_source = gis_water.get('source', 'gis_epa')
+                    gis_confidence = gis_water.get('confidence', 'high')
                     result = {
                         "NAME": gis_water['name'],
                         "PWSID": gis_water.get('pwsid'),
                         "STATE": gis_water.get('state') or state,
                         "CITY": city,
-                        "_confidence": gis_water.get('confidence', 'high'),
-                        "_source": gis_water.get('source', 'gis_epa')
+                        "_confidence": gis_confidence,
+                        "_source": gis_source,
+                        "_confidence_explanation": _get_water_gis_confidence_explanation(gis_source, gis_confidence, state)
                     }
                     # Try to enrich with contact info from municipal database
                     municipal_water = lookup_municipal_water(state, city, zip_code)
@@ -3255,16 +3294,19 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
                             "STATE": state,
                             "CITY": municipal_water.get('city', city),
                             "_confidence": municipal_water['confidence'],
-                            "_source": "municipal_utility"
+                            "_source": "municipal_utility",
+                            "_confidence_explanation": "Matched from municipal utility database"
                         }
                     # No municipal match - use GIS result anyway (it's still authoritative)
+                    gis_source = gis_water.get('source', 'gis_epa')
                     return {
                         "NAME": gis_water['name'],
                         "PWSID": gis_water.get('pwsid'),
                         "STATE": gis_water.get('state') or state,
                         "CITY": city,
                         "_confidence": 'medium',  # Lower confidence due to city mismatch
-                        "_source": gis_water.get('source', 'gis_epa'),
+                        "_source": gis_source,
+                        "_confidence_explanation": f"GIS boundary lookup (city name mismatch) - verify with {city} water department",
                         "_note": f"GIS boundary lookup - verify with {city} water department"
                     }
         
@@ -3278,7 +3320,8 @@ def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str
                 "STATE": state,
                 "CITY": municipal_water.get('city', city),
                 "_confidence": municipal_water['confidence'],
-                "_source": "municipal_utility"
+                "_source": "municipal_utility",
+                "_confidence_explanation": "Matched from municipal utility database"
             }
         
         # Priority 3: Supplemental (city overrides)

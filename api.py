@@ -1506,11 +1506,12 @@ def lookup_municipal():
     state = request.args.get('state', '').upper() if request.args.get('state') else None
     city = request.args.get('city')
     zip_code = request.args.get('zip')
+    county = request.args.get('county')
     
     if not state:
         return jsonify({'error': 'state parameter required'}), 400
     
-    result = lookup_municipal_electric(state, city, zip_code)
+    result = lookup_municipal_electric(state, city, zip_code, county)
     
     if result:
         return jsonify({'found': True, 'utility': result})

@@ -2227,7 +2227,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 # Fall through to next priority
                 primary_electric = None
         # PRIORITY 2: Check municipal utilities first (Austin Energy, CPS Energy, LADWP, etc.)
-        if primary_electric is None and (municipal_electric := lookup_municipal_electric(state, city, zip_code)):
+        if primary_electric is None and (municipal_electric := lookup_municipal_electric(state, city, zip_code, county)):
             primary_electric = {
                 'NAME': municipal_electric['name'],
                 'TELEPHONE': municipal_electric.get('phone'),
@@ -2295,7 +2295,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             }
             other_gas = []
         # PRIORITY 1: Check municipal/regional gas data FIRST (most accurate for specific ZIPs)
-        elif (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
+        elif (municipal_gas := lookup_municipal_gas(state, city, zip_code, county)):
             primary_gas = {
                 'NAME': municipal_gas['name'],
                 'TELEPHONE': municipal_gas.get('phone'),
@@ -2315,7 +2315,7 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 primary_gas = pipeline_result
                 other_gas = []
         # PRIORITY 3: Check municipal gas utilities again (legacy fallback)
-        if primary_gas is None and (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
+        if primary_gas is None and (municipal_gas := lookup_municipal_gas(state, city, zip_code, county)):
             primary_gas = {
                 'NAME': municipal_gas['name'],
                 'TELEPHONE': municipal_gas.get('phone'),
@@ -3050,7 +3050,7 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
                 return _add_deregulated_info(result, state, zip_code)
         
         # Check municipal first (exempt from deregulation)
-        municipal_electric = lookup_municipal_electric(state, city, zip_code)
+        municipal_electric = lookup_municipal_electric(state, city, zip_code, county)
         if municipal_electric:
             result = {
                 'NAME': municipal_electric['name'],
@@ -3183,7 +3183,7 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
     """Look up gas utility only. Fast - typically < 1 second."""
     try:
         # Priority 0: Check municipal/regional gas data FIRST (most accurate for specific ZIPs)
-        municipal_gas = lookup_municipal_gas(state, city, zip_code)
+        municipal_gas = lookup_municipal_gas(state, city, zip_code, county)
         if municipal_gas:
             return {
                 'NAME': municipal_gas['name'],
@@ -3203,7 +3203,7 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
                 return pipeline_result
         
         # Fallback: Check municipal again (legacy path)
-        municipal_gas = lookup_municipal_gas(state, city, zip_code)
+        municipal_gas = lookup_municipal_gas(state, city, zip_code, county)
         if municipal_gas:
             return {
                 'NAME': municipal_gas['name'],

@@ -91,18 +91,25 @@ class MunicipalElectricSource(DataSource):
     
     def query(self, context: LookupContext) -> Optional[SourceResult]:
         try:
-            from utility_lookup_v1 import lookup_municipal_electric
+            from municipal_utilities import lookup_municipal_electric
             
-            result = lookup_municipal_electric(context.state, context.city, context.zip_code)
+            result = lookup_municipal_electric(context.state, context.city, context.zip_code, context.county)
             
             if not result or not result.get('name'):
                 return None
             
+            # Determine match type based on source
+            match_type = 'city'
+            confidence = self.base_confidence
+            if result.get('source') == 'county_electric_fallback':
+                match_type = 'county'
+                confidence = SOURCE_CONFIDENCE.get('county_default', 50)
+            
             return SourceResult(
                 source_name=self.name,
                 utility_name=result.get('name'),
-                confidence_score=self.base_confidence,
-                match_type='city',
+                confidence_score=confidence,
+                match_type=match_type,
                 phone=result.get('phone'),
                 website=result.get('website'),
                 raw_data=result

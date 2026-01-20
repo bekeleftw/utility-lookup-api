@@ -23,7 +23,7 @@ def load_municipal_data() -> dict:
     return _municipal_data
 
 
-def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None) -> Optional[Dict]:
+def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None, county: str = None) -> Optional[Dict]:
     """
     Check if address is served by a municipal electric utility.
     
@@ -31,18 +31,17 @@ def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None
         state: 2-letter state code
         city: City name
         zip_code: 5-digit ZIP code
+        county: County name (for fallback)
     
     Returns:
         Municipal utility dict if found, None otherwise
     """
     data = load_municipal_data()
-    state_data = data.get('electric', {}).get(state.upper() if state else '', {})
-    
-    if not state_data:
-        return None
+    state_upper = state.upper() if state else ''
+    state_data = data.get('electric', {}).get(state_upper, {})
     
     # Check by ZIP code first (most accurate)
-    if zip_code:
+    if zip_code and state_data:
         for city_name, utility in state_data.items():
             if zip_code in utility.get('zip_codes', []):
                 return {
@@ -56,7 +55,7 @@ def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None
                 }
     
     # Fall back to city name match
-    if city:
+    if city and state_data:
         city_upper = city.upper()
         for city_name, utility in state_data.items():
             if city_name.upper() == city_upper or city_name.upper() in city_upper:
@@ -70,10 +69,39 @@ def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None
                     'note': utility.get('note', f"Municipal utility serving {city_name}")
                 }
     
+    # COUNTY FALLBACK: If no city match, try county-level data
+    county_data = data.get('county_electric', {}).get(state_upper, {})
+    if county and county_data:
+        county_upper = county.upper()
+        # Try exact match first
+        for county_name, utility in county_data.items():
+            if county_name.upper() == county_upper:
+                return {
+                    'name': utility['name'],
+                    'phone': utility.get('phone'),
+                    'website': utility.get('website'),
+                    'county': county_name,
+                    'source': 'county_electric_fallback',
+                    'confidence': 'medium',
+                    'note': utility.get('note', f"Electric utility serving {county_name} County")
+                }
+        # Try partial match (e.g., "Jefferson County" matches "Jefferson")
+        for county_name, utility in county_data.items():
+            if county_name.upper() in county_upper or county_upper in county_name.upper():
+                return {
+                    'name': utility['name'],
+                    'phone': utility.get('phone'),
+                    'website': utility.get('website'),
+                    'county': county_name,
+                    'source': 'county_electric_fallback',
+                    'confidence': 'low',
+                    'note': utility.get('note', f"Electric utility serving {county_name} County")
+                }
+    
     return None
 
 
-def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None) -> Optional[Dict]:
+def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None, county: str = None) -> Optional[Dict]:
     """Check if city has municipal/regional gas utility (Texas Gas Service, Atmos, CenterPoint, etc.)."""
     data = load_municipal_data()
     state_upper = state.upper() if state else ''
@@ -136,6 +164,35 @@ def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None) -> 
                 'source': 'municipal_utility',
                 'confidence': 'medium'
             }
+    
+    # COUNTY FALLBACK: If no city match, try county-level gas data
+    county_data = data.get('county_gas', {}).get(state_upper, {})
+    if county and county_data:
+        county_upper = county.upper()
+        # Try exact match first
+        for county_name, utility in county_data.items():
+            if county_name.upper() == county_upper:
+                return {
+                    'name': utility['name'],
+                    'phone': utility.get('phone'),
+                    'website': utility.get('website'),
+                    'county': county_name,
+                    'source': 'county_gas_fallback',
+                    'confidence': 'medium',
+                    'note': utility.get('note', f"Gas utility serving {county_name} County")
+                }
+        # Try partial match (e.g., "Jefferson County" matches "Jefferson")
+        for county_name, utility in county_data.items():
+            if county_name.upper() in county_upper or county_upper in county_name.upper():
+                return {
+                    'name': utility['name'],
+                    'phone': utility.get('phone'),
+                    'website': utility.get('website'),
+                    'county': county_name,
+                    'source': 'county_gas_fallback',
+                    'confidence': 'low',
+                    'note': utility.get('note', f"Gas utility serving {county_name} County")
+                }
     
     return None
 

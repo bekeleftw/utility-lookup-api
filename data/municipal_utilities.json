@@ -2641,127 +2641,232 @@
         "name": "Seattle City Light",
         "phone": "206-684-3000",
         "website": "https://www.seattle.gov/city-light",
-        "zip_codes": [
-          "98101",
-          "98102",
-          "98103",
-          "98104",
-          "98105",
-          "98106",
-          "98107",
-          "98108",
-          "98109",
-          "98111",
-          "98112",
-          "98113",
-          "98114",
-          "98115",
-          "98116",
-          "98117",
-          "98118",
-          "98119",
-          "98121",
-          "98122",
-          "98124",
-          "98125",
-          "98126",
-          "98127",
-          "98129",
-          "98131",
-          "98133",
-          "98134",
-          "98136",
-          "98138",
-          "98139",
-          "98141",
-          "98144",
-          "98145",
-          "98146",
-          "98148",
-          "98154",
-          "98155",
-          "98158",
-          "98160",
-          "98161",
-          "98164",
-          "98165",
-          "98166",
-          "98168",
-          "98170",
-          "98174",
-          "98175",
-          "98177",
-          "98178",
-          "98181",
-          "98185",
-          "98188",
-          "98190",
-          "98191",
-          "98194",
-          "98195",
-          "98198",
-          "98199"
-        ]
+        "note": "Municipal"
+      },
+      "Spokane": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
       },
       "Tacoma": {
-        "name": "Tacoma Public Utilities",
+        "name": "Tacoma Power",
         "phone": "253-502-8600",
-        "website": "https://www.mytpu.org",
-        "zip_codes": [
-          "98401",
-          "98402",
-          "98403",
-          "98404",
-          "98405",
-          "98406",
-          "98407",
-          "98408",
-          "98409",
-          "98411",
-          "98412",
-          "98413",
-          "98415",
-          "98416",
-          "98417",
-          "98418",
-          "98419",
-          "98421",
-          "98422",
-          "98424",
-          "98431",
-          "98433",
-          "98443",
-          "98444",
-          "98445",
-          "98446",
-          "98447",
-          "98448",
-          "98465",
-          "98466",
-          "98467"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "website": "https://www.mytpu.org/",
+        "note": "Municipal"
       },
-      "PacifiCorp": {
-        "name": "PacifiCorp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (46 ZIP codes)"
+      "Vancouver": {
+        "name": "Clark Public Utilities",
+        "phone": "360-992-3000",
+        "website": "https://www.clarkpublicutilities.com/",
+        "note": "PUD"
       },
-      "Avista Corp": {
-        "name": "Avista Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (119 ZIP codes)"
+      "Bellevue": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
       },
-      "Puget Sound Energy Inc": {
-        "name": "Puget Sound Energy Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (250 ZIP codes)"
+      "Kent": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Everett": {
+        "name": "Snohomish County PUD",
+        "phone": "425-783-1000",
+        "website": "https://www.snopud.com/",
+        "note": "PUD"
+      },
+      "Renton": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Spokane Valley": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Federal Way": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Yakima": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Bellingham": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Kirkland": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Auburn": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Kennewick": {
+        "name": "Benton PUD",
+        "phone": "509-582-1234",
+        "website": "https://www.bentonpud.org/",
+        "note": "PUD"
+      },
+      "Redmond": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Marysville": {
+        "name": "Snohomish County PUD",
+        "phone": "425-783-1000",
+        "website": "https://www.snopud.com/",
+        "note": "PUD"
+      },
+      "Sammamish": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Lakewood": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Richland": {
+        "name": "City of Richland Energy Services",
+        "phone": "509-942-7500",
+        "website": "https://www.ci.richland.wa.us/",
+        "note": "Municipal"
+      },
+      "Pasco": {
+        "name": "Franklin PUD",
+        "phone": "509-547-5591",
+        "website": "https://www.franklinpud.com/",
+        "note": "PUD"
+      },
+      "Burien": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Olympia": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Lacey": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Edmonds": {
+        "name": "Snohomish County PUD",
+        "phone": "425-783-1000",
+        "website": "https://www.snopud.com/",
+        "note": "PUD"
+      },
+      "Puyallup": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Bremerton": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Lynnwood": {
+        "name": "Snohomish County PUD",
+        "phone": "425-783-1000",
+        "website": "https://www.snopud.com/",
+        "note": "PUD"
+      },
+      "Bothell": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Longview": {
+        "name": "Cowlitz PUD",
+        "phone": "360-423-2210",
+        "website": "https://www.cowlitzpud.org/",
+        "note": "PUD"
+      },
+      "Issaquah": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Wenatchee": {
+        "name": "Chelan County PUD",
+        "phone": "509-663-8121",
+        "website": "https://www.chelanpud.org/",
+        "note": "PUD"
+      },
+      "Mount Vernon": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "University Place": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Pullman": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Walla Walla": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Des Moines": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Lake Stevens": {
+        "name": "Snohomish County PUD",
+        "phone": "425-783-1000",
+        "website": "https://www.snopud.com/",
+        "note": "PUD"
+      },
+      "Shoreline": {
+        "name": "Seattle City Light",
+        "phone": "206-684-3000",
+        "website": "https://www.seattle.gov/city-light"
+      },
+      "Tumwater": {
+        "name": "Puget Sound Energy",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Ellensburg": {
+        "name": "Ellensburg City Electric",
+        "phone": "509-962-7230",
+        "website": "https://www.ci.ellensburg.wa.us/",
+        "note": "Municipal"
+      },
+      "Centralia": {
+        "name": "Centralia City Light",
+        "phone": "360-330-7662",
+        "website": "https://www.cityofcentralia.com/",
+        "note": "Municipal"
+      },
+      "Cheney": {
+        "name": "Cheney Light Department",
+        "phone": "509-498-9230",
+        "website": "https://www.cityofcheney.org/",
+        "note": "Municipal"
       }
     },
     "OR": {
@@ -5447,35 +5552,112 @@
       }
     },
     "WV": {
-      "Appalachian Power Co": {
-        "name": "Appalachian Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (491 ZIP codes)"
+      "Charleston": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
       },
-      "Monongahela Power Co": {
-        "name": "Monongahela Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (394 ZIP codes)"
+      "Huntington": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
       },
-      "Black Diamond Power Co": {
-        "name": "Black Diamond Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (6 ZIP codes)"
+      "Morgantown": {
+        "name": "Mon Power (FirstEnergy)",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "The Potomac Edison Company": {
-        "name": "The Potomac Edison Company",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (21 ZIP codes)"
+      "Parkersburg": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
       },
-      "Wheeling Power Co": {
-        "name": "Wheeling Power Co",
-        "phone": null,
+      "Wheeling": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Weirton": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Fairmont": {
+        "name": "Mon Power (FirstEnergy)",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Martinsburg": {
+        "name": "Potomac Edison (FirstEnergy)",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Beckley": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Clarksburg": {
+        "name": "Mon Power (FirstEnergy)",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "South Charleston": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "St. Albans": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Vienna": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Bluefield": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Bridgeport": {
+        "name": "Mon Power (FirstEnergy)",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Elkins": {
+        "name": "Mon Power (FirstEnergy)",
+        "phone": "800-686-0022",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Princeton": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      },
+      "Charles Town": {
+        "name": "Potomac Edison (FirstEnergy)",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Keyser": {
+        "name": "Potomac Edison (FirstEnergy)",
+        "phone": "800-686-0011",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "New Martinsville": {
+        "name": "New Martinsville Municipal Electric",
+        "phone": "304-455-9100",
         "website": null,
-        "note": "From EIA-861 (17 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Philippi": {
+        "name": "Philippi Municipal Electric",
+        "phone": "304-457-3700",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "AR": {
@@ -12558,61 +12740,172 @@
       }
     },
     "WA": {
-      "Statewide": {
-        "name": "Puget Sound Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for WA"
+      "Seattle": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
       },
-      "Puget_Sound_Energy": {
-        "name": "Puget Sound Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WA"
+      "Spokane": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
       },
-      "Avista": {
-        "name": "Avista",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WA"
+      "Tacoma": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
       },
-      "Cascade_Natural_Gas": {
-        "name": "Cascade Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WA"
-      },
-      "NW_Natural": {
+      "Vancouver": {
         "name": "NW Natural",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WA"
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Bellevue": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Kent": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Everett": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Renton": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Spokane Valley": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Yakima": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Bellingham": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Kirkland": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Auburn": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Kennewick": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Redmond": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Olympia": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Puyallup": {
+        "name": "Puget Sound Energy Gas",
+        "phone": "888-225-5773",
+        "website": "https://www.pse.com/"
+      },
+      "Bremerton": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Longview": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Wenatchee": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Pullman": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Walla Walla": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
       }
     },
     "WV": {
-      "Statewide": {
+      "Charleston": {
         "name": "Dominion Energy West Virginia",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for WV"
+        "phone": "800-688-4673",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Dominion_Energy_West_Virginia": {
-        "name": "Dominion Energy West Virginia",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WV"
-      },
-      "Mountaineer_Gas": {
+      "Huntington": {
         "name": "Mountaineer Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WV"
+        "phone": "800-834-2070",
+        "website": "https://www.mountaineergas.com/"
       },
-      "Hope_Gas": {
+      "Morgantown": {
+        "name": "Dominion Energy West Virginia",
+        "phone": "800-688-4673",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Parkersburg": {
+        "name": "Mountaineer Gas",
+        "phone": "800-834-2070",
+        "website": "https://www.mountaineergas.com/"
+      },
+      "Wheeling": {
+        "name": "Dominion Energy West Virginia",
+        "phone": "800-688-4673",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Fairmont": {
+        "name": "Dominion Energy West Virginia",
+        "phone": "800-688-4673",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Martinsburg": {
+        "name": "Mountaineer Gas",
+        "phone": "800-834-2070",
+        "website": "https://www.mountaineergas.com/"
+      },
+      "Beckley": {
         "name": "Hope Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in WV"
+        "phone": "800-688-4673",
+        "website": "https://www.hopegas.com/"
+      },
+      "Clarksburg": {
+        "name": "Dominion Energy West Virginia",
+        "phone": "800-688-4673",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Bluefield": {
+        "name": "Hope Gas",
+        "phone": "800-688-4673",
+        "website": "https://www.hopegas.com/"
+      },
+      "Elkins": {
+        "name": "Mountaineer Gas",
+        "phone": "800-834-2070",
+        "website": "https://www.mountaineergas.com/"
       }
     },
     "WI": {

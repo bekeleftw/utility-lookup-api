@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Cache buster - change this to force rebuild
-ARG CACHE_BUST=2026-01-20-v9-streaming
+ARG CACHE_BUST=2026-01-20-v10-all-utilities
 RUN echo "Cache bust: $CACHE_BUST"
 
 COPY . .

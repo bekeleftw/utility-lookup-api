@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-20-v9', 'changes': 'streaming_uses_v2_pipeline'})
+    return jsonify({'version': '2026-01-20-v10', 'changes': 'streaming_electric_gas_water_use_v2'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")
@@ -429,10 +429,12 @@ def lookup_stream():
                 else:
                     yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
             
-            # Step 4: Water (fast)
+            # Step 4: Water (fast) - Use v2 pipeline for user corrections support
             if 'water' in selected_utilities:
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up water provider...'})}\n\n"
-                water = lookup_water_only(lat, lon, city, county, state, zip_code, address)
+                # Use v2 lookup which includes UserCorrectionSource
+                v2_result = lookup_utilities_by_address(address, selected_utilities=['water'])
+                water = v2_result.get('water') if v2_result else None
                 if water:
                     yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water')})}\n\n"
                 else:

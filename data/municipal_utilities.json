@@ -3297,39 +3297,169 @@
         "phone": "800-436-7734",
         "website": "https://www.pseg.com/"
       },
+      "Paterson": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Elizabeth": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
       "Trenton": {
         "name": "PSE&G",
         "phone": "800-436-7734",
         "website": "https://www.pseg.com/"
+      },
+      "Camden": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Clifton": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Passaic": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Union City": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Bayonne": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "East Orange": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Vineland": {
+        "name": "Atlantic City Electric",
+        "phone": "800-642-3780",
+        "website": "https://www.atlanticcityelectric.com/"
       },
       "Atlantic City": {
         "name": "Atlantic City Electric",
         "phone": "800-642-3780",
         "website": "https://www.atlanticcityelectric.com/"
       },
-      "Atlantic City Electric Co": {
-        "name": "Atlantic City Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (137 ZIP codes)"
+      "Cherry Hill": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
       },
-      "Jersey Central Power & Lt Co": {
-        "name": "Jersey Central Power & Lt Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (298 ZIP codes)"
+      "Toms River": {
+        "name": "Jersey Central Power & Light",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com/"
       },
-      "Public Service Elec & Gas Co": {
-        "name": "Public Service Elec & Gas Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (362 ZIP codes)"
+      "Edison": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
       },
-      "Rockland Electric Co": {
-        "name": "Rockland Electric Co",
-        "phone": null,
+      "Woodbridge": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Lakewood": {
+        "name": "Jersey Central Power & Light",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Brick": {
+        "name": "Jersey Central Power & Light",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Middletown": {
+        "name": "Jersey Central Power & Light",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Howell": {
+        "name": "Jersey Central Power & Light",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Parsippany": {
+        "name": "Jersey Central Power & Light",
+        "phone": "800-662-3115",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Mahwah": {
+        "name": "Rockland Electric",
+        "phone": "877-434-4100",
+        "website": "https://www.oru.com/"
+      },
+      "Ramsey": {
+        "name": "Rockland Electric",
+        "phone": "877-434-4100",
+        "website": "https://www.oru.com/"
+      },
+      "Butler": {
+        "name": "Butler Electric Utility",
+        "phone": "973-838-7200",
+        "website": "https://www.butlerborough.com/",
+        "note": "Municipal utility"
+      },
+      "Madison": {
+        "name": "Madison Electric Department",
+        "phone": "973-593-3075",
+        "website": "https://www.rosenet.org/",
+        "note": "Municipal utility"
+      },
+      "Milltown": {
+        "name": "Milltown Electric",
+        "phone": "732-828-2100",
         "website": null,
-        "note": "From EIA-861 (47 ZIP codes)"
+        "note": "Municipal utility"
+      },
+      "Park Ridge": {
+        "name": "Park Ridge Electric",
+        "phone": "201-391-5673",
+        "website": "https://www.parkridgeboro.com/",
+        "note": "Municipal utility"
+      },
+      "Pemberton": {
+        "name": "Pemberton Borough Electric",
+        "phone": "609-894-8222",
+        "website": null,
+        "note": "Municipal utility"
+      },
+      "South River": {
+        "name": "South River Electric",
+        "phone": "732-257-1999",
+        "website": null,
+        "note": "Municipal utility"
+      },
+      "Lavallette": {
+        "name": "Lavallette Municipal Electric",
+        "phone": "732-793-7477",
+        "website": "https://www.lavallettenj.org/",
+        "note": "Municipal utility"
+      },
+      "Seaside Heights": {
+        "name": "Seaside Heights Electric",
+        "phone": "732-793-1511",
+        "website": null,
+        "note": "Municipal utility"
+      },
+      "Sussex": {
+        "name": "Sussex Rural Electric Cooperative",
+        "phone": "973-875-5101",
+        "website": "https://www.sussexrec.com/",
+        "note": "Rural co-op"
       }
     },
     "AL": {
@@ -5379,15 +5509,135 @@
         "phone": "800-436-7734",
         "website": "https://www.pseg.com/"
       },
+      "Paterson": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Elizabeth": {
+        "name": "Elizabethtown Gas",
+        "phone": "800-242-5830",
+        "website": "https://www.elizabethtowngas.com/"
+      },
       "Trenton": {
         "name": "PSE&G Gas",
         "phone": "800-436-7734",
         "website": "https://www.pseg.com/"
       },
+      "Camden": {
+        "name": "South Jersey Gas",
+        "phone": "800-582-7060",
+        "website": "https://www.southjerseygas.com/"
+      },
+      "Vineland": {
+        "name": "South Jersey Gas",
+        "phone": "800-582-7060",
+        "website": "https://www.southjerseygas.com/"
+      },
       "Atlantic City": {
         "name": "South Jersey Gas",
         "phone": "800-582-7060",
         "website": "https://www.southjerseygas.com/"
+      },
+      "Cherry Hill": {
+        "name": "South Jersey Gas",
+        "phone": "800-582-7060",
+        "website": "https://www.southjerseygas.com/"
+      },
+      "Toms River": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Edison": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Woodbridge": {
+        "name": "Elizabethtown Gas",
+        "phone": "800-242-5830",
+        "website": "https://www.elizabethtowngas.com/"
+      },
+      "Lakewood": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Brick": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Middletown": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Howell": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Parsippany": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Freehold": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Long Branch": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Asbury Park": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Red Bank": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Point Pleasant": {
+        "name": "New Jersey Natural Gas",
+        "phone": "800-221-0051",
+        "website": "https://www.njng.com/"
+      },
+      "Morristown": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Summit": {
+        "name": "Elizabethtown Gas",
+        "phone": "800-242-5830",
+        "website": "https://www.elizabethtowngas.com/"
+      },
+      "Westfield": {
+        "name": "Elizabethtown Gas",
+        "phone": "800-242-5830",
+        "website": "https://www.elizabethtowngas.com/"
+      },
+      "Plainfield": {
+        "name": "Elizabethtown Gas",
+        "phone": "800-242-5830",
+        "website": "https://www.elizabethtowngas.com/"
+      },
+      "New Brunswick": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Perth Amboy": {
+        "name": "Elizabethtown Gas",
+        "phone": "800-242-5830",
+        "website": "https://www.elizabethtowngas.com/"
       }
     },
     "AL": {

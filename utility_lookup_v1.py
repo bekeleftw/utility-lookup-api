@@ -1438,31 +1438,32 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
         else:
             print(f"  PostgreSQL returned no providers for this block")
     
-    # Try fast BDC local lookup (SQLite)
-    try:
-        from bdc_internet_lookup import lookup_internet_fast, get_available_states
-        bdc_states = get_available_states()
-        if bdc_states:
-            print(f"  Trying fast BDC lookup (available states: {', '.join(bdc_states)})...")
-            bdc_result = lookup_internet_fast(address)
-            if bdc_result and bdc_result.get('providers'):
-                print(f"  BDC lookup found {len(bdc_result['providers'])} providers")
-                return {
-                    "providers": bdc_result['providers'],
-                    "provider_count": bdc_result['provider_count'],
-                    "max_download": max((p.get('max_download_mbps', 0) for p in bdc_result['providers']), default=0),
-                    "max_upload": max((p.get('max_upload_mbps', 0) for p in bdc_result['providers']), default=0),
-                    "has_fiber": any(p.get('technology') == 'Fiber' for p in bdc_result['providers']),
-                    "has_cable": any(p.get('technology') == 'Cable' for p in bdc_result['providers']),
-                    "_source": bdc_result.get('source', 'fcc_bdc_local'),
-                    "_block_geoid": bdc_result.get('block_geoid')
-                }
-            elif bdc_result:
-                print(f"  BDC lookup: no providers for this block (may need more state data)")
-    except ImportError:
-        pass  # BDC module not available
-    except Exception as e:
-        print(f"  BDC lookup error: {e}")
+    # Try fast BDC local lookup (SQLite) - uses block_geoid directly
+    if block_geoid:
+        try:
+            from bdc_internet_lookup import lookup_internet_by_block, get_available_states
+            bdc_states = get_available_states()
+            if bdc_states:
+                print(f"  Trying fast BDC lookup for block {block_geoid}...")
+                bdc_result = lookup_internet_by_block(block_geoid)
+                if bdc_result and bdc_result.get('providers'):
+                    print(f"  BDC lookup found {len(bdc_result['providers'])} providers")
+                    return {
+                        "providers": bdc_result['providers'],
+                        "provider_count": bdc_result['provider_count'],
+                        "max_download": max((p.get('max_download_mbps', 0) for p in bdc_result['providers']), default=0),
+                        "max_upload": max((p.get('max_upload_mbps', 0) for p in bdc_result['providers']), default=0),
+                        "has_fiber": any(p.get('technology') == 'Fiber' for p in bdc_result['providers']),
+                        "has_cable": any(p.get('technology') == 'Cable' for p in bdc_result['providers']),
+                        "_source": bdc_result.get('source', 'fcc_bdc_local'),
+                        "_block_geoid": bdc_result.get('block_geoid')
+                    }
+                elif bdc_result:
+                    print(f"  BDC lookup: no providers for this block")
+        except ImportError as e:
+            print(f"  BDC module not available: {e}")
+        except Exception as e:
+            print(f"  BDC lookup error: {e}")
     
     # Fall back to slow Playwright scraping
     print("  Falling back to Playwright (slow)...")

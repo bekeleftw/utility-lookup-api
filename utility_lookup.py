@@ -1155,15 +1155,20 @@ def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
         conn.close()
         if row and row[0]:
             providers_json = row[0] if isinstance(row[0], list) else json.loads(row[0])
+            # Deduplicate by (name, technology, download, upload)
+            seen = set()
             providers = []
             for p in providers_json:
-                providers.append({
-                    'name': p.get('name'),
-                    'technology': p.get('tech'),
-                    'max_download_mbps': p.get('down', 0),
-                    'max_upload_mbps': p.get('up', 0),
-                    'low_latency': p.get('low_lat', 0)
-                })
+                key = (p.get('name'), p.get('tech'), p.get('down', 0), p.get('up', 0))
+                if key not in seen:
+                    seen.add(key)
+                    providers.append({
+                        'name': p.get('name'),
+                        'technology': p.get('tech'),
+                        'max_download_mbps': p.get('down', 0),
+                        'max_upload_mbps': p.get('up', 0),
+                        'low_latency': p.get('low_lat', 0)
+                    })
             return {
                 "providers": providers,
                 "provider_count": len(providers),

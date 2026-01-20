@@ -3964,17 +3964,95 @@
       }
     },
     "AK": {
-      "Alaska Electric Light&Power Co": {
-        "name": "Alaska Electric Light&Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (8 ZIP codes)"
+      "Anchorage": {
+        "name": "Chugach Electric Association",
+        "phone": "907-563-7494",
+        "website": "https://www.chugachelectric.com/"
       },
-      "Alaska Power and Telephone Co": {
-        "name": "Alaska Power and Telephone Co",
-        "phone": null,
+      "Fairbanks": {
+        "name": "Golden Valley Electric Association",
+        "phone": "907-452-1151",
+        "website": "https://www.gvea.com/"
+      },
+      "Juneau": {
+        "name": "Alaska Electric Light & Power",
+        "phone": "907-586-2222",
+        "website": "https://prior-lake.mn.us/"
+      },
+      "Wasilla": {
+        "name": "Matanuska Electric Association",
+        "phone": "907-745-3231",
+        "website": "https://www.mea.coop/"
+      },
+      "Palmer": {
+        "name": "Matanuska Electric Association",
+        "phone": "907-745-3231",
+        "website": "https://www.mea.coop/"
+      },
+      "Sitka": {
+        "name": "Sitka Electric Department",
+        "phone": "907-747-1870",
+        "website": "https://www.cityofsitka.com/",
+        "note": "Municipal"
+      },
+      "Ketchikan": {
+        "name": "Ketchikan Public Utilities",
+        "phone": "907-225-1000",
+        "website": "https://www.ktn-ak.us/",
+        "note": "Municipal"
+      },
+      "Kenai": {
+        "name": "Homer Electric Association",
+        "phone": "907-235-8551",
+        "website": "https://www.homerelectric.com/"
+      },
+      "Soldotna": {
+        "name": "Homer Electric Association",
+        "phone": "907-235-8551",
+        "website": "https://www.homerelectric.com/"
+      },
+      "Homer": {
+        "name": "Homer Electric Association",
+        "phone": "907-235-8551",
+        "website": "https://www.homerelectric.com/"
+      },
+      "Kodiak": {
+        "name": "Kodiak Electric Association",
+        "phone": "907-486-7700",
+        "website": "https://www.kodiakelectric.com/"
+      },
+      "Bethel": {
+        "name": "Bethel Utilities Corporation",
+        "phone": "907-543-3644",
+        "website": null
+      },
+      "North Pole": {
+        "name": "Golden Valley Electric Association",
+        "phone": "907-452-1151",
+        "website": "https://www.gvea.com/"
+      },
+      "Eagle River": {
+        "name": "Chugach Electric Association",
+        "phone": "907-563-7494",
+        "website": "https://www.chugachelectric.com/"
+      },
+      "Petersburg": {
+        "name": "Petersburg Municipal Power & Light",
+        "phone": "907-772-4203",
         "website": null,
-        "note": "From EIA-861 (22 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Wrangell": {
+        "name": "Wrangell Municipal Light & Power",
+        "phone": "907-874-3602",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Seward": {
+        "name": "Seward Electric System",
+        "phone": "907-224-4050",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "IA": {
@@ -6236,17 +6314,41 @@
       }
     },
     "AK": {
-      "Statewide": {
+      "Anchorage": {
         "name": "ENSTAR Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for AK"
+        "phone": "907-277-5551",
+        "website": "https://www.enstarnaturalgas.com/"
       },
-      "ENSTAR_Natural_Gas": {
+      "Wasilla": {
         "name": "ENSTAR Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in AK"
+        "phone": "907-277-5551",
+        "website": "https://www.enstarnaturalgas.com/"
+      },
+      "Palmer": {
+        "name": "ENSTAR Natural Gas",
+        "phone": "907-277-5551",
+        "website": "https://www.enstarnaturalgas.com/"
+      },
+      "Eagle River": {
+        "name": "ENSTAR Natural Gas",
+        "phone": "907-277-5551",
+        "website": "https://www.enstarnaturalgas.com/"
+      },
+      "Kenai": {
+        "name": "ENSTAR Natural Gas",
+        "phone": "907-277-5551",
+        "website": "https://www.enstarnaturalgas.com/"
+      },
+      "Soldotna": {
+        "name": "ENSTAR Natural Gas",
+        "phone": "907-277-5551",
+        "website": "https://www.enstarnaturalgas.com/"
+      },
+      "Fairbanks": {
+        "name": "Interior Gas Utility",
+        "phone": "907-450-0prior",
+        "website": "https://prior-lake.mn.us/",
+        "note": "Limited service area"
       }
     },
     "AR": {

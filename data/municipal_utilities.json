@@ -489,6 +489,106 @@
         "name": "Bartlett Electric Cooperative",
         "phone": "254-527-3551",
         "website": "https://www.bartlettec.coop/"
+      },
+      "Castroville": {
+        "name": "Castroville Municipal Utilities",
+        "phone": "830-931-4070",
+        "website": "https://www.castrovilletx.gov/"
+      },
+      "Hondo": {
+        "name": "City of Hondo Electric",
+        "phone": "830-426-3378",
+        "website": "https://www.hondo-tx.org/"
+      },
+      "Karnes City": {
+        "name": "Karnes City Electric",
+        "phone": "830-780-3938",
+        "website": null
+      },
+      "Kenedy": {
+        "name": "City of Kenedy Electric",
+        "phone": "830-583-3523",
+        "website": "https://www.cityofkenedy.org/"
+      },
+      "Llano": {
+        "name": "City of Llano Electric",
+        "phone": "325-247-4158",
+        "website": "https://www.cityofllano.com/"
+      },
+      "Marble Falls": {
+        "name": "City of Marble Falls Electric",
+        "phone": "830-693-3615",
+        "website": "https://www.marblefallstx.gov/"
+      },
+      "Burnet": {
+        "name": "City of Burnet Electric",
+        "phone": "512-756-6093",
+        "website": "https://www.cityofburnet.com/"
+      },
+      "Lampasas": {
+        "name": "City of Lampasas Electric",
+        "phone": "512-556-6831",
+        "website": "https://www.lampasas.org/"
+      },
+      "Brady": {
+        "name": "City of Brady Electric",
+        "phone": "325-597-2152",
+        "website": "https://www.bradytx.us/"
+      },
+      "Coleman": {
+        "name": "City of Coleman Electric",
+        "phone": "325-625-4116",
+        "website": null
+      },
+      "Ballinger": {
+        "name": "City of Ballinger Electric",
+        "phone": "325-365-3511",
+        "website": "https://www.ballingertx.org/"
+      },
+      "Winters": {
+        "name": "City of Winters Electric",
+        "phone": "325-754-4424",
+        "website": null
+      },
+      "Stamford": {
+        "name": "City of Stamford Electric",
+        "phone": "325-773-2591",
+        "website": null
+      },
+      "Hamlin": {
+        "name": "City of Hamlin Electric",
+        "phone": "325-576-3636",
+        "website": null
+      },
+      "Rotan": {
+        "name": "City of Rotan Electric",
+        "phone": "325-735-2261",
+        "website": null
+      },
+      "Snyder": {
+        "name": "City of Snyder Electric",
+        "phone": "325-573-4957",
+        "website": "https://www.ci.snyder.tx.us/"
+      },
+      "Colorado City": {
+        "name": "City of Colorado City Electric",
+        "phone": "325-728-3403",
+        "website": null
+      },
+      "Sweetwater": {
+        "name": "City of Sweetwater Electric",
+        "phone": "325-236-6311",
+        "website": "https://www.sweetwatertexas.net/"
+      },
+      "Merkel": {
+        "name": "City of Merkel Electric",
+        "phone": "325-928-4911",
+        "website": null
+      },
+      "Anson": {
+        "name": "City of Anson Electric",
+        "phone": "325-823-3333",
+        "website": null
       }
     },
     "CA": {

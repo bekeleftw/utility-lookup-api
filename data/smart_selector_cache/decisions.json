@@ -575,5 +575,61 @@
     ],
     "reasoning": "The state_gis source has the highest confidence level (85%) and identifies PacifiCorp as the utility provider for the address in Yakima, WA. Although other sources provide conflicting information, the authoritative nature of the state_gis data supports the selection of PacifiCorp.",
     "timestamp": 1768932598.099252
+  },
+  "606:electric:a2c2b34c": {
+    "utility_name": "Commonwealth Edison Co",
+    "confidence": 0.7,
+    "confidence_level": "medium",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The address is in Chicago, IL, which does not have a municipal utility serving it. The EIA source indicates Commonwealth Edison Co as the provider with the highest confidence, while the county default and HIFLD sources provide lower confidence and conflicting information.",
+    "timestamp": 1768935802.293953
+  },
+  "606:gas:bd8e35ae": {
+    "utility_name": "Peoples Gas",
+    "confidence": 0.5,
+    "confidence_level": "low",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "hifld_gas"
+    ],
+    "reasoning": "Peoples Gas is the municipal utility for Chicago, and since the address is within Chicago city limits, it is the authoritative provider despite the higher confidence from NICOR GAS COMPANY in the hifld_gas source.",
+    "timestamp": 1768935805.858059
+  },
+  "770:water:d6e92dbc": {
+    "utility_name": "City of Houston Public Works",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "special_district_water"
+    ],
+    "reasoning": "The address is within the city limits of Houston, which has a municipal water utility named 'City of Houston Public Works'. According to the critical rules, municipal utilities are authoritative for their city, making this the correct choice despite the high confidence of the special district water source.",
+    "timestamp": 1768936147.307918
+  },
+  "786:water:d6e92dbc": {
+    "utility_name": "City of Kyle Utilities",
+    "confidence": 0.88,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "special_district_water"
+    ],
+    "reasoning": "The address is located within the city limits of Kyle, which has a municipal utility named 'City of Kyle Utilities'. According to the critical rules, municipal utilities are authoritative for their city, making this the most likely correct provider despite the high confidence of the special district water source.",
+    "timestamp": 1768937450.9294982
+  },
+  "750:gas:9e085ab3": {
+    "utility_name": "CoServ Gas",
+    "confidence": 0.99,
+    "confidence_level": "verified",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "county_default_gas"
+    ],
+    "reasoning": "The user correction indicates a high confidence in CoServ Gas as the provider for the address in question, while the county default gas source suggests Atmos Energy with lower confidence. Given the high confidence in the user correction, CoServ Gas is selected despite the disagreement.",
+    "timestamp": 1768939409.0181062
   }
 }

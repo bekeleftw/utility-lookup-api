@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-20T14:03:33.518982",
+  "city": "Oak Point",
+  "state": "TX",
+  "zip_prefix": "750",
+  "utility_type": "gas",
+  "verified": false,
+  "serp_utility": "Atmos Energy",
+  "confidence_boost": -0.2,
+  "sources": [],
+  "search_query": "\"Oak Point\" \"TX\" gas utility provider",
+  "notes": "The search results consistently indicate that Atmos Energy is the gas utility provider for Oak Point, TX."
+}

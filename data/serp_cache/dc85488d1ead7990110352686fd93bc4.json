@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-20T13:09:13.076773",
+  "city": "Houston",
+  "state": "TX",
+  "zip_prefix": "770",
+  "utility_type": "water",
+  "verified": true,
+  "serp_utility": "City of Houston Public Works",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Houston\" \"TX\" water utility provider",
+  "notes": "The City of Houston Public Works is identified as the water utility provider for the specified address based on multiple search results."
+}

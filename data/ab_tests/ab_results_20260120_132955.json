@@ -1,0 +1,1549 @@
+{
+  "timestamp": "2026-01-20T13:32:32.877932",
+  "total_tests": 20,
+  "results": [
+    {
+      "address": "1100 Congress Ave, Austin, TX 78701",
+      "timestamp": "2026-01-20T13:29:55.177180",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Austin Energy",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Texas Gas Service",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5790,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Austin Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Texas Gas Service",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": {
+            "name": "Austin Water",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 1908,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Austin Water",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Austin Energy",
+        "expected_gas": "Texas Gas Service"
+      }
+    },
+    {
+      "address": "1000 Main St, Houston, TX 77002",
+      "timestamp": "2026-01-20T13:30:02.876878",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "CenterPoint Energy Houston Electric,",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "CenterPoint Energy",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5625,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "CenterPoint Energy Houston Electric, LLC",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "CenterPoint Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": {
+            "name": "City of Houston Public Works",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 794,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "CenterPoint Energy Houston Electric,",
+            "v2_name": "CenterPoint Energy Houston Electric, LLC",
+            "v1_source": "state_gis",
+            "v2_source": "state_gis"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "City of Houston Public Works",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "CenterPoint Energy",
+        "expected_gas": "CenterPoint Energy"
+      }
+    },
+    {
+      "address": "1500 Marilla St, Dallas, TX 75201",
+      "timestamp": "2026-01-20T13:30:09.297134",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Oncor Electric Delivery Company LLC",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Atmos Energy",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 4673,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Oncor Electric Delivery Company LLC",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Atmos Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": {
+            "name": "Dallas Water Utilities",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 1265,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Dallas Water Utilities",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Oncor",
+        "expected_gas": "Atmos Energy"
+      }
+    },
+    {
+      "address": "100 Military Plaza, San Antonio, TX 78205",
+      "timestamp": "2026-01-20T13:30:15.236793",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "CPS Energy",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "CPS Energy",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5298,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "CPS Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "CPS Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": {
+            "name": "San Antonio Water System (SAWS)",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 1005,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "San Antonio Water System (SAWS)",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "CPS Energy",
+        "expected_gas": "CPS Energy"
+      }
+    },
+    {
+      "address": "301 Treasure Trove Path, Kyle, TX 78640",
+      "timestamp": "2026-01-20T13:30:21.541059",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Pedernales Electric Cooperative, Inc.",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Centerpoint Energy",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "hifld_gas+serp"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 24518,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Pedernales Electric Cooperative, Inc.",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "CenterPoint Energy",
+            "confidence": "verified",
+            "confidence_score": 99,
+            "source": "user_corrections"
+          },
+          "water": {
+            "name": "City of Kyle Utilities",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 9731,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "City of Kyle Utilities",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": false
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": false
+        }
+      },
+      "expected": {
+        "expected_electric": "Pedernales Electric Cooperative",
+        "expected_gas": "Texas Gas Service"
+      }
+    },
+    {
+      "address": "100 NE 1st Ave, Miami, FL 33132",
+      "timestamp": "2026-01-20T13:30:55.790962",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Florida Power & Light",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "Florida City Gas Company",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5521,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Florida Power & Light Co",
+            "confidence": "high",
+            "confidence_score": 75,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "PEOPLES GAS SYSTEMS, INC",
+            "confidence": "high",
+            "confidence_score": 73,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": "Miami-Dade Water and Sewer Department",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 735,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "Florida Power & Light",
+            "v2_name": "Florida Power & Light Co",
+            "v1_source": "eia_861",
+            "v2_source": "eia_861"
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "Florida City Gas Company",
+            "v2_name": "PEOPLES GAS SYSTEMS, INC",
+            "v1_source": "hifld_gas",
+            "v2_source": "hifld_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Miami-Dade Water and Sewer Department",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true
+        },
+        "v2_correct": {
+          "electric": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Florida Power & Light",
+        "expected_gas": null
+      }
+    },
+    {
+      "address": "315 E Kennedy Blvd, Tampa, FL 33602",
+      "timestamp": "2026-01-20T13:31:02.048500",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Tampa Electric Co",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "Peoples Gas Systems,",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "supplemental"
+          }
+        },
+        "time_ms": 5045,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Tampa Electric Co",
+            "confidence": "high",
+            "confidence_score": 75,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "PEOPLES GAS SYSTEMS, INC",
+            "confidence": "high",
+            "confidence_score": 73,
+            "source": "hifld_gas"
+          },
+          "water": null
+        },
+        "time_ms": 899,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "gas",
+            "v1_name": "Peoples Gas Systems,",
+            "v2_name": "PEOPLES GAS SYSTEMS, INC",
+            "v1_source": "hifld_gas",
+            "v2_source": "hifld_gas"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Tampa Electric",
+        "expected_gas": "Peoples Gas"
+      }
+    },
+    {
+      "address": "400 S Orange Ave, Orlando, FL 32801",
+      "timestamp": "2026-01-20T13:31:07.993423",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Orlando Utilities Commission (OUC)",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Peoples Gas Systems,",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5394,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Orlando Utilities Commission (OUC)",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "PEOPLES GAS SYSTEMS, INC",
+            "confidence": "high",
+            "confidence_score": 73,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": "Orlando Utilities Commission (OUC)",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 994,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "gas",
+            "v1_name": "Peoples Gas Systems,",
+            "v2_name": "PEOPLES GAS SYSTEMS, INC",
+            "v1_source": "hifld_gas",
+            "v2_source": "hifld_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Orlando Utilities Commission (OUC)",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true
+        },
+        "v2_correct": {
+          "electric": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Orlando Utilities Commission",
+        "expected_gas": null
+      }
+    },
+    {
+      "address": "117 W Duval St, Jacksonville, FL 32202",
+      "timestamp": "2026-01-20T13:31:14.382820",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Jea",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Peoples Gas Systems,",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5157,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "JEA",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "PEOPLES GAS SYSTEMS, INC",
+            "confidence": "high",
+            "confidence_score": 73,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": "Jacksonville Water",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 1397,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "gas",
+            "v1_name": "Peoples Gas Systems,",
+            "v2_name": "PEOPLES GAS SYSTEMS, INC",
+            "v1_source": "hifld_gas",
+            "v2_source": "hifld_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Jacksonville Water",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true
+        },
+        "v2_correct": {
+          "electric": true
+        }
+      },
+      "expected": {
+        "expected_electric": "JEA",
+        "expected_gas": null
+      }
+    },
+    {
+      "address": "55 Trinity Ave SW, Atlanta, GA 30303",
+      "timestamp": "2026-01-20T13:31:20.938184",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Georgia Power",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "Atlanta Gas Light",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 6811,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Georgia Power Co",
+            "confidence": "high",
+            "confidence_score": 75,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "ATLANTA GAS LIGHT CO.",
+            "confidence": "verified",
+            "confidence_score": 93,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": "City of Atlanta Department of Watershed Management",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 905,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "Georgia Power",
+            "v2_name": "Georgia Power Co",
+            "v1_source": "eia_861",
+            "v2_source": "eia_861"
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "Atlanta Gas Light",
+            "v2_name": "ATLANTA GAS LIGHT CO.",
+            "v1_source": "hifld_gas",
+            "v2_source": "hifld_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "City of Atlanta Department of Watershed Management",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Georgia Power",
+        "expected_gas": "Atlanta Gas Light"
+      }
+    },
+    {
+      "address": "600 E 4th St, Charlotte, NC 28202",
+      "timestamp": "2026-01-20T13:31:28.655720",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Duke Energy Carolinas,",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "Piedmont Natural Gas",
+            "confidence": "medium",
+            "confidence_score": null,
+            "source": "State LDC database (HIFLD gap)"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "supplemental"
+          }
+        },
+        "time_ms": 12878,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Duke Energy Carolinas, LLC",
+            "confidence": "verified",
+            "confidence_score": 90,
+            "source": "eia_861"
+          },
+          "gas": null,
+          "water": null
+        },
+        "time_ms": 1189,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "Duke Energy Carolinas,",
+            "v2_name": "Duke Energy Carolinas, LLC",
+            "v1_source": "eia_861",
+            "v2_source": "eia_861"
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "Piedmont Natural Gas",
+            "v2_name": null,
+            "v1_source": "State LDC database (HIFLD gap)",
+            "v2_source": null
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": false
+        }
+      },
+      "expected": {
+        "expected_electric": "Duke Energy Carolinas",
+        "expected_gas": "Piedmont Natural Gas"
+      }
+    },
+    {
+      "address": "1 E Edenton St, Raleigh, NC 27601",
+      "timestamp": "2026-01-20T13:31:42.723865",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Duke Energy Progress - (NC)",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "Public Service Co. of North Carolina",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "supplemental"
+          }
+        },
+        "time_ms": 4350,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Duke Energy Progress - (NC)",
+            "confidence": "verified",
+            "confidence_score": 90,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "PUBLIC SERVICE CO. OF NORTH CAROLINA",
+            "confidence": "high",
+            "confidence_score": 73,
+            "source": "hifld_gas"
+          },
+          "water": null
+        },
+        "time_ms": 879,
+        "error": null
+      },
+      "comparison": {
+        "match": true,
+        "differences": [],
+        "v1_correct": {
+          "electric": true,
+          "gas": false
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": false
+        }
+      },
+      "expected": {
+        "expected_electric": "Duke Energy Progress",
+        "expected_gas": "PSNC Energy"
+      }
+    },
+    {
+      "address": "1 Public Square, Nashville, TN 37201",
+      "timestamp": "2026-01-20T13:31:47.954114",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Nashville Electric Service (NES)",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Piedmont Natural Gas",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "supplemental"
+          }
+        },
+        "time_ms": 4414,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": null,
+          "gas": null,
+          "water": null
+        },
+        "time_ms": 528,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "Nashville Electric Service (NES)",
+            "v2_name": null,
+            "v1_source": "municipal",
+            "v2_source": null
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "Piedmont Natural Gas",
+            "v2_name": null,
+            "v1_source": "hifld_gas",
+            "v2_source": null
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": false,
+          "gas": false
+        }
+      },
+      "expected": {
+        "expected_electric": "Nashville Electric Service",
+        "expected_gas": "Piedmont Natural Gas"
+      }
+    },
+    {
+      "address": "125 N Main St, Memphis, TN 38103",
+      "timestamp": "2026-01-20T13:31:52.897433",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Memphis Light, Gas and Water (MLGW)",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Memphis Light, Gas and Water (MLGW)",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 5198,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Memphis Light, Gas and Water (MLGW)",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Memphis Light, Gas and Water (MLGW)",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": {
+            "name": "Memphis Water",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 1011,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Memphis Water",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "MLGW",
+        "expected_gas": "MLGW"
+      }
+    },
+    {
+      "address": "200 N Spring St, Los Angeles, CA 90012",
+      "timestamp": "2026-01-20T13:31:59.108266",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Los Angeles Department of Water and Power (LADWP)",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "SoCalGas",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 6660,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Los Angeles Department of Water and Power (LADWP)",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Southern California Gas",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": "Los Angeles Department of Water and Power (LADWP)",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 888,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "gas",
+            "v1_name": "SoCalGas",
+            "v2_name": "Southern California Gas",
+            "v1_source": "state_gis_gas",
+            "v2_source": "state_gis_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "Los Angeles Department of Water and Power (LADWP)",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": false
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "LADWP",
+        "expected_gas": "Southern California Gas"
+      }
+    },
+    {
+      "address": "1 Dr Carlton B Goodlett Pl, San Francisco, CA 94102",
+      "timestamp": "2026-01-20T13:32:06.656973",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Pacific Gas and Electric",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Pacific Gas and Electric",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 3665,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Pacific Gas & Electric Company",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Pacific Gas & Electric",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": "San Francisco Public Utilities Commission (SFPUC)",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 951,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "Pacific Gas and Electric",
+            "v2_name": "Pacific Gas & Electric Company",
+            "v1_source": "state_gis",
+            "v2_source": "state_gis"
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "Pacific Gas and Electric",
+            "v2_name": "Pacific Gas & Electric",
+            "v1_source": "state_gis_gas",
+            "v2_source": "state_gis_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "San Francisco Public Utilities Commission (SFPUC)",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Pacific Gas & Electric",
+        "expected_gas": "Pacific Gas & Electric"
+      }
+    },
+    {
+      "address": "202 C St, San Diego, CA 92101",
+      "timestamp": "2026-01-20T13:32:11.274174",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "SDG&E",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "SDG&E",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 4772,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "San Diego Gas & Electric",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "San Diego Gas & Electric",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": "City of San Diego Public Utilities",
+            "confidence": "verified",
+            "confidence_score": 96,
+            "source": "municipal_water"
+          }
+        },
+        "time_ms": 814,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "SDG&E",
+            "v2_name": "San Diego Gas & Electric",
+            "v1_source": "state_gis",
+            "v2_source": "state_gis"
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "SDG&E",
+            "v2_name": "San Diego Gas & Electric",
+            "v1_source": "state_gis_gas",
+            "v2_source": "state_gis_gas"
+          },
+          {
+            "utility_type": "water",
+            "v1_name": null,
+            "v2_name": "City of San Diego Public Utilities",
+            "v1_source": "municipal_utility",
+            "v2_source": "municipal_water"
+          }
+        ],
+        "v1_correct": {
+          "electric": false,
+          "gas": false
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "San Diego Gas & Electric",
+        "expected_gas": "San Diego Gas & Electric"
+      }
+    },
+    {
+      "address": "915 I St, Sacramento, CA 95814",
+      "timestamp": "2026-01-20T13:32:16.861235",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Sacramento Municipal Utility District (SMUD)",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Pacific Gas and Electric",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "supplemental"
+          }
+        },
+        "time_ms": 5295,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Sacramento Municipal Utility District (SMUD)",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Pacific Gas & Electric",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis_gas"
+          },
+          "water": null
+        },
+        "time_ms": 1362,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "gas",
+            "v1_name": "Pacific Gas and Electric",
+            "v2_name": "Pacific Gas & Electric",
+            "v1_source": "state_gis_gas",
+            "v2_source": "state_gis_gas"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "SMUD",
+        "expected_gas": "Pacific Gas & Electric"
+      }
+    },
+    {
+      "address": "City Hall, New York, NY 10007",
+      "timestamp": "2026-01-20T13:32:23.519292",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Consolidated Edison Co-NY Inc",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "Con Edison",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 3315,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": null,
+          "gas": null,
+          "water": null
+        },
+        "time_ms": 273,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "Consolidated Edison Co-NY Inc",
+            "v2_name": null,
+            "v1_source": "eia_861",
+            "v2_source": null
+          },
+          {
+            "utility_type": "gas",
+            "v1_name": "Con Edison",
+            "v2_name": null,
+            "v1_source": "hifld_gas",
+            "v2_source": null
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": false,
+          "gas": false
+        }
+      },
+      "expected": {
+        "expected_electric": "Con Edison",
+        "expected_gas": "Con Edison"
+      }
+    },
+    {
+      "address": "65 Niagara Square, Buffalo, NY 14202",
+      "timestamp": "2026-01-20T13:32:27.109150",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Niagara Mohawk Power Corp.",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "National Fuel Gas Distribution",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "hifld_gas"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "supplemental"
+          }
+        },
+        "time_ms": 4932,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Niagara Mohawk Power Corp.",
+            "confidence": "verified",
+            "confidence_score": 95,
+            "source": "eia_861"
+          },
+          "gas": {
+            "name": "NATIONAL FUEL GAS DISTRIBUTION",
+            "confidence": "verified",
+            "confidence_score": 93,
+            "source": "hifld_gas"
+          },
+          "water": null
+        },
+        "time_ms": 834,
+        "error": null
+      },
+      "comparison": {
+        "match": true,
+        "differences": [],
+        "v1_correct": {
+          "electric": false,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": false,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "National Grid",
+        "expected_gas": "National Fuel Gas"
+      }
+    }
+  ]
+}

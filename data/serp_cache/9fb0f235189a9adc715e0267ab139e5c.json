@@ -1,0 +1,13 @@
+{
+  "timestamp": "2026-01-20T13:31:36.724338",
+  "city": "Charlotte",
+  "state": "NC",
+  "zip_prefix": "282",
+  "utility_type": "electric",
+  "verified": true,
+  "serp_utility": "Duke Energy",
+  "confidence_boost": 0.1,
+  "sources": [],
+  "search_query": "\"Charlotte\" \"NC\" electric utility provider",
+  "notes": "Duke Energy is identified as the primary electric utility provider for Charlotte, NC, including the specified address."
+}

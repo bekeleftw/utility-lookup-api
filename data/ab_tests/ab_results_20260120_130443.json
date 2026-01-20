@@ -1,0 +1,203 @@
+{
+  "timestamp": "2026-01-20T13:05:05.944383",
+  "total_tests": 3,
+  "results": [
+    {
+      "address": "1100 Congress Ave, Austin, TX 78701",
+      "timestamp": "2026-01-20T13:04:43.910791",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Austin Energy",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Texas Gas Service",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 6848,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Austin Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal"
+          },
+          "gas": {
+            "name": "Texas Gas Service",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": null
+        },
+        "time_ms": 1225,
+        "error": null
+      },
+      "comparison": {
+        "match": true,
+        "differences": [],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Austin Energy",
+        "expected_gas": "Texas Gas Service"
+      }
+    },
+    {
+      "address": "1000 Main St, Houston, TX 77002",
+      "timestamp": "2026-01-20T13:04:51.984236",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "CenterPoint Energy Houston Electric,",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "CenterPoint Energy",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 4750,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "CenterPoint Energy Houston Electric, LLC",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "CenterPoint Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": null
+        },
+        "time_ms": 1015,
+        "error": null
+      },
+      "comparison": {
+        "match": false,
+        "differences": [
+          {
+            "utility_type": "electric",
+            "v1_name": "CenterPoint Energy Houston Electric,",
+            "v2_name": "CenterPoint Energy Houston Electric, LLC",
+            "v1_source": "state_gis",
+            "v2_source": "state_gis"
+          }
+        ],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "CenterPoint Energy",
+        "expected_gas": "CenterPoint Energy"
+      }
+    },
+    {
+      "address": "1500 Marilla St, Dallas, TX 75201",
+      "timestamp": "2026-01-20T13:04:57.749920",
+      "v1": {
+        "result": {
+          "electric": {
+            "name": "Oncor Electric Delivery Company LLC",
+            "confidence": "verified",
+            "confidence_score": null,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Atmos Energy",
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_gas_data"
+          },
+          "water": {
+            "name": null,
+            "confidence": "high",
+            "confidence_score": null,
+            "source": "municipal_utility"
+          }
+        },
+        "time_ms": 7416,
+        "error": null
+      },
+      "v2": {
+        "result": {
+          "electric": {
+            "name": "Oncor Electric Delivery Company LLC",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "state_gis"
+          },
+          "gas": {
+            "name": "Atmos Energy",
+            "confidence": "verified",
+            "confidence_score": 100,
+            "source": "municipal_gas"
+          },
+          "water": null
+        },
+        "time_ms": 777,
+        "error": null
+      },
+      "comparison": {
+        "match": true,
+        "differences": [],
+        "v1_correct": {
+          "electric": true,
+          "gas": true
+        },
+        "v2_correct": {
+          "electric": true,
+          "gas": true
+        }
+      },
+      "expected": {
+        "expected_electric": "Oncor",
+        "expected_gas": "Atmos Energy"
+      }
+    }
+  ]
+}

@@ -2678,93 +2678,168 @@
       }
     },
     "CO": {
+      "Denver": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
       "Colorado Springs": {
         "name": "Colorado Springs Utilities",
         "phone": "719-448-4800",
-        "website": "https://www.csu.org",
-        "zip_codes": [
-          "80829",
-          "80831",
-          "80840",
-          "80901",
-          "80902",
-          "80903",
-          "80904",
-          "80905",
-          "80906",
-          "80907",
-          "80908",
-          "80909",
-          "80910",
-          "80911",
-          "80912",
-          "80913",
-          "80914",
-          "80915",
-          "80916",
-          "80917",
-          "80918",
-          "80919",
-          "80920",
-          "80921",
-          "80922",
-          "80923",
-          "80924",
-          "80925",
-          "80926",
-          "80927",
-          "80928",
-          "80929",
-          "80930",
-          "80938",
-          "80939",
-          "80941",
-          "80942",
-          "80951"
-        ],
-        "services": [
-          "electric",
-          "gas",
-          "water"
-        ]
+        "website": "https://www.csu.org/",
+        "note": "Municipal"
+      },
+      "Aurora": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
       "Fort Collins": {
         "name": "Fort Collins Utilities",
         "phone": "970-212-2900",
-        "website": "https://www.fcgov.com/utilities",
-        "zip_codes": [
-          "80521",
-          "80522",
-          "80523",
-          "80524",
-          "80525",
-          "80526",
-          "80527",
-          "80528"
-        ]
+        "website": "https://www.fcgov.com/utilities/",
+        "note": "Municipal"
+      },
+      "Lakewood": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Thornton": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Arvada": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Westminster": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Pueblo": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Centennial": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Boulder": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Greeley": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
       "Longmont": {
         "name": "Longmont Power & Communications",
         "phone": "303-651-8386",
-        "website": "https://www.longmontcolorado.gov/departments/departments-e-m/longmont-power-communications",
-        "zip_codes": [
-          "80501",
-          "80502",
-          "80503",
-          "80504"
-        ]
+        "website": "https://www.longmontcolorado.gov/lpc",
+        "note": "Municipal"
       },
-      "Public Service Co of Colorado": {
-        "name": "Public Service Co of Colorado",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (344 ZIP codes)"
+      "Loveland": {
+        "name": "Loveland Water & Power",
+        "phone": "970-962-3000",
+        "website": "https://www.cityofloveland.org/",
+        "note": "Municipal"
       },
-      "Black Hills Colorado Electric LLC": {
-        "name": "Black Hills Colorado Electric, LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (72 ZIP codes)"
+      "Broomfield": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Grand Junction": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Castle Rock": {
+        "name": "IREA (Intermountain Rural Electric)",
+        "phone": "800-332-9540",
+        "website": "https://www.irea.coop/",
+        "note": "Co-op"
+      },
+      "Commerce City": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Parker": {
+        "name": "IREA (Intermountain Rural Electric)",
+        "phone": "800-332-9540",
+        "website": "https://www.irea.coop/",
+        "note": "Co-op"
+      },
+      "Littleton": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Northglenn": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Brighton": {
+        "name": "United Power",
+        "phone": "303-659-0551",
+        "website": "https://www.unitedpower.com/",
+        "note": "Co-op"
+      },
+      "Englewood": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Wheat Ridge": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Durango": {
+        "name": "La Plata Electric Association",
+        "phone": "970-247-5786",
+        "website": "https://www.lpea.coop/",
+        "note": "Co-op"
+      },
+      "Montrose": {
+        "name": "Delta-Montrose Electric Association",
+        "phone": "970-249-4572",
+        "website": "https://www.dmea.com/",
+        "note": "Co-op"
+      },
+      "Steamboat Springs": {
+        "name": "Yampa Valley Electric Association",
+        "phone": "970-879-1160",
+        "website": "https://www.yvea.com/",
+        "note": "Co-op"
+      },
+      "Glenwood Springs": {
+        "name": "Holy Cross Energy",
+        "phone": "970-945-5491",
+        "website": "https://www.holycross.com/",
+        "note": "Co-op"
+      },
+      "Aspen": {
+        "name": "Holy Cross Energy",
+        "phone": "970-945-5491",
+        "website": "https://www.holycross.com/",
+        "note": "Co-op"
+      },
+      "Estes Park": {
+        "name": "Estes Park Power & Communications",
+        "phone": "970-586-5331",
+        "website": "https://www.esteselec.com/",
+        "note": "Municipal"
       }
     },
     "UT": {
@@ -6651,35 +6726,91 @@
       }
     },
     "CO": {
-      "Statewide": {
+      "Denver": {
         "name": "Xcel Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for CO"
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Xcel_Energy": {
+      "Colorado Springs": {
+        "name": "Colorado Springs Utilities",
+        "phone": "719-448-4800",
+        "website": "https://www.csu.org/",
+        "note": "Municipal"
+      },
+      "Aurora": {
         "name": "Xcel Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CO"
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Black_Hills_Energy": {
+      "Fort Collins": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Lakewood": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Thornton": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Arvada": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Westminster": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Pueblo": {
         "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CO"
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Atmos_Energy": {
+      "Centennial": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Boulder": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Greeley": {
         "name": "Atmos Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CO"
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
       },
-      "Colorado_Natural_Gas": {
-        "name": "Colorado Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in CO"
+      "Longmont": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Loveland": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Grand Junction": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Durango": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Montrose": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       }
     },
     "CT": {

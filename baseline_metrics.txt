@@ -1,0 +1,113 @@
+======================================================================
+UTILITY LOOKUP SYSTEM - BASELINE METRICS
+Generated: 2026-01-20T12:56:36.325749
+======================================================================
+
+======================================================================
+1. LINES OF CODE ANALYSIS
+======================================================================
+
+File                                               Lines
+---------------------------------------------------------
+utility_lookup.py                                  2,564
+state_utility_verification.py                        989
+gis_utility_lookup.py                              1,228
+pipeline/pipeline.py                                 283
+pipeline/interfaces.py                               154
+pipeline/smart_selector.py                           256
+pipeline/sources/gas.py                              195
+pipeline/sources/electric.py                         229
+api.py                                             1,038
+geocoding.py                                         236
+confidence_scoring.py                                256
+---------------------------------------------------------
+TOTAL                                              7,428
+
+======================================================================
+2. DATA FILE INVENTORY
+======================================================================
+
+Total JSON files: 51
+
+File                                                       Size
+----------------------------------------------------------------
+special_districts/processed/tx_districts.json         25579.8 KB
+county_utility_defaults.json                            452.1 KB
+special_districts/processed/tx_districts_index.json      391.9 KB
+findenergy/city_providers.json                          233.5 KB
+special_districts/processed/county_to_district.json       43.6 KB
+municipal_utilities.json                                 39.8 KB
+electric_cooperatives_supplemental.json                  35.9 KB
+lookup_log.json                                          34.6 KB
+smart_selector_cache/decisions.json                      25.9 KB
+utility_directory/master.json                            14.1 KB
+special_districts/processed/fl_districts.json            11.8 KB
+deregulated_markets.json                                 11.7 KB
+special_districts/processed/ca_districts.json            10.7 KB
+special_districts/processed/co_districts.json            10.1 KB
+electric_puds/washington.json                             8.4 KB
+special_districts/processed/ca_zip_to_district.json        8.0 KB
+special_districts/processed/az_districts.json             7.7 KB
+gas_county_lookups.json                                   7.6 KB
+franchise_agreements/index.json                           5.7 KB
+special_districts/processed/az_zip_to_district.json        5.5 KB
+----------------------------------------------------------------
+TOTAL                                                 26973.7 KB
+
+======================================================================
+3. PIPELINE SOURCE INVENTORY
+======================================================================
+
+gas.py: 195 lines
+  Sources: StateGISGasSource, MunicipalGasSource, ZIPMappingGasSource, HIFLDGasSource, CountyDefaultGasSource
+
+electric.py: 229 lines
+  Sources: StateGISElectricSource, MunicipalElectricSource, CoopSource, EIASource, HIFLDElectricSource, CountyDefaultElectricSource
+
+======================================================================
+4. LATENCY BENCHMARK
+======================================================================
+
+Skipped (set RUN_LATENCY_BENCHMARK=true to enable)
+
+======================================================================
+5. TEST COVERAGE SUMMARY
+======================================================================
+
+Golden test addresses: 68
+
+Tests by state:
+  TX: 5
+  FL: 4
+  CA: 4
+  NC: 2
+  TN: 2
+  NY: 2
+  PA: 2
+  OH: 2
+  AZ: 2
+  MO: 2
+
+======================================================================
+6. SUMMARY - REFACTORING TARGETS
+======================================================================
+
+Current State:
+  - Total lines of code (key files): 7,428
+  - Data files: 51
+  - Pipeline sources: Electric, Gas (Water missing)
+
+Target State (after refactor):
+  - Lines of code: < 2,000
+  - Data files: < 10
+  - Pipeline sources: Electric, Gas, Water (unified)
+
+Key Files to Refactor:
+  - utility_lookup.py (3,464 lines → < 300 lines)
+  - state_utility_verification.py (1,401 lines → DELETE)
+  - pipeline/sources/water.py (NEW)
+
+
+======================================================================
+END OF BASELINE METRICS REPORT
+======================================================================

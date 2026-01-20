@@ -2484,6 +2484,124 @@
         ],
         "note": "CoServ provides both electric and gas in Denton County - Little Elm, Oak Point, Frisco, Flower Mound, Highland Village, Corinth, Lake Dallas, Hickory Creek, Argyle, Aubrey, Pilot Point, Sanger, Krum"
       }
+    },
+    "GA": {
+      "Adairsville": {
+        "name": "City of Adairsville Gas",
+        "phone": "678-409-6092",
+        "website": null
+      },
+      "Austell": {
+        "name": "Austell Natural Gas System",
+        "phone": "770-948-1841",
+        "website": "http://www.austellga.gov/"
+      },
+      "Buford": {
+        "name": "City of Buford Gas",
+        "phone": "770-932-7981",
+        "website": "http://www.cityofbuford.com/"
+      },
+      "Cartersville": {
+        "name": "City of Cartersville Gas",
+        "phone": "770-387-5642",
+        "website": "http://www.cityofcartersville.org/"
+      },
+      "Claxton": {
+        "name": "City of Claxton Gas",
+        "phone": "912-739-1712",
+        "website": null
+      },
+      "Cochran": {
+        "name": "City of Cochran Gas",
+        "phone": "478-934-6346",
+        "website": null
+      },
+      "Commerce": {
+        "name": "City of Commerce Gas",
+        "phone": "706-335-4200",
+        "website": "http://www.commercega.org/"
+      },
+      "Doerun": {
+        "name": "City of Doerun Gas",
+        "phone": "229-891-0553",
+        "website": null
+      },
+      "Douglas": {
+        "name": "City of Douglas Gas",
+        "phone": "912-384-3302",
+        "website": "http://www.cityofdouglasga.com/"
+      },
+      "Dublin": {
+        "name": "City of Dublin Gas",
+        "phone": "478-277-5050",
+        "website": "http://www.dublinga.gov/"
+      },
+      "Edison": {
+        "name": "City of Edison Gas",
+        "phone": "229-308-2492",
+        "website": null
+      },
+      "Fitzgerald": {
+        "name": "Fitzgerald Water, Light & Bond Commission",
+        "phone": "229-426-5400",
+        "website": "http://www.fitzgeraldga.org/"
+      },
+      "Fort Gaines": {
+        "name": "City of Fort Gaines Gas",
+        "phone": "229-768-2505",
+        "website": null
+      },
+      "Louisville": {
+        "name": "City of Louisville Gas",
+        "phone": "706-840-4773",
+        "website": null
+      },
+      "Moultrie": {
+        "name": "City of Moultrie Gas",
+        "phone": "229-668-6000",
+        "website": "http://www.moultriega.com/"
+      },
+      "Nashville": {
+        "name": "City of Nashville Gas",
+        "phone": "229-237-9249",
+        "website": null
+      },
+      "Quitman": {
+        "name": "City of Quitman Gas",
+        "phone": "229-263-7556",
+        "website": "http://www.quitmanga.org/"
+      },
+      "Statesboro": {
+        "name": "City of Statesboro Gas",
+        "phone": "912-764-6154",
+        "website": "http://www.statesboroga.gov/"
+      },
+      "Summerville": {
+        "name": "City of Summerville Gas",
+        "phone": "706-728-7824",
+        "website": null
+      },
+      "Trion": {
+        "name": "Town of Trion Gas",
+        "phone": "706-734-2332",
+        "website": null
+      },
+      "Waynesboro": {
+        "name": "City of Waynesboro Gas",
+        "phone": "706-554-8000",
+        "website": null
+      },
+      "Winder": {
+        "name": "City of Winder Gas",
+        "phone": "678-764-1433",
+        "website": "http://www.cityofwinder.com/"
+      },
+      "Gainesville": {
+        "name": "Liberty Utilities",
+        "phone": "678-707-5217",
+        "website": "https://georgia.libertyutilities.com/",
+        "note": "Serves Gainesville area"
+      }
     }
   },
   "water": {
@@ -3228,6 +3346,251 @@
           "30344"
         ],
         "note": "Atlanta water and wastewater"
+      },
+      "Cobb County": {
+        "name": "Cobb County Water System",
+        "phone": "770-423-1000",
+        "website": "https://www.cobbcounty.org/water"
+      },
+      "Gwinnett County": {
+        "name": "Gwinnett County Water Resources",
+        "phone": "678-376-6700",
+        "website": "https://www.gwinnettcounty.com/departments/water"
+      },
+      "DeKalb County": {
+        "name": "DeKalb County Watershed Management",
+        "phone": "770-621-7200",
+        "website": "https://www.dekalbcountyga.gov/watershed-management"
+      },
+      "Fulton County": {
+        "name": "Fulton County Water",
+        "phone": "404-612-7400",
+        "website": "https://www.fultoncountyga.gov/"
+      },
+      "Clayton County": {
+        "name": "Clayton County Water Authority",
+        "phone": "770-960-5200",
+        "website": "https://www.ccwa.us/"
+      },
+      "Henry County": {
+        "name": "Henry County Water Authority",
+        "phone": "770-957-6659",
+        "website": "https://www.hcwa.com/"
+      },
+      "Cherokee County": {
+        "name": "Cherokee County Water & Sewerage Authority",
+        "phone": "770-479-1813",
+        "website": "https://www.ccwsa.com/"
+      },
+      "Forsyth County": {
+        "name": "Forsyth County Water & Sewer",
+        "phone": "770-781-2160",
+        "website": "https://www.forsythco.com/"
+      },
+      "Douglas County": {
+        "name": "Douglas County Water & Sewer Authority",
+        "phone": "770-949-7617",
+        "website": "https://www.dcwasa.com/"
+      },
+      "Rockdale County": {
+        "name": "Rockdale County Water Resources",
+        "phone": "770-278-7400",
+        "website": "https://www.rockdalecountyga.gov/"
+      },
+      "Newton County": {
+        "name": "Newton County Water & Sewerage Authority",
+        "phone": "770-385-3923",
+        "website": "https://www.ncwsa.us/"
+      },
+      "Paulding County": {
+        "name": "Paulding County Water System",
+        "phone": "770-443-7616",
+        "website": "https://www.paulding.gov/"
+      },
+      "Coweta County": {
+        "name": "Coweta County Water Authority",
+        "phone": "770-254-3710",
+        "website": "https://www.coweta.ga.us/"
+      },
+      "Fayette County": {
+        "name": "Fayette County Water System",
+        "phone": "770-461-1146",
+        "website": "https://www.fayettecountyga.gov/"
+      },
+      "Savannah": {
+        "name": "City of Savannah Water Resources",
+        "phone": "912-651-6460",
+        "website": "https://www.savannahga.gov/"
+      },
+      "Augusta": {
+        "name": "Augusta Utilities Department",
+        "phone": "706-312-4154",
+        "website": "https://www.augustaga.gov/"
+      },
+      "Columbus": {
+        "name": "Columbus Water Works",
+        "phone": "706-649-3400",
+        "website": "https://www.cwwga.org/"
+      },
+      "Macon": {
+        "name": "Macon Water Authority",
+        "phone": "478-464-5600",
+        "website": "https://www.maconwater.org/"
+      },
+      "Athens": {
+        "name": "Athens-Clarke County Public Utilities",
+        "phone": "706-613-3470",
+        "website": "https://www.accgov.com/"
+      },
+      "Albany": {
+        "name": "Albany Utility Board",
+        "phone": "229-883-8330",
+        "website": "http://www.albanyutil.org/"
+      },
+      "Marietta": {
+        "name": "Marietta Board of Lights and Water",
+        "phone": "770-794-5150",
+        "website": "https://www.mariettaga.gov/"
+      },
+      "Roswell": {
+        "name": "City of Roswell Water",
+        "phone": "770-641-3727",
+        "website": "https://www.roswellgov.com/"
+      },
+      "Johns Creek": {
+        "name": "Fulton County Water (Johns Creek)",
+        "phone": "404-612-7400",
+        "website": "https://www.johnscreekga.gov/"
+      },
+      "Warner Robins": {
+        "name": "City of Warner Robins Water",
+        "phone": "478-293-1000",
+        "website": "https://www.wrga.gov/"
+      },
+      "Alpharetta": {
+        "name": "City of Alpharetta Water",
+        "phone": "678-297-6000",
+        "website": "https://www.alpharetta.ga.us/"
+      },
+      "Smyrna": {
+        "name": "City of Smyrna Water",
+        "phone": "770-431-2842",
+        "website": "https://www.smyrnaga.gov/"
+      },
+      "Valdosta": {
+        "name": "City of Valdosta Utilities",
+        "phone": "229-259-3592",
+        "website": "https://www.valdostacity.com/"
+      },
+      "Dalton": {
+        "name": "Dalton Utilities",
+        "phone": "706-278-1313",
+        "website": "http://www.dutil.com/"
+      },
+      "Newnan": {
+        "name": "Newnan Utilities",
+        "phone": "770-254-2355",
+        "website": "http://www.newnanutilities.org/"
+      },
+      "Gainesville": {
+        "name": "Gainesville Water Resources",
+        "phone": "770-535-6880",
+        "website": "https://www.gainesville.org/"
+      },
+      "LaGrange": {
+        "name": "City of LaGrange Utilities",
+        "phone": "706-883-2055",
+        "website": "http://www.lagrangega.org/"
+      },
+      "Carrollton": {
+        "name": "City of Carrollton Utilities",
+        "phone": "770-830-2000",
+        "website": "https://www.carrollton-ga.gov/"
+      },
+      "Rome": {
+        "name": "Rome Water & Sewer Division",
+        "phone": "706-236-4477",
+        "website": "https://www.romega.us/"
+      },
+      "Kennesaw": {
+        "name": "Cobb County Water (Kennesaw)",
+        "phone": "770-423-1000",
+        "website": "https://www.kennesaw-ga.gov/"
+      },
+      "Peachtree City": {
+        "name": "Fayette County Water (Peachtree City)",
+        "phone": "770-461-1146",
+        "website": "https://www.peachtree-city.org/"
+      },
+      "Woodstock": {
+        "name": "Cherokee County Water (Woodstock)",
+        "phone": "770-479-1813",
+        "website": "https://www.woodstockga.gov/"
+      },
+      "Canton": {
+        "name": "City of Canton Water",
+        "phone": "770-704-1500",
+        "website": "https://www.cantonga.gov/"
+      },
+      "Acworth": {
+        "name": "Cobb County Water (Acworth)",
+        "phone": "770-423-1000",
+        "website": "http://www.acworth.org/"
+      },
+      "Cartersville": {
+        "name": "City of Cartersville Water",
+        "phone": "770-387-5656",
+        "website": "http://www.cityofcartersville.org/"
+      },
+      "Griffin": {
+        "name": "City of Griffin Water",
+        "phone": "770-229-6400",
+        "website": "http://www.cityofgriffin.com/"
+      },
+      "McDonough": {
+        "name": "Henry County Water (McDonough)",
+        "phone": "770-957-6659",
+        "website": "https://www.mcdonoughga.org/"
+      },
+      "Stockbridge": {
+        "name": "Henry County Water (Stockbridge)",
+        "phone": "770-957-6659",
+        "website": "https://www.cityofstockbridge.com/"
+      },
+      "Lawrenceville": {
+        "name": "Gwinnett County Water (Lawrenceville)",
+        "phone": "678-376-6700",
+        "website": "https://www.lawrencevillega.org/"
+      },
+      "Duluth": {
+        "name": "Gwinnett County Water (Duluth)",
+        "phone": "678-376-6700",
+        "website": "https://www.duluthga.net/"
+      },
+      "Snellville": {
+        "name": "Gwinnett County Water (Snellville)",
+        "phone": "678-376-6700",
+        "website": "https://www.snellville.org/"
+      },
+      "Suwanee": {
+        "name": "Gwinnett County Water (Suwanee)",
+        "phone": "678-376-6700",
+        "website": "https://www.suwanee.com/"
+      },
+      "Buford": {
+        "name": "City of Buford Water",
+        "phone": "770-945-6761",
+        "website": "http://www.cityofbuford.com/"
+      },
+      "Conyers": {
+        "name": "Rockdale County Water (Conyers)",
+        "phone": "770-278-7400",
+        "website": "https://www.conyersga.com/"
+      },
+      "Covington": {
+        "name": "City of Covington Water",
+        "phone": "770-385-2000",
+        "website": "http://www.cityofcovington.org/"
       }
     },
     "FL": {

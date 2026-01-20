@@ -82,14 +82,16 @@ class MetricsCollector:
         
         self._initialized = True
         self._metrics_lock = threading.Lock()
-        self._current_bucket = self._create_bucket()
         self._historical_buckets: List[MetricsBucket] = []
         
-        # Configuration
+        # Configuration - must be set before _create_bucket()
         self._bucket_duration_minutes = 5
         self._max_historical_buckets = 288  # 24 hours at 5-min intervals
         self._metrics_dir = Path(__file__).parent.parent / 'data' / 'metrics'
         self._metrics_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Now create the bucket
+        self._current_bucket = self._create_bucket()
     
     def _create_bucket(self) -> MetricsBucket:
         """Create a new metrics bucket for the current time window."""

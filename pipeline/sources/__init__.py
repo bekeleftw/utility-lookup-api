@@ -19,7 +19,11 @@ from .gas import (
     CountyDefaultGasSource,
 )
 
+from .corrections import UserCorrectionSource
+
 __all__ = [
+    # Corrections (highest priority)
+    'UserCorrectionSource',
     # Electric
     'StateGISElectricSource',
     'MunicipalElectricSource',

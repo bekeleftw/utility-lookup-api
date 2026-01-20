@@ -4984,29 +4984,163 @@
       }
     },
     "KS": {
-      "Empire District Electric Co": {
-        "name": "Empire District Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (12 ZIP codes)"
+      "Wichita": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
       },
-      "Evergy Kansas Central Inc": {
-        "name": "Evergy Kansas Central, Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (283 ZIP codes)"
+      "Overland Park": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
       },
-      "Evergy Kansas South Inc": {
-        "name": "Evergy Kansas South, Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (160 ZIP codes)"
+      "Kansas City": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
       },
-      "Evergy Metro": {
-        "name": "Evergy Metro",
-        "phone": null,
+      "Olathe": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Topeka": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Lawrence": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Shawnee": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Manhattan": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Lenexa": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Salina": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Hutchinson": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Leavenworth": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Leawood": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Dodge City": {
+        "name": "Victory Electric Cooperative",
+        "phone": "620-227-2139",
+        "website": "https://www.victoryelectric.net/",
+        "note": "Co-op"
+      },
+      "Garden City": {
+        "name": "Southern Pioneer Electric",
+        "phone": "620-624-7116",
+        "website": "https://www.southernpioneer.net/",
+        "note": "Co-op"
+      },
+      "Emporia": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Derby": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Junction City": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Prairie Village": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Liberal": {
+        "name": "Southern Pioneer Electric",
+        "phone": "620-624-7116",
+        "website": "https://www.southernpioneer.net/",
+        "note": "Co-op"
+      },
+      "Hays": {
+        "name": "Midwest Energy",
+        "phone": "800-222-3121",
+        "website": "https://www.mwenergy.com/"
+      },
+      "Pittsburg": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com/"
+      },
+      "Newton": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Gardner": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Great Bend": {
+        "name": "Midwest Energy",
+        "phone": "800-222-3121",
+        "website": "https://www.mwenergy.com/"
+      },
+      "Chanute": {
+        "name": "Chanute Electric",
+        "phone": "620-431-5200",
+        "website": "https://www.chanute.org/",
+        "note": "Municipal"
+      },
+      "Coffeyville": {
+        "name": "Coffeyville Municipal Light & Power",
+        "phone": "620-252-6100",
         "website": null,
-        "note": "From EIA-861 (95 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Independence": {
+        "name": "Independence Power & Light",
+        "phone": "620-332-2512",
+        "website": null,
+        "note": "Municipal"
+      },
+      "McPherson": {
+        "name": "McPherson Board of Public Utilities",
+        "phone": "620-245-2558",
+        "website": "https://www.mcphersonbpu.com/",
+        "note": "Municipal"
+      },
+      "Winfield": {
+        "name": "Winfield Electric",
+        "phone": "620-221-5500",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "MO": {
@@ -5430,41 +5564,125 @@
       }
     },
     "KY": {
-      "Kentucky Utilities Co": {
-        "name": "Kentucky Utilities Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (355 ZIP codes)"
+      "Louisville": {
+        "name": "LG&E (Louisville Gas & Electric)",
+        "phone": "502-589-1444",
+        "website": "https://www.lge-ku.com/"
       },
-      "Kentucky Power Co": {
-        "name": "Kentucky Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (230 ZIP codes)"
+      "Lexington": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
       },
-      "South Kentucky RECC": {
-        "name": "South Kentucky RECC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (56 ZIP codes)"
+      "Bowling Green": {
+        "name": "Bowling Green Municipal Utilities",
+        "phone": "270-782-1200",
+        "website": "https://www.bgmu.com/",
+        "note": "Municipal"
       },
-      "Farmers Electric Cooperative (Kentucky)": {
-        "name": "Farmers Electric Cooperative (Kentucky)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (32 ZIP codes)"
+      "Owensboro": {
+        "name": "Owensboro Municipal Utilities",
+        "phone": "270-926-3200",
+        "website": "https://www.omu.org/",
+        "note": "Municipal"
       },
-      "Louisville Gas & Electric Co": {
-        "name": "Louisville Gas & Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (97 ZIP codes)"
-      },
-      "Duke Energy Kentucky": {
+      "Covington": {
         "name": "Duke Energy Kentucky",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (33 ZIP codes)"
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Richmond": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
+      },
+      "Georgetown": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
+      },
+      "Florence": {
+        "name": "Duke Energy Kentucky",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Hopkinsville": {
+        "name": "Hopkinsville Electric System",
+        "phone": "270-887-4200",
+        "website": "https://www.hesnet.org/",
+        "note": "TVA Municipal"
+      },
+      "Nicholasville": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
+      },
+      "Elizabethtown": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
+      },
+      "Henderson": {
+        "name": "Henderson Municipal Power & Light",
+        "phone": "270-826-2726",
+        "website": "https://www.hmpl.net/",
+        "note": "Municipal"
+      },
+      "Frankfort": {
+        "name": "Frankfort Plant Board",
+        "phone": "502-352-4372",
+        "website": "https://www.fpb.cc/",
+        "note": "Municipal"
+      },
+      "Paducah": {
+        "name": "Paducah Power System",
+        "phone": "270-575-4000",
+        "website": "https://www.paducahpower.com/",
+        "note": "TVA Municipal"
+      },
+      "Ashland": {
+        "name": "Kentucky Power (AEP)",
+        "phone": "800-572-1113",
+        "website": "https://www.kentuckypower.com/"
+      },
+      "Murray": {
+        "name": "Murray Electric System",
+        "phone": "270-753-5312",
+        "website": "https://www.murrayelectric.net/",
+        "note": "TVA Municipal"
+      },
+      "Madisonville": {
+        "name": "Pennyrile Electric Cooperative",
+        "phone": "270-825-4546",
+        "website": "https://www.pennyrile.com/",
+        "note": "Co-op"
+      },
+      "Radcliff": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
+      },
+      "Danville": {
+        "name": "Kentucky Utilities (KU)",
+        "phone": "800-981-0600",
+        "website": "https://www.lge-ku.com/"
+      },
+      "Somerset": {
+        "name": "South Kentucky RECC",
+        "phone": "800-264-5112",
+        "website": "https://www.skrecc.com/",
+        "note": "Co-op"
+      },
+      "Glasgow": {
+        "name": "Glasgow Electric Plant Board",
+        "phone": "270-651-8341",
+        "website": "https://www.glasgow-ky.com/",
+        "note": "Municipal"
+      },
+      "Pikeville": {
+        "name": "Kentucky Power (AEP)",
+        "phone": "800-572-1113",
+        "website": "https://www.kentuckypower.com/"
       }
     },
     "MT": {
@@ -8074,61 +8292,153 @@
       }
     },
     "KS": {
-      "Statewide": {
+      "Wichita": {
         "name": "Kansas Gas Service",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for KS"
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
       },
-      "Kansas_Gas_Service": {
+      "Overland Park": {
         "name": "Kansas Gas Service",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KS"
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
       },
-      "Black_Hills_Energy": {
+      "Kansas City": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Olathe": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Topeka": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Lawrence": {
         "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KS"
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Atmos_Energy": {
-        "name": "Atmos Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KS"
+      "Shawnee": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Manhattan": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Lenexa": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Salina": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Hutchinson": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Dodge City": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Garden City": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Emporia": {
+        "name": "Kansas Gas Service",
+        "phone": "800-794-4780",
+        "website": "https://www.kansasgasservice.com/"
+      },
+      "Liberal": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Hays": {
+        "name": "Midwest Energy Gas",
+        "phone": "800-222-3121",
+        "website": "https://www.mwenergy.com/"
       }
     },
     "KY": {
-      "Statewide": {
-        "name": "LG&E",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for KY"
+      "Louisville": {
+        "name": "LG&E Gas",
+        "phone": "502-589-1444",
+        "website": "https://www.lge-ku.com/"
       },
-      "LG&E": {
-        "name": "LG&E",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KY"
-      },
-      "Duke_Energy_Kentucky": {
-        "name": "Duke Energy Kentucky",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KY"
-      },
-      "Columbia_Gas_of_Kentucky": {
+      "Lexington": {
         "name": "Columbia Gas of Kentucky",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KY"
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasky.com/"
       },
-      "Atmos_Energy": {
+      "Bowling Green": {
         "name": "Atmos Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in KY"
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Owensboro": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Covington": {
+        "name": "Duke Energy Gas",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Richmond": {
+        "name": "Columbia Gas of Kentucky",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasky.com/"
+      },
+      "Georgetown": {
+        "name": "Columbia Gas of Kentucky",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasky.com/"
+      },
+      "Florence": {
+        "name": "Duke Energy Gas",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Hopkinsville": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Elizabethtown": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Frankfort": {
+        "name": "Frankfort Plant Board Gas",
+        "phone": "502-352-4372",
+        "website": "https://www.fpb.cc/",
+        "note": "Municipal"
+      },
+      "Paducah": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Ashland": {
+        "name": "Columbia Gas of Kentucky",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasky.com/"
       }
     },
     "LA": {

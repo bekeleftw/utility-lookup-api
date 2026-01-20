@@ -562,5 +562,18 @@
     ],
     "reasoning": "CoServ Gas is the municipal gas provider for the area, and the address is within the jurisdiction of Little Elm, which has a municipal utility. The confidence in this source is significantly higher than the others.",
     "timestamp": 1768927922.3410702
+  },
+  "989:electric:f1c1efb1": {
+    "utility_name": "PacifiCorp",
+    "confidence": 0.85,
+    "confidence_level": "high",
+    "sources_agreed": false,
+    "dissenting_sources": [
+      "eia_861",
+      "county_default",
+      "hifld"
+    ],
+    "reasoning": "The state_gis source has the highest confidence level (85%) and identifies PacifiCorp as the utility provider for the address in Yakima, WA. Although other sources provide conflicting information, the authoritative nature of the state_gis data supports the selection of PacifiCorp.",
+    "timestamp": 1768932598.099252
   }
 }

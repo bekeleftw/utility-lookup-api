@@ -684,6 +684,12 @@ TEXAS_GAS_LDCS = {
         "phone": "1-800-700-2443",
         "website": "https://www.texasgasservice.com",
         "service_area": "Austin, Central Texas, El Paso"
+    },
+    "COSERV": {
+        "name": "CoServ Gas",
+        "phone": "1-940-321-7800",
+        "website": "https://www.coserv.com",
+        "service_area": "Denton County, parts of Collin/Dallas/Tarrant counties"
     }
 }
 
@@ -716,6 +722,17 @@ TEXAS_GAS_ZIP_PREFIX = {
 # Full 5-digit ZIP overrides for areas where prefix mapping is wrong
 # These take precedence over the 3-digit prefix mapping
 TEXAS_GAS_ZIP_OVERRIDES = {
+    # Denton County - CoServ territory, NOT Atmos
+    # The 750xx prefix defaults to Atmos (Dallas) but Denton County is CoServ
+    "75068": "COSERV",  # Little Elm - tenant verified
+    "75022": "COSERV",  # Flower Mound
+    "75028": "COSERV",  # Flower Mound
+    "75034": "COSERV",  # Frisco (partial)
+    "75056": "COSERV",  # The Colony
+    "75057": "COSERV",  # Lewisville
+    "75067": "COSERV",  # Lewisville
+    "75077": "COSERV",  # Highland Village
+    
     # Hays County - Kyle, Buda, San Marcos area is CenterPoint, not Texas Gas Service
     # The 786xx prefix defaults to Texas Gas Service (Austin) but southern Hays County is CenterPoint
     "78640": "CENTERPOINT",  # Kyle
@@ -732,6 +749,17 @@ TEXAS_GAS_ZIP_OVERRIDES = {
 # Format: "ZIP": {"name": "Provider Name", "phone": "...", "note": "reason"}
 
 GAS_ZIP_OVERRIDES = {
+    # Texas - Denton County (CoServ, not Atmos)
+    # The 750xx prefix defaults to Atmos (Dallas) but Denton County is CoServ territory
+    "75068": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Little Elm - tenant verified"},
+    "75022": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Flower Mound"},
+    "75028": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Flower Mound"},
+    "75034": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Frisco (partial)"},
+    "75056": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "The Colony"},
+    "75057": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Lewisville"},
+    "75067": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Lewisville"},
+    "75077": {"state": "TX", "name": "CoServ Gas", "phone": "1-940-321-7800", "website": "https://www.coserv.com", "note": "Highland Village"},
+    
     # Texas - Hays County (CenterPoint, not Texas Gas Service)
     "78640": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "Kyle - user verified"},
     "78610": {"state": "TX", "name": "CenterPoint Energy", "phone": "1-800-752-8036", "note": "Buda"},

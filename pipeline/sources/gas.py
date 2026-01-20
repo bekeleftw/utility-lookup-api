@@ -139,12 +139,14 @@ class ZIPMappingGasSource(DataSource):
             
             primary = result['primary']
             
-            # Boost confidence if it's a verified result
+            # ZIP prefix mapping is too coarse - lower confidence so HIFLD/municipal wins
+            # The 3-digit ZIP prefix can't distinguish between providers in same metro area
+            # e.g., 750xx covers both Atmos (Dallas) AND CoServ (Denton County)
             confidence = self.base_confidence
             if result.get('confidence') == 'verified':
-                confidence = 80
+                confidence = 50  # Was 80 - lowered to let geographic sources win
             elif result.get('confidence') == 'high':
-                confidence = 75
+                confidence = 45  # Was 75 - lowered to let geographic sources win
             
             return SourceResult(
                 source_name=self.name,

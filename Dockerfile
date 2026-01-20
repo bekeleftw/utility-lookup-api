@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Cache buster - change this to force rebuild
-ARG CACHE_BUST=2026-01-20-v7
+ARG CACHE_BUST=2026-01-20-v8-coserv
 RUN echo "Cache bust: $CACHE_BUST"
 
 COPY . .

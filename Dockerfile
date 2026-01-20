@@ -9,7 +9,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Cache buster - change this to force rebuild
-ARG CACHE_BUST=2026-01-20-v21-tx-gas
+ARG CACHE_BUST=2026-01-20-v22-ca-data
 RUN echo "Cache bust: $CACHE_BUST"
 
 COPY . .

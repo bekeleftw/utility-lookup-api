@@ -2242,86 +2242,109 @@
       "Omaha": {
         "name": "Omaha Public Power District (OPPD)",
         "phone": "402-536-4131",
-        "website": "https://www.oppd.com",
-        "zip_codes": [
-          "68007",
-          "68010",
-          "68022",
-          "68028",
-          "68046",
-          "68064",
-          "68069",
-          "68101",
-          "68102",
-          "68103",
-          "68104",
-          "68105",
-          "68106",
-          "68107",
-          "68108",
-          "68109",
-          "68110",
-          "68111",
-          "68112",
-          "68113",
-          "68114",
-          "68116",
-          "68117",
-          "68118",
-          "68119",
-          "68122",
-          "68124",
-          "68127",
-          "68130",
-          "68131",
-          "68132",
-          "68134",
-          "68135",
-          "68136",
-          "68137",
-          "68138",
-          "68142",
-          "68144",
-          "68145",
-          "68147",
-          "68152",
-          "68154",
-          "68157",
-          "68164"
-        ],
-        "note": "Serves 13 counties in Nebraska"
+        "website": "https://www.oppd.com/",
+        "note": "Public power"
       },
       "Lincoln": {
         "name": "Lincoln Electric System (LES)",
         "phone": "402-475-4211",
-        "website": "https://www.les.com",
-        "zip_codes": [
-          "68501",
-          "68502",
-          "68503",
-          "68504",
-          "68505",
-          "68506",
-          "68507",
-          "68508",
-          "68509",
-          "68510",
-          "68512",
-          "68514",
-          "68516",
-          "68517",
-          "68520",
-          "68521",
-          "68522",
-          "68523",
-          "68524",
-          "68526",
-          "68527",
-          "68528",
-          "68529",
-          "68531",
-          "68532"
-        ]
+        "website": "https://www.les.com/",
+        "note": "Municipal"
+      },
+      "Bellevue": {
+        "name": "Omaha Public Power District (OPPD)",
+        "phone": "402-536-4131",
+        "website": "https://www.oppd.com/"
+      },
+      "Grand Island": {
+        "name": "Grand Island Utilities",
+        "phone": "308-385-5444",
+        "website": "https://www.grand-island.com/",
+        "note": "Municipal"
+      },
+      "Kearney": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "Fremont": {
+        "name": "Fremont Department of Utilities",
+        "phone": "402-727-2600",
+        "website": "https://www.fremontne.gov/",
+        "note": "Municipal"
+      },
+      "Hastings": {
+        "name": "Hastings Utilities",
+        "phone": "402-463-1371",
+        "website": "https://www.hastingsutilities.com/",
+        "note": "Municipal"
+      },
+      "North Platte": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "Norfolk": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "Columbus": {
+        "name": "Loup Power District",
+        "phone": "402-564-3171",
+        "website": "https://www.lfrpu.org/",
+        "note": "Public power"
+      },
+      "Papillion": {
+        "name": "Omaha Public Power District (OPPD)",
+        "phone": "402-536-4131",
+        "website": "https://www.oppd.com/"
+      },
+      "La Vista": {
+        "name": "Omaha Public Power District (OPPD)",
+        "phone": "402-536-4131",
+        "website": "https://www.oppd.com/"
+      },
+      "Scottsbluff": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "South Sioux City": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "Beatrice": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "Lexington": {
+        "name": "Dawson Public Power District",
+        "phone": "308-324-2386",
+        "website": "https://www.dawsonpower.com/",
+        "note": "Public power"
+      },
+      "Alliance": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "Blair": {
+        "name": "Omaha Public Power District (OPPD)",
+        "phone": "402-536-4131",
+        "website": "https://www.oppd.com/"
+      },
+      "York": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
+      },
+      "McCook": {
+        "name": "Nebraska Public Power District (NPPD)",
+        "phone": "800-282-6773",
+        "website": "https://www.nppd.com/"
       }
     },
     "WA": {
@@ -6388,29 +6411,110 @@
       }
     },
     "MT": {
-      "Montana-Dakota Utilities Co": {
-        "name": "Montana-Dakota Utilities Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (40 ZIP codes)"
+      "Billings": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       },
-      "NorthWestern Energy LLC (MT)": {
-        "name": "NorthWestern Energy LLC - (MT)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (229 ZIP codes)"
+      "Missoula": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       },
-      "Avista Corp": {
-        "name": "Avista Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (5 ZIP codes)"
+      "Great Falls": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       },
-      "Black Hills Power Inc d/b/a": {
-        "name": "Black Hills Power, Inc. d/b/a",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (1 ZIP codes)"
+      "Bozeman": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Butte": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Helena": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Kalispell": {
+        "name": "Flathead Electric Cooperative",
+        "phone": "406-751-4483",
+        "website": "https://www.flatheadelectric.com/",
+        "note": "Co-op"
+      },
+      "Havre": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Anaconda": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Miles City": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Livingston": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Laurel": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Whitefish": {
+        "name": "Flathead Electric Cooperative",
+        "phone": "406-751-4483",
+        "website": "https://www.flatheadelectric.com/",
+        "note": "Co-op"
+      },
+      "Lewistown": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Sidney": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Glendive": {
+        "name": "Montana-Dakota Utilities",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Columbia Falls": {
+        "name": "Flathead Electric Cooperative",
+        "phone": "406-751-4483",
+        "website": "https://www.flatheadelectric.com/",
+        "note": "Co-op"
+      },
+      "Hamilton": {
+        "name": "Ravalli Electric Cooperative",
+        "phone": "406-961-3001",
+        "website": "https://www.ravallielectric.com/",
+        "note": "Co-op"
+      },
+      "Polson": {
+        "name": "Mission Valley Power",
+        "phone": "406-883-7900",
+        "website": "https://www.missionvalleypower.org/",
+        "note": "Tribal utility"
+      },
+      "Dillon": {
+        "name": "NorthWestern Energy",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       }
     },
     "ND": {
@@ -6781,17 +6885,79 @@
       }
     },
     "NV": {
-      "Nevada Power Co": {
-        "name": "Nevada Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (118 ZIP codes)"
+      "Las Vegas": {
+        "name": "NV Energy",
+        "phone": "702-402-5555",
+        "website": "https://www.nvenergy.com/"
       },
-      "Sierra Pacific Power Co": {
-        "name": "Sierra Pacific Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (97 ZIP codes)"
+      "Henderson": {
+        "name": "NV Energy",
+        "phone": "702-402-5555",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Reno": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "North Las Vegas": {
+        "name": "NV Energy",
+        "phone": "702-402-5555",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Sparks": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Carson City": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Fernley": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Elko": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Mesquite": {
+        "name": "Overton Power District",
+        "phone": "702-397-2512",
+        "website": "https://www.opd5.com/",
+        "note": "Public power"
+      },
+      "Boulder City": {
+        "name": "Boulder City Utilities",
+        "phone": "702-293-9242",
+        "website": "https://www.bcnv.org/",
+        "note": "Municipal"
+      },
+      "Fallon": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Winnemucca": {
+        "name": "NV Energy",
+        "phone": "775-834-4444",
+        "website": "https://www.nvenergy.com/"
+      },
+      "Pahrump": {
+        "name": "Valley Electric Association",
+        "phone": "775-727-5312",
+        "website": "https://www.vea.coop/",
+        "note": "Co-op"
+      },
+      "Ely": {
+        "name": "Mt. Wheeler Power",
+        "phone": "775-289-8981",
+        "website": "https://www.mwpower.net/",
+        "note": "Co-op"
       }
     },
     "DC": {
@@ -6802,23 +6968,106 @@
       }
     },
     "NH": {
-      "Public Service Co of NH": {
-        "name": "Public Service Co of NH",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (244 ZIP codes)"
+      "Manchester": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
       },
-      "Unitil Energy Systems": {
-        "name": "Unitil Energy Systems",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (39 ZIP codes)"
+      "Nashua": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
       },
-      "Liberty Utilities (Granite State Electri": {
-        "name": "Liberty Utilities (Granite State Electri",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (3 ZIP codes)"
+      "Concord": {
+        "name": "Unitil",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Derry": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Dover": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Rochester": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Salem": {
+        "name": "Liberty Utilities",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
+      },
+      "Merrimack": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Hudson": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Londonderry": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Keene": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Bedford": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Portsmouth": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Goffstown": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Laconia": {
+        "name": "NH Electric Cooperative",
+        "phone": "800-698-2007",
+        "website": "https://www.nhec.com/",
+        "note": "Co-op"
+      },
+      "Hampton": {
+        "name": "Unitil",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Exeter": {
+        "name": "Unitil",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Lebanon": {
+        "name": "Liberty Utilities",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
+      },
+      "Berlin": {
+        "name": "Eversource",
+        "phone": "800-662-7764",
+        "website": "https://www.eversource.com/"
+      },
+      "Claremont": {
+        "name": "Liberty Utilities",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
       }
     }
   },
@@ -9922,89 +10171,203 @@
       }
     },
     "MT": {
-      "Statewide": {
-        "name": "NorthWestern Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for MT"
+      "Billings": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       },
-      "NorthWestern_Energy": {
-        "name": "NorthWestern Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MT"
+      "Missoula": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
       },
-      "Montana-Dakota_Utilities": {
-        "name": "Montana-Dakota Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MT"
+      "Great Falls": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Bozeman": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Butte": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Helena": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Kalispell": {
+        "name": "NorthWestern Energy Gas",
+        "phone": "888-467-2669",
+        "website": "https://www.northwesternenergy.com/"
+      },
+      "Miles City": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Sidney": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
+      },
+      "Glendive": {
+        "name": "Montana-Dakota Utilities Gas",
+        "phone": "800-638-3278",
+        "website": "https://www.montana-dakota.com/"
       }
     },
     "NE": {
-      "Statewide": {
+      "Omaha": {
+        "name": "Metropolitan Utilities District (MUD)",
+        "phone": "402-554-6666",
+        "website": "https://www.mudomaha.com/",
+        "note": "Municipal"
+      },
+      "Lincoln": {
         "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for NE"
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Black_Hills_Energy": {
+      "Bellevue": {
+        "name": "Metropolitan Utilities District (MUD)",
+        "phone": "402-554-6666",
+        "website": "https://www.mudomaha.com/"
+      },
+      "Grand Island": {
         "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NE"
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "NorthWestern_Energy": {
-        "name": "NorthWestern Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NE"
+      "Kearney": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       },
-      "Metropolitan_Utilities_District": {
-        "name": "Metropolitan Utilities District",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NE"
+      "Fremont": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Hastings": {
+        "name": "Hastings Utilities Gas",
+        "phone": "402-463-1371",
+        "website": "https://www.hastingsutilities.com/",
+        "note": "Municipal"
+      },
+      "North Platte": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Norfolk": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
+      },
+      "Scottsbluff": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       }
     },
     "NV": {
-      "Statewide": {
+      "Las Vegas": {
         "name": "Southwest Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for NV"
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
       },
-      "Southwest_Gas": {
+      "Henderson": {
         "name": "Southwest Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NV"
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
       },
-      "NV_Energy": {
-        "name": "NV Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NV"
+      "Reno": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "North Las Vegas": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Sparks": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Carson City": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Elko": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
+      },
+      "Fallon": {
+        "name": "Southwest Gas",
+        "phone": "877-860-6020",
+        "website": "https://www.swgas.com/"
       }
     },
     "NH": {
-      "Statewide": {
-        "name": "Liberty Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for NH"
+      "Manchester": {
+        "name": "Liberty Utilities Gas",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
       },
-      "Liberty_Utilities": {
-        "name": "Liberty Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NH"
+      "Nashua": {
+        "name": "Liberty Utilities Gas",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
       },
-      "Unitil": {
-        "name": "Unitil",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NH"
+      "Concord": {
+        "name": "Liberty Utilities Gas",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
+      },
+      "Dover": {
+        "name": "Unitil Gas",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Rochester": {
+        "name": "Unitil Gas",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Salem": {
+        "name": "Liberty Utilities Gas",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
+      },
+      "Keene": {
+        "name": "Liberty Utilities Gas",
+        "phone": "800-375-7413",
+        "website": "https://www.libertyutilities.com/"
+      },
+      "Portsmouth": {
+        "name": "Unitil Gas",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Hampton": {
+        "name": "Unitil Gas",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
+      },
+      "Exeter": {
+        "name": "Unitil Gas",
+        "phone": "888-301-7700",
+        "website": "https://www.unitil.com/"
       }
     },
     "NM": {

@@ -78,26 +78,28 @@ def _query_arcgis_point(url: str, lat: float, lon: float, out_fields: str = "*")
 
 def query_epa_water_service_area(lat: float, lon: float) -> Optional[Dict]:
     """
-    Query EPA Community Water System Service Area Boundaries.
+    Query EPA Water System Boundaries - comprehensive national dataset.
     
-    This is the primary nationwide water utility lookup.
-    Coverage: 44,000+ community water systems, 99% of US population.
-    
-    Returns:
-        Dict with PWSID, PWS_Name, Pop_Cat_5, Data_Provider_Type
+    Covers ~44,000 service areas across all 50 states (99% of PWS consumers).
+    56% are from state/utility databases, remainder modeled using ML.
+    Updated quarterly with SDWIS data.
     """
     url = "https://services.arcgis.com/cJ9YHowT8TU7DUyn/arcgis/rest/services/Water_System_Boundaries/FeatureServer/0/query"
-    result = _query_arcgis_point(url, lat, lon, "PWSID,PWS_Name,Pop_Cat_5,Data_Provider_Type,Primacy_Agency")
+    result = _query_arcgis_point(url, lat, lon, "PWS_Name,PWSID,Primacy_Agency,Data_Provider_Type,Pop_Cat_5")
     
     if result:
+        # Determine confidence based on data source
+        data_provider = result.get("Data_Provider_Type", "")
+        confidence = "high" if data_provider and "model" not in data_provider.lower() else "medium"
+        
         return {
             "name": result.get("PWS_Name", "").strip(),
             "pwsid": result.get("PWSID"),
             "population_category": result.get("Pop_Cat_5"),
-            "data_source": result.get("Data_Provider_Type") or "EPA",
+            "data_source": data_provider or "EPA",
             "state": result.get("Primacy_Agency", "")[:2] if result.get("Primacy_Agency") else None,
-            "confidence": "high",
-            "source": "epa_cws_boundaries"
+            "confidence": confidence,
+            "source": "epa_water_boundaries"
         }
     return None
 
@@ -151,21 +153,80 @@ def query_california_water(lat: float, lon: float) -> Optional[Dict]:
     This is more authoritative than EPA for California.
     """
     url = "https://gispublic.waterboards.ca.gov/portalserver/rest/services/Drinking_Water/California_Drinking_Water_System_Area_Boundaries/MapServer/0/query"
-    result = _query_arcgis_point(url, lat, lon, "WATER_SYSTEM_NAME,WATER_SYSTEM_NUMBER,COUNTY")
+    result = _query_arcgis_point(url, lat, lon, "WATER_SYSTEM_NAME,WATER_SYSTEM_NUMBER,COUNTY,AC_PHONE_NUMBER")
     
     if result:
         return {
             "name": result.get("WATER_SYSTEM_NAME", "").strip(),
             "system_number": result.get("WATER_SYSTEM_NUMBER"),
             "county": result.get("COUNTY"),
+            "phone": result.get("AC_PHONE_NUMBER", "").strip() if result.get("AC_PHONE_NUMBER") else None,
             "confidence": "high",
             "source": "california_swrcb"
         }
     return None
 
 
+def query_pennsylvania_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Pennsylvania DEP Public Water Supply service areas.
+    Source: PASDA (Pennsylvania Spatial Data Access)
+    """
+    url = "https://mapservices.pasda.psu.edu/server/rest/services/pasda/DEP2/MapServer/8/query"
+    result = _query_arcgis_point(url, lat, lon, "NAME,PWS_ID,CNTY_NAME,OWNERSHIP")
+    
+    if result:
+        return {
+            "name": result.get("NAME", "").strip(),
+            "pws_id": result.get("PWS_ID"),
+            "county": result.get("CNTY_NAME"),
+            "ownership": result.get("OWNERSHIP"),
+            "confidence": "high",
+            "source": "pennsylvania_dep"
+        }
+    return None
+
+
+def query_new_york_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query New York DEC Public Water Supply Service Areas.
+    Covers most PWS systems serving over 500 people.
+    """
+    url = "https://gisservices.dec.ny.gov/arcgis/rest/services/der/der_viewer/MapServer/4/query"
+    result = _query_arcgis_point(url, lat, lon, "PWS_NAME,PWS_NUMBER,PRINCIPAL_COUNTY_SERVED,CONTACT_PHONE_NUMBER")
+    
+    if result:
+        return {
+            "name": result.get("PWS_NAME", "").strip(),
+            "pws_id": result.get("PWS_NUMBER"),
+            "county": result.get("PRINCIPAL_COUNTY_SERVED"),
+            "phone": result.get("CONTACT_PHONE_NUMBER"),
+            "confidence": "high",
+            "source": "new_york_dec"
+        }
+    return None
+
+
+def query_new_jersey_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query New Jersey DEP Water Purveyor Service Areas.
+    """
+    url = "https://mapsdep.nj.gov/arcgis/rest/services/Features/Utilities/MapServer/13/query"
+    result = _query_arcgis_point(url, lat, lon, "SYS_NAME,PWID,AGENCY_URL")
+    
+    if result:
+        return {
+            "name": result.get("SYS_NAME", "").strip(),
+            "pws_id": result.get("PWID"),
+            "website": result.get("AGENCY_URL"),
+            "confidence": "high",
+            "source": "new_jersey_dep"
+        }
+    return None
+
+
 # States with state-specific water APIs (more authoritative than EPA)
-STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS'}
+STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ'}
 
 
 def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optional[Dict]:
@@ -194,6 +255,18 @@ def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optio
             return result
     elif state == "CA":
         result = query_california_water(lat, lon)
+        if result:
+            return result
+    elif state == "PA":
+        result = query_pennsylvania_water(lat, lon)
+        if result:
+            return result
+    elif state == "NY":
+        result = query_new_york_water(lat, lon)
+        if result:
+            return result
+    elif state == "NJ":
+        result = query_new_jersey_water(lat, lon)
         if result:
             return result
     elif state == "MS":

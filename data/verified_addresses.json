@@ -235,6 +235,16 @@
         "verified_date": "2026-01-20",
         "verified_by": "migration"
       }
+    },
+    "85143": {
+      "electric": {
+        "name": "Salt River Project (SRP)",
+        "phone": "602-236-8888",
+        "website": "https://www.srpnet.com",
+        "note": "San Tan Valley / Queen Creek area - tenant confirmed",
+        "verified_date": "2026-01-20",
+        "verified_by": "tenant_feedback"
+      }
     }
   },
   "_metadata": {

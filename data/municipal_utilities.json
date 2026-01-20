@@ -3347,9 +3347,14 @@
         "website": "https://www.nationalgridus.com/"
       },
       "Rochester": {
-        "name": "Rochester Gas & Electric",
+        "name": "Rochester Gas & Electric (RG&E)",
         "phone": "800-743-2110",
         "website": "https://www.rge.com/"
+      },
+      "Yonkers": {
+        "name": "Con Edison",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
       },
       "Syracuse": {
         "name": "National Grid",
@@ -3361,58 +3366,140 @@
         "phone": "800-642-4272",
         "website": "https://www.nationalgridus.com/"
       },
-      "Long Island": {
+      "New Rochelle": {
+        "name": "Con Edison",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
+      "Mount Vernon": {
+        "name": "Con Edison",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
+      "Schenectady": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Utica": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "White Plains": {
+        "name": "Con Edison",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
+      "Hempstead": {
         "name": "PSEG Long Island",
         "phone": "800-490-0025",
         "website": "https://www.psegliny.com/"
       },
-      "Central Hudson Gas & Elec Corp": {
-        "name": "Central Hudson Gas & Elec Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (195 ZIP codes)"
+      "Troy": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
       },
-      "New York State Elec & Gas Corp": {
-        "name": "New York State Elec & Gas Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (684 ZIP codes)"
+      "Niagara Falls": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
       },
-      "Orange & Rockland Utils Inc": {
-        "name": "Orange & Rockland Utils Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (96 ZIP codes)"
+      "Binghamton": {
+        "name": "NYSEG",
+        "phone": "800-572-1111",
+        "website": "https://www.nyseg.com/"
       },
-      "Niagara Mohawk Power Corp": {
-        "name": "Niagara Mohawk Power Corp.",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (873 ZIP codes)"
+      "Freeport": {
+        "name": "Freeport Electric",
+        "phone": "516-377-2200",
+        "website": "https://www.freeportny.gov/",
+        "note": "Municipal"
       },
-      "Consolidated Edison Co-NY Inc": {
-        "name": "Consolidated Edison Co-NY Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (395 ZIP codes)"
+      "Long Beach": {
+        "name": "PSEG Long Island",
+        "phone": "800-490-0025",
+        "website": "https://www.psegliny.com/"
       },
-      "Fishers Island Utility Co Inc": {
-        "name": "Fishers Island Utility Co Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (1 ZIP codes)"
+      "Valley Stream": {
+        "name": "PSEG Long Island",
+        "phone": "800-490-0025",
+        "website": "https://www.psegliny.com/"
       },
-      "Rochester Gas & Electric Corp": {
-        "name": "Rochester Gas & Electric Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (150 ZIP codes)"
+      "Spring Valley": {
+        "name": "Orange & Rockland",
+        "phone": "877-434-4100",
+        "website": "https://www.oru.com/"
       },
-      "Pennsylvania Electric Co": {
-        "name": "Pennsylvania Electric Co",
-        "phone": null,
+      "Newburgh": {
+        "name": "Central Hudson",
+        "phone": "800-527-2714",
+        "website": "https://www.cenhud.com/"
+      },
+      "Poughkeepsie": {
+        "name": "Central Hudson",
+        "phone": "800-527-2714",
+        "website": "https://www.cenhud.com/"
+      },
+      "Ithaca": {
+        "name": "NYSEG",
+        "phone": "800-572-1111",
+        "website": "https://www.nyseg.com/"
+      },
+      "Elmira": {
+        "name": "NYSEG",
+        "phone": "800-572-1111",
+        "website": "https://www.nyseg.com/"
+      },
+      "Auburn": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Watertown": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Glen Cove": {
+        "name": "PSEG Long Island",
+        "phone": "800-490-0025",
+        "website": "https://www.psegliny.com/"
+      },
+      "Saratoga Springs": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Rome": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Jamestown": {
+        "name": "Jamestown Board of Public Utilities",
+        "phone": "716-661-1660",
+        "website": "https://www.jamestownbpu.com/",
+        "note": "Municipal"
+      },
+      "Rockville Centre": {
+        "name": "Rockville Centre Electric",
+        "phone": "516-678-9300",
+        "website": "https://www.rfrvc.com/",
+        "note": "Municipal"
+      },
+      "Massena": {
+        "name": "Massena Electric Department",
+        "phone": "315-764-0243",
+        "website": "https://www.massenaelectric.com/",
+        "note": "Municipal"
+      },
+      "Plattsburgh": {
+        "name": "Plattsburgh Municipal Lighting Department",
+        "phone": "518-563-7701",
         "website": null,
-        "note": "From EIA-861 (33 ZIP codes)"
+        "note": "Municipal"
       }
     },
     "IL": {
@@ -5554,23 +5641,125 @@
       }
     },
     "NM": {
-      "El Paso Electric Co": {
-        "name": "El Paso Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (37 ZIP codes)"
+      "Albuquerque": {
+        "name": "PNM (Public Service Company of New Mexico)",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
       },
-      "Public Service Co of NM": {
-        "name": "Public Service Co of NM",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (108 ZIP codes)"
+      "Las Cruces": {
+        "name": "El Paso Electric",
+        "phone": "800-351-1621",
+        "website": "https://www.epelectric.com/"
       },
-      "Southwestern Public Service Co": {
-        "name": "Southwestern Public Service Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (25 ZIP codes)"
+      "Rio Rancho": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
+      },
+      "Santa Fe": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
+      },
+      "Roswell": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Farmington": {
+        "name": "Farmington Electric Utility System",
+        "phone": "505-599-1375",
+        "website": "https://www.fmtn.org/",
+        "note": "Municipal"
+      },
+      "Clovis": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Hobbs": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Alamogordo": {
+        "name": "El Paso Electric",
+        "phone": "800-351-1621",
+        "website": "https://www.epelectric.com/"
+      },
+      "Carlsbad": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Gallup": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
+      },
+      "Deming": {
+        "name": "El Paso Electric",
+        "phone": "800-351-1621",
+        "website": "https://www.epelectric.com/"
+      },
+      "Los Lunas": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
+      },
+      "Sunland Park": {
+        "name": "El Paso Electric",
+        "phone": "800-351-1621",
+        "website": "https://www.epelectric.com/"
+      },
+      "Las Vegas": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
+      },
+      "Portales": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Los Alamos": {
+        "name": "Los Alamos County Utilities",
+        "phone": "505-662-8333",
+        "website": "https://www.losalamosnm.us/",
+        "note": "Municipal"
+      },
+      "Artesia": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Lovington": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Silver City": {
+        "name": "PNM",
+        "phone": "888-342-5766",
+        "website": "https://www.pnm.com/"
+      },
+      "Taos": {
+        "name": "Kit Carson Electric Cooperative",
+        "phone": "575-758-2258",
+        "website": "https://www.kitcarson.com/",
+        "note": "Co-op"
+      },
+      "Espanola": {
+        "name": "Jemez Mountains Electric Cooperative",
+        "phone": "575-753-2105",
+        "website": "https://www.jemezcoop.org/",
+        "note": "Co-op"
+      },
+      "Ruidoso": {
+        "name": "Otero County Electric Cooperative",
+        "phone": "575-682-5533",
+        "website": "https://www.ocec-inc.com/",
+        "note": "Co-op"
       }
     },
     "KS": {
@@ -8429,6 +8618,11 @@
         "phone": "800-743-2110",
         "website": "https://www.rge.com/"
       },
+      "Yonkers": {
+        "name": "Con Edison Gas",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
       "Syracuse": {
         "name": "National Grid Gas",
         "phone": "800-642-4272",
@@ -8438,6 +8632,61 @@
         "name": "National Grid Gas",
         "phone": "800-642-4272",
         "website": "https://www.nationalgridus.com/"
+      },
+      "Schenectady": {
+        "name": "National Grid Gas",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Utica": {
+        "name": "National Grid Gas",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "White Plains": {
+        "name": "Con Edison Gas",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
+      "Troy": {
+        "name": "National Grid Gas",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Niagara Falls": {
+        "name": "National Fuel Gas",
+        "phone": "800-365-3234",
+        "website": "https://www.natfuel.com/"
+      },
+      "Binghamton": {
+        "name": "NYSEG Gas",
+        "phone": "800-572-1111",
+        "website": "https://www.nyseg.com/"
+      },
+      "Newburgh": {
+        "name": "Central Hudson Gas",
+        "phone": "800-527-2714",
+        "website": "https://www.cenhud.com/"
+      },
+      "Poughkeepsie": {
+        "name": "Central Hudson Gas",
+        "phone": "800-527-2714",
+        "website": "https://www.cenhud.com/"
+      },
+      "Ithaca": {
+        "name": "NYSEG Gas",
+        "phone": "800-572-1111",
+        "website": "https://www.nyseg.com/"
+      },
+      "Elmira": {
+        "name": "NYSEG Gas",
+        "phone": "800-572-1111",
+        "website": "https://www.nyseg.com/"
+      },
+      "Jamestown": {
+        "name": "National Fuel Gas",
+        "phone": "800-365-3234",
+        "website": "https://www.natfuel.com/"
       }
     },
     "IL": {
@@ -10371,23 +10620,55 @@
       }
     },
     "NM": {
-      "Statewide": {
+      "Albuquerque": {
         "name": "New Mexico Gas Company",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for NM"
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
       },
-      "New_Mexico_Gas_Company": {
+      "Las Cruces": {
         "name": "New Mexico Gas Company",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NM"
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
       },
-      "Raton_Natural_Gas": {
-        "name": "Raton Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in NM"
+      "Rio Rancho": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Santa Fe": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Roswell": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Farmington": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Clovis": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Hobbs": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Carlsbad": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
+      },
+      "Gallup": {
+        "name": "New Mexico Gas Company",
+        "phone": "888-664-2726",
+        "website": "https://www.nmgco.com/"
       }
     },
     "NC": {

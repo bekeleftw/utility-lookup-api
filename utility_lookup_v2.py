@@ -122,16 +122,29 @@ def _get_water_pipeline() -> LookupPipeline:
     if _pipeline_water is None:
         _pipeline_water = LookupPipeline()
         
-        # Water sources will be added in Phase 3
-        # For now, fall back to legacy lookup
+        # Import water sources
+        try:
+            from pipeline.sources.water import (
+                MunicipalWaterSource,
+                StateGISWaterSource,
+                SpecialDistrictWaterSource,
+                EPAWaterSource,
+                CountyDefaultWaterSource,
+            )
+            WATER_SOURCES_AVAILABLE = True
+        except ImportError:
+            WATER_SOURCES_AVAILABLE = False
+        
+        # Add sources in priority order
         if USER_CORRECTIONS_AVAILABLE:
             _pipeline_water.add_source(UserCorrectionSource())
         
-        # TODO: Add water sources in Phase 3:
-        # _pipeline_water.add_source(StateGISWaterSource())
-        # _pipeline_water.add_source(MunicipalWaterSource())
-        # _pipeline_water.add_source(EPAWaterSource())
-        # _pipeline_water.add_source(HIFLDWaterSource())
+        if WATER_SOURCES_AVAILABLE:
+            _pipeline_water.add_source(MunicipalWaterSource())
+            _pipeline_water.add_source(StateGISWaterSource())
+            _pipeline_water.add_source(SpecialDistrictWaterSource())
+            _pipeline_water.add_source(EPAWaterSource())
+            _pipeline_water.add_source(CountyDefaultWaterSource())
     
     return _pipeline_water
 

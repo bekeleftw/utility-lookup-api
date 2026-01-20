@@ -21,6 +21,14 @@ from .gas import (
 
 from .corrections import UserCorrectionSource
 
+from .water import (
+    MunicipalWaterSource,
+    StateGISWaterSource,
+    SpecialDistrictWaterSource,
+    EPAWaterSource,
+    CountyDefaultWaterSource,
+)
+
 __all__ = [
     # Corrections (highest priority)
     'UserCorrectionSource',
@@ -37,4 +45,10 @@ __all__ = [
     'ZIPMappingGasSource',
     'HIFLDGasSource',
     'CountyDefaultGasSource',
+    # Water
+    'MunicipalWaterSource',
+    'StateGISWaterSource',
+    'SpecialDistrictWaterSource',
+    'EPAWaterSource',
+    'CountyDefaultWaterSource',
 ]

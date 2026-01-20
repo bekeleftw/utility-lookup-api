@@ -1999,6 +1999,12 @@ def _get_pipeline():
     global _pipeline_instance
     if _pipeline_instance is None and PIPELINE_AVAILABLE:
         _pipeline_instance = LookupPipeline()
+        # User corrections have highest priority
+        try:
+            from pipeline.sources.corrections import UserCorrectionSource
+            _pipeline_instance.add_source(UserCorrectionSource())
+        except ImportError:
+            pass
         _pipeline_instance.add_source(StateGISElectricSource())
         _pipeline_instance.add_source(MunicipalElectricSource())
         _pipeline_instance.add_source(CoopSource())

@@ -2691,53 +2691,179 @@
       }
     },
     "OR": {
+      "Portland": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Salem": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
       "Eugene": {
         "name": "Eugene Water & Electric Board (EWEB)",
         "phone": "541-685-7000",
-        "website": "https://www.eweb.org",
-        "zip_codes": [
-          "97401",
-          "97402",
-          "97403",
-          "97404",
-          "97405",
-          "97408"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "website": "https://www.eweb.org/",
+        "note": "Municipal"
+      },
+      "Gresham": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Hillsboro": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Beaverton": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Bend": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Medford": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
       },
       "Springfield": {
-        "name": "Springfield Utility Board (SUB)",
-        "phone": "541-744-3600",
-        "website": "https://www.subutil.com",
-        "zip_codes": [
-          "97477",
-          "97478"
-        ],
-        "services": [
-          "electric",
-          "water"
-        ]
+        "name": "Springfield Utility Board",
+        "phone": "541-746-8451",
+        "website": "https://www.subutil.com/",
+        "note": "Municipal"
       },
-      "Idaho Power Co": {
-        "name": "Idaho Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (29 ZIP codes)"
+      "Corvallis": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
       },
-      "PacifiCorp": {
-        "name": "PacifiCorp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (201 ZIP codes)"
+      "Albany": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
       },
-      "Portland General Electric Co": {
-        "name": "Portland General Electric Co",
-        "phone": null,
+      "Tigard": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Lake Oswego": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Keizer": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Grants Pass": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Oregon City": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "McMinnville": {
+        "name": "McMinnville Water & Light",
+        "phone": "503-472-6158",
+        "website": "https://www.mc-power.com/",
+        "note": "Municipal"
+      },
+      "Redmond": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Tualatin": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "West Linn": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Woodburn": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Ashland": {
+        "name": "Ashland Electric",
+        "phone": "541-488-5357",
+        "website": "https://www.ashland.or.us/",
+        "note": "Municipal"
+      },
+      "Klamath Falls": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Roseburg": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Pendleton": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "The Dalles": {
+        "name": "Northern Wasco County PUD",
+        "phone": "541-296-2226",
+        "website": "https://www.nwasco.com/",
+        "note": "PUD"
+      },
+      "Hermiston": {
+        "name": "Umatilla Electric Cooperative",
+        "phone": "541-567-6414",
+        "website": "https://www.umatillaelectric.com/",
+        "note": "Co-op"
+      },
+      "Ontario": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Coos Bay": {
+        "name": "Pacific Power",
+        "phone": "888-221-7070",
+        "website": "https://www.pacificpower.net/"
+      },
+      "Newberg": {
+        "name": "Portland General Electric",
+        "phone": "800-542-8818",
+        "website": "https://www.portlandgeneral.com/"
+      },
+      "Forest Grove": {
+        "name": "Forest Grove Light & Power",
+        "phone": "503-992-3200",
+        "website": "https://www.forestgrove-or.gov/",
+        "note": "Municipal"
+      },
+      "Canby": {
+        "name": "Canby Utility",
+        "phone": "503-266-1156",
+        "website": "https://www.canbyutility.org/",
+        "note": "Municipal"
+      },
+      "Monmouth": {
+        "name": "Monmouth Power & Light",
+        "phone": "503-838-0722",
         "website": null,
-        "note": "From EIA-861 (151 ZIP codes)"
+        "note": "Municipal"
       }
     },
     "AZ": {
@@ -6299,35 +6425,184 @@
       }
     },
     "OK": {
-      "Empire District Electric Co": {
-        "name": "Empire District Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (11 ZIP codes)"
+      "Oklahoma City": {
+        "name": "OG&E (Oklahoma Gas & Electric)",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
       },
-      "Public Service Co of Oklahoma": {
-        "name": "Public Service Co of Oklahoma",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (284 ZIP codes)"
+      "Tulsa": {
+        "name": "PSO (Public Service Company of Oklahoma)",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
       },
-      "Oklahoma Gas & Electric Co": {
-        "name": "Oklahoma Gas & Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (397 ZIP codes)"
+      "Norman": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
       },
-      "Oklahoma Electric Cooperative": {
-        "name": "Oklahoma Electric Cooperative",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (75 ZIP codes)"
+      "Broken Arrow": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
       },
-      "Rural Electric Cooperative (Oklahoma)": {
-        "name": "Rural Electric Cooperative (Oklahoma)",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (49 ZIP codes)"
+      "Lawton": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Edmond": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Moore": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Midwest City": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Enid": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Stillwater": {
+        "name": "Stillwater Electric Utility",
+        "phone": "405-372-0025",
+        "website": "https://www.stillwater.org/",
+        "note": "Municipal"
+      },
+      "Muskogee": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Bartlesville": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Owasso": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Shawnee": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Ponca City": {
+        "name": "Ponca City Utility Authority",
+        "phone": "580-767-0301",
+        "website": "https://www.poncacityok.gov/",
+        "note": "Municipal"
+      },
+      "Ardmore": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Duncan": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Del City": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Bixby": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Sapulpa": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Yukon": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Altus": {
+        "name": "Altus Air Force Base Electric",
+        "phone": "580-482-1228",
+        "website": null
+      },
+      "Claremore": {
+        "name": "Claremore Electric",
+        "phone": "918-341-8485",
+        "website": "https://www.claremorecity.com/",
+        "note": "Municipal"
+      },
+      "Sand Springs": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "El Reno": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "McAlester": {
+        "name": "PSO",
+        "phone": "888-216-3523",
+        "website": "https://www.psoklahoma.com/"
+      },
+      "Bethany": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Mustang": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Durant": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Tahlequah": {
+        "name": "Tahlequah Public Works Authority",
+        "phone": "918-456-0651",
+        "website": "https://www.cityoftahlequah.com/",
+        "note": "Municipal"
+      },
+      "Miami": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com/"
+      },
+      "Chickasha": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Ada": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Guthrie": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
+      },
+      "Weatherford": {
+        "name": "OG&E",
+        "phone": "800-272-9741",
+        "website": "https://www.oge.com/"
       }
     },
     "VT": {
@@ -11116,55 +11391,162 @@
       }
     },
     "OK": {
-      "Statewide": {
+      "Oklahoma City": {
         "name": "Oklahoma Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for OK"
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
       },
-      "Oklahoma_Natural_Gas": {
+      "Tulsa": {
         "name": "Oklahoma Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in OK"
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
       },
-      "CenterPoint_Energy": {
+      "Norman": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Broken Arrow": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Lawton": {
         "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in OK"
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
       },
-      "PSO": {
-        "name": "PSO",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in OK"
+      "Edmond": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Moore": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Enid": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Stillwater": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Muskogee": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Bartlesville": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Shawnee": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Ponca City": {
+        "name": "Oklahoma Natural Gas",
+        "phone": "800-664-5463",
+        "website": "https://www.oklahomanaturalgas.com/"
+      },
+      "Ardmore": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Duncan": {
+        "name": "CenterPoint Energy",
+        "phone": "800-992-7552",
+        "website": "https://www.centerpointenergy.com/"
       }
     },
     "OR": {
-      "Statewide": {
+      "Portland": {
         "name": "NW Natural",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for OR"
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
       },
-      "NW_Natural": {
+      "Salem": {
         "name": "NW Natural",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in OR"
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
       },
-      "Avista": {
-        "name": "Avista",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in OR"
+      "Eugene": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
       },
-      "Cascade_Natural_Gas": {
+      "Gresham": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Hillsboro": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Beaverton": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Bend": {
         "name": "Cascade Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in OR"
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Medford": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Springfield": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Corvallis": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Albany": {
+        "name": "NW Natural",
+        "phone": "800-422-4012",
+        "website": "https://www.nwnatural.com/"
+      },
+      "Grants Pass": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Klamath Falls": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Roseburg": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Pendleton": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
+      },
+      "Ontario": {
+        "name": "Cascade Natural Gas",
+        "phone": "888-522-1130",
+        "website": "https://www.cngc.com/"
       }
     },
     "RI": {

@@ -99,6 +99,14 @@ def _get_electric_pipeline() -> LookupPipeline:
         _pipeline_electric.add_source(MunicipalElectricSource())
         _pipeline_electric.add_source(StateGISElectricSource())
         _pipeline_electric.add_source(CoopSource())
+        
+        # State-specific sources
+        try:
+            from pipeline.sources.georgia_emc import GeorgiaEMCSource
+            _pipeline_electric.add_source(GeorgiaEMCSource())
+        except ImportError:
+            pass
+        
         _pipeline_electric.add_source(EIASource())
         _pipeline_electric.add_source(HIFLDElectricSource())
         _pipeline_electric.add_source(CountyDefaultElectricSource())

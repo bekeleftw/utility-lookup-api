@@ -1420,235 +1420,180 @@
       }
     },
     "TN": {
-      "Memphis": {
-        "name": "Memphis Light, Gas and Water (MLGW)",
-        "phone": "901-544-6549",
-        "website": "https://www.mlgw.com",
-        "zip_codes": [
-          "37501",
-          "38101",
-          "38103",
-          "38104",
-          "38105",
-          "38106",
-          "38107",
-          "38108",
-          "38109",
-          "38111",
-          "38112",
-          "38113",
-          "38114",
-          "38115",
-          "38116",
-          "38117",
-          "38118",
-          "38119",
-          "38120",
-          "38122",
-          "38124",
-          "38125",
-          "38126",
-          "38127",
-          "38128",
-          "38130",
-          "38131",
-          "38132",
-          "38133",
-          "38134",
-          "38135",
-          "38136",
-          "38137",
-          "38138",
-          "38139",
-          "38141",
-          "38145",
-          "38148",
-          "38150",
-          "38151",
-          "38152",
-          "38157",
-          "38159",
-          "38161",
-          "38163",
-          "38166",
-          "38167",
-          "38168",
-          "38173",
-          "38174",
-          "38175",
-          "38177",
-          "38181",
-          "38182",
-          "38183",
-          "38184",
-          "38186",
-          "38187",
-          "38188",
-          "38190",
-          "38193",
-          "38194",
-          "38197"
-        ],
-        "services": [
-          "electric",
-          "gas",
-          "water"
-        ],
-        "note": "Largest 3-service municipal utility in US"
-      },
       "Nashville": {
-        "name": "Nashville Electric Service (NES)",
+        "name": "Nashville Electric Service",
         "phone": "615-736-6900",
-        "website": "https://www.nespower.com",
-        "zip_codes": [
-          "37011",
-          "37013",
-          "37015",
-          "37027",
-          "37064",
-          "37067",
-          "37072",
-          "37076",
-          "37080",
-          "37115",
-          "37116",
-          "37138",
-          "37143",
-          "37189",
-          "37201",
-          "37202",
-          "37203",
-          "37204",
-          "37205",
-          "37206",
-          "37207",
-          "37208",
-          "37209",
-          "37210",
-          "37211",
-          "37212",
-          "37213",
-          "37214",
-          "37215",
-          "37216",
-          "37217",
-          "37218",
-          "37219",
-          "37220",
-          "37221",
-          "37222",
-          "37224",
-          "37227",
-          "37228",
-          "37229",
-          "37230",
-          "37232",
-          "37234",
-          "37235",
-          "37236",
-          "37238",
-          "37240",
-          "37241",
-          "37242",
-          "37243",
-          "37244",
-          "37246",
-          "37250"
-        ]
+        "website": "https://www.nespower.com/",
+        "note": "TVA Municipal"
+      },
+      "Memphis": {
+        "name": "Memphis Light Gas & Water",
+        "phone": "901-544-6549",
+        "website": "https://www.mlgw.com/",
+        "note": "TVA Municipal"
       },
       "Knoxville": {
-        "name": "Knoxville Utilities Board (KUB)",
+        "name": "Knoxville Utilities Board",
         "phone": "865-524-2911",
-        "website": "https://www.kub.org",
-        "zip_codes": [
-          "37901",
-          "37902",
-          "37909",
-          "37912",
-          "37914",
-          "37915",
-          "37916",
-          "37917",
-          "37918",
-          "37919",
-          "37920",
-          "37921",
-          "37922",
-          "37923",
-          "37924",
-          "37927",
-          "37928",
-          "37929",
-          "37930",
-          "37931",
-          "37932",
-          "37933",
-          "37934",
-          "37938",
-          "37939"
-        ],
-        "services": [
-          "electric",
-          "gas",
-          "water"
-        ]
+        "website": "https://www.kub.org/",
+        "note": "TVA Municipal"
       },
       "Chattanooga": {
         "name": "EPB (Electric Power Board)",
         "phone": "423-648-1372",
-        "website": "https://www.epb.com",
-        "zip_codes": [
-          "37341",
-          "37343",
-          "37350",
-          "37351",
-          "37363",
-          "37377",
-          "37379",
-          "37402",
-          "37403",
-          "37404",
-          "37405",
-          "37406",
-          "37407",
-          "37408",
-          "37409",
-          "37410",
-          "37411",
-          "37412",
-          "37414",
-          "37415",
-          "37416",
-          "37419",
-          "37421",
-          "37422",
-          "37424"
-        ],
-        "note": "Known for gigabit fiber network"
+        "website": "https://www.epb.com/",
+        "note": "TVA Municipal"
       },
-      "Entergy Arkansas LLC": {
-        "name": "Entergy Arkansas LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (91 ZIP codes)"
+      "Clarksville": {
+        "name": "CDE Lightband",
+        "phone": "931-648-8151",
+        "website": "https://www.cdelightband.com/",
+        "note": "TVA Municipal"
       },
-      "Kingsport Power Co": {
-        "name": "Kingsport Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (4 ZIP codes)"
-      },
-      "Middle Tennessee Electric": {
+      "Murfreesboro": {
         "name": "Middle Tennessee Electric",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (44 ZIP codes)"
+        "phone": "877-777-9020",
+        "website": "https://www.mfrpu.org/",
+        "note": "TVA Co-op"
       },
-      "Gibson Electric Membership Corporation": {
-        "name": "Gibson Electric Membership Corporation",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (97 ZIP codes)"
+      "Franklin": {
+        "name": "Middle Tennessee Electric",
+        "phone": "877-777-9020",
+        "website": "https://www.mfrpu.org/",
+        "note": "TVA Co-op"
+      },
+      "Jackson": {
+        "name": "Jackson Energy Authority",
+        "phone": "731-422-7500",
+        "website": "https://www.jea.com/",
+        "note": "TVA Municipal"
+      },
+      "Johnson City": {
+        "name": "Johnson City Power Board",
+        "phone": "423-952-5000",
+        "website": "https://www.jcpb.com/",
+        "note": "TVA Municipal"
+      },
+      "Bartlett": {
+        "name": "Memphis Light Gas & Water",
+        "phone": "901-544-6549",
+        "website": "https://www.mlgw.com/"
+      },
+      "Hendersonville": {
+        "name": "Nashville Electric Service",
+        "phone": "615-736-6900",
+        "website": "https://www.nespower.com/"
+      },
+      "Kingsport": {
+        "name": "Kingsport Power",
+        "phone": "423-224-2480",
+        "website": "https://www.kingsporttn.gov/",
+        "note": "TVA Municipal"
+      },
+      "Collierville": {
+        "name": "Memphis Light Gas & Water",
+        "phone": "901-544-6549",
+        "website": "https://www.mlgw.com/"
+      },
+      "Smyrna": {
+        "name": "Middle Tennessee Electric",
+        "phone": "877-777-9020",
+        "website": "https://www.mfrpu.org/",
+        "note": "TVA Co-op"
+      },
+      "Cleveland": {
+        "name": "Cleveland Utilities",
+        "phone": "423-472-4521",
+        "website": "https://www.clevelandutilities.com/",
+        "note": "TVA Municipal"
+      },
+      "Brentwood": {
+        "name": "Nashville Electric Service",
+        "phone": "615-736-6900",
+        "website": "https://www.nespower.com/"
+      },
+      "Germantown": {
+        "name": "Memphis Light Gas & Water",
+        "phone": "901-544-6549",
+        "website": "https://www.mlgw.com/"
+      },
+      "Columbia": {
+        "name": "Columbia Power & Water Systems",
+        "phone": "931-388-4833",
+        "website": "https://www.cpws.com/",
+        "note": "TVA Municipal"
+      },
+      "La Vergne": {
+        "name": "Middle Tennessee Electric",
+        "phone": "877-777-9020",
+        "website": "https://www.mfrpu.org/",
+        "note": "TVA Co-op"
+      },
+      "Gallatin": {
+        "name": "Gallatin Department of Electricity",
+        "phone": "615-452-5400",
+        "website": "https://www.gallatintn.gov/",
+        "note": "TVA Municipal"
+      },
+      "Cookeville": {
+        "name": "Cookeville Electric Department",
+        "phone": "931-526-9751",
+        "website": "https://www.cookeville-tn.gov/",
+        "note": "TVA Municipal"
+      },
+      "Oak Ridge": {
+        "name": "Oak Ridge Electric Department",
+        "phone": "865-425-1803",
+        "website": "https://www.oakridgetn.gov/",
+        "note": "TVA Municipal"
+      },
+      "Morristown": {
+        "name": "Morristown Utility Systems",
+        "phone": "423-586-1262",
+        "website": "https://www.mus-tn.com/",
+        "note": "TVA Municipal"
+      },
+      "Bristol": {
+        "name": "Bristol Tennessee Essential Services",
+        "phone": "423-764-4004",
+        "website": "https://www.bristoltn.org/",
+        "note": "TVA Municipal"
+      },
+      "Maryville": {
+        "name": "Alcoa Electric Department",
+        "phone": "865-380-4600",
+        "website": "https://www.cityofalcoa-tn.gov/",
+        "note": "TVA Municipal"
+      },
+      "Spring Hill": {
+        "name": "Spring Hill Electric",
+        "phone": "931-486-2252",
+        "website": "https://www.springhilltn.org/",
+        "note": "TVA Municipal"
+      },
+      "Lebanon": {
+        "name": "Lebanon Utilities",
+        "phone": "615-443-2505",
+        "website": "https://www.lebanontn.org/",
+        "note": "TVA Municipal"
+      },
+      "Shelbyville": {
+        "name": "Shelbyville Power System",
+        "phone": "931-684-7171",
+        "website": "https://www.shelbyvilletn.org/",
+        "note": "TVA Municipal"
+      },
+      "Dyersburg": {
+        "name": "Dyersburg Electric System",
+        "phone": "731-285-2612",
+        "website": "https://www.dyersburgelectric.com/",
+        "note": "TVA Municipal"
+      },
+      "Tullahoma": {
+        "name": "Tullahoma Utilities Authority",
+        "phone": "931-455-4515",
+        "website": "https://www.tullahomautilities.com/",
+        "note": "TVA Municipal"
       }
     },
     "GA": {
@@ -3336,45 +3281,192 @@
       }
     },
     "UT": {
+      "Salt Lake City": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "West Valley City": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
       "Provo": {
-        "name": "Provo Power",
-        "phone": "801-852-6050",
-        "website": "https://www.provo.org/departments/energy",
-        "zip_codes": [
-          "84601",
-          "84602",
-          "84603",
-          "84604",
-          "84605",
-          "84606"
-        ]
+        "name": "Provo City Power",
+        "phone": "801-852-6000",
+        "website": "https://www.provo.org/",
+        "note": "Municipal"
+      },
+      "West Jordan": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Orem": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Sandy": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Ogden": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "St. George": {
+        "name": "City of St. George Energy Services",
+        "phone": "435-627-4700",
+        "website": "https://www.sgcity.org/",
+        "note": "Municipal"
+      },
+      "Layton": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "South Jordan": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Lehi": {
+        "name": "Lehi City Power",
+        "phone": "801-768-7100",
+        "website": "https://www.lehi-ut.gov/",
+        "note": "Municipal"
+      },
+      "Millcreek": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Taylorsville": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
       },
       "Logan": {
         "name": "Logan City Light & Power",
         "phone": "435-716-9700",
-        "website": "https://www.loganutah.org",
-        "zip_codes": [
-          "84321",
-          "84322",
-          "84323"
-        ]
+        "website": "https://www.loganutah.org/",
+        "note": "Municipal"
       },
-      "St. George": {
-        "name": "St. George Energy Services",
-        "phone": "435-627-4700",
-        "website": "https://www.sgcity.org",
-        "zip_codes": [
-          "84770",
-          "84771",
-          "84790",
-          "84791"
-        ]
+      "Murray": {
+        "name": "Murray City Power",
+        "phone": "801-264-2700",
+        "website": "https://www.murray.utah.gov/",
+        "note": "Municipal"
       },
-      "PacifiCorp": {
-        "name": "PacifiCorp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (309 ZIP codes)"
+      "Draper": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Bountiful": {
+        "name": "Bountiful City Light & Power",
+        "phone": "801-298-6000",
+        "website": "https://www.bountifulutah.gov/",
+        "note": "Municipal"
+      },
+      "Riverton": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Herriman": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Spanish Fork": {
+        "name": "Spanish Fork City Power",
+        "phone": "801-804-4500",
+        "website": "https://www.spanishfork.org/",
+        "note": "Municipal"
+      },
+      "Roy": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Pleasant Grove": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Kearns": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Tooele": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Cottonwood Heights": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Springville": {
+        "name": "Springville City Power",
+        "phone": "801-489-2700",
+        "website": "https://www.springville.org/",
+        "note": "Municipal"
+      },
+      "Cedar City": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Kaysville": {
+        "name": "Kaysville City Power",
+        "phone": "801-546-1235",
+        "website": "https://www.kaysvillecity.com/",
+        "note": "Municipal"
+      },
+      "Clearfield": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Midvale": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "American Fork": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Holladay": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Payson": {
+        "name": "Payson City Power",
+        "phone": "801-465-5265",
+        "website": "https://www.paysonutah.org/",
+        "note": "Municipal"
+      },
+      "Washington": {
+        "name": "City of Washington Power",
+        "phone": "435-656-6300",
+        "website": "https://www.washingtoncity.org/",
+        "note": "Municipal"
+      },
+      "Hurricane": {
+        "name": "City of Hurricane Power",
+        "phone": "435-635-2811",
+        "website": "https://www.cityofhurricane.com/",
+        "note": "Municipal"
       }
     },
     "PA": {
@@ -11963,49 +12055,143 @@
       }
     },
     "TN": {
-      "Statewide": {
+      "Nashville": {
         "name": "Piedmont Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for TN"
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
       },
-      "Piedmont_Natural_Gas": {
+      "Memphis": {
+        "name": "Memphis Light Gas & Water",
+        "phone": "901-544-6549",
+        "website": "https://www.mlgw.com/",
+        "note": "Municipal"
+      },
+      "Knoxville": {
+        "name": "Knoxville Utilities Board Gas",
+        "phone": "865-524-2911",
+        "website": "https://www.kub.org/",
+        "note": "Municipal"
+      },
+      "Chattanooga": {
+        "name": "Chattanooga Gas",
+        "phone": "423-756-1212",
+        "website": "https://www.chattanoogagas.com/"
+      },
+      "Clarksville": {
+        "name": "Clarksville Gas & Water",
+        "phone": "931-645-7400",
+        "website": "https://www.clarksvillegw.com/",
+        "note": "Municipal"
+      },
+      "Murfreesboro": {
         "name": "Piedmont Natural Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in TN"
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
       },
-      "Atmos_Energy": {
+      "Franklin": {
+        "name": "Piedmont Natural Gas",
+        "phone": "800-752-7504",
+        "website": "https://www.piedmontng.com/"
+      },
+      "Jackson": {
+        "name": "Jackson Energy Authority Gas",
+        "phone": "731-422-7500",
+        "website": "https://www.jea.com/",
+        "note": "Municipal"
+      },
+      "Johnson City": {
         "name": "Atmos Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in TN"
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
       },
-      "Nashville_Gas": {
-        "name": "Nashville Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in TN"
+      "Kingsport": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Cleveland": {
+        "name": "Cleveland Utilities Gas",
+        "phone": "423-472-4521",
+        "website": "https://www.clevelandutilities.com/",
+        "note": "Municipal"
+      },
+      "Columbia": {
+        "name": "Columbia Power & Water Systems Gas",
+        "phone": "931-388-4833",
+        "website": "https://www.cpws.com/",
+        "note": "Municipal"
+      },
+      "Cookeville": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
       }
     },
     "UT": {
-      "Statewide": {
+      "Salt Lake City": {
         "name": "Dominion Energy Utah",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for UT"
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Dominion_Energy_Utah": {
+      "West Valley City": {
         "name": "Dominion Energy Utah",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in UT"
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
       },
-      "Questar_Gas": {
-        "name": "Questar Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in UT"
+      "Provo": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "West Jordan": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Orem": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Sandy": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Ogden": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "St. George": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Layton": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Logan": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Murray": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Bountiful": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Cedar City": {
+        "name": "Dominion Energy Utah",
+        "phone": "800-323-5517",
+        "website": "https://www.dominionenergy.com/"
       }
     },
     "VT": {

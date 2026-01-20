@@ -981,6 +981,31 @@
         "name": "City of Victorville Electric",
         "phone": "760-955-5000",
         "website": "https://www.victorvilleca.gov/"
+      },
+      "Imperial": {
+        "name": "Imperial Irrigation District",
+        "phone": "760-339-9144",
+        "website": "https://www.iid.com/"
+      },
+      "Merced": {
+        "name": "Merced Irrigation District",
+        "phone": "209-722-5761",
+        "website": "https://www.mercedid.com/"
+      },
+      "Trinity County": {
+        "name": "Trinity Public Utilities District",
+        "phone": "530-623-5536",
+        "website": "https://www.trinitypud.com/"
+      },
+      "Gridley": {
+        "name": "City of Gridley Electric",
+        "phone": "530-846-3631",
+        "website": null
+      },
+      "Rancho Cucamonga": {
+        "name": "Rancho Cucamonga Municipal Utility",
+        "phone": "909-477-2700",
+        "website": "https://www.cityofrc.us/"
       }
     },
     "FL": {
@@ -3910,6 +3935,206 @@
         "name": "East Bay Municipal Utility District (EBMUD)",
         "phone": "866-403-2683",
         "website": "https://www.ebmud.com/"
+      },
+      "San Bernardino": {
+        "name": "San Bernardino Municipal Water Department",
+        "phone": "909-384-5092",
+        "website": "https://www.sbcity.org/"
+      },
+      "Fontana": {
+        "name": "Fontana Water Company",
+        "phone": "909-822-2201",
+        "website": "https://www.fontanawater.com/"
+      },
+      "Moreno Valley": {
+        "name": "Eastern Municipal Water District",
+        "phone": "951-928-3777",
+        "website": "https://www.emwd.org/"
+      },
+      "Ontario": {
+        "name": "City of Ontario Water",
+        "phone": "909-395-2000",
+        "website": "https://www.ontarioca.gov/"
+      },
+      "Rancho Cucamonga": {
+        "name": "Cucamonga Valley Water District",
+        "phone": "909-987-2591",
+        "website": "https://www.cvwdwater.com/"
+      },
+      "Corona": {
+        "name": "City of Corona Water",
+        "phone": "951-736-2259",
+        "website": "https://www.coronaca.gov/"
+      },
+      "Elk Grove": {
+        "name": "Elk Grove Water District",
+        "phone": "916-685-3556",
+        "website": "https://www.egwd.org/"
+      },
+      "Palmdale": {
+        "name": "Palmdale Water District",
+        "phone": "661-947-4111",
+        "website": "https://www.palmdalewater.org/"
+      },
+      "Lancaster": {
+        "name": "Los Angeles County Waterworks",
+        "phone": "661-942-2116",
+        "website": "https://dpw.lacounty.gov/"
+      },
+      "Salinas": {
+        "name": "California Water Service",
+        "phone": "831-422-7404",
+        "website": "https://www.calwater.com/"
+      },
+      "Thousand Oaks": {
+        "name": "California American Water",
+        "phone": "888-237-1333",
+        "website": "https://www.amwater.com/"
+      },
+      "Simi Valley": {
+        "name": "Ventura County Waterworks",
+        "phone": "805-378-3000",
+        "website": "https://www.vcpublicworks.org/"
+      },
+      "Visalia": {
+        "name": "California Water Service",
+        "phone": "559-734-1868",
+        "website": "https://www.calwater.com/"
+      },
+      "Clovis": {
+        "name": "City of Clovis Water",
+        "phone": "559-324-2600",
+        "website": "https://www.cityofclovis.com/"
+      },
+      "Santa Rosa": {
+        "name": "City of Santa Rosa Water",
+        "phone": "707-543-3150",
+        "website": "https://www.srcity.org/"
+      },
+      "Oceanside": {
+        "name": "City of Oceanside Water",
+        "phone": "760-435-5800",
+        "website": "https://www.ci.oceanside.ca.us/"
+      },
+      "Garden Grove": {
+        "name": "City of Garden Grove Water",
+        "phone": "714-741-5078",
+        "website": "https://www.ggcity.org/"
+      },
+      "Huntington Beach": {
+        "name": "City of Huntington Beach Water",
+        "phone": "714-536-5921",
+        "website": "https://www.huntingtonbeachca.gov/"
+      },
+      "Chula Vista": {
+        "name": "Sweetwater Authority",
+        "phone": "619-420-1413",
+        "website": "https://www.sweetwater.org/"
+      },
+      "Carlsbad": {
+        "name": "Carlsbad Municipal Water District",
+        "phone": "760-438-2722",
+        "website": "https://www.carlsbadca.gov/"
+      },
+      "Temecula": {
+        "name": "Rancho California Water District",
+        "phone": "951-296-6900",
+        "website": "https://www.ranchowater.com/"
+      },
+      "Murrieta": {
+        "name": "Western Municipal Water District",
+        "phone": "951-789-5000",
+        "website": "https://www.wmwd.com/"
+      },
+      "Menifee": {
+        "name": "Eastern Municipal Water District",
+        "phone": "951-928-3777",
+        "website": "https://www.emwd.org/"
+      },
+      "Indio": {
+        "name": "Indio Water Authority",
+        "phone": "760-391-4000",
+        "website": "https://www.indio.org/"
+      },
+      "Hemet": {
+        "name": "Lake Hemet Municipal Water District",
+        "phone": "951-658-3241",
+        "website": "https://www.lhmwd.org/"
+      },
+      "Redlands": {
+        "name": "City of Redlands Water",
+        "phone": "909-798-7698",
+        "website": "https://www.cityofredlands.org/"
+      },
+      "Lake Forest": {
+        "name": "El Toro Water District",
+        "phone": "949-837-0660",
+        "website": "https://www.etwd.com/"
+      },
+      "Newport Beach": {
+        "name": "City of Newport Beach Water",
+        "phone": "949-644-3011",
+        "website": "https://www.newportbeachca.gov/"
+      },
+      "San Clemente": {
+        "name": "City of San Clemente Water",
+        "phone": "949-361-8200",
+        "website": "https://www.san-clemente.org/"
+      },
+      "Mission Viejo": {
+        "name": "Moulton Niguel Water District",
+        "phone": "949-831-2500",
+        "website": "https://www.mnwd.com/"
+      },
+      "Vacaville": {
+        "name": "City of Vacaville Water",
+        "phone": "707-449-5100",
+        "website": "https://www.cityofvacaville.com/"
+      },
+      "Fairfield": {
+        "name": "City of Fairfield Water",
+        "phone": "707-428-7400",
+        "website": "https://www.fairfield.ca.gov/"
+      },
+      "Vallejo": {
+        "name": "City of Vallejo Water",
+        "phone": "707-648-4300",
+        "website": "https://www.cityofvallejo.net/"
+      },
+      "Napa": {
+        "name": "City of Napa Water",
+        "phone": "707-257-9520",
+        "website": "https://www.cityofnapa.org/"
+      },
+      "San Rafael": {
+        "name": "Marin Municipal Water District",
+        "phone": "415-945-1455",
+        "website": "https://www.marinwater.org/"
+      },
+      "Petaluma": {
+        "name": "City of Petaluma Water",
+        "phone": "707-778-4507",
+        "website": "https://www.cityofpetaluma.org/"
+      },
+      "Redwood City": {
+        "name": "City of Redwood City Water",
+        "phone": "650-780-7000",
+        "website": "https://www.redwoodcity.org/"
+      },
+      "San Mateo": {
+        "name": "California Water Service",
+        "phone": "650-558-7800",
+        "website": "https://www.calwater.com/"
+      },
+      "Daly City": {
+        "name": "City of Daly City Water",
+        "phone": "650-991-8200",
+        "website": "https://www.dalycity.org/"
+      },
+      "Mountain View": {
+        "name": "City of Mountain View Water",
+        "phone": "650-903-6329",
+        "website": "https://www.mountainview.gov/"
       }
     },
     "CO": {

@@ -48,7 +48,7 @@ class StateGISElectricSource(DataSource):
             return None
         
         try:
-            from utility_lookup import lookup_electric_utility_gis
+            from utility_lookup_v1 import lookup_electric_utility_gis
             
             result = lookup_electric_utility_gis(context.lat, context.lon, context.state)
             
@@ -91,7 +91,7 @@ class MunicipalElectricSource(DataSource):
     
     def query(self, context: LookupContext) -> Optional[SourceResult]:
         try:
-            from utility_lookup import lookup_municipal_electric
+            from utility_lookup_v1 import lookup_municipal_electric
             
             result = lookup_municipal_electric(context.state, context.city, context.zip_code)
             
@@ -236,7 +236,7 @@ class HIFLDElectricSource(DataSource):
             return None
         
         try:
-            from utility_lookup import lookup_electric_utility
+            from utility_lookup_v1 import lookup_electric_utility
             
             result = lookup_electric_utility(context.lon, context.lat)
             

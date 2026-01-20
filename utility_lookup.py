@@ -2211,13 +2211,27 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_selection_reason': f"User-reported correction ({correction.get('_confirmation_count', 1)} confirmations)"
             }
             other_gas = []
-        # PRIORITY 1: NEW PIPELINE with OpenAI Smart Selector
+        # PRIORITY 1: Check municipal/regional gas data FIRST (most accurate for specific ZIPs)
+        elif (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
+            primary_gas = {
+                'NAME': municipal_gas['name'],
+                'TELEPHONE': municipal_gas.get('phone'),
+                'WEBSITE': municipal_gas.get('website'),
+                'STATE': state,
+                'CITY': municipal_gas.get('city', city),
+                '_confidence': 'high',
+                '_source': 'municipal_gas_data',
+                '_verification_source': 'municipal_gas_data',
+                '_selection_reason': f"Municipal/regional gas utility for {municipal_gas.get('city', city)}"
+            }
+            other_gas = []
+        # PRIORITY 2: NEW PIPELINE with OpenAI Smart Selector
         elif use_pipeline and PIPELINE_AVAILABLE:
             pipeline_result = _pipeline_lookup(lat, lon, address, city, county, state, zip_code, 'gas')
             if pipeline_result:
                 primary_gas = pipeline_result
                 other_gas = []
-        # PRIORITY 2: Check municipal gas utilities (fallback)
+        # PRIORITY 3: Check municipal gas utilities again (legacy fallback)
         if primary_gas is None and (municipal_gas := lookup_municipal_gas(state, city, zip_code)):
             primary_gas = {
                 'NAME': municipal_gas['name'],
@@ -3085,13 +3099,27 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
 def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None, use_pipeline: bool = True) -> Optional[Dict]:
     """Look up gas utility only. Fast - typically < 1 second."""
     try:
-        # Priority 0: Use pipeline with SmartSelector for best accuracy
+        # Priority 0: Check municipal/regional gas data FIRST (most accurate for specific ZIPs)
+        municipal_gas = lookup_municipal_gas(state, city, zip_code)
+        if municipal_gas:
+            return {
+                'NAME': municipal_gas['name'],
+                'TELEPHONE': municipal_gas.get('phone'),
+                'WEBSITE': municipal_gas.get('website'),
+                'STATE': state,
+                'CITY': municipal_gas.get('city', city),
+                '_confidence': 'high',
+                '_source': 'municipal_gas_data',
+                '_verification_source': 'municipal_gas_data'
+            }
+        
+        # Priority 1: Use pipeline with SmartSelector
         if use_pipeline and PIPELINE_AVAILABLE:
             pipeline_result = _pipeline_lookup(lat, lon, address or '', city, county, state, zip_code, 'gas')
             if pipeline_result:
                 return pipeline_result
         
-        # Fallback: Check municipal first
+        # Fallback: Check municipal again (legacy path)
         municipal_gas = lookup_municipal_gas(state, city, zip_code)
         if municipal_gas:
             return {

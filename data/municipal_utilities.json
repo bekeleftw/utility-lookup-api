@@ -5711,29 +5711,164 @@
       }
     },
     "MO": {
-      "Empire District Electric Co": {
-        "name": "Empire District Electric Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (107 ZIP codes)"
+      "Kansas City": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
       },
-      "Evergy Missouri West": {
-        "name": "Evergy Missouri West",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (191 ZIP codes)"
+      "St. Louis": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
       },
-      "Evergy Metro": {
-        "name": "Evergy Metro",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (143 ZIP codes)"
+      "Springfield": {
+        "name": "City Utilities of Springfield",
+        "phone": "417-863-9000",
+        "website": "https://www.cityutilities.net/",
+        "note": "Municipal"
       },
-      "Union Electric Co (MO)": {
-        "name": "Union Electric Co - (MO)",
-        "phone": null,
+      "Columbia": {
+        "name": "Columbia Water & Light",
+        "phone": "573-874-7325",
+        "website": "https://www.como.gov/",
+        "note": "Municipal"
+      },
+      "Independence": {
+        "name": "Independence Power & Light",
+        "phone": "816-325-7550",
+        "website": "https://www.ci.independence.mo.us/",
+        "note": "Municipal"
+      },
+      "Lee's Summit": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "O'Fallon": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "St. Joseph": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "St. Charles": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "St. Peters": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Blue Springs": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Florissant": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Joplin": {
+        "name": "Empire District Electric",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com/"
+      },
+      "Chesterfield": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Jefferson City": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Cape Girardeau": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Wildwood": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "University City": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Ballwin": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Raytown": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Liberty": {
+        "name": "Liberty Utilities",
+        "phone": "816-439-4700",
+        "website": "https://www.libertyutilities.com/",
+        "note": "Municipal"
+      },
+      "Kirkwood": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Gladstone": {
+        "name": "Evergy",
+        "phone": "888-471-5275",
+        "website": "https://www.evergy.com/"
+      },
+      "Sedalia": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Hannibal": {
+        "name": "Hannibal Board of Public Works",
+        "phone": "573-221-8050",
+        "website": "https://www.hannibalbpw.org/",
+        "note": "Municipal"
+      },
+      "Poplar Bluff": {
+        "name": "Poplar Bluff Municipal Utilities",
+        "phone": "573-785-5561",
         "website": null,
-        "note": "From EIA-861 (519 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Sikeston": {
+        "name": "Sikeston Board of Municipal Utilities",
+        "phone": "573-471-2512",
+        "website": "https://www.sikeston.org/",
+        "note": "Municipal"
+      },
+      "Kennett": {
+        "name": "Kennett Board of Public Works",
+        "phone": "573-888-5366",
+        "website": null,
+        "note": "Municipal"
+      },
+      "Marshall": {
+        "name": "Marshall Municipal Utilities",
+        "phone": "660-886-7411",
+        "website": "https://www.marshallmo.com/",
+        "note": "Municipal"
+      },
+      "Rolla": {
+        "name": "Ameren Missouri",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
       }
     },
     "OK": {
@@ -6331,43 +6466,310 @@
       }
     },
     "MN": {
-      "ALLETE Inc": {
-        "name": "ALLETE, Inc.",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (113 ZIP codes)"
+      "Minneapolis": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Northern States Power Co Minnesota": {
-        "name": "Northern States Power Co - Minnesota",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (482 ZIP codes)"
+      "St. Paul": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Otter Tail Power Co": {
-        "name": "Otter Tail Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (154 ZIP codes)"
+      "Rochester": {
+        "name": "Rochester Public Utilities",
+        "phone": "507-280-1500",
+        "website": "https://www.rfrpu.org/",
+        "note": "Municipal"
       },
-      "Northwestern Wisconsin Elec Co": {
-        "name": "Northwestern Wisconsin Elec Co",
-        "phone": null,
+      "Duluth": {
+        "name": "Minnesota Power",
+        "phone": "800-228-4966",
+        "website": "https://www.mnpower.com/"
+      },
+      "Bloomington": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Brooklyn Park": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Plymouth": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "St. Cloud": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Woodbury": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Eagan": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Maple Grove": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Eden Prairie": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Coon Rapids": {
+        "name": "Connexus Energy",
+        "phone": "763-323-2600",
+        "website": "https://www.connexusenergy.com/",
+        "note": "Co-op"
+      },
+      "Burnsville": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Blaine": {
+        "name": "Connexus Energy",
+        "phone": "763-323-2600",
+        "website": "https://www.connexusenergy.com/",
+        "note": "Co-op"
+      },
+      "Lakeville": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Minnetonka": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Apple Valley": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Edina": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "St. Louis Park": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Mankato": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Moorhead": {
+        "name": "Moorhead Public Service",
+        "phone": "218-477-8000",
+        "website": "https://www.mfrpu.org/",
+        "note": "Municipal"
+      },
+      "Shakopee": {
+        "name": "Shakopee Public Utilities",
+        "phone": "952-233-9500",
+        "website": "https://www.shakopeeutilities.com/",
+        "note": "Municipal"
+      },
+      "Richfield": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Cottage Grove": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Inver Grove Heights": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Roseville": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Owatonna": {
+        "name": "Owatonna Public Utilities",
+        "phone": "507-451-2480",
+        "website": "https://www.owatonnautilities.com/",
+        "note": "Municipal"
+      },
+      "Austin": {
+        "name": "Austin Utilities",
+        "phone": "507-433-8886",
+        "website": "https://www.austinutilities.com/",
+        "note": "Municipal"
+      },
+      "Winona": {
+        "name": "Xcel Energy",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Willmar": {
+        "name": "Willmar Municipal Utilities",
+        "phone": "320-235-4422",
+        "website": "https://www.wmu.willmar.mn.us/",
+        "note": "Municipal"
+      },
+      "Hibbing": {
+        "name": "Hibbing Public Utilities",
+        "phone": "218-362-5900",
+        "website": "https://www.hibbingmn.com/",
+        "note": "Municipal"
+      },
+      "Virginia": {
+        "name": "Virginia Public Utilities",
+        "phone": "218-748-7500",
         "website": null,
-        "note": "From EIA-861 (7 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Fergus Falls": {
+        "name": "Otter Tail Power",
+        "phone": "800-257-4044",
+        "website": "https://www.otpco.com/"
+      },
+      "Alexandria": {
+        "name": "Alexandria Light & Power",
+        "phone": "320-763-6501",
+        "website": "https://www.alputilities.com/",
+        "note": "Municipal"
       }
     },
     "MS": {
-      "Entergy Mississippi LLC": {
-        "name": "Entergy Mississippi LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (238 ZIP codes)"
+      "Jackson": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
       },
-      "Mississippi Power Co": {
-        "name": "Mississippi Power Co",
-        "phone": null,
+      "Gulfport": {
+        "name": "Mississippi Power",
+        "phone": "800-532-1502",
+        "website": "https://www.mississippipower.com/"
+      },
+      "Southaven": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Hattiesburg": {
+        "name": "Mississippi Power",
+        "phone": "800-532-1502",
+        "website": "https://www.mississippipower.com/"
+      },
+      "Biloxi": {
+        "name": "Mississippi Power",
+        "phone": "800-532-1502",
+        "website": "https://www.mississippipower.com/"
+      },
+      "Meridian": {
+        "name": "Mississippi Power",
+        "phone": "800-532-1502",
+        "website": "https://www.mississippipower.com/"
+      },
+      "Tupelo": {
+        "name": "Tupelo Water & Light",
+        "phone": "662-841-6440",
+        "website": "https://www.tupeloms.gov/",
+        "note": "TVA Municipal"
+      },
+      "Olive Branch": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Greenville": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Horn Lake": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Clinton": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Pearl": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Madison": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Starkville": {
+        "name": "Starkville Utilities",
+        "phone": "662-323-2652",
+        "website": "https://www.cityofstarkville.org/",
+        "note": "TVA Municipal"
+      },
+      "Vicksburg": {
+        "name": "Entergy Mississippi",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy-mississippi.com/"
+      },
+      "Columbus": {
+        "name": "Columbus Light & Water",
+        "phone": "662-329-5500",
         "website": null,
-        "note": "From EIA-861 (94 ZIP codes)"
+        "note": "TVA Municipal"
+      },
+      "Pascagoula": {
+        "name": "Mississippi Power",
+        "phone": "800-532-1502",
+        "website": "https://www.mississippipower.com/"
+      },
+      "Laurel": {
+        "name": "Mississippi Power",
+        "phone": "800-532-1502",
+        "website": "https://www.mississippipower.com/"
+      },
+      "Oxford": {
+        "name": "Oxford Electric Department",
+        "phone": "662-232-2300",
+        "website": "https://www.oxfordms.net/",
+        "note": "TVA Municipal"
+      },
+      "Corinth": {
+        "name": "Corinth Electric Department",
+        "phone": "662-286-8400",
+        "website": null,
+        "note": "TVA Municipal"
+      },
+      "West Point": {
+        "name": "West Point Electric System",
+        "phone": "662-494-5054",
+        "website": null,
+        "note": "TVA Municipal"
+      },
+      "New Albany": {
+        "name": "New Albany Light Gas & Water",
+        "phone": "662-534-1012",
+        "website": null,
+        "note": "TVA Municipal"
       }
     },
     "RI": {
@@ -9319,81 +9721,204 @@
       }
     },
     "MN": {
-      "Statewide": {
+      "Minneapolis": {
         "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for MN"
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
       },
-      "CenterPoint_Energy": {
-        "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MN"
+      "St. Paul": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
       },
-      "Xcel_Energy": {
-        "name": "Xcel Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MN"
-      },
-      "Minnesota_Energy_Resources": {
+      "Rochester": {
         "name": "Minnesota Energy Resources",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MN"
+        "phone": "800-889-9508",
+        "website": "https://www.minnesotaenergyresources.com/"
+      },
+      "Duluth": {
+        "name": "Minnesota Energy Resources",
+        "phone": "800-889-9508",
+        "website": "https://www.minnesotaenergyresources.com/"
+      },
+      "Bloomington": {
+        "name": "CenterPoint Energy",
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Brooklyn Park": {
+        "name": "CenterPoint Energy",
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Plymouth": {
+        "name": "CenterPoint Energy",
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "St. Cloud": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Woodbury": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Eagan": {
+        "name": "CenterPoint Energy",
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Maple Grove": {
+        "name": "CenterPoint Energy",
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Eden Prairie": {
+        "name": "CenterPoint Energy",
+        "phone": "612-372-4727",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Mankato": {
+        "name": "Xcel Energy Gas",
+        "phone": "800-895-4999",
+        "website": "https://www.xcelenergy.com/"
+      },
+      "Austin": {
+        "name": "Austin Utilities Gas",
+        "phone": "507-433-8886",
+        "website": "https://www.austinutilities.com/",
+        "note": "Municipal"
       }
     },
     "MS": {
-      "Statewide": {
+      "Jackson": {
         "name": "Spire Mississippi",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for MS"
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
       },
-      "Spire_Mississippi": {
+      "Gulfport": {
         "name": "Spire Mississippi",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MS"
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
       },
-      "Atmos_Energy": {
+      "Southaven": {
         "name": "Atmos Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MS"
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
       },
-      "CenterPoint_Energy": {
-        "name": "CenterPoint Energy",
-        "phone": null,
+      "Hattiesburg": {
+        "name": "Spire Mississippi",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Biloxi": {
+        "name": "Spire Mississippi",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Meridian": {
+        "name": "Spire Mississippi",
+        "phone": "800-292-4008",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Tupelo": {
+        "name": "Tupelo Water & Light Gas",
+        "phone": "662-841-6440",
+        "website": "https://www.tupeloms.gov/",
+        "note": "Municipal"
+      },
+      "Olive Branch": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Greenville": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Vicksburg": {
+        "name": "Atmos Energy",
+        "phone": "888-286-6700",
+        "website": "https://www.atmosenergy.com/"
+      },
+      "Columbus": {
+        "name": "Columbus Light & Water Gas",
+        "phone": "662-329-5500",
         "website": null,
-        "note": "Major gas utility in MS"
+        "note": "Municipal"
+      },
+      "New Albany": {
+        "name": "New Albany Light Gas & Water",
+        "phone": "662-534-1012",
+        "website": null,
+        "note": "Municipal"
       }
     },
     "MO": {
-      "Statewide": {
+      "Kansas City": {
         "name": "Spire",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for MO"
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
       },
-      "Spire": {
+      "St. Louis": {
         "name": "Spire",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MO"
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
       },
-      "Ameren_Missouri": {
-        "name": "Ameren Missouri",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MO"
+      "Springfield": {
+        "name": "City Utilities of Springfield Gas",
+        "phone": "417-863-9000",
+        "website": "https://www.cityutilities.net/",
+        "note": "Municipal"
       },
-      "Liberty_Utilities": {
-        "name": "Liberty Utilities",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in MO"
+      "Columbia": {
+        "name": "Ameren Missouri Gas",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Independence": {
+        "name": "Spire",
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Lee's Summit": {
+        "name": "Spire",
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
+      },
+      "O'Fallon": {
+        "name": "Spire",
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
+      },
+      "St. Joseph": {
+        "name": "Spire",
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
+      },
+      "St. Charles": {
+        "name": "Spire",
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
+      },
+      "Joplin": {
+        "name": "Empire District Gas",
+        "phone": "800-206-2300",
+        "website": "https://www.empiredistrict.com/"
+      },
+      "Jefferson City": {
+        "name": "Ameren Missouri Gas",
+        "phone": "800-552-7583",
+        "website": "https://www.ameren.com/"
+      },
+      "Cape Girardeau": {
+        "name": "Spire",
+        "phone": "800-582-1234",
+        "website": "https://www.spireenergy.com/"
       }
     },
     "MT": {

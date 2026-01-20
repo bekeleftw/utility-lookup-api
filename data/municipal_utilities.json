@@ -2037,79 +2037,33 @@
     "OH": {
       "Cleveland": {
         "name": "Cleveland Public Power",
-        "phone": "216-664-4600",
-        "website": "https://www.cpp.org",
-        "zip_codes": [
-          "44101",
-          "44102",
-          "44103",
-          "44104",
-          "44105",
-          "44106",
-          "44107",
-          "44108",
-          "44109",
-          "44110",
-          "44111",
-          "44112",
-          "44113",
-          "44114",
-          "44115",
-          "44116",
-          "44117",
-          "44118",
-          "44119",
-          "44120",
-          "44121",
-          "44122",
-          "44124",
-          "44125",
-          "44126",
-          "44127",
-          "44128",
-          "44129",
-          "44130",
-          "44134",
-          "44135",
-          "44143",
-          "44144"
-        ]
+        "phone": "216-664-3922",
+        "website": "https://www.cpp.org/"
       },
       "Columbus": {
-        "name": "Columbus Division of Power",
-        "phone": "614-645-8276",
-        "website": "https://www.columbus.gov",
-        "zip_codes": [
-          "43085",
-          "43201",
-          "43202",
-          "43203",
-          "43204",
-          "43205",
-          "43206",
-          "43207",
-          "43209",
-          "43210",
-          "43211",
-          "43212",
-          "43213",
-          "43214",
-          "43215",
-          "43217",
-          "43219",
-          "43220",
-          "43221",
-          "43222",
-          "43223",
-          "43224",
-          "43227",
-          "43228",
-          "43229",
-          "43230",
-          "43231",
-          "43232"
-        ],
-        "note": "Serves select areas, not entire city"
+        "name": "AEP Ohio",
+        "phone": "800-672-2231",
+        "website": "https://www.aepohio.com/"
+      },
+      "Cincinnati": {
+        "name": "Duke Energy Ohio",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Toledo": {
+        "name": "Toledo Edison (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Akron": {
+        "name": "Ohio Edison (FirstEnergy)",
+        "phone": "800-545-7741",
+        "website": "https://www.firstenergycorp.com/"
+      },
+      "Dayton": {
+        "name": "AES Ohio",
+        "phone": "877-437-6237",
+        "website": "https://www.aes-ohio.com/"
       }
     },
     "NE": {
@@ -2582,6 +2536,158 @@
         "name": "West Penn Power (FirstEnergy)",
         "phone": "800-545-7741",
         "website": "https://www.firstenergycorp.com/"
+      }
+    },
+    "NY": {
+      "New York": {
+        "name": "Con Edison",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
+      "Buffalo": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Rochester": {
+        "name": "Rochester Gas & Electric",
+        "phone": "800-743-2110",
+        "website": "https://www.rge.com/"
+      },
+      "Syracuse": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Albany": {
+        "name": "National Grid",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Long Island": {
+        "name": "PSEG Long Island",
+        "phone": "800-490-0025",
+        "website": "https://www.psegliny.com/"
+      }
+    },
+    "IL": {
+      "Chicago": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Springfield": {
+        "name": "City Water Light & Power",
+        "phone": "217-789-2121",
+        "website": "https://www.cwlp.com/"
+      },
+      "Rockford": {
+        "name": "ComEd",
+        "phone": "800-334-7661",
+        "website": "https://www.comed.com/"
+      },
+      "Peoria": {
+        "name": "Ameren Illinois",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      }
+    },
+    "MI": {
+      "Detroit": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Grand Rapids": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Lansing": {
+        "name": "Lansing Board of Water & Light",
+        "phone": "517-702-6006",
+        "website": "https://www.lbwl.com/"
+      },
+      "Ann Arbor": {
+        "name": "DTE Energy",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Flint": {
+        "name": "Consumers Energy",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      }
+    },
+    "VA": {
+      "Richmond": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Virginia Beach": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Norfolk": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Arlington": {
+        "name": "Dominion Energy Virginia",
+        "phone": "866-366-4357",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Roanoke": {
+        "name": "Appalachian Power",
+        "phone": "800-956-4237",
+        "website": "https://www.appalachianpower.com/"
+      }
+    },
+    "MA": {
+      "Boston": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Worcester": {
+        "name": "National Grid",
+        "phone": "800-322-3223",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Springfield": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Cambridge": {
+        "name": "Eversource",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      }
+    },
+    "NJ": {
+      "Newark": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Jersey City": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Trenton": {
+        "name": "PSE&G",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Atlantic City": {
+        "name": "Atlantic City Electric",
+        "phone": "800-642-3780",
+        "website": "https://www.atlanticcityelectric.com/"
       }
     }
   },
@@ -3765,6 +3871,185 @@
         "name": "PECO Energy Gas",
         "phone": "800-494-4000",
         "website": "https://www.peco.com/"
+      }
+    },
+    "NY": {
+      "New York": {
+        "name": "Con Edison Gas",
+        "phone": "800-752-6633",
+        "website": "https://www.coned.com/"
+      },
+      "Buffalo": {
+        "name": "National Fuel Gas",
+        "phone": "800-365-3234",
+        "website": "https://www.natfuel.com/"
+      },
+      "Rochester": {
+        "name": "Rochester Gas & Electric",
+        "phone": "800-743-2110",
+        "website": "https://www.rge.com/"
+      },
+      "Syracuse": {
+        "name": "National Grid Gas",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Albany": {
+        "name": "National Grid Gas",
+        "phone": "800-642-4272",
+        "website": "https://www.nationalgridus.com/"
+      }
+    },
+    "IL": {
+      "Chicago": {
+        "name": "Peoples Gas",
+        "phone": "866-556-6001",
+        "website": "https://www.peoplesgasdelivery.com/"
+      },
+      "Springfield": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      },
+      "Rockford": {
+        "name": "Nicor Gas",
+        "phone": "888-642-6748",
+        "website": "https://www.nicorgas.com/"
+      },
+      "Peoria": {
+        "name": "Ameren Illinois Gas",
+        "phone": "800-755-5000",
+        "website": "https://www.ameren.com/"
+      }
+    },
+    "OH": {
+      "Columbus": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Cleveland": {
+        "name": "Dominion Energy Ohio",
+        "phone": "800-362-7557",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Cincinnati": {
+        "name": "Duke Energy Gas",
+        "phone": "800-544-6900",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Toledo": {
+        "name": "Columbia Gas of Ohio",
+        "phone": "800-344-4077",
+        "website": "https://www.columbiagasohio.com/"
+      },
+      "Akron": {
+        "name": "Dominion Energy Ohio",
+        "phone": "800-362-7557",
+        "website": "https://www.dominionenergy.com/"
+      },
+      "Dayton": {
+        "name": "Vectren Energy (CenterPoint)",
+        "phone": "800-227-1376",
+        "website": "https://www.vectren.com/"
+      }
+    },
+    "MI": {
+      "Detroit": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Grand Rapids": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Lansing": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      },
+      "Ann Arbor": {
+        "name": "DTE Gas",
+        "phone": "800-477-4747",
+        "website": "https://www.dteenergy.com/"
+      },
+      "Flint": {
+        "name": "Consumers Energy Gas",
+        "phone": "800-477-5050",
+        "website": "https://www.consumersenergy.com/"
+      }
+    },
+    "VA": {
+      "Richmond": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Virginia Beach": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Norfolk": {
+        "name": "Virginia Natural Gas",
+        "phone": "866-229-3578",
+        "website": "https://www.virginianaturalgas.com/"
+      },
+      "Arlington": {
+        "name": "Washington Gas",
+        "phone": "844-927-4427",
+        "website": "https://www.washingtongas.com/"
+      },
+      "Roanoke": {
+        "name": "Roanoke Gas",
+        "phone": "540-777-0623",
+        "website": "https://www.roanokegas.com/"
+      }
+    },
+    "MA": {
+      "Boston": {
+        "name": "National Grid Gas",
+        "phone": "800-233-5325",
+        "website": "https://www.nationalgridus.com/"
+      },
+      "Worcester": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Springfield": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      },
+      "Cambridge": {
+        "name": "Eversource Gas",
+        "phone": "800-592-2000",
+        "website": "https://www.eversource.com/"
+      }
+    },
+    "NJ": {
+      "Newark": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Jersey City": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Trenton": {
+        "name": "PSE&G Gas",
+        "phone": "800-436-7734",
+        "website": "https://www.pseg.com/"
+      },
+      "Atlantic City": {
+        "name": "South Jersey Gas",
+        "phone": "800-582-7060",
+        "website": "https://www.southjerseygas.com/"
       }
     }
   },

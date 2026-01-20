@@ -4777,43 +4777,185 @@
       }
     },
     "HI": {
-      "Hawaii Electric Light Co Inc": {
-        "name": "Hawaii Electric Light Co Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (32 ZIP codes)"
+      "Honolulu": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
       },
-      "Maui Electric Co Ltd": {
-        "name": "Maui Electric Co Ltd",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (19 ZIP codes)"
+      "Pearl City": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
       },
-      "Hawaiian Electric Co Inc": {
-        "name": "Hawaiian Electric Co Inc",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (69 ZIP codes)"
+      "Hilo": {
+        "name": "Hawaii Electric Light",
+        "phone": "808-969-6999",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Kailua": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Waipahu": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Kaneohe": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Mililani Town": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Kahului": {
+        "name": "Maui Electric",
+        "phone": "808-871-8461",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Ewa Beach": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Kapolei": {
+        "name": "Hawaiian Electric (HECO)",
+        "phone": "808-548-7311",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Kihei": {
+        "name": "Maui Electric",
+        "phone": "808-871-8461",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Lahaina": {
+        "name": "Maui Electric",
+        "phone": "808-871-8461",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Kailua-Kona": {
+        "name": "Hawaii Electric Light",
+        "phone": "808-969-6999",
+        "website": "https://www.hawaiianelectric.com/"
+      },
+      "Lihue": {
+        "name": "Kauai Island Utility Cooperative",
+        "phone": "808-246-4300",
+        "website": "https://www.kiuc.coop/",
+        "note": "Co-op"
+      },
+      "Kapaa": {
+        "name": "Kauai Island Utility Cooperative",
+        "phone": "808-246-4300",
+        "website": "https://www.kiuc.coop/",
+        "note": "Co-op"
       }
     },
     "ID": {
-      "Idaho Power Co": {
-        "name": "Idaho Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (164 ZIP codes)"
+      "Boise": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
       },
-      "PacifiCorp": {
-        "name": "PacifiCorp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (74 ZIP codes)"
+      "Meridian": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
       },
-      "Avista Corp": {
-        "name": "Avista Corp",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (77 ZIP codes)"
+      "Nampa": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Idaho Falls": {
+        "name": "Idaho Falls Power",
+        "phone": "208-612-8430",
+        "website": "https://www.ifpower.org/",
+        "note": "Municipal"
+      },
+      "Pocatello": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Caldwell": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Coeur d Alene": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Twin Falls": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Lewiston": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Post Falls": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Rexburg": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Moscow": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Eagle": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Kuna": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Ammon": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Chubbuck": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Hayden": {
+        "name": "Avista",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Mountain Home": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
+      },
+      "Blackfoot": {
+        "name": "Rocky Mountain Power",
+        "phone": "888-221-7070",
+        "website": "https://www.rockymountainpower.net/"
+      },
+      "Burley": {
+        "name": "Idaho Power",
+        "phone": "800-488-6151",
+        "website": "https://www.idahopower.com/"
       }
     },
     "IN": {
@@ -7143,37 +7285,98 @@
       }
     },
     "HI": {
-      "Statewide": {
+      "Honolulu": {
         "name": "Hawaii Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for HI"
+        "phone": "808-535-5933",
+        "website": "https://www.hawaiigas.com/",
+        "note": "Propane-based"
       },
-      "Hawaii_Gas": {
+      "Pearl City": {
         "name": "Hawaii Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in HI"
+        "phone": "808-535-5933",
+        "website": "https://www.hawaiigas.com/"
+      },
+      "Hilo": {
+        "name": "Hawaii Gas",
+        "phone": "808-535-5933",
+        "website": "https://www.hawaiigas.com/"
+      },
+      "Kailua": {
+        "name": "Hawaii Gas",
+        "phone": "808-535-5933",
+        "website": "https://www.hawaiigas.com/"
+      },
+      "Kahului": {
+        "name": "Hawaii Gas",
+        "phone": "808-535-5933",
+        "website": "https://www.hawaiigas.com/"
+      },
+      "Kapolei": {
+        "name": "Hawaii Gas",
+        "phone": "808-535-5933",
+        "website": "https://www.hawaiigas.com/"
       }
     },
     "ID": {
-      "Statewide": {
+      "Boise": {
         "name": "Intermountain Gas",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for ID"
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
       },
-      "Intermountain_Gas": {
+      "Meridian": {
         "name": "Intermountain Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ID"
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
       },
-      "Avista": {
-        "name": "Avista",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in ID"
+      "Nampa": {
+        "name": "Intermountain Gas",
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
+      },
+      "Idaho Falls": {
+        "name": "Intermountain Gas",
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
+      },
+      "Pocatello": {
+        "name": "Intermountain Gas",
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
+      },
+      "Caldwell": {
+        "name": "Intermountain Gas",
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
+      },
+      "Coeur d Alene": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Twin Falls": {
+        "name": "Intermountain Gas",
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
+      },
+      "Lewiston": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Post Falls": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Moscow": {
+        "name": "Avista Gas",
+        "phone": "800-227-9187",
+        "website": "https://www.myavista.com/"
+      },
+      "Eagle": {
+        "name": "Intermountain Gas",
+        "phone": "800-548-3679",
+        "website": "https://www.intgas.com/"
       }
     },
     "IN": {

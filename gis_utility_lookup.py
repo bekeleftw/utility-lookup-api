@@ -399,8 +399,66 @@ def query_delaware_water(lat: float, lon: float) -> Optional[Dict]:
     return None
 
 
+def query_arkansas_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Arkansas Public Water Systems.
+    Coverage: 98% (657 of 672 active CWS)
+    Source: Arkansas Department of Health
+    """
+    url = "https://gis.arkansas.gov/arcgis/rest/services/FEATURESERVICES/Utilities/FeatureServer/15/query"
+    result = _query_arcgis_point(url, lat, lon, "pws_name")
+    
+    if result:
+        return {
+            "name": result.get("pws_name", "").strip(),
+            "confidence": "high",
+            "source": "arkansas_adh"
+        }
+    return None
+
+
+def query_kansas_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Kansas Rural Water Districts.
+    Coverage: ~90% (779 of 864 active CWS)
+    Note: Rural water districts + municipalities
+    """
+    url = "https://services1.arcgis.com/q2CglofYX6ACNEeu/arcgis/rest/services/KS_RuralWaterDistricts_SHP/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "NAME,FED_ID,KDHE_ID")
+    
+    if result:
+        return {
+            "name": result.get("NAME", "").strip(),
+            "pws_id": result.get("FED_ID"),
+            "kdhe_id": result.get("KDHE_ID"),
+            "confidence": "high",
+            "source": "kansas_kdhe"
+        }
+    return None
+
+
+def query_florida_sjrwmd_water(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Florida St. Johns River Water Management District PWS areas.
+    Coverage: ~21% of Florida (344 of 1,605 active CWS)
+    Note: Only covers SJRWMD region (NE Florida including Jacksonville)
+    """
+    url = "https://services.arcgis.com/s8wtJX9suxFen6TA/ArcGIS/rest/services/Public_Water_Supply_Area_SJRWMD/FeatureServer/0/query"
+    result = _query_arcgis_point(url, lat, lon, "UTILITY,PWS_ID,CNTY_NAME")
+    
+    if result:
+        return {
+            "name": result.get("UTILITY", "").strip(),
+            "pws_id": result.get("PWS_ID"),
+            "county": result.get("CNTY_NAME"),
+            "confidence": "high",
+            "source": "florida_sjrwmd"
+        }
+    return None
+
+
 # States with state-specific water APIs (more authoritative than EPA)
-STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM', 'OK', 'AZ', 'CT', 'DE'}
+STATES_WITH_WATER_GIS = {'CA', 'TX', 'MS', 'PA', 'NY', 'NJ', 'WA', 'UT', 'TN', 'NC', 'NM', 'OK', 'AZ', 'CT', 'DE', 'AR', 'KS', 'FL'}
 
 
 def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optional[Dict]:
@@ -477,6 +535,18 @@ def lookup_water_utility_gis(lat: float, lon: float, state: str = None) -> Optio
             return result
     elif state == "DE":
         result = query_delaware_water(lat, lon)
+        if result:
+            return result
+    elif state == "AR":
+        result = query_arkansas_water(lat, lon)
+        if result:
+            return result
+    elif state == "KS":
+        result = query_kansas_water(lat, lon)
+        if result:
+            return result
+    elif state == "FL":
+        result = query_florida_sjrwmd_water(lat, lon)
         if result:
             return result
     elif state == "MS":

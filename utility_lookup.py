@@ -30,6 +30,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # Import geocoding - use the Census geocoder with geography info
 from utility_lookup_v1 import geocode_with_census as geocode_address
 
+# Re-export functions from v1 that api.py needs for backward compatibility
+from utility_lookup_v1 import (
+    lookup_utility_json,
+    lookup_electric_only,
+    lookup_gas_only,
+    lookup_water_only,
+    lookup_internet_only,
+    geocode_with_census,
+)
+
 # Import pipeline components
 try:
     from pipeline.pipeline import LookupPipeline

@@ -4255,23 +4255,135 @@
       }
     },
     "IA": {
-      "Amana Society Service Co": {
-        "name": "Amana Society Service Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (6 ZIP codes)"
+      "Des Moines": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
       },
-      "Interstate Power and Light Co": {
-        "name": "Interstate Power and Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (641 ZIP codes)"
+      "Cedar Rapids": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
       },
-      "MidAmerican Energy Co": {
-        "name": "MidAmerican Energy Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (507 ZIP codes)"
+      "Davenport": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Sioux City": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Iowa City": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Waterloo": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Ames": {
+        "name": "City of Ames Electric",
+        "phone": "515-239-5120",
+        "website": "https://www.cityofames.org/",
+        "note": "Municipal"
+      },
+      "Council Bluffs": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Dubuque": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "West Des Moines": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Ankeny": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Urbandale": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Cedar Falls": {
+        "name": "Cedar Falls Utilities",
+        "phone": "319-273-8600",
+        "website": "https://www.cfu.net/",
+        "note": "Municipal"
+      },
+      "Marion": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Bettendorf": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Mason City": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Muscatine": {
+        "name": "Muscatine Power & Water",
+        "phone": "563-263-2631",
+        "website": "https://www.mpw.org/",
+        "note": "Municipal"
+      },
+      "Marshalltown": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Clinton": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Burlington": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Ottumwa": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Fort Dodge": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Coralville": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Spencer": {
+        "name": "Spencer Municipal Utilities",
+        "phone": "712-580-5800",
+        "website": "https://www.spencermunicipalutilities.com/",
+        "note": "Municipal"
+      },
+      "Indianola": {
+        "name": "Indianola Municipal Utilities",
+        "phone": "515-961-9410",
+        "website": "https://www.indianolaiowa.gov/",
+        "note": "Municipal"
       }
     },
     "WV": {
@@ -5146,35 +5258,175 @@
       }
     },
     "IN": {
-      "Indianapolis Power & Light Co": {
-        "name": "Indianapolis Power & Light Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (82 ZIP codes)"
+      "Indianapolis": {
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com/"
       },
-      "Indiana Michigan Power Co": {
-        "name": "Indiana Michigan Power Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (155 ZIP codes)"
+      "Fort Wayne": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
       },
-      "Duke Energy Indiana LLC": {
-        "name": "Duke Energy Indiana, LLC",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (428 ZIP codes)"
+      "Evansville": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
       },
-      "Northern Indiana Pub Serv Co": {
-        "name": "Northern Indiana Pub Serv Co",
-        "phone": null,
-        "website": null,
-        "note": "From EIA-861 (162 ZIP codes)"
+      "South Bend": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
       },
-      "Southern Indiana Gas & Elec Co": {
-        "name": "Southern Indiana Gas & Elec Co",
-        "phone": null,
+      "Carmel": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Fishers": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Bloomington": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Hammond": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Gary": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Lafayette": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Muncie": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
+      },
+      "Terre Haute": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Noblesville": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Greenwood": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Kokomo": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Anderson": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
+      },
+      "Elkhart": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
+      },
+      "Mishawaka": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
+      },
+      "Lawrence": {
+        "name": "AES Indiana",
+        "phone": "317-261-8222",
+        "website": "https://www.aesindiana.com/"
+      },
+      "Jeffersonville": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Columbus": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Portage": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "New Albany": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Richmond": {
+        "name": "Richmond Power & Light",
+        "phone": "765-983-7200",
+        "website": "https://www.richmondpower.net/",
+        "note": "Municipal"
+      },
+      "Valparaiso": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Michigan City": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Westfield": {
+        "name": "Duke Energy Indiana",
+        "phone": "800-521-2232",
+        "website": "https://www.duke-energy.com/"
+      },
+      "Marion": {
+        "name": "Indiana Michigan Power (AEP)",
+        "phone": "800-311-4634",
+        "website": "https://www.indianamichiganpower.com/"
+      },
+      "East Chicago": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Goshen": {
+        "name": "Goshen Utilities",
+        "phone": "574-534-1811",
+        "website": "https://www.goshenindiana.org/",
+        "note": "Municipal"
+      },
+      "Crawfordsville": {
+        "name": "Crawfordsville Electric Light & Power",
+        "phone": "765-362-1900",
+        "website": "https://www.crawfordsville-in.gov/",
+        "note": "Municipal"
+      },
+      "Frankfort": {
+        "name": "Frankfort Electric & Water",
+        "phone": "765-654-4492",
         "website": null,
-        "note": "From EIA-861 (73 ZIP codes)"
+        "note": "Municipal"
+      },
+      "Logansport": {
+        "name": "Logansport Municipal Utilities",
+        "phone": "574-753-6231",
+        "website": "https://www.cityoflogansport.org/",
+        "note": "Municipal"
       }
     },
     "KY": {
@@ -7652,61 +7904,173 @@
       }
     },
     "IN": {
-      "Statewide": {
-        "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for IN"
-      },
-      "CenterPoint_Energy": {
-        "name": "CenterPoint Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IN"
-      },
-      "NIPSCO": {
-        "name": "NIPSCO",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IN"
-      },
-      "Citizens_Gas": {
+      "Indianapolis": {
         "name": "Citizens Gas",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IN"
+        "phone": "317-924-3311",
+        "website": "https://www.citizensgas.com/"
       },
-      "Duke_Energy_Indiana": {
-        "name": "Duke Energy Indiana",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IN"
+      "Fort Wayne": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Evansville": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "South Bend": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Carmel": {
+        "name": "Citizens Gas",
+        "phone": "317-924-3311",
+        "website": "https://www.citizensgas.com/"
+      },
+      "Fishers": {
+        "name": "Citizens Gas",
+        "phone": "317-924-3311",
+        "website": "https://www.citizensgas.com/"
+      },
+      "Bloomington": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Hammond": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Gary": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Lafayette": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Muncie": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Terre Haute": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Noblesville": {
+        "name": "Citizens Gas",
+        "phone": "317-924-3311",
+        "website": "https://www.citizensgas.com/"
+      },
+      "Kokomo": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Anderson": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Elkhart": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Mishawaka": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Columbus": {
+        "name": "CenterPoint Energy",
+        "phone": "800-227-1376",
+        "website": "https://www.centerpointenergy.com/"
+      },
+      "Valparaiso": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
+      },
+      "Michigan City": {
+        "name": "NIPSCO",
+        "phone": "800-464-7726",
+        "website": "https://www.nipsco.com/"
       }
     },
     "IA": {
-      "Statewide": {
+      "Des Moines": {
         "name": "MidAmerican Energy",
-        "phone": null,
-        "website": null,
-        "note": "Default gas utility for IA"
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
       },
-      "MidAmerican_Energy": {
-        "name": "MidAmerican Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IA"
-      },
-      "Black_Hills_Energy": {
-        "name": "Black Hills Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IA"
-      },
-      "Alliant_Energy": {
+      "Cedar Rapids": {
         "name": "Alliant Energy",
-        "phone": null,
-        "website": null,
-        "note": "Major gas utility in IA"
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Davenport": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Sioux City": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Iowa City": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Waterloo": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Ames": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "Council Bluffs": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Dubuque": {
+        "name": "Alliant Energy",
+        "phone": "800-255-4268",
+        "website": "https://www.alliantenergy.com/"
+      },
+      "West Des Moines": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Ankeny": {
+        "name": "MidAmerican Energy",
+        "phone": "888-427-5632",
+        "website": "https://www.midamericanenergy.com/"
+      },
+      "Cedar Falls": {
+        "name": "Cedar Falls Utilities Gas",
+        "phone": "319-273-8600",
+        "website": "https://www.cfu.net/",
+        "note": "Municipal"
+      },
+      "Fort Dodge": {
+        "name": "Black Hills Energy",
+        "phone": "888-890-5554",
+        "website": "https://www.blackhillsenergy.com/"
       }
     },
     "KS": {

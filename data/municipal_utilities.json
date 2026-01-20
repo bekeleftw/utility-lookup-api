@@ -5389,6 +5389,910 @@
         "phone": "800-582-7060",
         "website": "https://www.southjerseygas.com/"
       }
+    },
+    "AL": {
+      "Statewide": {
+        "name": "Spire Alabama",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for AL"
+      },
+      "Spire_Alabama": {
+        "name": "Spire Alabama",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in AL"
+      },
+      "Alagasco": {
+        "name": "Alagasco",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in AL"
+      }
+    },
+    "AK": {
+      "Statewide": {
+        "name": "ENSTAR Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for AK"
+      },
+      "ENSTAR_Natural_Gas": {
+        "name": "ENSTAR Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in AK"
+      }
+    },
+    "AR": {
+      "Statewide": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for AR"
+      },
+      "CenterPoint_Energy": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in AR"
+      },
+      "Black_Hills_Energy": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in AR"
+      },
+      "Oklahoma_Natural_Gas": {
+        "name": "Oklahoma Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in AR"
+      }
+    },
+    "CO": {
+      "Statewide": {
+        "name": "Xcel Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for CO"
+      },
+      "Xcel_Energy": {
+        "name": "Xcel Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CO"
+      },
+      "Black_Hills_Energy": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CO"
+      },
+      "Atmos_Energy": {
+        "name": "Atmos Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CO"
+      },
+      "Colorado_Natural_Gas": {
+        "name": "Colorado Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CO"
+      }
+    },
+    "CT": {
+      "Statewide": {
+        "name": "Eversource",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for CT"
+      },
+      "Eversource": {
+        "name": "Eversource",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CT"
+      },
+      "Southern_Connecticut_Gas": {
+        "name": "Southern Connecticut Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CT"
+      },
+      "Connecticut_Natural_Gas": {
+        "name": "Connecticut Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in CT"
+      }
+    },
+    "DE": {
+      "Statewide": {
+        "name": "Delmarva Power",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for DE"
+      },
+      "Delmarva_Power": {
+        "name": "Delmarva Power",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in DE"
+      },
+      "Chesapeake_Utilities": {
+        "name": "Chesapeake Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in DE"
+      }
+    },
+    "DC": {
+      "Statewide": {
+        "name": "Washington Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for DC"
+      },
+      "Washington_Gas": {
+        "name": "Washington Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in DC"
+      }
+    },
+    "HI": {
+      "Statewide": {
+        "name": "Hawaii Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for HI"
+      },
+      "Hawaii_Gas": {
+        "name": "Hawaii Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in HI"
+      }
+    },
+    "ID": {
+      "Statewide": {
+        "name": "Intermountain Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for ID"
+      },
+      "Intermountain_Gas": {
+        "name": "Intermountain Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ID"
+      },
+      "Avista": {
+        "name": "Avista",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ID"
+      }
+    },
+    "IN": {
+      "Statewide": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for IN"
+      },
+      "CenterPoint_Energy": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IN"
+      },
+      "NIPSCO": {
+        "name": "NIPSCO",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IN"
+      },
+      "Citizens_Gas": {
+        "name": "Citizens Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IN"
+      },
+      "Duke_Energy_Indiana": {
+        "name": "Duke Energy Indiana",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IN"
+      }
+    },
+    "IA": {
+      "Statewide": {
+        "name": "MidAmerican Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for IA"
+      },
+      "MidAmerican_Energy": {
+        "name": "MidAmerican Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IA"
+      },
+      "Black_Hills_Energy": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IA"
+      },
+      "Alliant_Energy": {
+        "name": "Alliant Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in IA"
+      }
+    },
+    "KS": {
+      "Statewide": {
+        "name": "Kansas Gas Service",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for KS"
+      },
+      "Kansas_Gas_Service": {
+        "name": "Kansas Gas Service",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KS"
+      },
+      "Black_Hills_Energy": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KS"
+      },
+      "Atmos_Energy": {
+        "name": "Atmos Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KS"
+      }
+    },
+    "KY": {
+      "Statewide": {
+        "name": "LG&E",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for KY"
+      },
+      "LG&E": {
+        "name": "LG&E",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KY"
+      },
+      "Duke_Energy_Kentucky": {
+        "name": "Duke Energy Kentucky",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KY"
+      },
+      "Columbia_Gas_of_Kentucky": {
+        "name": "Columbia Gas of Kentucky",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KY"
+      },
+      "Atmos_Energy": {
+        "name": "Atmos Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in KY"
+      }
+    },
+    "LA": {
+      "Statewide": {
+        "name": "Entergy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for LA"
+      },
+      "Entergy": {
+        "name": "Entergy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in LA"
+      },
+      "Atmos_Energy": {
+        "name": "Atmos Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in LA"
+      },
+      "CenterPoint_Energy": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in LA"
+      }
+    },
+    "ME": {
+      "Statewide": {
+        "name": "Summit Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for ME"
+      },
+      "Summit_Natural_Gas": {
+        "name": "Summit Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ME"
+      },
+      "Bangor_Gas": {
+        "name": "Bangor Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ME"
+      },
+      "Maine_Natural_Gas": {
+        "name": "Maine Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ME"
+      }
+    },
+    "MD": {
+      "Statewide": {
+        "name": "BGE",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for MD"
+      },
+      "BGE": {
+        "name": "BGE",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MD"
+      },
+      "Washington_Gas": {
+        "name": "Washington Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MD"
+      },
+      "Columbia_Gas_of_Maryland": {
+        "name": "Columbia Gas of Maryland",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MD"
+      }
+    },
+    "MN": {
+      "Statewide": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for MN"
+      },
+      "CenterPoint_Energy": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MN"
+      },
+      "Xcel_Energy": {
+        "name": "Xcel Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MN"
+      },
+      "Minnesota_Energy_Resources": {
+        "name": "Minnesota Energy Resources",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MN"
+      }
+    },
+    "MS": {
+      "Statewide": {
+        "name": "Spire Mississippi",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for MS"
+      },
+      "Spire_Mississippi": {
+        "name": "Spire Mississippi",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MS"
+      },
+      "Atmos_Energy": {
+        "name": "Atmos Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MS"
+      },
+      "CenterPoint_Energy": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MS"
+      }
+    },
+    "MO": {
+      "Statewide": {
+        "name": "Spire",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for MO"
+      },
+      "Spire": {
+        "name": "Spire",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MO"
+      },
+      "Ameren_Missouri": {
+        "name": "Ameren Missouri",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MO"
+      },
+      "Liberty_Utilities": {
+        "name": "Liberty Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MO"
+      }
+    },
+    "MT": {
+      "Statewide": {
+        "name": "NorthWestern Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for MT"
+      },
+      "NorthWestern_Energy": {
+        "name": "NorthWestern Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MT"
+      },
+      "Montana-Dakota_Utilities": {
+        "name": "Montana-Dakota Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in MT"
+      }
+    },
+    "NE": {
+      "Statewide": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for NE"
+      },
+      "Black_Hills_Energy": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NE"
+      },
+      "NorthWestern_Energy": {
+        "name": "NorthWestern Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NE"
+      },
+      "Metropolitan_Utilities_District": {
+        "name": "Metropolitan Utilities District",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NE"
+      }
+    },
+    "NV": {
+      "Statewide": {
+        "name": "Southwest Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for NV"
+      },
+      "Southwest_Gas": {
+        "name": "Southwest Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NV"
+      },
+      "NV_Energy": {
+        "name": "NV Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NV"
+      }
+    },
+    "NH": {
+      "Statewide": {
+        "name": "Liberty Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for NH"
+      },
+      "Liberty_Utilities": {
+        "name": "Liberty Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NH"
+      },
+      "Unitil": {
+        "name": "Unitil",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NH"
+      }
+    },
+    "NM": {
+      "Statewide": {
+        "name": "New Mexico Gas Company",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for NM"
+      },
+      "New_Mexico_Gas_Company": {
+        "name": "New Mexico Gas Company",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NM"
+      },
+      "Raton_Natural_Gas": {
+        "name": "Raton Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NM"
+      }
+    },
+    "NC": {
+      "Statewide": {
+        "name": "Piedmont Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for NC"
+      },
+      "Piedmont_Natural_Gas": {
+        "name": "Piedmont Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NC"
+      },
+      "Dominion_Energy": {
+        "name": "Dominion Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NC"
+      },
+      "PSNC_Energy": {
+        "name": "PSNC Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in NC"
+      }
+    },
+    "ND": {
+      "Statewide": {
+        "name": "Montana-Dakota Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for ND"
+      },
+      "Montana-Dakota_Utilities": {
+        "name": "Montana-Dakota Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ND"
+      },
+      "Xcel_Energy": {
+        "name": "Xcel Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in ND"
+      }
+    },
+    "OK": {
+      "Statewide": {
+        "name": "Oklahoma Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for OK"
+      },
+      "Oklahoma_Natural_Gas": {
+        "name": "Oklahoma Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in OK"
+      },
+      "CenterPoint_Energy": {
+        "name": "CenterPoint Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in OK"
+      },
+      "PSO": {
+        "name": "PSO",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in OK"
+      }
+    },
+    "OR": {
+      "Statewide": {
+        "name": "NW Natural",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for OR"
+      },
+      "NW_Natural": {
+        "name": "NW Natural",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in OR"
+      },
+      "Avista": {
+        "name": "Avista",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in OR"
+      },
+      "Cascade_Natural_Gas": {
+        "name": "Cascade Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in OR"
+      }
+    },
+    "RI": {
+      "Statewide": {
+        "name": "National Grid",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for RI"
+      },
+      "National_Grid": {
+        "name": "National Grid",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in RI"
+      }
+    },
+    "SC": {
+      "Statewide": {
+        "name": "Piedmont Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for SC"
+      },
+      "Piedmont_Natural_Gas": {
+        "name": "Piedmont Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in SC"
+      },
+      "Dominion_Energy": {
+        "name": "Dominion Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in SC"
+      },
+      "SCE&G": {
+        "name": "SCE&G",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in SC"
+      }
+    },
+    "SD": {
+      "Statewide": {
+        "name": "NorthWestern Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for SD"
+      },
+      "NorthWestern_Energy": {
+        "name": "NorthWestern Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in SD"
+      },
+      "Montana-Dakota_Utilities": {
+        "name": "Montana-Dakota Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in SD"
+      },
+      "MidAmerican_Energy": {
+        "name": "MidAmerican Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in SD"
+      }
+    },
+    "TN": {
+      "Statewide": {
+        "name": "Piedmont Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for TN"
+      },
+      "Piedmont_Natural_Gas": {
+        "name": "Piedmont Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in TN"
+      },
+      "Atmos_Energy": {
+        "name": "Atmos Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in TN"
+      },
+      "Nashville_Gas": {
+        "name": "Nashville Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in TN"
+      }
+    },
+    "UT": {
+      "Statewide": {
+        "name": "Dominion Energy Utah",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for UT"
+      },
+      "Dominion_Energy_Utah": {
+        "name": "Dominion Energy Utah",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in UT"
+      },
+      "Questar_Gas": {
+        "name": "Questar Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in UT"
+      }
+    },
+    "VT": {
+      "Statewide": {
+        "name": "Vermont Gas Systems",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for VT"
+      },
+      "Vermont_Gas_Systems": {
+        "name": "Vermont Gas Systems",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in VT"
+      }
+    },
+    "WA": {
+      "Statewide": {
+        "name": "Puget Sound Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for WA"
+      },
+      "Puget_Sound_Energy": {
+        "name": "Puget Sound Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WA"
+      },
+      "Avista": {
+        "name": "Avista",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WA"
+      },
+      "Cascade_Natural_Gas": {
+        "name": "Cascade Natural Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WA"
+      },
+      "NW_Natural": {
+        "name": "NW Natural",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WA"
+      }
+    },
+    "WV": {
+      "Statewide": {
+        "name": "Dominion Energy West Virginia",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for WV"
+      },
+      "Dominion_Energy_West_Virginia": {
+        "name": "Dominion Energy West Virginia",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WV"
+      },
+      "Mountaineer_Gas": {
+        "name": "Mountaineer Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WV"
+      },
+      "Hope_Gas": {
+        "name": "Hope Gas",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WV"
+      }
+    },
+    "WI": {
+      "Statewide": {
+        "name": "We Energies",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for WI"
+      },
+      "We_Energies": {
+        "name": "We Energies",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WI"
+      },
+      "Xcel_Energy": {
+        "name": "Xcel Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WI"
+      },
+      "Alliant_Energy": {
+        "name": "Alliant Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WI"
+      },
+      "Wisconsin_Public_Service": {
+        "name": "Wisconsin Public Service",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WI"
+      }
+    },
+    "WY": {
+      "Statewide": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Default gas utility for WY"
+      },
+      "Black_Hills_Energy": {
+        "name": "Black Hills Energy",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WY"
+      },
+      "Dominion_Energy_Wyoming": {
+        "name": "Dominion Energy Wyoming",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WY"
+      },
+      "Montana-Dakota_Utilities": {
+        "name": "Montana-Dakota Utilities",
+        "phone": null,
+        "website": null,
+        "note": "Major gas utility in WY"
+      }
     }
   },
   "water": {

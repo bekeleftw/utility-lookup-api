@@ -4135,6 +4135,6334 @@
         "name": "City of Mountain View Water",
         "phone": "650-903-6329",
         "website": "https://www.mountainview.gov/"
+      },
+      "Vernalis": {
+        "name": "132 INVESTMENTS WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (93 connections)"
+      },
+      "Inyokern": {
+        "name": "INYOKERN CSD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (265 connections)"
+      },
+      "Lemoore": {
+        "name": "LEMOORE",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (7306 connections)"
+      },
+      "Columbia": {
+        "name": "TUD - COLUMBIA WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (2092 connections)"
+      },
+      "Oakdale": {
+        "name": "OAKDALE",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (8335 connections)"
+      },
+      "Rosamond": {
+        "name": "ROSAMOND CSD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (5293 connections)"
+      },
+      "Tehachapi": {
+        "name": "TEHACHAPI",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (3410 connections)"
+      },
+      "Null": {
+        "name": "LIVE OAK SPRINGS WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (92 connections)"
+      },
+      "Vina": {
+        "name": "ABBEY OF NEW CLAIRVAUX",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (24 connections)"
+      },
+      "Independence": {
+        "name": "INYO COUNTY PWD - LONE PINE",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (503 connections)"
+      },
+      "Mt. Shasta": {
+        "name": "SISKIYOU LAKE HIGHLANDS MWC",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (94 connections)"
+      },
+      "Acampo": {
+        "name": "ARBOR MOBILE HOME PARK WS",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (173 connections)"
+      },
+      "Adelanto": {
+        "name": "ADELANTO",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (8318 connections)"
+      },
+      "St. Helena": {
+        "name": "ST. HELENA",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (2551 connections)"
+      },
+      "North Edwards": {
+        "name": "NORTH EDWARDS WD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (221 connections)"
+      },
+      "San Luis Obispo": {
+        "name": "SAN LUIS OBISPO WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (17012 connections)"
+      },
+      "Carnelian Bay": {
+        "name": "AGATE BAY WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (584 connections)"
+      },
+      "Delano": {
+        "name": "DELANO",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (10112 connections)"
+      },
+      "Alameda": {
+        "name": "ALAMEDA POINT",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (378 connections)"
+      },
+      "Albion": {
+        "name": "ALBION MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (27 connections)"
+      },
+      "Los Gatos": {
+        "name": "CHEMEKETA PARK MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (153 connections)"
+      },
+      "Alderpoint": {
+        "name": "ALDERPOINT COUNTY WATER",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (88 connections)"
+      },
+      "Gaviota": {
+        "name": "SAN AUGUSTINE MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (23 connections)"
+      },
+      "Healdsburg": {
+        "name": "HEALDSBURG",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (4612 connections)"
+      },
+      "Tulare": {
+        "name": "TULARE",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (20059 connections)"
+      },
+      "Corralitos": {
+        "name": "RANCHO CORRALITOS",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (31 connections)"
+      },
+      "Alleghany": {
+        "name": "ALLEGHANY COUNTY W.D.",
+        "phone": null,
+        "website": null,
+        "county": "Sierra",
+        "note": "From CA SWRCB data (52 connections)"
+      },
+      "Allensworth": {
+        "name": "ALLENSWORTH CSD",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (168 connections)"
+      },
+      "Occidental": {
+        "name": "OCCIDENTAL COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (110 connections)"
+      },
+      "Paso Robles": {
+        "name": "City of PASO ROBLES WATER DIVISION",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (10822 connections)"
+      },
+      "Chico": {
+        "name": "CAL-WATER SERVICE CO.-CHICO",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (30239 connections)"
+      },
+      "Alpaugh": {
+        "name": "ALPAUGH COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (372 connections)"
+      },
+      "Sonora": {
+        "name": "TUD - SONORA/JAMESTOWN WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (5121 connections)"
+      },
+      "Colfax": {
+        "name": "ALPINE MEADOWS PROPERTY OWNERS ASSO",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (129 connections)"
+      },
+      "Alpine": {
+        "name": "ALPINE OAKS ESTATES LLC",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (68 connections)"
+      },
+      "Alpine Meadows": {
+        "name": "ALPINE SPRINGS COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (663 connections)"
+      },
+      "Pinyon Pines": {
+        "name": "PINYON CREST HOA",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (90 connections)"
+      },
+      "Twin Peaks": {
+        "name": "ALPINE WATER USERS ASSOCIATION",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (952 connections)"
+      },
+      "Wofford Heights": {
+        "name": "ALTA SIERRA MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (224 connections)"
+      },
+      "Fillmore": {
+        "name": "FILLMORE WATER DEPT",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (4370 connections)"
+      },
+      "Rosemead": {
+        "name": "CAL/AM WATER COMPANY - SAN MARINO",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (14280 connections)"
+      },
+      "Cottonwood": {
+        "name": "RIO ALTO WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (1418 connections)"
+      },
+      "American Canyon": {
+        "name": "AMERICAN CANYON",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (6868 connections)"
+      },
+      "Quincy": {
+        "name": "AMERICAN VALLEY CSD",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (1613 connections)"
+      },
+      "Vandenberg Afb": {
+        "name": "AMERICAN WATER O&M, LLC - VSFB",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (1161 connections)"
+      },
+      "Thermal": {
+        "name": "AMEZCUA - GARCIA WATER",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (79 connections)"
+      },
+      "Nevada City": {
+        "name": "NEVADA ID - E. GEORGE, BANNER MOUNTAIN",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (6154 connections)"
+      },
+      "Anderson": {
+        "name": "City of ANDERSON",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (3607 connections)"
+      },
+      "Middletown": {
+        "name": "CALLAYOMI COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (532 connections)"
+      },
+      "Gilroy": {
+        "name": "City of GILROY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (15419 connections)"
+      },
+      "Angels Camp": {
+        "name": "ANGELS",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (2000 connections)"
+      },
+      "Bethel Island": {
+        "name": "PLEASANTIMES MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (195 connections)"
+      },
+      "Los Molinos": {
+        "name": "LOS MOLINOS COMM. SERVICES DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (373 connections)"
+      },
+      "Red Bluff": {
+        "name": "City of RED BLUFF",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (4853 connections)"
+      },
+      "Anza": {
+        "name": "ANZA RV RESORT",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (117 connections)"
+      },
+      "Greenfield": {
+        "name": "GREENFIELD",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (3880 connections)"
+      },
+      "Apple Valley": {
+        "name": "LIBERTY UTILITIES (AV RANCHOS) CORP.",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (20780 connections)"
+      },
+      "Royal Oaks": {
+        "name": "PSMCSD - PAJARO",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (463 connections)"
+      },
+      "Watsonville": {
+        "name": "WATSONVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (14955 connections)"
+      },
+      "Arbuckle": {
+        "name": "ARBUCKLE PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Colusa",
+        "note": "From CA SWRCB data (1027 connections)"
+      },
+      "Arcata": {
+        "name": "ARCATA",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (6148 connections)"
+      },
+      "Taylorsville": {
+        "name": "ARLINGTON HEIGHTS MHP",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (39 connections)"
+      },
+      "Armona": {
+        "name": "ARMONA COMMUNITY SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (1366 connections)"
+      },
+      "Guerneville": {
+        "name": "SWEETWATER SPRINGS CWD - GUERNEVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (2612 connections)"
+      },
+      "Aromas": {
+        "name": "AROMAS WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Benito",
+        "note": "From CA SWRCB data (956 connections)"
+      },
+      "Arrowbear Lake": {
+        "name": "ARROWBEAR PARK CWD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (957 connections)"
+      },
+      "Sky Forest": {
+        "name": "ARROWHEAD VILLAS MUTUAL SERVICE COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (798 connections)"
+      },
+      "Soledad": {
+        "name": "SOLEDAD",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (4400 connections)"
+      },
+      "Artois": {
+        "name": "ARTOIS COMMUNITY S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Glenn",
+        "note": "From CA SWRCB data (62 connections)"
+      },
+      "Arvin": {
+        "name": "ARVIN COMMUNITY SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (4246 connections)"
+      },
+      "Hollister": {
+        "name": "HOLLISTER",
+        "phone": null,
+        "website": null,
+        "county": "San Benito",
+        "note": "From CA SWRCB data (7861 connections)"
+      },
+      "Carmel Valley": {
+        "name": "TASSAJARA SPRINGS WS",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (70 connections)"
+      },
+      "Bishop": {
+        "name": "BISHOP",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (1171 connections)"
+      },
+      "Atascadero": {
+        "name": "ATASCADERO MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (10961 connections)"
+      },
+      "Auburn": {
+        "name": "PLACER CWA - FOOTHILL",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (27694 connections)"
+      },
+      "Cazadero": {
+        "name": "CAZADERO WATER COMPANY, INC. (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (159 connections)"
+      },
+      "Avenal": {
+        "name": "AVENAL",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (2140 connections)"
+      },
+      "Avila Beach": {
+        "name": "AVILA BEACH COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (388 connections)"
+      },
+      "Ione": {
+        "name": "AWA - CAMANCHE VILLAGE",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (728 connections)"
+      },
+      "Jackson": {
+        "name": "AWA BUCKHORN PLANT",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (2738 connections)"
+      },
+      "Sutter Creek": {
+        "name": "AWA, TANNER",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (1754 connections)"
+      },
+      "Azusa": {
+        "name": "AZUSA LIGHT AND WATER",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (23379 connections)"
+      },
+      "Isleton": {
+        "name": "VIEIRA'S RESORT, INC",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (107 connections)"
+      },
+      "Exeter": {
+        "name": "EXETER",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (3298 connections)"
+      },
+      "Baker": {
+        "name": "BAKER COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (109 connections)"
+      },
+      "Foresthill": {
+        "name": "FORESTHILL PUBLIC UTILITY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (2060 connections)"
+      },
+      "Madera": {
+        "name": "City of MADERA",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (15112 connections)"
+      },
+      "Mountain Center": {
+        "name": "PINYON PINES COUNTY WATER DIST",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (82 connections)"
+      },
+      "Ballico": {
+        "name": "BALLICO CSD",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (73 connections)"
+      },
+      "Banning": {
+        "name": "BANNING",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (11535 connections)"
+      },
+      "Lucerne Valley": {
+        "name": "JUBILEE MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (230 connections)"
+      },
+      "Barstow": {
+        "name": "GOLDEN STATE WATER CO - BARSTOW",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (9029 connections)"
+      },
+      "Dulzura": {
+        "name": "BARRETT LAKE MH AND RV LLC",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (102 connections)"
+      },
+      "Angelus Oaks": {
+        "name": "BARTON FLATS WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (16 connections)"
+      },
+      "Wishon": {
+        "name": "SIERRA LINDA MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (89 connections)"
+      },
+      "Oakhurst": {
+        "name": "CAL AM - OAKHURST",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (1034 connections)"
+      },
+      "Bass Lake": {
+        "name": "BASS LAKE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (1013 connections)"
+      },
+      "Castroville": {
+        "name": "CASTROVILLE COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (2360 connections)"
+      },
+      "Lower Lake": {
+        "name": "LOWER LAKE COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (835 connections)"
+      },
+      "Yucca Valley": {
+        "name": "HI DESERT WD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (11070 connections)"
+      },
+      "Trinidad": {
+        "name": "TRINIDAD",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (324 connections)"
+      },
+      "Beale Air Force Base": {
+        "name": "BEALE AIR FORCE BASE",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (810 connections)"
+      },
+      "Georgetown": {
+        "name": "GEORGETOWN DIVIDE PUD",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (3729 connections)"
+      },
+      "Beaumont": {
+        "name": "BEAUMONT CHERRY VALLEY WD",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (20878 connections)"
+      },
+      "Kelseyville": {
+        "name": "MT. KONOCTI MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (1603 connections)"
+      },
+      "Fort Bragg": {
+        "name": "FORT BRAGG",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (2869 connections)"
+      },
+      "Weldon": {
+        "name": "TRADEWIND WATER ASSOC.",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (219 connections)"
+      },
+      "Redding": {
+        "name": "City of REDDING",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (30580 connections)"
+      },
+      "Pittsburg": {
+        "name": "City of PITTSBURG",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (19534 connections)"
+      },
+      "Bellflower": {
+        "name": "BELLFLOWER - SOMERSET MWC",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (6996 connections)"
+      },
+      "Sebastopol": {
+        "name": "SEBASTOPOL",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (2947 connections)"
+      },
+      "Berry Creek": {
+        "name": "LAKE MADRONE WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (123 connections)"
+      },
+      "Pope Valley": {
+        "name": "BERRYESSA ESTATES (LBRID)",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (185 connections)"
+      },
+      "Crescent City": {
+        "name": "City of CRESCENT CITY",
+        "phone": null,
+        "website": null,
+        "county": "Del Norte",
+        "note": "From CA SWRCB data (3731 connections)"
+      },
+      "San Juan Bautista": {
+        "name": "SAN JUAN BAUTISTA",
+        "phone": null,
+        "website": null,
+        "county": "San Benito",
+        "note": "From CA SWRCB data (834 connections)"
+      },
+      "Beverly Hills": {
+        "name": "BEVERLY HILLS-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (10455 connections)"
+      },
+      "Pescadero": {
+        "name": "COUNTY SERVICE AREA 11",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (102 connections)"
+      },
+      "Boulder Creek Road": {
+        "name": "BIG BASIN WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (540 connections)"
+      },
+      "Big Bear City": {
+        "name": "BIG BEAR CITY CSD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (6205 connections)"
+      },
+      "Big Bear Lake": {
+        "name": "BIG BEAR LAKE DWP - BIG BEAR SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (15837 connections)"
+      },
+      "Big Creek": {
+        "name": "SCE/BIG CREEK POWERHOUSE #1",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (105 connections)"
+      },
+      "Eureka": {
+        "name": "EUREKA",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (10412 connections)"
+      },
+      "Oakley": {
+        "name": "DIABLO WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (13617 connections)"
+      },
+      "Big Pine": {
+        "name": "BIG PINE CSD",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (323 connections)"
+      },
+      "Forest Falls": {
+        "name": "FALLSVALE SERVICE COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (492 connections)"
+      },
+      "Mendocino": {
+        "name": "SURFWOOD MUTUAL WATER CORPORATION",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (107 connections)"
+      },
+      "Old Station": {
+        "name": "DEL ORO WATER CO. - HAT CREEK DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (64 connections)"
+      },
+      "Butte Meadows": {
+        "name": "BIGGERS GLEN MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (18 connections)"
+      },
+      "Biola": {
+        "name": "BIOLA COMMUNITY SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (1200 connections)"
+      },
+      "Mammoth Lakes": {
+        "name": "MAMMOTH CWD",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (3452 connections)"
+      },
+      "Merced": {
+        "name": "City of MERCED",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (24363 connections)"
+      },
+      "Blairsden": {
+        "name": "PLUMAS EUREKA CSD",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (557 connections)"
+      },
+      "Norco": {
+        "name": "NORCO",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (7447 connections)"
+      },
+      "Arnold": {
+        "name": "BLUE LAKE SPRINGS MUT WTR",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (1726 connections)"
+      },
+      "Blue Lake": {
+        "name": "BLUE LAKE",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (731 connections)"
+      },
+      "Upper Lake": {
+        "name": "UPPER LAKE COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (403 connections)"
+      },
+      "Tomales": {
+        "name": "BLUE MOUNTAIN CENTER",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (10 connections)"
+      },
+      "Paradise": {
+        "name": "PARADISE IRRIGATION DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (9368 connections)"
+      },
+      "Blythe": {
+        "name": "BLYTHE - CITY OF",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (3424 connections)"
+      },
+      "Buellton": {
+        "name": "City of BUELLTON WATER DIVISION",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (1832 connections)"
+      },
+      "Bodega Bay": {
+        "name": "BODEGA BAY PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (1153 connections)"
+      },
+      "Bodega": {
+        "name": "BODEGA WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (38 connections)"
+      },
+      "Bolinas": {
+        "name": "BOLINAS COMMUNITY PUD",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (587 connections)"
+      },
+      "Dunnigan": {
+        "name": "CAL AM - DUNNIGAN",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (175 connections)"
+      },
+      "Boron": {
+        "name": "BORON CSD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (631 connections)"
+      },
+      "Borrego Springs": {
+        "name": "BORREGO WD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (2049 connections)"
+      },
+      "Boulder Creek": {
+        "name": "SAN LORENZO VALLEY WATER DIST",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (6467 connections)"
+      },
+      "Aguanga": {
+        "name": "BRADFORD RUN RV",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (59 connections)"
+      },
+      "Lockwood": {
+        "name": "VALLEY OAKS MHP WS",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (46 connections)"
+      },
+      "Big Sur": {
+        "name": "CSP-PFEIFFER BIG SUR",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (128 connections)"
+      },
+      "Branscomb": {
+        "name": "BRANSCOMB MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (14 connections)"
+      },
+      "Brawley": {
+        "name": "BRAWLEY",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (6051 connections)"
+      },
+      "Brentwood": {
+        "name": "BRENTWOOD",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (21441 connections)"
+      },
+      "Garberville": {
+        "name": "GARBERVILLE SANITARY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (465 connections)"
+      },
+      "Jenner": {
+        "name": "SONOMA COUNTY CSA 41-JENNER",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (123 connections)"
+      },
+      "Bridgeport": {
+        "name": "BRIDGEPORT PUD",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (260 connections)"
+      },
+      "Five Points": {
+        "name": "FCSA #49/ FIVE POINTS",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (46 connections)"
+      },
+      "Bakesrfield": {
+        "name": "BROCK MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (155 connections)"
+      },
+      "Mentone": {
+        "name": "MILL CREEK MSC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (102 connections)"
+      },
+      "Willits": {
+        "name": "WILLITS",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (2393 connections)"
+      },
+      "Lewiston": {
+        "name": "LEWISTON COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (235 connections)"
+      },
+      "Patterson": {
+        "name": "PATTERSON",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (7109 connections)"
+      },
+      "Kernville": {
+        "name": "CWS - KERNVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (1891 connections)"
+      },
+      "Burney": {
+        "name": "BURNEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (1414 connections)"
+      },
+      "Burnt Ranch": {
+        "name": "BURNT RANCH ESTATES",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (35 connections)"
+      },
+      "Butte City": {
+        "name": "BUTTE CITY COMMUNITY S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Glenn",
+        "note": "From CA SWRCB data (48 connections)"
+      },
+      "Mather": {
+        "name": "BUTTE COURT MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Del Norte",
+        "note": "From CA SWRCB data (23 connections)"
+      },
+      "Julian": {
+        "name": "MAJESTIC PINES COMMUNITY SD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (706 connections)"
+      },
+      "Buttonwillow": {
+        "name": "BUTTONWILLOW CWD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (416 connections)"
+      },
+      "Cabazon": {
+        "name": "CABAZON WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (989 connections)"
+      },
+      "Yolo": {
+        "name": "CACHEVILLE SERVICE DIST",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (157 connections)"
+      },
+      "Santa Barbara": {
+        "name": "City of SANTA BARBARA WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (27491 connections)"
+      },
+      "Coarsgold": {
+        "name": "CAL AM - COARSEGOLD",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (25 connections)"
+      },
+      "Raymond": {
+        "name": "CAL AM - RAYMOND",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (97 connections)"
+      },
+      "Chualar": {
+        "name": "CAL AM WATER COMPANY - CHUALAR",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (192 connections)"
+      },
+      "Monterey": {
+        "name": "CAL AM WATER COMPANY - GARRAPATA",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (43 connections)"
+      },
+      "Pacific Grove": {
+        "name": "CAL AM WATER COMPANY - MONTEREY",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (38257 connections)"
+      },
+      "Newbury Park": {
+        "name": "CAL AMERICAN WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (20251 connections)"
+      },
+      "Piru": {
+        "name": "CAL AMERICAN WATER COMPANY - PIRU",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (613 connections)"
+      },
+      "Ventura": {
+        "name": "VENTURA WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (28954 connections)"
+      },
+      "Miramonte": {
+        "name": "CAL FIRE - MIRAMONTE CONSERVATION CAMP",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (9 connections)"
+      },
+      "Springville": {
+        "name": "SPRINGVILLE PUD",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (390 connections)"
+      },
+      "Jamestown": {
+        "name": "CDCR - SIERRA CONSERVATION CENTER",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (578 connections)"
+      },
+      "Weed": {
+        "name": "LAKE SHASTINA C.S.D",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (1274 connections)"
+      },
+      "Imperial Beach": {
+        "name": "CAL-AM WATER CORONADO",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (21412 connections)"
+      },
+      "Hamilton City": {
+        "name": "CAL-WATER SERVICE CO.-HAMILTON CITY",
+        "phone": null,
+        "website": null,
+        "county": "Glenn",
+        "note": "From CA SWRCB data (650 connections)"
+      },
+      "Marysville": {
+        "name": "LINDA COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (5362 connections)"
+      },
+      "Oroville": {
+        "name": "SOUTH FEATHER W&P - MINERS RANCH",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (6868 connections)"
+      },
+      "Willows": {
+        "name": "CAL-WATER SERVICE CO.-WILLOWS",
+        "phone": null,
+        "website": null,
+        "county": "Glenn",
+        "note": "From CA SWRCB data (2378 connections)"
+      },
+      "San Andreas": {
+        "name": "CALAVERAS PUD",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (1956 connections)"
+      },
+      "Calexico": {
+        "name": "CALEXICO",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (8616 connections)"
+      },
+      "Saugus": {
+        "name": "LILY OF THE VALLEY MOBILE VILLAGE",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (182 connections)"
+      },
+      "Yermo": {
+        "name": "LIBERTY -YERMO",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (287 connections)"
+      },
+      "California City": {
+        "name": "CALIFORNIA CITY",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (4757 connections)"
+      },
+      "Whittier": {
+        "name": "WHITTIER-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (12001 connections)"
+      },
+      "Chino": {
+        "name": "CHINO",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (23052 connections)"
+      },
+      "Alturas": {
+        "name": "City of ALTURAS",
+        "phone": null,
+        "website": null,
+        "county": "Modoc",
+        "note": "From CA SWRCB data (1481 connections)"
+      },
+      "Atherton": {
+        "name": "CALIFORNIA WATER SERVICE - BEAR GULCH",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (18550 connections)"
+      },
+      "Livermore": {
+        "name": "CALIFORNIA WATER SERVICE - LIVERMORE",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (18595 connections)"
+      },
+      "Westlake Village": {
+        "name": "CALIFORNIA WATER SERVICE CO - WESTLAKE",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (6931 connections)"
+      },
+      "Quartz Hill": {
+        "name": "QUARTZ HILL WATER DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (5807 connections)"
+      },
+      "Dixon": {
+        "name": "City of DIXON",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (3800 connections)"
+      },
+      "Commerce": {
+        "name": "CALIFORNIA WATER SERVICE CO. - ELA",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (26227 connections)"
+      },
+      "Rancho Palos Verdes": {
+        "name": "CALIFORNIA WATER SERVICE CO. - PALOS VER",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (24413 connections)"
+      },
+      "Quartz  Hill": {
+        "name": "CALIFORNIA WATER SERVICE CO.-LANCASTER",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (674 connections)"
+      },
+      "Travis Afb": {
+        "name": "CALIFORNIA WATER SERVICE CO.-TRAVIS AFB",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (1 connections)"
+      },
+      "South San Francisco": {
+        "name": "CALIFORNIA WATER SERVICE-S SAN FRANCISCO",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (16428 connections)"
+      },
+      "Geyserville": {
+        "name": "CALIFORNIA-AMERICAN GEYSERVILLE (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (307 connections)"
+      },
+      "Calipatria": {
+        "name": "CALIPATRIA STATE PRISON",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (1979 connections)"
+      },
+      "Calistoga": {
+        "name": "CALISTOGA",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (2229 connections)"
+      },
+      "Callahan": {
+        "name": "CALLAHAN WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (33 connections)"
+      },
+      "Arroyo Grande": {
+        "name": "City of ARROYO GRANDE UTILITIES DIVISION",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (6854 connections)"
+      },
+      "Calpella": {
+        "name": "CALPELLA COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (185 connections)"
+      },
+      "Valley Springs": {
+        "name": "CCWD - JENNY LIND",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (3884 connections)"
+      },
+      "Valley Springs,": {
+        "name": "CAMANCHE SOUTH SHORE-EBMUD",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (448 connections)"
+      },
+      "Camarillo": {
+        "name": "CAMARILLO WATER DEPT",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (13924 connections)"
+      },
+      "Cambria": {
+        "name": "CAMBRIA COMM SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (4034 connections)"
+      },
+      "Riverdale": {
+        "name": "RIVERDALE PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (928 connections)"
+      },
+      "Byron": {
+        "name": "CAMINO MOBILEHOME",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (75 connections)"
+      },
+      "La Honda": {
+        "name": "CUESTA LA HONDA GUILD INC",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (297 connections)"
+      },
+      "Loma Mar": {
+        "name": "LOMA MAR MUTUAL",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (34 connections)"
+      },
+      "Camp Meeker": {
+        "name": "CAMP MEEKER WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (356 connections)"
+      },
+      "Camp Nelson": {
+        "name": "CAMP NELSON WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (293 connections)"
+      },
+      "Camp Pendleton": {
+        "name": "CAMP PENDLETON (SOUTH)",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (7761 connections)"
+      },
+      "Saratoga": {
+        "name": "SARATOGA HEIGHTS MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (92 connections)"
+      },
+      "Campo": {
+        "name": "CAMPO HILLS-COUNTY PUBLIC WORKS WASTEWTR",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (222 connections)"
+      },
+      "Camptonville": {
+        "name": "CAMPTONVILLE COMMUNITY SERV DIST",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (85 connections)"
+      },
+      "Carmel": {
+        "name": "SANTA LUCIA PRESERVE WS",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (184 connections)"
+      },
+      "Somerset": {
+        "name": "CRYSTAL CAVES MHP",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (40 connections)"
+      },
+      "Penngrove": {
+        "name": "PENNGROVE WATER COMPANY (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (528 connections)"
+      },
+      "Cantua Creek": {
+        "name": "FCSA #32/CANTUA CREEK",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (79 connections)"
+      },
+      "Bodfish": {
+        "name": "CWS - LOWER BODFISH WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (549 connections)"
+      },
+      "Manteca": {
+        "name": "MANTECA",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (26685 connections)"
+      },
+      "Carmichael": {
+        "name": "CARMICHAEL WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (11716 connections)"
+      },
+      "Carpinteria": {
+        "name": "CARPINTERIA VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (4431 connections)"
+      },
+      "Olancha": {
+        "name": "CARTAGO MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (40 connections)"
+      },
+      "Caruthers": {
+        "name": "CARUTHERS COMM SERV DIST",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (752 connections)"
+      },
+      "Agua Dulce": {
+        "name": "SPV WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (73 connections)"
+      },
+      "North Fork": {
+        "name": "CASCADEL MUTUAL WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (120 connections)"
+      },
+      "Duncans Mills": {
+        "name": "RANCHO DEL PARADISO-CAL WATER SVC (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (58 connections)"
+      },
+      "Oakview": {
+        "name": "CASITAS MUNICIPAL WATER DIST",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (3171 connections)"
+      },
+      "Casmalia": {
+        "name": "CASMALIA COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (53 connections)"
+      },
+      "Cassel": {
+        "name": "CASSEL PARK MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (71 connections)"
+      },
+      "Atwater": {
+        "name": "City of ATWATER",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (8400 connections)"
+      },
+      "Pleasanton": {
+        "name": "City of PLEASANTON",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (22334 connections)"
+      },
+      "E. Linda": {
+        "name": "CASTLEWOOD MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (88 connections)"
+      },
+      "Aptos": {
+        "name": "CENTRAL WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (826 connections)"
+      },
+      "Scotts Valley": {
+        "name": "SCOTTS VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (3945 connections)"
+      },
+      "Cayucos": {
+        "name": "SLOCSA #10A - CAYUCOS",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (784 connections)"
+      },
+      "Copperopolis": {
+        "name": "CCWD - COPPER COVE",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (2759 connections)"
+      },
+      "Avery": {
+        "name": "CCWD - EBBETTS PASS",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (6010 connections)"
+      },
+      "Sheep Ranch": {
+        "name": "CCWD - SHEEP RANCH",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (49 connections)"
+      },
+      "Wallace": {
+        "name": "CCWD - WALLACE",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (108 connections)"
+      },
+      "West Point": {
+        "name": "CCWD - WEST POINT",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (576 connections)"
+      },
+      "Susanville": {
+        "name": "City of SUSANVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Lassen",
+        "note": "From CA SWRCB data (3772 connections)"
+      },
+      "Mariposa": {
+        "name": "MARIPOSA PUBLIC UTILITY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (683 connections)"
+      },
+      "Yucaipa": {
+        "name": "YUCAIPA VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (13617 connections)"
+      },
+      "Crestline": {
+        "name": "CRESTLINE VILLAGE CWD - DIVISION 10",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (4892 connections)"
+      },
+      "Round Mountain": {
+        "name": "CEDAR CREEK MOBILEHOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (20 connections)"
+      },
+      "El Portal": {
+        "name": "YOSEMITE NPS-EL PORTAL",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (226 connections)"
+      },
+      "Cedarpines Park": {
+        "name": "CEDARPINES PARK MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (745 connections)"
+      },
+      "Cedarville": {
+        "name": "CEDARVILLE COUNTY WATER DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Modoc",
+        "note": "From CA SWRCB data (293 connections)"
+      },
+      "Imperial": {
+        "name": "IMPERIAL",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (6819 connections)"
+      },
+      "Chowchilla": {
+        "name": "CHOWCHILLA CITY WATER DEPT",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (4185 connections)"
+      },
+      "Ceres": {
+        "name": "CERES",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (11881 connections)"
+      },
+      "Cerritos": {
+        "name": "CERRITOS - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (15664 connections)"
+      },
+      "Chalfant Valley": {
+        "name": "CHALFANT VALLEY WEST M.W.C.",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (15 connections)"
+      },
+      "El Mirage": {
+        "name": "CHAMISAL MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (29 connections)"
+      },
+      "Oxnard": {
+        "name": "OXNARD WATER DEPT",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (42733 connections)"
+      },
+      "Shoshone": {
+        "name": "CHARLES BROWN WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (31 connections)"
+      },
+      "Cherry Valley": {
+        "name": "CHERRY VALLEY WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (75 connections)"
+      },
+      "Chester": {
+        "name": "CHESTER PUBLIC U.D.",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (1300 connections)"
+      },
+      "China Lake": {
+        "name": "CHINA LAKE NAVAL AIR WEAPONS STATION",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (1380 connections)"
+      },
+      "Jurupa Valley": {
+        "name": "JURUPA COMMUNITY SD",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (33574 connections)"
+      },
+      "Chino Hills": {
+        "name": "CHINO HILLS",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (21799 connections)"
+      },
+      "Chiriaco Summit": {
+        "name": "CHIRIACO SUMMIT WATER DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (40 connections)"
+      },
+      "Grass Valley": {
+        "name": "NEVADA ID - LOMA RICA",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (4994 connections)"
+      },
+      "Citrus Heights": {
+        "name": "CITRUS HEIGHTS WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (20250 connections)"
+      },
+      "Ukiah": {
+        "name": "UKIAH",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (4940 connections)"
+      },
+      "Alhambra": {
+        "name": "LOS ANGELES CWWD 40 REG 4 & 34 LANCASTER",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (52476 connections)"
+      },
+      "Antioch": {
+        "name": "City of ANTIOCH",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (33597 connections)"
+      },
+      "Arcadia": {
+        "name": "City of ARCADIA",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (15218 connections)"
+      },
+      "Bell Gardens": {
+        "name": "City of BELL GARDENS",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1653 connections)"
+      },
+      "Benicia": {
+        "name": "City of BENICIA",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (9595 connections)"
+      },
+      "Biggs": {
+        "name": "City of BIGGS",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (800 connections)"
+      },
+      "Brea": {
+        "name": "City of BREA",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (12943 connections)"
+      },
+      "Brisbane": {
+        "name": "City of BRISBANE",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (1293 connections)"
+      },
+      "Buena Park": {
+        "name": "City of BUENA PARK",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (19074 connections)"
+      },
+      "Burlingame": {
+        "name": "City of BURLINGAME",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (8739 connections)"
+      },
+      "Colusa": {
+        "name": "City of COLUSA",
+        "phone": null,
+        "website": null,
+        "county": "Colusa",
+        "note": "From CA SWRCB data (2258 connections)"
+      },
+      "Corning": {
+        "name": "City of CORNING",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (2436 connections)"
+      },
+      "Cupertino": {
+        "name": "City of CUPERTINO",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (4627 connections)"
+      },
+      "Davis": {
+        "name": "City of DAVIS",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (17320 connections)"
+      },
+      "Dos Palos": {
+        "name": "City of DOS PALOS",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (2525 connections)"
+      },
+      "East Palo Alto": {
+        "name": "City of EAST PALO ALTO",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (3906 connections)"
+      },
+      "Fountain Valley": {
+        "name": "City of FOUNTAIN VALLEY",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (16888 connections)"
+      },
+      "Fowler": {
+        "name": "City of FOWLER",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (2160 connections)"
+      },
+      "Fullerton": {
+        "name": "City of FULLERTON",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (31411 connections)"
+      },
+      "Gridley": {
+        "name": "City of GRIDLEY",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (2282 connections)"
+      },
+      "Grover Beach": {
+        "name": "City of GROVER BEACH PUBLIC WORKS DEPT",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (4999 connections)"
+      },
+      "Gustine": {
+        "name": "City of GUSTINE",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (1912 connections)"
+      },
+      "La Puente": {
+        "name": "LA PUENTE VALLEY CWD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (2498 connections)"
+      },
+      "La Habra": {
+        "name": "City of LA HABRA",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (13248 connections)"
+      },
+      "La Palma": {
+        "name": "City of LA PALMA",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (4368 connections)"
+      },
+      "Lathrop": {
+        "name": "City of LATHROP",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (10412 connections)"
+      },
+      "Lincoln": {
+        "name": "City of LINCOLN",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (22127 connections)"
+      },
+      "Live Oak": {
+        "name": "City of LIVE OAK",
+        "phone": null,
+        "website": null,
+        "county": "Sutter",
+        "note": "From CA SWRCB data (2503 connections)"
+      },
+      "Livingston": {
+        "name": "City of LIVINGSTON",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (3584 connections)"
+      },
+      "Los Banos": {
+        "name": "City of LOS BANOS",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (13484 connections)"
+      },
+      "Loyalton": {
+        "name": "City of LOYALTON",
+        "phone": null,
+        "website": null,
+        "county": "Sierra",
+        "note": "From CA SWRCB data (343 connections)"
+      },
+      "Martinez": {
+        "name": "City of MARTINEZ",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (10230 connections)"
+      },
+      "Millbrae": {
+        "name": "City of MILLBRAE",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (6613 connections)"
+      },
+      "Milpitas": {
+        "name": "City of MILPITAS",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (15696 connections)"
+      },
+      "Turlock": {
+        "name": "TURLOCK",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (19332 connections)"
+      },
+      "Salida": {
+        "name": "City of MODESTO - SALIDA",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (4416 connections)"
+      },
+      "Morgan Hill": {
+        "name": "City of MORGAN HILL",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (14867 connections)"
+      },
+      "Mountain House": {
+        "name": "City of MOUNTAIN HOUSE",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (7334 connections)"
+      },
+      "Newman": {
+        "name": "City of NEWMAN-WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (3792 connections)"
+      },
+      "Orange": {
+        "name": "City of ORANGE",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (35528 connections)"
+      },
+      "Orange Cove": {
+        "name": "City of ORANGE COVE",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (1714 connections)"
+      },
+      "Orland": {
+        "name": "City of ORLAND",
+        "phone": null,
+        "website": null,
+        "county": "Glenn",
+        "note": "From CA SWRCB data (2712 connections)"
+      },
+      "Palo Alto": {
+        "name": "City of PALO ALTO",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (19975 connections)"
+      },
+      "Parlier": {
+        "name": "City of PARLIER",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (2688 connections)"
+      },
+      "Portola": {
+        "name": "City of PORTOLA",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (1154 connections)"
+      },
+      "Rio Vista": {
+        "name": "City of RIO VISTA",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (5646 connections)"
+      },
+      "San Bruno": {
+        "name": "City of SAN BRUNO",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (11206 connections)"
+      },
+      "Rancho Santa Margarita": {
+        "name": "SANTA MARGARITA WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (55982 connections)"
+      },
+      "Sanger": {
+        "name": "City of SANGER",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (7033 connections)"
+      },
+      "Santa Maria": {
+        "name": "City of SANTA MARIA UTILITIES DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (22664 connections)"
+      },
+      "Santa Paula": {
+        "name": "City of SANTA PAULA",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (8404 connections)"
+      },
+      "Seal Beach": {
+        "name": "City of SEAL BEACH",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (5449 connections)"
+      },
+      "Shasta Lake": {
+        "name": "City of SHASTA LAKE",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (3900 connections)"
+      },
+      "South Pasadena": {
+        "name": "City of SOUTH PASADENA",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (6410 connections)"
+      },
+      "Tehama": {
+        "name": "City of TEHAMA",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (197 connections)"
+      },
+      "Tustin": {
+        "name": "City of TUSTIN",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (14160 connections)"
+      },
+      "Elmira": {
+        "name": "City of VACAVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (30935 connections)"
+      },
+      "Waterford": {
+        "name": "City of WATERFORD",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (2174 connections)"
+      },
+      "West Sacramento": {
+        "name": "City of WEST SACRAMENTO",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (15587 connections)"
+      },
+      "Westminster": {
+        "name": "City of WESTMINSTER",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (20733 connections)"
+      },
+      "Wheatland": {
+        "name": "City of WHEATLAND",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (1246 connections)"
+      },
+      "Williams": {
+        "name": "City of WILLIAMS",
+        "phone": null,
+        "website": null,
+        "county": "Colusa",
+        "note": "From CA SWRCB data (1526 connections)"
+      },
+      "Winters": {
+        "name": "City of WINTERS",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (2463 connections)"
+      },
+      "Woodland": {
+        "name": "City of WOODLAND",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (17748 connections)"
+      },
+      "Yuba City": {
+        "name": "City of YUBA CITY",
+        "phone": null,
+        "website": null,
+        "county": "Sutter",
+        "note": "From CA SWRCB data (18867 connections)"
+      },
+      "Lake Isabella": {
+        "name": "ERSKINE CREEK WC",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (1131 connections)"
+      },
+      "Clayton": {
+        "name": "CLAYTON PALMS WATER",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (202 connections)"
+      },
+      "Westwood": {
+        "name": "WESTWOOD C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Lassen",
+        "note": "From CA SWRCB data (949 connections)"
+      },
+      "Cloverdale": {
+        "name": "CLOVERDALE",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (3265 connections)"
+      },
+      "Clearlake Oaks": {
+        "name": "CLEARLAKE OAKS COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (2120 connections)"
+      },
+      "Clements": {
+        "name": "CLEMENTS WATER WORKS #43",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (83 connections)"
+      },
+      "Clio": {
+        "name": "WHITEHAWK RANCH MWC",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (200 connections)"
+      },
+      "Palm Desert": {
+        "name": "COACHELLA VWD: COVE COMMUNITY",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (111186 connections)"
+      },
+      "Coachella": {
+        "name": "COACHELLA WATER AUTHORITY",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (9363 connections)"
+      },
+      "Coalinga": {
+        "name": "COALINGA-CITY",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (4026 connections)"
+      },
+      "Dillon Beach": {
+        "name": "COAST SPRINGS - CAL. WATER SERVICE (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (251 connections)"
+      },
+      "Half Moon Bay": {
+        "name": "COASTSIDE COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (6571 connections)"
+      },
+      "Cobb": {
+        "name": "COBB AREA COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (1081 connections)"
+      },
+      "Hughson": {
+        "name": "HUGHSON",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (2236 connections)"
+      },
+      "Cold Springs": {
+        "name": "COLD SPRINGS WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (538 connections)"
+      },
+      "Birds Landing": {
+        "name": "COLLINSVILLE WATER WORKS",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (15 connections)"
+      },
+      "Colton": {
+        "name": "COLTON",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (10417 connections)"
+      },
+      "Grimes": {
+        "name": "COLUSA CO. WWD #1 - GRIMES",
+        "phone": null,
+        "website": null,
+        "county": "Colusa",
+        "note": "From CA SWRCB data (123 connections)"
+      },
+      "Princeton": {
+        "name": "COLUSA CO. WWD #2 - PRINCETON",
+        "phone": null,
+        "website": null,
+        "county": "Colusa",
+        "note": "From CA SWRCB data (120 connections)"
+      },
+      "Compton": {
+        "name": "COMPTON-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (14365 connections)"
+      },
+      "Montague": {
+        "name": "MONTAGUE",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (536 connections)"
+      },
+      "Corcoran": {
+        "name": "CORCORAN",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (3560 connections)"
+      },
+      "Gonzales": {
+        "name": "GONZALES",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (1961 connections)"
+      },
+      "Lakeport": {
+        "name": "LAKEPORT",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (2314 connections)"
+      },
+      "Tracy": {
+        "name": "TRACY",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (27078 connections)"
+      },
+      "Shingletown": {
+        "name": "SHASTA FOREST VILLAGE M.W.C.",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (403 connections)"
+      },
+      "Cotati": {
+        "name": "COTATI",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (2698 connections)"
+      },
+      "Woodbridge": {
+        "name": "SAN JOAQUIN COUNTY-MOKELUMNE ACRES",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (1152 connections)"
+      },
+      "El Centro": {
+        "name": "EL CENTRO",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (10230 connections)"
+      },
+      "Lockeford": {
+        "name": "LOCKEFORD COMMUNITY SERV. DIST.",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (846 connections)"
+      },
+      "District 10": {
+        "name": "COUNTRY VILLAGE MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (45 connections)"
+      },
+      "Yreka": {
+        "name": "YREKA",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (3383 connections)"
+      },
+      "Covelo": {
+        "name": "COVELO MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (30 connections)"
+      },
+      "Covina": {
+        "name": "SUBURBAN WATER SYSTEMS-SAN JOSE",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (40233 connections)"
+      },
+      "Lake Forest Drive": {
+        "name": "COVINGTON MILL MWC-DIVISION B",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (99 connections)"
+      },
+      "Ocotillo": {
+        "name": "COYOTE VALLEY MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (124 connections)"
+      },
+      "Penn Valley": {
+        "name": "NEVADA ID - LAKE WILDWOOD",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (3229 connections)"
+      },
+      "La Crescenta": {
+        "name": "CRESCENTA VALLEY CWD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (8429 connections)"
+      },
+      "Crowley Lake": {
+        "name": "CROWLEY LAKE TRAILER PARK",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (108 connections)"
+      },
+      "Crows Landing": {
+        "name": "CROWS LANDING COMM SVC DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (138 connections)"
+      },
+      "Newberry Springs": {
+        "name": "IRONWOOD CAMP",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (74 connections)"
+      },
+      "Oro Grande": {
+        "name": "CSA 42 ORO GRANDE",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (144 connections)"
+      },
+      "Desert Center": {
+        "name": "CSA 51",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (77 connections)"
+      },
+      "Ripley": {
+        "name": "CSA 62",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (156 connections)"
+      },
+      "Morongo Valley": {
+        "name": "GOLDEN STATE WATER CO - MORONGO DEL SUR",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (829 connections)"
+      },
+      "Pioneertown": {
+        "name": "CSA 70 W-4 PIONEERTOWN",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (123 connections)"
+      },
+      "Tres Pinos": {
+        "name": "TRES PINOS CWD",
+        "phone": null,
+        "website": null,
+        "county": "San Benito",
+        "note": "From CA SWRCB data (121 connections)"
+      },
+      "Cutler": {
+        "name": "CUTLER PUD",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (1234 connections)"
+      },
+      "New Cuyama": {
+        "name": "CUYAMA COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (254 connections)"
+      },
+      "Mojave": {
+        "name": "MOJAVE PUD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (1201 connections)"
+      },
+      "Porterville": {
+        "name": "PORTERVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (17215 connections)"
+      },
+      "Selma": {
+        "name": "CWS - SELMA",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (6470 connections)"
+      },
+      "Ca": {
+        "name": "CWS SOUTHLAKE SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (813 connections)"
+      },
+      "King City": {
+        "name": "CWSC KING CITY",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (2863 connections)"
+      },
+      "Los Altos": {
+        "name": "CWSC LOS ALTOS SUBURBAN",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (18526 connections)"
+      },
+      "Prunedale": {
+        "name": "CWSC OAK HILLS",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (883 connections)"
+      },
+      "Daggett": {
+        "name": "DAGGETT COMM SVCS DIST",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (196 connections)"
+      },
+      "Darwin": {
+        "name": "DARWIN COMMUNITY SERVICE DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (63 connections)"
+      },
+      "Davenport": {
+        "name": "DAVENPORT COUNTY SANITATION",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (108 connections)"
+      },
+      "Sonoma": {
+        "name": "SONOMA",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (4343 connections)"
+      },
+      "Lake Arrowhead": {
+        "name": "LAKE ARROWHEAD CSD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (7927 connections)"
+      },
+      "Three Rivers": {
+        "name": "SOUTH KAWEAH MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (142 connections)"
+      },
+      "Del Mar": {
+        "name": "DEL MAR",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (1869 connections)"
+      },
+      "Somis": {
+        "name": "DEL NORTE MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (85 connections)"
+      },
+      "California Hot Springs": {
+        "name": "DEL ORO CALIFORNIA PINES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (278 connections)"
+      },
+      "Traver": {
+        "name": "DEL ORO TRAVER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (198 connections)"
+      },
+      "Magalia": {
+        "name": "DEL ORO WATER CO.-PARADISE PINES",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (3300 connections)"
+      },
+      "Stirling City": {
+        "name": "DEL ORO WATER CO.-STIRLING BLUFFS",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (152 connections)"
+      },
+      "Strawberry": {
+        "name": "DEL ORO WATER COMPANY - STRAWBERRY DIV.",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (392 connections)"
+      },
+      "Del Rey": {
+        "name": "DEL REY COMMUNITY SERV DIST",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (312 connections)"
+      },
+      "El Monte": {
+        "name": "SAN GABRIEL VALLEY WATER CO.-EL MONTE",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (46608 connections)"
+      },
+      "Dinuba": {
+        "name": "DINUBA",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (6522 connections)"
+      },
+      "Delhi": {
+        "name": "DELHI CWD",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (2423 connections)"
+      },
+      "Suisun": {
+        "name": "DELTA CONSERVATION CAMP",
+        "phone": null,
+        "website": null,
+        "county": "Solano",
+        "note": "From CA SWRCB data (4 connections)"
+      },
+      "Denair": {
+        "name": "DENAIR COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (1709 connections)"
+      },
+      "Descanso": {
+        "name": "DESCANSO COMMUNITY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (317 connections)"
+      },
+      "Hinkley": {
+        "name": "DESERT VIEW MOBILE PARK",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (28 connections)"
+      },
+      "Palm Springs": {
+        "name": "DESERT WATER AGENCY",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (23358 connections)"
+      },
+      "Blue Jay": {
+        "name": "DOGWOOD BLUE JAY CYN IMP",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (81 connections)"
+      },
+      "La Grange": {
+        "name": "LAKE DON PEDRO CSD",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (1534 connections)"
+      },
+      "Soda Springs": {
+        "name": "SIERRA LAKES COUNTY WATER DIST",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (841 connections)"
+      },
+      "Dorris": {
+        "name": "DORRIS",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (438 connections)"
+      },
+      "Downey": {
+        "name": "DOWNEY - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (23478 connections)"
+      },
+      "Downieville": {
+        "name": "DOWNIEVILLE PUBLIC U.D.",
+        "phone": null,
+        "website": null,
+        "county": "Sierra",
+        "note": "From CA SWRCB data (234 connections)"
+      },
+      "Graton": {
+        "name": "DOWNTOWN GRATON MUTUAL WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (24 connections)"
+      },
+      "Drytown": {
+        "name": "DRYTOWN COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (67 connections)"
+      },
+      "Dublin": {
+        "name": "DUBLIN SAN RAMON SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (25458 connections)"
+      },
+      "Ducor": {
+        "name": "DUCOR CSD",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (176 connections)"
+      },
+      "Ridgecrest": {
+        "name": "INDIAN WELLS VALLEY W.D.",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (12377 connections)"
+      },
+      "Dunsmuir": {
+        "name": "DUNSMUIR",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (1187 connections)"
+      },
+      "Durham": {
+        "name": "DURHAM IRRIGATION DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (479 connections)"
+      },
+      "Earlimart": {
+        "name": "EARLIMART PUD",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (1541 connections)"
+      },
+      "Firebaugh": {
+        "name": "FIREBAUGH CITY",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (1642 connections)"
+      },
+      "Orosi": {
+        "name": "OROSI PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (1601 connections)"
+      },
+      "Highland": {
+        "name": "EAST VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (21584 connections)"
+      },
+      "Walnut Grove": {
+        "name": "EAST WALNUT GROVE [SWS]",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (169 connections)"
+      },
+      "Perris": {
+        "name": "EASTERN MUNICIPAL WD",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (167890 connections)"
+      },
+      "Midway City": {
+        "name": "EASTSIDE WATER ASSOCIATION",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (285 connections)"
+      },
+      "Edwards Afb": {
+        "name": "EDWARDS AFB BASE",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (1088 connections)"
+      },
+      "Goleta": {
+        "name": "GOLETA WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (16433 connections)"
+      },
+      "Placerville": {
+        "name": "EL DORADO ID",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (43500 connections)"
+      },
+      "El Nido": {
+        "name": "EL NIDO MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (50 connections)"
+      },
+      "El Segundo": {
+        "name": "EL SEGUNDO-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (6228 connections)"
+      },
+      "North Highlands": {
+        "name": "MC CLELLAN MHP",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (199 connections)"
+      },
+      "Elk": {
+        "name": "ELK COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (99 connections)"
+      },
+      "Elk Creek": {
+        "name": "ELK CREEK COMMUNITY S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Glenn",
+        "note": "From CA SWRCB data (92 connections)"
+      },
+      "Lake Elsinore": {
+        "name": "ELSINORE VALLEY MWD",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (47390 connections)"
+      },
+      "Emigrant Gap": {
+        "name": "EMIGRANT GAP MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (43 connections)"
+      },
+      "Escalon": {
+        "name": "ESCALON",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (2527 connections)"
+      },
+      "Esparto": {
+        "name": "ESPARTO C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (978 connections)"
+      },
+      "Foster City": {
+        "name": "ESTERO MUNICIPAL IMPROVEMENT DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (8010 connections)"
+      },
+      "Etna": {
+        "name": "ETNA",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (413 connections)"
+      },
+      "Windsor": {
+        "name": "WINDSOR, TOWN OF",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (9081 connections)"
+      },
+      "Winton": {
+        "name": "WINTON WATER & SANITARY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (2719 connections)"
+      },
+      "Fair Oaks": {
+        "name": "FAIR OAKS WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (14277 connections)"
+      },
+      "Plumas Lake": {
+        "name": "FAIRWAY DOWNS MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (27 connections)"
+      },
+      "Kingsburg": {
+        "name": "KINGSBURG",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (4121 connections)"
+      },
+      "Fall River Mills": {
+        "name": "FALL RIVER VALLEY CSD",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (482 connections)"
+      },
+      "Fallbrook": {
+        "name": "FALLBROOK PUD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (9189 connections)"
+      },
+      "Wildomar": {
+        "name": "FARM MUTUAL W.C. (THE)",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (1265 connections)"
+      },
+      "Farmersville": {
+        "name": "FARMERSVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (2738 connections)"
+      },
+      "Farmington": {
+        "name": "FARMINGTON WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (78 connections)"
+      },
+      "Three Rocks": {
+        "name": "FCSA #30/EL PORVENIR",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (56 connections)"
+      },
+      "Friant": {
+        "name": "FCSA #34/ MILLERTON NEW TOWN",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (403 connections)"
+      },
+      "Raisin City": {
+        "name": "FCSA #43/RAISIN CITY",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (68 connections)"
+      },
+      "Meadow Lakes": {
+        "name": "FCWWD #37/MILE HIGH",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (46 connections)"
+      },
+      "Auberry": {
+        "name": "MEADOW LAKES CLUB",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (120 connections)"
+      },
+      "Shaver Lake": {
+        "name": "FCWWD #41/SHAVER LAKE",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (972 connections)"
+      },
+      "Maybe": {
+        "name": "FEATHER RIVER RV & MHP",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (18 connections)"
+      },
+      "Oregon House": {
+        "name": "FELLOWSHIP OF FRIENDS",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (30 connections)"
+      },
+      "Valyermo": {
+        "name": "FENNER CANYON YOUTH CONSERVATION CAMP",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1 connections)"
+      },
+      "Idyllwild": {
+        "name": "IDYLLWILD WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (1681 connections)"
+      },
+      "Fiddletown": {
+        "name": "FIDDLETOWN COMMUNITY SERVICE",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (66 connections)"
+      },
+      "Arcata,": {
+        "name": "FIELDBROOK GLENDALE C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (560 connections)"
+      },
+      "Pioneer": {
+        "name": "FIRST MACE MEADOW # 1",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (337 connections)"
+      },
+      "Fishcamp": {
+        "name": "FISHCAMP MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (75 connections)"
+      },
+      "Floriston": {
+        "name": "FLORISTON WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (45 connections)"
+      },
+      "Granite Bay": {
+        "name": "SAN JUAN WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (10802 connections)"
+      },
+      "Represa": {
+        "name": "FOLSOM STATE PRISON",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (2790 connections)"
+      },
+      "Folsom": {
+        "name": "FOLSOM, City of",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (23372 connections)"
+      },
+      "Lone Pine": {
+        "name": "FOOTHILL MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (48 connections)"
+      },
+      "La Canada Flintridge": {
+        "name": "VALLEY WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (3610 connections)"
+      },
+      "Forest Ranch": {
+        "name": "FOREST RANCH MUTUAL WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (42 connections)"
+      },
+      "Felton": {
+        "name": "SLVWD - FELTON WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (1353 connections)"
+      },
+      "Pine Grove": {
+        "name": "PINE GROVE COMM SERV DIST",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (410 connections)"
+      },
+      "Forestville": {
+        "name": "RUSSIAN RIVER COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (1256 connections)"
+      },
+      "Fort Hunter Liggett": {
+        "name": "FORT HUNTER LIGGETT",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (185 connections)"
+      },
+      "Fort Jones": {
+        "name": "FORT JONES, TOWN OF",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (399 connections)"
+      },
+      "Fortuna": {
+        "name": "FORTUNA",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (4641 connections)"
+      },
+      "Frazier Park": {
+        "name": "FRAZIER PARK PUD",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (1313 connections)"
+      },
+      "Twain": {
+        "name": "FRCCSD OLD MILL RANCH",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (36 connections)"
+      },
+      "Tahoe City": {
+        "name": "TAHOE CITY PUD",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (2902 connections)"
+      },
+      "Bermuda Dunes": {
+        "name": "MYOMA DUNES MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (2574 connections)"
+      },
+      "Galt": {
+        "name": "GALT",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (7862 connections)"
+      },
+      "Gasquet": {
+        "name": "GASQUET C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Del Norte",
+        "note": "From CA SWRCB data (201 connections)"
+      },
+      "Gerber": {
+        "name": "GERBER LAS FLORES CSD",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (400 connections)"
+      },
+      "Angeles Oaks": {
+        "name": "GLEN MARTIN MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (337 connections)"
+      },
+      "Glendora": {
+        "name": "GLENDORA-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (14053 connections)"
+      },
+      "Glenhaven": {
+        "name": "GLENHAVEN MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (131 connections)"
+      },
+      "Glennville": {
+        "name": "GLENNVILLE MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (25 connections)"
+      },
+      "El Dorado": {
+        "name": "GOLD BEACH PARK",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (48 connections)"
+      },
+      "North San Juan": {
+        "name": "SHADY LAKE WATER ASSOCIATION",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (28 connections)"
+      },
+      "Newcastle": {
+        "name": "GOLD HILL MOBILEHOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (32 connections)"
+      },
+      "Winterhaven": {
+        "name": "WINTERHAVEN COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (122 connections)"
+      },
+      "Gilman Hot Springs": {
+        "name": "GOLDEN ERA PRODUCTIONS",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (29 connections)"
+      },
+      "Loomis": {
+        "name": "LAKEVIEW HILLS COMMUNITY ASSOC",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (153 connections)"
+      },
+      "San Dimas": {
+        "name": "GSWC-SAN DIMAS",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (16168 connections)"
+      },
+      "Wrightwood": {
+        "name": "GOLDEN STATE WATER CO - WRIGHTWOOD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (2812 connections)"
+      },
+      "Rancho Cordova": {
+        "name": "GOLDEN STATE WATER CO. - CORDOVA",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (14882 connections)"
+      },
+      "Robbins": {
+        "name": "GOLDEN STATE WATER CO. - ROBBINS",
+        "phone": null,
+        "website": null,
+        "county": "Sutter",
+        "note": "From CA SWRCB data (87 connections)"
+      },
+      "Clear Lake": {
+        "name": "GOLDEN STATE WATER CO.-CLEARLAKE SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (2131 connections)"
+      },
+      "Bay Point": {
+        "name": "GOLDEN STATE WATER COMPANY - BAY POINT",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (5073 connections)"
+      },
+      "Los Osos": {
+        "name": "LOS OSOS COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (2776 connections)"
+      },
+      "Gorman": {
+        "name": "GOLDEN VALLEY MUNICIPAL WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (22 connections)"
+      },
+      "Graeagle": {
+        "name": "GRAEAGLE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (939 connections)"
+      },
+      "Korbel": {
+        "name": "GREEN DIAMOND RESOURCE COMPANY - KORBEL",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (18 connections)"
+      },
+      "Muir Beach": {
+        "name": "MUIR BEACH COMMUNITY",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (162 connections)"
+      },
+      "Green Valley": {
+        "name": "GREEN VALLEY CWD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (499 connections)"
+      },
+      "Green Valley Lake": {
+        "name": "GREEN VALLEY MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (1170 connections)"
+      },
+      "Greenville": {
+        "name": "IVCSD-GREENVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (269 connections)"
+      },
+      "Greenhorn Ranch": {
+        "name": "GREENHORN CREEK CSD",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (136 connections)"
+      },
+      "Grenada": {
+        "name": "GRENADA SANITARY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (103 connections)"
+      },
+      "Grizzly Flats": {
+        "name": "GRIZZLY FLATS COMMUNITY SERVIC",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (620 connections)"
+      },
+      "Delleker": {
+        "name": "GRIZZLY LAKE CSD-DELLEKER",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (351 connections)"
+      },
+      "Groveland": {
+        "name": "GROVELAND COMMUNITY SERV DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (3298 connections)"
+      },
+      "Santa Fe Springs": {
+        "name": "GSWC - ARTESIA",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (10778 connections)"
+      },
+      "Gardena": {
+        "name": "GSWC - SOUTHWEST",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (52612 connections)"
+      },
+      "Guadalupe": {
+        "name": "GUADALUPE WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (2452 connections)"
+      },
+      "Guatay": {
+        "name": "HEAVENLY OAKS",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (103 connections)"
+      },
+      "Halcyon": {
+        "name": "HALCYON WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (46 connections)"
+      },
+      "Lake Almanor": {
+        "name": "LAKE ALMANOR COUNTRY CLUB MWC",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (1714 connections)"
+      },
+      "Hanford": {
+        "name": "HANFORD",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (18712 connections)"
+      },
+      "Lodi": {
+        "name": "LODI",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (29520 connections)"
+      },
+      "Happy Camp": {
+        "name": "HAPPY CAMP C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (454 connections)"
+      },
+      "Keene": {
+        "name": "HART CREEK ESTATES MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (93 connections)"
+      },
+      "Badger": {
+        "name": "HARTLAND CHRISTIAN CAMP",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (54 connections)"
+      },
+      "Hawthorne": {
+        "name": "HAWTHORNE-CITY WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (6205 connections)"
+      },
+      "Applegate": {
+        "name": "HEATHER GLEN COMMUNITY SERVICE DIST",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (101 connections)"
+      },
+      "Heber": {
+        "name": "HEBER PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (1675 connections)"
+      },
+      "Helendale": {
+        "name": "HELENDALE COMMUNITY SERVICE DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (2867 connections)"
+      },
+      "La Mesa": {
+        "name": "HELIX WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (56598 connections)"
+      },
+      "Helm": {
+        "name": "HELM SCHOOL",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (11 connections)"
+      },
+      "Herlong": {
+        "name": "HERLONG PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Lassen",
+        "note": "From CA SWRCB data (297 connections)"
+      },
+      "Hesperia": {
+        "name": "HESPERIA WD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (27785 connections)"
+      },
+      "Moccasin": {
+        "name": "HHW&P MOCCASIN COMPOUND-SFPUC",
+        "phone": null,
+        "website": null,
+        "county": "San Francisco",
+        "note": "From CA SWRCB data (89 connections)"
+      },
+      "Hidden Valley Lake": {
+        "name": "HIDDEN VALLEY LAKE CSD",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (2528 connections)"
+      },
+      "Clearlake": {
+        "name": "HIGHLANDS MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (2882 connections)"
+      },
+      "Westley": {
+        "name": "HILLSVIEW HOMES",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (230 connections)"
+      },
+      "Hilmar": {
+        "name": "HILMAR COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (1668 connections)"
+      },
+      "Holtville": {
+        "name": "HOLTVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (1624 connections)"
+      },
+      "Milford": {
+        "name": "HONEY LAKE CAMPGROUND",
+        "phone": null,
+        "website": null,
+        "county": "Lassen",
+        "note": "From CA SWRCB data (11 connections)"
+      },
+      "Hood": {
+        "name": "HOOD WATERTENCE DIST [SWS]",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (82 connections)"
+      },
+      "Plymouth": {
+        "name": "PLYMOUTH",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (534 connections)"
+      },
+      "Hopland": {
+        "name": "HOPLAND PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (327 connections)"
+      },
+      "Hornbrook": {
+        "name": "HORNBROOK C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (147 connections)"
+      },
+      "Angwin": {
+        "name": "HOWELL MOUNTAIN MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (399 connections)"
+      },
+      "Cutten": {
+        "name": "HUMBOLDT C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (7974 connections)"
+      },
+      "Hume": {
+        "name": "HUME LAKE CHRISTIAN CAMPS, INC",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (388 connections)"
+      },
+      "Klamath": {
+        "name": "HUNTER VALLEY CSD",
+        "phone": null,
+        "website": null,
+        "county": "Del Norte",
+        "note": "From CA SWRCB data (69 connections)"
+      },
+      "Huntington Park": {
+        "name": "HUNTINGTON PARK-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (5608 connections)"
+      },
+      "Huron": {
+        "name": "HURON",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (945 connections)"
+      },
+      "Hydesville,": {
+        "name": "HYDESVILLE CO. W.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (437 connections)"
+      },
+      "Douglas City": {
+        "name": "INDIAN CREEK TRAILER PARK",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (35 connections)"
+      },
+      "Jamul": {
+        "name": "MHC TT INC. (DBA PIO PICO)",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (512 connections)"
+      },
+      "Inglewood": {
+        "name": "INGLEWOOD- CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (15942 connections)"
+      },
+      "Inverness": {
+        "name": "INVERNESS PUBLIC UTILITY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (518 connections)"
+      },
+      "Manchester": {
+        "name": "IRISH BEACH WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (206 connections)"
+      },
+      "Canby": {
+        "name": "ISOT COMMUNITY WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Modoc",
+        "note": "From CA SWRCB data (55 connections)"
+      },
+      "Ivanhoe": {
+        "name": "IVANHOE PUBLIC UTILITY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (1124 connections)"
+      },
+      "Crescent Mills": {
+        "name": "IVCSD-GREENVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (269 connections)"
+      },
+      "Bayside": {
+        "name": "JACOBY CREEK CWD",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (335 connections)"
+      },
+      "Jacumba": {
+        "name": "JACUMBA COMMUNITY SD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (244 connections)"
+      },
+      "Santa Cruz": {
+        "name": "SANTA CRUZ WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (25429 connections)"
+      },
+      "Joshua Tree": {
+        "name": "JOSHUA BASIN WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (4921 connections)"
+      },
+      "June Lake": {
+        "name": "JUNE LAKE PUD - DOWN CANYON",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (388 connections)"
+      },
+      "Keeler": {
+        "name": "KEELER COMMUNITY SERVICE DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (84 connections)"
+      },
+      "Kenwood": {
+        "name": "KENWOOD VILLAGE WATER COMPANY (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (309 connections)"
+      },
+      "Kerman": {
+        "name": "KERMAN",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (3992 connections)"
+      },
+      "Kettleman City": {
+        "name": "KETTLEMAN CITY CSD",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (355 connections)"
+      },
+      "Keyes": {
+        "name": "KEYES COMMUNITY SERVICES DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (1436 connections)"
+      },
+      "Dunlap": {
+        "name": "KINGS CANYON MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (26 connections)"
+      },
+      "Piedra": {
+        "name": "KINGS RIVER POINT",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (15 connections)"
+      },
+      "Kirkwood": {
+        "name": "KIRKWOOD MEADOWS PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Alpine",
+        "note": "From CA SWRCB data (866 connections)"
+      },
+      "Knights Ferry": {
+        "name": "KNIGHTS FERRY COMM. SVC. DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (67 connections)"
+      },
+      "Knights Landing": {
+        "name": "KNIGHTS LANDING SVC. DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (298 connections)"
+      },
+      "Knightsen": {
+        "name": "KNIGHTSEN COMMUNITY WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (22 connections)"
+      },
+      "Ludlow": {
+        "name": "KNOLL ENTERPRISES",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (25 connections)"
+      },
+      "Ojai": {
+        "name": "VENTURA RIVER WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (2166 connections)"
+      },
+      "Kyburz": {
+        "name": "KYBURZ MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (118 connections)"
+      },
+      "La Canada": {
+        "name": "LA CANADA IRRIGATION DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (2949 connections)"
+      },
+      "La Habra Heights": {
+        "name": "LA HABRA HEIGHTS CWD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (2002 connections)"
+      },
+      "La Verne": {
+        "name": "LA VERNE, CITY WD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (8819 connections)"
+      },
+      "Laguna Beach": {
+        "name": "SOUTH COAST WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (13386 connections)"
+      },
+      "Wilton": {
+        "name": "LAGUNA DEL SOL INC",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (112 connections)"
+      },
+      "Mount Laguna": {
+        "name": "LAGUNA MOUNTIAN MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (30 connections)"
+      },
+      "Nipomo": {
+        "name": "NIPOMO COMM SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (4512 connections)"
+      },
+      "Bear Valley": {
+        "name": "LAKE ALPINE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Alpine",
+        "note": "From CA SWRCB data (490 connections)"
+      },
+      "Lucerne": {
+        "name": "LUCERNE WATER CO. - CAL WATER SERVICE",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (1245 connections)"
+      },
+      "Elizabeth Lake": {
+        "name": "LAKE ELIZABETH MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (725 connections)"
+      },
+      "Dobbins": {
+        "name": "RISELEN PARK",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (35 connections)"
+      },
+      "Santa Ysabel": {
+        "name": "LAKE HENSHAW RESORT INC.",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (101 connections)"
+      },
+      "Lake Of The Woods": {
+        "name": "LAKE OF THE WOODS MOBILE VILLAGE",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (86 connections)"
+      },
+      "Bradley": {
+        "name": "NACIMIENTO WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (663 connections)"
+      },
+      "Lakehead": {
+        "name": "LAKESIDE WOODS MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (112 connections)"
+      },
+      "Mt Shasta": {
+        "name": "LAKE SISKIYOU M.W.C.",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (84 connections)"
+      },
+      "Redwood Valley": {
+        "name": "REDWOOD VALLEY COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (1317 connections)"
+      },
+      "Rail Road Flat": {
+        "name": "LAKESIDE MOBILE ESTATES",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (24 connections)"
+      },
+      "Rail Road Flat Rd": {
+        "name": "LAKESIDE MOBILE ESTATES",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (24 connections)"
+      },
+      "South Lake Tahoe": {
+        "name": "SOUTH TAHOE PUD",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (14287 connections)"
+      },
+      "Lakeside": {
+        "name": "LAKESIDE WD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (6958 connections)"
+      },
+      "Lakewood": {
+        "name": "LAKEWOOD - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (20027 connections)"
+      },
+      "Lamont": {
+        "name": "LAMONT PUBLIC UTILITY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (3169 connections)"
+      },
+      "Antelope Acres": {
+        "name": "LAND PROJECTS MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (548 connections)"
+      },
+      "Altadena": {
+        "name": "LINCOLN AVENUE WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (4493 connections)"
+      },
+      "Calabasas": {
+        "name": "LAS VIRGENES MWD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (20162 connections)"
+      },
+      "Bieber": {
+        "name": "LASSEN COUNTY WATER DISTRICT #1",
+        "phone": null,
+        "website": null,
+        "county": "Lassen",
+        "note": "From CA SWRCB data (147 connections)"
+      },
+      "Laton": {
+        "name": "LATON COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (473 connections)"
+      },
+      "San  Luis Obispo": {
+        "name": "LAUREATE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (7 connections)"
+      },
+      "Laytonville": {
+        "name": "LAYTONVILLE COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (419 connections)"
+      },
+      "Pauma Valley": {
+        "name": "RANCHO PAUMA MUTUAL WC",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (387 connections)"
+      },
+      "Le Grand": {
+        "name": "LE GRAND COMM SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (456 connections)"
+      },
+      "Lebec": {
+        "name": "LEBEC COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (297 connections)"
+      },
+      "Lee Vining": {
+        "name": "LEE VINING PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (68 connections)"
+      },
+      "Twain Harte": {
+        "name": "TUD - UPPER BASIN WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (4030 connections)"
+      },
+      "Lemon Cove": {
+        "name": "LEMON COVE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (60 connections)"
+      },
+      "Victorville": {
+        "name": "VICTORVILLE WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (38282 connections)"
+      },
+      "Courtland": {
+        "name": "MAGNOLIA MUTUAL WATER",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (34 connections)"
+      },
+      "Linden": {
+        "name": "LINDEN COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (617 connections)"
+      },
+      "Lindsay": {
+        "name": "LINDSAY",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (3108 connections)"
+      },
+      "Reedley": {
+        "name": "REEDLEY",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (6275 connections)"
+      },
+      "Llano": {
+        "name": "LLANO DEL RIO WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (187 connections)"
+      },
+      "Little Valley": {
+        "name": "LITTLE VALLEY CSD",
+        "phone": null,
+        "website": null,
+        "county": "Lassen",
+        "note": "From CA SWRCB data (44 connections)"
+      },
+      "Littlerock": {
+        "name": "LITTLEROCK CREEK IRRIGATION DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1357 connections)"
+      },
+      "Shafter": {
+        "name": "SHAFTER",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (4884 connections)"
+      },
+      "Loleta": {
+        "name": "LOLETA C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (284 connections)"
+      },
+      "Loma Linda": {
+        "name": "LOMA LINDA",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (5804 connections)"
+      },
+      "Loma Rica": {
+        "name": "LOMA RICA WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (70 connections)"
+      },
+      "Lomita": {
+        "name": "LOMITA-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (4452 connections)"
+      },
+      "Lompoc": {
+        "name": "LOMPOC-CITY WATER UTILITY DIV",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (9888 connections)"
+      },
+      "Long Barn": {
+        "name": "SIERRA PARK WATER COMPANY, INC.",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (346 connections)"
+      },
+      "Los Alamos": {
+        "name": "LOS ALAMOS COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (615 connections)"
+      },
+      "Santa Clarita": {
+        "name": "SANTA CLARITA VALLEY W.A.-SANTA CLARITA",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (33105 connections)"
+      },
+      "Warner Springs": {
+        "name": "WARNER SPRINGS ESTATES",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (307 connections)"
+      },
+      "Lost Hills": {
+        "name": "LOST HILLS UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (461 connections)"
+      },
+      "Strathmore": {
+        "name": "STRATHMORE PUBLIC UTIL DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (473 connections)"
+      },
+      "Lynwood": {
+        "name": "LYNWOOD-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (9322 connections)"
+      },
+      "Rialto": {
+        "name": "WEST VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (23436 connections)"
+      },
+      "Coarsegold": {
+        "name": "YOSEMITE SPRING PARK UTIL CO",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (1970 connections)"
+      },
+      "Madison": {
+        "name": "MADISON SERVICE DIST",
+        "phone": null,
+        "website": null,
+        "county": "Yolo",
+        "note": "From CA SWRCB data (149 connections)"
+      },
+      "Manhattan Beach": {
+        "name": "MANHATTAN BEACH-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (13437 connections)"
+      },
+      "Corte Madera": {
+        "name": "MARIN MUNICIPAL WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (62255 connections)"
+      },
+      "Marina": {
+        "name": "MARINA COAST WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (10218 connections)"
+      },
+      "Markleeville": {
+        "name": "MARKLEEVILLE WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Alpine",
+        "note": "From CA SWRCB data (167 connections)"
+      },
+      "French Camp": {
+        "name": "MARTINEZ APARTMENTS",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (9 connections)"
+      },
+      "Bloomington": {
+        "name": "MARYGOLD MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (951 connections)"
+      },
+      "Maxwell": {
+        "name": "MAXWELL PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Colusa",
+        "note": "From CA SWRCB data (393 connections)"
+      },
+      "Maywood": {
+        "name": "MAYWOOD MUTUAL WATER CO. #3",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (2035 connections)"
+      },
+      "Mccloud": {
+        "name": "MCCLOUD C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (733 connections)"
+      },
+      "Snelling,": {
+        "name": "MCCLURE BOAT CLUB, INC.",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (66 connections)"
+      },
+      "Mcfarland": {
+        "name": "MCFARLAND",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (2849 connections)"
+      },
+      "Mckinleyville": {
+        "name": "MCKINLEYVILLE C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (5999 connections)"
+      },
+      "Homewood": {
+        "name": "TAHOE SWISS VILLAGE UTILITY",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (413 connections)"
+      },
+      "Ahwahnee": {
+        "name": "MD 46 AHWAHNEE RESORTS",
+        "phone": null,
+        "website": null,
+        "county": "Madera",
+        "note": "From CA SWRCB data (90 connections)"
+      },
+      "Vinton": {
+        "name": "MEADOW EDGE MHP",
+        "phone": null,
+        "website": null,
+        "county": "Plumas",
+        "note": "From CA SWRCB data (31 connections)"
+      },
+      "Boonville": {
+        "name": "MEADOW ESTATES MUTUAL",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (35 connections)"
+      },
+      "Meadow Vista": {
+        "name": "MEADOW VISTA CWD",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (1539 connections)"
+      },
+      "Santa Ynez": {
+        "name": "SANTA YNEZ RIVER WATER CONS. DIST. ID#1",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (2639 connections)"
+      },
+      "Meiners Oaks": {
+        "name": "MEINERS OAKS CWD",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (1285 connections)"
+      },
+      "Palo Cedro": {
+        "name": "MEL MAR MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (91 connections)"
+      },
+      "Mendota": {
+        "name": "MENDOTA",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (2315 connections)"
+      },
+      "Menlo Park": {
+        "name": "MENLO PARK MUNICIPAL WATER",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (4175 connections)"
+      },
+      "Clipper Mills": {
+        "name": "MERRY MOUNTAIN MUTUAL",
+        "phone": null,
+        "website": null,
+        "county": "Butte",
+        "note": "From CA SWRCB data (97 connections)"
+      },
+      "Costa Mesa": {
+        "name": "MESA  WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (24475 connections)"
+      },
+      "Solvang": {
+        "name": "SOLVANG WATER DIVISION",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (2106 connections)"
+      },
+      "Mi Wuk Village": {
+        "name": "MI WUK VILLAGE MUT WTR CO",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (766 connections)"
+      },
+      "Belmont, Ca": {
+        "name": "MID-PENINSULA WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (8117 connections)"
+      },
+      "Los Olivos": {
+        "name": "MIDLAND SCHOOL",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (49 connections)"
+      },
+      "Pine Mountain Club": {
+        "name": "MIL POTRERO MWC",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (2395 connections)"
+      },
+      "Mineral": {
+        "name": "MINERAL COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (192 connections)"
+      },
+      "Murphys": {
+        "name": "UNION PUBLIC UTILITY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Calaveras",
+        "note": "From CA SWRCB data (1735 connections)"
+      },
+      "Miranda": {
+        "name": "MIRANDA C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (149 connections)"
+      },
+      "Desert Hot Springs": {
+        "name": "MISSION SPRINGS WD",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (13484 connections)"
+      },
+      "Palo Verde": {
+        "name": "PALO VERDE COUNTY WATER DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (134 connections)"
+      },
+      "Monrovia": {
+        "name": "MONROVIA-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (9425 connections)"
+      },
+      "Montara": {
+        "name": "MONTARA WATER AND SANITARY DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (1684 connections)"
+      },
+      "Montclair": {
+        "name": "MONTE VISTA WD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (11972 connections)"
+      },
+      "Montebello": {
+        "name": "MONTEBELLO LAND & WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (3957 connections)"
+      },
+      "Moss Landing": {
+        "name": "PSMCSD - MOSS LANDING HARBOR WS",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (144 connections)"
+      },
+      "Monterey Park": {
+        "name": "MONTEREY PARK-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (13616 connections)"
+      },
+      "Canyon": {
+        "name": "MORAGA HEIGHTS MUTUAL WATER",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (20 connections)"
+      },
+      "Morro Bay": {
+        "name": "MORRO BAY PW DEPT - WATER DIVISION",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (5892 connections)"
+      },
+      "Glen Ellen": {
+        "name": "MORTON'S WARM SPRINGS / SONOMA SPRINGS",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (21 connections)"
+      },
+      "Laguna Hilss": {
+        "name": "MOULTON NIGUEL WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (53620 connections)"
+      },
+      "Mountain Pass": {
+        "name": "MP MINE OPERATIONS LLC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (9 connections)"
+      },
+      "Coulterville": {
+        "name": "MPWD-COULTERVILLE CSA 1",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (77 connections)"
+      },
+      "Mt. Baldy": {
+        "name": "MT BALDY HOMEOWNERS ASSN.",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (115 connections)"
+      },
+      "Mount Hermon": {
+        "name": "MT. HERMON ASSOCIATION, INC.",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (491 connections)"
+      },
+      "Mount Shasta": {
+        "name": "MT. SHASTA",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (1884 connections)"
+      },
+      "Tuolumne": {
+        "name": "TUD - TUOLUMNE WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (703 connections)"
+      },
+      "Parker Dam": {
+        "name": "MWD OF SO CAL GENE PLANT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (61 connections)"
+      },
+      "Earp": {
+        "name": "MWD OF SO CAL IRON MOUNTAIN",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (38 connections)"
+      },
+      "Myers Flat": {
+        "name": "MYERS FLAT M.W.S. INC.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (93 connections)"
+      },
+      "Moffett Field": {
+        "name": "NASA AMES RESEARCH CENTER",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (288 connections)"
+      },
+      "Point Mugu": {
+        "name": "NAVAL BASE VENTURA COUNTY, POINT MUGU",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (928 connections)"
+      },
+      "Needles": {
+        "name": "NEEDLES",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (1706 connections)"
+      },
+      "North Auburn": {
+        "name": "NEVADA ID - NORTH AUBURN",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (2384 connections)"
+      },
+      "Thornton": {
+        "name": "SAN JOAQUIN COUNTY - THORNTON",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (292 connections)"
+      },
+      "Nicasio": {
+        "name": "NICASIO VALLEY RANCH MUTUAL",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (14 connections)"
+      },
+      "Nice": {
+        "name": "NICE MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Lake",
+        "note": "From CA SWRCB data (1058 connections)"
+      },
+      "Castro Valley": {
+        "name": "NORRIS CANYON PROPERTY OWNERS ASSN",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (19 connections)"
+      },
+      "Pacifica": {
+        "name": "NORTH COAST COUNTY WATER DIST",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (11905 connections)"
+      },
+      "Gualala": {
+        "name": "NORTH GUALALA WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (1060 connections)"
+      },
+      "Novato": {
+        "name": "NORTH MARIN WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (20468 connections)"
+      },
+      "Point Reyes Station": {
+        "name": "NORTH MARIN WD - PT. REYES",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (781 connections)"
+      },
+      "Fawnskin": {
+        "name": "NORTH SHORE MWC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (33 connections)"
+      },
+      "Tahoe Vista": {
+        "name": "NORTH TAHOE PUD",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (3241 connections)"
+      },
+      "Brownsville": {
+        "name": "NORTH YUBA WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (795 connections)"
+      },
+      "Truckee": {
+        "name": "TRUCKEE-DONNER PUD,",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (13657 connections)"
+      },
+      "Norwalk": {
+        "name": "NORWALK - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (5398 connections)"
+      },
+      "Death Valley": {
+        "name": "NPS - DEATH VALLEY, FURNACE CREEK",
+        "phone": null,
+        "website": null,
+        "county": "Inyo",
+        "note": "From CA SWRCB data (150 connections)"
+      },
+      "Sausalito": {
+        "name": "NPS GGNRA",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (227 connections)"
+      },
+      "Point Reyes": {
+        "name": "NPS PRNS - BEACHES",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (7 connections)"
+      },
+      "Grant Grove Village": {
+        "name": "NPS-GRANT GROVE",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (100 connections)"
+      },
+      "Sequoia National Park": {
+        "name": "NPS-WOLVERTON",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (125 connections)"
+      },
+      "Nuevo": {
+        "name": "NUEVO WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (1887 connections)"
+      },
+      "Aqua Dulce": {
+        "name": "OAK GROVE MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (31 connections)"
+      },
+      "Shingle Springs": {
+        "name": "OAKLANE MOBILE VILLAGE, LLC.",
+        "phone": null,
+        "website": null,
+        "county": "El Dorado",
+        "note": "From CA SWRCB data (35 connections)"
+      },
+      "Oceano": {
+        "name": "OCEANO COMM SERVICES DIST.",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (2207 connections)"
+      },
+      "Oildale": {
+        "name": "OILDALE MWC",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (12683 connections)"
+      },
+      "Oak View": {
+        "name": "OJAI WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (2921 connections)"
+      },
+      "Old River": {
+        "name": "SOUTH KERN MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (15 connections)"
+      },
+      "Olivehurst": {
+        "name": "OLIVEHURST PUBLIC U.D.",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (4613 connections)"
+      },
+      "Encinitas": {
+        "name": "OLIVENHAIN MWD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (22716 connections)"
+      },
+      "Olympic Valley": {
+        "name": "OLYMPIC VALLEY PSD",
+        "phone": null,
+        "website": null,
+        "county": "Placer",
+        "note": "From CA SWRCB data (897 connections)"
+      },
+      "Orangevale": {
+        "name": "ORANGE VALE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (5730 connections)"
+      },
+      "Orick": {
+        "name": "ORICK C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (143 connections)"
+      },
+      "Orleans": {
+        "name": "ORLEANS C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (167 connections)"
+      },
+      "Elsinore": {
+        "name": "ORTEGA OAKS RV PARK&CAMPGROUND",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (77 connections)"
+      },
+      "Spring Valley": {
+        "name": "OTAY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (50664 connections)"
+      },
+      "Santee": {
+        "name": "PADRE DAM MWD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (23277 connections)"
+      },
+      "Palomar Mountain": {
+        "name": "PALOMAR MOUNTAIN MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (197 connections)"
+      },
+      "Castaic": {
+        "name": "PETER PITCHESS HONOR RANCHO DETN. CTR",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1952 connections)"
+      },
+      "Paramount": {
+        "name": "PARAMOUNT - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (7537 connections)"
+      },
+      "Paskenta": {
+        "name": "PASKENTA COMM. SERVICES DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (72 connections)"
+      },
+      "Phelan": {
+        "name": "PHELAN PINON HILLS CSD",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (7204 connections)"
+      },
+      "Phillipsville": {
+        "name": "PHILLIPSVILLE C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (80 connections)"
+      },
+      "Pico Rivera": {
+        "name": "PICO RIVERA - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (9474 connections)"
+      },
+      "Mcarthur": {
+        "name": "PINE GROVE MOBILEHOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (19 connections)"
+      },
+      "Pine Valley": {
+        "name": "PINE VALLEY MUTUAL WC",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (721 connections)"
+      },
+      "Pinecrest": {
+        "name": "PINECREST PERMITTEES ASSN",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (390 connections)"
+      },
+      "Pinedale": {
+        "name": "PINEDALE COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (2120 connections)"
+      },
+      "Pismo Beach": {
+        "name": "PISMO BEACH WATER DEPARTMENT",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (5335 connections)"
+      },
+      "Pixley": {
+        "name": "PIXLEY PUBLIC UTIL DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (865 connections)"
+      },
+      "Plainview": {
+        "name": "PLAINVIEW MWC - CENTRAL WATER",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (42 connections)"
+      },
+      "Planada": {
+        "name": "PLANADA CSD",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (1120 connections)"
+      },
+      "Calimesa": {
+        "name": "SOUTH MESA WC",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (3063 connections)"
+      },
+      "Point Arena": {
+        "name": "POINT ARENA WATER WORKS",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (202 connections)"
+      },
+      "Wasco": {
+        "name": "WASCO",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (5531 connections)"
+      },
+      "Poplar": {
+        "name": "POPLAR COMM SERVICE DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (597 connections)"
+      },
+      "Port Hueneme": {
+        "name": "PORT HUENEME CITY WATER DEPT",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (5791 connections)"
+      },
+      "Poway": {
+        "name": "POWAY",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (14139 connections)"
+      },
+      "Los Altos Hills": {
+        "name": "PURISSIMA HILLS WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (2143 connections)"
+      },
+      "Platina": {
+        "name": "R-WILD HORSE RANCH",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (30 connections)"
+      },
+      "Ramona": {
+        "name": "RAMONA MUNICIPAL WD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (9596 connections)"
+      },
+      "Rancho Murieta": {
+        "name": "RANCHO MURIETA COMMUNITY SERVI",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (2869 connections)"
+      },
+      "Cantil": {
+        "name": "RANCHO SECO INC. WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (35 connections)"
+      },
+      "Johanesburg": {
+        "name": "RAND COMMUNITIES WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (274 connections)"
+      },
+      "Redcrest": {
+        "name": "REDCREST WATER WORKS",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (31 connections)"
+      },
+      "Redway": {
+        "name": "REDWAY C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (569 connections)"
+      },
+      "Whitethorn": {
+        "name": "RESORT IMPROVEMENT DISTRICT #1",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (631 connections)"
+      },
+      "Richgrove": {
+        "name": "RICHGROVE COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (526 connections)"
+      },
+      "Rio Dell": {
+        "name": "RIO DELL",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (1273 connections)"
+      },
+      "Rio Linda": {
+        "name": "RIO LINDA/ELVERTA COMMUNITY WATER DIST",
+        "phone": null,
+        "website": null,
+        "county": "Sacramento",
+        "note": "From CA SWRCB data (4656 connections)"
+      },
+      "Ripon": {
+        "name": "RIPON",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (5144 connections)"
+      },
+      "Smartsville": {
+        "name": "RIVER HIGHLANDS CSD",
+        "phone": null,
+        "website": null,
+        "county": "Yuba",
+        "note": "From CA SWRCB data (84 connections)"
+      },
+      "River Pines": {
+        "name": "RIVER PINES PUD",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (230 connections)"
+      },
+      "Riverbank": {
+        "name": "RIVERBANK",
+        "phone": null,
+        "website": null,
+        "county": "Stanislaus",
+        "note": "From CA SWRCB data (7191 connections)"
+      },
+      "Bridgeville": {
+        "name": "RIVERBEND MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (31 connections)"
+      },
+      "Ferndale": {
+        "name": "RIVERSIDE CSD",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (101 connections)"
+      },
+      "Grand Terrace": {
+        "name": "RIVERSIDE HIGHLAND WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (6217 connections)"
+      },
+      "Rohnert Park": {
+        "name": "ROHNERT PARK",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (10414 connections)"
+      },
+      "Rough And Ready": {
+        "name": "ROUGH & READY VILLAGE",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (56 connections)"
+      },
+      "Rowland Heights": {
+        "name": "ROWLAND WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (13514 connections)"
+      },
+      "Mtn. Center (Pinyon Pines)": {
+        "name": "ROYAL CARRIZO HOA",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (20 connections)"
+      },
+      "Rubidoux": {
+        "name": "RUBIDOUX COMMUNITY SD",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (6820 connections)"
+      },
+      "Running Springs": {
+        "name": "RUNNING SPRINGS WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (3037 connections)"
+      },
+      "Weaverville": {
+        "name": "WEAVERVILLE C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (1657 connections)"
+      },
+      "Salyer": {
+        "name": "TRINITY VILLAGE MUTUAL WATER",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (192 connections)"
+      },
+      "La Selva Beach": {
+        "name": "SAN ANDREAS MUTUAL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (135 connections)"
+      },
+      "Mecca": {
+        "name": "SAN ANTONIO MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (68 connections)"
+      },
+      "Upland": {
+        "name": "UPLAND",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (20160 connections)"
+      },
+      "San Ardo": {
+        "name": "SAN ARDO WD",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (161 connections)"
+      },
+      "Escondido,": {
+        "name": "SAN DIEGO COUNTY WATER AUTHORITY",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (102 connections)"
+      },
+      "San Fernando": {
+        "name": "SAN FERNANDO-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (5350 connections)"
+      },
+      "San Jacinto": {
+        "name": "SAN JACINTO",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (4552 connections)"
+      },
+      "Victor": {
+        "name": "SAN JOAQUIN WATER WORKS #2",
+        "phone": null,
+        "website": null,
+        "county": "San Joaquin",
+        "note": "From CA SWRCB data (94 connections)"
+      },
+      "San Joaquin": {
+        "name": "SAN JOAQUIN",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (749 connections)"
+      },
+      "San Juan Capistrano": {
+        "name": "SAN JUAN BASIN AUTHORITY",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (2 connections)"
+      },
+      "San Lucas": {
+        "name": "SAN LUCAS COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (94 connections)"
+      },
+      "Santa Nella": {
+        "name": "SANTA NELLA COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (672 connections)"
+      },
+      "San Martin": {
+        "name": "WEST SAN MARTIN WATER WORKS INC",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (325 connections)"
+      },
+      "San Miguel": {
+        "name": "SAN MIGUEL COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (907 connections)"
+      },
+      "San Simeon": {
+        "name": "SAN SIMEON CSD",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (206 connections)"
+      },
+      "Valencia": {
+        "name": "SANTA CLARITA VALLEY W.A.-VALENCIA DIVIS",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (32473 connections)"
+      },
+      "Rancho Santa Fe": {
+        "name": "SANTA FE I.D.",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (6539 connections)"
+      },
+      "Coyote": {
+        "name": "SANTA TERESA MEADOWS WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (23 connections)"
+      },
+      "Cedar Glen": {
+        "name": "SBDNO COUNTY SERVICE AREA 70 CEDAR GLEN",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (336 connections)"
+      },
+      "Scotia": {
+        "name": "SCOTIA CSD",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (304 connections)"
+      },
+      "The Sea Ranch": {
+        "name": "SEA RANCH WATER COMPANY,THE (PUC)",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (1935 connections)"
+      },
+      "Trona": {
+        "name": "SEARLES VALLEY MINERALS OPERATIONS INC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (756 connections)"
+      },
+      "Seaside": {
+        "name": "SEASIDE MUNICIPAL WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Monterey",
+        "note": "From CA SWRCB data (792 connections)"
+      },
+      "Seeley": {
+        "name": "SEELEY CWD",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (405 connections)"
+      },
+      "Villa Park": {
+        "name": "SERRANO WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (2357 connections)"
+      },
+      "Seville": {
+        "name": "SEVILLE WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (91 connections)"
+      },
+      "Trinity Center": {
+        "name": "TRINITY CENTER M.W.C.          .",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (260 connections)"
+      },
+      "Shasta": {
+        "name": "SHASTA C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (944 connections)"
+      },
+      "Castella": {
+        "name": "SHASTA CSA - CASTELLA, #3",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (101 connections)"
+      },
+      "French Gulch": {
+        "name": "SHASTA CSA - FRENCH GULCH, #11",
+        "phone": null,
+        "website": null,
+        "county": "Shasta",
+        "note": "From CA SWRCB data (84 connections)"
+      },
+      "Sierra City": {
+        "name": "SIERRA WATER RESOURCES - SIERRA CITY",
+        "phone": null,
+        "website": null,
+        "county": "Sierra",
+        "note": "From CA SWRCB data (120 connections)"
+      },
+      "Calpine": {
+        "name": "SIERRA CO. W.W.D #1 CALPINE",
+        "phone": null,
+        "website": null,
+        "county": "Sierra",
+        "note": "From CA SWRCB data (135 connections)"
+      },
+      "Coleville": {
+        "name": "USMC - HOUSING COLEVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (116 connections)"
+      },
+      "Sierra Madre": {
+        "name": "SIERRA MADRE-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (3797 connections)"
+      },
+      "Sierra Village": {
+        "name": "SIERRA VILLAGE MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (30 connections)"
+      },
+      "Sierraville": {
+        "name": "SIERRAVILLE P.U.D.",
+        "phone": null,
+        "website": null,
+        "county": "Sierra",
+        "note": "From CA SWRCB data (107 connections)"
+      },
+      "Signal Hill": {
+        "name": "SIGNAL HILL - CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (3035 connections)"
+      },
+      "Sisquoc": {
+        "name": "SISQUOC",
+        "phone": null,
+        "website": null,
+        "county": "Santa Barbara",
+        "note": "From CA SWRCB data (77 connections)"
+      },
+      "Paynes Creek": {
+        "name": "SKY VIEW COUNTY WATER",
+        "phone": null,
+        "website": null,
+        "county": "Tehama",
+        "note": "From CA SWRCB data (125 connections)"
+      },
+      "Mi-Wuk Village": {
+        "name": "SLIDE INN SNOWBOWL WATER CO",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (153 connections)"
+      },
+      "Shandon": {
+        "name": "SLO CSA NO. 16 - SHANDON",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (362 connections)"
+      },
+      "Santa Margarita": {
+        "name": "SLO CWWD NO. 23 - SANTA MARGARITA",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (506 connections)"
+      },
+      "Smith River": {
+        "name": "SMITH RIVER C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Del Norte",
+        "note": "From CA SWRCB data (601 connections)"
+      },
+      "Mount Baldy": {
+        "name": "SNOWCREST HEIGHTS IMP ASSOC",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (125 connections)"
+      },
+      "Avalon": {
+        "name": "SO. CAL. EDISON CO.-SANTA CATALINA",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1999 connections)"
+      },
+      "Freestone": {
+        "name": "SONOMA COUNTY CSA 41-FREESTONE",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (26 connections)"
+      },
+      "Soquel": {
+        "name": "SOQUEL CREEK WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (14493 connections)"
+      },
+      "South Gate": {
+        "name": "SOUTH GATE-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (14414 connections)"
+      },
+      "Woody": {
+        "name": "SPRING MOUNTAIN MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (13 connections)"
+      },
+      "Stanford": {
+        "name": "STANFORD UNIVERSITY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (1476 connections)"
+      },
+      "Stinson Beach": {
+        "name": "STINSON BEACH COUNTY WTR DIST",
+        "phone": null,
+        "website": null,
+        "county": "Marin",
+        "note": "From CA SWRCB data (742 connections)"
+      },
+      "Stratford": {
+        "name": "STRATFORD PUD",
+        "phone": null,
+        "website": null,
+        "county": "Kings",
+        "note": "From CA SWRCB data (364 connections)"
+      },
+      "Twain Hatre": {
+        "name": "SUGAR PINE RV RESORT",
+        "phone": null,
+        "website": null,
+        "county": "Tuolumne",
+        "note": "From CA SWRCB data (88 connections)"
+      },
+      "Sultana": {
+        "name": "SULTANA COMMUNITY SERVICES DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (249 connections)"
+      },
+      "Sutter": {
+        "name": "SUTTER COMMUNITY S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Sutter",
+        "note": "From CA SWRCB data (1120 connections)"
+      },
+      "Monte Rio": {
+        "name": "SWEETWATER SPRINGS CWD - MONTE RIO",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (1081 connections)"
+      },
+      "Temescal Valley": {
+        "name": "TEMESCAL VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Riverside",
+        "note": "From CA SWRCB data (6567 connections)"
+      },
+      "Templeton": {
+        "name": "TEMPLETON CSD",
+        "phone": null,
+        "website": null,
+        "county": "San Luis Obispo",
+        "note": "From CA SWRCB data (3004 connections)"
+      },
+      "Tennant": {
+        "name": "TENNANT C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (102 connections)"
+      },
+      "Terra Bella": {
+        "name": "TERRA BELLA IRRIGATION DISTRICT - TBT",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (803 connections)"
+      },
+      "Lake Hughes": {
+        "name": "THE PAINTED TURTLE CAMP",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (5 connections)"
+      },
+      "Paicines": {
+        "name": "THOUSAND TRAILS SAN BENITO PRESERVE",
+        "phone": null,
+        "website": null,
+        "county": "San Benito",
+        "note": "From CA SWRCB data (365 connections)"
+      },
+      "Mt. Hamilton": {
+        "name": "THREE SPRINGS RANCH MUTUAL WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Santa Clara",
+        "note": "From CA SWRCB data (33 connections)"
+      },
+      "Claremont": {
+        "name": "THREE VALLEYS MWD",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (15 connections)"
+      },
+      "Timber Cove": {
+        "name": "TIMBER COVE COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (205 connections)"
+      },
+      "Tipton": {
+        "name": "TIPTON COMMUNITY SERVICES DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (608 connections)"
+      },
+      "Discovery Bay": {
+        "name": "TOWN OF DISCOVERY BAY",
+        "phone": null,
+        "website": null,
+        "county": "Contra Costa",
+        "note": "From CA SWRCB data (6163 connections)"
+      },
+      "Hillsborough": {
+        "name": "TOWN OF HILLSBOROUGH",
+        "phone": null,
+        "website": null,
+        "county": "San Mateo",
+        "note": "From CA SWRCB data (4302 connections)"
+      },
+      "Sunol": {
+        "name": "TOWN OF SUNOL - SFPUC",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (102 connections)"
+      },
+      "Yountville": {
+        "name": "TOWN OF YOUNTVILLE",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (837 connections)"
+      },
+      "Trabuco Canyon": {
+        "name": "TRABUCO CANYON WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (4112 connections)"
+      },
+      "Cudahy": {
+        "name": "TRACT 180 MUTUAL WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1190 connections)"
+      },
+      "San Leandro": {
+        "name": "TRAILER HAVEN MOBILE HOME PARK",
+        "phone": null,
+        "website": null,
+        "county": "Alameda",
+        "note": "From CA SWRCB data (191 connections)"
+      },
+      "Tranquillity": {
+        "name": "TRANQUILLITY IRRIGATION DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Fresno",
+        "note": "From CA SWRCB data (340 connections)"
+      },
+      "Coffee Creek": {
+        "name": "TREASURE CREEK WOODS MWC",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (32 connections)"
+      },
+      "Hayfork": {
+        "name": "TRINITY CO. W.W. DIST #1",
+        "phone": null,
+        "website": null,
+        "county": "Trinity",
+        "note": "From CA SWRCB data (698 connections)"
+      },
+      "Tulelake": {
+        "name": "TULELAKE",
+        "phone": null,
+        "website": null,
+        "county": "Siskiyou",
+        "note": "From CA SWRCB data (485 connections)"
+      },
+      "Twentynine Palms": {
+        "name": "TWENTYNINE PALMS WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (7423 connections)"
+      },
+      "Potrero": {
+        "name": "TWIN LAKES RESORT",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (153 connections)"
+      },
+      "Fort Irwin": {
+        "name": "US ARMY FORT IRWIN",
+        "phone": null,
+        "website": null,
+        "county": "San Bernardino",
+        "note": "From CA SWRCB data (3315 connections)"
+      },
+      "Saint Helena": {
+        "name": "VAILIMA ESTATES MUTUAL WATER",
+        "phone": null,
+        "website": null,
+        "county": "Napa",
+        "note": "From CA SWRCB data (15 connections)"
+      },
+      "West Covina": {
+        "name": "VALENCIA HEIGHTS WATER CO.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1681 connections)"
+      },
+      "Tujunga": {
+        "name": "VALHALLA WATER ASSOCIATION",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (9 connections)"
+      },
+      "San Marcos": {
+        "name": "VALLECITOS WD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (22419 connections)"
+      },
+      "Valley Center": {
+        "name": "VALLEY CENTER MWD",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (9768 connections)"
+      },
+      "Baldwin Park": {
+        "name": "VALLEY COUNTY WATER DIST.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (12648 connections)"
+      },
+      "Valley Ford": {
+        "name": "VALLEY FORD WATER ASSOCIATION",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (23 connections)"
+      },
+      "El Verano": {
+        "name": "VALLEY OF THE MOON WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Sonoma",
+        "note": "From CA SWRCB data (7048 connections)"
+      },
+      "Moorpark": {
+        "name": "VENTURA CWWD NO. 1 - MOORPARK",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (11012 connections)"
+      },
+      "Vernon": {
+        "name": "VERNON-CITY, WATER DEPT.",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (1058 connections)"
+      },
+      "Vista": {
+        "name": "VISTA IRRIGATION DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "San Diego",
+        "note": "From CA SWRCB data (27782 connections)"
+      },
+      "Ben Lomond": {
+        "name": "VISTA ROBLES ASSOCIATION",
+        "phone": null,
+        "website": null,
+        "county": "Santa Cruz",
+        "note": "From CA SWRCB data (19 connections)"
+      },
+      "Volcano": {
+        "name": "VOLCANO COMMUNITY SERVICE DIST",
+        "phone": null,
+        "website": null,
+        "county": "Amador",
+        "note": "From CA SWRCB data (73 connections)"
+      },
+      "Volta": {
+        "name": "VOLTA COMMUNITY SD",
+        "phone": null,
+        "website": null,
+        "county": "Merced",
+        "note": "From CA SWRCB data (44 connections)"
+      },
+      "Walnut": {
+        "name": "WALNUT VALLEY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Los Angeles",
+        "note": "From CA SWRCB data (27479 connections)"
+      },
+      "Washington": {
+        "name": "WASHINGTON WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Nevada",
+        "note": "From CA SWRCB data (115 connections)"
+      },
+      "Weott": {
+        "name": "WEOTT C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (135 connections)"
+      },
+      "Taft": {
+        "name": "WEST KERN WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Kern",
+        "note": "From CA SWRCB data (7165 connections)"
+      },
+      "Westmorland": {
+        "name": "WESTMORLAND",
+        "phone": null,
+        "website": null,
+        "county": "Imperial",
+        "note": "From CA SWRCB data (582 connections)"
+      },
+      "Westport": {
+        "name": "WESTPORT COUNTY WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (78 connections)"
+      },
+      "Swall Meadows": {
+        "name": "WHEELER CREST CSD",
+        "phone": null,
+        "website": null,
+        "county": "Mono",
+        "note": "From CA SWRCB data (43 connections)"
+      },
+      "Midpines": {
+        "name": "WHISPERING PINES APARTMENTS",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (25 connections)"
+      },
+      "Willow Creek": {
+        "name": "WILLOW CREEK C.S.D.",
+        "phone": null,
+        "website": null,
+        "county": "Humboldt",
+        "note": "From CA SWRCB data (932 connections)"
+      },
+      "Woodlake": {
+        "name": "WOODLAKE",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (1995 connections)"
+      },
+      "Little River": {
+        "name": "WOODS, THE (MENDOCINO)",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (115 connections)"
+      },
+      "Woodville": {
+        "name": "WOODVILLE PUBLIC UTILITY DIST",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (467 connections)"
+      },
+      "Malibu": {
+        "name": "YERBA BUENA WATER COMPANY",
+        "phone": null,
+        "website": null,
+        "county": "Ventura",
+        "note": "From CA SWRCB data (249 connections)"
+      },
+      "Yettem": {
+        "name": "YETTEM WATER SYSTEM",
+        "phone": null,
+        "website": null,
+        "county": "Tulare",
+        "note": "From CA SWRCB data (66 connections)"
+      },
+      "Talmage": {
+        "name": "YOKAYO TRIBE OF INDIANS",
+        "phone": null,
+        "website": null,
+        "county": "Mendocino",
+        "note": "From CA SWRCB data (23 connections)"
+      },
+      "Placentia": {
+        "name": "YORBA LINDA WATER DISTRICT",
+        "phone": null,
+        "website": null,
+        "county": "Orange",
+        "note": "From CA SWRCB data (25497 connections)"
+      },
+      "Yosemite National Park": {
+        "name": "YOSEMITE NPS-YOSEMITE VALLEY",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (235 connections)"
+      },
+      "Greeley Hill": {
+        "name": "YOSEMITE TERRACE ESTATES",
+        "phone": null,
+        "website": null,
+        "county": "Mariposa",
+        "note": "From CA SWRCB data (53 connections)"
       }
     },
     "CO": {

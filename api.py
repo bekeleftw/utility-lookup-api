@@ -73,7 +73,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-20-v14', 'changes': 'improved_smart_selector_prompt'})
+    return jsonify({'version': '2026-01-20-v15', 'changes': 'ai_first_selector'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @limiter.limit("100 per day")

@@ -289,10 +289,25 @@ def format_utility(util, util_type):
     state = util.get('STATE') or util.get('state')
     
     # Check if this is a municipal utility (exempt from deregulation)
+    # These utilities are in deregulated states but customers cannot choose their provider
     name_lower = normalized_name.lower() if normalized_name else ''
-    municipal_utilities = ['austin energy', 'cps energy', 'garland power', 'lubbock power', 
-                          'new braunfels utilities', 'georgetown utility', 'greenville electric',
-                          'brownsville public', 'bryan texas utilities', 'college station utilities']
+    municipal_utilities = [
+        # Texas municipal utilities
+        'austin energy', 'cps energy', 'garland power', 'lubbock power', 
+        'new braunfels utilities', 'georgetown utility', 'greenville electric',
+        'brownsville public', 'bryan texas utilities', 'college station utilities',
+        'kerrville public', 'seguin electric', 'boerne utilities', 'fredericksburg electric',
+        # Ohio municipal utilities
+        'cleveland public power', 'american municipal power', 'amp ohio',
+        # Illinois municipal utilities  
+        'springfield city water', 'cwlp',
+        # New York - LIPA operates differently
+        'long island power', 'lipa', 'pseg long island',
+        # Pennsylvania municipal utilities
+        'lansdale borough',
+        # Generic municipal indicators
+        'municipal power', 'city utilities', 'public power', 'city light'
+    ]
     is_municipal = any(muni in name_lower for muni in municipal_utilities)
     
     # Deregulated if flag is set OR state is deregulated (but NOT if municipal)
@@ -397,7 +412,7 @@ def format_internet_providers(internet_data):
 @limiter.exempt
 def health():
     """Health check endpoint."""
-    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v5'})
+    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v6'})
 
 
 @app.route('/api/rate-limit', methods=['GET'])

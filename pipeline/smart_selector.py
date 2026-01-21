@@ -227,13 +227,29 @@ class SmartSelector:
         
         utility_type = context.utility_type.value
         
-        # Get area context from tenant verification data
+        # Get area context from tenant verification data AND learned boundary rules
         area_context_text = ""
         try:
+            # First, check learned boundary rules (more specific)
+            from utility_boundary_learner import UtilityBoundaryLearner
+            learner = UtilityBoundaryLearner()
+            learned_ctx = learner.get_context_for_ai(context.address)
+            if learned_ctx:
+                area_context_text = f"\n\n{learned_ctx}"
+        except ImportError:
+            pass
+        except Exception as e:
+            print(f"Warning: Failed to get learned rules: {e}")
+        
+        try:
+            # Also get general area context
             from tenant_verified_lookup import get_area_context
             area_ctx = get_area_context(context.zip_code, context.address)
             if area_ctx.get('context_note'):
-                area_context_text = f"\n\nAREA INTELLIGENCE (from historical tenant data):\n{area_ctx['context_note']}"
+                if area_context_text:
+                    area_context_text += f"\n\nADDITIONAL AREA INTELLIGENCE:\n{area_ctx['context_note']}"
+                else:
+                    area_context_text = f"\n\nAREA INTELLIGENCE (from historical tenant data):\n{area_ctx['context_note']}"
                 if area_ctx.get('utilities_seen'):
                     area_context_text += f"\nOther utilities reported in this ZIP: {', '.join(area_ctx['utilities_seen'][:8])}"
         except ImportError:

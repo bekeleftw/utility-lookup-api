@@ -368,13 +368,17 @@ def geocode_address(address: str, include_geography: bool = False) -> Optional[D
     # Tier 1: Census Geocoder
     result = geocode_with_census(address, include_geography)
     if result:
-        # Validate ZIP code matches - Census sometimes matches wrong city with similar name
+        # Validate ZIP code - only reject if drastically different (different 3-digit prefix = different region)
+        # Adjacent ZIPs (e.g., 75201 vs 75202) are common for addresses near ZIP boundaries
         returned_zip = result.get('zip_code')
-        if input_zip and returned_zip and input_zip != returned_zip:
-            print(f"Census geocoder returned wrong ZIP ({returned_zip} vs expected {input_zip})")
+        if input_zip and returned_zip and input_zip[:3] != returned_zip[:3]:
+            # Different 3-digit prefix means different postal region - likely wrong match
+            print(f"Census geocoder returned wrong ZIP region ({returned_zip} vs expected {input_zip})")
             print(f"  Matched: {result.get('matched_address')} - REJECTED, trying fallback...")
             result = None  # Reject and try fallback
         else:
+            if input_zip and returned_zip and input_zip != returned_zip:
+                print(f"Note: ZIP adjusted from {input_zip} to {returned_zip} (adjacent ZIP)")
             print(f"Geocoded (Census): {result.get('matched_address')}")
             print(f"Coordinates: {result.get('lat')}, {result.get('lon')}")
             if result.get('city') or result.get('county'):

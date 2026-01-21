@@ -2235,7 +2235,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
             if pipeline_result:
                 primary_electric = pipeline_result
                 primary_electric['_is_deregulated'] = is_deregulated_state(state)
-                if deregulated_info:
+                # Always apply deregulation adjustment for deregulated states
+                if is_deregulated_state(state):
                     primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
                 other_electric = []
         # PRIORITY 2: GIS-based lookup for states with authoritative APIs (fallback)
@@ -2251,7 +2252,8 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     '_selection_reason': f"GIS lookup from {gis_electric.get('source', 'state API')}",
                     '_is_deregulated': is_deregulated_state(state)
                 }
-                if deregulated_info:
+                # Always apply deregulation adjustment for deregulated states
+                if is_deregulated_state(state):
                     primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
                 other_electric = []
             else:

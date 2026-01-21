@@ -288,10 +288,12 @@ def format_utility(util, util_type):
     from deregulated_markets import is_deregulated_state, get_deregulated_market_info
     state = util.get('STATE') or util.get('state')
     
-    # Check if this is a municipal utility (exempt from deregulation)
+    # Check if this is a municipal utility or co-op (exempt from deregulation)
     # These utilities are in deregulated states but customers cannot choose their provider
     name_lower = normalized_name.lower() if normalized_name else ''
-    municipal_utilities = [
+    
+    # Specific exempt utilities
+    exempt_utilities = [
         # Texas municipal utilities
         'austin energy', 'cps energy', 'garland power', 'lubbock power', 
         'new braunfels utilities', 'georgetown utility', 'greenville electric',
@@ -305,13 +307,23 @@ def format_utility(util, util_type):
         'long island power', 'lipa', 'pseg long island',
         # Pennsylvania municipal utilities
         'lansdale borough',
-        # Generic municipal indicators
-        'municipal power', 'city utilities', 'public power', 'city light'
     ]
-    is_municipal = any(muni in name_lower for muni in municipal_utilities)
     
-    # Deregulated if flag is set OR state is deregulated (but NOT if municipal)
-    is_dereg = util.get('_deregulated_market') or (state and is_deregulated_state(state) and not is_municipal)
+    # Generic patterns that indicate exempt utilities
+    exempt_patterns = [
+        'cooperative', 'co-op', 'coop', 'electric co-op',  # Electric cooperatives
+        'municipal', 'city of', 'city utilities', 'city light', 'city power',
+        'public power', 'public utility', 'pud',  # Public utility districts
+        'rural electric', 'rec', 'emc',  # Rural electric cooperatives
+    ]
+    
+    is_exempt = (
+        any(exempt in name_lower for exempt in exempt_utilities) or
+        any(pattern in name_lower for pattern in exempt_patterns)
+    )
+    
+    # Deregulated if flag is set OR state is deregulated (but NOT if exempt utility)
+    is_dereg = util.get('_deregulated_market') or (state and is_deregulated_state(state) and not is_exempt)
     
     if util_type == 'electric' and is_dereg:
         # Get market info from util or fetch it
@@ -412,7 +424,7 @@ def format_internet_providers(internet_data):
 @limiter.exempt
 def health():
     """Health check endpoint."""
-    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v6'})
+    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v7'})
 
 
 @app.route('/api/rate-limit', methods=['GET'])

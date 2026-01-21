@@ -287,7 +287,16 @@ def format_utility(util, util_type):
     # Check both the flag AND the state directly as fallback
     from deregulated_markets import is_deregulated_state, get_deregulated_market_info
     state = util.get('STATE') or util.get('state')
-    is_dereg = util.get('_deregulated_market') or (state and is_deregulated_state(state))
+    
+    # Check if this is a municipal utility (exempt from deregulation)
+    name_lower = normalized_name.lower() if normalized_name else ''
+    municipal_utilities = ['austin energy', 'cps energy', 'garland power', 'lubbock power', 
+                          'new braunfels utilities', 'georgetown utility', 'greenville electric',
+                          'brownsville public', 'bryan texas utilities', 'college station utilities']
+    is_municipal = any(muni in name_lower for muni in municipal_utilities)
+    
+    # Deregulated if flag is set OR state is deregulated (but NOT if municipal)
+    is_dereg = util.get('_deregulated_market') or (state and is_deregulated_state(state) and not is_municipal)
     
     if util_type == 'electric' and is_dereg:
         # Get market info from util or fetch it
@@ -388,7 +397,7 @@ def format_internet_providers(internet_data):
 @limiter.exempt
 def health():
     """Health check endpoint."""
-    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v4'})
+    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v5'})
 
 
 @app.route('/api/rate-limit', methods=['GET'])

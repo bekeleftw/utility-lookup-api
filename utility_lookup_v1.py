@@ -2259,6 +2259,13 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 primary_electric = None
         # PRIORITY 2: Check municipal utilities first (Austin Energy, CPS Energy, LADWP, etc.)
         if primary_electric is None and (municipal_electric := lookup_municipal_electric(state, city, zip_code, county)):
+            util_name = municipal_electric['name'].lower()
+            # Check if this is actually a TDU (not a true municipal utility)
+            known_tdus = ['centerpoint', 'oncor', 'aep texas', 'tnmp', 'texas-new mexico power',
+                          'peco', 'ppl', 'duquesne', 'penelec', 'met-ed', 'west penn',
+                          'firstenergy', 'aep ohio', 'duke energy ohio', 'dayton power']
+            is_tdu = any(tdu in util_name for tdu in known_tdus)
+            
             primary_electric = {
                 'NAME': municipal_electric['name'],
                 'TELEPHONE': municipal_electric.get('phone'),
@@ -2268,9 +2275,13 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_confidence': municipal_electric['confidence'],
                 '_verification_source': 'municipal_utility_database',
                 '_selection_reason': f"Municipal utility serving {municipal_electric.get('city', city)}",
-                '_is_deregulated': False,
                 '_note': municipal_electric.get('note')
             }
+            # TDUs in deregulated markets should show retail choice
+            if is_tdu and deregulated_info:
+                primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+            else:
+                primary_electric['_is_deregulated'] = False
             other_electric = []
         elif primary_electric is None:
             # PRIORITY 2: HIFLD and state-specific verification

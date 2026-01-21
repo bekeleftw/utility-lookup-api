@@ -382,7 +382,7 @@ def format_internet_providers(internet_data):
 @limiter.exempt
 def health():
     """Health check endpoint."""
-    return jsonify({'status': 'ok'})
+    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v2'})
 
 
 @app.route('/api/rate-limit', methods=['GET'])

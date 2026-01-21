@@ -240,9 +240,15 @@ def lookup():
 
 def format_utility(util, util_type):
     """Format utility data for API response."""
+    from name_normalizer import normalize_utility_name
+    
+    # Get raw name and normalize it
+    raw_name = util.get('NAME', util.get('name', 'Unknown'))
+    normalized_name = normalize_utility_name(raw_name)
+    
     if util_type == 'water':
         return {
-            'name': util.get('NAME', util.get('name', 'Unknown')),
+            'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
             'website': util.get('WEBSITE', util.get('website')),
             'address': util.get('ADDRESS', util.get('address')),
@@ -260,7 +266,7 @@ def format_utility(util, util_type):
         }
     else:
         return {
-            'name': util.get('NAME', util.get('name', 'Unknown')),
+            'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
             'website': util.get('WEBSITE', util.get('website')),
             'address': util.get('ADDRESS', util.get('address')),

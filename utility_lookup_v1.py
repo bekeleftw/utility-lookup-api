@@ -2233,8 +2233,10 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_is_deregulated': False
             }
             other_electric = []
+        # NOTE: Tenant-verified data is now used as CONTEXT for AI selector, not as override
+        # See pipeline/smart_selector.py - it includes area context in the AI prompt
         # PRIORITY 1: NEW PIPELINE with OpenAI Smart Selector
-        elif use_pipeline and PIPELINE_AVAILABLE:
+        if primary_electric is None and use_pipeline and PIPELINE_AVAILABLE:
             pipeline_result = _pipeline_lookup(lat, lon, address, city, county, state, zip_code, 'electric')
             if pipeline_result:
                 primary_electric = pipeline_result

@@ -227,6 +227,20 @@ class SmartSelector:
         
         utility_type = context.utility_type.value
         
+        # Get area context from tenant verification data
+        area_context_text = ""
+        try:
+            from tenant_verified_lookup import get_area_context
+            area_ctx = get_area_context(context.zip_code, context.address)
+            if area_ctx.get('context_note'):
+                area_context_text = f"\n\nAREA INTELLIGENCE (from historical tenant data):\n{area_ctx['context_note']}"
+                if area_ctx.get('utilities_seen'):
+                    area_context_text += f"\nOther utilities reported in this ZIP: {', '.join(area_ctx['utilities_seen'][:8])}"
+        except ImportError:
+            pass
+        except Exception as e:
+            print(f"Warning: Failed to get area context: {e}")
+        
         prompt = f"""You are a utility service territory expert with deep knowledge of how utilities work in the United States. Given an address and conflicting results from data sources, use your expertise to determine the correct {utility_type} utility provider.
 
 ADDRESS:
@@ -234,7 +248,7 @@ ADDRESS:
 {context.city}, {context.state} {context.zip_code}
 
 SOURCE RESULTS:
-{sources_text}
+{sources_text}{area_context_text}
 
 THINK STEP BY STEP:
 

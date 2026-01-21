@@ -325,18 +325,30 @@ class EPAWaterSource(DataSource):
                 with open(path, 'r') as f:
                     raw_data = json.load(f)
                     
-                # Build lookup index by city|state and county|state
+                # Handle new structure: {'by_county': {...}, 'by_city': {...}}
                 indexed = {}
-                for entry in raw_data if isinstance(raw_data, list) else raw_data.values():
+                
+                # Load by_city entries (key format: "STATE|CITY")
+                by_city = raw_data.get('by_city', {})
+                for key, entry in by_city.items():
                     if isinstance(entry, dict):
-                        city = entry.get('city', '').upper()
-                        state = entry.get('state', '').upper()
-                        county = entry.get('county', '').upper()
-                        
-                        if city and state:
+                        # Key is already "STATE|CITY", we need "CITY|STATE" for lookup
+                        parts = key.split('|')
+                        if len(parts) == 2:
+                            state, city = parts
                             indexed[f"{city}|{state}"] = entry
-                        if county and state:
-                            indexed[f"{county}|{state}"] = entry
+                
+                # Load by_county entries (key format: "STATE|COUNTY")
+                by_county = raw_data.get('by_county', {})
+                for key, entry in by_county.items():
+                    if isinstance(entry, dict):
+                        parts = key.split('|')
+                        if len(parts) == 2:
+                            state, county = parts
+                            # Only add if not already covered by city
+                            county_key = f"{county}|{state}"
+                            if county_key not in indexed:
+                                indexed[county_key] = entry
                 
                 EPAWaterSource._cache = indexed
                 return EPAWaterSource._cache

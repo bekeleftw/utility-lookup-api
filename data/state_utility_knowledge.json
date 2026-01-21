@@ -6,22 +6,580 @@
       "2. Identify data gaps (what we're missing)",
       "3. Document data sources to scrape/acquire"
     ],
-    "last_updated": "2026-01-20"
+    "last_updated": "2026-01-21"
   },
-  
+  "AL": {
+    "electric": {
+      "landscape": {
+        "description": "Alabama Power (IOU) dominates, plus TVA distributors in north and rural co-ops",
+        "major_players": [
+          {
+            "name": "Alabama Power",
+            "type": "IOU",
+            "coverage": "Most of Alabama"
+          },
+          {
+            "name": "TVA Distributors",
+            "type": "municipal/coop",
+            "coverage": "Northern Alabama (Huntsville, Florence)"
+          },
+          {
+            "name": "Rural Electric Cooperatives",
+            "type": "cooperative",
+            "count": 22,
+            "coverage": "Rural areas statewide"
+          }
+        ],
+        "key_insight": "Northern Alabama is TVA territory - cities like Huntsville have municipal utilities that buy from TVA, not Alabama Power. | SPLIT-UTILITY CITIES: Birmingham suburbs: Alabama Power / co-ops (Rural areas around Birmingham served by co-ops); Huntsville area: TVA distributors / Alabama Power (Huntsville Utilities vs Alabama Power in suburbs)"
+      },
+      "data_status": {
+        "have": [
+          "Alabama Power boundaries",
+          "TVA distributor list"
+        ],
+        "missing": [
+          "Co-op precise boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Spire (formerly Alagasco) is the dominant provider",
+        "major_players": [
+          {
+            "name": "Spire Alabama (Alagasco)",
+            "type": "utility",
+            "coverage": "Most urban/suburban areas"
+          }
+        ],
+        "key_insight": "Rural areas often have no piped gas - propane is common"
+      },
+      "data_status": {
+        "have": [
+          "Spire coverage areas"
+        ],
+        "missing": [
+          "Precise boundaries"
+        ],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities in cities, water authorities in counties",
+        "major_players": [
+          {
+            "name": "Birmingham Water Works",
+            "type": "municipal",
+            "coverage": "Birmingham metro"
+          },
+          {
+            "name": "City utilities",
+            "type": "municipal",
+            "coverage": "Within city limits"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "County water authority boundaries"
+        ],
+        "confidence": "medium"
+      }
+    }
+  },
+  "AK": {
+    "electric": {
+      "landscape": {
+        "description": "Isolated grids due to geography. Multiple utilities serve different regions.",
+        "major_players": [
+          {
+            "name": "Chugach Electric",
+            "type": "cooperative",
+            "coverage": "Anchorage area"
+          },
+          {
+            "name": "Golden Valley Electric",
+            "type": "cooperative",
+            "coverage": "Fairbanks area"
+          },
+          {
+            "name": "Matanuska Electric",
+            "type": "cooperative",
+            "coverage": "Mat-Su Valley"
+          },
+          {
+            "name": "Municipal Light & Power",
+            "type": "municipal",
+            "coverage": "Anchorage city (merging with Chugach)"
+          }
+        ],
+        "key_insight": "Alaska has no interconnected grid. Each region has its own utility. Co-ops dominate."
+      },
+      "data_status": {
+        "have": [
+          "Major utility service areas"
+        ],
+        "missing": [
+          "Rural village utilities"
+        ],
+        "confidence": "medium"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "ENSTAR is the main gas utility in Southcentral Alaska",
+        "major_players": [
+          {
+            "name": "ENSTAR Natural Gas",
+            "type": "utility",
+            "coverage": "Anchorage, Mat-Su, Kenai Peninsula"
+          }
+        ],
+        "key_insight": "Most of Alaska has no piped natural gas - heating oil and propane are common"
+      },
+      "data_status": {
+        "have": [
+          "ENSTAR coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities in cities, many rural areas have wells or village systems",
+        "major_players": [
+          {
+            "name": "AWWU (Anchorage)",
+            "type": "municipal",
+            "coverage": "Anchorage"
+          },
+          {
+            "name": "City utilities",
+            "type": "municipal",
+            "coverage": "Other cities"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "Rural systems"
+        ],
+        "confidence": "medium"
+      }
+    }
+  },
+  "AR": {
+    "electric": {
+      "landscape": {
+        "description": "Entergy Arkansas dominates, plus SWEPCO in northwest and many rural co-ops",
+        "major_players": [
+          {
+            "name": "Entergy Arkansas",
+            "type": "IOU",
+            "coverage": "Most of Arkansas"
+          },
+          {
+            "name": "SWEPCO",
+            "type": "IOU",
+            "coverage": "Northwest Arkansas (Fayetteville, Bentonville area)"
+          },
+          {
+            "name": "Electric Cooperatives",
+            "type": "cooperative",
+            "count": 17,
+            "coverage": "Rural areas"
+          },
+          {
+            "name": "OG&E",
+            "type": "IOU",
+            "coverage": "Fort Smith area"
+          }
+        ],
+        "key_insight": "Northwest Arkansas (Walmart country) is SWEPCO territory, not Entergy. This is a common mistake."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op precise boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "CenterPoint Energy and Black Hills Energy are main providers",
+        "major_players": [
+          {
+            "name": "CenterPoint Energy",
+            "type": "utility",
+            "coverage": "Central and southern Arkansas"
+          },
+          {
+            "name": "Black Hills Energy",
+            "type": "utility",
+            "coverage": "Northwest Arkansas"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [
+          "Precise boundaries"
+        ],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities and rural water associations",
+        "major_players": [
+          {
+            "name": "Central Arkansas Water",
+            "type": "municipal",
+            "coverage": "Little Rock metro"
+          },
+          {
+            "name": "City utilities",
+            "type": "municipal",
+            "coverage": "Within city limits"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "Rural water association boundaries"
+        ],
+        "confidence": "medium"
+      }
+    }
+  },
+  "CO": {
+    "electric": {
+      "landscape": {
+        "description": "Xcel Energy dominates Front Range, rural co-ops elsewhere",
+        "major_players": [
+          {
+            "name": "Xcel Energy",
+            "type": "IOU",
+            "coverage": "Denver metro, Front Range, Pueblo"
+          },
+          {
+            "name": "Black Hills Energy",
+            "type": "IOU",
+            "coverage": "Southern Colorado, Pueblo area"
+          },
+          {
+            "name": "Colorado Springs Utilities",
+            "type": "municipal",
+            "coverage": "Colorado Springs"
+          },
+          {
+            "name": "Rural Electric Cooperatives",
+            "type": "cooperative",
+            "count": 22,
+            "coverage": "Rural and mountain areas"
+          }
+        ],
+        "key_insight": "Denver metro: Xcel serves Denver city and close-in suburbs. United Power serves north (Brighton, Erie, Firestone - roughly north of 120th Ave). IREA serves south (Castle Rock, Parker - roughly south of Arapahoe Rd/E-470).",
+        "boundary_notes": "Denver metro: Xcel serves Denver city and close-in suburbs. United Power serves north (Brighton, Erie, Firestone - roughly north of 120th Ave). IREA serves south (Castle Rock, Parker - roughly south of Arapahoe Rd/E-470)."
+      },
+      "data_status": {
+        "have": [
+          "Xcel boundaries",
+          "Major municipal boundaries"
+        ],
+        "missing": [
+          "Some co-op boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Xcel Energy provides gas along Front Range, Black Hills in south",
+        "major_players": [
+          {
+            "name": "Xcel Energy",
+            "type": "utility",
+            "coverage": "Denver metro, Front Range"
+          },
+          {
+            "name": "Black Hills Energy",
+            "type": "utility",
+            "coverage": "Southern Colorado"
+          },
+          {
+            "name": "Colorado Springs Utilities",
+            "type": "municipal",
+            "coverage": "Colorado Springs"
+          },
+          {
+            "name": "Atmos Energy",
+            "type": "utility",
+            "coverage": "Southeast Colorado"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities and special districts, water rights are complex",
+        "major_players": [
+          {
+            "name": "Denver Water",
+            "type": "municipal",
+            "coverage": "Denver and some suburbs"
+          },
+          {
+            "name": "Aurora Water",
+            "type": "municipal",
+            "coverage": "Aurora"
+          },
+          {
+            "name": "Colorado Springs Utilities",
+            "type": "municipal",
+            "coverage": "Colorado Springs"
+          }
+        ],
+        "key_insight": "Water districts in Colorado suburbs can be complex - many special metro districts"
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "Metro district boundaries"
+        ],
+        "confidence": "medium"
+      }
+    }
+  },
+  "CT": {
+    "electric": {
+      "landscape": {
+        "description": "Eversource dominates, UI serves southwest",
+        "major_players": [
+          {
+            "name": "Eversource",
+            "type": "IOU",
+            "coverage": "Most of Connecticut"
+          },
+          {
+            "name": "United Illuminating (UI)",
+            "type": "IOU",
+            "coverage": "Greater New Haven and Bridgeport areas"
+          },
+          {
+            "name": "Municipal utilities",
+            "type": "municipal",
+            "count": 6,
+            "coverage": "Wallingford, Norwich, Groton, etc."
+          }
+        ],
+        "key_insight": "Connecticut is deregulated - Eversource/UI handle delivery, customers can choose retail suppliers. Report the distribution utility."
+      },
+      "data_status": {
+        "have": [
+          "Eversource/UI boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Multiple gas utilities by region",
+        "major_players": [
+          {
+            "name": "Eversource",
+            "type": "utility",
+            "coverage": "Central and eastern CT"
+          },
+          {
+            "name": "Southern Connecticut Gas",
+            "type": "utility",
+            "coverage": "New Haven area"
+          },
+          {
+            "name": "Connecticut Natural Gas",
+            "type": "utility",
+            "coverage": "Hartford area"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Regional water authorities and municipal utilities",
+        "major_players": [
+          {
+            "name": "Regional Water Authority",
+            "type": "authority",
+            "coverage": "Greater New Haven"
+          },
+          {
+            "name": "Aquarion Water",
+            "type": "private",
+            "coverage": "Fairfield County and other areas"
+          },
+          {
+            "name": "MDC (Metropolitan District)",
+            "type": "authority",
+            "coverage": "Hartford area"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major utility boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "DE": {
+    "electric": {
+      "landscape": {
+        "description": "Delmarva Power serves most of the state",
+        "major_players": [
+          {
+            "name": "Delmarva Power",
+            "type": "IOU",
+            "coverage": "Most of Delaware"
+          },
+          {
+            "name": "Delaware Electric Cooperative",
+            "type": "cooperative",
+            "coverage": "Kent and Sussex counties rural areas"
+          }
+        ],
+        "key_insight": "Delaware Electric Cooperative serves rural areas in southern Delaware - don't assume Delmarva for all addresses."
+      },
+      "data_status": {
+        "have": [
+          "Delmarva boundaries"
+        ],
+        "missing": [
+          "DEC precise boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Delmarva Power and Chesapeake Utilities",
+        "major_players": [
+          {
+            "name": "Delmarva Power",
+            "type": "utility",
+            "coverage": "Northern Delaware"
+          },
+          {
+            "name": "Chesapeake Utilities",
+            "type": "utility",
+            "coverage": "Southern Delaware"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Provider coverage areas"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities and Artesian Water",
+        "major_players": [
+          {
+            "name": "Artesian Water",
+            "type": "private",
+            "coverage": "New Castle County and other areas"
+          },
+          {
+            "name": "City of Wilmington",
+            "type": "municipal",
+            "coverage": "Wilmington"
+          },
+          {
+            "name": "Tidewater Utilities",
+            "type": "private",
+            "coverage": "Southern Delaware"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
   "GA": {
     "electric": {
       "landscape": {
         "description": "Mix of large IOU (Georgia Power) and 41 rural EMCs (Electric Membership Corporations)",
         "major_players": [
-          {"name": "Georgia Power", "type": "IOU", "coverage": "Urban/suburban Atlanta metro and major cities"},
-          {"name": "Georgia EMCs", "type": "cooperative", "count": 41, "coverage": "Rural and some suburban areas"}
+          {
+            "name": "Georgia Power",
+            "type": "IOU",
+            "coverage": "Urban/suburban Atlanta metro and major cities"
+          },
+          {
+            "name": "Georgia EMCs",
+            "type": "cooperative",
+            "count": 41,
+            "coverage": "Rural and some suburban areas"
+          }
         ],
-        "key_insight": "EMCs serve significant portions of suburban counties. Don't assume Georgia Power for addresses outside Atlanta core."
+        "key_insight": "Atlanta: Georgia Power serves Fulton/DeKalb core. Jackson EMC serves Gwinnett (east of I-85), Barrow, Hall counties. Cobb EMC serves Cobb County (Marietta area). Walton EMC serves Walton County (east). Boundary roughly follows county lines but not exactly.",
+        "boundary_notes": "Atlanta: Georgia Power serves Fulton/DeKalb core. Jackson EMC serves Gwinnett (east of I-85), Barrow, Hall counties. Cobb EMC serves Cobb County (Marietta area). Walton EMC serves Walton County (east). Boundary roughly follows county lines but not exactly."
       },
       "data_status": {
-        "have": ["Georgia Power boundaries (EIA/HIFLD)"],
-        "missing": ["EMC service territory boundaries"],
+        "have": [
+          "Georgia Power boundaries (EIA/HIFLD)"
+        ],
+        "missing": [
+          "EMC service territory boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
         "confidence": "low_for_rural"
       },
       "data_sources_to_acquire": [
@@ -43,13 +601,22 @@
       "landscape": {
         "description": "Atlanta Gas Light is primary provider, some areas have no piped gas",
         "major_players": [
-          {"name": "Atlanta Gas Light", "type": "utility", "coverage": "Most of metro Atlanta and urban areas"}
+          {
+            "name": "Atlanta Gas Light",
+            "type": "utility",
+            "coverage": "Most of metro Atlanta and urban areas"
+          }
         ],
         "key_insight": "Rural areas often have no piped natural gas - propane is common"
       },
       "data_status": {
-        "have": ["Atlanta Gas Light ZIP mapping"],
-        "missing": ["Precise service boundaries", "Propane-only areas"],
+        "have": [
+          "Atlanta Gas Light ZIP mapping"
+        ],
+        "missing": [
+          "Precise service boundaries",
+          "Propane-only areas"
+        ],
         "confidence": "medium"
       }
     },
@@ -57,14 +624,25 @@
       "landscape": {
         "description": "Highly fragmented - county water authorities, city utilities, private companies",
         "major_players": [
-          {"name": "County Water Authorities", "type": "municipal", "coverage": "Varies by county"},
-          {"name": "City utilities", "type": "municipal", "coverage": "Within city limits"}
+          {
+            "name": "County Water Authorities",
+            "type": "municipal",
+            "coverage": "Varies by county"
+          },
+          {
+            "name": "City utilities",
+            "type": "municipal",
+            "coverage": "Within city limits"
+          }
         ],
         "key_insight": "Water is very local - need county-level data"
       },
       "data_status": {
         "have": [],
-        "missing": ["County water authority boundaries", "City water service areas"],
+        "missing": [
+          "County water authority boundaries",
+          "City water service areas"
+        ],
         "confidence": "very_low"
       },
       "data_sources_to_acquire": [
@@ -77,23 +655,51 @@
       ]
     }
   },
-
   "TX": {
     "electric": {
       "landscape": {
         "description": "Deregulated retail market in ERCOT. TDUs handle delivery, REPs handle retail. Outside ERCOT: traditional utilities and co-ops.",
         "major_players": [
-          {"name": "Oncor", "type": "TDU", "coverage": "North/Central Texas including Dallas"},
-          {"name": "CenterPoint", "type": "TDU", "coverage": "Houston metro"},
-          {"name": "AEP Texas", "type": "TDU", "coverage": "South/West Texas"},
-          {"name": "TNMP", "type": "TDU", "coverage": "Parts of Central/East Texas"},
-          {"name": "Rural Co-ops", "type": "cooperative", "count": 75, "coverage": "Rural areas, some not in ERCOT"}
+          {
+            "name": "Oncor",
+            "type": "TDU",
+            "coverage": "North/Central Texas including Dallas"
+          },
+          {
+            "name": "CenterPoint",
+            "type": "TDU",
+            "coverage": "Houston metro"
+          },
+          {
+            "name": "AEP Texas",
+            "type": "TDU",
+            "coverage": "South/West Texas"
+          },
+          {
+            "name": "TNMP",
+            "type": "TDU",
+            "coverage": "Parts of Central/East Texas"
+          },
+          {
+            "name": "Rural Co-ops",
+            "type": "cooperative",
+            "count": 75,
+            "coverage": "Rural areas, some not in ERCOT"
+          }
         ],
-        "key_insight": "For residential, report the TDU as 'electric company' - they handle outages/connections. Co-ops like CoServ, Pedernales serve specific areas."
+        "key_insight": "Dallas: Oncor serves Dallas, most of Collin County (Plano, McKinney). CoServ serves Denton County (Frisco west of DNT, Flower Mound, Lewisville). Boundary roughly follows Denton/Collin county line but CoServ extends into parts of Collin. Houston: CenterPoint serves Harris County core, co-ops serve Fort Bend, Brazoria outer areas.",
+        "boundary_notes": "Dallas: Oncor serves Dallas, most of Collin County (Plano, McKinney). CoServ serves Denton County (Frisco west of DNT, Flower Mound, Lewisville). Boundary roughly follows Denton/Collin county line but CoServ extends into parts of Collin. Houston: CenterPoint serves Harris County core, co-ops serve Fort Bend, Brazoria outer areas."
       },
       "data_status": {
-        "have": ["TDU boundaries (state GIS)", "Major co-op data"],
-        "missing": ["Complete co-op boundaries", "Municipal utility boundaries"],
+        "have": [
+          "TDU boundaries (state GIS)",
+          "Major co-op data"
+        ],
+        "missing": [
+          "Complete co-op boundaries",
+          "Municipal utility boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
         "confidence": "high_for_urban"
       },
       "data_sources_to_acquire": [
@@ -115,15 +721,32 @@
       "landscape": {
         "description": "Regulated market. Major providers by region.",
         "major_players": [
-          {"name": "Atmos Energy", "type": "utility", "coverage": "North/Central Texas, Dallas area"},
-          {"name": "CenterPoint Energy", "type": "utility", "coverage": "Houston metro"},
-          {"name": "Texas Gas Service", "type": "utility", "coverage": "Austin, Central Texas"}
+          {
+            "name": "Atmos Energy",
+            "type": "utility",
+            "coverage": "North/Central Texas, Dallas area"
+          },
+          {
+            "name": "CenterPoint Energy",
+            "type": "utility",
+            "coverage": "Houston metro"
+          },
+          {
+            "name": "Texas Gas Service",
+            "type": "utility",
+            "coverage": "Austin, Central Texas"
+          }
         ],
         "key_insight": "Gas is regulated (not deregulated like electric). Provider depends on location."
       },
       "data_status": {
-        "have": ["ZIP-level mapping for major providers"],
-        "missing": ["Precise boundaries", "Rural propane-only areas"],
+        "have": [
+          "ZIP-level mapping for major providers"
+        ],
+        "missing": [
+          "Precise boundaries",
+          "Rural propane-only areas"
+        ],
         "confidence": "medium"
       }
     },
@@ -131,15 +754,33 @@
       "landscape": {
         "description": "Extremely fragmented. 1000+ MUDs, city utilities, water districts, private companies.",
         "major_players": [
-          {"name": "City utilities", "type": "municipal", "coverage": "Within city limits"},
-          {"name": "MUDs", "type": "special_district", "count": 1000, "coverage": "Suburban developments"},
-          {"name": "Water districts", "type": "special_district", "coverage": "Various"}
+          {
+            "name": "City utilities",
+            "type": "municipal",
+            "coverage": "Within city limits"
+          },
+          {
+            "name": "MUDs",
+            "type": "special_district",
+            "count": 1000,
+            "coverage": "Suburban developments"
+          },
+          {
+            "name": "Water districts",
+            "type": "special_district",
+            "coverage": "Various"
+          }
         ],
         "key_insight": "MUDs are created for development financing but cities often take over service after annexation. TCEQ MUD boundaries may be stale."
       },
       "data_status": {
-        "have": ["TCEQ MUD boundaries", "Major city utilities"],
-        "missing": ["Accurate 'who actually serves' data - MUD vs city"],
+        "have": [
+          "TCEQ MUD boundaries",
+          "Major city utilities"
+        ],
+        "missing": [
+          "Accurate 'who actually serves' data - MUD vs city"
+        ],
         "confidence": "medium"
       },
       "data_sources_to_acquire": [
@@ -152,23 +793,50 @@
       ]
     }
   },
-
   "CA": {
     "electric": {
       "landscape": {
         "description": "Three large IOUs dominate, plus municipal utilities in major cities",
         "major_players": [
-          {"name": "PG&E", "type": "IOU", "coverage": "Northern and Central California"},
-          {"name": "SCE (Southern California Edison)", "type": "IOU", "coverage": "Southern California except San Diego and LA city"},
-          {"name": "SDG&E", "type": "IOU", "coverage": "San Diego area"},
-          {"name": "LADWP", "type": "municipal", "coverage": "Los Angeles city"},
-          {"name": "SMUD", "type": "municipal", "coverage": "Sacramento area"}
+          {
+            "name": "PG&E",
+            "type": "IOU",
+            "coverage": "Northern and Central California"
+          },
+          {
+            "name": "SCE (Southern California Edison)",
+            "type": "IOU",
+            "coverage": "Southern California except San Diego and LA city"
+          },
+          {
+            "name": "SDG&E",
+            "type": "IOU",
+            "coverage": "San Diego area"
+          },
+          {
+            "name": "LADWP",
+            "type": "municipal",
+            "coverage": "Los Angeles city"
+          },
+          {
+            "name": "SMUD",
+            "type": "municipal",
+            "coverage": "Sacramento area"
+          }
         ],
-        "key_insight": "Municipal utilities serve their city limits only. LADWP serves LA city, not LA county suburbs."
+        "key_insight": "Sacramento: SMUD serves Sacramento County (boundary is county line). LA area: LADWP serves LA city limits; Burbank, Glendale, Pasadena have own utilities within their city limits; SCE serves unincorporated areas and other cities.",
+        "boundary_notes": "Sacramento: SMUD serves Sacramento County (boundary is county line). LA area: LADWP serves LA city limits; Burbank, Glendale, Pasadena have own utilities within their city limits; SCE serves unincorporated areas and other cities."
       },
       "data_status": {
-        "have": ["IOU boundaries", "Major municipal boundaries"],
-        "missing": ["Smaller municipal utilities", "CCA (Community Choice Aggregator) boundaries"],
+        "have": [
+          "IOU boundaries",
+          "Major municipal boundaries"
+        ],
+        "missing": [
+          "Smaller municipal utilities",
+          "CCA (Community Choice Aggregator) boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
         "confidence": "high"
       }
     },
@@ -176,13 +844,27 @@
       "landscape": {
         "description": "SoCalGas dominates south, PG&E provides gas in north",
         "major_players": [
-          {"name": "SoCalGas", "type": "utility", "coverage": "Southern California"},
-          {"name": "PG&E", "type": "utility", "coverage": "Northern California"},
-          {"name": "SDG&E", "type": "utility", "coverage": "San Diego area"}
+          {
+            "name": "SoCalGas",
+            "type": "utility",
+            "coverage": "Southern California"
+          },
+          {
+            "name": "PG&E",
+            "type": "utility",
+            "coverage": "Northern California"
+          },
+          {
+            "name": "SDG&E",
+            "type": "utility",
+            "coverage": "San Diego area"
+          }
         ]
       },
       "data_status": {
-        "have": ["Major provider boundaries"],
+        "have": [
+          "Major provider boundaries"
+        ],
         "missing": [],
         "confidence": "high"
       }
@@ -191,36 +873,80 @@
       "landscape": {
         "description": "Extremely fragmented - hundreds of water districts, municipal utilities, private companies",
         "major_players": [
-          {"name": "LADWP", "type": "municipal", "coverage": "Los Angeles city"},
-          {"name": "MWD member agencies", "type": "various", "coverage": "Southern California"},
-          {"name": "EBMUD", "type": "municipal", "coverage": "East Bay"}
+          {
+            "name": "LADWP",
+            "type": "municipal",
+            "coverage": "Los Angeles city"
+          },
+          {
+            "name": "MWD member agencies",
+            "type": "various",
+            "coverage": "Southern California"
+          },
+          {
+            "name": "EBMUD",
+            "type": "municipal",
+            "coverage": "East Bay"
+          }
         ],
         "key_insight": "Water is very local. Many small districts and private companies."
       },
       "data_status": {
-        "have": ["Major municipal utilities"],
-        "missing": ["Small district boundaries", "Private water company service areas"],
+        "have": [
+          "Major municipal utilities"
+        ],
+        "missing": [
+          "Small district boundaries",
+          "Private water company service areas"
+        ],
         "confidence": "low"
       }
     }
   },
-
   "FL": {
     "electric": {
       "landscape": {
         "description": "FPL dominates, plus Duke, TECO, and municipal utilities",
         "major_players": [
-          {"name": "FPL (Florida Power & Light)", "type": "IOU", "coverage": "Most of Florida"},
-          {"name": "Duke Energy Florida", "type": "IOU", "coverage": "Central/North Florida"},
-          {"name": "TECO (Tampa Electric)", "type": "IOU", "coverage": "Tampa Bay area"},
-          {"name": "JEA", "type": "municipal", "coverage": "Jacksonville"},
-          {"name": "OUC", "type": "municipal", "coverage": "Orlando"}
+          {
+            "name": "FPL (Florida Power & Light)",
+            "type": "IOU",
+            "coverage": "Most of Florida"
+          },
+          {
+            "name": "Duke Energy Florida",
+            "type": "IOU",
+            "coverage": "Central/North Florida"
+          },
+          {
+            "name": "TECO (Tampa Electric)",
+            "type": "IOU",
+            "coverage": "Tampa Bay area"
+          },
+          {
+            "name": "JEA",
+            "type": "municipal",
+            "coverage": "Jacksonville"
+          },
+          {
+            "name": "OUC",
+            "type": "municipal",
+            "coverage": "Orlando"
+          }
         ],
-        "key_insight": "Municipal utilities serve their city limits. JEA serves Jacksonville, OUC serves Orlando."
+        "key_insight": "Tampa Bay: TECO serves Hillsborough County (Tampa), Duke serves Pinellas County (St. Pete, Clearwater). Boundary is roughly the bay/county line. Orlando: OUC serves within Orlando city limits, Duke/co-ops serve Orange County outside city.",
+        "boundary_notes": "Tampa Bay: TECO serves Hillsborough County (Tampa), Duke serves Pinellas County (St. Pete, Clearwater). Boundary is roughly the bay/county line. Orlando: OUC serves within Orlando city limits, Duke/co-ops serve Orange County outside city."
       },
       "data_status": {
-        "have": ["IOU boundaries", "Major municipal boundaries"],
-        "missing": ["Smaller municipal utilities", "Rural co-ops"],
+        "have": [
+          "IOU boundaries",
+          "Major municipal boundaries"
+        ],
+        "missing": [
+          "Smaller municipal utilities",
+          "Rural co-ops",
+          "Co-op/IOU boundary precision in split cities"
+        ],
         "confidence": "high"
       }
     },
@@ -228,14 +954,27 @@
       "landscape": {
         "description": "Limited piped gas coverage. TECO Peoples Gas and Florida City Gas are main providers.",
         "major_players": [
-          {"name": "TECO Peoples Gas", "type": "utility", "coverage": "Various areas"},
-          {"name": "Florida City Gas", "type": "utility", "coverage": "South Florida"}
+          {
+            "name": "TECO Peoples Gas",
+            "type": "utility",
+            "coverage": "Various areas"
+          },
+          {
+            "name": "Florida City Gas",
+            "type": "utility",
+            "coverage": "South Florida"
+          }
         ],
         "key_insight": "Many areas have no piped natural gas - propane is common in rural/suburban areas"
       },
       "data_status": {
-        "have": ["ZIP-level mapping"],
-        "missing": ["Precise boundaries", "Propane-only areas"],
+        "have": [
+          "ZIP-level mapping"
+        ],
+        "missing": [
+          "Precise boundaries",
+          "Propane-only areas"
+        ],
         "confidence": "medium"
       }
     },
@@ -243,32 +982,61 @@
       "landscape": {
         "description": "Mostly municipal utilities, some county utilities",
         "major_players": [
-          {"name": "City utilities", "type": "municipal", "coverage": "Within city limits"},
-          {"name": "County utilities", "type": "municipal", "coverage": "Unincorporated areas"}
+          {
+            "name": "City utilities",
+            "type": "municipal",
+            "coverage": "Within city limits"
+          },
+          {
+            "name": "County utilities",
+            "type": "municipal",
+            "coverage": "Unincorporated areas"
+          }
         ]
       },
       "data_status": {
-        "have": ["Major city utilities"],
-        "missing": ["County utility boundaries", "Private water companies"],
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "County utility boundaries",
+          "Private water companies"
+        ],
         "confidence": "medium"
       }
     }
   },
-
   "AZ": {
     "electric": {
       "landscape": {
         "description": "APS and SRP split Phoenix metro, TEP serves Tucson",
         "major_players": [
-          {"name": "APS (Arizona Public Service)", "type": "IOU", "coverage": "Most of Arizona, Phoenix west side"},
-          {"name": "SRP (Salt River Project)", "type": "quasi-municipal", "coverage": "Phoenix metro east side"},
-          {"name": "TEP (Tucson Electric Power)", "type": "IOU", "coverage": "Tucson area"}
+          {
+            "name": "APS (Arizona Public Service)",
+            "type": "IOU",
+            "coverage": "Most of Arizona, Phoenix west side"
+          },
+          {
+            "name": "SRP (Salt River Project)",
+            "type": "quasi-municipal",
+            "coverage": "Phoenix metro east side"
+          },
+          {
+            "name": "TEP (Tucson Electric Power)",
+            "type": "IOU",
+            "coverage": "Tucson area"
+          }
         ],
-        "key_insight": "APS vs SRP boundary is very specific in Phoenix metro. Address location matters a lot."
+        "key_insight": "Phoenix metro is split: SRP serves east of ~19th Ave (Tempe, Mesa, Chandler, Gilbert, east Phoenix, Scottsdale). APS serves west Phoenix, Glendale, Peoria, Surprise, Avondale. Boundary roughly follows 19th Ave in central Phoenix, Agua Fria River in west valley.",
+        "boundary_notes": "Phoenix metro is split: SRP serves east of ~19th Ave (Tempe, Mesa, Chandler, Gilbert, east Phoenix, Scottsdale). APS serves west Phoenix, Glendale, Peoria, Surprise, Avondale. Boundary roughly follows 19th Ave in central Phoenix, Agua Fria River in west valley."
       },
       "data_status": {
-        "have": ["APS/SRP/TEP boundaries"],
-        "missing": [],
+        "have": [
+          "APS/SRP/TEP boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
         "confidence": "high"
       }
     },
@@ -276,11 +1044,17 @@
       "landscape": {
         "description": "Southwest Gas serves most of the state",
         "major_players": [
-          {"name": "Southwest Gas", "type": "utility", "coverage": "Most of Arizona"}
+          {
+            "name": "Southwest Gas",
+            "type": "utility",
+            "coverage": "Most of Arizona"
+          }
         ]
       },
       "data_status": {
-        "have": ["Southwest Gas coverage"],
+        "have": [
+          "Southwest Gas coverage"
+        ],
         "missing": [],
         "confidence": "high"
       }
@@ -289,34 +1063,66 @@
       "landscape": {
         "description": "City utilities in incorporated areas, private companies in unincorporated areas",
         "major_players": [
-          {"name": "Phoenix Water", "type": "municipal", "coverage": "Phoenix city"},
-          {"name": "Tucson Water", "type": "municipal", "coverage": "Tucson city"},
-          {"name": "Private water companies", "type": "private", "coverage": "Unincorporated areas"}
+          {
+            "name": "Phoenix Water",
+            "type": "municipal",
+            "coverage": "Phoenix city"
+          },
+          {
+            "name": "Tucson Water",
+            "type": "municipal",
+            "coverage": "Tucson city"
+          },
+          {
+            "name": "Private water companies",
+            "type": "private",
+            "coverage": "Unincorporated areas"
+          }
         ],
         "key_insight": "Many private water companies in unincorporated Maricopa County"
       },
       "data_status": {
-        "have": ["Major city utilities"],
-        "missing": ["Private water company boundaries"],
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "Private water company boundaries"
+        ],
         "confidence": "medium"
       }
     }
   },
-
   "PA": {
     "electric": {
       "landscape": {
         "description": "Deregulated retail market. PECO, PPL, Duquesne are main distribution utilities.",
         "major_players": [
-          {"name": "PECO", "type": "utility", "coverage": "Philadelphia area (electric only in Philly proper)"},
-          {"name": "PPL", "type": "utility", "coverage": "Central and Eastern PA"},
-          {"name": "Duquesne Light", "type": "utility", "coverage": "Pittsburgh area"}
+          {
+            "name": "PECO",
+            "type": "utility",
+            "coverage": "Philadelphia area (electric only in Philly proper)"
+          },
+          {
+            "name": "PPL",
+            "type": "utility",
+            "coverage": "Central and Eastern PA"
+          },
+          {
+            "name": "Duquesne Light",
+            "type": "utility",
+            "coverage": "Pittsburgh area"
+          }
         ],
-        "key_insight": "Deregulated - distribution utility handles delivery, retail suppliers handle energy. Report distribution utility."
+        "key_insight": "Philadelphia: PECO serves Philadelphia and most of surrounding counties. PPL serves Lehigh Valley (Allentown, Bethlehem). Met-Ed serves Berks County (Reading). Boundaries follow county lines mostly.",
+        "boundary_notes": "Philadelphia: PECO serves Philadelphia and most of surrounding counties. PPL serves Lehigh Valley (Allentown, Bethlehem). Met-Ed serves Berks County (Reading). Boundaries follow county lines mostly."
       },
       "data_status": {
-        "have": ["Distribution utility boundaries"],
-        "missing": [],
+        "have": [
+          "Distribution utility boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
         "confidence": "high"
       }
     },
@@ -324,15 +1130,34 @@
       "landscape": {
         "description": "PECO provides gas in suburbs but NOT Philadelphia city. PGW serves Philly.",
         "major_players": [
-          {"name": "Philadelphia Gas Works (PGW)", "type": "municipal", "coverage": "Philadelphia city proper"},
-          {"name": "PECO", "type": "utility", "coverage": "Philadelphia suburbs (NOT city)"},
-          {"name": "UGI", "type": "utility", "coverage": "Central PA"},
-          {"name": "Columbia Gas", "type": "utility", "coverage": "Western PA"}
+          {
+            "name": "Philadelphia Gas Works (PGW)",
+            "type": "municipal",
+            "coverage": "Philadelphia city proper"
+          },
+          {
+            "name": "PECO",
+            "type": "utility",
+            "coverage": "Philadelphia suburbs (NOT city)"
+          },
+          {
+            "name": "UGI",
+            "type": "utility",
+            "coverage": "Central PA"
+          },
+          {
+            "name": "Columbia Gas",
+            "type": "utility",
+            "coverage": "Western PA"
+          }
         ],
         "key_insight": "CRITICAL: PECO is electric-only in Philadelphia city. PGW is the gas utility for Philly. This is a common point of confusion."
       },
       "data_status": {
-        "have": ["PGW boundary", "Major utility boundaries"],
+        "have": [
+          "PGW boundary",
+          "Major utility boundaries"
+        ],
         "missing": [],
         "confidence": "high"
       }
@@ -341,19 +1166,2345 @@
       "landscape": {
         "description": "Municipal utilities in cities, Pennsylvania American Water in many areas",
         "major_players": [
-          {"name": "Philadelphia Water Department", "type": "municipal", "coverage": "Philadelphia"},
-          {"name": "Pittsburgh Water", "type": "municipal", "coverage": "Pittsburgh"},
-          {"name": "Pennsylvania American Water", "type": "private", "coverage": "Various areas statewide"}
+          {
+            "name": "Philadelphia Water Department",
+            "type": "municipal",
+            "coverage": "Philadelphia"
+          },
+          {
+            "name": "Pittsburgh Water",
+            "type": "municipal",
+            "coverage": "Pittsburgh"
+          },
+          {
+            "name": "Pennsylvania American Water",
+            "type": "private",
+            "coverage": "Various areas statewide"
+          }
         ]
       },
       "data_status": {
-        "have": ["Major city utilities"],
-        "missing": ["PA American Water precise boundaries"],
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [
+          "PA American Water precise boundaries"
+        ],
         "confidence": "medium"
       }
     }
   },
-
+  "HI": {
+    "electric": {
+      "landscape": {
+        "description": "Hawaiian Electric serves most islands, Kauai has its own cooperative",
+        "major_players": [
+          {
+            "name": "Hawaiian Electric (HECO)",
+            "type": "IOU",
+            "coverage": "Oahu"
+          },
+          {
+            "name": "Maui Electric (MECO)",
+            "type": "IOU",
+            "coverage": "Maui, Lanai, Molokai"
+          },
+          {
+            "name": "Hawaii Electric Light (HELCO)",
+            "type": "IOU",
+            "coverage": "Big Island"
+          },
+          {
+            "name": "Kauai Island Utility Cooperative (KIUC)",
+            "type": "cooperative",
+            "coverage": "Kauai"
+          }
+        ],
+        "key_insight": "Each island has its own grid. HECO/MECO/HELCO are all under Hawaiian Electric Industries. Kauai is separate (KIUC)."
+      },
+      "data_status": {
+        "have": [
+          "Island-level utility mapping"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Hawaii Gas provides propane/synthetic gas, no natural gas pipelines",
+        "major_players": [
+          {
+            "name": "Hawaii Gas",
+            "type": "utility",
+            "coverage": "Oahu and parts of other islands"
+          }
+        ],
+        "key_insight": "Hawaii has no natural gas - Hawaii Gas provides synthetic natural gas and propane"
+      },
+      "data_status": {
+        "have": [
+          "Hawaii Gas coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "County water departments serve each island",
+        "major_players": [
+          {
+            "name": "Honolulu Board of Water Supply",
+            "type": "municipal",
+            "coverage": "Oahu"
+          },
+          {
+            "name": "Maui County DWS",
+            "type": "municipal",
+            "coverage": "Maui County"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "County water departments"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "ID": {
+    "electric": {
+      "landscape": {
+        "description": "Idaho Power dominates south, Avista in north, plus co-ops",
+        "major_players": [
+          {
+            "name": "Idaho Power",
+            "type": "IOU",
+            "coverage": "Southern Idaho including Boise"
+          },
+          {
+            "name": "Avista",
+            "type": "IOU",
+            "coverage": "Northern Idaho panhandle"
+          },
+          {
+            "name": "Rocky Mountain Power",
+            "type": "IOU",
+            "coverage": "Eastern Idaho"
+          }
+        ],
+        "key_insight": "Idaho is split - Idaho Power in south, Avista in north (Coeur d'Alene area), Rocky Mountain Power in east."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Intermountain Gas serves most of the state",
+        "major_players": [
+          {
+            "name": "Intermountain Gas",
+            "type": "utility",
+            "coverage": "Most of Idaho"
+          },
+          {
+            "name": "Avista",
+            "type": "utility",
+            "coverage": "Northern Idaho"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities and private water companies",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "IL": {
+    "electric": {
+      "landscape": {
+        "description": "ComEd dominates northern Illinois, Ameren in central/south",
+        "major_players": [
+          {
+            "name": "ComEd",
+            "type": "IOU",
+            "coverage": "Northern Illinois including Chicago"
+          },
+          {
+            "name": "Ameren Illinois",
+            "type": "IOU",
+            "coverage": "Central and Southern Illinois"
+          }
+        ],
+        "key_insight": "Illinois is deregulated - ComEd/Ameren handle delivery. Chicago city gas is Peoples Gas, suburbs are Nicor Gas. | SPLIT-UTILITY CITIES: Chicago suburbs: ComEd / municipal (Some suburbs have municipal utilities); Springfield: CWLP / Ameren (City Water Light & Power vs Ameren in suburbs)"
+      },
+      "data_status": {
+        "have": [
+          "ComEd/Ameren boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Nicor Gas in north suburbs, Peoples Gas in Chicago city",
+        "major_players": [
+          {
+            "name": "Peoples Gas",
+            "type": "utility",
+            "coverage": "Chicago city"
+          },
+          {
+            "name": "Nicor Gas",
+            "type": "utility",
+            "coverage": "Northern Illinois suburbs"
+          },
+          {
+            "name": "Ameren Illinois",
+            "type": "utility",
+            "coverage": "Central and Southern Illinois"
+          }
+        ],
+        "key_insight": "CRITICAL: Chicago city is Peoples Gas, suburbs are Nicor Gas - this is a key distinction."
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Chicago DWM and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "IN": {
+    "electric": {
+      "landscape": {
+        "description": "Multiple IOUs serve different regions",
+        "major_players": [
+          {
+            "name": "Duke Energy Indiana",
+            "type": "IOU",
+            "coverage": "Central Indiana"
+          },
+          {
+            "name": "AES Indiana",
+            "type": "IOU",
+            "coverage": "Indianapolis area"
+          },
+          {
+            "name": "NIPSCO",
+            "type": "IOU",
+            "coverage": "Northern Indiana"
+          }
+        ],
+        "key_insight": "Indianapolis: AES Indiana serves Marion County core and downtown. Duke Energy serves surrounding counties and parts of Marion County (west/south). Boundary is complex within Marion County - roughly west of I-465 on south side is Duke.",
+        "boundary_notes": "Indianapolis: AES Indiana serves Marion County core and downtown. Duke Energy serves surrounding counties and parts of Marion County (west/south). Boundary is complex within Marion County - roughly west of I-465 on south side is Duke."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "CenterPoint Energy and NIPSCO",
+        "major_players": [
+          {
+            "name": "CenterPoint Energy",
+            "type": "utility",
+            "coverage": "Indianapolis and central Indiana"
+          },
+          {
+            "name": "NIPSCO",
+            "type": "utility",
+            "coverage": "Northern Indiana"
+          }
+        ]
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Citizens Water in Indianapolis",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "IA": {
+    "electric": {
+      "landscape": {
+        "description": "MidAmerican and Alliant Energy split the state, plus many municipal utilities",
+        "major_players": [
+          {
+            "name": "MidAmerican Energy",
+            "type": "IOU",
+            "coverage": "Western and central Iowa including Des Moines"
+          },
+          {
+            "name": "Alliant Energy",
+            "type": "IOU",
+            "coverage": "Eastern Iowa including Cedar Rapids"
+          }
+        ],
+        "key_insight": "Iowa has 135 municipal utilities - don't assume IOU for all cities. Ames, Muscatine, Cedar Falls have their own utilities."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Some municipal boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "MidAmerican and Black Hills Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities serve most cities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "KS": {
+    "electric": {
+      "landscape": {
+        "description": "Evergy dominates eastern Kansas, co-ops in west",
+        "major_players": [
+          {
+            "name": "Evergy",
+            "type": "IOU",
+            "coverage": "Eastern Kansas including Kansas City, Topeka, Wichita"
+          }
+        ],
+        "key_insight": "Western Kansas has many co-ops and municipal utilities. Evergy dominates the eastern population centers."
+      },
+      "data_status": {
+        "have": [
+          "Evergy boundaries"
+        ],
+        "missing": [
+          "Western Kansas co-op boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Kansas Gas Service (ONE Gas)",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "WaterOne in Johnson County, municipal utilities elsewhere",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "KY": {
+    "electric": {
+      "landscape": {
+        "description": "LG&E/KU in central, Duke in north, TVA distributors in west",
+        "major_players": [
+          {
+            "name": "LG&E and KU",
+            "type": "IOU",
+            "coverage": "Louisville and central Kentucky"
+          },
+          {
+            "name": "Duke Energy Kentucky",
+            "type": "IOU",
+            "coverage": "Northern Kentucky (Cincinnati suburbs)"
+          },
+          {
+            "name": "TVA Distributors",
+            "type": "municipal/coop",
+            "coverage": "Western Kentucky"
+          }
+        ],
+        "key_insight": "Kentucky is complex - different utilities in each region. Western KY is TVA territory, northern KY is Duke. | SPLIT-UTILITY CITIES: Louisville suburbs: LG&E / co-ops (Salt River Electric, Shelby Energy in suburbs); Lexington suburbs: Kentucky Utilities / co-ops (Blue Grass Energy, Clark Energy in suburbs)"
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "LG&E in Louisville, Duke in north",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Louisville Water Company and Kentucky American Water",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "LA": {
+    "electric": {
+      "landscape": {
+        "description": "Entergy Louisiana dominates, plus SWEPCO in northwest",
+        "major_players": [
+          {
+            "name": "Entergy Louisiana",
+            "type": "IOU",
+            "coverage": "Most of Louisiana including New Orleans, Baton Rouge"
+          },
+          {
+            "name": "SWEPCO",
+            "type": "IOU",
+            "coverage": "Northwest Louisiana (Shreveport area)"
+          },
+          {
+            "name": "Cleco",
+            "type": "IOU",
+            "coverage": "Central Louisiana"
+          }
+        ],
+        "key_insight": "Shreveport area is SWEPCO, not Entergy. Cleco serves central Louisiana around Alexandria."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Entergy and Atmos Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Sewerage & Water Board in New Orleans",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "ME": {
+    "electric": {
+      "landscape": {
+        "description": "Central Maine Power dominates, Versant in north",
+        "major_players": [
+          {
+            "name": "Central Maine Power (CMP)",
+            "type": "IOU",
+            "coverage": "Southern and central Maine"
+          },
+          {
+            "name": "Versant Power",
+            "type": "IOU",
+            "coverage": "Northern and eastern Maine"
+          }
+        ],
+        "key_insight": "Maine is deregulated - CMP/Versant handle delivery, customers can choose retail suppliers."
+      },
+      "data_status": {
+        "have": [
+          "CMP/Versant boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Limited natural gas - heating oil and propane common",
+        "major_players": [],
+        "key_insight": "Most of Maine has no piped natural gas"
+      },
+      "data_status": {
+        "have": [],
+        "missing": [],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Portland Water District and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "MD": {
+    "electric": {
+      "landscape": {
+        "description": "BGE in Baltimore, Pepco in DC suburbs, others in rural areas",
+        "major_players": [
+          {
+            "name": "BGE",
+            "type": "IOU",
+            "coverage": "Baltimore metro and central Maryland"
+          },
+          {
+            "name": "Pepco",
+            "type": "IOU",
+            "coverage": "DC suburbs (Montgomery, Prince George's counties)"
+          },
+          {
+            "name": "Delmarva Power",
+            "type": "IOU",
+            "coverage": "Eastern Shore"
+          },
+          {
+            "name": "SMECO",
+            "type": "cooperative",
+            "coverage": "Southern Maryland"
+          }
+        ],
+        "key_insight": "Maryland is deregulated. DC suburbs are Pepco, Baltimore area is BGE. SMECO serves southern Maryland."
+      },
+      "data_status": {
+        "have": [
+          "Utility boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "BGE in Baltimore, Washington Gas in DC suburbs",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "WSSC Water in DC suburbs, Baltimore City DPW",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "MA": {
+    "electric": {
+      "landscape": {
+        "description": "National Grid and Eversource dominate, plus 40 municipal utilities",
+        "major_players": [
+          {
+            "name": "National Grid",
+            "type": "IOU",
+            "coverage": "Eastern Massachusetts including Boston suburbs"
+          },
+          {
+            "name": "Eversource",
+            "type": "IOU",
+            "coverage": "Eastern and western Massachusetts"
+          }
+        ],
+        "key_insight": "Massachusetts is deregulated. Many towns have municipal utilities - check before assuming National Grid or Eversource. | SPLIT-UTILITY CITIES: Boston suburbs: National Grid / Eversource / municipal (40+ municipal utilities in MA); Braintree, Wellesley, etc.: Municipal utilities (Many towns have own electric)"
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries",
+          "Municipal utility list"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "National Grid and Eversource provide gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "MWRA supplies Boston area wholesale, municipal utilities retail",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "MI": {
+    "electric": {
+      "landscape": {
+        "description": "DTE and Consumers Energy split the state",
+        "major_players": [
+          {
+            "name": "DTE Energy",
+            "type": "IOU",
+            "coverage": "Southeast Michigan including Detroit"
+          },
+          {
+            "name": "Consumers Energy",
+            "type": "IOU",
+            "coverage": "Most of Lower Peninsula except southeast"
+          }
+        ],
+        "key_insight": "Detroit metro: DTE serves Wayne, Oakland, Macomb counties (Detroit, most suburbs). Consumers Energy serves Washtenaw (Ann Arbor), Livingston, western Oakland. Boundary roughly runs through western Oakland County.",
+        "boundary_notes": "Detroit metro: DTE serves Wayne, Oakland, Macomb counties (Detroit, most suburbs). Consumers Energy serves Washtenaw (Ann Arbor), Livingston, western Oakland. Boundary roughly runs through western Oakland County."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "DTE and Consumers Energy provide gas in their electric territories",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Great Lakes Water Authority in Detroit area",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "MN": {
+    "electric": {
+      "landscape": {
+        "description": "Xcel Energy dominates Twin Cities, co-ops and municipals elsewhere",
+        "major_players": [
+          {
+            "name": "Xcel Energy",
+            "type": "IOU",
+            "coverage": "Twin Cities metro and southern Minnesota"
+          },
+          {
+            "name": "Minnesota Power",
+            "type": "IOU",
+            "coverage": "Northeastern Minnesota (Duluth)"
+          }
+        ],
+        "key_insight": "Twin Cities: Xcel serves Minneapolis, St. Paul, close-in suburbs. Dakota Electric serves south suburbs (Eagan, Apple Valley, Burnsville - south of I-494). Connexus serves Anoka County north. Wright-Hennepin serves west.",
+        "boundary_notes": "Twin Cities: Xcel serves Minneapolis, St. Paul, close-in suburbs. Dakota Electric serves south suburbs (Eagan, Apple Valley, Burnsville - south of I-494). Connexus serves Anoka County north. Wright-Hennepin serves west."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Some municipal and co-op boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "CenterPoint Energy and Xcel Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities serve most cities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "MS": {
+    "electric": {
+      "landscape": {
+        "description": "Entergy Mississippi dominates, plus TVA in northeast",
+        "major_players": [
+          {
+            "name": "Entergy Mississippi",
+            "type": "IOU",
+            "coverage": "Most of Mississippi including Jackson"
+          },
+          {
+            "name": "TVA Distributors",
+            "type": "municipal/coop",
+            "coverage": "Northeast Mississippi (Tupelo area)"
+          },
+          {
+            "name": "Mississippi Power",
+            "type": "IOU",
+            "coverage": "Southeast Mississippi coast"
+          }
+        ],
+        "key_insight": "Northeast Mississippi (Tupelo, Columbus) is TVA territory, not Entergy. Gulf Coast is Mississippi Power."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Atmos Energy and CenterPoint Energy",
+        "key_insight": "Rural areas often have no piped gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities and rural water associations",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "MO": {
+    "electric": {
+      "landscape": {
+        "description": "Ameren and Evergy split the state",
+        "major_players": [
+          {
+            "name": "Ameren Missouri",
+            "type": "IOU",
+            "coverage": "Eastern Missouri including St. Louis"
+          },
+          {
+            "name": "Evergy Missouri",
+            "type": "IOU",
+            "coverage": "Western Missouri including Kansas City"
+          }
+        ],
+        "key_insight": "St. Louis is Ameren, Kansas City is Evergy. Springfield has its own municipal utility (City Utilities). | SPLIT-UTILITY CITIES: St. Louis suburbs: Ameren / co-ops (Co-ops serve outer suburbs); Kansas City suburbs: Evergy / co-ops (Co-ops in rural areas)"
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Spire Missouri dominates",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Missouri American Water and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "MT": {
+    "electric": {
+      "landscape": {
+        "description": "NorthWestern Energy dominates, plus co-ops",
+        "major_players": [
+          {
+            "name": "NorthWestern Energy",
+            "type": "IOU",
+            "coverage": "Most of Montana"
+          }
+        ],
+        "key_insight": "Montana is deregulated for large customers. NorthWestern serves most residential customers."
+      },
+      "data_status": {
+        "have": [
+          "NorthWestern boundaries"
+        ],
+        "missing": [
+          "Co-op boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "NorthWestern Energy in urban areas",
+        "key_insight": "Rural Montana often has no piped gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "NorthWestern coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities in cities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "NE": {
+    "electric": {
+      "landscape": {
+        "description": "Nebraska is 100% public power - no IOUs",
+        "major_players": [
+          {
+            "name": "OPPD",
+            "type": "public",
+            "coverage": "Omaha metro and eastern Nebraska"
+          },
+          {
+            "name": "LES",
+            "type": "municipal",
+            "coverage": "Lincoln"
+          },
+          {
+            "name": "NPPD",
+            "type": "public",
+            "coverage": "Most of rural Nebraska"
+          }
+        ],
+        "key_insight": "Nebraska is unique - entirely public power, no investor-owned utilities. OPPD serves Omaha, LES serves Lincoln."
+      },
+      "data_status": {
+        "have": [
+          "Public power district boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Black Hills Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "MUD in Omaha, Lincoln Water System",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "NV": {
+    "electric": {
+      "landscape": {
+        "description": "NV Energy serves most of the state",
+        "major_players": [
+          {
+            "name": "NV Energy",
+            "type": "IOU",
+            "coverage": "Las Vegas and Reno areas, most of Nevada"
+          }
+        ],
+        "key_insight": "NV Energy serves both Las Vegas (Nevada Power) and Reno (Sierra Pacific) - same company, different divisions."
+      },
+      "data_status": {
+        "have": [
+          "NV Energy boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Southwest Gas serves urban areas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Southwest Gas coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Las Vegas Valley Water District and Truckee Meadows Water Authority",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "NH": {
+    "electric": {
+      "landscape": {
+        "description": "Eversource dominates, plus Liberty and co-ops",
+        "major_players": [
+          {
+            "name": "Eversource",
+            "type": "IOU",
+            "coverage": "Most of New Hampshire"
+          },
+          {
+            "name": "Liberty Utilities",
+            "type": "IOU",
+            "coverage": "Parts of New Hampshire"
+          }
+        ],
+        "key_insight": "New Hampshire is deregulated - distribution utilities handle delivery, customers can choose retail suppliers."
+      },
+      "data_status": {
+        "have": [
+          "Utility boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Limited coverage",
+        "key_insight": "Much of NH has no piped gas - propane and heating oil common",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [],
+        "missing": [],
+        "confidence": "medium"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Manchester Water Works and Pennichuck Water",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "NJ": {
+    "electric": {
+      "landscape": {
+        "description": "PSE&G dominates north/central, JCP&L in central, ACE in south",
+        "major_players": [
+          {
+            "name": "PSE&G",
+            "type": "IOU",
+            "coverage": "Northern and central New Jersey"
+          },
+          {
+            "name": "JCP&L",
+            "type": "IOU",
+            "coverage": "Central New Jersey"
+          },
+          {
+            "name": "Atlantic City Electric",
+            "type": "IOU",
+            "coverage": "Southern New Jersey"
+          }
+        ],
+        "key_insight": "New Jersey is deregulated. PSE&G serves Newark/Jersey City, JCP&L serves shore areas, ACE serves south. | SPLIT-UTILITY CITIES: Central NJ: PSE&G / JCP&L (Boundary runs through Middlesex, Monmouth counties)"
+      },
+      "data_status": {
+        "have": [
+          "Utility boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "PSE&G, New Jersey Natural Gas, South Jersey Gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "New Jersey American Water and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "NM": {
+    "electric": {
+      "landscape": {
+        "description": "PNM dominates, plus El Paso Electric in south",
+        "major_players": [
+          {
+            "name": "PNM",
+            "type": "IOU",
+            "coverage": "Albuquerque and northern New Mexico"
+          },
+          {
+            "name": "El Paso Electric",
+            "type": "IOU",
+            "coverage": "Las Cruces and southern New Mexico"
+          },
+          {
+            "name": "Xcel Energy (SPS)",
+            "type": "IOU",
+            "coverage": "Eastern New Mexico"
+          }
+        ],
+        "key_insight": "Albuquerque is PNM, Las Cruces is El Paso Electric, eastern NM is Xcel (SPS)."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "New Mexico Gas Company serves most urban areas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "NM Gas coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Albuquerque Bernalillo County Water Utility Authority",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "NY": {
+    "electric": {
+      "landscape": {
+        "description": "Con Edison in NYC, National Grid upstate, PSEG Long Island",
+        "major_players": [
+          {
+            "name": "Con Edison",
+            "type": "IOU",
+            "coverage": "New York City and Westchester"
+          },
+          {
+            "name": "National Grid",
+            "type": "IOU",
+            "coverage": "Upstate New York including Buffalo, Syracuse, Albany"
+          },
+          {
+            "name": "PSEG Long Island",
+            "type": "IOU",
+            "coverage": "Long Island"
+          }
+        ],
+        "key_insight": "New York is deregulated. Con Edison serves NYC, PSEG Long Island serves LI, National Grid serves upstate. | SPLIT-UTILITY CITIES: Long Island: PSEG LI only (No split - PSEG LI serves all); Westchester: Con Edison / NYSEG (Northern Westchester is NYSEG)"
+      },
+      "data_status": {
+        "have": [
+          "Utility boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Con Edison in Manhattan/Bronx, National Grid in Brooklyn/Staten Island/upstate",
+        "key_insight": "Gas service in NYC varies by borough",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "NYC DEP in city, municipal utilities elsewhere",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "NC": {
+    "electric": {
+      "landscape": {
+        "description": "Duke Energy dominates, plus Dominion in northeast and 26 rural electric cooperatives",
+        "major_players": [
+          {
+            "name": "Duke Energy Carolinas",
+            "type": "IOU",
+            "coverage": "Western and central North Carolina"
+          },
+          {
+            "name": "Duke Energy Progress",
+            "type": "IOU",
+            "coverage": "Eastern North Carolina"
+          },
+          {
+            "name": "Dominion Energy",
+            "type": "IOU",
+            "coverage": "Northeastern North Carolina"
+          },
+          {
+            "name": "Wake Electric Membership Corporation",
+            "type": "cooperative",
+            "coverage": "Parts of Wake, Franklin, Durham, Granville, Nash counties"
+          },
+          {
+            "name": "Piedmont Electric",
+            "type": "cooperative",
+            "coverage": "Parts of Orange, Durham, Caswell, Person, Alamance counties"
+          },
+          {
+            "name": "Rural Electric Cooperatives",
+            "type": "cooperative",
+            "count": 26,
+            "coverage": "Rural areas statewide"
+          }
+        ],
+        "key_insight": "Triangle: Duke serves Raleigh, Durham, Chapel Hill cores. Wake Electric serves northeast Wake County (Wake Forest east of Capital Blvd, Rolesville, Zebulon). Piedmont Electric serves Orange/Durham county rural areas. Boundary doesn't follow city limits.",
+        "boundary_notes": "Triangle: Duke serves Raleigh, Durham, Chapel Hill cores. Wake Electric serves northeast Wake County (Wake Forest east of Capital Blvd, Rolesville, Zebulon). Piedmont Electric serves Orange/Durham county rural areas. Boundary doesn't follow city limits."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Electric cooperative precise boundaries",
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high_for_urban_duke"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Piedmont Natural Gas and Enbridge Gas NC (formerly PSNC Energy/Dominion) are main providers",
+        "major_players": [
+          {
+            "name": "Piedmont Natural Gas",
+            "type": "utility",
+            "coverage": "Charlotte, Triangle, Triad areas"
+          },
+          {
+            "name": "Enbridge Gas North Carolina",
+            "type": "utility",
+            "coverage": "Triangle area, eastern NC (formerly PSNC Energy)"
+          },
+          {
+            "name": "Dominion Energy",
+            "type": "utility",
+            "coverage": "Eastern North Carolina"
+          }
+        ],
+        "key_insight": "PSNC Energy rebranded to Enbridge Gas NC. Wake Forest area is served by Enbridge Gas NC, not Piedmont."
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Charlotte Water, Raleigh Water, municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "ND": {
+    "electric": {
+      "landscape": {
+        "description": "Multiple utilities serve different regions",
+        "major_players": [
+          {
+            "name": "Xcel Energy",
+            "type": "IOU",
+            "coverage": "Fargo area"
+          },
+          {
+            "name": "Montana-Dakota Utilities",
+            "type": "IOU",
+            "coverage": "Western North Dakota including Bismarck"
+          }
+        ],
+        "key_insight": "Fargo is Xcel, Bismarck is MDU. Many rural areas served by co-ops."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Montana-Dakota Utilities and Xcel Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "OH": {
+    "electric": {
+      "landscape": {
+        "description": "Multiple IOUs serve different regions",
+        "major_players": [
+          {
+            "name": "AEP Ohio",
+            "type": "IOU",
+            "coverage": "Columbus and central/southern Ohio"
+          },
+          {
+            "name": "Duke Energy Ohio",
+            "type": "IOU",
+            "coverage": "Cincinnati area"
+          },
+          {
+            "name": "FirstEnergy",
+            "type": "IOU",
+            "coverage": "Northern Ohio including Cleveland"
+          },
+          {
+            "name": "Dayton Power & Light",
+            "type": "IOU",
+            "coverage": "Dayton area"
+          }
+        ],
+        "key_insight": "Columbus: AEP serves Franklin County core. South Central Power serves Pickaway, Fairfield counties (south of I-270). Consolidated Cooperative serves Delaware County (north of I-270). Boundaries roughly follow county lines.",
+        "boundary_notes": "Columbus: AEP serves Franklin County core. South Central Power serves Pickaway, Fairfield counties (south of I-270). Consolidated Cooperative serves Delaware County (north of I-270). Boundaries roughly follow county lines."
+      },
+      "data_status": {
+        "have": [
+          "Utility boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Columbia Gas, Duke Energy, Dominion Energy by region",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Cleveland Water, Columbus Water, Cincinnati Water Works",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "OK": {
+    "electric": {
+      "landscape": {
+        "description": "OG&E and PSO split the state",
+        "major_players": [
+          {
+            "name": "OG&E",
+            "type": "IOU",
+            "coverage": "Oklahoma City and central Oklahoma"
+          },
+          {
+            "name": "PSO",
+            "type": "IOU",
+            "coverage": "Tulsa and eastern Oklahoma"
+          }
+        ],
+        "key_insight": "Oklahoma City is OG&E, Tulsa is PSO. Many rural areas served by co-ops."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Oklahoma Natural Gas (ONE Gas)",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "ONG coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Oklahoma City Utilities, Tulsa Water",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "OR": {
+    "electric": {
+      "landscape": {
+        "description": "PGE and Pacific Power split the state, including within Portland city limits",
+        "major_players": [
+          {
+            "name": "Portland General Electric (PGE)",
+            "type": "IOU",
+            "coverage": "Most of Portland metro and northwest Oregon"
+          },
+          {
+            "name": "Pacific Power (PacifiCorp)",
+            "type": "IOU",
+            "coverage": "Parts of NE/SE Portland, southern and eastern Oregon"
+          },
+          {
+            "name": "EWEB",
+            "type": "municipal",
+            "coverage": "Eugene"
+          }
+        ],
+        "key_insight": "Portland: PGE serves most of Portland west of ~42nd Ave. Pacific Power serves NE Portland east of ~42nd Ave, parts of SE Portland east of 82nd Ave, and Gresham. Boundary runs roughly north-south through east Portland.",
+        "boundary_notes": "Portland: PGE serves most of Portland west of ~42nd Ave. Pacific Power serves NE Portland east of ~42nd Ave, parts of SE Portland east of 82nd Ave, and Gresham. Boundary runs roughly north-south through east Portland."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Precise PGE/Pacific Power boundary within Portland",
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "medium_for_portland"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "NW Natural dominates western Oregon",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Portland Water Bureau and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "RI": {
+    "electric": {
+      "landscape": {
+        "description": "Rhode Island Energy serves the entire state",
+        "major_players": [
+          {
+            "name": "Rhode Island Energy",
+            "type": "IOU",
+            "coverage": "Entire state"
+          }
+        ],
+        "key_insight": "Rhode Island Energy (PPL) serves essentially the entire state. Simple utility landscape."
+      },
+      "data_status": {
+        "have": [
+          "Statewide coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Rhode Island Energy provides gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Statewide coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Providence Water and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major utility coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "SC": {
+    "electric": {
+      "landscape": {
+        "description": "Duke Energy and Dominion split the state",
+        "major_players": [
+          {
+            "name": "Duke Energy Carolinas",
+            "type": "IOU",
+            "coverage": "Upstate South Carolina"
+          },
+          {
+            "name": "Dominion Energy SC",
+            "type": "IOU",
+            "coverage": "Lowcountry and Midlands including Charleston, Columbia"
+          },
+          {
+            "name": "Santee Cooper",
+            "type": "public",
+            "coverage": "Parts of coastal SC"
+          }
+        ],
+        "key_insight": "Charleston and Columbia are Dominion, Greenville/Spartanburg are Duke. Santee Cooper is state-owned. | SPLIT-UTILITY CITIES: Columbia suburbs: Dominion / co-ops (Mid-Carolina Electric, Newberry Electric in suburbs); Charleston suburbs: Dominion / Berkeley Electric (Berkeley Electric co-op in north)"
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Dominion Energy and Piedmont Natural Gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Charleston Water System, Columbia Water, Greenville Water",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "SD": {
+    "electric": {
+      "landscape": {
+        "description": "Multiple utilities serve different regions",
+        "major_players": [
+          {
+            "name": "Xcel Energy",
+            "type": "IOU",
+            "coverage": "Sioux Falls area"
+          },
+          {
+            "name": "Black Hills Energy",
+            "type": "IOU",
+            "coverage": "Rapid City and western South Dakota"
+          },
+          {
+            "name": "NorthWestern Energy",
+            "type": "IOU",
+            "coverage": "Parts of South Dakota"
+          }
+        ],
+        "key_insight": "Sioux Falls is Xcel, Rapid City is Black Hills Energy."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op boundaries"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "NorthWestern Energy and Black Hills Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "TN": {
+    "electric": {
+      "landscape": {
+        "description": "TVA territory - all power comes from TVA, distributed by local utilities",
+        "major_players": [
+          {
+            "name": "Nashville Electric Service",
+            "type": "municipal",
+            "coverage": "Nashville"
+          },
+          {
+            "name": "Memphis Light Gas & Water",
+            "type": "municipal",
+            "coverage": "Memphis"
+          },
+          {
+            "name": "Knoxville Utilities Board",
+            "type": "municipal",
+            "coverage": "Knoxville"
+          },
+          {
+            "name": "EPB",
+            "type": "municipal",
+            "coverage": "Chattanooga"
+          }
+        ],
+        "key_insight": "Tennessee is 100% TVA territory. Local municipal utilities and co-ops distribute power. No IOUs. | SPLIT-UTILITY CITIES: Nashville suburbs: NES / Middle TN EMC (MTEMC serves Williamson, Rutherford counties); Memphis suburbs: MLGW / Southwest TN EMC (Co-op serves DeSoto County MS suburbs)"
+      },
+      "data_status": {
+        "have": [
+          "TVA distributor list"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Piedmont Natural Gas in Nashville area, MLGW in Memphis",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities - Nashville Water, MLGW, KUB",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "UT": {
+    "electric": {
+      "landscape": {
+        "description": "Rocky Mountain Power dominates",
+        "major_players": [
+          {
+            "name": "Rocky Mountain Power",
+            "type": "IOU",
+            "coverage": "Most of Utah including Salt Lake City"
+          }
+        ],
+        "key_insight": "Rocky Mountain Power (PacifiCorp) serves most of Utah. Some municipal utilities exist."
+      },
+      "data_status": {
+        "have": [
+          "RMP boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Dominion Energy Utah",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Dominion coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Salt Lake City Public Utilities and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "VT": {
+    "electric": {
+      "landscape": {
+        "description": "Green Mountain Power dominates",
+        "major_players": [
+          {
+            "name": "Green Mountain Power",
+            "type": "IOU",
+            "coverage": "Most of Vermont"
+          }
+        ],
+        "key_insight": "Green Mountain Power serves about 75% of Vermont. Burlington has its own municipal utility."
+      },
+      "data_status": {
+        "have": [
+          "GMP boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Vermont Gas Systems serves limited areas",
+        "key_insight": "Most of Vermont has no piped gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "VGS coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "VA": {
+    "electric": {
+      "landscape": {
+        "description": "Dominion Energy dominates, Appalachian Power in southwest",
+        "major_players": [
+          {
+            "name": "Dominion Energy Virginia",
+            "type": "IOU",
+            "coverage": "Most of Virginia including Richmond, Norfolk, Northern Virginia"
+          },
+          {
+            "name": "Appalachian Power",
+            "type": "IOU",
+            "coverage": "Southwest Virginia"
+          }
+        ],
+        "key_insight": "NoVA: Dominion serves Arlington, Alexandria, Fairfax close-in. NOVEC serves Loudoun County (Ashburn, Leesburg), Prince William outer areas (Gainesville, Haymarket). Boundary roughly follows Fairfax/Loudoun county line and outer Prince William.",
+        "boundary_notes": "NoVA: Dominion serves Arlington, Alexandria, Fairfax close-in. NOVEC serves Loudoun County (Ashburn, Leesburg), Prince William outer areas (Gainesville, Haymarket). Boundary roughly follows Fairfax/Loudoun county line and outer Prince William."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Washington Gas in Northern Virginia, Dominion elsewhere",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Fairfax Water, municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "WA": {
+    "electric": {
+      "landscape": {
+        "description": "Puget Sound Energy in west, Avista in east, plus many PUDs",
+        "major_players": [
+          {
+            "name": "Puget Sound Energy",
+            "type": "IOU",
+            "coverage": "Puget Sound region"
+          },
+          {
+            "name": "Seattle City Light",
+            "type": "municipal",
+            "coverage": "Seattle"
+          },
+          {
+            "name": "Avista",
+            "type": "IOU",
+            "coverage": "Spokane and eastern Washington"
+          },
+          {
+            "name": "Tacoma Power",
+            "type": "municipal",
+            "coverage": "Tacoma"
+          }
+        ],
+        "key_insight": "Seattle: Seattle City Light serves Seattle city limits only. PSE serves everything outside Seattle city limits (Bellevue, Redmond, Kent, Renton, etc.). Tacoma: Tacoma Power serves Tacoma city limits, PSE serves Pierce County outside. Boundary is city limits.",
+        "boundary_notes": "Seattle: Seattle City Light serves Seattle city limits only. PSE serves everything outside Seattle city limits (Bellevue, Redmond, Kent, Renton, etc.). Tacoma: Tacoma Power serves Tacoma city limits, PSE serves Pierce County outside. Boundary is city limits."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries",
+          "Major PUD boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Puget Sound Energy in west, Avista in east",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Seattle Public Utilities, Tacoma Water, municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "WV": {
+    "electric": {
+      "landscape": {
+        "description": "Multiple utilities serve different regions",
+        "major_players": [
+          {
+            "name": "Appalachian Power",
+            "type": "IOU",
+            "coverage": "Southern West Virginia"
+          },
+          {
+            "name": "Mon Power (FirstEnergy)",
+            "type": "IOU",
+            "coverage": "Northern West Virginia"
+          },
+          {
+            "name": "Potomac Edison (FirstEnergy)",
+            "type": "IOU",
+            "coverage": "Eastern Panhandle"
+          }
+        ],
+        "key_insight": "West Virginia is split between Appalachian Power (south) and FirstEnergy companies (north)."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Dominion Energy and Hope Gas",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "West Virginia American Water and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "WI": {
+    "electric": {
+      "landscape": {
+        "description": "We Energies in southeast, Alliant and Xcel elsewhere",
+        "major_players": [
+          {
+            "name": "We Energies",
+            "type": "IOU",
+            "coverage": "Milwaukee and southeast Wisconsin"
+          },
+          {
+            "name": "Alliant Energy (WPL)",
+            "type": "IOU",
+            "coverage": "Madison and south-central Wisconsin"
+          },
+          {
+            "name": "Xcel Energy",
+            "type": "IOU",
+            "coverage": "Western Wisconsin"
+          }
+        ],
+        "key_insight": "Milwaukee: We Energies serves Milwaukee County and most of SE Wisconsin. Alliant serves Dane County (Madison). Boundary roughly follows county lines. Madison: MGE serves city of Madison, Alliant serves surrounding Dane County.",
+        "boundary_notes": "Milwaukee: We Energies serves Milwaukee County and most of SE Wisconsin. Alliant serves Dane County (Madison). Boundary roughly follows county lines. Madison: MGE serves city of Madison, Alliant serves surrounding Dane County."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [
+          "Co-op/IOU boundary precision in split cities"
+        ],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "We Energies in southeast, others elsewhere",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Milwaukee Water Works and municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
+  "WY": {
+    "electric": {
+      "landscape": {
+        "description": "Rocky Mountain Power and Black Hills Energy",
+        "major_players": [
+          {
+            "name": "Rocky Mountain Power",
+            "type": "IOU",
+            "coverage": "Most of Wyoming"
+          },
+          {
+            "name": "Black Hills Energy",
+            "type": "IOU",
+            "coverage": "Cheyenne area"
+          }
+        ],
+        "key_insight": "Rocky Mountain Power serves most of Wyoming. Cheyenne is Black Hills Energy."
+      },
+      "data_status": {
+        "have": [
+          "IOU boundaries"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Black Hills Energy and Dominion Energy",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major provider coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "Municipal utilities",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Major city utilities"
+        ],
+        "missing": [],
+        "confidence": "medium"
+      }
+    }
+  },
+  "DC": {
+    "electric": {
+      "landscape": {
+        "description": "Pepco serves all of DC",
+        "major_players": [
+          {
+            "name": "Pepco",
+            "type": "IOU",
+            "coverage": "All of Washington DC"
+          }
+        ],
+        "key_insight": "Pepco is the sole electric utility for DC. DC is deregulated - customers can choose retail suppliers."
+      },
+      "data_status": {
+        "have": [
+          "Full coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "gas": {
+      "landscape": {
+        "description": "Washington Gas serves all of DC",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Full coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    },
+    "water": {
+      "landscape": {
+        "description": "DC Water serves all of DC",
+        "major_players": []
+      },
+      "data_status": {
+        "have": [
+          "Full coverage"
+        ],
+        "missing": [],
+        "confidence": "high"
+      }
+    }
+  },
   "_template": {
     "_comment": "Use this template when adding new states",
     "electric": {

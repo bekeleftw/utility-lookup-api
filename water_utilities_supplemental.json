@@ -426,6 +426,23 @@
       "website": "https://www.boardofwatersupply.com",
       "_confidence": "high",
       "_source": "supplemental"
+    },
+    "SC|ANDERSON": {
+      "name": "Hammond Water District",
+      "phone": "864-847-4957",
+      "website": "https://hammondwater.com",
+      "address": "4315 Hwy 29 North, Belton, SC 29627",
+      "_confidence": "high",
+      "_source": "supplemental",
+      "_note": "Serves Anderson County including Anderson city, Belton area"
+    },
+    "SC|BELTON": {
+      "name": "Hammond Water District",
+      "phone": "864-847-4957",
+      "website": "https://hammondwater.com",
+      "address": "4315 Hwy 29 North, Belton, SC 29627",
+      "_confidence": "high",
+      "_source": "supplemental"
     }
   }
 }

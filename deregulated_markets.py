@@ -344,14 +344,18 @@ def get_deregulated_electric_response(
 def adjust_electric_result_for_deregulation(result: Dict, state: str, zip_code: str = None) -> Dict:
     """
     Adjust an electric utility result to account for deregulated markets.
+    Updated 2026-01-21 v3
     """
+    print(f"[DEREG] adjust_electric_result_for_deregulation called for state={state}")
     if not is_deregulated_state(state):
+        print(f"[DEREG] State {state} is NOT deregulated, returning unchanged")
         return result
     
     market_info = DEREGULATED_STATES[state.upper()]
     
     # The utility we found is likely the TDU/EDC, not the retail provider
     original_name = result.get("NAME") or result.get("name")
+    print(f"[DEREG] Setting _deregulated_market=True for {original_name}")
     
     result["_deregulated_market"] = True
     result["_market_info"] = {

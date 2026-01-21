@@ -1356,8 +1356,12 @@ def _lookup_internet_single(address: str) -> Optional[Dict]:
     return result_data
 
 
-def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
-    """Look up internet providers from PostgreSQL database."""
+def _lookup_internet_postgres(block_geoid: str, try_neighbors: bool = True) -> Optional[Dict]:
+    """Look up internet providers from PostgreSQL database.
+    
+    If exact block not found and try_neighbors=True, searches for nearby blocks
+    in the same census tract (first 11 digits of block_geoid).
+    """
     database_url = os.environ.get('DATABASE_URL')
     if not database_url or not block_geoid:
         return None
@@ -1365,17 +1369,39 @@ def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
         import psycopg2
         conn = psycopg2.connect(database_url)
         cursor = conn.cursor()
+        
+        # Try exact block match first
         cursor.execute("SELECT providers FROM internet_providers WHERE block_geoid = %s", (block_geoid,))
         row = cursor.fetchone()
+        neighbor_used = None
+        
+        # If no exact match, try neighbor blocks in same tract
+        if not row and try_neighbors and len(block_geoid) >= 11:
+            tract_prefix = block_geoid[:11]  # State(2) + County(3) + Tract(6)
+            cursor.execute("""
+                SELECT block_geoid, providers 
+                FROM internet_providers 
+                WHERE block_geoid LIKE %s 
+                ORDER BY block_geoid 
+                LIMIT 1
+            """, (tract_prefix + '%',))
+            neighbor_row = cursor.fetchone()
+            if neighbor_row:
+                neighbor_used = neighbor_row[0]
+                row = (neighbor_row[1],)
+                print(f"  No exact block match, using neighbor block {neighbor_used}")
+        
         conn.close()
         if row and row[0]:
             providers_json = row[0] if isinstance(row[0], list) else json.loads(row[0])
             # Map FCC technology codes to names
             tech_names = {
                 '50': 'Fiber', '40': 'Cable', '10': 'DSL', 
-                '70': 'Fixed Wireless', '60': 'Satellite',
+                '60': 'Fixed Wireless', '61': 'Fixed Wireless',
+                '70': 'Satellite', '72': 'Satellite (LEO)',
                 50: 'Fiber', 40: 'Cable', 10: 'DSL',
-                70: 'Fixed Wireless', 60: 'Satellite'
+                60: 'Fixed Wireless', 61: 'Fixed Wireless',
+                70: 'Satellite', 72: 'Satellite (LEO)'
             }
             # Keep only fastest plan per provider (by download speed)
             best_by_provider = {}
@@ -1397,7 +1423,7 @@ def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
                     'max_upload_mbps': p.get('up', 0),
                     'low_latency': p.get('low_lat', 0)
                 })
-            return {
+            result = {
                 "providers": providers,
                 "provider_count": len(providers),
                 "max_download": max((p.get('max_download_mbps', 0) for p in providers), default=0),
@@ -1407,6 +1433,10 @@ def _lookup_internet_postgres(block_geoid: str) -> Optional[Dict]:
                 "_source": "fcc_bdc_postgres",
                 "_block_geoid": block_geoid
             }
+            if neighbor_used:
+                result["_neighbor_block_used"] = neighbor_used
+                result["_note"] = "Data from nearby block in same census tract"
+            return result
     except Exception as e:
         print(f"  PostgreSQL lookup error: {e}")
     return None

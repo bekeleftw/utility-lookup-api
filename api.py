@@ -284,13 +284,19 @@ def format_utility(util, util_type):
     }
     
     # Add deregulated market info for electric utilities
-    if util_type == 'electric' and util.get('_deregulated_market'):
-        market_info = util.get('_market_info', {})
+    # Check both the flag AND the state directly as fallback
+    from deregulated_markets import is_deregulated_state, get_deregulated_market_info
+    state = util.get('STATE') or util.get('state')
+    is_dereg = util.get('_deregulated_market') or (state and is_deregulated_state(state))
+    
+    if util_type == 'electric' and is_dereg:
+        # Get market info from util or fetch it
+        market_info = util.get('_market_info') or (get_deregulated_market_info(state) if state else {})
         result['deregulated'] = {
             'is_deregulated': True,
             'has_choice': True,
             'message': "You have options! You can choose your electricity provider.",
-            'provider_role': util.get('_role', 'Infrastructure provider'),
+            'provider_role': util.get('_role', 'TDU (infrastructure owner)'),
             'explanation': util.get('_note', f"{normalized_name} delivers the electricity, but you choose who you buy it from."),
             'choice_website': market_info.get('choice_website'),
             'choice_website_name': _get_choice_website_name(market_info.get('choice_website')),
@@ -382,7 +388,7 @@ def format_internet_providers(internet_data):
 @limiter.exempt
 def health():
     """Health check endpoint."""
-    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v3'})
+    return jsonify({'status': 'ok', 'version': '2026-01-21-dereg-v4'})
 
 
 @app.route('/api/rate-limit', methods=['GET'])

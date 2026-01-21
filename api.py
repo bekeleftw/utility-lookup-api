@@ -264,23 +264,66 @@ def format_utility(util, util_type):
             'verified': util.get('_serp_verified', False),
             '_source': util.get('_source') or util.get('_verification_source') or util.get('source')
         }
-    else:
-        return {
-            'name': normalized_name,
-            'phone': util.get('TELEPHONE', util.get('phone')),
-            'website': util.get('WEBSITE', util.get('website')),
-            'address': util.get('ADDRESS', util.get('address')),
-            'city': util.get('CITY', util.get('city')),
-            'state': util.get('STATE', util.get('state')),
-            'zip': util.get('ZIP', util.get('zip')),
-            'id': util.get('ID') or util.get('SVCTERID') or util.get('id'),
-            'type': util.get('TYPE'),
-            'confidence': util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium'),
-            'confidence_score': util.get('confidence_score'),
-            'confidence_factors': util.get('confidence_factors'),
-            'verified': util.get('_serp_verified', False),
-            '_source': util.get('_source') or util.get('_verification_source') or util.get('source')
+    
+    # Electric and Gas utilities
+    result = {
+        'name': normalized_name,
+        'phone': util.get('TELEPHONE', util.get('phone')),
+        'website': util.get('WEBSITE', util.get('website')),
+        'address': util.get('ADDRESS', util.get('address')),
+        'city': util.get('CITY', util.get('city')),
+        'state': util.get('STATE', util.get('state')),
+        'zip': util.get('ZIP', util.get('zip')),
+        'id': util.get('ID') or util.get('SVCTERID') or util.get('id'),
+        'type': util.get('TYPE'),
+        'confidence': util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium'),
+        'confidence_score': util.get('confidence_score'),
+        'confidence_factors': util.get('confidence_factors'),
+        'verified': util.get('_serp_verified', False),
+        '_source': util.get('_source') or util.get('_verification_source') or util.get('source')
+    }
+    
+    # Add deregulated market info for electric utilities
+    if util_type == 'electric' and util.get('_deregulated_market'):
+        market_info = util.get('_market_info', {})
+        result['deregulated'] = {
+            'is_deregulated': True,
+            'has_choice': True,
+            'message': "You have options! You can choose your electricity provider.",
+            'provider_role': util.get('_role', 'Infrastructure provider'),
+            'explanation': util.get('_note', f"{normalized_name} delivers the electricity, but you choose who you buy it from."),
+            'choice_website': market_info.get('choice_website'),
+            'choice_website_name': _get_choice_website_name(market_info.get('choice_website')),
+            'how_it_works': f"{normalized_name} owns the power lines and meters. You choose a retail provider ({market_info.get('rep_term', 'supplier')}) who sells you electricity."
         }
+    elif util_type == 'electric':
+        # Explicitly mark as NOT deregulated so UI knows
+        result['deregulated'] = {
+            'is_deregulated': False,
+            'has_choice': False,
+            'message': None
+        }
+    
+    return result
+
+
+def _get_choice_website_name(url):
+    """Get friendly name for choice website."""
+    if not url:
+        return None
+    website_names = {
+        'powertochoose.org': 'Power to Choose (Texas)',
+        'papowerswitch.com': 'PA Power Switch',
+        'energychoice.ohio.gov': 'Energy Choice Ohio',
+        'pluginillinois.org': 'Plug In Illinois',
+        'askpsc.com': 'NY Public Service Commission',
+        'mdelectricchoice.com': 'MD Electric Choice',
+        'energizect.com': 'Energize CT',
+    }
+    for domain, name in website_names.items():
+        if domain in url.lower():
+            return name
+    return 'Compare Providers'
 
 
 def format_internet_providers(internet_data):

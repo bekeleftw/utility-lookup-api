@@ -687,7 +687,7 @@
             "coverage": "Rural areas, some not in ERCOT"
           }
         ],
-        "key_insight": "Dallas: Oncor serves Dallas, most of Collin County (Plano, McKinney). CoServ serves Denton County (Frisco west of DNT, Flower Mound, Lewisville). Boundary roughly follows Denton/Collin county line but CoServ extends into parts of Collin. Houston: CenterPoint serves Harris County core, co-ops serve Fort Bend, Brazoria outer areas.",
+        "key_insight": "Texas is DEREGULATED: Two entities involved - TDU (owns wires, handles outages) and REP (sells power, bills customer). \nTDUs by area: CenterPoint (Houston/Harris County), Oncor (Dallas/Fort Worth), AEP Texas (South/West TX), Texas-New Mexico Power (scattered).\nOur lookup returns the TDU which is correct for utility setup - tenant chooses their own REP (like 4Change, Reliant, TXU).\nDallas: Oncor serves Dallas, Collin County. CoServ co-op serves Denton County (Frisco, Flower Mound).\nHouston: CenterPoint serves Harris County. Co-ops serve outer Fort Bend, Brazoria.",
         "boundary_notes": "Dallas: Oncor serves Dallas, most of Collin County (Plano, McKinney). CoServ serves Denton County (Frisco west of DNT, Flower Mound, Lewisville). Boundary roughly follows Denton/Collin county line but CoServ extends into parts of Collin. Houston: CenterPoint serves Harris County core, co-ops serve Fort Bend, Brazoria outer areas."
       },
       "data_status": {
@@ -771,7 +771,7 @@
             "coverage": "Various"
           }
         ],
-        "key_insight": "MUDs are created for development financing but cities often take over service after annexation. TCEQ MUD boundaries may be stale."
+        "key_insight": "Houston/Dallas suburbs have 1000+ MUDs (Municipal Utility Districts) that provide water/sewer.\nMUD boundaries do NOT follow city limits - a Katy address may be served by Harris County MUD 71, not City of Katy.\nMUDs are named by county + number (e.g., Harris County MUD 71, Fort Bend MUD 142).\nOur city-level lookup may return wrong utility - MUD boundaries require precise address lookup.\nTCEQ maintains MUD data but boundaries are complex and frequently change."
       },
       "data_status": {
         "have": [
@@ -1042,21 +1042,29 @@
     },
     "gas": {
       "landscape": {
-        "description": "Southwest Gas serves most of the state",
+        "description": "Southwest Gas serves most of AZ, UniSource Energy Services serves northern Arizona",
         "major_players": [
           {
             "name": "Southwest Gas",
             "type": "utility",
-            "coverage": "Most of Arizona"
+            "coverage": "Phoenix metro, Tucson, most of southern/central AZ"
+          },
+          {
+            "name": "UniSource Energy Services",
+            "type": "utility",
+            "coverage": "Prescott Valley, Sedona, Flagstaff area, Yavapai County"
           }
-        ]
+        ],
+        "key_insight": "SPLIT: Southwest Gas serves Phoenix/Tucson metro. UniSource Energy Services serves northern AZ including Prescott Valley, Sedona, and Yavapai County. Prescott city may be Southwest Gas while Prescott Valley is UniSource."
       },
       "data_status": {
         "have": [
-          "Southwest Gas coverage"
+          "Major provider coverage"
         ],
-        "missing": [],
-        "confidence": "high"
+        "missing": [
+          "Precise boundary between Southwest Gas and UniSource in Yavapai County"
+        ],
+        "confidence": "medium"
       }
     },
     "water": {
@@ -3088,12 +3096,19 @@
     },
     "gas": {
       "landscape": {
-        "description": "Dominion Energy Utah",
-        "major_players": []
+        "description": "Enbridge Gas Utah serves most of the state (acquired Dominion Energy Utah in June 2024)",
+        "major_players": [
+          {
+            "name": "Enbridge Gas Utah",
+            "type": "utility",
+            "coverage": "Statewide (formerly Dominion Energy Utah)"
+          }
+        ],
+        "key_insight": "Dominion Energy Utah was acquired by Enbridge Gas in June 2024. Bills may still show Dominion branding during transition. Same service, new name."
       },
       "data_status": {
         "have": [
-          "Dominion coverage"
+          "Statewide coverage"
         ],
         "missing": [],
         "confidence": "high"
@@ -3221,40 +3236,53 @@
   "WA": {
     "electric": {
       "landscape": {
-        "description": "Puget Sound Energy in west, Avista in east, plus many PUDs",
+        "description": "Mix of municipal utilities, PUDs (Public Utility Districts), and PSE (investor-owned)",
         "major_players": [
           {
-            "name": "Puget Sound Energy",
+            "name": "Puget Sound Energy (PSE)",
             "type": "IOU",
-            "coverage": "Puget Sound region"
+            "coverage": "King, Pierce, Kitsap counties outside city utilities"
           },
           {
             "name": "Seattle City Light",
             "type": "municipal",
-            "coverage": "Seattle"
+            "coverage": "Seattle city limits only"
+          },
+          {
+            "name": "Tacoma Power",
+            "type": "municipal",
+            "coverage": "Tacoma city limits"
+          },
+          {
+            "name": "Clark Public Utilities",
+            "type": "PUD",
+            "coverage": "Clark County (Vancouver, Camas, Washougal)"
+          },
+          {
+            "name": "Snohomish County PUD",
+            "type": "PUD",
+            "coverage": "Snohomish County (Everett, Marysville)"
+          },
+          {
+            "name": "Cowlitz County PUD",
+            "type": "PUD",
+            "coverage": "Cowlitz County (Longview, Kelso) - NOT Vancouver"
           },
           {
             "name": "Avista",
             "type": "IOU",
             "coverage": "Spokane and eastern Washington"
-          },
-          {
-            "name": "Tacoma Power",
-            "type": "municipal",
-            "coverage": "Tacoma"
           }
         ],
-        "key_insight": "Seattle: Seattle City Light serves Seattle city limits only. PSE serves everything outside Seattle city limits (Bellevue, Redmond, Kent, Renton, etc.). Tacoma: Tacoma Power serves Tacoma city limits, PSE serves Pierce County outside. Boundary is city limits.",
-        "boundary_notes": "Seattle: Seattle City Light serves Seattle city limits only. PSE serves everything outside Seattle city limits (Bellevue, Redmond, Kent, Renton, etc.). Tacoma: Tacoma Power serves Tacoma city limits, PSE serves Pierce County outside. Boundary is city limits."
+        "key_insight": "Washington has 28 PUDs (Public Utility Districts) that serve by county. Vancouver WA is Clark County = Clark Public Utilities. Cowlitz PUD serves Longview/Kelso area (different county). Seattle/Tacoma have municipal utilities within city limits, PSE serves surrounding areas.",
+        "boundary_notes": "PUD boundaries follow county lines. Municipal utilities (Seattle City Light, Tacoma Power) follow city limits exactly."
       },
       "data_status": {
         "have": [
-          "IOU boundaries",
-          "Major PUD boundaries"
+          "PUD coverage by county",
+          "Municipal utility boundaries"
         ],
-        "missing": [
-          "Co-op/IOU boundary precision in split cities"
-        ],
+        "missing": [],
         "confidence": "high"
       }
     },
@@ -3432,12 +3460,29 @@
     },
     "gas": {
       "landscape": {
-        "description": "Black Hills Energy and Dominion Energy",
-        "major_players": []
+        "description": "Black Hills Energy serves most of WY, Enbridge Gas Wyoming serves southwest (formerly Dominion)",
+        "major_players": [
+          {
+            "name": "Black Hills Energy",
+            "type": "utility",
+            "coverage": "Most of Wyoming"
+          },
+          {
+            "name": "Enbridge Gas Wyoming",
+            "type": "utility",
+            "coverage": "Southwest Wyoming (Rock Springs, Green River area - formerly Dominion)"
+          },
+          {
+            "name": "Montana-Dakota Utilities",
+            "type": "utility",
+            "coverage": "Northeast Wyoming (Gillette area)"
+          }
+        ],
+        "key_insight": "Dominion Energy Wyoming was acquired by Enbridge Gas in June 2024. Southwest WY (Rock Springs area) is now Enbridge."
       },
       "data_status": {
         "have": [
-          "Major provider coverage"
+          "Provider coverage areas"
         ],
         "missing": [],
         "confidence": "high"

@@ -5,9 +5,10 @@ Sources in priority order:
 1. UserCorrectionSource (in corrections.py) - 99 confidence
 2. MunicipalWaterSource - 88 confidence (city-owned utilities)
 3. StateGISWaterSource - 85 confidence (state GIS APIs)
-4. SpecialDistrictWaterSource - 80 confidence (MUDs, CDDs)
-5. EPAWaterSource - 65 confidence (EPA SDWIS data)
-6. CountyDefaultWaterSource - 40 confidence (fallback)
+4. TexasMUDSupplementalSource - 82 confidence (TX MUDs by subdivision/ZIP)
+5. SpecialDistrictWaterSource - 80 confidence (MUDs, CDDs)
+6. EPAWaterSource - 65 confidence (EPA SDWIS data)
+7. CountyDefaultWaterSource - 40 confidence (fallback)
 """
 
 import json
@@ -420,3 +421,190 @@ class CountyDefaultWaterSource(DataSource):
         
         CountyDefaultWaterSource._cache = {}
         return CountyDefaultWaterSource._cache
+
+
+class TexasMUDSupplementalSource(DataSource):
+    """
+    Texas MUD lookup using supplemental data with subdivision/ZIP mappings.
+    
+    Higher confidence than generic special district lookup because it uses
+    specific subdivision names and ZIP codes from MUD websites.
+    
+    Uses hybrid approach:
+    1. Local abbreviation expansion and matching (fast, free)
+    2. OAPI fallback to extract subdivision name when local match fails (smart, ~$0.001/call)
+    """
+    
+    _cache = None
+    _oapi_cache = {}  # Cache OAPI results to avoid repeat calls
+    
+    # MUD-heavy ZIP code prefixes in Houston/Dallas metro
+    MUD_HEAVY_ZIPS = {'774', '775', '776', '770', '771', '772', '773',  # Houston
+                      '750', '751', '752', '753', '754', '755', '760', '761', '762'}  # Dallas
+    
+    @property
+    def name(self) -> str:
+        return "texas_mud_supplemental"
+    
+    @property
+    def supported_types(self) -> List[UtilityType]:
+        return [UtilityType.WATER]
+    
+    @property
+    def base_confidence(self) -> int:
+        return 82  # Higher than generic special_district (80)
+    
+    def query(self, context: LookupContext) -> Optional[SourceResult]:
+        if context.state != 'TX':
+            return None
+        
+        data = self._load_data()
+        tx_muds = data.get('TX', {})
+        
+        if not tx_muds:
+            return None
+        
+        address = context.address or ''
+        address_upper = address.upper()
+        
+        # Step 1: Local abbreviation expansion
+        address_expanded = self._expand_abbreviations(address_upper)
+        
+        # Step 2: Try local subdivision match
+        result = self._try_local_match(tx_muds, address_upper, address_expanded)
+        if result:
+            return result
+        
+        # Step 3: OAPI fallback for MUD-heavy ZIP codes when local match fails
+        if context.zip_code and context.zip_code[:3] in self.MUD_HEAVY_ZIPS:
+            extracted_subdiv = self._extract_subdivision_with_oapi(address)
+            if extracted_subdiv:
+                result = self._try_local_match(tx_muds, extracted_subdiv.upper(), extracted_subdiv.upper())
+                if result:
+                    # Mark that OAPI helped
+                    result.raw_data['oapi_extracted'] = extracted_subdiv
+                    return result
+        
+        # Step 4: Fall back to ZIP-only match (lowest confidence)
+        for mud_name, mud_info in tx_muds.items():
+            zip_codes = mud_info.get('zip_codes', [])
+            if context.zip_code and context.zip_code in zip_codes:
+                return self._build_result(mud_info, 'zip', context.zip_code)
+        
+        return None
+    
+    def _expand_abbreviations(self, address: str) -> str:
+        """Expand common address abbreviations for better matching."""
+        expansions = [
+            (' PT,', ' POINT,'), (' PT ', ' POINT '), (' PT$', ' POINT'),
+            (' PL,', ' PLACE,'), (' PL ', ' PLACE '), (' PL$', ' PLACE'),
+            (' VLG,', ' VILLAGE,'), (' VLG ', ' VILLAGE '), (' VLG$', ' VILLAGE'),
+            (' MDW,', ' MEADOW,'), (' MDW ', ' MEADOW '), (' MDWS ', ' MEADOWS '),
+            (' LK,', ' LAKE,'), (' LK ', ' LAKE '), (' LKS ', ' LAKES '),
+            (' CRK,', ' CREEK,'), (' CRK ', ' CREEK '),
+            (' XING,', ' CROSSING,'), (' XING ', ' CROSSING '),
+            (' EST,', ' ESTATES,'), (' EST ', ' ESTATES '), (' ESTS ', ' ESTATES '),
+            (' RCH,', ' RANCH,'), (' RCH ', ' RANCH '),
+            (' TRL,', ' TRAIL,'), (' TRL ', ' TRAIL '),
+            (' HTS,', ' HEIGHTS,'), (' HTS ', ' HEIGHTS '),
+            (' GLN,', ' GLEN,'), (' GLN ', ' GLEN '),
+            (' VW,', ' VIEW,'), (' VW ', ' VIEW '),
+            (' SPGS,', ' SPRINGS,'), (' SPGS ', ' SPRINGS '),
+        ]
+        result = address
+        for abbrev, full in expansions:
+            result = result.replace(abbrev, full)
+        return result
+    
+    def _try_local_match(self, tx_muds: dict, address_upper: str, address_expanded: str) -> Optional[SourceResult]:
+        """Try to match subdivision name locally."""
+        for mud_name, mud_info in tx_muds.items():
+            subdivisions = mud_info.get('subdivisions', [])
+            for subdiv in subdivisions:
+                subdiv_upper = subdiv.upper()
+                if subdiv_upper in address_upper or subdiv_upper in address_expanded:
+                    return self._build_result(mud_info, 'subdivision', subdiv)
+        return None
+    
+    def _extract_subdivision_with_oapi(self, address: str) -> Optional[str]:
+        """Use OpenAI to extract subdivision/neighborhood name from address."""
+        import os
+        
+        # Check cache first
+        cache_key = address.lower().strip()
+        if cache_key in self._oapi_cache:
+            return self._oapi_cache[cache_key]
+        
+        api_key = os.environ.get('OPENAI_API_KEY')
+        if not api_key:
+            return None
+        
+        try:
+            import openai
+            client = openai.OpenAI(api_key=api_key)
+            
+            response = client.chat.completions.create(
+                model="gpt-4o-mini",
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "Extract the subdivision, neighborhood, or community name from this Texas address. Return ONLY the subdivision name, nothing else. If no subdivision name is found, return 'NONE'."
+                    },
+                    {
+                        "role": "user", 
+                        "content": address
+                    }
+                ],
+                max_tokens=50,
+                temperature=0
+            )
+            
+            result = response.choices[0].message.content.strip()
+            if result.upper() == 'NONE':
+                result = None
+            
+            # Cache the result
+            self._oapi_cache[cache_key] = result
+            return result
+            
+        except Exception as e:
+            # Log but don't fail
+            print(f"OAPI subdivision extraction failed: {e}")
+            return None
+    
+    def _build_result(self, mud_info: dict, match_type: str, match_value: str) -> SourceResult:
+        confidence = self.base_confidence
+        if match_type == 'subdivision':
+            confidence = 90  # High confidence for subdivision match
+        elif match_type == 'zip':
+            confidence = 70  # Lower confidence for ZIP-only match
+        
+        return SourceResult(
+            source_name=self.name,
+            utility_name=mud_info.get('name'),
+            confidence_score=confidence,
+            match_type=match_type,
+            phone=mud_info.get('phone'),
+            website=mud_info.get('website'),
+            raw_data={
+                'match_type': match_type,
+                'match_value': match_value,
+                'mud_info': mud_info
+            }
+        )
+    
+    def _load_data(self) -> dict:
+        if TexasMUDSupplementalSource._cache is not None:
+            return TexasMUDSupplementalSource._cache
+        
+        try:
+            path = Path(__file__).parent.parent.parent / 'data' / 'mud_supplemental.json'
+            if path.exists():
+                with open(path, 'r') as f:
+                    TexasMUDSupplementalSource._cache = json.load(f)
+                    return TexasMUDSupplementalSource._cache
+        except (FileNotFoundError, json.JSONDecodeError):
+            pass
+        
+        TexasMUDSupplementalSource._cache = {}
+        return TexasMUDSupplementalSource._cache

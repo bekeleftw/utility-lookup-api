@@ -10063,6 +10063,16 @@
         "name": "Southwest Gas",
         "phone": "877-860-6020",
         "website": "https://www.swgas.com/"
+      },
+      "Prescott Valley": {
+        "name": "UniSource Energy Services",
+        "phone": "877-837-4968",
+        "website": "https://www.uesaz.com"
+      },
+      "Sedona": {
+        "name": "UniSource Energy Services",
+        "phone": "877-837-4968",
+        "website": "https://www.uesaz.com"
       }
     },
     "PA": {
@@ -12849,69 +12859,69 @@
     },
     "UT": {
       "Salt Lake City": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "West Valley City": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Provo": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "West Jordan": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Orem": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Sandy": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Ogden": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "St. George": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Layton": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Logan": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Murray": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Bountiful": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       },
       "Cedar City": {
-        "name": "Dominion Energy Utah",
+        "name": "Enbridge Gas Utah",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/utah"
       }
     },
     "VT": {
@@ -13235,9 +13245,9 @@
         "website": "https://www.montana-dakota.com/"
       },
       "Rock Springs": {
-        "name": "Dominion Energy Wyoming",
+        "name": "Enbridge Gas Wyoming",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/wyoming"
       },
       "Sheridan": {
         "name": "Montana-Dakota Utilities Gas",
@@ -13245,14 +13255,14 @@
         "website": "https://www.montana-dakota.com/"
       },
       "Green River": {
-        "name": "Dominion Energy Wyoming",
+        "name": "Enbridge Gas Wyoming",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/wyoming"
       },
       "Evanston": {
-        "name": "Dominion Energy Wyoming",
+        "name": "Enbridge Gas Wyoming",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/wyoming"
       },
       "Riverton": {
         "name": "Black Hills Energy Gas",
@@ -13265,9 +13275,9 @@
         "website": "https://www.montana-dakota.com/"
       },
       "Rawlins": {
-        "name": "Dominion Energy Wyoming",
+        "name": "Enbridge Gas Wyoming",
         "phone": "800-323-5517",
-        "website": "https://www.dominionenergy.com/"
+        "website": "https://www.enbridgegas.com/wyoming"
       }
     }
   },

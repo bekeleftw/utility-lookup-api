@@ -1,0 +1,33 @@
+{
+  "_metadata": {
+    "description": "Texas MUD supplemental data with ZIP/subdivision mappings",
+    "last_updated": "2026-01-21",
+    "source": "Manual compilation from MUD websites"
+  },
+  "TX": {
+    "Harris County MUD 71": {
+      "name": "Harris County MUD 71",
+      "phone": "281-579-4500",
+      "website": "https://hcmud71.com",
+      "zip_codes": [
+        "77449",
+        "77494"
+      ],
+      "subdivisions": [
+        "Bridgewater Meadow",
+        "Bridgewater Place",
+        "Bridgewater Point",
+        "Bridgewater Village",
+        "Enclave at Bridgewater",
+        "Lakes of Bridgewater",
+        "Mason Lakes",
+        "Morton Ranch",
+        "The Lakes at Mason Park",
+        "Vineyard Meadow",
+        "Westland Creek Village"
+      ],
+      "county": "Harris",
+      "type": "MUD"
+    }
+  }
+}

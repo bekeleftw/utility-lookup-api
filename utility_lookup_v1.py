@@ -3040,17 +3040,32 @@ def _add_deregulated_info(result: Dict, state: str, zip_code: str) -> Dict:
         return result
     from deregulated_markets import is_deregulated_state, adjust_electric_result_for_deregulation
     if is_deregulated_state(state):
-        # Check if this is a municipal utility (exempt from deregulation)
+        name = result.get('NAME', '').lower()
+        
+        # Known TDUs in deregulated markets - these ARE deregulated (customer chooses REP)
+        known_tdus = [
+            'centerpoint', 'oncor', 'aep texas', 'tnmp', 'texas-new mexico power',
+            'peco', 'ppl', 'duquesne', 'penelec', 'met-ed', 'west penn',
+            'firstenergy', 'aep ohio', 'duke energy ohio', 'dayton power'
+        ]
+        is_tdu = any(tdu in name for tdu in known_tdus)
+        
+        # Check if this is a TRUE municipal utility (exempt from deregulation)
+        # Municipal utilities like Austin Energy, CPS Energy are NOT deregulated
         is_municipal = (
-            result.get('_verification_source') == 'municipal_utility_database' or
-            'municipal' in result.get('NAME', '').lower() or
-            'city of' in result.get('NAME', '').lower()
+            'municipal' in name or
+            'city of' in name or
+            name in ['austin energy', 'cps energy', 'garland power', 'lubbock power', 
+                     'new braunfels utilities', 'georgetown utility', 'greenville electric']
         )
-        if is_municipal:
+        
+        if is_tdu or not is_municipal:
+            # This is a TDU or regular utility in deregulated market - customer has choice
+            result = adjust_electric_result_for_deregulation(result, state, zip_code)
+        else:
+            # True municipal utility - exempt from retail choice
             result['_deregulated_market'] = False
             result['_note'] = 'Municipal utility - exempt from retail choice'
-        else:
-            result = adjust_electric_result_for_deregulation(result, state, zip_code)
     return result
 
 

@@ -1,5 +1,5 @@
 {
-  "_description": "Philadelphia metro water utility ZIP mappings (PA and NJ suburbs)",
+  "_description": "Pennsylvania and South Jersey water utility ZIP mappings (Aqua PA serves 1.6M people across PA)",
   "_source": "Tenant-verified addresses (87k dataset)",
   "_last_updated": "2026-01-22",
   "zip_mappings": {
@@ -248,6 +248,14 @@
       "phone": "877-987-2782"
     },
     "19070": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "15010": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "18326": {
       "name": "Aqua Pennsylvania",
       "phone": "877-987-2782"
     }

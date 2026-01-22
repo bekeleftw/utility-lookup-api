@@ -1,0 +1,255 @@
+{
+  "_description": "Philadelphia metro water utility ZIP mappings (PA and NJ suburbs)",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "19090": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19460": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "19406": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19425": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19350": {
+      "name": "Aqua Pennsylvaniq/New Garden Wastewater",
+      "phone": null
+    },
+    "19426": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "19018": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19348": {
+      "name": "Chester Water Authority",
+      "phone": "610-876-8181"
+    },
+    "08629": {
+      "name": "Trenton Water Works",
+      "phone": "609-989-3055"
+    },
+    "19465": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "19320": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "08536": {
+      "name": "New Jersey American Water",
+      "phone": "800-272-1325"
+    },
+    "19096": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19111": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19131": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19074": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19121": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19061": {
+      "name": "Chester Water Authority",
+      "phone": "610-876-8181"
+    },
+    "19346": {
+      "name": "Chester Water Authority",
+      "phone": "610-876-8181"
+    },
+    "19122": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19038": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19013": {
+      "name": "Chester Water Authority",
+      "phone": "610-876-8181"
+    },
+    "19078": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19032": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19134": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19125": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19355": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "08360": {
+      "name": "Vineland Municipal Utilities",
+      "phone": "856-794-4000"
+    },
+    "19132": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "08332": {
+      "name": "City of Millville Water",
+      "phone": "856-825-7000"
+    },
+    "19380": {
+      "name": "Aqua Pennsylavina",
+      "phone": null
+    },
+    "19428": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19440": {
+      "name": "North Penn Water Authority",
+      "phone": null
+    },
+    "19446": {
+      "name": "North Penn Water Authority",
+      "phone": null
+    },
+    "19003": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19342": {
+      "name": "Chester Water Authority",
+      "phone": "610-876-8181"
+    },
+    "19468": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "08648": {
+      "name": "New Jersey American Water",
+      "phone": "800-272-1325"
+    },
+    "19007": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19405": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "08079": {
+      "name": "American Water(NJ)",
+      "phone": null
+    },
+    "08542": {
+      "name": "New Jersey American Water",
+      "phone": "800-272-1325"
+    },
+    "19026": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "08016": {
+      "name": "Aqua -NJ",
+      "phone": null
+    },
+    "19023": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19104": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19141": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19050": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19403": {
+      "name": "Pennsylvania American Water",
+      "phone": "800-565-7292"
+    },
+    "19143": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19067": {
+      "name": "American water (PA)",
+      "phone": null
+    },
+    "19120": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19063": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19082": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19020": {
+      "name": "Aqua PA",
+      "phone": null
+    },
+    "19142": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "19086": {
+      "name": "Chester Water Authority",
+      "phone": "610-876-8181"
+    },
+    "19153": {
+      "name": "Philadelphia Water Department",
+      "phone": "215-685-6300"
+    },
+    "08109": {
+      "name": "Merchantiville - Pennsauken Water Commission - NJ",
+      "phone": null
+    },
+    "08610": {
+      "name": "Trenton Water Works",
+      "phone": "609-989-3055"
+    },
+    "19073": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    },
+    "19070": {
+      "name": "Aqua Pennsylvania",
+      "phone": "877-987-2782"
+    }
+  }
+}

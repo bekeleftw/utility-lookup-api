@@ -58,12 +58,12 @@ CORS(app)  # Allow cross-origin requests from Webflow
 # Register Resident Guide Blueprint
 app.register_blueprint(guide_bp)
 
-# Set up database connection for guide feature if DATABASE_URL is available
-DATABASE_URL = os.getenv('DATABASE_URL')
-if DATABASE_URL:
+# Set up database connection for guide feature (uses separate GUIDE_DATABASE_URL)
+GUIDE_DATABASE_URL = os.getenv('GUIDE_DATABASE_URL')
+if GUIDE_DATABASE_URL:
     try:
         import psycopg2
-        guide_db_conn = psycopg2.connect(DATABASE_URL)
+        guide_db_conn = psycopg2.connect(GUIDE_DATABASE_URL)
         set_guide_db_connection(guide_db_conn)
     except Exception as e:
         print(f"Warning: Could not connect to database for guide feature: {e}")

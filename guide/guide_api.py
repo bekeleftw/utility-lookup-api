@@ -129,15 +129,15 @@ def request_guide():
         # Insert guide request into database
         if _db_connection:
             cursor = _db_connection.cursor()
+            utility_results = data.get('utility_results')
             cursor.execute("""
                 INSERT INTO guide_requests 
-                (address, address_components, utility_results, email, company_name, website, status)
-                VALUES (%s, %s, %s, %s, %s, %s, 'pending')
+                (address, utility_results, email, company_name, website, status)
+                VALUES (%s, %s, %s, %s, %s, 'pending')
                 RETURNING id
             """, (
                 address,
-                json.dumps(address_components),
-                json.dumps(data['utility_results']),
+                json.dumps(utility_results) if utility_results else None,
                 email,
                 company_name,
                 website

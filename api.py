@@ -52,7 +52,7 @@ def extract_city_state(address):
         return match.group(1).strip().upper(), match.group(2).upper()
     return None, None
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static', static_url_path='/static')
 CORS(app)  # Allow cross-origin requests from Webflow
 
 # Register Resident Guide Blueprint

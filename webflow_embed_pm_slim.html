@@ -1,0 +1,173 @@
+<!--
+  Utility Lookup Widget with PM Guide Feature (Slim Version)
+  Loads JS from Railway server to stay under Webflow 50KB limit
+-->
+<style>
+.up-container{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:680px;margin:0 auto;padding:32px 24px;background:#fafafa;border-radius:16px;}
+.up-header{text-align:center;margin-bottom:24px;}
+.up-logo{display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.up-title{font-size:20px;font-weight:600;color:#1a1a1a;margin:0 0 4px 0;}
+.up-subtitle{font-size:14px;color:#6b7280;margin:0;}
+.up-form{display:flex;flex-direction:column;gap:16px;margin-bottom:24px;}
+.up-input{width:100%;padding:14px 18px;font-size:16px;border:2px solid #e5e7eb;border-radius:12px;outline:none;transition:all 0.2s;box-sizing:border-box;background:white;}
+.up-input:focus{border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,0.1);}
+.up-utility-toggles{display:flex;flex-wrap:wrap;gap:8px;}
+.up-toggle{display:flex;align-items:center;gap:6px;padding:8px 14px;background:white;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all 0.2s;user-select:none;}
+.up-toggle:hover{border-color:#d1d5db;}
+.up-toggle.active{border-color:#7AC143;background:#f0f9e8;}
+.up-toggle-icon{font-size:16px;}
+.up-toggle-label{font-size:14px;font-weight:500;color:#374151;}
+.up-toggle-check{width:18px;height:18px;border:2px solid #d1d5db;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-size:12px;color:white;}
+.up-toggle.active .up-toggle-check{background:#7AC143;border-color:#7AC143;}
+.up-toggle input{display:none;}
+.up-btn{width:100%;padding:14px 24px;font-size:16px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:12px;cursor:pointer;transition:all 0.2s;}
+.up-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(122,193,67,0.3);}
+.up-btn:disabled{background:#9ca3af;transform:none;box-shadow:none;cursor:not-allowed;}
+.up-error{background:#fef2f2;color:#dc2626;padding:16px;border-radius:12px;text-align:center;}
+.up-location{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#f0f9e8;border-radius:10px;margin-bottom:16px;font-size:14px;color:#374151;}
+.up-location-icon{font-size:18px;}
+.up-results{display:flex;flex-direction:column;gap:16px;}
+.up-card{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid #e5e7eb;}
+.up-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;}
+.up-card-type{display:flex;align-items:center;gap:10px;}
+.up-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.up-icon-electric{background:#fef3c7;}
+.up-icon-gas{background:#fee2e2;}
+.up-icon-water{background:#dbeafe;}
+.up-icon-internet{background:#e0e7ff;}
+.up-type-label{font-size:13px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;}
+.up-header-badges{display:flex;gap:6px;}
+.up-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;}
+.up-badge-verified{background:#dcfce7;color:#166534;}
+.up-badge-high{background:#dbeafe;color:#1e40af;}
+.up-badge-medium{background:#fef3c7;color:#92400e;}
+.up-badge-low{background:#fee2e2;color:#991b1b;}
+.up-provider-section{margin-bottom:12px;}
+.up-provider-name{font-size:18px;font-weight:600;color:#1a1a1a;}
+.up-details{display:flex;justify-content:space-between;align-items:flex-start;}
+.up-detail{margin-bottom:8px;}
+.up-detail-label{font-size:11px;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;display:block;}
+.up-detail-value{font-size:14px;color:#374151;}
+.up-detail-value a{color:#7AC143;text-decoration:none;}
+.up-dereg-banner{background:linear-gradient(135deg,#f0f9e8 0%,#dcfce7 100%);border-radius:10px;padding:16px;margin:12px 0;}
+.up-dereg-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+.up-dereg-icon{font-size:20px;}
+.up-dereg-title{font-weight:600;color:#166534;}
+.up-dereg-explain{font-size:13px;color:#374151;margin:0 0 12px 0;line-height:1.5;}
+.up-dereg-cta{display:inline-flex;align-items:center;gap:6px;background:#7AC143;color:white;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;}
+.up-internet-stats{display:flex;gap:24px;margin-bottom:12px;}
+.up-stat{text-align:center;}
+.up-stat-value{font-size:24px;font-weight:700;color:#1a1a1a;display:block;}
+.up-stat-label{font-size:11px;color:#6b7280;text-transform:uppercase;}
+.up-internet-list{display:flex;flex-direction:column;gap:8px;}
+.up-internet-row{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#f9fafb;border-radius:8px;}
+.up-internet-provider{display:flex;flex-direction:column;}
+.up-internet-name{font-weight:600;color:#1a1a1a;font-size:14px;}
+.up-internet-tech{font-size:11px;color:#6b7280;}
+.up-internet-speed{text-align:right;}
+.up-internet-down{font-size:18px;font-weight:700;color:#7AC143;}
+.up-internet-speed-label{font-size:10px;color:#6b7280;display:block;}
+.up-status-message{display:flex;align-items:center;gap:12px;padding:16px;background:#f0f9e8;border-radius:10px;margin-bottom:16px;}
+.up-loading-spinner{width:20px;height:20px;border:3px solid #e5e7eb;border-top-color:#7AC143;border-radius:50%;animation:spin 1s linear infinite;}
+.up-loading-spinner-small{width:14px;height:14px;border:2px solid #e5e7eb;border-top-color:#7AC143;border-radius:50%;animation:spin 1s linear infinite;display:inline-block;margin-right:8px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.up-result-slot{padding:12px;color:#6b7280;font-size:14px;}
+.up-loading-slot{background:#f9fafb;border-radius:8px;}
+.up-no-result{color:#6b7280;font-size:14px;}
+.up-footer{text-align:center;margin-top:24px;font-size:12px;color:#9ca3af;}
+.up-footer a{color:#7AC143;text-decoration:none;}
+.up-guide-btn{display:none;width:100%;margin-top:20px;padding:14px 24px;font-size:16px;font-weight:600;color:#7AC143;background:white;border:2px solid #7AC143;border-radius:12px;cursor:pointer;transition:all 0.2s;}
+.up-guide-btn:hover{background:#f0f9e8;transform:translateY(-1px);}
+.up-guide-btn.show{display:flex;align-items:center;justify-content:center;gap:8px;}
+.up-guide-btn-icon{font-size:20px;}
+.up-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;padding:20px;}
+.up-modal-overlay.open{display:flex;}
+.up-modal{background:white;border-radius:16px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.up-modal-header{padding:20px 24px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;}
+.up-modal-title{font-size:18px;font-weight:600;color:#1a1a1a;margin:0;}
+.up-modal-close{background:none;border:none;font-size:24px;color:#6b7280;cursor:pointer;padding:0;line-height:1;}
+.up-modal-close:hover{color:#1a1a1a;}
+.up-modal-body{padding:24px;}
+.up-modal-desc{font-size:14px;color:#6b7280;margin:0 0 20px 0;line-height:1.5;}
+.up-modal-address{background:#f5f5f5;padding:12px 16px;border-radius:8px;margin-bottom:20px;font-size:14px;}
+.up-modal-address-label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
+.up-modal-address-value{font-weight:500;color:#1a1a1a;}
+.up-modal-form{display:flex;flex-direction:column;gap:16px;}
+.up-modal-field{display:flex;flex-direction:column;gap:6px;}
+.up-modal-label{font-size:13px;font-weight:500;color:#374151;}
+.up-modal-label .required{color:#ef4444;}
+.up-modal-input{padding:12px 14px;font-size:15px;border:2px solid #e5e7eb;border-radius:10px;outline:none;transition:all 0.2s;}
+.up-modal-input:focus{border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,0.1);}
+.up-modal-hint{font-size:12px;color:#9ca3af;}
+.up-modal-submit{padding:14px 24px;font-size:16px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:12px;cursor:pointer;transition:all 0.2s;margin-top:8px;}
+.up-modal-submit:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(122,193,67,0.3);}
+.up-modal-submit:disabled{background:#9ca3af;transform:none;box-shadow:none;cursor:not-allowed;}
+.up-modal-success{text-align:center;padding:20px 0;}
+.up-modal-success-icon{font-size:48px;margin-bottom:16px;}
+.up-modal-success-title{font-size:18px;font-weight:600;color:#1a1a1a;margin:0 0 8px 0;}
+.up-modal-success-desc{font-size:14px;color:#6b7280;margin:0;line-height:1.5;}
+</style>
+
+<div class="up-container">
+  <div class="up-header">
+    <div class="up-logo">
+      <img src="https://cdn.prod.website-files.com/659dd5a41f44c8d830f6cd7f/65a6e32124ad5ffc69552987_Utility%20Profit%20logo%20green%20full%20horizontal.svg" alt="Utility Profit" style="height:40px;">
+    </div>
+    <h2 class="up-title">Utility Provider Lookup</h2>
+    <p class="up-subtitle">Enter an address to find utility providers</p>
+  </div>
+  
+  <form class="up-form" id="utilityForm">
+    <input type="text" class="up-input" id="addressInput" placeholder="123 Main St, Dallas, TX 75201" required />
+    <div class="up-utility-toggles">
+      <label class="up-toggle active" data-utility="electric"><input type="checkbox" checked /><span class="up-toggle-icon">⚡</span><span class="up-toggle-label">Electric</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="gas"><input type="checkbox" checked /><span class="up-toggle-icon">🔥</span><span class="up-toggle-label">Gas</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="water"><input type="checkbox" checked /><span class="up-toggle-icon">💧</span><span class="up-toggle-label">Water</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="internet"><input type="checkbox" checked /><span class="up-toggle-icon">🌐</span><span class="up-toggle-label">Internet</span><span class="up-toggle-check">✓</span></label>
+    </div>
+    <button type="submit" class="up-btn" id="searchBtn">Search</button>
+  </form>
+  
+  <div id="utilityResults"></div>
+  
+  <button class="up-guide-btn" id="guideBtn">
+    <span class="up-guide-btn-icon">📋</span>
+    <span>Get Resident Guide</span>
+  </button>
+  
+  <div class="up-footer">Powered by <a href="https://utilityprofit.com" target="_blank">Utility Profit</a></div>
+</div>
+
+<div class="up-modal-overlay" id="guideModal">
+  <div class="up-modal">
+    <div class="up-modal-header">
+      <h3 class="up-modal-title">Get Resident Guide</h3>
+      <button class="up-modal-close" id="guideModalClose">&times;</button>
+    </div>
+    <div class="up-modal-body" id="guideModalBody">
+      <p class="up-modal-desc">We'll create a branded PDF guide with step-by-step signup instructions for each utility. The guide will be emailed to you in 5-10 minutes.</p>
+      <div class="up-modal-address">
+        <div class="up-modal-address-label">Property Address</div>
+        <div class="up-modal-address-value" id="guideModalAddress"></div>
+      </div>
+      <form class="up-modal-form" id="guideForm">
+        <div class="up-modal-field">
+          <label class="up-modal-label">Email <span class="required">*</span></label>
+          <input type="email" class="up-modal-input" id="guideEmail" placeholder="you@company.com" required />
+        </div>
+        <div class="up-modal-field">
+          <label class="up-modal-label">Company Name <span class="required">*</span></label>
+          <input type="text" class="up-modal-input" id="guideCompany" placeholder="ABC Property Management" maxlength="100" required />
+        </div>
+        <div class="up-modal-field">
+          <label class="up-modal-label">Website <span style="color:#9ca3af">(optional)</span></label>
+          <input type="url" class="up-modal-input" id="guideWebsite" placeholder="https://yourcompany.com" />
+          <div class="up-modal-hint">We'll add your logo to the guide if provided</div>
+        </div>
+        <button type="submit" class="up-modal-submit" id="guideSubmit">Send My Guide</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="https://web-production-9acc6.up.railway.app/static/widget_pm.js"></script>

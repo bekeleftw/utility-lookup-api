@@ -12,6 +12,7 @@ SOCAL_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'socal_water_
 DFW_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'dfw_water_districts.json')
 HOUSTON_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'houston_water_districts.json')
 PHILLY_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'philly_water_districts.json')
+DC_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'dc_water_districts.json')
 
 _municipal_data = None
 _long_island_water_data = None
@@ -19,6 +20,7 @@ _socal_water_data = None
 _dfw_water_data = None
 _houston_water_data = None
 _philly_water_data = None
+_dc_water_data = None
 
 
 def load_municipal_data() -> dict:
@@ -374,6 +376,40 @@ def lookup_philly_water(zip_code: str) -> Optional[Dict]:
     return None
 
 
+def load_dc_water_data() -> dict:
+    """Load Washington DC metro water district data."""
+    global _dc_water_data
+    if _dc_water_data is None:
+        if os.path.exists(DC_WATER_FILE):
+            with open(DC_WATER_FILE, 'r') as f:
+                _dc_water_data = json.load(f)
+        else:
+            _dc_water_data = {}
+    return _dc_water_data
+
+
+def lookup_dc_water(zip_code: str) -> Optional[Dict]:
+    """Look up water utility for DC metro by ZIP code."""
+    if not zip_code:
+        return None
+    
+    data = load_dc_water_data()
+    zip_mappings = data.get('zip_mappings', {})
+    
+    if zip_code in zip_mappings:
+        district = zip_mappings[zip_code]
+        return {
+            'name': district['name'],
+            'phone': district.get('phone'),
+            'website': district.get('website'),
+            'source': 'dc_water_zip',
+            'confidence': 'verified',
+            'note': f"Water utility serving ZIP {zip_code} (tenant-verified)"
+        }
+    
+    return None
+
+
 def lookup_long_island_water(zip_code: str, county: str = None) -> Optional[Dict]:
     """Look up water district for Long Island (Nassau/Suffolk counties) by ZIP code."""
     if not zip_code or not zip_code.startswith('11'):
@@ -466,6 +502,16 @@ def lookup_municipal_water(state: str, city: str = None, zip_code: str = None, c
             philly_result = lookup_philly_water(zip_code)
             if philly_result:
                 return philly_result
+    
+    # SPECIAL CASE: DC metro (DC 200-205, MD 206-219, VA 220-223)
+    if zip_code:
+        prefix = zip_code[:3]
+        if (state_upper == 'DC' and prefix in ['200', '201', '202', '203', '204', '205']) or \
+           (state_upper == 'MD' and prefix in ['206', '207', '208', '209', '210', '211', '212', '214', '215', '217', '218', '219']) or \
+           (state_upper == 'VA' and prefix in ['220', '221', '222', '223', '201']):
+            dc_result = lookup_dc_water(zip_code)
+            if dc_result:
+                return dc_result
     
     # FIRST: Check dedicated water section (standalone water utilities)
     water_data = data.get('water', {}).get(state_upper, {})

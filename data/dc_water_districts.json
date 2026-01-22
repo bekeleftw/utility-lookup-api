@@ -1,0 +1,591 @@
+{
+  "_description": "Washington DC metro water utility ZIP mappings (DC, MD suburbs, Northern VA)",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "22306": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22032": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20774": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22205": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "22046": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22066": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22202": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "20110": {
+      "name": "Manassas Virginia",
+      "phone": null
+    },
+    "20164": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "22204": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "20852": {
+      "name": "City of Rockville",
+      "phone": null
+    },
+    "22201": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "22030": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20721": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22180": {
+      "name": "Town of Vienna Water",
+      "phone": "703-255-6380"
+    },
+    "20112": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "21060": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "20191": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20181": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "21811": {
+      "name": "Town of Berlin - MD",
+      "phone": null
+    },
+    "22101": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22314": {
+      "name": "City of Alexandria Water",
+      "phone": "703-746-4357"
+    },
+    "20735": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20190": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20194": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22192": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "22039": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20165": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "20170": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22124": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22308": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20009": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "21216": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "20024": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "20171": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22033": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20715": {
+      "name": "City of Bowie MD",
+      "phone": null
+    },
+    "22301": {
+      "name": "City of Alexandria Water",
+      "phone": "703-746-4357"
+    },
+    "20175": {
+      "name": "Town of Leesburg Utilities",
+      "phone": "703-771-2790"
+    },
+    "20906": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20007": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "21224": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "20151": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20124": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20176": {
+      "name": "Town of Leesburg Utilities",
+      "phone": "703-771-2790"
+    },
+    "22191": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "20772": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20169": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "21719": {
+      "name": "Cascade Properties",
+      "phone": null
+    },
+    "20745": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21804": {
+      "name": "City of Salisbury Public Works",
+      "phone": null
+    },
+    "20120": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20155": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "22026": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "21230": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "21228": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "22025": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "20904": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20001": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "21227": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "22182": {
+      "name": "Town of Vienna Water",
+      "phone": "703-255-6380"
+    },
+    "20832": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20785": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21740": {
+      "name": "City of Hagerstown",
+      "phone": null
+    },
+    "20886": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21239": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "22207": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "20020": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "20147": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "20851": {
+      "name": "City of Rockville",
+      "phone": null
+    },
+    "22043": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20910": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22181": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20640": {
+      "name": "Town of Indian Head MD",
+      "phone": null
+    },
+    "20902": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22125": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "20166": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "20148": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "22303": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20653": {
+      "name": "St. Mary's County Metropolitan Commission - MD",
+      "phone": null
+    },
+    "21114": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "20619": {
+      "name": "St. Mary's County Metropolitan Commission - MD",
+      "phone": null
+    },
+    "20105": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "20152": {
+      "name": "Loudoun Water",
+      "phone": "571-291-7880"
+    },
+    "20872": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21113": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "21218": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "20015": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "22042": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20748": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21211": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "22031": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "21146": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "22203": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "22309": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22134": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "22302": {
+      "name": "dominian energy",
+      "phone": null
+    },
+    "22003": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22206": {
+      "name": "Arlington County Water",
+      "phone": "703-228-6570"
+    },
+    "22044": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22041": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20186": {
+      "name": "City of Warrenton",
+      "phone": null
+    },
+    "21225": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "20695": {
+      "name": "Charles County Department of Public Works",
+      "phone": null
+    },
+    "20878": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22310": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "21043": {
+      "name": "Howard County Department of Public Works",
+      "phone": null
+    },
+    "22312": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20895": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21044": {
+      "name": "Howard County Department of Public Works",
+      "phone": null
+    },
+    "21223": {
+      "name": "Baltimore City DPW",
+      "phone": "410-396-5398"
+    },
+    "21090": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "22315": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20011": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22151": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22015": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20737": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20121": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "21029": {
+      "name": "Howard County Department of Public Works",
+      "phone": null
+    },
+    "22307": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20817": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22152": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20743": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "22150": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "21045": {
+      "name": "Howard County Department of Public Works",
+      "phone": null
+    },
+    "20004": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "20132": {
+      "name": "Town of Purcellville",
+      "phone": null
+    },
+    "20017": {
+      "name": "DC Water",
+      "phone": "202-354-3600"
+    },
+    "21801": {
+      "name": "City of Salisbury Public Works",
+      "phone": null
+    },
+    "21403": {
+      "name": "City of Annapolis",
+      "phone": null
+    },
+    "22153": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22102": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "22079": {
+      "name": "Fairfax Water",
+      "phone": "703-698-5800"
+    },
+    "20109": {
+      "name": "Manassas Virginia",
+      "phone": null
+    },
+    "21122": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "21075": {
+      "name": "Howard County Department of Public Works",
+      "phone": null
+    },
+    "20657": {
+      "name": "Chesapeake Water Association - MD",
+      "phone": null
+    },
+    "20111": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "20724": {
+      "name": "Anne Arundel County Water",
+      "phone": "410-222-8400"
+    },
+    "20877": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20136": {
+      "name": "Prince William County Service Authority",
+      "phone": "703-335-7900"
+    },
+    "20723": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20905": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "20814": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    },
+    "21875": {
+      "name": "Town of Delmar",
+      "phone": null
+    },
+    "20901": {
+      "name": "WSSC Water",
+      "phone": "301-206-4001"
+    }
+  }
+}

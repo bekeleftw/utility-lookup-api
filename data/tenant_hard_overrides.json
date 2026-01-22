@@ -1,0 +1,1461 @@
+{
+  "version": "2026-01-21",
+  "description": "High-confidence tenant-verified utility mappings. Use as primary source.",
+  "override_count": 145,
+  "overrides": {
+    "66502": {
+      "laramie street 1": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "bluemont avenue 1": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "bluemont avenue 2": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "29544": {
+      "evergreen drive": {
+        "electric": "Horry Electric Cooperative",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "81101": {
+      "maroon drive": {
+        "electric": "Xcel Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "64063": {
+      "sw oxford place": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "nw market place b": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "67212": {
+      "n curtis court": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "47802": {
+      "e joy circle": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "allendale boulevard": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 9,
+        "agreement_rate": 1.0
+      }
+    },
+    "27603": {
+      "wolf cub court": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "27704": {
+      "titanium rock road 1": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "turrentine street": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "27703": {
+      "sweet cream court": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "28546": {
+      "banister loop": {
+        "electric": "Jones-Onslow Electric Membership Corporation",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "caldwell loop": {
+        "electric": "Jones-Onslow Electric Membership Corporation",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "30120": {
+      "penn station way": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "union station street": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "27713": {
+      "flagler street": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "33545": {
+      "blue passing loop": {
+        "electric": "Withlacoochee River Electric Cooperative - Fl",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "31313": {
+      "live oak drive": {
+        "electric": "Canoochee Emc",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "rolland street": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "pleasant street": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "37138": {
+      "scenic vw": {
+        "electric": "Nashville Electric Service - Tn",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "92103": {
+      "park boulevard": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "77840": {
+      "lemon tree lane": {
+        "electric": "College Station Utilities",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "boardwalk court": {
+        "electric": "College Station Utilities",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "27284": {
+      "amberview lane": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "28027": {
+      "yeager drive": {
+        "electric": "City Of Concord Electric Department",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "50036": {
+      "greene street": {
+        "electric": "Alliant Energy",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      },
+      "6th street": {
+        "electric": "Alliant Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "71291": {
+      "n 4th street": {
+        "electric": "Entergy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "49504": {
+      "sw watson street": {
+        "electric": "Consumers Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "28315": {
+      "ducks lndg": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "84078": {
+      "e red fox lane": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "45840": {
+      "potomac drive": {
+        "electric": "AEP",
+        "confidence": 0.99,
+        "sample_count": 13,
+        "agreement_rate": 1.0
+      },
+      "colonial drive": {
+        "electric": "AEP",
+        "confidence": 0.99,
+        "sample_count": 22,
+        "agreement_rate": 1.0
+      }
+    },
+    "73107": {
+      "nw 18th street": {
+        "electric": "Oklahoma Gas And Electric",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "54494": {
+      "3rd street": {
+        "electric": "Wisconsin Rapids Water Works & Lighting Commission",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "46383": {
+      "mayfield avenue b": {
+        "electric": "NiSource",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "72916": {
+      "cantera drive a": {
+        "electric": "Arkansas Valley Electric Cooperative",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "23224": {
+      "midlothian tpke": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "70601": {
+      "oak park boulevard": {
+        "electric": "Entergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "70810": {
+      "gsri avenue": {
+        "electric": "Entergy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "39564": {
+      "cottage square lane": {
+        "electric": "Mississippi Power (Gulfport)",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "15317": {
+      "cedar hill drive": {
+        "electric": "West Penn Power",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "83202": {
+      "briscoe road d": {
+        "electric": "Idaho Power",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "w quinn road a": {
+        "electric": "Idaho Power",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "w quinn road c": {
+        "electric": "Idaho Power",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "85296": {
+      "e pinto drive": {
+        "electric": "Salt River Project",
+        "confidence": 0.99,
+        "sample_count": 18,
+        "agreement_rate": 1.0
+      },
+      "e jasper drive": {
+        "electric": "Salt River Project",
+        "confidence": 0.99,
+        "sample_count": 12,
+        "agreement_rate": 1.0
+      },
+      "e amoroso drive": {
+        "electric": "Salt River Project",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "e brisa drive": {
+        "electric": "Salt River Project",
+        "confidence": 0.99,
+        "sample_count": 11,
+        "agreement_rate": 1.0
+      }
+    },
+    "29651": {
+      "whitfield way": {
+        "electric": "Greer Commission Of Public Works (Cpw) - Sc",
+        "confidence": 0.99,
+        "sample_count": 10,
+        "agreement_rate": 1.0
+      }
+    },
+    "29803": {
+      "kelly drive": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "28278": {
+      "wilson mac lane": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "64086": {
+      "nw colbern road": {
+        "electric": "Evergy",
+        "confidence": 0.99,
+        "sample_count": 17,
+        "agreement_rate": 1.0
+      }
+    },
+    "27103": {
+      "farm house trl": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "47804": {
+      "n 19th street": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "97401": {
+      "mill street": {
+        "electric": "Eugene Water & Electric Board Eweb - Or",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "46806": {
+      "reed street": {
+        "electric": "Indiana Michigan Power Co",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "84057": {
+      "n main street": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 9,
+        "agreement_rate": 1.0
+      },
+      "n monterey drive": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "43230": {
+      "taylor station road": {
+        "electric": "AEP",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "30223": {
+      "n 19th street": {
+        "electric": "City Of Griffin",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "78253": {
+      "giovannis gdn": {
+        "electric": "CPS Energy",
+        "confidence": 0.99,
+        "sample_count": 11,
+        "agreement_rate": 1.0
+      },
+      "abigail aly": {
+        "electric": "CPS Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "64014": {
+      "sw lily street": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "nw vesper street": {
+        "electric": "Evergy",
+        "confidence": 0.99,
+        "sample_count": 10,
+        "agreement_rate": 1.0
+      }
+    },
+    "67211": {
+      "s hydraulic avenue": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "84404": {
+      "e 1425 s": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "28273": {
+      "rover street": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "castle nook drive": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "29732": {
+      "herlong avenue": {
+        "electric": "City Of Rock Hill - Sc",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "80012": {
+      "s nome street": {
+        "electric": "Xcel Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "32207": {
+      "dunsford terrace": {
+        "electric": "JEA",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "85233": {
+      "n bay drive": {
+        "electric": "Salt River Project",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "70820": {
+      "starboard drive": {
+        "electric": "Entergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "bayou fountain avenue": {
+        "electric": "Entergy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "73120": {
+      "sheffield road": {
+        "electric": "Oklahoma Gas And Electric",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "98662": {
+      "ne 86th avenue": {
+        "electric": "Clark Public Utilities",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "ne 78th avenue": {
+        "electric": "Clark Public Utilities",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "73114": {
+      "northstar lane": {
+        "electric": "Oklahoma Gas And Electric",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "84058": {
+      "w 350 south": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "84054": {
+      "n tidwell drive": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "92154": {
+      "neptune avenue": {
+        "electric": "SDG&E",
+        "confidence": 0.99,
+        "sample_count": 12,
+        "agreement_rate": 1.0
+      }
+    },
+    "80206": {
+      "e 14th avenue": {
+        "electric": "Xcel Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "35124": {
+      "huntley knoll drive": {
+        "electric": "Alabama Power - Al",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "30907": {
+      "stevens creek court": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "43211": {
+      "wedge street": {
+        "electric": "AEP",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "97405": {
+      "e 22nd avenue": {
+        "electric": "Eugene Water & Electric Board Eweb - Or",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "77801": {
+      "fairway drive": {
+        "electric": "Bryan Texas Utilities",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "03867": {
+      "n main street": {
+        "electric": "Eversource",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "37355": {
+      "wiley street": {
+        "electric": "Duck River Elec Member Corp",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "84660": {
+      "meadow lane": {
+        "electric": "Spanish Fork Power",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "41018": {
+      "amhurst drive": {
+        "electric": "Owen Electric Cooperative - Ky",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "92101": {
+      "e juniper street": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "85295": {
+      "e megan street": {
+        "electric": "Salt River Project",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "85297": {
+      "e euclid avenue": {
+        "electric": "Salt River Project",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "30809": {
+      "commons drive": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "62269": {
+      "eagle rdg": {
+        "electric": "Ameren",
+        "confidence": 0.99,
+        "sample_count": 16,
+        "agreement_rate": 1.0
+      }
+    },
+    "85226": {
+      "w shannon street": {
+        "electric": "Salt River Project",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "98663": {
+      "ne newhouse road": {
+        "electric": "Clark Public Utilities",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "ne 2nd court": {
+        "electric": "Clark Public Utilities",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "23702": {
+      "sebago drive": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 9,
+        "agreement_rate": 1.0
+      },
+      "huron drive": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "seminole drive": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "pawnee drive": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "48089": {
+      "marshall avenue": {
+        "electric": "DTE Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "27610": {
+      "e lenoir street": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "61920": {
+      "university drive": {
+        "electric": "Ameren",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "80210": {
+      "s ogden street": {
+        "electric": "Xcel Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "47403": {
+      "w rockcrest drive": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      },
+      "s cramer circle": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "27260": {
+      "hobson street": {
+        "electric": "City Of High Point - Nc",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "25526": {
+      "christian court": {
+        "electric": "Appalachian Power",
+        "confidence": 0.99,
+        "sample_count": 25,
+        "agreement_rate": 1.0
+      }
+    },
+    "27127": {
+      "glenburn drive": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "59404": {
+      "american avenue": {
+        "electric": "Northwestern Energy (Mt)",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "30909": {
+      "wheeler woods road": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "wheeler woods road augusta road d": {
+        "electric": "Georgia Power",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "97202": {
+      "se cesar e chavez boulevard": {
+        "electric": "Portland General Electric",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "se 17th avenue": {
+        "electric": "Portland General Electric",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "97470": {
+      "ne alameda avenue": {
+        "electric": "PG&E",
+        "confidence": 0.99,
+        "sample_count": 12,
+        "agreement_rate": 1.0
+      }
+    },
+    "53206": {
+      "n 24th place": {
+        "electric": "We Energies",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "30571": {
+      "primrose drive": {
+        "electric": "Habersham Emc - Ga",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "94063": {
+      "15th avenue": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "29405": {
+      "azalea drive": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "53576": {
+      "sater street": {
+        "electric": "Alliant Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "54467": {
+      "barrington place": {
+        "electric": "Wisconsin Public Services",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "67218": {
+      "s broadview street": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "s belmont street": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "43224": {
+      "belcher drive": {
+        "electric": "AEP",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "sandridge avenue": {
+        "electric": "AEP",
+        "confidence": 0.99,
+        "sample_count": 13,
+        "agreement_rate": 1.0
+      }
+    },
+    "84321": {
+      "w 690 n": {
+        "electric": "City Of Logan",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "98684": {
+      "ne 21st street": {
+        "electric": "Clark Public Utilities",
+        "confidence": 0.99,
+        "sample_count": 10,
+        "agreement_rate": 1.0
+      }
+    },
+    "78218": {
+      "hibiscus fls": {
+        "electric": "CPS Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "28303": {
+      "king george drive": {
+        "electric": "Fayetteville Pwc (Nc)",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      },
+      "pilot avenue": {
+        "electric": "Fayetteville Pwc (Nc)",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "80011": {
+      "e 16th avenue": {
+        "electric": "Xcel Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "64029": {
+      "nw woodbury drive": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "83705": {
+      "w targee street": {
+        "electric": "Idaho Power",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "97214": {
+      "se alder street": {
+        "electric": "Portland General Electric",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "85340": {
+      "w badgett lane": {
+        "electric": "Arizona Public Service",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "35210": {
+      "red rock place": {
+        "electric": "Alabama Power - Al",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      },
+      "brevard boulevard": {
+        "electric": "Alabama Power - Al",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "43223": {
+      "whitethorne avenue": {
+        "electric": "AEP",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "98226": {
+      "tull place": {
+        "electric": "Puget Sound Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "track street": {
+        "electric": "Puget Sound Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "85041": {
+      "w hidalgo avenue": {
+        "electric": "Salt River Project",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "33034": {
+      "se 7th terrace": {
+        "electric": "Florida Power & Light",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "63139": {
+      "lawn avenue": {
+        "electric": "Ameren",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "85387": {
+      "w sand hills drive": {
+        "electric": "Arizona Public Service",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "97213": {
+      "ne hancock street": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "34714": {
+      "syracuse drive": {
+        "electric": "Seco Energy - Fl",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "84097": {
+      "s 605 e": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "92105": {
+      "46th street": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "62034": {
+      "magnolia drive": {
+        "electric": "Ameren",
+        "confidence": 0.99,
+        "sample_count": 25,
+        "agreement_rate": 1.0
+      }
+    },
+    "92116": {
+      "madison avenue": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "47265": {
+      "n greensburg street": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "95380": {
+      "vermont avenue": {
+        "electric": "Tid Water & Power - Turlock Irrigation District",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "80620": {
+      "crater street": {
+        "electric": "Xcel Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "53211": {
+      "n maryland avenue": {
+        "electric": "We Energies",
+        "confidence": 0.99,
+        "sample_count": 12,
+        "agreement_rate": 1.0
+      },
+      "n murray avenue": {
+        "electric": "We Energies",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "92111": {
+      "drescher street": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "50158": {
+      "melody lane 2": {
+        "electric": "Alliant Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "melody lane 3": {
+        "electric": "Alliant Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "54443": {
+      "brock avenue": {
+        "electric": "Wisconsin Public Services",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "49548": {
+      "se in the pines drive": {
+        "electric": "Consumers Energy",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "74127": {
+      "w newton street": {
+        "electric": "Public Service Company Of Oklahoma",
+        "confidence": 0.99,
+        "sample_count": 10,
+        "agreement_rate": 1.0
+      }
+    },
+    "28405": {
+      "sunglow drive": {
+        "electric": "Duke Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "95608": {
+      "george road": {
+        "electric": "Sacramento Municipal Utility District",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "92115": {
+      "college avenue": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "art street": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "rockford drive": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "ewing street": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 9,
+        "agreement_rate": 1.0
+      },
+      "tipton street": {
+        "electric": "SDG&E",
+        "confidence": 0.99,
+        "sample_count": 13,
+        "agreement_rate": 1.0
+      },
+      "e falls view drive": {
+        "electric": "SDG&E",
+        "confidence": 0.99,
+        "sample_count": 28,
+        "agreement_rate": 1.0
+      },
+      "w falls view drive": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      },
+      "baja drive": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      },
+      "dorothy drive": {
+        "electric": "SDG&E",
+        "confidence": 0.99,
+        "sample_count": 10,
+        "agreement_rate": 1.0
+      },
+      "mary lane drive": {
+        "electric": "SDG&E",
+        "confidence": 0.99,
+        "sample_count": 12,
+        "agreement_rate": 1.0
+      },
+      "dorothy way": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      },
+      "montezuma road": {
+        "electric": "SDG&E",
+        "confidence": 0.9,
+        "sample_count": 7,
+        "agreement_rate": 1.0
+      }
+    },
+    "35760": {
+      "hope ridge drive": {
+        "electric": "Huntsville Utilities - Al",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      }
+    },
+    "97206": {
+      "se 52nd avenue": {
+        "electric": "Portland General Electric",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "28411": {
+      "sandy ridge loop": {
+        "electric": "Duke Energy",
+        "confidence": 0.99,
+        "sample_count": 22,
+        "agreement_rate": 1.0
+      }
+    },
+    "99217": {
+      "e fairview avenue": {
+        "electric": "Avista Utilities",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "50261": {
+      "long avenue": {
+        "electric": "Midamerican Energy Company",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "33619": {
+      "wild senna boulevard": {
+        "electric": "TECO Energy",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    },
+    "63109": {
+      "hereford street": {
+        "electric": "Ameren",
+        "confidence": 0.9,
+        "sample_count": 8,
+        "agreement_rate": 1.0
+      },
+      "s kingshighway boulevard a": {
+        "electric": "Ameren",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "67226": {
+      "n cypress circle": {
+        "electric": "Evergy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "22079": {
+      "hagel circle": {
+        "electric": "Dominion Energy",
+        "confidence": 0.9,
+        "sample_count": 5,
+        "agreement_rate": 1.0
+      }
+    },
+    "93422": {
+      "jornada lane 04": {
+        "electric": "PG&E",
+        "confidence": 0.9,
+        "sample_count": 6,
+        "agreement_rate": 1.0
+      }
+    }
+  }
+}

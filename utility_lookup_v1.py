@@ -2233,8 +2233,28 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 '_is_deregulated': False
             }
             other_electric = []
-        # NOTE: Tenant-verified data is now used as CONTEXT for AI selector, not as override
-        # See pipeline/smart_selector.py - it includes area context in the AI prompt
+        # PRIORITY 0.5: Check tenant-verified hard overrides (95%+ confidence)
+        if primary_electric is None:
+            try:
+                from tenant_override_lookup import check_tenant_override_for_address
+                tenant_override = check_tenant_override_for_address(address, 'electric')
+                if tenant_override and tenant_override.get('confidence', 0) >= 0.90:
+                    primary_electric = {
+                        'NAME': tenant_override['utility'],
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': tenant_override['confidence'],
+                        '_verification_source': tenant_override['source'],
+                        '_selection_reason': f"Tenant-verified ({tenant_override['sample_count']} samples, {tenant_override['confidence']*100:.0f}% confidence)",
+                        '_is_deregulated': is_deregulated_state(state)
+                    }
+                    if is_deregulated_state(state):
+                        primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                    other_electric = []
+            except ImportError:
+                pass
+            except Exception as e:
+                print(f"Warning: tenant override lookup failed: {e}")
         # PRIORITY 1: NEW PIPELINE with OpenAI Smart Selector
         if primary_electric is None and use_pipeline and PIPELINE_AVAILABLE:
             pipeline_result = _pipeline_lookup(lat, lon, address, city, county, state, zip_code, 'electric')

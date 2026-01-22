@@ -253,17 +253,17 @@ class SmartSelector:
         except Exception as e:
             pass  # Silently continue if insights not available
         
-        # Also get general area context from tenant data
+        # Also get tenant-verified context (from properly processed data)
         try:
-            from tenant_verified_lookup import get_area_context
-            area_ctx = get_area_context(context.zip_code, context.address)
-            if area_ctx.get('context_note'):
+            from tenant_override_lookup import get_tenant_context_for_address
+            tenant_ctx = get_tenant_context_for_address(context.address, 'electric')
+            if tenant_ctx and tenant_ctx.get('context_text'):
                 if area_context_text:
-                    area_context_text += f"\n\nADDITIONAL CONTEXT:\n{area_ctx['context_note']}"
+                    area_context_text += f"\n\nTENANT-VERIFIED DATA:\n{tenant_ctx['context_text']}"
                 else:
-                    area_context_text = f"\n\nAREA INTELLIGENCE:\n{area_ctx['context_note']}"
-                if area_ctx.get('utilities_seen'):
-                    area_context_text += f"\nUtilities seen in this ZIP: {', '.join(area_ctx['utilities_seen'][:5])}"
+                    area_context_text = f"\n\nTENANT-VERIFIED DATA:\n{tenant_ctx['context_text']}"
+                if tenant_ctx.get('is_split_territory'):
+                    area_context_text += f"\nNote: This ZIP has split utility territories."
         except ImportError:
             pass
         except Exception as e:

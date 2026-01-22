@@ -1,290 +1,143 @@
-// Utility Lookup Widget (Standard Version - No Guide Feature)
+// Utility Lookup Widget - Full Featured (No Guide)
 (function() {
- const API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
- const FEEDBACK_URL = 'https://web-production-9acc6.up.railway.app/api/feedback';
- const form = document.getElementById('utilityForm');
- const input = document.getElementById('addressInput');
- const btn = document.getElementById('searchBtn');
- const results = document.getElementById('utilityResults');
- const toggles = document.querySelectorAll('.up-toggle');
- const icons = { electric: '⚡', gas: '🔥', water: '💧', internet: '🌐' };
- const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
- 
- let currentAddress = '';
- let currentZipCode = '';
-
- const sourceExplanations = {
-   'municipal_utility': 'Verified municipal utility',
-   'eia_861': 'EIA federal data',
-   'hifld': 'Federal territory data',
-   'coop_boundaries': 'Electric co-op territory',
-   'serp_api': 'Web search verified',
-   'epa_water_boundaries': 'EPA water data',
-   'fcc_broadband': 'FCC broadband data',
-   'user_confirmed': 'Confirmed by users',
-   'special_district': 'Special district boundary'
- };
-
- function getSourceExplanation(source) {
-   if (!source) return null;
-   if (sourceExplanations[source]) return sourceExplanations[source];
-   const sl = source.toLowerCase();
-   if (sl.includes('municipal')) return 'Verified municipal utility';
-   if (sl.includes('eia')) return 'Federal utility data';
-   if (sl.includes('coop')) return 'Electric co-op territory';
-   if (sl.includes('fcc')) return 'FCC broadband data';
-   return null;
- }
-
- // Toggle functionality
- toggles.forEach(toggle => {
-   toggle.addEventListener('click', (e) => {
-     e.preventDefault();
-     const checkbox = toggle.querySelector('input');
-     checkbox.checked = !checkbox.checked;
-     toggle.classList.toggle('active', checkbox.checked);
-   });
- });
-
- function getSelectedUtilities() {
-   const selected = [];
-   toggles.forEach(toggle => {
-     if (toggle.querySelector('input').checked) {
-       selected.push(toggle.dataset.utility);
-     }
-   });
-   return selected;
- }
-
- // Form submit
- form.addEventListener('submit', async (e) => {
-   e.preventDefault();
-   const address = input.value.trim();
-   if (!address) return;
-   currentAddress = address;
-   const utilities = getSelectedUtilities();
-   if (utilities.length === 0) {
-     results.innerHTML = '<div class="up-error">Please select at least one utility type.</div>';
-     return;
-   }
-   btn.disabled = true;
-   btn.textContent = 'Searching...';
-
-   const streamUrl = API_URL.replace('/lookup', '/lookup/stream');
-   const params = new URLSearchParams({ address, utilities: utilities.join(',') });
-   
-   results.innerHTML = `
-     <div class="up-status-message" id="upStatusMsg">
-       <div class="up-loading-spinner"></div>
-       <span>Starting lookup...</span>
-     </div>
-     <div id="upLocationContainer"></div>
-     <div class="up-results" id="upStreamResults">
-       ${utilities.includes('electric') ? '<div id="upElectricSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up electric...</div>' : ''}
-       ${utilities.includes('gas') ? '<div id="upGasSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up gas...</div>' : ''}
-       ${utilities.includes('water') ? '<div id="upWaterSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up water...</div>' : ''}
-       ${utilities.includes('internet') ? '<div id="upInternetSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up internet...</div>' : ''}
-     </div>
-   `;
-
-   const streamData = { utilities: {}, location: null };
-   
-   try {
-     const eventSource = new EventSource(`${streamUrl}?${params}`);
-     
-     eventSource.onmessage = (event) => {
-       const msg = JSON.parse(event.data);
-       
-       if (msg.event === 'status') {
-         document.getElementById('upStatusMsg').innerHTML = `<div class="up-loading-spinner"></div><span>${msg.message}</span>`;
-       }
-       else if (msg.event === 'geocode') {
-         streamData.location = msg.data;
-         currentZipCode = msg.data?.zip_code || '';
-         document.getElementById('upLocationContainer').innerHTML = `
-           <div class="up-location">
-             <span class="up-location-icon">📍</span>
-             ${msg.data.city || ''}, ${msg.data.county ? msg.data.county + ' County, ' : ''}${msg.data.state || ''}
-           </div>
-         `;
-       }
-       else if (msg.event === 'electric') {
-         const slot = document.getElementById('upElectricSlot');
-         if (msg.data) {
-           streamData.utilities.electric = [msg.data];
-           slot.outerHTML = renderUtilityCard(msg.data, 'electric');
-         } else {
-           slot.innerHTML = `<div class="up-no-result">⚡ ${msg.note || 'No electric provider found'}</div>`;
-           slot.classList.remove('up-loading-slot');
-         }
-       }
-       else if (msg.event === 'gas') {
-         const slot = document.getElementById('upGasSlot');
-         if (msg.data) {
-           streamData.utilities.gas = [msg.data];
-           slot.outerHTML = renderUtilityCard(msg.data, 'gas');
-         } else {
-           slot.innerHTML = `<div class="up-no-result">🔥 ${msg.note || 'No gas provider found'}</div>`;
-           slot.classList.remove('up-loading-slot');
-         }
-       }
-       else if (msg.event === 'water') {
-         const slot = document.getElementById('upWaterSlot');
-         if (msg.data) {
-           streamData.utilities.water = [msg.data];
-           slot.outerHTML = renderUtilityCard(msg.data, 'water');
-         } else {
-           slot.innerHTML = `<div class="up-no-result">💧 ${msg.note || 'No water provider found'}</div>`;
-           slot.classList.remove('up-loading-slot');
-         }
-       }
-       else if (msg.event === 'internet') {
-         const slot = document.getElementById('upInternetSlot');
-         if (msg.data && msg.data.providers && msg.data.providers.length > 0) {
-           streamData.utilities.internet = msg.data;
-           slot.outerHTML = renderInternetCard(msg.data);
-         } else {
-           slot.innerHTML = `<div class="up-no-result">🌐 ${msg.note || 'No internet data available'}</div>`;
-           slot.classList.remove('up-loading-slot');
-         }
-       }
-       else if (msg.event === 'complete') {
-         document.getElementById('upStatusMsg').remove();
-         eventSource.close();
-         btn.disabled = false;
-         btn.textContent = 'Search';
-       }
-       else if (msg.event === 'error') {
-         results.innerHTML = `<div class="up-error">${msg.message}</div>`;
-         eventSource.close();
-         btn.disabled = false;
-         btn.textContent = 'Search';
-       }
-     };
-     
-     eventSource.onerror = () => {
-       eventSource.close();
-       if (!streamData.location) {
-         results.innerHTML = '<div class="up-error">Connection lost. Please try again.</div>';
-       } else {
-         document.getElementById('upStatusMsg')?.remove();
-       }
-       btn.disabled = false;
-       btn.textContent = 'Search';
-     };
-   } catch (error) {
-     results.innerHTML = '<div class="up-error">Failed to connect to API. Please try again.</div>';
-     btn.disabled = false;
-     btn.textContent = 'Search';
-   }
- });
-
- function renderUtilityCard(util, type) {
-   const cardId = `card-${type}-${Date.now()}`;
-   let badges = getConfidenceBadge(util, cardId);
-   
-   let detailsLeft = '';
-   if (util.phone && util.phone !== 'NOT AVAILABLE') {
-     detailsLeft += `<div class="up-detail"><span class="up-detail-label">Phone</span><span class="up-detail-value"><a href="tel:${util.phone}">${util.phone}</a></span></div>`;
-   }
-   if (util.website && util.website !== 'NOT AVAILABLE') {
-     const url = util.website.startsWith('http') ? util.website : 'https://' + util.website;
-     detailsLeft += `<div class="up-detail"><span class="up-detail-label">Website</span><span class="up-detail-value"><a href="${url}" target="_blank">Visit site</a></span></div>`;
-   }
-
-   let deregSection = '';
-   if (type === 'electric' && util.deregulated && util.deregulated.has_choice) {
-     const dereg = util.deregulated;
-     deregSection = `
-       <div class="up-dereg-banner">
-         <div class="up-dereg-header"><span class="up-dereg-icon">🎉</span><span class="up-dereg-title">${dereg.message || 'You have options!'}</span></div>
-         <div class="up-dereg-body">
-           <p class="up-dereg-explain">${dereg.how_it_works || dereg.explanation || ''}</p>
-           ${dereg.choice_website ? `<a href="${dereg.choice_website}" target="_blank" class="up-dereg-cta"><span>🔍</span> Compare Providers</a>` : ''}
-         </div>
-       </div>
-     `;
-   }
-
-   return `
-     <div class="up-card" id="${cardId}">
-       <div class="up-card-header">
-         <div class="up-card-type">
-           <div class="up-icon up-icon-${type}">${icons[type]}</div>
-           <span class="up-type-label">${typeLabels[type]}</span>
-         </div>
-         <div class="up-header-badges">${badges}</div>
-       </div>
-       <div class="up-provider-section">
-         <div class="up-provider-name">${util.name || 'Unknown Provider'}</div>
-       </div>
-       ${deregSection}
-       <div class="up-details">
-         <div class="up-details-left">${detailsLeft}</div>
-       </div>
-     </div>
-   `;
- }
-
- function getConfidenceBadge(util, cardId) {
-   // Check confidence string first (from API), then fall back to score
-   const conf = util.confidence;
-   const score = util.confidence_score;
-   let badgeClass, badgeLabel;
-   
-   if (conf === 'verified' || conf === 'high' || score >= 85) {
-     badgeClass = 'up-badge-verified'; badgeLabel = 'Verified';
-   } else if (conf === 'medium' || (score >= 50 && score < 85)) {
-     badgeClass = 'up-badge-medium'; badgeLabel = 'Medium';
-   } else if (conf === 'low' || (score !== null && score < 50)) {
-     badgeClass = 'up-badge-low'; badgeLabel = 'Low Confidence';
-   } else {
-     // Default to verified for municipal sources
-     const source = util._source || '';
-     if (source.includes('municipal') || source.includes('eia')) {
-       badgeClass = 'up-badge-verified'; badgeLabel = 'Verified';
-     } else {
-       badgeClass = 'up-badge-medium'; badgeLabel = 'Medium';
-     }
-   }
-   return `<span class="up-badge ${badgeClass}">${badgeLabel}</span>`;
- }
-
- function renderInternetCard(inet) {
-   const providers = inet.providers || [];
-   let badge = inet.has_fiber ? '<span class="up-badge up-badge-verified">Fiber Available</span>' : 
-               inet.has_cable ? '<span class="up-badge up-badge-high">Cable Available</span>' : 
-               '<span class="up-badge up-badge-medium">Limited Options</span>';
-   
-   const sorted = [...providers].sort((a, b) => (b.max_download_mbps || 0) - (a.max_download_mbps || 0));
-   
-   return `
-     <div class="up-card">
-       <div class="up-card-header">
-         <div class="up-card-type">
-           <div class="up-icon up-icon-internet">${icons.internet}</div>
-           <span class="up-type-label">Internet</span>
-         </div>
-         <div class="up-header-badges">${badge}</div>
-       </div>
-       <div class="up-internet-stats">
-         <div class="up-stat"><span class="up-stat-value">${inet.provider_count}</span><span class="up-stat-label">Providers</span></div>
-       </div>
-       <div class="up-internet-list">
-         ${sorted.slice(0, 5).map(p => `
-           <div class="up-internet-row">
-             <div class="up-internet-provider">
-               <span class="up-internet-name">${p.name}</span>
-               <span class="up-internet-tech">${p.technology || 'Unknown'}</span>
-             </div>
-             <div class="up-internet-speed">
-               <span class="up-internet-down">${p.max_download_mbps || '?'}</span>
-               <span class="up-internet-speed-label">↓ Mbps</span>
-             </div>
-           </div>
-         `).join('')}
-       </div>
-     </div>
-   `;
- }
+const API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
+const FEEDBACK_URL = 'https://web-production-9acc6.up.railway.app/api/feedback';
+const form = document.getElementById('utilityForm');
+const input = document.getElementById('addressInput');
+const btn = document.getElementById('searchBtn');
+const results = document.getElementById('utilityResults');
+const toggles = document.querySelectorAll('.up-toggle');
+const icons = { electric: '⚡', gas: '🔥', water: '💧', internet: '🌐' };
+const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
+const sourceExplanations = {'municipal_utility':'Verified municipal utility','municipal':'Verified municipal utility','special_district':'Special district boundary','user_confirmed':'Confirmed by users','verified':'State regulatory data','hifld':'Federal territory data','eia_861':'Federal utility data','eia':'Federal utility data','google_serp':'Web search verified','serp':'Web search verified','epa_sdwis':'EPA water data','epa':'EPA water data','fcc':'FCC broadband data','supplemental':'Curated database'};
+function getSourceExplanation(source) {
+if (!source) return null;
+if (sourceExplanations[source]) return sourceExplanations[source];
+const sl = source.toLowerCase();
+if (sl.includes('municipal')) return 'Verified municipal utility';
+if (sl.includes('eia') || sl.includes('861')) return 'Federal utility data';
+if (sl.includes('hifld')) return 'Federal territory data';
+if (sl.includes('coop')) return 'Electric co-op territory';
+if (sl.includes('serp') || sl.includes('google')) return 'Web search verified';
+if (sl.includes('epa') || sl.includes('sdwis')) return 'EPA water data';
+if (sl.includes('fcc')) return 'FCC broadband data';
+if (sl.includes('user') || sl.includes('confirmed')) return 'Confirmed by users';
+if (sl.includes('special') || sl.includes('district')) return 'Special district boundary';
+return null;
+}
+let currentAddress = '';
+let currentZipCode = '';
+toggles.forEach(toggle => {
+toggle.addEventListener('click', (e) => {
+e.preventDefault();
+const checkbox = toggle.querySelector('input');
+checkbox.checked = !checkbox.checked;
+toggle.classList.toggle('active', checkbox.checked);
+});
+});
+function getSelectedUtilities() {
+const selected = [];
+toggles.forEach(toggle => { if (toggle.querySelector('input').checked) selected.push(toggle.dataset.utility); });
+return selected;
+}
+document.addEventListener('click', (e) => {
+if (!e.target.closest('.up-badge-confidence')) {
+document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => d.classList.remove('open'));
+document.querySelectorAll('.up-badge-confidence.open').forEach(b => b.classList.remove('open'));
+}
+});
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+const address = input.value.trim();
+if (!address) return;
+currentAddress = address;
+const utilities = getSelectedUtilities();
+if (utilities.length === 0) { results.innerHTML = '<div class="up-error">Please select at least one utility type.</div>'; return; }
+btn.disabled = true;
+btn.textContent = 'Searching...';
+const streamUrl = API_URL.replace('/lookup', '/lookup/stream');
+const params = new URLSearchParams({ address: address, utilities: utilities.join(',') });
+results.innerHTML = '<div class="up-status-message" id="upStatusMsg"><div class="up-loading-spinner"></div><span>Starting lookup...</span></div><div id="upLocationContainer"></div><div class="up-results" id="upStreamResults">' + (utilities.includes('electric') ? '<div id="upElectricSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up electric...</div>' : '') + (utilities.includes('gas') ? '<div id="upGasSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up gas...</div>' : '') + (utilities.includes('water') ? '<div id="upWaterSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up water...</div>' : '') + (utilities.includes('internet') ? '<div id="upInternetSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up internet...</div>' : '') + '</div>';
+const streamData = { utilities: {}, location: null };
+try {
+const eventSource = new EventSource(streamUrl + '?' + params);
+eventSource.onmessage = (event) => {
+const msg = JSON.parse(event.data);
+if (msg.event === 'status') { document.getElementById('upStatusMsg').innerHTML = '<div class="up-loading-spinner"></div><span>' + msg.message + '</span>'; }
+else if (msg.event === 'geocode') { streamData.location = msg.data; currentZipCode = msg.data?.zip_code || ''; document.getElementById('upLocationContainer').innerHTML = '<div class="up-location"><span class="up-location-icon">📍</span>' + (msg.data.city || '') + ', ' + (msg.data.county ? msg.data.county + ' County, ' : '') + (msg.data.state || '') + '</div>'; }
+else if (msg.event === 'electric') { const slot = document.getElementById('upElectricSlot'); if (msg.data) { streamData.utilities.electric = [msg.data]; slot.outerHTML = renderUtilityCard(msg.data, 'electric'); attachBadgeListeners(); attachFeedbackListeners(); } else { slot.innerHTML = '<div class="up-no-result">⚡ ' + (msg.note || 'No electric provider found') + '</div>'; slot.classList.remove('up-loading-slot'); } }
+else if (msg.event === 'gas') { const slot = document.getElementById('upGasSlot'); if (msg.data) { streamData.utilities.gas = [msg.data]; slot.outerHTML = renderUtilityCard(msg.data, 'gas'); attachBadgeListeners(); attachFeedbackListeners(); } else { slot.innerHTML = '<div class="up-no-result">🔥 ' + (msg.note || 'No gas provider found') + '</div>'; slot.classList.remove('up-loading-slot'); } }
+else if (msg.event === 'water') { const slot = document.getElementById('upWaterSlot'); if (msg.data) { streamData.utilities.water = [msg.data]; slot.outerHTML = renderUtilityCard(msg.data, 'water'); attachBadgeListeners(); attachFeedbackListeners(); } else { slot.innerHTML = '<div class="up-no-result">💧 ' + (msg.note || 'No water provider found') + '</div>'; slot.classList.remove('up-loading-slot'); } }
+else if (msg.event === 'internet') { const slot = document.getElementById('upInternetSlot'); if (msg.data && msg.data.providers && msg.data.providers.length > 0) { streamData.utilities.internet = msg.data; slot.outerHTML = renderInternetCard(msg.data); } else { slot.innerHTML = '<div class="up-no-result">🌐 ' + (msg.note || 'No internet data available') + '</div>'; slot.classList.remove('up-loading-slot'); } }
+else if (msg.event === 'complete') { document.getElementById('upStatusMsg').remove(); eventSource.close(); btn.disabled = false; btn.textContent = 'Search'; }
+else if (msg.event === 'error') { results.innerHTML = '<div class="up-error">' + msg.message + '</div>'; eventSource.close(); btn.disabled = false; btn.textContent = 'Search'; }
+};
+eventSource.onerror = () => { eventSource.close(); if (!streamData.location) { results.innerHTML = '<div class="up-error">Connection lost. Please try again.</div>'; } else { var s = document.getElementById('upStatusMsg'); if(s) s.remove(); } btn.disabled = false; btn.textContent = 'Search'; };
+} catch (error) { results.innerHTML = '<div class="up-error">Failed to connect to API. Please try again.</div>'; btn.disabled = false; btn.textContent = 'Search'; }
+});
+function renderUtilityCard(util, type) {
+const cardId = 'card-' + type + '-' + Date.now();
+let badges = '';
+if (util.type && ['MUD', 'CDD', 'PUD', 'WCID', 'Metro District'].includes(util.type)) { badges += '<span class="up-badge up-badge-district">' + util.type + '</span>'; }
+badges += getConfidenceBadgeWithDropdown(util, cardId);
+let detailsLeft = '';
+if (util.phone && util.phone !== 'NOT AVAILABLE') { detailsLeft += '<div class="up-detail"><span class="up-detail-label">Phone</span><span class="up-detail-value"><a href="tel:' + util.phone + '">' + util.phone + '</a></span></div>'; }
+if (util.website && util.website !== 'NOT AVAILABLE') { const url = util.website.startsWith('http') ? util.website : 'https://' + util.website; detailsLeft += '<div class="up-detail"><span class="up-detail-label">Website</span><span class="up-detail-value"><a href="' + url + '" target="_blank">Visit site</a></span></div>'; }
+let deregSection = '';
+if (type === 'electric' && util.deregulated && util.deregulated.has_choice) { const dereg = util.deregulated; deregSection = '<div class="up-dereg-banner"><div class="up-dereg-header"><span class="up-dereg-icon">🎉</span><span class="up-dereg-title">' + (dereg.message || 'You have options!') + '</span></div><div class="up-dereg-body"><p class="up-dereg-explain">' + (dereg.how_it_works || dereg.explanation || '') + '</p>' + (dereg.choice_website ? '<a href="' + dereg.choice_website + '" target="_blank" class="up-dereg-cta"><span>🔍</span> Compare Providers</a>' : '') + '</div></div>'; }
+return '<div class="up-card" id="' + cardId + '"><div class="up-card-header"><div class="up-card-type"><div class="up-icon up-icon-' + type + '">' + icons[type] + '</div><span class="up-type-label">' + typeLabels[type] + '</span></div><div class="up-header-badges">' + badges + '</div></div><div class="up-provider-section"><div class="up-provider-name">' + (util.name || 'Unknown Provider') + '</div></div>' + deregSection + '<div class="up-details"><div class="up-details-left">' + detailsLeft + '</div><div class="up-feedback-inline" data-card="' + cardId + '" data-type="' + type + '" data-provider="' + (util.name || '') + '"><span>Correct?</span><button class="up-feedback-btn-small yes" data-response="yes">Yes</button><button class="up-feedback-btn-small no" data-response="no">No</button><span class="up-feedback-done" id="' + cardId + '-done">Thanks!</span></div></div><div class="up-feedback-form" id="' + cardId + '-form"><label>What is the correct ' + typeLabels[type].toLowerCase() + ' provider?</label><input type="text" placeholder="Enter correct provider name" id="' + cardId + '-correction" /><button class="up-feedback-submit" data-card="' + cardId + '" data-type="' + type + '">Submit</button></div></div>';
+}
+function getConfidenceBadgeWithDropdown(util, cardId) {
+const score = util.confidence_score;
+const source = util._source || util.source || '';
+let badgeClass, badgeLabel;
+if (score !== undefined && score !== null) { if (score >= 85) { badgeClass = 'up-badge-verified'; badgeLabel = 'Verified'; } else if (score >= 70) { badgeClass = 'up-badge-high'; badgeLabel = 'High Confidence'; } else if (score >= 50) { badgeClass = 'up-badge-medium'; badgeLabel = 'Medium'; } else { badgeClass = 'up-badge-low'; badgeLabel = 'Low Confidence'; } }
+else { const confidence = util.confidence || 'medium'; const map = { 'verified': { c: 'up-badge-verified', l: 'Verified' }, 'high': { c: 'up-badge-high', l: 'High Confidence' }, 'medium': { c: 'up-badge-medium', l: 'Medium' }, 'low': { c: 'up-badge-low', l: 'Low Confidence' } }; const m = map[confidence] || map['medium']; badgeClass = m.c; badgeLabel = m.l; }
+const explanation = getSourceExplanation(source);
+const dropdownContent = score !== undefined && score !== null ? (explanation ? '<span class="score">' + score + '/100</span> - ' + explanation : '<span class="score">' + score + '/100</span> confidence') : (explanation || 'Confidence details unavailable');
+return '<span class="up-badge ' + badgeClass + ' up-badge-confidence" data-dropdown="' + cardId + '-dropdown">' + badgeLabel + '<span class="up-badge-caret">▼</span></span><div class="up-confidence-dropdown" id="' + cardId + '-dropdown">' + dropdownContent + '</div>';
+}
+function renderInternetCard(inet) {
+const providers = inet.providers || [];
+const best = inet.best_wired;
+const badge = inet.has_fiber ? '<span class="up-badge up-badge-verified">Fiber Available</span>' : inet.has_cable ? '<span class="up-badge up-badge-high">Cable Available</span>' : '<span class="up-badge up-badge-medium">Limited Options</span>';
+const sortedProviders = [...providers].sort((a, b) => (b.max_download_mbps || 0) - (a.max_download_mbps || 0));
+const rows = sortedProviders.map(provider => { const isBest = best && provider.name === best.name; return '<div class="up-internet-row' + (isBest ? ' up-internet-row-best' : '') + '"><div class="up-internet-provider"><span class="up-internet-name">' + provider.name + '</span><span class="up-internet-tech">' + (provider.technology || 'Unknown') + '</span></div><div class="up-internet-speed"><span class="up-internet-down">' + (provider.max_download_mbps || '?') + '</span><span class="up-internet-speed-label">↓ / ' + (provider.max_upload_mbps || '?') + ' ↑ Mbps</span></div></div>'; }).join('');
+return '<div class="up-card"><div class="up-card-header"><div class="up-card-type"><div class="up-icon up-icon-internet">' + icons.internet + '</div><span class="up-type-label">Internet</span></div><div class="up-header-badges">' + badge + '</div></div><div class="up-internet-stats"><div class="up-stat"><span class="up-stat-value">' + inet.provider_count + '</span><span class="up-stat-label">Providers</span></div>' + (best ? '<div class="up-stat"><span class="up-stat-value">' + best.max_download_mbps + '</span><span class="up-stat-label">Max Mbps</span></div>' : '') + '</div><div class="up-internet-list">' + rows + '</div></div>';
+}
+function attachBadgeListeners() {
+document.querySelectorAll('.up-badge-confidence:not([data-listener])').forEach(badge => {
+badge.setAttribute('data-listener', 'true');
+badge.addEventListener('click', function(e) { e.stopPropagation(); const dropdownId = this.dataset.dropdown; const dropdown = document.getElementById(dropdownId); document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => { if (d.id !== dropdownId) d.classList.remove('open'); }); document.querySelectorAll('.up-badge-confidence.open').forEach(b => { if (b !== this) b.classList.remove('open'); }); dropdown.classList.toggle('open'); this.classList.toggle('open'); });
+});
+}
+function attachFeedbackListeners() {
+document.querySelectorAll('.up-feedback-btn-small:not([data-listener])').forEach(btn => {
+btn.setAttribute('data-listener', 'true');
+btn.addEventListener('click', function() { const feedback = this.closest('.up-feedback-inline'); const cardId = feedback.dataset.card; const type = feedback.dataset.type; const provider = feedback.dataset.provider; const response = this.dataset.response; feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.classList.remove('selected')); this.classList.add('selected'); if (response === 'yes') { feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.style.display = 'none'); document.getElementById(cardId + '-done').classList.add('show'); fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: currentAddress, zip_code: currentZipCode, utility_type: type, returned_provider: provider, is_correct: true, source: 'web_widget' }) }).catch(e => console.error('Failed to submit feedback:', e)); } else { document.getElementById(cardId + '-form').classList.add('open'); } });
+});
+document.querySelectorAll('.up-feedback-submit:not([data-listener])').forEach(btn => {
+btn.setAttribute('data-listener', 'true');
+btn.addEventListener('click', function() { const cardId = this.dataset.card; const type = this.dataset.type; const correction = document.getElementById(cardId + '-correction').value.trim(); if (!correction) { alert('Please enter the correct provider name'); return; } const feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]'); const returnedProvider = feedback.dataset.provider; fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: currentAddress, zip_code: currentZipCode, utility_type: type, returned_provider: returnedProvider, correct_provider: correction, is_correct: false, source: 'web_widget' }) }).catch(e => console.error('Failed to submit feedback:', e)); document.getElementById(cardId + '-form').classList.remove('open'); feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.style.display = 'none'); document.getElementById(cardId + '-done').classList.add('show'); });
+});
+}
+// CSV Bulk Upload
+const csvDropZone = document.getElementById('csvDropZone');
+const csvInput = document.getElementById('csvInput');
+const csvSelectBtn = document.getElementById('csvSelectBtn');
+const csvProgress = document.getElementById('csvProgress');
+const csvProgressFill = document.getElementById('csvProgressFill');
+const csvProgressText = document.getElementById('csvProgressText');
+const csvResults = document.getElementById('csvResults');
+const csvSuccessCount = document.getElementById('csvSuccessCount');
+const csvErrorCount = document.getElementById('csvErrorCount');
+const csvDownloadBtn = document.getElementById('csvDownloadBtn');
+let csvResultsData = [];
+if (csvDropZone) { csvDropZone.addEventListener('dragover', e => { e.preventDefault(); csvDropZone.classList.add('dragover'); }); csvDropZone.addEventListener('dragleave', () => csvDropZone.classList.remove('dragover')); csvDropZone.addEventListener('drop', e => { e.preventDefault(); csvDropZone.classList.remove('dragover'); const file = e.dataTransfer.files[0]; if (file && file.name.endsWith('.csv')) processCSVFile(file); else alert('Please upload a CSV file'); }); }
+if (csvSelectBtn) csvSelectBtn.addEventListener('click', e => { e.stopPropagation(); csvInput.click(); });
+if (csvInput) csvInput.addEventListener('change', e => { const file = e.target.files[0]; if (file) processCSVFile(file); });
+if (csvDownloadBtn) csvDownloadBtn.addEventListener('click', () => { if (csvResultsData.length === 0) return; const headers = Object.keys(csvResultsData[0]); const csvContent = [headers.join(','), ...csvResultsData.map(row => headers.map(h => { const val = row[h] || ''; if (val.toString().includes(',') || val.toString().includes('"')) return '"' + val.toString().replace(/"/g, '""') + '"'; return val; }).join(','))].join('\n'); const blob = new Blob([csvContent], { type: 'text/csv' }); const url = URL.createObjectURL(blob); const a = document.createElement('a'); a.href = url; a.download = 'utility_lookup_results.csv'; a.click(); URL.revokeObjectURL(url); });
+function parseCSV(text) { const lines = text.split('\n').filter(line => line.trim()); if (lines.length < 2) return { headers: [], rows: [] }; const parseRow = line => { const result = []; let current = ''; let inQuotes = false; for (let i = 0; i < line.length; i++) { const char = line[i]; if (char === '"') inQuotes = !inQuotes; else if (char === ',' && !inQuotes) { result.push(current.trim()); current = ''; } else current += char; } result.push(current.trim()); return result; }; const headers = parseRow(lines[0]); const rows = lines.slice(1).map(line => { const values = parseRow(line); const obj = {}; headers.forEach((h, i) => obj[h] = values[i] || ''); return obj; }); return { headers, rows }; }
+function findAddressColumn(headers) { const addressCols = ['address', 'full_address', 'street_address', 'property_address', 'addr', 'location']; const headersLower = headers.map(h => h.toLowerCase().trim()); for (const col of addressCols) { const idx = headersLower.indexOf(col); if (idx !== -1) return headers[idx]; } return null; }
+async function processCSVFile(file) { const text = await file.text(); const { headers, rows } = parseCSV(text); if (rows.length === 0) { alert('CSV file is empty'); return; } const addressCol = findAddressColumn(headers); if (!addressCol) { alert('Could not find address column.'); return; } const MAX_ROWS = 100; const processRows = rows.slice(0, MAX_ROWS); if (rows.length > MAX_ROWS) alert('Processing first ' + MAX_ROWS + ' addresses only'); const utilities = getSelectedUtilities(); if (utilities.length === 0) { alert('Please select at least one utility type'); return; } csvProgress.classList.add('show'); csvResults.classList.remove('show'); csvResultsData = []; let successCount = 0; let errorCount = 0; for (let i = 0; i < processRows.length; i++) { const row = processRows[i]; const address = row[addressCol]; const pct = Math.round(((i + 1) / processRows.length) * 100); csvProgressFill.style.width = pct + '%'; csvProgressText.textContent = 'Processing ' + (i + 1) + ' of ' + processRows.length + '...'; if (!address || !address.trim()) { csvResultsData.push({ ...row, _status: 'error', _error: 'Empty address', electric_provider: '', gas_provider: '', water_provider: '' }); errorCount++; continue; } try { const params = new URLSearchParams({ address: address.trim(), verify: 'true', utilities: utilities.join(',') }); const response = await fetch(API_URL + '?' + params); const data = await response.json(); if (data.error) { csvResultsData.push({ ...row, _status: 'error', _error: data.error, electric_provider: '', gas_provider: '', water_provider: '' }); errorCount++; } else { const result = { ...row, _status: 'success', _error: '' }; if (utilities.includes('electric') && data.utilities.electric?.length > 0) result.electric_provider = data.utilities.electric[0].name || ''; else result.electric_provider = ''; if (utilities.includes('gas') && data.utilities.gas?.length > 0) result.gas_provider = data.utilities.gas[0].name || ''; else result.gas_provider = ''; if (utilities.includes('water') && data.utilities.water?.length > 0) result.water_provider = data.utilities.water[0].name || ''; else result.water_provider = ''; if (data.location) { result._geocoded_city = data.location.city || ''; result._geocoded_state = data.location.state || ''; } csvResultsData.push(result); successCount++; } } catch (e) { csvResultsData.push({ ...row, _status: 'error', _error: e.message || 'API error', electric_provider: '', gas_provider: '', water_provider: '' }); errorCount++; } await new Promise(r => setTimeout(r, 200)); } csvProgress.classList.remove('show'); csvResults.classList.add('show'); csvSuccessCount.textContent = successCount; csvErrorCount.textContent = errorCount; }
 })();

@@ -667,6 +667,25 @@
         "phone": null,
         "website": null,
         "note": "From EIA-861 (71 ZIP codes)"
+      },
+      "Cleveland": {
+        "name": "Entergy Texas",
+        "phone": "800-368-3749",
+        "website": "https://www.entergy.com/texas/",
+        "zip_codes": [
+          "77327",
+          "77328"
+        ],
+        "note": "Entergy Texas service territory"
+      },
+      "Magnolia": {
+        "name": "San Bernard Electric Cooperative",
+        "phone": "979-543-6271",
+        "website": "https://www.sanbernardecc.com/",
+        "zip_codes": [
+          "77355"
+        ],
+        "note": "San Bernard Electric Cooperative service territory"
       }
     },
     "CA": {
@@ -9387,6 +9406,16 @@
         "name": "Texas Gas Service",
         "phone": "800-700-2443",
         "website": "https://www.texasgasservice.com/"
+      },
+      "Cleveland": {
+        "name": "Universal Natural Gas",
+        "phone": "713-358-2400",
+        "website": "https://www.universalnaturalgas.com/",
+        "zip_codes": [
+          "77327",
+          "77328"
+        ],
+        "note": "Universal Natural Gas service territory"
       }
     },
     "GA": {

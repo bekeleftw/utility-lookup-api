@@ -2255,15 +2255,65 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                 pass
             except Exception as e:
                 print(f"Warning: tenant override lookup failed: {e}")
+        # PRIORITY 0.6: Check geographic boundary (lat/lon based)
+        if primary_electric is None and lat and lon:
+            try:
+                from geographic_boundary_lookup import check_geographic_boundary, get_utility_from_nearby_consensus
+                # First try boundary-based lookup
+                geo_result = check_geographic_boundary(zip_code, lat, lon)
+                if geo_result and geo_result.get('confidence', 0) >= 0.15:
+                    primary_electric = {
+                        'NAME': geo_result['utility'],
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': geo_result['confidence'],
+                        '_verification_source': 'geographic_boundary',
+                        '_selection_reason': f"Geographic boundary: {geo_result['description']}",
+                        '_is_deregulated': is_deregulated_state(state)
+                    }
+                    if is_deregulated_state(state):
+                        primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                    other_electric = []
+                # If no boundary, try nearby consensus
+                if primary_electric is None:
+                    nearby_result = get_utility_from_nearby_consensus(zip_code, lat, lon)
+                    if nearby_result and nearby_result.get('confidence', 0) >= 0.80:
+                        primary_electric = {
+                            'NAME': nearby_result['utility'],
+                            'STATE': state,
+                            'CITY': city,
+                            '_confidence': nearby_result['confidence'],
+                            '_verification_source': 'nearby_consensus',
+                            '_selection_reason': f"Nearby consensus: {nearby_result['agreement_count']}/{nearby_result['nearby_count']} addresses within {nearby_result['avg_distance_miles']}mi",
+                            '_is_deregulated': is_deregulated_state(state)
+                        }
+                        if is_deregulated_state(state):
+                            primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                        other_electric = []
+            except ImportError:
+                pass
+            except Exception as e:
+                print(f"Warning: geographic boundary lookup failed: {e}")
         # PRIORITY 1: NEW PIPELINE with OpenAI Smart Selector
         if primary_electric is None and use_pipeline and PIPELINE_AVAILABLE:
             pipeline_result = _pipeline_lookup(lat, lon, address, city, county, state, zip_code, 'electric')
             if pipeline_result:
                 primary_electric = pipeline_result
-                primary_electric['_is_deregulated'] = is_deregulated_state(state)
-                # Always apply deregulation adjustment for deregulated states
-                if is_deregulated_state(state):
+                # Check if this is a municipal utility (exempt from deregulation)
+                util_name = (primary_electric.get('NAME') or primary_electric.get('name') or '').lower()
+                is_municipal = (
+                    'municipal' in util_name or
+                    'city of' in util_name or
+                    util_name in ['austin energy', 'cps energy', 'garland power', 'lubbock power', 
+                                 'new braunfels utilities', 'georgetown utility', 'greenville electric',
+                                 'ladwp', 'los angeles department of water and power', 'seattle city light',
+                                 'sacramento municipal utility district', 'smud']
+                )
+                if is_deregulated_state(state) and not is_municipal:
+                    primary_electric['_is_deregulated'] = True
                     primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                else:
+                    primary_electric['_is_deregulated'] = False
                 other_electric = []
         # PRIORITY 2: GIS-based lookup for states with authoritative APIs (fallback)
         if primary_electric is None and GIS_LOOKUP_AVAILABLE and state in ('NJ', 'AR', 'DE', 'HI', 'RI', 'PA', 'WI', 'CO', 'WA', 'OR', 'UT', 'MA', 'VT', 'FL', 'IL', 'MS', 'OH', 'KY', 'AK', 'NE', 'CA', 'MI', 'TX', 'NY', 'ME', 'SC', 'IA', 'VA', 'IN', 'KS', 'DC', 'NC', 'MN'):
@@ -2275,12 +2325,23 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     'CITY': city,
                     '_confidence': gis_electric.get('confidence', 'high'),
                     '_verification_source': gis_electric.get('source', 'gis_state_api'),
-                    '_selection_reason': f"GIS lookup from {gis_electric.get('source', 'state API')}",
-                    '_is_deregulated': is_deregulated_state(state)
+                    '_selection_reason': f"GIS lookup from {gis_electric.get('source', 'state API')}"
                 }
-                # Always apply deregulation adjustment for deregulated states
-                if is_deregulated_state(state):
+                # Check if this is a municipal utility (exempt from deregulation)
+                util_name = gis_electric['name'].lower()
+                is_municipal = (
+                    'municipal' in util_name or
+                    'city of' in util_name or
+                    util_name in ['austin energy', 'cps energy', 'garland power', 'lubbock power', 
+                                 'new braunfels utilities', 'georgetown utility', 'greenville electric',
+                                 'ladwp', 'los angeles department of water and power', 'seattle city light',
+                                 'sacramento municipal utility district', 'smud']
+                )
+                if is_deregulated_state(state) and not is_municipal:
+                    primary_electric['_is_deregulated'] = True
                     primary_electric = adjust_electric_result_for_deregulation(primary_electric, state, zip_code)
+                else:
+                    primary_electric['_is_deregulated'] = False
                 other_electric = []
             else:
                 # Fall through to next priority
@@ -3267,7 +3328,36 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
 def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None, use_pipeline: bool = True) -> Optional[Dict]:
     """Look up gas utility only. Fast - typically < 1 second."""
     try:
-        # Priority 0: Check municipal/regional gas data FIRST (most accurate for specific ZIPs)
+        # Priority 0.6: Check geographic boundary (lat/lon based)
+        if lat and lon:
+            try:
+                from geographic_boundary_lookup import check_geographic_boundary, get_utility_from_nearby_consensus
+                geo_result = check_geographic_boundary(zip_code, lat, lon, utility_type='gas')
+                if geo_result and geo_result.get('confidence', 0) >= 0.15:
+                    return {
+                        'NAME': geo_result['utility'],
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': geo_result['confidence'],
+                        '_verification_source': 'geographic_boundary',
+                        '_selection_reason': f"Geographic boundary: {geo_result['description']}"
+                    }
+                nearby_result = get_utility_from_nearby_consensus(zip_code, lat, lon, utility_type='gas')
+                if nearby_result and nearby_result.get('confidence', 0) >= 0.80:
+                    return {
+                        'NAME': nearby_result['utility'],
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': nearby_result['confidence'],
+                        '_verification_source': 'nearby_consensus',
+                        '_selection_reason': f"Nearby consensus: {nearby_result['agreement_count']}/{nearby_result['nearby_count']} addresses"
+                    }
+            except ImportError:
+                pass
+            except Exception:
+                pass
+        
+        # Priority 1: Check municipal/regional gas data (most accurate for specific ZIPs)
         municipal_gas = lookup_municipal_gas(state, city, zip_code, county)
         if municipal_gas:
             return {
@@ -3374,6 +3464,35 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
 def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
     """Look up water utility only. Fast - typically < 1 second."""
     try:
+        # Priority 0.6: Check geographic boundary (lat/lon based)
+        if lat and lon:
+            try:
+                from geographic_boundary_lookup import check_geographic_boundary, get_utility_from_nearby_consensus
+                geo_result = check_geographic_boundary(zip_code, lat, lon, utility_type='water')
+                if geo_result and geo_result.get('confidence', 0) >= 0.15:
+                    return {
+                        'NAME': geo_result['utility'],
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': geo_result['confidence'],
+                        '_verification_source': 'geographic_boundary',
+                        '_selection_reason': f"Geographic boundary: {geo_result['description']}"
+                    }
+                nearby_result = get_utility_from_nearby_consensus(zip_code, lat, lon, utility_type='water')
+                if nearby_result and nearby_result.get('confidence', 0) >= 0.80:
+                    return {
+                        'NAME': nearby_result['utility'],
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': nearby_result['confidence'],
+                        '_verification_source': 'nearby_consensus',
+                        '_selection_reason': f"Nearby consensus: {nearby_result['agreement_count']}/{nearby_result['nearby_count']} addresses"
+                    }
+            except ImportError:
+                pass
+            except Exception:
+                pass
+        
         # Note: Special districts (MUDs/CDDs) are checked AFTER municipal/GIS
         # because major cities (Houston, Austin, Dallas) provide municipal water
         # even in areas that have MUD boundaries. MUDs are primarily for:

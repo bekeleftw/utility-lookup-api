@@ -269,6 +269,20 @@ class SmartSelector:
         except Exception as e:
             pass
         
+        # Add geographic boundary context
+        try:
+            from geographic_boundary_lookup import get_geographic_context_for_ai
+            geo_ctx = get_geographic_context_for_ai(context.zip_code)
+            if geo_ctx:
+                if area_context_text:
+                    area_context_text += f"\n\n{geo_ctx}"
+                else:
+                    area_context_text = f"\n\n{geo_ctx}"
+        except ImportError:
+            pass
+        except Exception:
+            pass
+        
         prompt = f"""You are a utility service territory expert with deep knowledge of how utilities work in the United States. Given an address and conflicting results from data sources, use your expertise to determine the correct {utility_type} utility provider.
 
 ADDRESS:

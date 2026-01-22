@@ -3,3 +3,8 @@ SDWA_latest_downloads/
 __pycache__/
 .env
 bdc_internet_new.db
+data/serp_cache/
+*.log
+export_*.json
+*_checkpoint.json
+*_checkpoint.txt

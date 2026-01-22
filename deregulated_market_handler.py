@@ -10,6 +10,20 @@ In deregulated markets:
 - Our API returns the TDU (who owns the wires, e.g., "Oncor")
 - BOTH are correct for different purposes
 - For property management, we typically want the TDU
+
+DESIGN NOTE: REP→TDU Mapping
+-----------------------------
+There is NO direct REP→TDU mapping function (e.g., get_tdu_for_rep("Reliant") → "CenterPoint")
+because REPs serve customers across MULTIPLE TDU territories. For example:
+- Reliant Energy serves customers in Oncor, CenterPoint, AEP Texas, and TNMP territories
+- TXU Energy similarly serves all major Texas TDU territories
+
+The correct approach is:
+1. Identify if tenant reported a REP: is_retail_provider()
+2. Use geographic/GIS lookup to find actual TDU based on lat/lon
+3. Use should_ignore_tenant_mismatch() to avoid flagging REP vs TDU as errors
+
+This geographic approach is MORE ACCURATE than a static REP→TDU mapping would be.
 """
 
 from typing import Optional, Dict, Set

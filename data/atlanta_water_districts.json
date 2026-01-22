@@ -1,0 +1,803 @@
+{
+  "_description": "Atlanta metro water utility ZIP mappings (Georgia)",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "30165": {
+      "name": "Rome GA",
+      "phone": null
+    },
+    "30045": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31005": {
+      "name": "Warner Robins",
+      "phone": null
+    },
+    "30240": {
+      "name": "City of LaGrange - TX",
+      "phone": null
+    },
+    "30120": {
+      "name": "Bartow County GA",
+      "phone": null
+    },
+    "31313": {
+      "name": "City of Hinesville",
+      "phone": null
+    },
+    "30577": {
+      "name": "City of Toccoa GA",
+      "phone": null
+    },
+    "30016": {
+      "name": "Newton County Water and Sewerage Authority",
+      "phone": null
+    },
+    "30605": {
+      "name": "Athens-Clarke County GA",
+      "phone": null
+    },
+    "30230": {
+      "name": "City of Hogansville",
+      "phone": null
+    },
+    "30606": {
+      "name": "Athens-Clarke County GA",
+      "phone": null
+    },
+    "30126": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30677": {
+      "name": "Oconee County Water Resources",
+      "phone": null
+    },
+    "30144": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "31601": {
+      "name": "City of Valdosta - GA",
+      "phone": null
+    },
+    "30904": {
+      "name": "Augusta GA",
+      "phone": null
+    },
+    "30269": {
+      "name": "Fayette County Water System",
+      "phone": "770-461-1146"
+    },
+    "31419": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30066": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "31558": {
+      "name": "St Marys Water & Sewer Department (GA)",
+      "phone": null
+    },
+    "30517": {
+      "name": "Town of Braselton",
+      "phone": null
+    },
+    "31548": {
+      "name": "Kingsland GA",
+      "phone": null
+    },
+    "30622": {
+      "name": "Oconee County Water Resources",
+      "phone": null
+    },
+    "30297": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "31415": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30223": {
+      "name": "City of Griffin",
+      "phone": null
+    },
+    "31406": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30233": {
+      "name": "Butts County Water and Sewer",
+      "phone": null
+    },
+    "30204": {
+      "name": "City of  Barnesville - GA",
+      "phone": null
+    },
+    "30241": {
+      "name": "City of LaGrange - TX",
+      "phone": null
+    },
+    "30238": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "30813": {
+      "name": "Columbia County Water Utility",
+      "phone": null
+    },
+    "31021": {
+      "name": "City of Dublin GA",
+      "phone": null
+    },
+    "30043": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31321": {
+      "name": "City of Pembroke GA",
+      "phone": null
+    },
+    "30009": {
+      "name": "Fulton County",
+      "phone": null
+    },
+    "30076": {
+      "name": "Fulton County",
+      "phone": null
+    },
+    "31407": {
+      "name": "PORT WENTWORTH",
+      "phone": null
+    },
+    "31088": {
+      "name": "Warner Robins",
+      "phone": null
+    },
+    "30228": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "30601": {
+      "name": "Athens-Clarke County GA",
+      "phone": null
+    },
+    "30143": {
+      "name": "City of Jasper - GA",
+      "phone": null
+    },
+    "30141": {
+      "name": "Paulding County Water",
+      "phone": null
+    },
+    "30265": {
+      "name": "Newnan Utilities",
+      "phone": null
+    },
+    "30082": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "31320": {
+      "name": "City of Midway",
+      "phone": null
+    },
+    "31028": {
+      "name": "City of Centerville",
+      "phone": null
+    },
+    "30281": {
+      "name": "Henry County Water Authority",
+      "phone": null
+    },
+    "30189": {
+      "name": "City of Woodstock",
+      "phone": null
+    },
+    "30134": {
+      "name": "Douglasville-Douglas County Water and Sewer Authority",
+      "phone": null
+    },
+    "30224": {
+      "name": "City of Griffin",
+      "phone": null
+    },
+    "30060": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "31324": {
+      "name": "Richmond Hill GA Water",
+      "phone": null
+    },
+    "30721": {
+      "name": "Dalton Utilities - GA",
+      "phone": null
+    },
+    "30064": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "31069": {
+      "name": "City of Perry",
+      "phone": null
+    },
+    "30263": {
+      "name": "Newnan Utilities",
+      "phone": null
+    },
+    "30220": {
+      "name": "City of Grantville - GA",
+      "phone": null
+    },
+    "30157": {
+      "name": "Paulding County Water",
+      "phone": null
+    },
+    "30005": {
+      "name": "Fulton County",
+      "phone": null
+    },
+    "30907": {
+      "name": "Columbia County Water Utility",
+      "phone": null
+    },
+    "31322": {
+      "name": "City of Pooler Utilities - GA",
+      "phone": null
+    },
+    "31404": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30097": {
+      "name": "Fulton County",
+      "phone": null
+    },
+    "30528": {
+      "name": "City of Cleveland GA",
+      "phone": null
+    },
+    "30260": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "30739": {
+      "name": "City of Lafayette - CO",
+      "phone": null
+    },
+    "30257": {
+      "name": "The City of Milner GA",
+      "phone": null
+    },
+    "30022": {
+      "name": "Fulton County",
+      "phone": null
+    },
+    "30655": {
+      "name": "Monroe GA",
+      "phone": null
+    },
+    "31027": {
+      "name": "City of East Dublin",
+      "phone": null
+    },
+    "31061": {
+      "name": "City of Milledgeville",
+      "phone": null
+    },
+    "30291": {
+      "name": "Union City Georgia",
+      "phone": null
+    },
+    "30115": {
+      "name": "Cherokee County Water & Sewerage Authority",
+      "phone": "770-479-1813"
+    },
+    "30205": {
+      "name": "Fayette County Water System",
+      "phone": "770-461-1146"
+    },
+    "30114": {
+      "name": "City of Canton Water Department - GA",
+      "phone": null
+    },
+    "30276": {
+      "name": "City of Senoia",
+      "phone": null
+    },
+    "30707": {
+      "name": "City of Chickamauga",
+      "phone": null
+    },
+    "31204": {
+      "name": "Macon Water Authority",
+      "phone": null
+    },
+    "30008": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30179": {
+      "name": "City of Temple",
+      "phone": null
+    },
+    "30161": {
+      "name": "Rome GA",
+      "phone": null
+    },
+    "31217": {
+      "name": "Macon Water Authority",
+      "phone": null
+    },
+    "30041": {
+      "name": "Forsyth County",
+      "phone": null
+    },
+    "30122": {
+      "name": "Douglasville-Douglas County Water and Sewer Authority",
+      "phone": null
+    },
+    "30296": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "30736": {
+      "name": "Catoosa Utility District Authority",
+      "phone": null
+    },
+    "30117": {
+      "name": "Carrollton Public Utilities",
+      "phone": null
+    },
+    "30906": {
+      "name": "Augusta GA",
+      "phone": null
+    },
+    "31907": {
+      "name": "Columbus Water Works (GA)",
+      "phone": null
+    },
+    "30814": {
+      "name": "Columbia County Water Utility",
+      "phone": null
+    },
+    "31401": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30132": {
+      "name": "Paulding County Water",
+      "phone": null
+    },
+    "30125": {
+      "name": "Cedartown water service",
+      "phone": null
+    },
+    "30103": {
+      "name": "City of Adairsville",
+      "phone": null
+    },
+    "30062": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30607": {
+      "name": "Athens-Clarke County GA",
+      "phone": null
+    },
+    "31201": {
+      "name": "Macon Water Authority",
+      "phone": null
+    },
+    "30534": {
+      "name": "Etowah Water & Sewer Authority",
+      "phone": null
+    },
+    "30752": {
+      "name": "DADE COUNTY WATER AUTHORITY",
+      "phone": null
+    },
+    "30680": {
+      "name": "City of Winder GA",
+      "phone": null
+    },
+    "31301": {
+      "name": "City of Walthourville - GA",
+      "phone": null
+    },
+    "30344": {
+      "name": "City of East Point - GA",
+      "phone": null
+    },
+    "30909": {
+      "name": "Augusta GA",
+      "phone": null
+    },
+    "30213": {
+      "name": "Fairburn GA",
+      "phone": null
+    },
+    "31901": {
+      "name": "Columbus Water Works (GA)",
+      "phone": null
+    },
+    "30013": {
+      "name": "Rockdale County Water",
+      "phone": null
+    },
+    "30047": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30067": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30274": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "31312": {
+      "name": "Effingham County GA",
+      "phone": null
+    },
+    "31545": {
+      "name": "Jesup Water System",
+      "phone": null
+    },
+    "30815": {
+      "name": "Augusta GA",
+      "phone": null
+    },
+    "30153": {
+      "name": "Rockmart GA",
+      "phone": null
+    },
+    "30236": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "30127": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30277": {
+      "name": "Coweta County Water & Sewer Authority",
+      "phone": null
+    },
+    "30288": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "30501": {
+      "name": "Gainesville GA",
+      "phone": null
+    },
+    "31093": {
+      "name": "Warner Robins",
+      "phone": null
+    },
+    "30011": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30511": {
+      "name": "Town of Baldwin GA",
+      "phone": null
+    },
+    "30152": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "31206": {
+      "name": "Macon Water Authority",
+      "phone": null
+    },
+    "30014": {
+      "name": "City of Covington",
+      "phone": null
+    },
+    "30182": {
+      "name": "City of Waco - GA",
+      "phone": null
+    },
+    "30268": {
+      "name": "City of Palmetto (GA)",
+      "phone": null
+    },
+    "30019": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31602": {
+      "name": "City of Valdosta - GA",
+      "phone": null
+    },
+    "30017": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30121": {
+      "name": "Bartow County GA",
+      "phone": null
+    },
+    "30094": {
+      "name": "Rockdale County Water",
+      "phone": null
+    },
+    "31903": {
+      "name": "Columbus Water Works (GA)",
+      "phone": null
+    },
+    "30529": {
+      "name": "Commerce City",
+      "phone": null
+    },
+    "30337": {
+      "name": "College Park",
+      "phone": null
+    },
+    "30168": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30110": {
+      "name": "City of Bremen",
+      "phone": null
+    },
+    "30720": {
+      "name": "Dalton Utilities - GA",
+      "phone": null
+    },
+    "30106": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30809": {
+      "name": "Columbia County Water Utility",
+      "phone": null
+    },
+    "30180": {
+      "name": "Villa Rica - GA",
+      "phone": null
+    },
+    "30040": {
+      "name": "Forsyth County",
+      "phone": null
+    },
+    "31308": {
+      "name": "Consolidated Utilities - GA",
+      "phone": null
+    },
+    "30742": {
+      "name": "Fort Oglethorpe",
+      "phone": null
+    },
+    "30519": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31211": {
+      "name": "Macon Water Authority",
+      "phone": null
+    },
+    "30427": {
+      "name": "Glennville City Water Department",
+      "phone": null
+    },
+    "30078": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31008": {
+      "name": "City of Byron, GA",
+      "phone": null
+    },
+    "31408": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30507": {
+      "name": "Gainesville GA",
+      "phone": null
+    },
+    "30044": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30401": {
+      "name": "Swainsboro GA",
+      "phone": null
+    },
+    "31302": {
+      "name": "City of Savannah Water Resources",
+      "phone": null
+    },
+    "30531": {
+      "name": "City of Cornelia",
+      "phone": null
+    },
+    "30329": {
+      "name": "Dekalb County (AIH)",
+      "phone": null
+    },
+    "30549": {
+      "name": "City of Jefferson GA",
+      "phone": null
+    },
+    "30135": {
+      "name": "Douglasville-Douglas County Water and Sewer Authority",
+      "phone": null
+    },
+    "30096": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30139": {
+      "name": "City of Calhoun GA",
+      "phone": null
+    },
+    "31546": {
+      "name": "Jesup Water System",
+      "phone": null
+    },
+    "30510": {
+      "name": "City of Baldwin GA",
+      "phone": null
+    },
+    "30273": {
+      "name": "Clayton County Water Authority",
+      "phone": "770-960-5200"
+    },
+    "31220": {
+      "name": "Monroe county water",
+      "phone": null
+    },
+    "30608": {
+      "name": "City of Winder GA",
+      "phone": null
+    },
+    "30901": {
+      "name": "Augusta GA",
+      "phone": null
+    },
+    "30092": {
+      "name": "Gwinnett County Department of Water Resources",
+      "phone": null
+    },
+    "31216": {
+      "name": "Macon Water Authority",
+      "phone": null
+    },
+    "30740": {
+      "name": "Dalton Utilities - GA",
+      "phone": null
+    },
+    "30546": {
+      "name": "City of Hiawahassee",
+      "phone": null
+    },
+    "30101": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30533": {
+      "name": "Dahlonega GA Utilities",
+      "phone": null
+    },
+    "30755": {
+      "name": "Dalton Utilities - GA",
+      "phone": null
+    },
+    "31909": {
+      "name": "Columbus Water Works (GA)",
+      "phone": null
+    },
+    "30039": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31520": {
+      "name": "Brunswick, GA",
+      "phone": null
+    },
+    "30728": {
+      "name": "LaFayette, GA",
+      "phone": null
+    },
+    "30046": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30506": {
+      "name": "Gainesville GA",
+      "phone": null
+    },
+    "30620": {
+      "name": "City of Winder GA",
+      "phone": null
+    },
+    "30028": {
+      "name": "Forsyth County",
+      "phone": null
+    },
+    "30185": {
+      "name": "Carroll County Water Authority",
+      "phone": null
+    },
+    "30183": {
+      "name": "City of Waleska",
+      "phone": null
+    },
+    "30504": {
+      "name": "Gainesville GA",
+      "phone": null
+    },
+    "30566": {
+      "name": "City of Gainesville",
+      "phone": null
+    },
+    "30518": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "30025": {
+      "name": "Social Circle GA",
+      "phone": null
+    },
+    "30187": {
+      "name": "Douglasville-Douglas County Water and Sewer Authority",
+      "phone": null
+    },
+    "30151": {
+      "name": "Cherokee County",
+      "phone": null
+    },
+    "30068": {
+      "name": "Cobb County Water System",
+      "phone": "770-419-6200"
+    },
+    "30071": {
+      "name": "Gwinnett County Water Resources",
+      "phone": "678-376-6700"
+    },
+    "31636": {
+      "name": "Lowndes County",
+      "phone": null
+    },
+    "30554": {
+      "name": "City of Lula",
+      "phone": null
+    },
+    "31030": {
+      "name": "Fort Valley Utility Comission",
+      "phone": null
+    },
+    "30548": {
+      "name": "City of Hoschton",
+      "phone": null
+    },
+    "30512": {
+      "name": "City of Blairsville (Union County, GA)",
+      "phone": null
+    },
+    "30107": {
+      "name": "Forsyth County",
+      "phone": null
+    },
+    "30173": {
+      "name": "Rome GA",
+      "phone": null
+    },
+    "31793": {
+      "name": "City of Tifton Utilities",
+      "phone": null
+    }
+  }
+}

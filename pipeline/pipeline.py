@@ -108,8 +108,21 @@ class LookupPipeline:
             cv_result = None
         
         # 4. Select best result
+        # Check if we have a high-confidence municipal match - skip AI if so
+        municipal_match = None
+        for r in valid_results:
+            if r.source_name in ('municipal', 'municipal_electric', 'municipal_gas', 'municipal_water') and r.confidence_score >= 85:
+                municipal_match = r
+                break
+        
+        # Skip AI selector if we have a clear municipal match (saves 2-5 seconds)
+        if municipal_match:
+            primary = municipal_match
+            if cv_result is None:
+                cv_result = {}
+            cv_result['ai_selector_skipped'] = 'high_confidence_municipal'
         # NEW: AI-first selection - AI evaluates ALL candidates with full context
-        if self._ai_selector and len(valid_results) > 1:
+        elif self._ai_selector and len(valid_results) > 1:
             # AI-first: Let AI evaluate all candidates and make the decision
             ai_decision = self._ai_selector.select(context, valid_results)
             

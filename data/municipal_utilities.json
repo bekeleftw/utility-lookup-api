@@ -992,6 +992,12 @@
         "phone": "800-655-4555",
         "website": "https://www.sce.com",
         "note": "Santa Monica is in SCE territory, not LADWP"
+      },
+      "Lake Los Angeles": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com",
+        "note": "Lake Los Angeles is in SCE territory, not LADWP"
       }
     },
     "FL": {

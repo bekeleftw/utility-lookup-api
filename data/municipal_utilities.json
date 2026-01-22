@@ -4794,6 +4794,21 @@
         "phone": "757-562-8561",
         "website": "https://www.franklinva.com/",
         "note": "Municipal"
+      },
+      "NOVEC_Territory": {
+        "name": "Northern Virginia Electric Cooperative (NOVEC)",
+        "phone": "703-335-0500",
+        "website": "https://www.novec.com/",
+        "zip_codes": [
+          "20109",
+          "20111",
+          "20112",
+          "20121",
+          "20136",
+          "20181",
+          "22025"
+        ],
+        "note": "NOVEC serves parts of Fairfax, Prince William, Loudoun, Fauquier counties"
       }
     },
     "MA": {
@@ -5982,6 +5997,35 @@
         "phone": "301-271-7313",
         "website": null,
         "note": "Municipal"
+      },
+      "SMECO_Territory": {
+        "name": "Southern Maryland Electric Cooperative (SMECO)",
+        "phone": "888-440-3311",
+        "website": "https://www.smeco.coop/",
+        "zip_codes": [
+          "20602",
+          "20616",
+          "20619",
+          "20625",
+          "20629",
+          "20634",
+          "20636",
+          "20637",
+          "20639",
+          "20640",
+          "20646",
+          "20650",
+          "20657",
+          "20659",
+          "20664",
+          "20667",
+          "20674",
+          "20675",
+          "20678",
+          "20685",
+          "20695"
+        ],
+        "note": "SMECO serves Charles, St. Mary's, Calvert, and Prince George's counties"
       }
     },
     "ME": {
@@ -10659,6 +10703,23 @@
         "name": "Washington Gas",
         "phone": "844-927-4427",
         "website": "https://www.washingtongas.com/"
+      },
+      "Columbia_Gas_Territory": {
+        "name": "Columbia Gas of Virginia",
+        "phone": "800-543-8911",
+        "website": "https://www.columbiagasva.com/",
+        "zip_codes": [
+          "20110",
+          "20111",
+          "20155",
+          "20170",
+          "20171",
+          "20181",
+          "20186",
+          "22025",
+          "22134"
+        ],
+        "note": "Columbia Gas serves parts of Northern Virginia and Shenandoah Valley"
       }
     },
     "MA": {
@@ -11929,6 +11990,15 @@
         "name": "BGE Gas",
         "phone": "800-685-0123",
         "website": "https://www.bge.com/"
+      },
+      "Columbia_Gas_MD": {
+        "name": "Columbia Gas of Maryland",
+        "phone": "888-460-4332",
+        "website": "https://www.columbiagasmd.com/",
+        "zip_codes": [
+          "21740"
+        ],
+        "note": "Columbia Gas serves Hagerstown area"
       }
     },
     "MN": {

@@ -986,6 +986,12 @@
         "name": "Imperial Irrigation District",
         "phone": "800-303-7756",
         "website": "https://www.iid.com/"
+      },
+      "Santa Monica": {
+        "name": "Southern California Edison (SCE)",
+        "phone": "800-655-4555",
+        "website": "https://www.sce.com",
+        "note": "Santa Monica is in SCE territory, not LADWP"
       }
     },
     "FL": {
@@ -9582,9 +9588,10 @@
         "website": "https://www.socalgas.com/"
       },
       "Long Beach": {
-        "name": "Southern California Gas (SoCalGas)",
-        "phone": "800-427-2200",
-        "website": "https://www.socalgas.com/"
+        "name": "Long Beach Gas & Oil",
+        "phone": "562-570-2140",
+        "website": "https://www.longbeach.gov/lbgo/",
+        "note": "Municipal gas utility"
       },
       "Anaheim": {
         "name": "Southern California Gas (SoCalGas)",
@@ -9700,12 +9707,6 @@
         "name": "San Diego Gas & Electric (SDG&E)",
         "phone": "800-411-7343",
         "website": "https://www.sdge.com/"
-      },
-      "Long Beach_Gas": {
-        "name": "Long Beach Gas & Oil",
-        "phone": "562-570-2140",
-        "website": "https://www.longbeach.gov/lbgo/",
-        "note": "Municipal gas"
       }
     },
     "FL": {

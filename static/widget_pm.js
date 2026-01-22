@@ -15,6 +15,7 @@ const sourceExplanations = {
 'municipal_utility_database': 'Verified municipal utility',
 'Municipal Utility Database': 'Verified municipal utility',
 'municipal': 'Verified municipal utility',
+'municipal_gas': 'Verified municipal utility',
 'special_district': 'Special district boundary',
 'special_district_boundary': 'Special district boundary',
 'texas_mud': 'Texas MUD boundary',

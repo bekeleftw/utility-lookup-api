@@ -106,6 +106,25 @@ def lookup_municipal_gas(state: str, city: str = None, zip_code: str = None, cou
     data = load_municipal_data()
     state_upper = state.upper() if state else ''
     
+    # SPECIAL CASE: NYC boroughs - check county FIRST since city is always "New York"
+    # but gas providers differ by borough (county)
+    if state_upper == 'NY' and county:
+        nyc_counties = ['KINGS', 'QUEENS', 'RICHMOND', 'BRONX', 'NEW YORK', 'NASSAU', 'SUFFOLK']
+        county_upper = county.upper()
+        if county_upper in nyc_counties:
+            county_data = data.get('county_gas', {}).get('NY', {})
+            for county_name, utility in county_data.items():
+                if county_name.upper() == county_upper:
+                    return {
+                        'name': utility['name'],
+                        'phone': utility.get('phone'),
+                        'website': utility.get('website'),
+                        'county': county_name,
+                        'source': 'county_gas_nyc',
+                        'confidence': 'verified',
+                        'note': f"Gas utility serving {county_name} County, NY"
+                    }
+    
     # FIRST: Check dedicated gas section (Texas Gas Service, Atmos, CenterPoint, etc.)
     gas_data = data.get('gas', {}).get(state_upper, {})
     

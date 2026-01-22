@@ -4193,9 +4193,10 @@
         "website": "https://www.comed.com/"
       },
       "Naperville": {
-        "name": "ComEd",
-        "phone": "800-334-7661",
-        "website": "https://www.comed.com/"
+        "name": "Naperville Electric Utility",
+        "phone": "630-420-6100",
+        "website": "https://www.naperville.il.us/services/electric-utility/",
+        "note": "Municipal electric utility"
       },
       "Joliet": {
         "name": "ComEd",
@@ -4387,31 +4388,31 @@
         "name": "City of Batavia Electric",
         "phone": "630-454-2000",
         "website": "https://www.cityofbatavia.net/",
-        "note": "Municipal"
+        "note": "Municipal electric utility"
       },
       "Geneva": {
         "name": "Geneva Electric",
-        "phone": "630-232-1503",
+        "phone": "630-232-1501",
         "website": "https://www.geneva.il.us/",
-        "note": "Municipal"
+        "note": "Municipal electric utility"
       },
       "St. Charles": {
-        "name": "St. Charles Electric",
+        "name": "City of St. Charles Electric",
         "phone": "630-377-4407",
         "website": "https://www.stcharlesil.gov/",
-        "note": "Municipal"
-      },
-      "Naperville_Muni": {
-        "name": "Naperville Electric",
-        "phone": "630-420-6100",
-        "website": "https://www.naperville.il.us/",
-        "note": "Some areas"
+        "note": "Municipal electric utility"
       },
       "Rochelle": {
         "name": "Rochelle Municipal Utilities",
         "phone": "815-562-4155",
         "website": "https://www.rfrmu.com/",
         "note": "Municipal"
+      },
+      "Saint Charles": {
+        "name": "City of St. Charles Electric",
+        "phone": "630-377-4407",
+        "website": "https://www.stcharlesil.gov/",
+        "note": "Municipal electric utility"
       }
     },
     "MI": {

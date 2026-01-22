@@ -1,0 +1,1078 @@
+<!--
+  Utility Lookup Widget v3 for Webflow
+  Utility Profit - https://utilityprofit.com
+  
+  Features:
+  - Utility type toggles (electric, gas, water, internet)
+  - Simplified confidence display (badge with dropdown)
+  - Compact inline feedback
+  - Problem area warnings
+  - Special district badges
+  - Collapsible CSV bulk upload
+-->
+
+<style>.up-container{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:680px;margin:0 auto;padding:32px 24px;background:#fafafa;border-radius:16px;}
+
+/* Resident Guide Button and Modal */
+.up-guide-btn{display:none;width:100%;margin-top:20px;padding:14px 24px;font-size:16px;font-weight:600;color:#7AC143;background:white;border:2px solid #7AC143;border-radius:12px;cursor:pointer;transition:all 0.2s;}.up-guide-btn:hover{background:#f0f9e8;transform:translateY(-1px);}.up-guide-btn.show{display:flex;align-items:center;justify-content:center;gap:8px;}.up-guide-btn-icon{font-size:20px;}
+.up-modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5);z-index:9999;align-items:center;justify-content:center;padding:20px;}.up-modal-overlay.open{display:flex;}
+.up-modal{background:white;border-radius:16px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,0.3);}
+.up-modal-header{padding:20px 24px;border-bottom:1px solid #e5e7eb;display:flex;align-items:center;justify-content:space-between;}
+.up-modal-title{font-size:18px;font-weight:600;color:#1a1a1a;margin:0;}
+.up-modal-close{background:none;border:none;font-size:24px;color:#6b7280;cursor:pointer;padding:0;line-height:1;}.up-modal-close:hover{color:#1a1a1a;}
+.up-modal-body{padding:24px;}
+.up-modal-desc{font-size:14px;color:#6b7280;margin:0 0 20px 0;line-height:1.5;}
+.up-modal-address{background:#f5f5f5;padding:12px 16px;border-radius:8px;margin-bottom:20px;font-size:14px;}.up-modal-address-label{font-size:11px;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}.up-modal-address-value{font-weight:500;color:#1a1a1a;}
+.up-modal-form{display:flex;flex-direction:column;gap:16px;}
+.up-modal-field{display:flex;flex-direction:column;gap:6px;}
+.up-modal-label{font-size:13px;font-weight:500;color:#374151;}.up-modal-label .required{color:#ef4444;}
+.up-modal-input{padding:12px 14px;font-size:15px;border:2px solid #e5e7eb;border-radius:10px;outline:none;transition:all 0.2s;}.up-modal-input:focus{border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,0.1);}
+.up-modal-hint{font-size:12px;color:#9ca3af;}
+.up-modal-submit{padding:14px 24px;font-size:16px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:12px;cursor:pointer;transition:all 0.2s;margin-top:8px;}.up-modal-submit:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(122,193,67,0.3);}.up-modal-submit:disabled{background:#9ca3af;transform:none;box-shadow:none;cursor:not-allowed;}
+.up-modal-success{text-align:center;padding:20px 0;}.up-modal-success-icon{font-size:48px;margin-bottom:16px;}.up-modal-success-title{font-size:18px;font-weight:600;color:#1a1a1a;margin:0 0 8px 0;}.up-modal-success-desc{font-size:14px;color:#6b7280;margin:0;line-height:1.5;}
+.up-header{text-align:center;margin-bottom:24px;}.up-logo{display:flex;align-items:center;justify-content:center;margin-bottom:8px;}.up-logo img{height:40px;width:auto;}.up-title{font-size:20px;font-weight:600;color:#1a1a1a;margin:0 0 4px 0;}.up-subtitle{font-size:14px;color:#6b7280;margin:0;}.up-form{display:flex;flex-direction:column;gap:16px;margin-bottom:24px;}.up-input{width:100%;padding:14px 18px;font-size:16px;border:2px solid #e5e7eb;border-radius:12px;outline:none;transition:all 0.2s;box-sizing:border-box;background:white;}.up-input:focus{border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,0.1);}.up-utility-toggles{display:flex;flex-wrap:wrap;gap:8px;}.up-toggle{display:flex;align-items:center;gap:6px;padding:8px 14px;background:white;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all 0.2s;user-select:none;}.up-toggle:hover{border-color:#d1d5db;}.up-toggle.active{border-color:#7AC143;background:#f0f9e8;}.up-toggle-icon{font-size:16px;}.up-toggle-label{font-size:14px;font-weight:500;color:#374151;}.up-toggle-check{width:18px;height:18px;border:2px solid #d1d5db;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-size:12px;color:white;}.up-toggle.active .up-toggle-check{background:#7AC143;border-color:#7AC143;}.up-toggle input{display:none;}.up-btn{width:100%;padding:14px 24px;font-size:16px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:12px;cursor:pointer;transition:all 0.2s;}.up-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(122,193,67,0.3);}.up-btn:disabled{background:#9ca3af;transform:none;box-shadow:none;cursor:not-allowed;}.up-problem-warning{display:flex;align-items:flex-start;gap:10px;background:#fef3c7;border:1px solid #fcd34d;border-radius:10px;padding:12px 16px;margin-bottom:16px;}.up-problem-warning-icon{font-size:18px;flex-shrink:0;}.up-problem-warning-text{font-size:13px;color:#92400e;line-height:1.4;}.up-problem-warning-text strong{display:block;margin-bottom:2px;}.up-location{display:flex;align-items:center;gap:8px;background:white;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:14px;color:#374151;border:1px solid #e5e7eb;}.up-location-icon{color:#7AC143;}.up-status-message{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#f0f9e8;border:1px solid #c5e4a8;border-radius:10px;margin-bottom:16px;font-size:14px;color:#4a7c28;}.up-result-slot{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;min-height:60px;}.up-loading-slot{display:flex;align-items:center;gap:12px;color:#6b7280;font-size:14px;}.up-loading-spinner-small{width:18px;height:18px;border:2px solid #e5e7eb;border-top-color:#7AC143;border-radius:50%;animation:up-spin 0.8s linear infinite;}.up-no-result{color:#6b7280;font-size:14px;padding:8px 0;}.up-results{display:flex;flex-direction:column;gap:12px;}.up-card{background:white;border:1px solid #e5e7eb;border-radius:14px;padding:20px;transition:all 0.2s;}.up-card:hover{border-color:#d1d5db;box-shadow:0 2px 8px rgba(0,0,0,0.04);}.up-card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:8px;}.up-card-type{display:flex;align-items:center;gap:10px;}.up-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;}.up-icon-electric{background:#fef3c7;}.up-icon-gas{background:#e0e7ff;}.up-icon-water{background:#d1fae5;}.up-icon-internet{background:#ede9fe;}.up-type-label{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;color:#6b7280;}.up-header-badges{display:flex;align-items:center;gap:6px;flex-wrap:wrap;position:relative;}.up-badge{display:inline-flex;align-items:center;gap:4px;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;transition:all 0.15s;}.up-badge:hover{filter:brightness(0.95);}.up-badge-verified{background:#e8f5de;color:#4a7c28;}.up-badge-high{background:#dbeafe;color:#1e40af;}.up-badge-medium{background:#fef3c7;color:#92400e;}.up-badge-low{background:#fee2e2;color:#991b1b;}.up-badge-district{background:#ede9fe;color:#5b21b6;cursor:default;}.up-badge-district:hover{filter:none;}.up-badge-caret{font-size:10px;margin-left:2px;transition:transform 0.15s;}.up-badge.open .up-badge-caret{transform:rotate(180deg);}.up-confidence-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:6px;background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:10;min-width:200px;font-size:13px;color:#374151;}.up-confidence-dropdown.open{display:block;}.up-confidence-dropdown .score{font-weight:700;color:#111827;}.up-provider-section{margin-bottom:12px;}.up-provider-name{font-size:18px;font-weight:700;color:#111827;margin-bottom:0;}.up-selection-reason{font-size:13px;color:#6b7280;font-style:italic;margin-top:4px;}.up-details{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:12px;border-top:1px solid #f3f4f6;flex-wrap:wrap;}.up-details-left{display:flex;gap:24px;}.up-detail{display:flex;flex-direction:column;gap:2px;}.up-detail-label{font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#9ca3af;}.up-detail-value{font-size:14px;color:#374151;}.up-detail-value a{color:#7AC143;text-decoration:none;}.up-detail-value a:hover{text-decoration:underline;}.up-feedback-inline{display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;}.up-feedback-inline span{white-space:nowrap;}.up-feedback-btn-small{padding:4px 8px;font-size:11px;font-weight:500;border-radius:4px;cursor:pointer;transition:all 0.15s;border:1px solid #e5e7eb;background:white;color:#6b7280;}.up-feedback-btn-small:hover{border-color:#d1d5db;color:#374151;}.up-feedback-btn-small.yes:hover{background:#f0f9e8;border-color:#7AC143;color:#4a7c28;}.up-feedback-btn-small.no:hover{background:#fef2f2;border-color:#ef4444;color:#991b1b;}.up-feedback-btn-small.selected{pointer-events:none;}.up-feedback-btn-small.yes.selected{background:#7AC143;border-color:#7AC143;color:white;}.up-feedback-btn-small.no.selected{background:#ef4444;border-color:#ef4444;color:white;}.up-feedback-done{display:none;font-size:11px;color:#5a9a30;}.up-feedback-done.show{display:inline;}.up-feedback-form{display:none;margin-top:12px;padding:12px;background:#fef2f2;border-radius:8px;}.up-feedback-form.open{display:block;}.up-feedback-form label{display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px;}.up-feedback-form input{width:100%;padding:10px 12px;font-size:14px;border:1px solid #e5e7eb;border-radius:6px;margin-bottom:10px;box-sizing:border-box;}.up-feedback-form input:focus{outline:none;border-color:#7AC143;}.up-feedback-submit{padding:8px 16px;font-size:13px;font-weight:600;background:#7AC143;color:white;border:none;border-radius:6px;cursor:pointer;}.up-feedback-submit:hover{background:#5a9a30;}.up-alternatives{margin-top:12px;padding-top:12px;border-top:1px dashed #e5e7eb;}.up-dereg-banner{background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);border:2px solid #10b981;border-radius:12px;padding:16px;margin:12px 0;}.up-dereg-header{display:flex;align-items:center;gap:8px;margin-bottom:8px;}.up-dereg-icon{font-size:20px;}.up-dereg-title{font-size:16px;font-weight:700;color:#065f46;}.up-dereg-body{}.up-dereg-explain{font-size:13px;color:#047857;line-height:1.5;margin:0 0 12px 0;}.up-dereg-cta{display:inline-flex;align-items:center;gap:6px;background:#10b981;color:white;padding:10px 16px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;transition:all 0.2s;}.up-dereg-cta:hover{background:#059669;transform:translateY(-1px);box-shadow:0 4px 12px rgba(16,185,129,0.3);}.up-alternatives-label{font-size:12px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}.up-alternatives-list{display:flex;flex-wrap:wrap;gap:8px;}.up-alt-chip{display:inline-flex;align-items:center;gap:6px;background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:8px 12px;font-size:13px;color:#4b5563;}.up-card-empty{background:#f9fafb;border:1px dashed #d1d5db;}.up-card-empty .up-provider-name{color:#9ca3af;font-weight:500;}.up-internet-stats{display:flex;gap:16px;margin-bottom:12px;}.up-stat{display:flex;flex-direction:column;}.up-stat-value{font-size:24px;font-weight:700;color:#111827;}.up-stat-label{font-size:12px;color:#6b7280;}.up-internet-list{display:flex;flex-direction:column;gap:8px;margin-top:16px;padding-top:16px;border-top:1px solid #f3f4f6;}.up-internet-row{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#f9fafb;border-radius:8px;border:1px solid #e5e7eb;}.up-internet-row-best{background:#ecfdf5;border-color:#a7f3d0;}.up-internet-provider{display:flex;flex-direction:column;gap:2px;}.up-internet-name{font-size:14px;font-weight:600;color:#111827;}.up-internet-tech{font-size:12px;color:#6b7280;}.up-internet-speed{text-align:right;}.up-internet-down{font-size:16px;font-weight:700;color:#111827;}.up-internet-speed-label{font-size:12px;color:#6b7280;}.up-loading{text-align:center;padding:48px 24px;color:#6b7280;}.up-loading-spinner{width:32px;height:32px;border:3px solid #e5e7eb;border-top-color:#7AC143;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px;}@keyframes spin{to{transform:rotate(360deg);}}.up-error{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:16px;color:#991b1b;display:flex;align-items:center;gap:10px;}.up-footer{text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb;}.up-footer a{font-size:13px;color:#7AC143;text-decoration:none;font-weight:500;}.up-footer a:hover{text-decoration:underline;}.up-csv-toggle{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;color:#6b7280;font-size:14px;cursor:pointer;transition:all 0.2s;border-radius:8px;margin-top:16px;}.up-csv-toggle:hover{background:#f3f4f6;color:#374151;}.up-csv-toggle-icon{font-size:16px;}.up-csv-toggle-text{font-weight:500;}.up-csv-toggle-caret{font-size:10px;transition:transform 0.2s;}.up-csv-toggle.open .up-csv-toggle-caret{transform:rotate(180deg);}.up-csv-section{display:none;background:white;border:2px dashed #e5e7eb;border-radius:12px;padding:20px;text-align:center;transition:all 0.2s;margin-top:12px;}.up-csv-section.open{display:block;}.up-csv-section:hover{border-color:#7AC143;background:#f0f9e8;}.up-csv-section.dragover{border-color:#7AC143;background:#e0f2d0;}.up-csv-subtitle{font-size:13px;color:#9ca3af;margin-bottom:12px;}.up-csv-input{display:none;}.up-csv-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;color:#7AC143;background:white;border:2px solid #7AC143;border-radius:8px;cursor:pointer;transition:all 0.2s;}.up-csv-btn:hover{background:#7AC143;color:white;}.up-csv-info{font-size:12px;color:#9ca3af;margin-top:12px;}.up-csv-progress{display:none;margin-top:16px;}.up-csv-progress.show{display:block;}.up-progress-bar{height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px;}.up-progress-fill{height:100%;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border-radius:4px;transition:width 0.3s;width:0%;}.up-progress-text{font-size:13px;color:#6b7280;}.up-csv-results{display:none;margin-top:16px;text-align:left;}.up-csv-results.show{display:block;}.up-csv-stats{display:flex;gap:16px;margin-bottom:12px;}.up-csv-stat{flex:1;background:#f9fafb;border-radius:8px;padding:12px;text-align:center;}.up-csv-stat-value{font-size:24px;font-weight:700;color:#111827;}.up-csv-stat-label{font-size:12px;color:#6b7280;}.up-csv-stat.success .up-csv-stat-value{color:#5a9a30;}.up-csv-stat.error .up-csv-stat-value{color:#dc2626;}.up-csv-download{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:14px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:8px;cursor:pointer;transition:all 0.2s;}.up-csv-download:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(122,193,67,0.3);}@media (max-width:480px){.up-container{padding:20px 16px;}.up-details{flex-direction:column;align-items:flex-start;}.up-details-left{width:100%;}.up-feedback-inline{margin-top:8px;}}</style>
+
+<div class="up-container">
+  <div class="up-header">
+    <div class="up-logo">
+      <img src="https://cdn.prod.website-files.com/659dd5a41f44c8d830f6cd7f/65a6e32124ad5ffc69552987_Utility%20Profit%20logo%20green%20full%20horizontal.svg" alt="Utility Profit" style="height: 40px;">
+    </div>
+    <h2 class="up-title">Utility Provider Lookup</h2>
+    <p class="up-subtitle">Enter an address to find utility providers</p>
+  </div>
+  
+  <form class="up-form" id="utilityForm">
+    <input 
+      type="text" 
+      class="up-input" 
+      id="addressInput" 
+      placeholder="123 Main St, Dallas, TX 75201"
+      required
+    />
+    
+    <div class="up-utility-toggles">
+      <label class="up-toggle active" data-utility="electric">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">⚡</span>
+        <span class="up-toggle-label">Electric</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+      <label class="up-toggle active" data-utility="gas">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">🔥</span>
+        <span class="up-toggle-label">Gas</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+      <label class="up-toggle active" data-utility="water">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">💧</span>
+        <span class="up-toggle-label">Water</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+      <label class="up-toggle active" data-utility="internet">
+        <input type="checkbox" checked />
+        <span class="up-toggle-icon">🌐</span>
+        <span class="up-toggle-label">Internet</span>
+        <span class="up-toggle-check">✓</span>
+      </label>
+    </div>
+    
+    <button type="submit" class="up-btn" id="searchBtn">Search</button>
+  </form>
+  
+  <!-- Collapsible CSV Section -->
+  <div class="up-csv-toggle" id="csvToggle">
+    <span class="up-csv-toggle-icon">📄</span>
+    <span class="up-csv-toggle-text">Bulk Lookup from CSV</span>
+    <span class="up-csv-toggle-caret" id="csvCaret">▼</span>
+  </div>
+
+  <div class="up-csv-section" id="csvDropZone">
+    <div class="up-csv-subtitle">Upload a CSV file with addresses (max 100)</div>
+    <input type="file" class="up-csv-input" id="csvInput" accept=".csv" />
+    <button class="up-csv-btn" id="csvSelectBtn">
+      <span>📁</span> Select CSV File
+    </button>
+    <div class="up-csv-info">
+      CSV must have an "address" column. Optional: city, state, zip columns.
+    </div>
+    <div class="up-csv-progress" id="csvProgress">
+      <div class="up-progress-bar">
+        <div class="up-progress-fill" id="csvProgressFill"></div>
+      </div>
+      <div class="up-progress-text" id="csvProgressText">Processing 0 of 0...</div>
+    </div>
+    <div class="up-csv-results" id="csvResults">
+      <div class="up-csv-stats">
+        <div class="up-csv-stat success">
+          <div class="up-csv-stat-value" id="csvSuccessCount">0</div>
+          <div class="up-csv-stat-label">Successful</div>
+        </div>
+        <div class="up-csv-stat error">
+          <div class="up-csv-stat-value" id="csvErrorCount">0</div>
+          <div class="up-csv-stat-label">Errors</div>
+        </div>
+      </div>
+      <button class="up-csv-download" id="csvDownloadBtn">
+        <span>⬇️</span> Download Results CSV
+      </button>
+    </div>
+  </div>
+  
+  <div id="utilityResults"></div>
+  
+  <!-- Get Resident Guide Button (shown after results) -->
+  <button class="up-guide-btn" id="guideBtn">
+    <span class="up-guide-btn-icon">📋</span>
+    <span>Get Resident Guide</span>
+  </button>
+  
+  <div class="up-footer">
+    Powered by <a href="https://utilityprofit.com" target="_blank">Utility Profit</a>
+  </div>
+</div>
+
+<!-- Resident Guide Modal -->
+<div class="up-modal-overlay" id="guideModal">
+  <div class="up-modal">
+    <div class="up-modal-header">
+      <h3 class="up-modal-title">Get Resident Guide</h3>
+      <button class="up-modal-close" id="guideModalClose">&times;</button>
+    </div>
+    <div class="up-modal-body" id="guideModalBody">
+      <p class="up-modal-desc">We'll create a branded PDF guide with step-by-step signup instructions for each utility. The guide will be emailed to you in 5-10 minutes.</p>
+      <div class="up-modal-address">
+        <div class="up-modal-address-label">Property Address</div>
+        <div class="up-modal-address-value" id="guideModalAddress"></div>
+      </div>
+      <form class="up-modal-form" id="guideForm">
+        <div class="up-modal-field">
+          <label class="up-modal-label">Email <span class="required">*</span></label>
+          <input type="email" class="up-modal-input" id="guideEmail" placeholder="you@company.com" required />
+        </div>
+        <div class="up-modal-field">
+          <label class="up-modal-label">Company Name <span class="required">*</span></label>
+          <input type="text" class="up-modal-input" id="guideCompany" placeholder="ABC Property Management" maxlength="100" required />
+        </div>
+        <div class="up-modal-field">
+          <label class="up-modal-label">Website <span style="color:#9ca3af">(optional)</span></label>
+          <input type="url" class="up-modal-input" id="guideWebsite" placeholder="https://yourcompany.com" />
+          <div class="up-modal-hint">We'll add your logo to the guide if provided</div>
+        </div>
+        <button type="submit" class="up-modal-submit" id="guideSubmit">Send My Guide</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+ const API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
+ const FEEDBACK_URL = 'https://web-production-9acc6.up.railway.app/api/feedback';
+ const GUIDE_URL = 'https://web-production-9acc6.up.railway.app/api/guide/request';
+ const form = document.getElementById('utilityForm');
+ const input = document.getElementById('addressInput');
+ const btn = document.getElementById('searchBtn');
+ const results = document.getElementById('utilityResults');
+ const toggles = document.querySelectorAll('.up-toggle');
+ const icons = { electric: '⚡', gas: '🔥', water: '💧', internet: '🌐' };
+ const typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
+ const sourceExplanations = {
+ 'municipal_utility': 'Verified municipal utility',
+ 'municipal_utility_database': 'Verified municipal utility',
+ 'Municipal Utility Database': 'Verified municipal utility',
+ 'eia_861': 'EIA federal data',
+ 'EIA-861': 'EIA federal data',
+ 'eia': 'Federal utility data',
+ 'hifld': 'Federal territory data',
+ 'HIFLD': 'Federal territory data',
+ 'coop_boundaries': 'Electric co-op territory',
+ 'coop': 'Electric co-op territory',
+ 'electric_coop': 'Electric co-op territory',
+ 'serp_api': 'Web search verified',
+ 'google_search': 'Web search verified',
+ 'web_search': 'Web search verified',
+ 'epa_water_boundaries': 'EPA water data',
+ 'epa': 'EPA water data',
+ 'sdwis': 'EPA drinking water data',
+ 'fcc_broadband': 'FCC broadband data',
+ 'fcc': 'FCC broadband data',
+ 'user_confirmed': 'Confirmed by users',
+ 'user_feedback': 'Confirmed by users',
+ 'feedback': 'Confirmed by users',
+ 'special_district': 'Special district boundary',
+ 'texas_mud': 'Texas MUD boundary',
+ 'mud': 'Texas MUD boundary',
+ 'florida_cdd': 'Florida CDD boundary',
+ 'cdd': 'Florida CDD boundary',
+ 'rrc_texas': 'Texas Railroad Commission',
+ 'puc': 'State regulatory data',
+ 'supplemental': 'Curated database',
+ 'Supplemental Data': 'Curated database',
+ 'supplemental_file': 'Curated database',
+ 'curated': 'Curated database',
+ 'zip_override': 'Verified for this ZIP',
+ 'zip_correction': 'Verified for this ZIP',
+ 'manual_override': 'Manually verified',
+ 'FCC Broadband Map': 'FCC broadband data',
+ 'fcc': 'FCC broadband data',
+ 'fcc_broadband': 'FCC broadband data',
+ 'state_gas_mapping': 'State utility territory',
+ 'state_ldc': 'State utility territory',
+ 'ldc_territory': 'State utility territory'
+ };
+ function getSourceExplanation(source) {
+ if (!source) return null;
+ if (sourceExplanations[source]) {
+ return sourceExplanations[source];
+ }
+ const sourceLower = source.toLowerCase();
+ for (const [key, value] of Object.entries(sourceExplanations)) {
+ if (key.toLowerCase() === sourceLower) {
+ return value;
+ }
+ }
+ if (sourceLower.includes('municipal')) return 'Verified municipal utility';
+ if (sourceLower.includes('eia') || sourceLower.includes('861')) return 'Federal utility data';
+ if (sourceLower.includes('hifld')) return 'Federal territory data';
+ if (sourceLower.includes('coop') || sourceLower.includes('co-op')) return 'Electric co-op territory';
+ if (sourceLower.includes('serp') || sourceLower.includes('google')) return 'Web search verified';
+ if (sourceLower.includes('epa') || sourceLower.includes('sdwis')) return 'EPA water data';
+ if (sourceLower.includes('fcc') || sourceLower.includes('broadband')) return 'FCC broadband data';
+ if (sourceLower.includes('user') || sourceLower.includes('confirmed') || sourceLower.includes('feedback')) return 'Confirmed by users';
+ if (sourceLower.includes('special') || sourceLower.includes('district')) return 'Special district boundary';
+ if (sourceLower.includes('mud')) return 'Texas MUD boundary';
+ if (sourceLower.includes('cdd')) return 'Florida CDD boundary';
+ if (sourceLower.includes('railroad') || sourceLower.includes('puc')) return 'State regulatory data';
+ if (sourceLower.includes('override') || sourceLower.includes('correction')) return 'Verified for this ZIP';
+ if (sourceLower.includes('supplemental') || sourceLower.includes('curated')) return 'Curated database';
+ return null;
+ }
+ let currentAddress = '';
+ let currentZipCode = '';
+ let currentUtilityResults = null;
+ 
+ // Resident Guide functionality
+ const guideBtn = document.getElementById('guideBtn');
+ const guideModal = document.getElementById('guideModal');
+ const guideModalClose = document.getElementById('guideModalClose');
+ const guideModalAddress = document.getElementById('guideModalAddress');
+ const guideModalBody = document.getElementById('guideModalBody');
+ const guideForm = document.getElementById('guideForm');
+ 
+ guideBtn.addEventListener('click', () => {
+   guideModalAddress.textContent = currentAddress;
+   guideModal.classList.add('open');
+ });
+ 
+ guideModalClose.addEventListener('click', () => {
+   guideModal.classList.remove('open');
+ });
+ 
+ guideModal.addEventListener('click', (e) => {
+   if (e.target === guideModal) {
+     guideModal.classList.remove('open');
+   }
+ });
+ 
+ guideForm.addEventListener('submit', async (e) => {
+   e.preventDefault();
+   const submitBtn = document.getElementById('guideSubmit');
+   const email = document.getElementById('guideEmail').value.trim();
+   const company = document.getElementById('guideCompany').value.trim();
+   const website = document.getElementById('guideWebsite').value.trim();
+   
+   if (!email || !company) {
+     alert('Please fill in all required fields');
+     return;
+   }
+   
+   submitBtn.disabled = true;
+   submitBtn.textContent = 'Sending...';
+   
+   try {
+     const response = await fetch(GUIDE_URL, {
+       method: 'POST',
+       headers: { 'Content-Type': 'application/json' },
+       body: JSON.stringify({
+         address: currentAddress,
+         utility_results: currentUtilityResults,
+         email: email,
+         company_name: company,
+         website: website || null
+       })
+     });
+     
+     const data = await response.json();
+     
+     if (data.success) {
+       guideModalBody.innerHTML = `
+         <div class="up-modal-success">
+           <div class="up-modal-success-icon">✅</div>
+           <h4 class="up-modal-success-title">Guide Request Submitted!</h4>
+           <p class="up-modal-success-desc">Your resident guide for <strong>${currentAddress}</strong> will be emailed to <strong>${email}</strong> in 5-10 minutes.</p>
+         </div>
+       `;
+     } else {
+       alert(data.error || 'Failed to submit request. Please try again.');
+       submitBtn.disabled = false;
+       submitBtn.textContent = 'Send My Guide';
+     }
+   } catch (err) {
+     console.error('Guide request failed:', err);
+     alert('Failed to submit request. Please try again.');
+     submitBtn.disabled = false;
+     submitBtn.textContent = 'Send My Guide';
+   }
+ });
+ 
+ // CSV toggle functionality
+ const csvToggle = document.getElementById('csvToggle');
+ const csvDropZone = document.getElementById('csvDropZone');
+ csvToggle.addEventListener('click', function() {
+   csvToggle.classList.toggle('open');
+   csvDropZone.classList.toggle('open');
+ });
+ 
+ toggles.forEach(toggle => {
+ toggle.addEventListener('click', (e) => {
+ e.preventDefault();
+ const checkbox = toggle.querySelector('input');
+ checkbox.checked = !checkbox.checked;
+ toggle.classList.toggle('active', checkbox.checked);
+ });
+ });
+ function getSelectedUtilities() {
+ const selected = [];
+ toggles.forEach(toggle => {
+ if (toggle.querySelector('input').checked) {
+ selected.push(toggle.dataset.utility);
+ }
+ });
+ return selected;
+ }
+ document.addEventListener('click', (e) => {
+ if (!e.target.closest('.up-badge-confidence')) {
+ document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => d.classList.remove('open'));
+ document.querySelectorAll('.up-badge-confidence.open').forEach(b => b.classList.remove('open'));
+ }
+ });
+ form.addEventListener('submit', async (e) => {
+ e.preventDefault();
+ const address = input.value.trim();
+ if (!address) return;
+ currentAddress = address;
+ const utilities = getSelectedUtilities();
+ if (utilities.length === 0) {
+ results.innerHTML = `<div class="up-error">Please select at least one utility type.</div>`;
+ return;
+ }
+ btn.disabled = true;
+ btn.textContent = 'Searching...';
+ guideBtn.classList.remove('show');
+ currentUtilityResults = null;
+ const streamUrl = API_URL.replace('/lookup', '/lookup/stream');
+ const params = new URLSearchParams({
+ address: address,
+ utilities: utilities.join(',')
+ });
+ results.innerHTML = `
+ <div class="up-status-message" id="upStatusMsg">
+ <div class="up-loading-spinner"></div>
+ <span>Starting lookup...</span>
+ </div>
+ <div id="upLocationContainer"></div>
+ <div class="up-results" id="upStreamResults">
+ ${utilities.includes('electric') ? '<div id="upElectricSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up electric...</div>' : ''}
+ ${utilities.includes('gas') ? '<div id="upGasSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up gas...</div>' : ''}
+ ${utilities.includes('water') ? '<div id="upWaterSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up water...</div>' : ''}
+ ${utilities.includes('internet') ? '<div id="upInternetSlot" class="up-result-slot up-loading-slot"><div class="up-loading-spinner-small"></div> Looking up internet...</div>' : ''}
+ </div>
+ `;
+ const streamData = { utilities: {}, location: null };
+ try {
+ const eventSource = new EventSource(`${streamUrl}?${params}`);
+ eventSource.onmessage = (event) => {
+ const msg = JSON.parse(event.data);
+ if (msg.event === 'status') {
+ document.getElementById('upStatusMsg').innerHTML = `
+ <div class="up-loading-spinner"></div>
+ <span>${msg.message}</span>
+ `;
+ }
+ else if (msg.event === 'geocode') {
+ streamData.location = msg.data;
+ currentZipCode = msg.data?.zip_code || '';
+ document.getElementById('upLocationContainer').innerHTML = `
+ <div class="up-location">
+ <span class="up-location-icon">📍</span>
+ ${msg.data.city || ''}, ${msg.data.county ? msg.data.county + ' County, ' : ''}${msg.data.state || ''}
+ </div>
+ `;
+ }
+ else if (msg.event === 'electric') {
+const slot = document.getElementById('upElectricSlot');
+if (msg.data) {
+streamData.utilities.electric = [msg.data];
+slot.outerHTML = renderUtilityCard(msg.data, 'electric', [], null);
+attachBadgeListeners();
+attachFeedbackListeners();
+} else {
+slot.innerHTML = `<div class="up-no-result">⚡ ${msg.note || 'No electric provider found'}</div>`;
+slot.classList.remove('up-loading-slot');
+}
+}
+else if (msg.event === 'gas') {
+  const slot = document.getElementById('upGasSlot');
+  if (msg.data) {
+    streamData.utilities.gas = [msg.data];
+    slot.outerHTML = renderUtilityCard(msg.data, 'gas', [], null);
+    attachBadgeListeners();
+    attachFeedbackListeners();
+  } else {
+ slot.innerHTML = `<div class="up-no-result">🔥 ${msg.note || 'No gas provider found'}</div>`;
+ slot.classList.remove('up-loading-slot');
+ }
+ }
+else if (msg.event === 'water') {
+  const slot = document.getElementById('upWaterSlot');
+  if (msg.data) {
+    streamData.utilities.water = [msg.data];
+    slot.outerHTML = renderUtilityCard(msg.data, 'water', [], null);
+    attachBadgeListeners();
+    attachFeedbackListeners();
+  } else {
+ slot.innerHTML = `<div class="up-no-result">💧 ${msg.note || 'No water provider found'}</div>`;
+ slot.classList.remove('up-loading-slot');
+ }
+ }
+ else if (msg.event === 'internet') {
+ const slot = document.getElementById('upInternetSlot');
+ if (msg.data && msg.data.providers && msg.data.providers.length > 0) {
+ streamData.utilities.internet = msg.data;
+ slot.outerHTML = renderInternetCard(msg.data);
+ } else {
+ slot.innerHTML = `<div class="up-no-result">🌐 ${msg.note || 'No internet data available'}</div>`;
+ slot.classList.remove('up-loading-slot');
+ }
+ }
+ else if (msg.event === 'complete') {
+ document.getElementById('upStatusMsg').remove();
+ eventSource.close();
+ btn.disabled = false;
+ btn.textContent = 'Search';
+ // Store results and show guide button
+ currentUtilityResults = { utilities: streamData.utilities, location: streamData.location };
+ guideBtn.classList.add('show');
+ }
+ else if (msg.event === 'error') {
+ results.innerHTML = `<div class="up-error">${msg.message}</div>`;
+ eventSource.close();
+ btn.disabled = false;
+ btn.textContent = 'Search';
+ }
+ };
+ eventSource.onerror = () => {
+ eventSource.close();
+ if (!streamData.location) {
+ results.innerHTML = `<div class="up-error">Connection lost. Please try again.</div>`;
+ } else {
+ document.getElementById('upStatusMsg')?.remove();
+ }
+ btn.disabled = false;
+ btn.textContent = 'Search';
+ };
+ } catch (error) {
+ results.innerHTML = `<div class="up-error">Failed to connect to API. Please try again.</div>`;
+ btn.disabled = false;
+ btn.textContent = 'Search';
+ }
+ });
+ function renderResults(data, selectedUtilities) {
+ let html = '';
+ if (data.problem_area_warning) {
+ html += `
+ <div class="up-problem-warning">
+ <span class="up-problem-warning-icon">⚠️</span>
+ <div class="up-problem-warning-text">
+ <strong>This area has known data quality issues</strong>
+ ${data.problem_area_warning}
+ ${data.verification_recommendation ? `<br><em>${data.verification_recommendation}</em>` : ''}
+ </div>
+ </div>
+ `;
+ }
+ if (data.location) {
+ const loc = data.location;
+ html += `
+ <div class="up-location">
+ <span class="up-location-icon">📍</span>
+ ${loc.city || ''}, ${loc.county ? loc.county + ' County, ' : ''}${loc.state || ''}
+ </div>
+ `;
+ }
+ html += '<div class="up-results">';
+ if (selectedUtilities.includes('electric') && data.utilities.electric) {
+ if (data.utilities.electric.length > 0) {
+ html += renderUtilityCard(
+ data.utilities.electric[0], 
+ 'electric', 
+ data.utilities.electric.slice(1), 
+ data.utilities.electric_source
+ );
+ }
+ }
+ if (selectedUtilities.includes('gas')) {
+ if (data.utilities.gas && data.utilities.gas.length > 0) {
+ html += renderUtilityCard(
+ data.utilities.gas[0], 
+ 'gas', 
+ data.utilities.gas.slice(1), 
+ data.utilities.gas_source
+ );
+ } else {
+ html += renderEmptyCard('gas', data.utilities.gas_note || 'No natural gas service found. Area may use propane.');
+ }
+ }
+ if (selectedUtilities.includes('water') && data.utilities.water) {
+ if (data.utilities.water.length > 0) {
+ html += renderUtilityCard(
+ data.utilities.water[0], 
+ 'water', 
+ [], 
+ data.utilities.water_source
+ );
+ }
+ }
+ if (selectedUtilities.includes('internet')) {
+ if (data.utilities.internet && data.utilities.internet.provider_count > 0) {
+ html += renderInternetCard(data.utilities.internet);
+ } else if (data.utilities.internet_note) {
+ html += renderEmptyCard('internet', data.utilities.internet_note);
+ }
+ }
+ html += '</div>';
+ results.innerHTML = html;
+ attachBadgeListeners();
+ attachFeedbackListeners();
+ }
+ function renderUtilityCard(util, type, alternatives, fallbackSource) {
+ const cardId = `card-${type}-${Date.now()}`;
+ let badges = '';
+ if (util.type && ['MUD', 'CDD', 'PUD', 'WCID', 'Metro District'].includes(util.type)) {
+ badges += `<span class="up-badge up-badge-district">${util.type}</span>`;
+ }
+ badges += getConfidenceBadgeWithDropdown(util, fallbackSource, cardId);
+ let detailsLeft = '';
+ if (util.phone && util.phone !== 'NOT AVAILABLE') {
+ detailsLeft += `
+ <div class="up-detail">
+ <span class="up-detail-label">Phone</span>
+ <span class="up-detail-value"><a href="tel:${util.phone}">${util.phone}</a></span>
+ </div>
+ `;
+ }
+ if (util.website && util.website !== 'NOT AVAILABLE') {
+ const url = util.website.startsWith('http') ? util.website : 'https://' + util.website;
+ detailsLeft += `
+ <div class="up-detail">
+ <span class="up-detail-label">Website</span>
+ <span class="up-detail-value"><a href="${url}" target="_blank">Visit site</a></span>
+ </div>
+ `;
+ }
+ let altSection = '';
+ if (alternatives && alternatives.length > 0) {
+ altSection = `
+ <div class="up-alternatives">
+ <div class="up-alternatives-label">Other possible providers</div>
+ <div class="up-alternatives-list">
+ ${alternatives.map(alt => `
+ <div class="up-alt-chip">
+ <span>${icons[type]}</span>
+ ${alt.name}
+ </div>
+ `).join('')}
+ </div>
+ </div>
+ `;
+ }
+ // Deregulated market section for electric
+ let deregSection = '';
+ if (type === 'electric' && util.deregulated && util.deregulated.has_choice) {
+ const dereg = util.deregulated;
+ deregSection = `
+ <div class="up-dereg-banner">
+ <div class="up-dereg-header">
+ <span class="up-dereg-icon">🎉</span>
+ <span class="up-dereg-title">${dereg.message || 'You have options!'}</span>
+ </div>
+ <div class="up-dereg-body">
+ <p class="up-dereg-explain">${dereg.how_it_works || dereg.explanation || ''}</p>
+ ${dereg.choice_website ? `
+ <a href="${dereg.choice_website}" target="_blank" class="up-dereg-cta">
+ <span>🔍</span> Compare Providers${dereg.choice_website_name ? ` on ${dereg.choice_website_name}` : ''}
+ </a>
+ ` : ''}
+ </div>
+ </div>
+ `;
+ }
+ return `
+ <div class="up-card" id="${cardId}">
+ <div class="up-card-header">
+ <div class="up-card-type">
+ <div class="up-icon up-icon-${type}">${icons[type]}</div>
+ <span class="up-type-label">${typeLabels[type]}</span>
+ </div>
+ <div class="up-header-badges">${badges}</div>
+ </div>
+ <div class="up-provider-section">
+ <div class="up-provider-name">${util.name || 'Unknown Provider'}</div>
+ ${util.selection_reason ? `<div class="up-selection-reason">${util.selection_reason}</div>` : ''}
+ </div>
+ ${deregSection}
+ <div class="up-details">
+ <div class="up-details-left">${detailsLeft}</div>
+ <div class="up-feedback-inline" data-card="${cardId}" data-type="${type}" data-provider="${util.name || ''}">
+ <span>Correct?</span>
+ <button class="up-feedback-btn-small yes" data-response="yes">Yes</button>
+ <button class="up-feedback-btn-small no" data-response="no">No</button>
+ <span class="up-feedback-done" id="${cardId}-done">Thanks!</span>
+ </div>
+ </div>
+ <div class="up-feedback-form" id="${cardId}-form">
+ <label>What's the correct ${typeLabels[type].toLowerCase()} provider?</label>
+ <input type="text" placeholder="Enter correct provider name" id="${cardId}-correction" />
+ <button class="up-feedback-submit" data-card="${cardId}" data-type="${type}">Submit</button>
+ </div>
+ ${altSection}
+ </div>
+ `;
+ }
+ function getConfidenceBadgeWithDropdown(util, fallbackSource, cardId) {
+ const score = util.confidence_score;
+ const source = util._source || util.source || util._verification_source || fallbackSource || '';
+ let badgeClass, badgeLabel;
+ if (score !== undefined && score !== null) {
+ if (score >= 85) {
+ badgeClass = 'up-badge-verified';
+ badgeLabel = 'Verified';
+ } else if (score >= 70) {
+ badgeClass = 'up-badge-high';
+ badgeLabel = 'High Confidence';
+ } else if (score >= 50) {
+ badgeClass = 'up-badge-medium';
+ badgeLabel = 'Medium';
+ } else {
+ badgeClass = 'up-badge-low';
+ badgeLabel = 'Low Confidence';
+ }
+ } else {
+ const confidence = util.confidence || 'medium';
+ const map = {
+ 'verified': { class: 'up-badge-verified', label: 'Verified' },
+ 'high': { class: 'up-badge-high', label: 'High Confidence' },
+ 'medium': { class: 'up-badge-medium', label: 'Medium' },
+ 'low': { class: 'up-badge-low', label: 'Low Confidence' }
+ };
+ const m = map[confidence] || map['medium'];
+ badgeClass = m.class;
+ badgeLabel = m.label;
+ }
+ let explanation = getSourceExplanation(source);
+ let dropdownContent = '';
+ if (score !== undefined && score !== null) {
+ if (explanation) {
+ dropdownContent = `<span class="score">${score}/100</span> · ${explanation}`;
+ } else {
+ dropdownContent = `<span class="score">${score}/100</span> confidence`;
+ }
+ } else {
+ if (explanation) {
+ dropdownContent = explanation;
+ } else {
+ dropdownContent = 'Confidence details unavailable';
+ }
+ }
+ return `
+ <span class="up-badge ${badgeClass} up-badge-confidence" data-dropdown="${cardId}-dropdown">
+ ${badgeLabel}
+ <span class="up-badge-caret">▼</span>
+ </span>
+ <div class="up-confidence-dropdown" id="${cardId}-dropdown">
+ ${dropdownContent}
+ </div>
+ `;
+ }
+ function renderEmptyCard(type, note) {
+ return `
+ <div class="up-card up-card-empty">
+ <div class="up-card-header">
+ <div class="up-card-type">
+ <div class="up-icon up-icon-${type}">${icons[type]}</div>
+ <span class="up-type-label">${typeLabels[type]}</span>
+ </div>
+ </div>
+ <div class="up-provider-name">No provider found</div>
+ <div style="font-size: 13px; color: #6b7280; margin-top: 4px;">${note}</div>
+ </div>
+ `;
+ }
+ function renderInternetCard(inet) {
+ const providers = inet.providers || [];
+ const best = inet.best_wired;
+ let badge = '';
+ if (inet.has_fiber) {
+ badge = '<span class="up-badge up-badge-verified">Fiber Available</span>';
+ } else if (inet.has_cable) {
+ badge = '<span class="up-badge up-badge-high">Cable Available</span>';
+ } else {
+ badge = '<span class="up-badge up-badge-medium">Limited Options</span>';
+ }
+ const sortedProviders = [...providers].sort((a, b) => 
+ (b.max_download_mbps || 0) - (a.max_download_mbps || 0)
+ );
+ return `
+ <div class="up-card">
+ <div class="up-card-header">
+ <div class="up-card-type">
+ <div class="up-icon up-icon-internet">${icons.internet}</div>
+ <span class="up-type-label">Internet</span>
+ </div>
+ <div class="up-header-badges">${badge}</div>
+ </div>
+ <div class="up-internet-stats">
+ <div class="up-stat">
+ <span class="up-stat-value">${inet.provider_count}</span>
+ <span class="up-stat-label">Providers</span>
+ </div>
+ ${best ? `
+ <div class="up-stat">
+ <span class="up-stat-value">${best.max_download_mbps}</span>
+ <span class="up-stat-label">Max Mbps</span>
+ </div>
+ ` : ''}
+ </div>
+ <div class="up-internet-list">
+ ${sortedProviders.map(provider => {
+ const isBest = best && provider.name === best.name;
+ return `
+ <div class="up-internet-row ${isBest ? 'up-internet-row-best' : ''}">
+ <div class="up-internet-provider">
+ <span class="up-internet-name">${provider.name}</span>
+ <span class="up-internet-tech">${provider.technology || 'Unknown'}</span>
+ </div>
+ <div class="up-internet-speed">
+ <span class="up-internet-down">${provider.max_download_mbps || '?'}</span>
+ <span class="up-internet-speed-label">↓ / ${provider.max_upload_mbps || '?'} ↑ Mbps</span>
+ </div>
+ </div>
+ `;
+ }).join('')}
+ </div>
+ </div>
+ `;
+ }
+ function attachBadgeListeners() {
+  document.querySelectorAll('.up-badge-confidence:not([data-listener])').forEach(badge => {
+    badge.setAttribute('data-listener', 'true');
+    badge.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const dropdownId = this.dataset.dropdown;
+      const dropdown = document.getElementById(dropdownId);
+      document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => {
+        if (d.id !== dropdownId) d.classList.remove('open');
+      });
+      document.querySelectorAll('.up-badge-confidence.open').forEach(b => {
+        if (b !== this) b.classList.remove('open');
+      });
+      dropdown.classList.toggle('open');
+      this.classList.toggle('open');
+    });
+  });
+}
+function attachFeedbackListeners() {
+  document.querySelectorAll('.up-feedback-btn-small:not([data-listener])').forEach(btn => {
+    btn.setAttribute('data-listener', 'true');
+    btn.addEventListener('click', function() {
+      const feedback = this.closest('.up-feedback-inline');
+      const cardId = feedback.dataset.card;
+      const type = feedback.dataset.type;
+      const provider = feedback.dataset.provider;
+      const response = this.dataset.response;
+      feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+      if (response === 'yes') {
+        feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.style.display = 'none');
+        document.getElementById(`${cardId}-done`).classList.add('show');
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: currentAddress,
+            zip_code: currentZipCode,
+            utility_type: type,
+            returned_provider: provider,
+            is_correct: true,
+            source: 'web_widget'
+          })
+        }).catch(e => console.error('Failed to submit feedback:', e));
+      } else {
+        document.getElementById(`${cardId}-form`).classList.add('open');
+      }
+    });
+  });
+  document.querySelectorAll('.up-feedback-submit:not([data-listener])').forEach(btn => {
+    btn.setAttribute('data-listener', 'true');
+    btn.addEventListener('click', async function() {
+      const cardId = this.dataset.card;
+      const type = this.dataset.type;
+      const correction = document.getElementById(`${cardId}-correction`).value.trim();
+      if (!correction) {
+        alert('Please enter the correct provider name');
+        return;
+      }
+      const feedback = document.querySelector(`.up-feedback-inline[data-card="${cardId}"]`);
+      const returnedProvider = feedback.dataset.provider;
+      try {
+        await fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: currentAddress,
+            zip_code: currentZipCode,
+            utility_type: type,
+            returned_provider: returnedProvider,
+            correct_provider: correction,
+            is_correct: false,
+            source: 'web_widget'
+          })
+        });
+      } catch (e) {
+        console.error('Failed to submit feedback:', e);
+      }
+      document.getElementById(`${cardId}-form`).classList.remove('open');
+      feedback.querySelectorAll('.up-feedback-btn-small').forEach(b => b.style.display = 'none');
+      document.getElementById(`${cardId}-done`).classList.add('show');
+    });
+  });
+}
+ const csvInput = document.getElementById('csvInput');
+ const csvSelectBtn = document.getElementById('csvSelectBtn');
+ const csvProgress = document.getElementById('csvProgress');
+ const csvProgressFill = document.getElementById('csvProgressFill');
+ const csvProgressText = document.getElementById('csvProgressText');
+ const csvResults = document.getElementById('csvResults');
+ const csvSuccessCount = document.getElementById('csvSuccessCount');
+ const csvErrorCount = document.getElementById('csvErrorCount');
+ const csvDownloadBtn = document.getElementById('csvDownloadBtn');
+ let csvResultsData = [];
+ csvDropZone.addEventListener('dragover', (e) => {
+ e.preventDefault();
+ csvDropZone.classList.add('dragover');
+ });
+ csvDropZone.addEventListener('dragleave', () => {
+ csvDropZone.classList.remove('dragover');
+ });
+ csvDropZone.addEventListener('drop', (e) => {
+ e.preventDefault();
+ csvDropZone.classList.remove('dragover');
+ const file = e.dataTransfer.files[0];
+ if (file && file.name.endsWith('.csv')) {
+ processCSVFile(file);
+ } else {
+ alert('Please upload a CSV file');
+ }
+ });
+ csvSelectBtn.addEventListener('click', (e) => {
+ e.stopPropagation();
+ csvInput.click();
+ });
+ csvInput.addEventListener('change', (e) => {
+ const file = e.target.files[0];
+ if (file) {
+ processCSVFile(file);
+ }
+ });
+ csvDownloadBtn.addEventListener('click', () => {
+ if (csvResultsData.length === 0) return;
+ const headers = Object.keys(csvResultsData[0]);
+ const csvContent = [
+ headers.join(','),
+ ...csvResultsData.map(row => 
+ headers.map(h => {
+ const val = row[h] || '';
+ if (val.toString().includes(',') || val.toString().includes('"')) {
+ return `"${val.toString().replace(/"/g, '""')}"`;
+ }
+ return val;
+ }).join(',')
+ )
+ ].join('\n');
+ const blob = new Blob([csvContent], { type: 'text/csv' });
+ const url = URL.createObjectURL(blob);
+ const a = document.createElement('a');
+ a.href = url;
+ a.download = 'utility_lookup_results.csv';
+ a.click();
+ URL.revokeObjectURL(url);
+ });
+ function parseCSV(text) {
+ const lines = text.split('\n').filter(line => line.trim());
+ if (lines.length < 2) return { headers: [], rows: [] };
+ const parseRow = (line) => {
+ const result = [];
+ let current = '';
+ let inQuotes = false;
+ for (let i = 0; i < line.length; i++) {
+ const char = line[i];
+ if (char === '"') {
+ inQuotes = !inQuotes;
+ } else if (char === ',' && !inQuotes) {
+ result.push(current.trim());
+ current = '';
+ } else {
+ current += char;
+ }
+ }
+ result.push(current.trim());
+ return result;
+ };
+ const headers = parseRow(lines[0]);
+ const rows = lines.slice(1).map(line => {
+ const values = parseRow(line);
+ const obj = {};
+ headers.forEach((h, i) => {
+ obj[h] = values[i] || '';
+ });
+ return obj;
+ });
+ return { headers, rows };
+ }
+ function findAddressColumn(headers) {
+ const addressCols = ['address', 'full_address', 'street_address', 'property_address', 'addr', 'location'];
+ const headersLower = headers.map(h => h.toLowerCase().trim());
+ for (const col of addressCols) {
+ const idx = headersLower.indexOf(col);
+ if (idx !== -1) return headers[idx];
+ }
+ return null;
+ }
+ async function processCSVFile(file) {
+ const text = await file.text();
+ const { headers, rows } = parseCSV(text);
+ if (rows.length === 0) {
+ alert('CSV file is empty');
+ return;
+ }
+ const addressCol = findAddressColumn(headers);
+ if (!addressCol) {
+ alert('Could not find address column. Please include a column named "address", "full_address", or "street_address".');
+ return;
+ }
+ const MAX_ROWS = 100;
+ const processRows = rows.slice(0, MAX_ROWS);
+ if (rows.length > MAX_ROWS) {
+ alert(`Processing first ${MAX_ROWS} addresses only (${rows.length} total in file)`);
+ }
+ const utilities = getSelectedUtilities();
+ if (utilities.length === 0) {
+ alert('Please select at least one utility type');
+ return;
+ }
+ csvProgress.classList.add('show');
+ csvResults.classList.remove('show');
+ csvResultsData = [];
+ let successCount = 0;
+ let errorCount = 0;
+ for (let i = 0; i < processRows.length; i++) {
+ const row = processRows[i];
+ const address = row[addressCol];
+ const pct = Math.round(((i + 1) / processRows.length) * 100);
+ csvProgressFill.style.width = `${pct}%`;
+ csvProgressText.textContent = `Processing ${i + 1} of ${processRows.length}...`;
+ if (!address || !address.trim()) {
+ csvResultsData.push({
+ ...row,
+ _status: 'error',
+ _error: 'Empty address',
+ electric_provider: '',
+ gas_provider: '',
+ water_provider: ''
+ });
+ errorCount++;
+ continue;
+ }
+ try {
+ const params = new URLSearchParams({
+ address: address.trim(),
+ verify: 'true',
+ utilities: utilities.join(',')
+ });
+ const response = await fetch(`${API_URL}?${params}`);
+ const data = await response.json();
+ if (data.error) {
+ csvResultsData.push({
+ ...row,
+ _status: 'error',
+ _error: data.error,
+ electric_provider: '',
+ gas_provider: '',
+ water_provider: ''
+ });
+ errorCount++;
+ } else {
+ const result = {
+ ...row,
+ _status: 'success',
+ _error: ''
+ };
+ if (utilities.includes('electric') && data.utilities.electric && data.utilities.electric.length > 0) {
+ result.electric_provider = data.utilities.electric[0].name || '';
+ result.electric_confidence = data.utilities.electric[0].confidence_score || '';
+ } else {
+ result.electric_provider = '';
+ result.electric_confidence = '';
+ }
+ if (utilities.includes('gas') && data.utilities.gas && data.utilities.gas.length > 0) {
+ result.gas_provider = data.utilities.gas[0].name || '';
+ result.gas_confidence = data.utilities.gas[0].confidence_score || '';
+ } else {
+ result.gas_provider = '';
+ result.gas_confidence = '';
+ }
+ if (utilities.includes('water') && data.utilities.water && data.utilities.water.length > 0) {
+ result.water_provider = data.utilities.water[0].name || '';
+ result.water_confidence = data.utilities.water[0].confidence_score || '';
+ } else {
+ result.water_provider = '';
+ result.water_confidence = '';
+ }
+ if (data.location) {
+ result._geocoded_city = data.location.city || '';
+ result._geocoded_state = data.location.state || '';
+ }
+ csvResultsData.push(result);
+ successCount++;
+ }
+ } catch (e) {
+ csvResultsData.push({
+ ...row,
+ _status: 'error',
+ _error: e.message || 'API error',
+ electric_provider: '',
+ gas_provider: '',
+ water_provider: ''
+ });
+ errorCount++;
+ }
+ await new Promise(r => setTimeout(r, 200));
+ }
+ csvProgress.classList.remove('show');
+ csvResults.classList.add('show');
+ csvSuccessCount.textContent = successCount;
+ csvErrorCount.textContent = errorCount;
+ }
+})();
+</script>

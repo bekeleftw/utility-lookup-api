@@ -9,6 +9,9 @@ from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from utility_lookup import lookup_utilities_by_address, lookup_utility_json, lookup_electric_only, lookup_gas_only, lookup_water_only, lookup_internet_only, geocode_address
+
+# Resident Guide feature
+from guide.guide_api import guide_bp, set_db_connection as set_guide_db_connection
 from state_utility_verification import check_problem_area, add_problem_area, load_problem_areas
 from special_districts import lookup_special_district, format_district_for_response, get_available_states, has_special_district_data
 from utility_scrapers import get_available_scrapers, get_scrapers_for_state, verify_with_utility_api_sync
@@ -51,6 +54,19 @@ def extract_city_state(address):
 
 app = Flask(__name__)
 CORS(app)  # Allow cross-origin requests from Webflow
+
+# Register Resident Guide Blueprint
+app.register_blueprint(guide_bp)
+
+# Set up database connection for guide feature if DATABASE_URL is available
+DATABASE_URL = os.getenv('DATABASE_URL')
+if DATABASE_URL:
+    try:
+        import psycopg2
+        guide_db_conn = psycopg2.connect(DATABASE_URL)
+        set_guide_db_connection(guide_db_conn)
+    except Exception as e:
+        print(f"Warning: Could not connect to database for guide feature: {e}")
 
 # Rate limiting - 100 lookups per 24 hours per IP
 # Uses in-memory storage by default, can configure Redis for production

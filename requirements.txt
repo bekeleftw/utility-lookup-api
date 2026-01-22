@@ -8,3 +8,9 @@ gunicorn
 playwright>=1.57.0
 shapely>=2.0.0
 psycopg2-binary
+
+# Resident Guide feature dependencies
+weasyprint>=60.0
+redis>=5.0.0
+rq>=1.15.0
+boto3>=1.34.0

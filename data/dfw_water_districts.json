@@ -1,0 +1,1187 @@
+{
+  "_description": "Dallas-Fort Worth water utility ZIP mappings",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "75025": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "76712": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "75081": {
+      "name": "City of Richardson",
+      "phone": null
+    },
+    "76140": {
+      "name": "City Of Forest Hill",
+      "phone": null
+    },
+    "76244": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76017": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75094": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "75104": {
+      "name": "City of Cedar Hill",
+      "phone": null
+    },
+    "75007": {
+      "name": "Carrollton TX",
+      "phone": null
+    },
+    "75023": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "76542": {
+      "name": "City of Killeen",
+      "phone": null
+    },
+    "75217": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76036": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75149": {
+      "name": "City of Mesquite, TX",
+      "phone": null
+    },
+    "76549": {
+      "name": "City of Killeen",
+      "phone": null
+    },
+    "76108": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76227": {
+      "name": "Mustang SUD - TX",
+      "phone": null
+    },
+    "76014": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75033": {
+      "name": "City of Frisco",
+      "phone": null
+    },
+    "76043": {
+      "name": "City of Glen Rose",
+      "phone": null
+    },
+    "76903": {
+      "name": "City of San Angelo Water",
+      "phone": null
+    },
+    "75021": {
+      "name": "Denison Water",
+      "phone": null
+    },
+    "75002": {
+      "name": "City of Allen (TX)",
+      "phone": null
+    },
+    "76028": {
+      "name": "City of Burleson",
+      "phone": null
+    },
+    "75020": {
+      "name": "Denison Water",
+      "phone": null
+    },
+    "76210": {
+      "name": "Denton TX",
+      "phone": null
+    },
+    "75125": {
+      "name": "City of Ferris TX",
+      "phone": null
+    },
+    "75409": {
+      "name": "CITY OF ANNA",
+      "phone": null
+    },
+    "75057": {
+      "name": "City of Lewisville - TX",
+      "phone": null
+    },
+    "75035": {
+      "name": "City of Frisco",
+      "phone": null
+    },
+    "76086": {
+      "name": "City of Weatherford",
+      "phone": null
+    },
+    "75703": {
+      "name": "City of Tyler - TX",
+      "phone": null
+    },
+    "75072": {
+      "name": "City of McKinney",
+      "phone": null
+    },
+    "76708": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76110": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75071": {
+      "name": "City of McKinney",
+      "phone": null
+    },
+    "76248": {
+      "name": "City of Keller Tx",
+      "phone": null
+    },
+    "75401": {
+      "name": "City of Greenville TX",
+      "phone": null
+    },
+    "75228": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75090": {
+      "name": "City of Sherman Texas",
+      "phone": null
+    },
+    "75060": {
+      "name": "City of Irving",
+      "phone": null
+    },
+    "76039": {
+      "name": "City of Euless",
+      "phone": null
+    },
+    "76102": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75757": {
+      "name": "Bullard Water Supply Corporation - TX",
+      "phone": null
+    },
+    "76209": {
+      "name": "Denton TX",
+      "phone": null
+    },
+    "75208": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75067": {
+      "name": "City of Lewisville - TX",
+      "phone": null
+    },
+    "75791": {
+      "name": "City of Tyler - TX",
+      "phone": null
+    },
+    "75474": {
+      "name": "City of West Tawakoni",
+      "phone": null
+    },
+    "76131": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76015": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75243": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76201": {
+      "name": "Denton TX",
+      "phone": null
+    },
+    "75043": {
+      "name": "City of Garland",
+      "phone": null
+    },
+    "76053": {
+      "name": "City of Hurst TX",
+      "phone": null
+    },
+    "75013": {
+      "name": "City of Allen (TX)",
+      "phone": null
+    },
+    "75050": {
+      "name": "Grand Praire Texas",
+      "phone": null
+    },
+    "75229": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76504": {
+      "name": "Temple TX",
+      "phone": null
+    },
+    "76020": {
+      "name": "Azle TX Water",
+      "phone": null
+    },
+    "75040": {
+      "name": "City of Garland",
+      "phone": null
+    },
+    "76005": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "76104": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75241": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75006": {
+      "name": "Carrollton TX",
+      "phone": null
+    },
+    "75019": {
+      "name": "City of Coppell",
+      "phone": null
+    },
+    "76657": {
+      "name": "City Of Mcgregor",
+      "phone": null
+    },
+    "76266": {
+      "name": "City of Sanger",
+      "phone": null
+    },
+    "76273": {
+      "name": "City of Whitesboro",
+      "phone": null
+    },
+    "75238": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76179": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75163": {
+      "name": "Southwest Water Company (TX)",
+      "phone": null
+    },
+    "75089": {
+      "name": "City of Rowlett",
+      "phone": null
+    },
+    "76126": {
+      "name": "Benbrook Water",
+      "phone": null
+    },
+    "75166": {
+      "name": "Bear Creek Special Utility District",
+      "phone": null
+    },
+    "75762": {
+      "name": "Southern Utilities Company TX",
+      "phone": null
+    },
+    "76476": {
+      "name": "City Of Tolar",
+      "phone": null
+    },
+    "75479": {
+      "name": "City of Savoy",
+      "phone": null
+    },
+    "76051": {
+      "name": "City of Grapevine",
+      "phone": null
+    },
+    "75230": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76426": {
+      "name": "Bridgeport TX, Runaway Bay",
+      "phone": null
+    },
+    "76059": {
+      "name": "CITY OF KEENE",
+      "phone": null
+    },
+    "75156": {
+      "name": "East Cedar Creek Fresh Water Supply District",
+      "phone": null
+    },
+    "76040": {
+      "name": "City of Euless",
+      "phone": null
+    },
+    "76052": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75165": {
+      "name": "City of Waxahacie",
+      "phone": null
+    },
+    "75058": {
+      "name": "Mustang SUD - TX",
+      "phone": null
+    },
+    "76132": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75407": {
+      "name": "City of Princeton (TX)",
+      "phone": null
+    },
+    "76710": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76905": {
+      "name": "City of San Angelo Water",
+      "phone": null
+    },
+    "76541": {
+      "name": "City of Killeen",
+      "phone": null
+    },
+    "76513": {
+      "name": "City of Belton",
+      "phone": null
+    },
+    "76501": {
+      "name": "Temple TX",
+      "phone": null
+    },
+    "75041": {
+      "name": "City of Garland",
+      "phone": null
+    },
+    "75418": {
+      "name": "City of Bonham",
+      "phone": null
+    },
+    "76240": {
+      "name": "City of Gainesville",
+      "phone": null
+    },
+    "76574": {
+      "name": "City of Taylor",
+      "phone": null
+    },
+    "76522": {
+      "name": "City Of Copperas Cove, TX",
+      "phone": null
+    },
+    "75707": {
+      "name": "City of Tyler - TX",
+      "phone": null
+    },
+    "75732": {
+      "name": "Southern Utilities Company TX",
+      "phone": null
+    },
+    "76208": {
+      "name": "Denton TX",
+      "phone": null
+    },
+    "76114": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75218": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76013": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "76705": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "75234": {
+      "name": "CITY OF FARMERS BRANCH",
+      "phone": null
+    },
+    "75051": {
+      "name": "Grand Praire Texas",
+      "phone": null
+    },
+    "75036": {
+      "name": "City of Frisco",
+      "phone": null
+    },
+    "75052": {
+      "name": "Grand Praire Texas",
+      "phone": null
+    },
+    "75069": {
+      "name": "City of McKinney",
+      "phone": null
+    },
+    "76011": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75028": {
+      "name": "City of Flower Mound (TX)",
+      "phone": null
+    },
+    "75038": {
+      "name": "City of Irving",
+      "phone": null
+    },
+    "76067": {
+      "name": "City of Mineral Wells Public Works",
+      "phone": null
+    },
+    "75075": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "75092": {
+      "name": "City of Sherman Texas",
+      "phone": null
+    },
+    "75077": {
+      "name": "City of Lewisville - TX",
+      "phone": null
+    },
+    "76247": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75701": {
+      "name": "City of Tyler - TX",
+      "phone": null
+    },
+    "76706": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76022": {
+      "name": "CITY OF BEDFORD",
+      "phone": null
+    },
+    "75216": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76063": {
+      "name": "City of Mansfield (TX)",
+      "phone": null
+    },
+    "76309": {
+      "name": "City of Wichita Falls",
+      "phone": null
+    },
+    "75134": {
+      "name": "Lancaster (TX)",
+      "phone": null
+    },
+    "75189": {
+      "name": "CITY OF ROYSE CITY",
+      "phone": null
+    },
+    "75032": {
+      "name": "City of Rockwall Texas",
+      "phone": null
+    },
+    "76021": {
+      "name": "CITY OF BEDFORD",
+      "phone": null
+    },
+    "75244": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76704": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76031": {
+      "name": "City of Cleburne",
+      "phone": null
+    },
+    "75087": {
+      "name": "City of Rockwall Texas",
+      "phone": null
+    },
+    "75160": {
+      "name": "City of Terrell - TX",
+      "phone": null
+    },
+    "76134": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76012": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75240": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75009": {
+      "name": "Celina TX",
+      "phone": null
+    },
+    "76177": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75253": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76258": {
+      "name": "Mustang SUD - TX",
+      "phone": null
+    },
+    "75702": {
+      "name": "City of Tyler - TX",
+      "phone": null
+    },
+    "75180": {
+      "name": "City of Balch Springs",
+      "phone": null
+    },
+    "76543": {
+      "name": "City of Killeen",
+      "phone": null
+    },
+    "75215": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75042": {
+      "name": "City of Garland",
+      "phone": null
+    },
+    "76548": {
+      "name": "City of Harker Heights Water Department",
+      "phone": null
+    },
+    "75402": {
+      "name": "City of Greenville TX",
+      "phone": null
+    },
+    "76306": {
+      "name": "City of Wichita Falls",
+      "phone": null
+    },
+    "75061": {
+      "name": "City of Irving",
+      "phone": null
+    },
+    "76058": {
+      "name": "Johnson County Special Utility District",
+      "phone": null
+    },
+    "75142": {
+      "name": "City of Kaufman - TX",
+      "phone": null
+    },
+    "75080": {
+      "name": "City of Richardson",
+      "phone": null
+    },
+    "75082": {
+      "name": "City of Richardson",
+      "phone": null
+    },
+    "76119": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75001": {
+      "name": "Addison TX",
+      "phone": null
+    },
+    "75146": {
+      "name": "Lancaster (TX)",
+      "phone": null
+    },
+    "76205": {
+      "name": "Denton TX",
+      "phone": null
+    },
+    "75478": {
+      "name": "Cypress Springs Special Utilities District",
+      "phone": null
+    },
+    "75224": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76707": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76112": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75074": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "76120": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75248": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75424": {
+      "name": "Frognot SUD",
+      "phone": null
+    },
+    "75010": {
+      "name": "Carrollton TX",
+      "phone": null
+    },
+    "76034": {
+      "name": "City of Colleyville TX",
+      "phone": null
+    },
+    "75203": {
+      "name": "City of Dallas TX Water",
+      "phone": null
+    },
+    "75503": {
+      "name": "Texarkana Water Utilities",
+      "phone": null
+    },
+    "75454": {
+      "name": "City of Melissa, TX",
+      "phone": null
+    },
+    "76010": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75204": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76033": {
+      "name": "City of Cleburne",
+      "phone": null
+    },
+    "75605": {
+      "name": "Longview, TX (Water)",
+      "phone": null
+    },
+    "76904": {
+      "name": "City of San Angelo Water",
+      "phone": null
+    },
+    "75232": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75161": {
+      "name": "Ables Springs Water Coop",
+      "phone": null
+    },
+    "76049": {
+      "name": "City of Granbury, TX",
+      "phone": null
+    },
+    "75159": {
+      "name": "City of Seagoville",
+      "phone": null
+    },
+    "76054": {
+      "name": "City of Hurst TX",
+      "phone": null
+    },
+    "75212": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76633": {
+      "name": "Aqua Source",
+      "phone": null
+    },
+    "75252": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75287": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75206": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75062": {
+      "name": "City of Irving",
+      "phone": null
+    },
+    "75114": {
+      "name": "Inframark",
+      "phone": null
+    },
+    "76935": {
+      "name": "Christoval Water District",
+      "phone": null
+    },
+    "76207": {
+      "name": "Denton TX",
+      "phone": null
+    },
+    "76117": {
+      "name": "City of Haltom",
+      "phone": null
+    },
+    "76301": {
+      "name": "City of Wichita Falls",
+      "phone": null
+    },
+    "75551": {
+      "name": "City of Atlanta - TX",
+      "phone": null
+    },
+    "76092": {
+      "name": "City of Southlake Water Utilities",
+      "phone": null
+    },
+    "75115": {
+      "name": "City of DeSoto",
+      "phone": null
+    },
+    "75044": {
+      "name": "City of Garland",
+      "phone": null
+    },
+    "75214": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76711": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76259": {
+      "name": "TOWN OF PONDER",
+      "phone": null
+    },
+    "76111": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75063": {
+      "name": "City of Irving",
+      "phone": null
+    },
+    "75442": {
+      "name": "City of Farmersville (TX)",
+      "phone": null
+    },
+    "76801": {
+      "name": "Brown County Water Improvement District",
+      "phone": null
+    },
+    "75088": {
+      "name": "City of Rowlett",
+      "phone": null
+    },
+    "75965": {
+      "name": "Nacogdoches - TX",
+      "phone": null
+    },
+    "75047": {
+      "name": "City of Princeton (TX)",
+      "phone": null
+    },
+    "76085": {
+      "name": "Walnut Creek SUD",
+      "phone": null
+    },
+    "75167": {
+      "name": "City of Waxahacie",
+      "phone": null
+    },
+    "75670": {
+      "name": "City of Marshall, TX",
+      "phone": null
+    },
+    "75070": {
+      "name": "City of McKinney",
+      "phone": null
+    },
+    "75135": {
+      "name": "City of Caddo Mills - TX",
+      "phone": null
+    },
+    "76016": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75150": {
+      "name": "City of Mesquite, TX",
+      "phone": null
+    },
+    "76105": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76655": {
+      "name": "City of Waco (TX)",
+      "phone": null
+    },
+    "76133": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75110": {
+      "name": "City of Corsicana",
+      "phone": null
+    },
+    "75211": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76018": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75201": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76084": {
+      "name": "City of Mansfield (TX)",
+      "phone": null
+    },
+    "75219": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75237": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75093": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "76103": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76109": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75054": {
+      "name": "Grand Praire Texas",
+      "phone": null
+    },
+    "76107": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75968": {
+      "name": "Little Elm TX",
+      "phone": null
+    },
+    "75048": {
+      "name": "CITY OF SACHSE",
+      "phone": null
+    },
+    "76123": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75181": {
+      "name": "City of Mesquite, TX",
+      "phone": null
+    },
+    "75233": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75495": {
+      "name": "City of Van Alstyne",
+      "phone": null
+    },
+    "75056": {
+      "name": "The Colony TX",
+      "phone": null
+    },
+    "75022": {
+      "name": "City of Flower Mound (TX)",
+      "phone": null
+    },
+    "76308": {
+      "name": "City of Wichita Falls",
+      "phone": null
+    },
+    "76065": {
+      "name": "City of Midlothian",
+      "phone": null
+    },
+    "76689": {
+      "name": "City of Valley Mills",
+      "phone": null
+    },
+    "75704": {
+      "name": "City of Tyler - TX",
+      "phone": null
+    },
+    "76559": {
+      "name": "Bell County WCID No. 3 (TX)",
+      "phone": null
+    },
+    "76116": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75494": {
+      "name": "City of Winnsboro",
+      "phone": null
+    },
+    "76502": {
+      "name": "Temple TX",
+      "phone": null
+    },
+    "75116": {
+      "name": "City of Duncanville",
+      "phone": null
+    },
+    "75034": {
+      "name": "City of Frisco",
+      "phone": null
+    },
+    "75119": {
+      "name": "City of Ennis",
+      "phone": null
+    },
+    "76135": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75205": {
+      "name": "University Park Utilities - TX",
+      "phone": null
+    },
+    "75236": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76137": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "76001": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75220": {
+      "name": "City of Dallas TX Water",
+      "phone": null
+    },
+    "75182": {
+      "name": "City of Sunnyside",
+      "phone": null
+    },
+    "75024": {
+      "name": "Plano TX",
+      "phone": null
+    },
+    "75491": {
+      "name": "City of Whitewrite",
+      "phone": null
+    },
+    "75501": {
+      "name": "Wake village water",
+      "phone": null
+    },
+    "75223": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76643": {
+      "name": "City of Hewitt",
+      "phone": null
+    },
+    "76180": {
+      "name": "North Richland Hills",
+      "phone": null
+    },
+    "76106": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75076": {
+      "name": "Red River Authority",
+      "phone": null
+    },
+    "75039": {
+      "name": "City of Irving",
+      "phone": null
+    },
+    "75246": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76302": {
+      "name": "City of Wichita Falls",
+      "phone": null
+    },
+    "75209": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75235": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76115": {
+      "name": "Tarrant Regional Water District",
+      "phone": null
+    },
+    "75065": {
+      "name": "Lake Cities Municipal Utility Authority",
+      "phone": null
+    },
+    "76087": {
+      "name": "City of Willow Park Water and Wastewater",
+      "phone": null
+    },
+    "75202": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76310": {
+      "name": "City of Wichita Falls",
+      "phone": null
+    },
+    "76933": {
+      "name": "City of Bronte, TX",
+      "phone": null
+    },
+    "76638": {
+      "name": "City of Crawford",
+      "phone": null
+    },
+    "76082": {
+      "name": "Walnut Creek Special Utility District",
+      "phone": null
+    },
+    "76148": {
+      "name": "City of Watauga",
+      "phone": null
+    },
+    "75249": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76664": {
+      "name": "City Of Mart",
+      "phone": null
+    },
+    "76006": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "76002": {
+      "name": "City of Arlington Texas",
+      "phone": null
+    },
+    "75137": {
+      "name": "City of Duncanville",
+      "phone": null
+    },
+    "75227": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75482": {
+      "name": "City of Sulphur Springs",
+      "phone": null
+    },
+    "76642": {
+      "name": "Cityu of Groesbeck Water",
+      "phone": null
+    },
+    "75662": {
+      "name": "City of Kilgore - TX",
+      "phone": null
+    },
+    "76182": {
+      "name": "North Richland Hills",
+      "phone": null
+    },
+    "76624": {
+      "name": "EOL WSC",
+      "phone": null
+    },
+    "75254": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "75231": {
+      "name": "Dallas Water Utilities - TX",
+      "phone": null
+    },
+    "76118": {
+      "name": "Fort Worth Water",
+      "phone": "817-392-4477"
+    },
+    "75758": {
+      "name": "City of Chandler - TX",
+      "phone": null
+    },
+    "75459": {
+      "name": "City of Howe",
+      "phone": null
+    },
+    "76044": {
+      "name": "Johnson County Special Utility District",
+      "phone": null
+    },
+    "76060": {
+      "name": "CITY OF KENNEDALE",
+      "phone": null
+    },
+    "75756": {
+      "name": "Moore Station WSC",
+      "phone": null
+    }
+  }
+}

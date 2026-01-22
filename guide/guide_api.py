@@ -83,8 +83,8 @@ def request_guide():
     """
     data = request.get_json()
     
-    # Validate required fields
-    required_fields = ['address', 'utility_results', 'email', 'company_name']
+    # Validate required fields (utility_results is optional - will fetch if not provided)
+    required_fields = ['address', 'email', 'company_name']
     for field in required_fields:
         if not data.get(field):
             return jsonify({

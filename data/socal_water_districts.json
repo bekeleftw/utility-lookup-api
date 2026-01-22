@@ -1226,6 +1226,30 @@
     "90605": {
       "name": "American Water",
       "phone": null
+    },
+    "92675": {
+      "name": "Santa Margarita Water District",
+      "phone": "949-459-6420"
+    },
+    "92679": {
+      "name": "Trabuco Canyon Water District",
+      "phone": "949-858-0277"
+    },
+    "92691": {
+      "name": "Moulton Niguel Water District",
+      "phone": "949-831-2500"
+    },
+    "93536": {
+      "name": "Los Angeles County Waterworks",
+      "phone": "626-300-3399"
+    },
+    "93560": {
+      "name": "Rosamond Community Services District",
+      "phone": "661-256-3411"
+    },
+    "95123": {
+      "name": "San Jose Water Company",
+      "phone": "408-279-7900"
     }
   }
 }

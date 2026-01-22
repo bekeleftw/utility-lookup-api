@@ -1983,6 +1983,113 @@
         "phone": null,
         "website": null,
         "note": "From EIA-861 (55 ZIP codes)"
+      },
+      "Cobb_EMC": {
+        "name": "Cobb Electric Membership Corporation",
+        "phone": "770-429-2100",
+        "website": "https://www.cobbemc.com/",
+        "zip_codes": [
+          "30062",
+          "30064",
+          "30102",
+          "30144",
+          "30152",
+          "30189"
+        ]
+      },
+      "Jackson_EMC": {
+        "name": "Jackson Electric Membership Corporation",
+        "phone": "706-367-5281",
+        "website": "https://www.jacksonemc.com/",
+        "zip_codes": [
+          "30043",
+          "30506",
+          "30517",
+          "30549",
+          "30566",
+          "30620",
+          "30666"
+        ]
+      },
+      "Sawnee_EMC": {
+        "name": "Sawnee Electric Membership Corporation",
+        "phone": "770-887-2363",
+        "website": "https://www.sawnee.com/",
+        "zip_codes": [
+          "30004",
+          "30028",
+          "30040",
+          "30097"
+        ]
+      },
+      "Coweta_Fayette_EMC": {
+        "name": "Coweta-Fayette EMC",
+        "phone": "770-502-0226",
+        "website": "https://www.utility.org/",
+        "zip_codes": [
+          "30205",
+          "30269",
+          "30277"
+        ]
+      },
+      "GreyStone_Power": {
+        "name": "GreyStone Power Corporation",
+        "phone": "770-942-6576",
+        "website": "https://www.greystonepower.com/",
+        "zip_codes": [
+          "30106",
+          "30122",
+          "30135",
+          "30157"
+        ]
+      },
+      "Walton_EMC": {
+        "name": "Walton Electric Membership Corporation",
+        "phone": "770-267-2505",
+        "website": "https://www.waltonemc.com/",
+        "zip_codes": [
+          "30017",
+          "30078",
+          "30677"
+        ]
+      },
+      "Snapping_Shoals_EMC": {
+        "name": "Snapping Shoals Electric Membership Corporation",
+        "phone": "770-786-3484",
+        "website": "https://www.ssemc.com/",
+        "zip_codes": [
+          "30013",
+          "30016"
+        ]
+      },
+      "Central_Georgia_EMC": {
+        "name": "Central Georgia EMC",
+        "phone": "478-783-2521",
+        "website": "https://www.cgemc.com/",
+        "zip_codes": [
+          "30248"
+        ]
+      },
+      "Flint_Energies": {
+        "name": "Flint Energies",
+        "phone": "800-342-3616",
+        "website": "https://www.flintenergies.com/",
+        "zip_codes": [
+          "31005",
+          "31069",
+          "31088",
+          "31093"
+        ]
+      },
+      "North_Georgia_EMC": {
+        "name": "North Georgia Electric Membership Corporation",
+        "phone": "706-259-9441",
+        "website": "https://www.ngemc.com/",
+        "zip_codes": [
+          "30720",
+          "30736",
+          "30742"
+        ]
       }
     },
     "NC": {

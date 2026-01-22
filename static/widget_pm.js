@@ -315,12 +315,26 @@
  }
 
  function getConfidenceBadge(util, cardId) {
+   // Check confidence string first (from API), then fall back to score
+   const conf = util.confidence;
    const score = util.confidence_score;
    let badgeClass, badgeLabel;
-   if (score >= 85) { badgeClass = 'up-badge-verified'; badgeLabel = 'Verified'; }
-   else if (score >= 70) { badgeClass = 'up-badge-high'; badgeLabel = 'High Confidence'; }
-   else if (score >= 50) { badgeClass = 'up-badge-medium'; badgeLabel = 'Medium'; }
-   else { badgeClass = 'up-badge-low'; badgeLabel = 'Low Confidence'; }
+   
+   if (conf === 'verified' || conf === 'high' || score >= 85) {
+     badgeClass = 'up-badge-verified'; badgeLabel = 'Verified';
+   } else if (conf === 'medium' || (score >= 50 && score < 85)) {
+     badgeClass = 'up-badge-medium'; badgeLabel = 'Medium';
+   } else if (conf === 'low' || (score !== null && score < 50)) {
+     badgeClass = 'up-badge-low'; badgeLabel = 'Low Confidence';
+   } else {
+     // Default to verified for municipal sources
+     const source = util._source || '';
+     if (source.includes('municipal') || source.includes('eia')) {
+       badgeClass = 'up-badge-verified'; badgeLabel = 'Verified';
+     } else {
+       badgeClass = 'up-badge-medium'; badgeLabel = 'Medium';
+     }
+   }
    return `<span class="up-badge ${badgeClass}">${badgeLabel}</span>`;
  }
 

@@ -227,35 +227,47 @@ class SmartSelector:
         
         utility_type = context.utility_type.value
         
-        # Get area context from tenant verification data AND learned boundary rules
+        # Get area context from AI boundary insights and tenant data
         area_context_text = ""
-        try:
-            # First, check learned boundary rules (more specific)
-            from utility_boundary_learner import UtilityBoundaryLearner
-            learner = UtilityBoundaryLearner()
-            learned_ctx = learner.get_context_for_ai(context.address)
-            if learned_ctx:
-                area_context_text = f"\n\n{learned_ctx}"
-        except ImportError:
-            pass
-        except Exception as e:
-            print(f"Warning: Failed to get learned rules: {e}")
         
+        # First, check AI-generated boundary insights (highest quality)
         try:
-            # Also get general area context
+            import json
+            import os
+            insights_file = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data', 'ai_boundary_insights.json')
+            if os.path.exists(insights_file):
+                with open(insights_file, 'r') as f:
+                    insights_data = json.load(f)
+                for insight in insights_data.get('insights', []):
+                    if insight.get('zip') == context.zip_code:
+                        area_context_text = f"\n\nAI-ANALYZED BOUNDARY INSIGHT for ZIP {context.zip_code}:"
+                        area_context_text += f"\n- Primary utility: {insight.get('primary_utility', 'Unknown')}"
+                        if insight.get('secondary_utility'):
+                            area_context_text += f"\n- Secondary utility: {insight.get('secondary_utility')}"
+                        if insight.get('boundary_description'):
+                            area_context_text += f"\n- Boundary: {insight.get('boundary_description')}"
+                        if insight.get('pattern'):
+                            area_context_text += f"\n- Pattern: {insight.get('pattern')}"
+                        area_context_text += f"\n- Confidence: {insight.get('confidence', 0)*100:.0f}%"
+                        break
+        except Exception as e:
+            pass  # Silently continue if insights not available
+        
+        # Also get general area context from tenant data
+        try:
             from tenant_verified_lookup import get_area_context
             area_ctx = get_area_context(context.zip_code, context.address)
             if area_ctx.get('context_note'):
                 if area_context_text:
-                    area_context_text += f"\n\nADDITIONAL AREA INTELLIGENCE:\n{area_ctx['context_note']}"
+                    area_context_text += f"\n\nADDITIONAL CONTEXT:\n{area_ctx['context_note']}"
                 else:
-                    area_context_text = f"\n\nAREA INTELLIGENCE (from historical tenant data):\n{area_ctx['context_note']}"
+                    area_context_text = f"\n\nAREA INTELLIGENCE:\n{area_ctx['context_note']}"
                 if area_ctx.get('utilities_seen'):
-                    area_context_text += f"\nOther utilities reported in this ZIP: {', '.join(area_ctx['utilities_seen'][:8])}"
+                    area_context_text += f"\nUtilities seen in this ZIP: {', '.join(area_ctx['utilities_seen'][:5])}"
         except ImportError:
             pass
         except Exception as e:
-            print(f"Warning: Failed to get area context: {e}")
+            pass
         
         prompt = f"""You are a utility service territory expert with deep knowledge of how utilities work in the United States. Given an address and conflicting results from data sources, use your expertise to determine the correct {utility_type} utility provider.
 

@@ -47,6 +47,24 @@ class MunicipalWaterSource(DataSource):
         return SOURCE_CONFIDENCE.get('municipal_utility', 88)
     
     def query(self, context: LookupContext) -> Optional[SourceResult]:
+        # SPECIAL CASE: Long Island (Nassau/Suffolk) - use ZIP-based water districts
+        if context.state == 'NY' and context.zip_code and context.zip_code.startswith('11'):
+            try:
+                from municipal_utilities import lookup_long_island_water
+                li_result = lookup_long_island_water(context.zip_code, context.county)
+                if li_result:
+                    return SourceResult(
+                        source_name=self.name,
+                        utility_name=li_result['name'],
+                        confidence_score=self.base_confidence if li_result.get('confidence') == 'verified' else 75,
+                        match_type='zip',
+                        phone=li_result.get('phone'),
+                        website=li_result.get('website'),
+                        raw_data=li_result
+                    )
+            except Exception as e:
+                pass  # Fall through to regular lookup
+        
         data = self._load_data()
         
         if not context.state or not context.city:

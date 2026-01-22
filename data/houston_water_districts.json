@@ -1,0 +1,527 @@
+{
+  "_description": "Houston metro water utility ZIP mappings",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "77584": {
+      "name": "City of Pearland",
+      "phone": "281-652-1900"
+    },
+    "77089": {
+      "name": "Clear Brook City Mud",
+      "phone": null
+    },
+    "77840": {
+      "name": "City of College Station",
+      "phone": "979-764-3500"
+    },
+    "77080": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77445": {
+      "name": "City of Hempstead - TX",
+      "phone": null
+    },
+    "77590": {
+      "name": "Texas City - GCWA",
+      "phone": null
+    },
+    "77808": {
+      "name": "Bryan Texas Utilities",
+      "phone": "979-821-5700"
+    },
+    "77536": {
+      "name": "City of Killeen",
+      "phone": null
+    },
+    "77029": {
+      "name": "Jacinto City Water Department",
+      "phone": null
+    },
+    "77075": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77070": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77086": {
+      "name": "NORTHWEST PARK MUD",
+      "phone": null
+    },
+    "77088": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77845": {
+      "name": "City of College Station",
+      "phone": "979-764-3500"
+    },
+    "77328": {
+      "name": "City of Cleveland TX",
+      "phone": null
+    },
+    "77801": {
+      "name": "Bryan Texas Utilities",
+      "phone": "979-821-5700"
+    },
+    "77013": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77042": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77043": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77009": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77389": {
+      "name": "Encanto Real Water District",
+      "phone": null
+    },
+    "77096": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77803": {
+      "name": "Bryan Texas Utilities",
+      "phone": "979-821-5700"
+    },
+    "77471": {
+      "name": "City of Rosenberg",
+      "phone": "832-595-3300"
+    },
+    "77573": {
+      "name": "City of League City",
+      "phone": "281-554-1335"
+    },
+    "77008": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77304": {
+      "name": "City of Conroe",
+      "phone": "936-522-3885"
+    },
+    "77066": {
+      "name": "Harris County MUD 6",
+      "phone": null
+    },
+    "77047": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77067": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77380": {
+      "name": "Montgomery County MUD 60",
+      "phone": null
+    },
+    "77085": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77015": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77071": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77515": {
+      "name": "City of Angleton TX",
+      "phone": null
+    },
+    "77356": {
+      "name": "Montgomery County Municipal Utility District No. 9",
+      "phone": null
+    },
+    "77077": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77082": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77014": {
+      "name": "Fountainhead Municipal Utility District",
+      "phone": null
+    },
+    "77571": {
+      "name": "City Of La Porte - TX",
+      "phone": null
+    },
+    "77099": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77079": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77301": {
+      "name": "City of Conroe",
+      "phone": "936-522-3885"
+    },
+    "77520": {
+      "name": "City of Baytown",
+      "phone": "281-420-6597"
+    },
+    "77062": {
+      "name": "Clear Lake Water Authority",
+      "phone": null
+    },
+    "77498": {
+      "name": "Fort Bend County MUD 25",
+      "phone": null
+    },
+    "77545": {
+      "name": "Fort Bend County MUD 23",
+      "phone": null
+    },
+    "77807": {
+      "name": "Bryan Texas Utilities",
+      "phone": "979-821-5700"
+    },
+    "77523": {
+      "name": "Aqua",
+      "phone": null
+    },
+    "77073": {
+      "name": "Harris County UD 16",
+      "phone": null
+    },
+    "77586": {
+      "name": "City Of Seabrook",
+      "phone": null
+    },
+    "77354": {
+      "name": "City of Magnolia",
+      "phone": null
+    },
+    "77090": {
+      "name": "Harris County MUD 189",
+      "phone": null
+    },
+    "77372": {
+      "name": "East Montgomery County MUD #14",
+      "phone": null
+    },
+    "77546": {
+      "name": "City of Friendswood",
+      "phone": "281-996-3200"
+    },
+    "77023": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77530": {
+      "name": "Harris County WCID 21",
+      "phone": null
+    },
+    "77083": {
+      "name": "Fort Bend Mud 1",
+      "phone": null
+    },
+    "77532": {
+      "name": "Newport Mud - TX",
+      "phone": null
+    },
+    "77598": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77521": {
+      "name": "HARRIS COUNTY MUD 213-A",
+      "phone": null
+    },
+    "77059": {
+      "name": "Clear Lake Water Authority",
+      "phone": null
+    },
+    "77038": {
+      "name": "FALLBROOK UTILITY DISTRICT",
+      "phone": null
+    },
+    "77055": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77006": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77707": {
+      "name": "City of Beaumont TX",
+      "phone": "409-880-3725"
+    },
+    "77020": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77504": {
+      "name": "City of Pasadena",
+      "phone": "713-475-5555"
+    },
+    "77018": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77058": {
+      "name": "City of Webster",
+      "phone": null
+    },
+    "77346": {
+      "name": "Harris County MUD 152",
+      "phone": null
+    },
+    "77026": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77565": {
+      "name": "Galveston County Water Control & Improvement District No. 12",
+      "phone": null
+    },
+    "77581": {
+      "name": "City of Pearland",
+      "phone": "281-652-1900"
+    },
+    "77443": {
+      "name": "Harris County MUD 491",
+      "phone": null
+    },
+    "77479": {
+      "name": "Sugar Land TX",
+      "phone": null
+    },
+    "77362": {
+      "name": "WDM texas",
+      "phone": null
+    },
+    "77340": {
+      "name": "Undine",
+      "phone": null
+    },
+    "77423": {
+      "name": "Fulshear MUD 3A",
+      "phone": null
+    },
+    "77502": {
+      "name": "City of Pasadena",
+      "phone": "713-475-5555"
+    },
+    "77007": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77568": {
+      "name": "City of La Marque",
+      "phone": null
+    },
+    "77701": {
+      "name": "City of Beaumont TX",
+      "phone": "409-880-3725"
+    },
+    "77702": {
+      "name": "City of Beaumont TX",
+      "phone": "409-880-3725"
+    },
+    "77339": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77562": {
+      "name": "Country Terrace Water Co",
+      "phone": null
+    },
+    "77039": {
+      "name": "Undine LLC",
+      "phone": null
+    },
+    "77003": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77336": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77076": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77004": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77355": {
+      "name": "Ranch Crest",
+      "phone": null
+    },
+    "77642": {
+      "name": "City of Port Arthur - TX",
+      "phone": null
+    },
+    "77802": {
+      "name": "Bryan Texas Utilities",
+      "phone": "979-821-5700"
+    },
+    "77535": {
+      "name": "Dayton TX",
+      "phone": null
+    },
+    "77486": {
+      "name": "Varner Creek Utility District",
+      "phone": null
+    },
+    "77511": {
+      "name": "Alvin TX",
+      "phone": null
+    },
+    "77441": {
+      "name": "Fulshear TX Water",
+      "phone": null
+    },
+    "77706": {
+      "name": "City of Beaumont TX",
+      "phone": "409-880-3725"
+    },
+    "77503": {
+      "name": "City of Pasadena",
+      "phone": "713-475-5555"
+    },
+    "77345": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77630": {
+      "name": "CITY OF ORANGE, City of Orange Water Department",
+      "phone": null
+    },
+    "77021": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77705": {
+      "name": "City of Beaumont TX",
+      "phone": "409-880-3725"
+    },
+    "77045": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77550": {
+      "name": "City of Galveston - TX",
+      "phone": null
+    },
+    "77051": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77016": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77327": {
+      "name": "City of Cleveland TX",
+      "phone": null
+    },
+    "77053": {
+      "name": "Municipal District Services",
+      "phone": null
+    },
+    "77033": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77041": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77092": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77091": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77518": {
+      "name": "Bacliff Mud",
+      "phone": null
+    },
+    "77435": {
+      "name": "City of Wharton",
+      "phone": null
+    },
+    "77506": {
+      "name": "City of Pasadena",
+      "phone": "713-475-5555"
+    },
+    "77591": {
+      "name": "Texas City - GCWA",
+      "phone": null
+    },
+    "77548": {
+      "name": "City of Pearland",
+      "phone": "281-652-1900"
+    },
+    "77035": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77022": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77028": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77563": {
+      "name": "Hitchcock - TX",
+      "phone": null
+    },
+    "77087": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77069": {
+      "name": "Champions MUD",
+      "phone": null
+    },
+    "77002": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77034": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77078": {
+      "name": "City of Houston Public Works",
+      "phone": "713-371-1400"
+    },
+    "77378": {
+      "name": "City of Conroe",
+      "phone": "936-522-3885"
+    },
+    "77065": {
+      "name": "Harris County MUD 168",
+      "phone": null
+    }
+  }
+}

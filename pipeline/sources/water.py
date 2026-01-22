@@ -65,6 +65,28 @@ class MunicipalWaterSource(DataSource):
             except Exception as e:
                 pass  # Fall through to regular lookup
         
+        # SPECIAL CASE: Southern California - use ZIP-based water districts
+        if context.state == 'CA' and context.zip_code:
+            prefix = context.zip_code[:3]
+            if prefix in ['900', '901', '902', '903', '904', '905', '906', '907', '908', 
+                          '910', '911', '912', '913', '914', '915', '916', '917', '918',
+                          '926', '927', '928', '925', '951', '952', '923', '924', '935']:
+                try:
+                    from municipal_utilities import lookup_socal_water
+                    socal_result = lookup_socal_water(context.zip_code)
+                    if socal_result:
+                        return SourceResult(
+                            source_name=self.name,
+                            utility_name=socal_result['name'],
+                            confidence_score=self.base_confidence if socal_result.get('confidence') == 'verified' else 75,
+                            match_type='zip',
+                            phone=socal_result.get('phone'),
+                            website=socal_result.get('website'),
+                            raw_data=socal_result
+                        )
+                except Exception as e:
+                    pass  # Fall through to regular lookup
+        
         data = self._load_data()
         
         if not context.state or not context.city:

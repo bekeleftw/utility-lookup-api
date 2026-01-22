@@ -8,9 +8,11 @@ from typing import Optional, Dict, List
 
 MUNICIPAL_FILE = os.path.join(os.path.dirname(__file__), 'data', 'municipal_utilities.json')
 LONG_ISLAND_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'long_island_water_districts.json')
+SOCAL_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'socal_water_districts.json')
 
 _municipal_data = None
 _long_island_water_data = None
+_socal_water_data = None
 
 
 def load_municipal_data() -> dict:
@@ -230,6 +232,40 @@ def load_long_island_water_data() -> dict:
     return _long_island_water_data
 
 
+def load_socal_water_data() -> dict:
+    """Load Southern California water district data."""
+    global _socal_water_data
+    if _socal_water_data is None:
+        if os.path.exists(SOCAL_WATER_FILE):
+            with open(SOCAL_WATER_FILE, 'r') as f:
+                _socal_water_data = json.load(f)
+        else:
+            _socal_water_data = {}
+    return _socal_water_data
+
+
+def lookup_socal_water(zip_code: str) -> Optional[Dict]:
+    """Look up water district for Southern California by ZIP code."""
+    if not zip_code:
+        return None
+    
+    data = load_socal_water_data()
+    zip_mappings = data.get('zip_mappings', {})
+    
+    if zip_code in zip_mappings:
+        district = zip_mappings[zip_code]
+        return {
+            'name': district['name'],
+            'phone': district.get('phone'),
+            'website': district.get('website'),
+            'source': 'socal_water_zip',
+            'confidence': 'verified',
+            'note': f"Water district serving ZIP {zip_code} (tenant-verified)"
+        }
+    
+    return None
+
+
 def lookup_long_island_water(zip_code: str, county: str = None) -> Optional[Dict]:
     """Look up water district for Long Island (Nassau/Suffolk counties) by ZIP code."""
     if not zip_code or not zip_code.startswith('11'):
@@ -292,6 +328,16 @@ def lookup_municipal_water(state: str, city: str = None, zip_code: str = None, c
         li_result = lookup_long_island_water(zip_code, county)
         if li_result:
             return li_result
+    
+    # SPECIAL CASE: Southern California - check ZIP-based water districts
+    if state_upper == 'CA' and zip_code:
+        prefix = zip_code[:3]
+        if prefix in ['900', '901', '902', '903', '904', '905', '906', '907', '908', 
+                      '910', '911', '912', '913', '914', '915', '916', '917', '918',
+                      '926', '927', '928', '925', '951', '952', '923', '924', '935']:
+            socal_result = lookup_socal_water(zip_code)
+            if socal_result:
+                return socal_result
     
     # FIRST: Check dedicated water section (standalone water utilities)
     water_data = data.get('water', {}).get(state_upper, {})

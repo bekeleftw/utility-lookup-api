@@ -1,0 +1,1231 @@
+{
+  "_description": "Southern California water district ZIP mappings (LA, Orange, Riverside, San Bernardino)",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "92694": {
+      "name": "Santa Margarita Water District",
+      "phone": "949-459-6420"
+    },
+    "92782": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "92620": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "90034": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90502": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92646": {
+      "name": "City of Huntington Beach Water",
+      "phone": "714-536-5921"
+    },
+    "91343": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92683": {
+      "name": "City of Westminster Water",
+      "phone": null
+    },
+    "91320": {
+      "name": "California American Water",
+      "phone": null
+    },
+    "92627": {
+      "name": "Mesa Water District",
+      "phone": "949-631-1200"
+    },
+    "95133": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92660": {
+      "name": "City of Newport Beach Water",
+      "phone": "949-644-3011"
+    },
+    "92618": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "90266": {
+      "name": "City of Manhattan Beach",
+      "phone": null
+    },
+    "92359": {
+      "name": "City of Redlands",
+      "phone": null
+    },
+    "95219": {
+      "name": "Stockton CA",
+      "phone": null
+    },
+    "90063": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91754": {
+      "name": "Monterey Park Water",
+      "phone": null
+    },
+    "92501": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "92705": {
+      "name": "City of Tustin Water",
+      "phone": "714-573-3150"
+    },
+    "92505": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "92557": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "90024": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90804": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "95131": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92780": {
+      "name": "City of Tustin Water",
+      "phone": "714-573-3150"
+    },
+    "90720": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "92345": {
+      "name": "Hesperia Wd",
+      "phone": null
+    },
+    "90744": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90003": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92397": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90019": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "95121": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "95129": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92354": {
+      "name": "Loma Linda CA",
+      "phone": null
+    },
+    "91730": {
+      "name": "Cucamonga Valley Water District",
+      "phone": null
+    },
+    "95136": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92604": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "92657": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "95110": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "95125": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "95207": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "90248": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "92376": {
+      "name": "City of Rialto",
+      "phone": null
+    },
+    "92808": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "91201": {
+      "name": "Glendale Water and Power (GWP)",
+      "phone": null
+    },
+    "91352": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91606": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90006": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92869": {
+      "name": "City of Orange Water",
+      "phone": "714-288-2475"
+    },
+    "92407": {
+      "name": "City of San Bernardino",
+      "phone": null
+    },
+    "90803": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "92507": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "91732": {
+      "name": "SPECTRUM",
+      "phone": null
+    },
+    "90291": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90025": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92840": {
+      "name": "City of Garden Grove Water",
+      "phone": "714-741-5078"
+    },
+    "91326": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "95126": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "90250": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90230": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90049": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90029": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "95139": {
+      "name": "Great Oaks Water",
+      "phone": null
+    },
+    "90701": {
+      "name": "C&c property management",
+      "phone": null
+    },
+    "92582": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "93555": {
+      "name": "Indian Wells Valley CA",
+      "phone": null
+    },
+    "90066": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91344": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92324": {
+      "name": "City of Colton",
+      "phone": null
+    },
+    "95204": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92602": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "91342": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90247": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "92606": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "91752": {
+      "name": "Jurupa Community Services District",
+      "phone": "951-685-7434"
+    },
+    "90301": {
+      "name": "Inglewood City, Water DP",
+      "phone": null
+    },
+    "90745": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92868": {
+      "name": "City of Orange Water",
+      "phone": "714-288-2475"
+    },
+    "92603": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "95242": {
+      "name": "City of Lodi - CA",
+      "phone": null
+    },
+    "92807": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "90038": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92612": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "92614": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "92879": {
+      "name": "City of Corona Water",
+      "phone": "951-736-2259"
+    },
+    "92880": {
+      "name": "Jurupa Community Services District",
+      "phone": "951-685-7434"
+    },
+    "92688": {
+      "name": "Santa Margarita Water District",
+      "phone": "949-459-6420"
+    },
+    "95120": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "95118": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "95128": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92866": {
+      "name": "City of Orange Water",
+      "phone": "714-288-2475"
+    },
+    "92308": {
+      "name": "Liberty Utilities",
+      "phone": null
+    },
+    "90249": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90059": {
+      "name": "Los Angeles Department of Water & Power (CA)",
+      "phone": null
+    },
+    "90028": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92571": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "92404": {
+      "name": "East Valley Water District",
+      "phone": null
+    },
+    "92677": {
+      "name": "Moulton Niguel Water District",
+      "phone": "949-831-2500"
+    },
+    "92881": {
+      "name": "City of Corona Water",
+      "phone": "951-736-2259"
+    },
+    "92656": {
+      "name": "Moulton Niguel Water District",
+      "phone": "949-831-2500"
+    },
+    "92707": {
+      "name": "City of Santa Ana Water",
+      "phone": "714-647-3320"
+    },
+    "90046": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91401": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92630": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "93532": {
+      "name": "Lake Elizabeth Water Company",
+      "phone": null
+    },
+    "92867": {
+      "name": "City of Orange Water",
+      "phone": "714-288-2475"
+    },
+    "90035": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90004": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92337": {
+      "name": "Fontana Water Company",
+      "phone": null
+    },
+    "91360": {
+      "name": "City of Thousand Oaks Water Department",
+      "phone": null
+    },
+    "92870": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "92553": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "91411": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90805": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "92805": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "90245": {
+      "name": "El Segundo City Water Dept",
+      "phone": null
+    },
+    "91206": {
+      "name": "Glendale Water and Power (GWP)",
+      "phone": null
+    },
+    "90501": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92551": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "91722": {
+      "name": "Azusa Light & Water",
+      "phone": null
+    },
+    "90603": {
+      "name": "Suburban Water Systems",
+      "phone": null
+    },
+    "92708": {
+      "name": "City of Fountain Valley Water",
+      "phone": "714-593-4400"
+    },
+    "91744": {
+      "name": "Suburban Water Systems",
+      "phone": null
+    },
+    "91709": {
+      "name": "City of Chino Hills",
+      "phone": null
+    },
+    "92701": {
+      "name": "City of Santa Ana Water",
+      "phone": "714-647-3320"
+    },
+    "92336": {
+      "name": "Fontana Water Company",
+      "phone": null
+    },
+    "90220": {
+      "name": "City of Compton, CA",
+      "phone": null
+    },
+    "92335": {
+      "name": "Fontana Water Company",
+      "phone": null
+    },
+    "90065": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90047": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "92649": {
+      "name": "City of Huntington Beach Water",
+      "phone": "714-536-5921"
+    },
+    "95116": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92865": {
+      "name": "City of Orange Water",
+      "phone": "714-288-2475"
+    },
+    "91436": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92802": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "92532": {
+      "name": "Elsinore Valley Municipal Water District",
+      "phone": "951-674-3146"
+    },
+    "95122": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "95124": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92835": {
+      "name": "City of Fullerton Water",
+      "phone": "714-738-6896"
+    },
+    "91104": {
+      "name": "City of Pasadena(LA)",
+      "phone": null
+    },
+    "92545": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "95148": {
+      "name": "City of San Jose, California",
+      "phone": null
+    },
+    "92530": {
+      "name": "Elsinore Valley Municipal Water District",
+      "phone": "951-674-3146"
+    },
+    "90278": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92503": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "92672": {
+      "name": "City of San Clemente Water",
+      "phone": "949-361-8200"
+    },
+    "92504": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "90706": {
+      "name": "Bellflower - Somerset Mutual Water (CA)",
+      "phone": null
+    },
+    "92647": {
+      "name": "City of Huntington Beach Water",
+      "phone": "714-536-5921"
+    },
+    "92610": {
+      "name": "Irvine Ranch Water District",
+      "phone": "949-453-5300"
+    },
+    "91016": {
+      "name": "City of Monrovia Water",
+      "phone": null
+    },
+    "95206": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "91325": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90062": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92821": {
+      "name": "City of Brea Water",
+      "phone": "714-990-7691"
+    },
+    "90504": {
+      "name": "City of Torrance",
+      "phone": null
+    },
+    "91335": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90016": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92886": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90746": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "91306": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92595": {
+      "name": "Elsinore Valley Municipal Water District",
+      "phone": "951-674-3146"
+    },
+    "92833": {
+      "name": "City of Fullerton Water",
+      "phone": "714-738-6896"
+    },
+    "90027": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90806": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "90405": {
+      "name": "City of Santa Monica",
+      "phone": null
+    },
+    "95132": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "91702": {
+      "name": "Azusa Light & Water",
+      "phone": null
+    },
+    "92804": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "92673": {
+      "name": "City of San Clemente Water",
+      "phone": "949-361-8200"
+    },
+    "95130": {
+      "name": "City of Santa Clara - CA",
+      "phone": null
+    },
+    "91311": {
+      "name": "Las Virgenes Municipal Water District",
+      "phone": null
+    },
+    "91350": {
+      "name": "Santa Clarita Valley Water (CA)",
+      "phone": null
+    },
+    "92648": {
+      "name": "City of Huntington Beach Water",
+      "phone": "714-536-5921"
+    },
+    "91364": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92663": {
+      "name": "City of Newport Beach Water",
+      "phone": "949-644-3011"
+    },
+    "90026": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91723": {
+      "name": "City of Covina",
+      "phone": null
+    },
+    "92806": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "91302": {
+      "name": "Las Virgenes Municipal Water District",
+      "phone": null
+    },
+    "92653": {
+      "name": "Moulton Niguel Water District",
+      "phone": "949-831-2500"
+    },
+    "90505": {
+      "name": "City of Torrance",
+      "phone": null
+    },
+    "90064": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92313": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "90813": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "92567": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "92629": {
+      "name": "South Coast Water District",
+      "phone": "949-499-4555"
+    },
+    "90039": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90403": {
+      "name": "HP",
+      "phone": null
+    },
+    "92883": {
+      "name": "City of Corona Water",
+      "phone": "951-736-2259"
+    },
+    "92562": {
+      "name": "Elsinore Valley Municipal Water District",
+      "phone": "951-674-3146"
+    },
+    "91354": {
+      "name": "Santa Clarita Valley Water (CA)",
+      "phone": null
+    },
+    "90018": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91321": {
+      "name": "Santa Clarita Valley Water (CA)",
+      "phone": null
+    },
+    "92586": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "92563": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "90731": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92625": {
+      "name": "City of Newport Beach Water",
+      "phone": "949-644-3011"
+    },
+    "90068": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90277": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92584": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "93550": {
+      "name": "PALMDALE WATER DISTRICT",
+      "phone": null
+    },
+    "92342": {
+      "name": "Helendale Community Service District",
+      "phone": null
+    },
+    "92555": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "91381": {
+      "name": "Santa Clarita Valley Water (CA)",
+      "phone": null
+    },
+    "95111": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92585": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "92624": {
+      "name": "South Coast Water District",
+      "phone": "949-499-4555"
+    },
+    "92346": {
+      "name": "East Valley Water District",
+      "phone": null
+    },
+    "93545": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92544": {
+      "name": "Lake Hemet Municipal Water District",
+      "phone": null
+    },
+    "92506": {
+      "name": "Riverside Public Utilities",
+      "phone": null
+    },
+    "91351": {
+      "name": "Santa Clarita Valley Water (CA)",
+      "phone": null
+    },
+    "90275": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "92692": {
+      "name": "Santa Margarita Water District",
+      "phone": "949-459-6420"
+    },
+    "92591": {
+      "name": "Rancho California Water District",
+      "phone": "951-296-6900"
+    },
+    "90732": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90815": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "91387": {
+      "name": "Santa Clarita Valley Water (CA)",
+      "phone": null
+    },
+    "92596": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "91001": {
+      "name": "Lincoln Avenue Water Company - CA",
+      "phone": null
+    },
+    "92882": {
+      "name": "City of Corona Water",
+      "phone": "951-736-2259"
+    },
+    "95127": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92374": {
+      "name": "City of Redlands",
+      "phone": null
+    },
+    "92592": {
+      "name": "Rancho California Water District",
+      "phone": "951-296-6900"
+    },
+    "92543": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "91107": {
+      "name": "City of Pasadena(LA)",
+      "phone": null
+    },
+    "91214": {
+      "name": "Crescenta Valley Water District - CA",
+      "phone": null
+    },
+    "95112": {
+      "name": "San Jose Water",
+      "phone": null
+    },
+    "92570": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "90808": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "92704": {
+      "name": "City of Santa Ana Water",
+      "phone": "714-647-3320"
+    },
+    "90631": {
+      "name": "City of La Habra",
+      "phone": null
+    },
+    "90043": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92823": {
+      "name": "City of Brea Water",
+      "phone": "714-990-7691"
+    },
+    "90007": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91203": {
+      "name": "Glendale Water and Power (GWP)",
+      "phone": null
+    },
+    "90023": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "93543": {
+      "name": "LA County Public Works",
+      "phone": null
+    },
+    "91710": {
+      "name": "Monte Vista Water District - CA",
+      "phone": null
+    },
+    "91604": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "95134": {
+      "name": "City of San Jose, California",
+      "phone": null
+    },
+    "90303": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "92832": {
+      "name": "City of Fullerton Water",
+      "phone": "714-738-6896"
+    },
+    "90293": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90814": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "92583": {
+      "name": "Eastern Municipal Water District",
+      "phone": "951-928-3777"
+    },
+    "93591": {
+      "name": "LA County Public Works",
+      "phone": null
+    },
+    "91505": {
+      "name": "Burbank Water & Power",
+      "phone": null
+    },
+    "90712": {
+      "name": "City of Lakewood, CA",
+      "phone": null
+    },
+    "95135": {
+      "name": "City of San Jose, California",
+      "phone": null
+    },
+    "93552": {
+      "name": "PALMDALE WATER DISTRICT",
+      "phone": null
+    },
+    "90713": {
+      "name": "City of Lakewood, CA",
+      "phone": null
+    },
+    "90807": {
+      "name": "City of Long Beach Water",
+      "phone": null
+    },
+    "90260": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90008": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "93535": {
+      "name": "LA County Public Works",
+      "phone": null
+    },
+    "90254": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "95210": {
+      "name": "California Water Service Company",
+      "phone": "408-367-8200"
+    },
+    "93534": {
+      "name": "LA County Public Works",
+      "phone": null
+    },
+    "95138": {
+      "name": "Great Oaks Water Company",
+      "phone": null
+    },
+    "90032": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91423": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91356": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90503": {
+      "name": "City of Torrance",
+      "phone": null
+    },
+    "91601": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90302": {
+      "name": "Inglewood City, Water DP",
+      "phone": null
+    },
+    "92661": {
+      "name": "City of Newport Beach Water",
+      "phone": "949-644-3011"
+    },
+    "91607": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90042": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90630": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "90827": {
+      "name": "Anaheim Public Utilities - Water",
+      "phone": "714-765-5185"
+    },
+    "91773": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "91739": {
+      "name": "Cucamonga Valley Water District",
+      "phone": null
+    },
+    "91205": {
+      "name": "Glendale Water and Power (GWP)",
+      "phone": null
+    },
+    "95119": {
+      "name": "Great Oaks Water Company",
+      "phone": null
+    },
+    "91367": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90036": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91307": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90045": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "93527": {
+      "name": "Inyokern CSD",
+      "phone": null
+    },
+    "91406": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90620": {
+      "name": "City of Buena Park - CA",
+      "phone": null
+    },
+    "91303": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92405": {
+      "name": "San Bernardino water company",
+      "phone": null
+    },
+    "90660": {
+      "name": "Pico Water",
+      "phone": null
+    },
+    "92509": {
+      "name": "Jurupa Community Services District",
+      "phone": "951-685-7434"
+    },
+    "90680": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "91304": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "90723": {
+      "name": "City of Paramount CA",
+      "phone": null
+    },
+    "90274": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "91789": {
+      "name": "Walnut Valley Water Districts",
+      "phone": null
+    },
+    "91030": {
+      "name": "City of South Pasadena - CA",
+      "phone": null
+    },
+    "90305": {
+      "name": "Inglewood City, Water DP",
+      "phone": null
+    },
+    "90241": {
+      "name": "City of Downey",
+      "phone": null
+    },
+    "92844": {
+      "name": "City of Garden Grove Water",
+      "phone": "714-741-5078"
+    },
+    "91708": {
+      "name": "City of Chino Hills",
+      "phone": null
+    },
+    "92320": {
+      "name": "South mesa water company",
+      "phone": null
+    },
+    "91402": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92311": {
+      "name": "Golden State Water Company",
+      "phone": "800-999-4033"
+    },
+    "91504": {
+      "name": "Burbank Water & Power",
+      "phone": null
+    },
+    "91324": {
+      "name": "Los Angeles Department of Water and Power",
+      "phone": "800-342-5397"
+    },
+    "92316": {
+      "name": "West Valley Water District - CA",
+      "phone": null
+    },
+    "91765": {
+      "name": "Walnut Valley Water Districts",
+      "phone": null
+    },
+    "90605": {
+      "name": "American Water",
+      "phone": null
+    }
+  }
+}

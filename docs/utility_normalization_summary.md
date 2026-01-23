@@ -110,23 +110,29 @@ Created `utility_normalization.py` with three functions that normalize names **b
 
 ---
 
-## Results
+## Final State (After Normalization + Thresholds)
 
-### Before Normalization
+| Utility Type | Total ZIPs | Threshold | High Conf (>80%) | Medium (60-80%) | Low (<60%) |
+|--------------|------------|-----------|------------------|-----------------|------------|
+| **Electric** | 494 | 70% | 438 (88.7%) | 56 (11.3%) | 0 |
+| **Gas** | 6,222 | 60% | 5,852 (94.1%) | 370 (5.9%) | 0 |
+| **Water** | 5,201 | 60% | 4,728 (90.9%) | 473 (9.1%) | 0 |
 
-| Utility Type | ZIPs Mapped | Issue |
-|--------------|-------------|-------|
-| Electric | 184 | Many co-ops missed due to name variations |
-| Gas | 264 | Piedmont had 0 NC ZIPs (variations split votes) |
-| Water | 2,983 | Inconsistent city utility names |
+### Key Points
 
-### After Normalization
+1. **No low-confidence entries exist** - All ZIPs meet minimum thresholds
+2. **Electric uses stricter 70% threshold** - Co-op boundaries are complex
+3. **Gas is large because it's NEW** - This file didn't exist before today
+4. **94% of gas ZIPs are high confidence** - Large utilities dominate (Piedmont, Enbridge, Atmos)
 
-| Utility Type | ZIPs Mapped | Improvement |
-|--------------|-------------|-------------|
-| Electric | 494 | +168% (co-ops properly aggregated) |
-| Gas | 6,222 | +2,256% (Piedmont now has 116 NC ZIPs) |
-| Water | 5,201 | +74% (city utilities consolidated) |
+### Why Gas Has 6,222 ZIPs
+
+Gas utilities have large, well-defined service territories:
+- **Piedmont Natural Gas**: 116 NC ZIPs alone
+- **Enbridge Gas** (formerly Dominion): Covers much of VA, NC, SC, OH
+- **Atmos Energy**: Major provider across TX, LA, MS, KY, TN, CO
+
+The 6,222 number is not inflated - it reflects that gas service territories are simpler than electric (fewer co-ops, fewer municipal utilities).
 
 ---
 

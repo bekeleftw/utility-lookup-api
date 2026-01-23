@@ -190,8 +190,8 @@ def normalize_water_name(name: str) -> str:
     if name in skip or any(s in name for s in skip):
         return ""
     
-    # American Water variations
-    if 'AMERICAN WATER' in name:
+    # American Water variations (includes district names like "Il American-Cairo")
+    if 'AMERICAN WATER' in name or 'AMERICAN-' in name or name.startswith('IL AMERICAN') or name.startswith('NJ AMERICAN') or name.startswith('PA AMERICAN'):
         states = {'NJ': 'NEW JERSEY', 'PA': 'PENNSYLVANIA', 'CA': 'CALIFORNIA', 
                   'IL': 'ILLINOIS', 'IN': 'INDIANA', 'MO': 'MISSOURI', 'WV': 'WEST VIRGINIA'}
         for abbr, full in states.items():

@@ -275,7 +275,7 @@ def format_utility(util, util_type):
             'population_served': util.get('POPULATION_SERVED', util.get('population_served')),
             'source_type': util.get('SOURCE_TYPE', util.get('source_type')),
             'confidence': util.get('_confidence', 'high'),
-            'confidence_score': util.get('confidence_score'),
+            'confidence_score': util.get('_confidence_score') or util.get('confidence_score'),
             'confidence_factors': util.get('confidence_factors'),
             'verified': util.get('_serp_verified', False),
             '_source': util.get('_source') or util.get('_verification_source') or util.get('source')
@@ -293,7 +293,7 @@ def format_utility(util, util_type):
         'id': util.get('ID') or util.get('SVCTERID') or util.get('id'),
         'type': util.get('TYPE'),
         'confidence': util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium'),
-        'confidence_score': util.get('confidence_score'),
+        'confidence_score': util.get('_confidence_score') or util.get('confidence_score'),
         'confidence_factors': util.get('confidence_factors'),
         'verified': util.get('_serp_verified', False),
         '_source': util.get('_source') or util.get('_verification_source') or util.get('source')

@@ -150,6 +150,7 @@ def _get_water_pipeline() -> LookupPipeline:
                 SpecialDistrictWaterSource,
                 EPAWaterSource,
                 CountyDefaultWaterSource,
+                TenantVerifiedWaterSource,
             )
             WATER_SOURCES_AVAILABLE = True
         except ImportError:
@@ -163,6 +164,7 @@ def _get_water_pipeline() -> LookupPipeline:
             _pipeline_water.add_source(MunicipalWaterSource())
             _pipeline_water.add_source(StateGISWaterSource())
             _pipeline_water.add_source(SpecialDistrictWaterSource())
+            _pipeline_water.add_source(TenantVerifiedWaterSource())  # Tenant-verified ZIP data
             _pipeline_water.add_source(EPAWaterSource())
             _pipeline_water.add_source(CountyDefaultWaterSource())
     

@@ -648,3 +648,56 @@ class TexasMUDSupplementalSource(DataSource):
         
         TexasMUDSupplementalSource._cache = {}
         return TexasMUDSupplementalSource._cache
+
+
+class TenantVerifiedWaterSource(DataSource):
+    """Look up water utilities using tenant-verified ZIP data."""
+    
+    @property
+    def name(self) -> str:
+        return "tenant_verified_water"
+    
+    @property
+    def supported_types(self) -> List[UtilityType]:
+        return [UtilityType.WATER]
+    
+    @property
+    def base_confidence(self) -> int:
+        return 70  # Below municipal/GIS but above EPA
+    
+    def query(self, context: LookupContext) -> Optional[SourceResult]:
+        if not context.zip_code or not context.state:
+            return None
+        
+        try:
+            from municipal_utilities import lookup_remaining_states_water
+            
+            result = lookup_remaining_states_water(context.zip_code, context.state)
+            
+            if not result or not result.get('name'):
+                return None
+            
+            confidence = result.get('confidence_score', self.base_confidence)
+            
+            return SourceResult(
+                source_name=self.name,
+                utility_name=result.get('name'),
+                confidence_score=confidence,
+                match_type='zip',
+                phone=result.get('phone'),
+                website=result.get('website'),
+                raw_data={
+                    **result,
+                    'confidence_level': result.get('confidence'),
+                    'dominance_pct': result.get('dominance_pct'),
+                    'possible_split_territory': result.get('possible_split_territory', False)
+                }
+            )
+        except Exception as e:
+            return SourceResult(
+                source_name=self.name,
+                utility_name=None,
+                confidence_score=0,
+                match_type='none',
+                error=str(e)
+            )

@@ -82,13 +82,21 @@ This fixed utilities like:
 
 ## The New State
 
-### Match Rates (Tenant Data vs API)
+### Match Rates (Tenant Data vs Tenant-Verified ZIP Files)
 
-| Utility | Before Audit | After Audit | Improvement |
-|---------|--------------|-------------|-------------|
-| **Electric** | 5.6% | **91.5%** | +85.9 pts |
-| **Gas** | 87.9% | **95.3%** | +7.4 pts |
-| **Water** | 77.6% | **90.9%** | +13.3 pts |
+**Important:** These rates measure how well our tenant-verified ZIP data files match tenant reports - NOT full API accuracy.
+
+| Utility | Records in File | Matched | Match Rate |
+|---------|-----------------|---------|------------|
+| **Electric** | 8,034 (9.9% of 80,711) | 7,351 | **91.5%** |
+| **Gas** | 43,275 (92.4% of 46,838) | 41,257 | **95.3%** |
+| **Water** | 40,060 (85.7% of 46,771) | 36,421 | **90.9%** |
+
+**Why electric coverage is low (9.9%):**
+- `remaining_states_electric.json` only contains co-ops and municipal utilities
+- Major IOUs (Duke, Georgia Power, FPL, Dominion) are deliberately excluded
+- IOUs are handled by other pipeline sources (StateGIS, EIA, HIFLD)
+- ~90% of tenant records are served by IOUs not in this file
 
 ### Data File Coverage
 

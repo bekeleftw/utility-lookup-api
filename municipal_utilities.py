@@ -519,16 +519,31 @@ def lookup_remaining_states_water(zip_code: str, state: str) -> Optional[Dict]:
             confidence_level = district.get('confidence_level', 'medium')
             dominance_pct = district.get('dominance_pct', 50)
             sample_count = district.get('sample_count', 1)
+            is_split = district.get('possible_split_territory', False)
+            
+            # Adjust confidence score based on split territory flag
+            if confidence_level == 'high':
+                conf_score = 70
+            elif is_split:
+                conf_score = 50  # Lower score for possible split territories
+            else:
+                conf_score = 55
+            
+            note = f"Water utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
+            if is_split:
+                note += " - POSSIBLE SPLIT TERRITORY"
+            
             return {
                 'name': district['name'],
                 'phone': district.get('phone'),
                 'website': district.get('website'),
                 'source': 'tenant_verified_zip',
                 'confidence': confidence_level,
-                'confidence_score': 70 if confidence_level == 'high' else 55 if confidence_level == 'medium' else 45,
+                'confidence_score': conf_score,
                 'dominance_pct': dominance_pct,
                 'sample_count': sample_count,
-                'note': f"Water utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
+                'possible_split_territory': is_split,
+                'note': note
             }
     
     return None
@@ -562,16 +577,31 @@ def lookup_remaining_states_electric(zip_code: str, state: str) -> Optional[Dict
             confidence_level = utility.get('confidence_level', 'medium')
             dominance_pct = utility.get('dominance_pct', 60)
             sample_count = utility.get('sample_count', 1)
+            is_split = utility.get('possible_split_territory', False)
+            
+            # Adjust confidence score based on split territory flag
+            if confidence_level == 'high':
+                conf_score = 75
+            elif is_split:
+                conf_score = 55  # Lower score for possible split territories
+            else:
+                conf_score = 60
+            
+            note = f"Electric utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
+            if is_split:
+                note += " - POSSIBLE SPLIT TERRITORY"
+            
             return {
                 'name': utility['name'],
                 'phone': utility.get('phone'),
                 'website': utility.get('website'),
                 'source': 'tenant_verified_zip',
                 'confidence': confidence_level,
-                'confidence_score': 75 if confidence_level == 'high' else 60 if confidence_level == 'medium' else 50,
+                'confidence_score': conf_score,
                 'dominance_pct': dominance_pct,
                 'sample_count': sample_count,
-                'note': f"Electric utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
+                'possible_split_territory': is_split,
+                'note': note
             }
     
     return None

@@ -4,7 +4,8 @@
   "_last_updated": "2026-01-23",
   "_methodology": {
     "threshold": "70% dominance required",
-    "normalization": "Names normalized before aggregation using unified normalization"
+    "normalization": "Names normalized before aggregation",
+    "filter": "Only co-ops and municipal utilities (expanded detection)"
   },
   "_confidence_levels": {
     "high": ">80% of addresses in ZIP use this provider",
@@ -28,6 +29,16 @@
         "phone": null,
         "sample_count": 2,
         "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "35976": {
+        "name": "ELECTRIC BOARD OF GUNTERSVILLE",
+        "normalized_name": "ELECTRIC BOARD OF GUNTERSVILLE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -160,6 +171,16 @@
         "phone": null,
         "sample_count": 2,
         "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "72730": {
+        "name": "Ozark Electric Coop - AR",
+        "normalized_name": "OZARK ELECTRIC COOP - AR",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -308,6 +329,26 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "92501": {
+        "name": "Riverside Public Utilities",
+        "normalized_name": "RIVERSIDE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "92505": {
+        "name": "Riverside Public Utilities",
+        "normalized_name": "RIVERSIDE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "95831": {
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
@@ -365,6 +406,26 @@
         "sample_count": 17,
         "total_count": 20,
         "dominance_pct": 85.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "92508": {
+        "name": "Riverside Public Utilities",
+        "normalized_name": "RIVERSIDE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "92507": {
+        "name": "Riverside Public Utilities",
+        "normalized_name": "RIVERSIDE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 9,
+        "dominance_pct": 88.9,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -554,6 +615,16 @@
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "92506": {
+        "name": "Riverside Public Utilities",
+        "normalized_name": "RIVERSIDE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -811,6 +882,28 @@
         "possible_split_territory": false
       }
     },
+    "CT": {
+      "06380": {
+        "name": "NORWICH PUBLIC UTILITIES",
+        "normalized_name": "NORWICH PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "06360": {
+        "name": "NORWICH PUBLIC UTILITIES",
+        "normalized_name": "NORWICH PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      }
+    },
     "DE": {
       "19963": {
         "name": "City of Milford Public Works",
@@ -851,6 +944,16 @@
         "dominance_pct": 75.0,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "19938": {
+        "name": "Town of Clayton, DE",
+        "normalized_name": "TOWN OF CLAYTON, DE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "19901": {
         "name": "City of Dover Electric Department - DE",
@@ -1844,6 +1947,16 @@
       }
     },
     "IN": {
+      "46106": {
+        "name": "Town of Bargersville - IN",
+        "normalized_name": "TOWN OF BARGERSVILLE - IN",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "46158": {
         "name": "South Central REMC",
         "normalized_name": "SOUTH CENTRAL R EMC",
@@ -1940,6 +2053,16 @@
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "47987": {
+        "name": "Town of Veedersburg",
+        "normalized_name": "TOWN OF VEEDERSBURG",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -2046,9 +2169,69 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "66101": {
+        "name": "Kansas City Board of Public Utilities (BPU)",
+        "normalized_name": "KANSAS CITY BOARD OF PUBLIC UTILITIES (BPU)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "67223": {
         "name": "Sedgwick County Rural Electric Co-op",
         "normalized_name": "SEDGWICK COUNTY RURAL ELECTRIC COOPERATIVE",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "66109": {
+        "name": "Kansas City Board of Public Utilities (BPU)",
+        "normalized_name": "KANSAS CITY BOARD OF PUBLIC UTILITIES (BPU)",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "66103": {
+        "name": "Kansas City Board of Public Utilities (BPU)",
+        "normalized_name": "KANSAS CITY BOARD OF PUBLIC UTILITIES (BPU)",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 8,
+        "dominance_pct": 87.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "66104": {
+        "name": "Kansas City Board of Public Utilities (BPU)",
+        "normalized_name": "KANSAS CITY BOARD OF PUBLIC UTILITIES (BPU)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "66112": {
+        "name": "Kansas City Board of Public Utilities (BPU)",
+        "normalized_name": "KANSAS CITY BOARD OF PUBLIC UTILITIES (BPU)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "66102": {
+        "name": "Kansas City Board of Public Utilities (BPU)",
+        "normalized_name": "KANSAS CITY BOARD OF PUBLIC UTILITIES (BPU)",
         "phone": null,
         "sample_count": 2,
         "total_count": 2,
@@ -2180,6 +2363,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "70591": {
+        "name": "Town Of Welsh",
+        "normalized_name": "TOWN OF WELSH",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "70726": {
         "name": "DEMCO",
         "normalized_name": "DEMCO",
@@ -2291,15 +2484,185 @@
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "02760": {
+        "name": "TOWN OF NORTH ATTLEBOROUGH - (MA)",
+        "normalized_name": "TOWN OF NORTH ATTLEBOROUGH - (MA)",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "02703": {
+        "name": "TOWN OF NORTH ATTLEBOROUGH - (MA)",
+        "normalized_name": "TOWN OF NORTH ATTLEBOROUGH - (MA)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       }
     },
     "MD": {
+      "20603": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 19,
+        "total_count": 27,
+        "dominance_pct": 70.4,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
       "21811": {
         "name": "Choptank Electric Cooperative",
         "normalized_name": "CHOPTANK ELECTRIC COOPERATIVE",
         "phone": null,
         "sample_count": 2,
         "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20657": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20674": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20667": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20629": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20634": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20616": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 8,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20646": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 4,
+        "dominance_pct": 75.0,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "20659": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20639": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20650": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20636": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20685": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20637": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "20675": {
+        "name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "normalized_name": "SOUTHERN MARYLAND ELEC COOP INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -2318,6 +2681,26 @@
       }
     },
     "MN": {
+      "56401": {
+        "name": "Brainerd Public Utilities",
+        "normalized_name": "BRAINERD PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 50,
+        "total_count": 57,
+        "dominance_pct": 87.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "55904": {
+        "name": "Rochester Public Utilities (RPU)",
+        "normalized_name": "ROCHESTER PUBLIC UTILITIES (RPU)",
+        "phone": null,
+        "sample_count": 34,
+        "total_count": 35,
+        "dominance_pct": 97.1,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "56450": {
         "name": "Mille Lacs Energy Cooperative",
         "normalized_name": "MILLE LACS ENERGY ELECTRIC COOPERATIVE",
@@ -2338,6 +2721,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "55901": {
+        "name": "Rochester Public Utilities (RPU)",
+        "normalized_name": "ROCHESTER PUBLIC UTILITIES (RPU)",
+        "phone": null,
+        "sample_count": 52,
+        "total_count": 53,
+        "dominance_pct": 98.1,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "55301": {
         "name": "Wright-Hennepin Cooperative Electric Association",
         "normalized_name": "WRIGHT-HENNEPIN COOPERATIVE ELECTRIC ASSOCIATION",
@@ -2351,6 +2744,46 @@
       "56444": {
         "name": "Mille Lacs Energy Cooperative",
         "normalized_name": "MILLE LACS ENERGY ELECTRIC COOPERATIVE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "55906": {
+        "name": "Rochester Public Utilities (RPU)",
+        "normalized_name": "ROCHESTER PUBLIC UTILITIES (RPU)",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 12,
+        "dominance_pct": 91.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "55902": {
+        "name": "Rochester Public Utilities (RPU)",
+        "normalized_name": "ROCHESTER PUBLIC UTILITIES (RPU)",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 13,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "55379": {
+        "name": "Shakopee Public Utilities",
+        "normalized_name": "SHAKOPEE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 7,
+        "dominance_pct": 85.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "55975": {
+        "name": "Spring Valley Public Utilities",
+        "normalized_name": "SPRING VALLEY PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -2394,6 +2827,16 @@
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "56520": {
+        "name": "Breckenridge Public Utilities",
+        "normalized_name": "BRECKENRIDGE PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -2580,6 +3023,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "64070": {
+        "name": "West Central Electric Coop - MO",
+        "normalized_name": "WEST CENTRAL ELECTRIC COOP - MO",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "63367": {
         "name": "Cuivre River Electric Cooperative",
         "normalized_name": "CUIVRE RIVER ELECTRIC COOPERATIVE",
@@ -2713,6 +3166,16 @@
         "sample_count": 1,
         "total_count": 1,
         "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "27502": {
+        "name": "Town of Apex - NC",
+        "normalized_name": "TOWN OF APEX - NC",
+        "phone": null,
+        "sample_count": 52,
+        "total_count": 58,
+        "dominance_pct": 89.7,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -2856,6 +3319,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "27523": {
+        "name": "Town of Apex - NC",
+        "normalized_name": "TOWN OF APEX - NC",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 9,
+        "dominance_pct": 88.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "28542": {
         "name": "Jones-Onslow Electric Membership Corporation",
         "normalized_name": "JONES-ONSLOW EMC",
@@ -2976,9 +3449,59 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "27932": {
+        "name": "Town of edenton",
+        "normalized_name": "TOWN OF EDENTON",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "27576": {
+        "name": "Town of Selma",
+        "normalized_name": "TOWN OF SELMA",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "27828": {
+        "name": "Town of Farmville - NC",
+        "normalized_name": "TOWN OF FARMVILLE - NC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "28457": {
         "name": "Four County Electric Membership Corporation",
         "normalized_name": "FOUR COUNTY EMC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "27578": {
+        "name": "Town of Selma",
+        "normalized_name": "TOWN OF SELMA",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "28513": {
+        "name": "Town of Ayden - NC",
+        "normalized_name": "TOWN OF AYDEN - NC",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -3101,6 +3624,16 @@
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "03894": {
+        "name": "Town of Wolfeboro NH",
+        "normalized_name": "TOWN OF WOLFEBORO NH",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       }
     },
     "NJ": {
@@ -3210,6 +3743,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "43119": {
+        "name": "Ohio Public Utilities Commission",
+        "normalized_name": "OHIO PUBLIC UTILITIES COMMISSION",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "45356": {
         "name": "City of Piqua - OH",
         "normalized_name": "CITY OF PIQUA - OH",
@@ -3294,12 +3837,72 @@
       }
     },
     "OR": {
+      "97401": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
+        "phone": null,
+        "sample_count": 54,
+        "total_count": 55,
+        "dominance_pct": 98.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "97402": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
+        "phone": null,
+        "sample_count": 21,
+        "total_count": 24,
+        "dominance_pct": 87.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "97403": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
+        "phone": null,
+        "sample_count": 16,
+        "total_count": 17,
+        "dominance_pct": 94.1,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "97405": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
+        "phone": null,
+        "sample_count": 38,
+        "total_count": 41,
+        "dominance_pct": 92.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "97759": {
         "name": "Central Electric Cooperative, Inc",
         "normalized_name": "CENTRAL ELECTRIC COOPERATIVE, INC",
         "phone": null,
         "sample_count": 12,
         "total_count": 12,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "97404": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "97477": {
+        "name": "Springfield Utility Board",
+        "normalized_name": "SPRINGFIELD UTILITY BOARD",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -3334,9 +3937,29 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "97408": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "97499": {
         "name": "Douglas Electric Cooperative Inc",
         "normalized_name": "DOUGLAS ELECTRIC COOPERATIVE INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "97448": {
+        "name": "Eugene Water & Electric Board EWEB - OR",
+        "normalized_name": "EUGENE WATER & ELECTRIC BOARD EWEB - OR",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -3377,6 +4000,16 @@
         "dominance_pct": 88.9,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "29566": {
+        "name": "Santee Cooper - SC",
+        "normalized_name": "SANTEE COOPER - SC",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 7,
+        "dominance_pct": 71.4,
+        "confidence_level": "medium",
+        "possible_split_territory": true
       },
       "29445": {
         "name": "Berkeley Electric Cooperative",
@@ -3438,6 +4071,16 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "29576": {
+        "name": "Santee Cooper - SC",
+        "normalized_name": "SANTEE COOPER - SC",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 6,
+        "dominance_pct": 83.3,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "29708": {
         "name": "York Electric Cooperative",
         "normalized_name": "YORK ELECTRIC COOPERATIVE",
@@ -3454,6 +4097,16 @@
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "29577": {
+        "name": "Santee Cooper - SC",
+        "normalized_name": "SANTEE COOPER - SC",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 13,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -3488,6 +4141,16 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "29585": {
+        "name": "Santee Cooper - SC",
+        "normalized_name": "SANTEE COOPER - SC",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "29588": {
         "name": "Horry Electric Cooperative",
         "normalized_name": "HORRY ELECTRIC COOPERATIVE",
@@ -3495,6 +4158,16 @@
         "sample_count": 13,
         "total_count": 16,
         "dominance_pct": 81.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "29575": {
+        "name": "Santee Cooper - SC",
+        "normalized_name": "SANTEE COOPER - SC",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -3554,6 +4227,16 @@
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "29572": {
+        "name": "Santee Cooper - SC",
+        "normalized_name": "SANTEE COOPER - SC",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -3629,9 +4312,29 @@
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "57543": {
+        "name": "West Central Electric Coop - MO",
+        "normalized_name": "WEST CENTRAL ELECTRIC COOP - MO",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       }
     },
     "TN": {
+      "37912": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 10,
+        "dominance_pct": 70.0,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
       "37075": {
         "name": "CEMC (Cumberland Electric Membership Corporation)- TN",
         "normalized_name": "CEMC (CUMBERLAND ELECTRIC MEMBERSHIP CORPORATION)- TN",
@@ -3639,6 +4342,26 @@
         "sample_count": 4,
         "total_count": 5,
         "dominance_pct": 80.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37405": {
+        "name": "Electric Power Board (EPB) - TN",
+        "normalized_name": "ELECTRIC POWER BOARD (EPB) - TN",
+        "phone": null,
+        "sample_count": 33,
+        "total_count": 47,
+        "dominance_pct": 70.2,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "37932": {
+        "name": "Lenoir City Utilities Board (LCUB) - TN",
+        "normalized_name": "LENOIR CITY UTILITIES BOARD (LCUB) - TN",
+        "phone": null,
+        "sample_count": 10,
+        "total_count": 10,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -3662,6 +4385,26 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "37920": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 15,
+        "total_count": 15,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37916": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "37185": {
         "name": "Meriwether Lewis Electric Cooperative",
         "normalized_name": "MERIWETHER LEWIS ELECTRIC COOPERATIVE",
@@ -3671,6 +4414,16 @@
         "dominance_pct": 75.0,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "37934": {
+        "name": "Lenoir City Utilities Board (LCUB) - TN",
+        "normalized_name": "LENOIR CITY UTILITIES BOARD (LCUB) - TN",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "37803": {
         "name": "City of Maryville (TN)",
@@ -3689,6 +4442,16 @@
         "sample_count": 11,
         "total_count": 13,
         "dominance_pct": 84.6,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37377": {
+        "name": "Electric Power Board (EPB) - TN",
+        "normalized_name": "ELECTRIC POWER BOARD (EPB) - TN",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -3742,6 +4505,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "37922": {
+        "name": "Lenoir City Utilities Board (LCUB) - TN",
+        "normalized_name": "LENOIR CITY UTILITIES BOARD (LCUB) - TN",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 8,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "37801": {
         "name": "City of Maryville (TN)",
         "normalized_name": "CITY OF MARYVILLE (TN)",
@@ -3765,6 +4538,16 @@
       "38582": {
         "name": "Upper Cumberland Electric Membership Corporation (UCEMC)",
         "normalized_name": "UPPER CUMBERLAND ELECTRIC MEMBERSHIP CORPORATION (UCEMC)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37807": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -3862,6 +4645,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "37915": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "37772": {
         "name": "Fort Loudoun Electric Cooperative",
         "normalized_name": "FORT LOUDOUN ELECTRIC COOPERATIVE",
@@ -3871,6 +4664,36 @@
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "37406": {
+        "name": "Electric Power Board (EPB) - TN",
+        "normalized_name": "ELECTRIC POWER BOARD (EPB) - TN",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 6,
+        "dominance_pct": 83.3,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37914": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 5,
+        "dominance_pct": 80.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37919": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 4,
+        "dominance_pct": 75.0,
+        "confidence_level": "medium",
+        "possible_split_territory": true
       },
       "38004": {
         "name": "Southwest Tennessee Electric Membership Corporation (STEMC)",
@@ -3882,6 +4705,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "37921": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 11,
+        "dominance_pct": 81.8,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "37048": {
         "name": "CEMC (Cumberland Electric Membership Corporation)- TN",
         "normalized_name": "CEMC (CUMBERLAND ELECTRIC MEMBERSHIP CORPORATION)- TN",
@@ -3889,6 +4722,26 @@
         "sample_count": 1,
         "total_count": 1,
         "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37924": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37918": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 9,
+        "dominance_pct": 88.9,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -3932,9 +4785,39 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "37716": {
+        "name": "Clinton Utilities Board (CUB) - TN",
+        "normalized_name": "CLINTON UTILITIES BOARD (CUB) - TN",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37721": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "37057": {
         "name": "Tri-County Electric Membership Corporation",
         "normalized_name": "TRI-COUNTY EMC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "37849": {
+        "name": "Knoxville Utilities Board",
+        "normalized_name": "KNOXVILLE UTILITIES BOARD",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -3964,6 +4847,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "75474": {
+        "name": "FARMERS ELECTRIC COOP, INC - (TX)",
+        "normalized_name": "FARMERS ELECTRIC COOP, INC - (TX)",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "78612": {
         "name": "Bluebonnet Electric Cooperative",
         "normalized_name": "BLUEBONNET ELECTRIC COOPERATIVE",
@@ -3983,6 +4876,16 @@
         "dominance_pct": 75.0,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "78028": {
+        "name": "Kerrville Public Utility Board",
+        "normalized_name": "KERRVILLE PUBLIC UTILITY BOARD",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "76273": {
         "name": "City of Whitesboro",
@@ -4074,6 +4977,16 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "75478": {
+        "name": "FARMERS ELECTRIC COOP, INC - (TX)",
+        "normalized_name": "FARMERS ELECTRIC COOP, INC - (TX)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "76401": {
         "name": "United cooperative services - Cleburne",
         "normalized_name": "UNITED COOPERATIVE SERVICES - CLEBURNE",
@@ -4097,6 +5010,16 @@
       "79363": {
         "name": "South Plains Electric Cooperative - TX",
         "normalized_name": "SOUTH PLAINS ELECTRIC COOPERATIVE - TX",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "77038": {
+        "name": "Direct Energy",
+        "normalized_name": "DIRECT ENERGY",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -4164,6 +5087,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "78542": {
+        "name": "Magic Valley Electric Coop - TX",
+        "normalized_name": "MAGIC VALLEY ELECTRIC COOP - TX",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 16,
+        "dominance_pct": 81.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "75495": {
         "name": "GRAYSON-COLLIN ELEC COOP",
         "normalized_name": "GRAYSON-COLLIN ELEC ELECTRIC COOPERATIVE",
@@ -4174,9 +5107,49 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "77612": {
+        "name": "JASPER-NEWTON ELEC COOP, INC",
+        "normalized_name": "JASPER-NEWTON ELEC COOP, INC",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "78624": {
+        "name": "Central Texas Electric Co-op - TX",
+        "normalized_name": "CENTRAL TEXAS ELECTRIC CO-OP - TX",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "78055": {
         "name": "Bandera Electric Cooperative",
         "normalized_name": "BANDERA ELECTRIC COOPERATIVE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "75453": {
+        "name": "FARMERS ELECTRIC COOP, INC - (TX)",
+        "normalized_name": "FARMERS ELECTRIC COOP, INC - (TX)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "79563": {
+        "name": "Taylor Electric Coop-TX",
+        "normalized_name": "TAYLOR ELECTRIC COOP-TX",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -4207,6 +5180,16 @@
       "79022": {
         "name": "City of Austin Utilities",
         "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "78520": {
+        "name": "Brownsville Public Utilities Board - TX",
+        "normalized_name": "BROWNSVILLE PUBLIC UTILITIES BOARD - TX",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -4560,6 +5543,36 @@
       }
     },
     "WA": {
+      "98682": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 38,
+        "total_count": 38,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98444": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 15,
+        "dominance_pct": 73.3,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "98403": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 18,
+        "total_count": 18,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98926": {
         "name": "City of Ellensburg",
         "normalized_name": "CITY OF ELLENSBURG",
@@ -4590,6 +5603,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98466": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 23,
+        "total_count": 23,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98036": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
@@ -4599,6 +5622,56 @@
         "dominance_pct": 77.8,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "98465": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98686": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 18,
+        "total_count": 19,
+        "dominance_pct": 94.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98662": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 27,
+        "total_count": 27,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98606": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98388": {
+        "name": "Town of Steilacoom WA",
+        "normalized_name": "TOWN OF STEILACOOM WA",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 8,
+        "dominance_pct": 87.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "98632": {
         "name": "Cowlitz County PUD",
@@ -4630,12 +5703,72 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98663": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 17,
+        "total_count": 17,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98604": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98402": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98406": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 28,
+        "total_count": 28,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98660": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98290": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98685": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 16,
+        "total_count": 16,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -4660,9 +5793,29 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "98684": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 34,
+        "total_count": 34,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98271": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98664": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 9,
         "total_count": 9,
@@ -4677,6 +5830,16 @@
         "sample_count": 15,
         "total_count": 16,
         "dominance_pct": 93.8,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98456": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -4700,6 +5863,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98405": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 60,
+        "total_count": 63,
+        "dominance_pct": 95.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98012": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
@@ -4720,6 +5893,26 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98642": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 26,
+        "total_count": 26,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98683": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98204": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
@@ -4729,6 +5922,46 @@
         "dominance_pct": 71.4,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "98665": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 25,
+        "total_count": 25,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98404": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 30,
+        "total_count": 30,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98629": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98607": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 26,
+        "total_count": 26,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "98021": {
         "name": "Snohomish County PUD",
@@ -4746,6 +5979,26 @@
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98418": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 15,
+        "total_count": 15,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98408": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 18,
+        "total_count": 18,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -4787,6 +6040,16 @@
         "sample_count": 7,
         "total_count": 7,
         "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98671": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 7,
+        "dominance_pct": 85.7,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -4850,6 +6113,36 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98661": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 28,
+        "total_count": 28,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98424": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98338": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 6,
+        "dominance_pct": 83.3,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98203": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
@@ -4883,6 +6176,46 @@
       "02127": {
         "name": "City of Cheney (WA)",
         "normalized_name": "CITY OF CHENEY (WA)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98422": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 22,
+        "total_count": 22,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98409": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 43,
+        "total_count": 44,
+        "dominance_pct": 97.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98407": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 18,
+        "total_count": 19,
+        "dominance_pct": 94.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98675": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -4940,6 +6273,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98443": {
+        "name": "Tacoma Public Utilities - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES - WA",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98541": {
         "name": "Mason County PUD 3 - WA",
         "normalized_name": "MASON COUNTY PUD 3 - WA",
@@ -4963,6 +6306,16 @@
       "98253": {
         "name": "Snohomish County PUD",
         "normalized_name": "SNOHOMISH COUNTY PUD",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "89682": {
+        "name": "Clark Public Utilities",
+        "normalized_name": "CLARK PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,

@@ -296,7 +296,8 @@ def format_utility(util, util_type):
         'confidence_score': util.get('_confidence_score') or util.get('confidence_score'),
         'confidence_factors': util.get('confidence_factors'),
         'verified': util.get('_serp_verified', False),
-        '_source': util.get('_source') or util.get('_verification_source') or util.get('source')
+        '_source': util.get('_source') or util.get('_verification_source') or util.get('source'),
+        'other_providers': util.get('_other_providers')
     }
     
     # Add deregulated market info for electric utilities

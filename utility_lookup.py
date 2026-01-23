@@ -303,6 +303,22 @@ def lookup_utilities_by_address(
             }
             
             if include_metadata:
+                # Extract other providers from disagreeing sources
+                other_providers = []
+                selected_name = (result.brand_name or result.utility_name or '').upper()
+                for sr in result.all_results:
+                    if sr.utility_name and sr.source_name != result.source:
+                        sr_name = sr.utility_name.upper()
+                        # Only include if different from selected
+                        if sr_name != selected_name and sr_name not in [p['name'].upper() for p in other_providers]:
+                            other_providers.append({
+                                'name': sr.utility_name,
+                                'source': sr.source_name,
+                                'confidence_score': sr.confidence_score
+                            })
+                # Sort by confidence and limit to top 3
+                other_providers = sorted(other_providers, key=lambda x: x.get('confidence_score', 0), reverse=True)[:3]
+                
                 formatted.update({
                     '_confidence': result.confidence_level,
                     '_confidence_score': result.confidence_score,
@@ -313,6 +329,7 @@ def lookup_utilities_by_address(
                     '_sources_agreed': result.sources_agreed,
                     '_agreeing_sources': result.agreeing_sources,
                     '_disagreeing_sources': result.disagreeing_sources,
+                    '_other_providers': other_providers if other_providers else None,
                     '_deregulated_market': result.deregulated_market,
                     '_deregulated_note': result.deregulated_note,
                     '_serp_verified': result.serp_verified,

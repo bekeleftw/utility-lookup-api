@@ -378,20 +378,18 @@ Respond in JSON format ONLY:
         source_results: List[SourceResult]
     ) -> SelectionResult:
         """Fallback to highest confidence source when LLM is unavailable."""
-        # Prefer municipal > tenant_verified > state_gis > eia > hifld > county_default
-        # tenant_verified_zip is ZIP-level data from 87k verified addresses
+        # Prefer municipal > state_gis > tenant_verified > eia > hifld > county_default
+        # tenant_verified_zip is ZIP-level data - should CORROBORATE, not override GIS
         SOURCE_PRIORITY = {
             'municipal': 100,
             'municipal_gas': 100,
             'municipal_water': 95,
-            'tenant_verified_zip': 85,  # High priority but below municipal (ZIP-level, not address-level)
             'state_gis': 90,
             'state_gis_gas': 90,
-            'electric_coop': 80,
-            'zip_mapping_gas': 75,
-            'eia_861': 70,
-            'remaining_states_water_zip': 65,  # Alias for tenant_verified_zip
-            'remaining_states_electric_zip': 65,
+            'electric_coop': 85,
+            'tenant_verified_zip': 75,  # Below GIS - corroborates rather than overrides
+            'zip_mapping_gas': 70,
+            'eia_861': 65,
             'hifld': 40,
             'hifld_gas': 40,
             'county_default': 30,
@@ -403,17 +401,14 @@ Respond in JSON format ONLY:
         for r in source_results:
             base_priority = SOURCE_PRIORITY.get(r.source_name, 0)
             
-            # For tenant-verified ZIP data, use the confidence_score which reflects dominance %
-            # High confidence (>80% dominance) gets full priority
-            # Medium/Low confidence gets reduced priority
+            # For tenant-verified ZIP data, adjust priority based on confidence level
+            # High confidence can approach GIS priority, low confidence stays well below
             if r.source_name == 'tenant_verified_zip' and hasattr(r, 'metadata'):
                 confidence_level = r.metadata.get('confidence', 'medium') if r.metadata else 'medium'
                 if confidence_level == 'high':
-                    base_priority = 85
-                elif confidence_level == 'medium':
-                    base_priority = 70
-                else:  # low
-                    base_priority = 55
+                    base_priority = 80  # Close to but still below GIS (90)
+                else:  # medium (no low confidence in data anymore)
+                    base_priority = 65  # Well below GIS, corroborating only
             
             score = r.confidence_score + base_priority * 0.3
             scored.append((score, r))

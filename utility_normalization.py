@@ -42,8 +42,8 @@ def normalize_electric_name(name: str) -> str:
     if 'GEORGIA POWER' in name:
         return 'GEORGIA POWER'
     
-    # Florida Power & Light
-    if 'FPL' in name or 'FLORIDA POWER' in name:
+    # Florida Power & Light (includes Gulf Power, acquired 2021)
+    if 'FPL' in name or 'FLORIDA POWER' in name or 'GULF POWER' in name:
         return 'FLORIDA POWER & LIGHT'
     
     # Southern California Edison

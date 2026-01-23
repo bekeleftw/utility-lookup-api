@@ -1,10 +1,10 @@
 {
-  "_description": "Gas utility ZIP mappings with unified normalization",
+  "_description": "Gas utility ZIP mappings",
   "_source": "Tenant-verified addresses (87k dataset)",
   "_last_updated": "2026-01-23",
   "_methodology": {
     "threshold": "60% dominance required",
-    "normalization": "Names normalized before aggregation using unified normalization"
+    "normalization": "Comprehensive normalization with merger/acquisition handling"
   },
   "_confidence_levels": {
     "high": ">80% of addresses in ZIP use this provider",
@@ -49842,9 +49842,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 32,
+        "sample_count": 33,
         "total_count": 35,
-        "dominance_pct": 91.4,
+        "dominance_pct": 94.3,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -49922,10 +49922,10 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 34,
+        "sample_count": 37,
         "total_count": 43,
-        "dominance_pct": 79.1,
-        "confidence_level": "medium",
+        "dominance_pct": 86.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "77375": {
@@ -50642,9 +50642,19 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 61,
+        "sample_count": 62,
         "total_count": 65,
-        "dominance_pct": 93.8,
+        "dominance_pct": 95.4,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "78023": {
+        "name": "CPS Energy",
+        "normalized_name": "CPS ENERGY",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 5,
+        "dominance_pct": 80.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -50702,11 +50712,11 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 10,
         "total_count": 13,
-        "dominance_pct": 69.2,
+        "dominance_pct": 76.9,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "75090": {
         "name": "Atmos Energy",
@@ -50752,9 +50762,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 10,
         "total_count": 10,
-        "dominance_pct": 90.0,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -51182,10 +51192,10 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 6,
+        "sample_count": 8,
         "total_count": 8,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "78374": {
@@ -51658,6 +51668,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "78204": {
+        "name": "CPS Energy",
+        "normalized_name": "CPS ENERGY",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 3,
+        "dominance_pct": 66.7,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
       "77047": {
         "name": "Centerpoint Energy",
         "normalized_name": "CENTERPOINT ENERGY",
@@ -51672,9 +51692,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 13,
+        "sample_count": 14,
         "total_count": 14,
-        "dominance_pct": 92.9,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -51972,11 +51992,11 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 6,
+        "sample_count": 7,
         "total_count": 9,
-        "dominance_pct": 66.7,
+        "dominance_pct": 77.8,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "78412": {
         "name": "Corpus Christi TX",
@@ -52042,9 +52062,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 10,
+        "sample_count": 11,
         "total_count": 11,
-        "dominance_pct": 90.9,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -52222,9 +52242,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 13,
+        "sample_count": 14,
         "total_count": 15,
-        "dominance_pct": 86.7,
+        "dominance_pct": 93.3,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -52422,10 +52442,10 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 3,
+        "sample_count": 4,
         "total_count": 4,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "77062": {
@@ -52472,10 +52492,10 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 19,
+        "sample_count": 22,
         "total_count": 24,
-        "dominance_pct": 79.2,
-        "confidence_level": "medium",
+        "dominance_pct": 91.7,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "75240": {
@@ -53002,9 +53022,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 7,
+        "sample_count": 8,
         "total_count": 8,
-        "dominance_pct": 87.5,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -53502,9 +53522,9 @@
         "name": "CPS Energy",
         "normalized_name": "CPS ENERGY",
         "phone": null,
-        "sample_count": 5,
+        "sample_count": 6,
         "total_count": 6,
-        "dominance_pct": 83.3,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -55491,6 +55511,16 @@
       "76002": {
         "name": "Atmos Energy",
         "normalized_name": "ATMOS ENERGY",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "78229": {
+        "name": "CPS",
+        "normalized_name": "CPS ENERGY",
         "phone": null,
         "sample_count": 2,
         "total_count": 2,

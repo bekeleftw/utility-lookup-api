@@ -1,10 +1,10 @@
 {
-  "_description": "Water utility ZIP mappings with unified normalization",
+  "_description": "Water utility ZIP mappings",
   "_source": "Tenant-verified addresses (87k dataset)",
   "_last_updated": "2026-01-23",
   "_methodology": {
     "threshold": "60% dominance required",
-    "normalization": "Names normalized before aggregation using unified normalization"
+    "normalization": "Comprehensive normalization with merger/acquisition handling"
   },
   "_confidence_levels": {
     "high": ">80% of addresses in ZIP use this provider",
@@ -19956,9 +19956,9 @@
         "name": "Fort Wayne City Utilities - IN",
         "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
-        "sample_count": 28,
+        "sample_count": 30,
         "total_count": 30,
-        "dominance_pct": 93.3,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -19996,9 +19996,9 @@
         "name": "Fort Wayne City Utilities - IN",
         "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
-        "sample_count": 66,
+        "sample_count": 69,
         "total_count": 69,
-        "dominance_pct": 95.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -20046,10 +20046,10 @@
         "name": "Fort Wayne City Utilities - IN",
         "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
-        "sample_count": 5,
+        "sample_count": 7,
         "total_count": 7,
-        "dominance_pct": 71.4,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "46107": {
@@ -20136,9 +20136,9 @@
         "name": "Fort Wayne City Utilities - IN",
         "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 12,
         "total_count": 12,
-        "dominance_pct": 91.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -20154,7 +20154,7 @@
       },
       "46783": {
         "name": "City of Fortwayne (Honey Suckle)",
-        "normalized_name": "CITY OF FORTWAYNE (HONEY SUCKLE)",
+        "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -20336,10 +20336,10 @@
         "name": "Fort Wayne City Utilities - IN",
         "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
-        "sample_count": 7,
+        "sample_count": 9,
         "total_count": 9,
-        "dominance_pct": 77.8,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "46222": {
@@ -20722,6 +20722,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "46804": {
+        "name": "Fort Wayne City Utilities - IN",
+        "normalized_name": "FORT WAYNE CITY UTILITIES",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "46237": {
         "name": "CItizens Energy",
         "normalized_name": "CITIZENS ENERGY",
@@ -20752,15 +20762,25 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "46809": {
+        "name": "City of Fortwayne (Honey Suckle)",
+        "normalized_name": "FORT WAYNE CITY UTILITIES",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 3,
+        "dominance_pct": 66.7,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
       "46835": {
         "name": "Fort Wayne City Utilities - IN",
         "normalized_name": "FORT WAYNE CITY UTILITIES",
         "phone": null,
-        "sample_count": 7,
+        "sample_count": 11,
         "total_count": 11,
-        "dominance_pct": 63.6,
-        "confidence_level": "medium",
-        "possible_split_territory": true
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "46148": {
         "name": "Knightstown - IN",
@@ -21066,13 +21086,13 @@
     "KS": {
       "66212": {
         "name": "Water One",
-        "normalized_name": "WATER ONE",
+        "normalized_name": "WATERONE",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 13,
         "total_count": 13,
-        "dominance_pct": 69.2,
-        "confidence_level": "medium",
-        "possible_split_territory": true
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "66502": {
         "name": "CITY OF MANHATTAN",
@@ -21166,7 +21186,7 @@
       },
       "66214": {
         "name": "Water One",
-        "normalized_name": "WATER ONE",
+        "normalized_name": "WATERONE",
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
@@ -21190,6 +21210,16 @@
         "phone": null,
         "sample_count": 7,
         "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "66203": {
+        "name": "WaterOne",
+        "normalized_name": "WATERONE",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -21226,7 +21256,7 @@
       },
       "66210": {
         "name": "Water One",
-        "normalized_name": "WATER ONE",
+        "normalized_name": "WATERONE",
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
@@ -21276,7 +21306,7 @@
       },
       "66213": {
         "name": "Water One",
-        "normalized_name": "WATER ONE",
+        "normalized_name": "WATERONE",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -21326,12 +21356,12 @@
       },
       "66215": {
         "name": "Water One",
-        "normalized_name": "WATER ONE",
+        "normalized_name": "WATERONE",
         "phone": null,
-        "sample_count": 3,
+        "sample_count": 4,
         "total_count": 4,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "67230": {
@@ -21544,6 +21574,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "66208": {
+        "name": "Water One",
+        "normalized_name": "WATERONE",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "67204": {
         "name": "City of Wichita Public Works",
         "normalized_name": "CITY OF WICHITA PUBLIC WORKS",
@@ -21593,6 +21633,16 @@
         "dominance_pct": 66.7,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "66205": {
+        "name": "WaterOne",
+        "normalized_name": "WATERONE",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "67210": {
         "name": "City of Wichita Public Works",
@@ -21748,10 +21798,10 @@
         "name": "WaterOne",
         "normalized_name": "WATERONE",
         "phone": null,
-        "sample_count": 3,
+        "sample_count": 4,
         "total_count": 4,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "66030": {
@@ -21794,6 +21844,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "66204": {
+        "name": "WaterOne",
+        "normalized_name": "WATERONE",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 8,
+        "dominance_pct": 87.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "66535": {
         "name": "City of St. George",
         "normalized_name": "CITY OF ST. GEORGE",
@@ -21816,7 +21876,7 @@
       },
       "66221": {
         "name": "Water One",
-        "normalized_name": "WATER ONE",
+        "normalized_name": "WATERONE",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -24860,11 +24920,11 @@
     "MN": {
       "55912": {
         "name": "Austin Utilities (NM)",
-        "normalized_name": "AUSTIN UTILITIES (NM)",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 33,
+        "sample_count": 36,
         "total_count": 37,
-        "dominance_pct": 89.2,
+        "dominance_pct": 97.3,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -27888,7 +27948,7 @@
       },
       "28107": {
         "name": "City of Conconrd - NC",
-        "normalized_name": "CITY OF CONCONRD",
+        "normalized_name": "CITY OF CONCORD",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -27900,11 +27960,11 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 48,
+        "sample_count": 57,
         "total_count": 76,
-        "dominance_pct": 63.2,
+        "dominance_pct": 75.0,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "27713": {
         "name": "City of Durham NC",
@@ -28048,7 +28108,7 @@
       },
       "28027": {
         "name": "City of Conconrd - NC",
-        "normalized_name": "CITY OF CONCONRD",
+        "normalized_name": "CITY OF CONCORD",
         "phone": null,
         "sample_count": 31,
         "total_count": 31,
@@ -28200,10 +28260,10 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 14,
+        "sample_count": 18,
         "total_count": 18,
-        "dominance_pct": 77.8,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "27701": {
@@ -28570,9 +28630,9 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 23,
+        "sample_count": 25,
         "total_count": 26,
-        "dominance_pct": 88.5,
+        "dominance_pct": 96.2,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -28740,10 +28800,10 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 20,
+        "sample_count": 23,
         "total_count": 28,
-        "dominance_pct": 71.4,
-        "confidence_level": "medium",
+        "dominance_pct": 82.1,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "28778": {
@@ -28850,9 +28910,9 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 14,
+        "sample_count": 16,
         "total_count": 16,
-        "dominance_pct": 87.5,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -29020,11 +29080,11 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 21,
+        "sample_count": 34,
         "total_count": 35,
-        "dominance_pct": 60.0,
-        "confidence_level": "medium",
-        "possible_split_territory": true
+        "dominance_pct": 97.1,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "27260": {
         "name": "City Of High Point",
@@ -29060,11 +29120,11 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 23,
+        "sample_count": 27,
         "total_count": 38,
-        "dominance_pct": 60.5,
+        "dominance_pct": 71.1,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "28205": {
         "name": "Charlotte Water (NC)",
@@ -29208,7 +29268,7 @@
       },
       "28025": {
         "name": "City of Conconrd - NC",
-        "normalized_name": "CITY OF CONCONRD",
+        "normalized_name": "CITY OF CONCORD",
         "phone": null,
         "sample_count": 12,
         "total_count": 12,
@@ -29310,10 +29370,10 @@
         "name": "Fayetteville Public Works Commission - NC",
         "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
         "phone": null,
-        "sample_count": 42,
+        "sample_count": 53,
         "total_count": 53,
-        "dominance_pct": 79.2,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "28403": {
@@ -29404,6 +29464,16 @@
         "total_count": 4,
         "dominance_pct": 75.0,
         "confidence_level": "medium",
+        "possible_split_territory": false
+      },
+      "28312": {
+        "name": "Fayetteville PWC",
+        "normalized_name": "FAYETTEVILLE PUBLIC WORKS COMMISSION",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 7,
+        "dominance_pct": 85.7,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "28134": {
@@ -31124,7 +31194,7 @@
       },
       "03303": {
         "name": "City of Conconrd - NC",
-        "normalized_name": "CITY OF CONCONRD",
+        "normalized_name": "CITY OF CONCORD",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -37686,9 +37756,9 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 31,
+        "sample_count": 34,
         "total_count": 34,
-        "dominance_pct": 91.2,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -37696,9 +37766,9 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 17,
+        "sample_count": 18,
         "total_count": 23,
-        "dominance_pct": 73.9,
+        "dominance_pct": 78.3,
         "confidence_level": "medium",
         "possible_split_territory": false
       },
@@ -37716,9 +37786,9 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 61,
+        "sample_count": 63,
         "total_count": 63,
-        "dominance_pct": 96.8,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -37836,10 +37906,10 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 12,
         "total_count": 12,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "29642": {
@@ -37856,9 +37926,9 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 39,
+        "sample_count": 41,
         "total_count": 46,
-        "dominance_pct": 84.8,
+        "dominance_pct": 89.1,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -37906,9 +37976,9 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 21,
+        "sample_count": 22,
         "total_count": 23,
-        "dominance_pct": 91.3,
+        "dominance_pct": 95.7,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -37966,11 +38036,11 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 6,
+        "sample_count": 7,
         "total_count": 10,
-        "dominance_pct": 60.0,
+        "dominance_pct": 70.0,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "29036": {
         "name": "City of Columbia - SC",
@@ -38196,9 +38266,9 @@
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 41,
+        "sample_count": 44,
         "total_count": 44,
-        "dominance_pct": 93.2,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -38282,13 +38352,23 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "29669": {
+        "name": "Greenville Water - SC",
+        "normalized_name": "GREENVILLE WATER",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 9,
+        "dominance_pct": 77.8,
+        "confidence_level": "medium",
+        "possible_split_territory": false
+      },
       "29615": {
         "name": "Greenville Water - SC",
         "normalized_name": "GREENVILLE WATER",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 12,
         "total_count": 13,
-        "dominance_pct": 84.6,
+        "dominance_pct": 92.3,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -40580,21 +40660,21 @@
     "TX": {
       "78747": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 37,
+        "sample_count": 41,
         "total_count": 42,
-        "dominance_pct": 88.1,
+        "dominance_pct": 97.6,
         "confidence_level": "high",
         "possible_split_territory": false
       },
       "75025": {
         "name": "Plano TX",
-        "normalized_name": "PLANO TX",
+        "normalized_name": "CITY OF PLANO",
         "phone": null,
-        "sample_count": 17,
+        "sample_count": 19,
         "total_count": 19,
-        "dominance_pct": 89.5,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -40610,11 +40690,11 @@
       },
       "78753": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 20,
+        "sample_count": 21,
         "total_count": 22,
-        "dominance_pct": 90.9,
+        "dominance_pct": 95.5,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -40630,7 +40710,7 @@
       },
       "78717": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 29,
         "total_count": 47,
@@ -40670,7 +40750,7 @@
       },
       "78745": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 83,
         "total_count": 84,
@@ -40760,12 +40840,12 @@
       },
       "75023": {
         "name": "Plano TX",
-        "normalized_name": "PLANO TX",
+        "normalized_name": "CITY OF PLANO",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 14,
         "total_count": 14,
-        "dominance_pct": 78.6,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "76542": {
@@ -40860,11 +40940,11 @@
       },
       "78751": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 49,
+        "sample_count": 50,
         "total_count": 50,
-        "dominance_pct": 98.0,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -40900,7 +40980,7 @@
       },
       "78757": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 60,
         "total_count": 60,
@@ -40930,11 +41010,11 @@
       },
       "78748": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 70,
+        "sample_count": 71,
         "total_count": 74,
-        "dominance_pct": 94.6,
+        "dominance_pct": 95.9,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -40980,7 +41060,7 @@
       },
       "78750": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 34,
         "total_count": 35,
@@ -41000,11 +41080,11 @@
       },
       "78704": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 81,
+        "sample_count": 82,
         "total_count": 82,
-        "dominance_pct": 98.8,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -41090,7 +41170,7 @@
       },
       "78752": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 29,
         "total_count": 29,
@@ -41210,11 +41290,11 @@
       },
       "78705": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 38,
+        "sample_count": 39,
         "total_count": 47,
-        "dominance_pct": 80.9,
+        "dominance_pct": 83.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -41490,7 +41570,7 @@
       },
       "78758": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 89,
         "total_count": 89,
@@ -41710,7 +41790,7 @@
       },
       "78746": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 6,
         "total_count": 9,
@@ -41740,11 +41820,11 @@
       },
       "78754": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 40,
+        "sample_count": 41,
         "total_count": 41,
-        "dominance_pct": 97.6,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -41900,7 +41980,7 @@
       },
       "78724": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 28,
         "total_count": 30,
@@ -42030,7 +42110,7 @@
       },
       "78702": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 47,
         "total_count": 47,
@@ -42260,7 +42340,7 @@
       },
       "78739": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 3,
         "total_count": 4,
@@ -42350,7 +42430,7 @@
       },
       "78726": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
@@ -42480,17 +42560,17 @@
       },
       "78722": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 20,
+        "sample_count": 21,
         "total_count": 21,
-        "dominance_pct": 95.2,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
       "78721": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 22,
         "total_count": 22,
@@ -42660,7 +42740,7 @@
       },
       "78652": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 4,
         "total_count": 4,
@@ -42730,11 +42810,11 @@
       },
       "78759": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 34,
+        "sample_count": 35,
         "total_count": 36,
-        "dominance_pct": 94.4,
+        "dominance_pct": 97.2,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -42850,11 +42930,11 @@
       },
       "78727": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 54,
+        "sample_count": 55,
         "total_count": 56,
-        "dominance_pct": 96.4,
+        "dominance_pct": 98.2,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -42870,7 +42950,7 @@
       },
       "78741": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 33,
         "total_count": 33,
@@ -42900,7 +42980,7 @@
       },
       "75075": {
         "name": "Plano TX",
-        "normalized_name": "PLANO TX",
+        "normalized_name": "CITY OF PLANO",
         "phone": null,
         "sample_count": 18,
         "total_count": 18,
@@ -42970,11 +43050,11 @@
       },
       "78703": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 22,
+        "sample_count": 23,
         "total_count": 23,
-        "dominance_pct": 95.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -42997,6 +43077,16 @@
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "78725": {
+        "name": "City of Austin Utilities",
+        "normalized_name": "AUSTIN WATER",
+        "phone": null,
+        "sample_count": 22,
+        "total_count": 34,
+        "dominance_pct": 64.7,
+        "confidence_level": "medium",
+        "possible_split_territory": true
       },
       "76063": {
         "name": "City of Mansfield (TX)",
@@ -43150,7 +43240,7 @@
       },
       "78729": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 36,
         "total_count": 53,
@@ -43160,7 +43250,7 @@
       },
       "78617": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 9,
         "total_count": 9,
@@ -43390,7 +43480,7 @@
       },
       "78723": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 56,
         "total_count": 56,
@@ -43730,11 +43820,11 @@
       },
       "78728": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 24,
+        "sample_count": 25,
         "total_count": 27,
-        "dominance_pct": 88.9,
+        "dominance_pct": 92.6,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -43940,11 +44030,11 @@
       },
       "75074": {
         "name": "Plano TX",
-        "normalized_name": "PLANO TX",
+        "normalized_name": "CITY OF PLANO",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 12,
         "total_count": 12,
-        "dominance_pct": 91.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -44110,7 +44200,7 @@
       },
       "78756": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 10,
         "total_count": 10,
@@ -44390,7 +44480,7 @@
       },
       "78701": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 4,
         "total_count": 4,
@@ -44850,11 +44940,11 @@
       },
       "78744": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 53,
+        "sample_count": 55,
         "total_count": 55,
-        "dominance_pct": 96.4,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -45230,12 +45320,12 @@
       },
       "75093": {
         "name": "Plano TX",
-        "normalized_name": "PLANO TX",
+        "normalized_name": "CITY OF PLANO",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 12,
         "total_count": 12,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "76103": {
@@ -45280,7 +45370,7 @@
       },
       "78731": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 27,
         "total_count": 27,
@@ -45620,11 +45710,11 @@
       },
       "78735": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
-        "sample_count": 13,
+        "sample_count": 14,
         "total_count": 14,
-        "dominance_pct": 92.9,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -45760,7 +45850,7 @@
       },
       "78749": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 28,
         "total_count": 28,
@@ -45860,11 +45950,11 @@
       },
       "75024": {
         "name": "Plano TX",
-        "normalized_name": "PLANO TX",
+        "normalized_name": "CITY OF PLANO",
         "phone": null,
-        "sample_count": 22,
+        "sample_count": 24,
         "total_count": 24,
-        "dominance_pct": 91.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -46470,7 +46560,7 @@
       },
       "78736": {
         "name": "City of Austin Utilities",
-        "normalized_name": "CITY OF AUSTIN UTILITIES",
+        "normalized_name": "AUSTIN WATER",
         "phone": null,
         "sample_count": 8,
         "total_count": 10,
@@ -49586,13 +49676,13 @@
       },
       "98444": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 5,
+        "sample_count": 6,
         "total_count": 8,
-        "dominance_pct": 62.5,
+        "dominance_pct": 75.0,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "98284": {
         "name": "Skagit Public Utility District (PUD)",
@@ -49636,7 +49726,7 @@
       },
       "98023": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 5,
         "total_count": 7,
@@ -49656,7 +49746,7 @@
       },
       "98445": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 5,
         "total_count": 5,
@@ -49686,7 +49776,7 @@
       },
       "98465": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 5,
         "total_count": 5,
@@ -49741,6 +49831,16 @@
         "sample_count": 16,
         "total_count": 16,
         "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "98374": {
+        "name": "City Of Tacoma Water Division - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 10,
+        "dominance_pct": 80.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -49836,7 +49936,7 @@
       },
       "98402": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -49846,12 +49946,12 @@
       },
       "98406": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 15,
+        "sample_count": 21,
         "total_count": 21,
-        "dominance_pct": 71.4,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98310": {
@@ -49896,22 +49996,22 @@
       },
       "98446": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 3,
+        "sample_count": 4,
         "total_count": 4,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98391": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 12,
+        "sample_count": 15,
         "total_count": 16,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
+        "dominance_pct": 93.8,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98125": {
@@ -49986,7 +50086,7 @@
       },
       "98321": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -50026,7 +50126,7 @@
       },
       "98456": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -50056,17 +50156,17 @@
       },
       "98405": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 27,
+        "sample_count": 35,
         "total_count": 35,
-        "dominance_pct": 77.1,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98403": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 4,
         "total_count": 4,
@@ -50096,13 +50196,13 @@
       },
       "98373": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 5,
+        "sample_count": 6,
         "total_count": 8,
-        "dominance_pct": 62.5,
+        "dominance_pct": 75.0,
         "confidence_level": "medium",
-        "possible_split_territory": true
+        "possible_split_territory": false
       },
       "98642": {
         "name": "City of Ridgefield",
@@ -50156,12 +50256,12 @@
       },
       "98404": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 13,
+        "sample_count": 17,
         "total_count": 17,
-        "dominance_pct": 76.5,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98629": {
@@ -50264,14 +50364,24 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "98418": {
+        "name": "City Of Tacoma Water Division - WA",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "98408": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 14,
         "total_count": 14,
-        "dominance_pct": 78.6,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98059": {
@@ -50676,11 +50786,11 @@
       },
       "98409": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 24,
+        "sample_count": 28,
         "total_count": 28,
-        "dominance_pct": 85.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -50736,22 +50846,22 @@
       },
       "98466": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 6,
+        "sample_count": 8,
         "total_count": 9,
-        "dominance_pct": 66.7,
-        "confidence_level": "medium",
-        "possible_split_territory": true
+        "dominance_pct": 88.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "98422": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 14,
         "total_count": 14,
-        "dominance_pct": 78.6,
-        "confidence_level": "medium",
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
         "possible_split_territory": false
       },
       "98675": {
@@ -50786,11 +50896,11 @@
       },
       "98407": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
-        "sample_count": 12,
+        "sample_count": 14,
         "total_count": 14,
-        "dominance_pct": 85.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -50926,7 +51036,7 @@
       },
       "98467": {
         "name": "City Of Tacoma Water Division - WA",
-        "normalized_name": "CITY OF TACOMA WATER DIVISION",
+        "normalized_name": "TACOMA PUBLIC UTILITIES",
         "phone": null,
         "sample_count": 2,
         "total_count": 2,

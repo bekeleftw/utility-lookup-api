@@ -1,11 +1,10 @@
 {
-  "_description": "Electric co-op/municipal ZIP mappings with unified normalization",
+  "_description": "Electric co-op/municipal ZIP mappings",
   "_source": "Tenant-verified addresses (87k dataset)",
   "_last_updated": "2026-01-23",
   "_methodology": {
     "threshold": "70% dominance required",
-    "normalization": "Names normalized before aggregation",
-    "filter": "Only co-ops and municipal utilities (expanded detection)"
+    "normalization": "Comprehensive normalization with merger/acquisition handling"
   },
   "_confidence_levels": {
     "high": ">80% of addresses in ZIP use this provider",
@@ -29,6 +28,16 @@
         "phone": null,
         "sample_count": 2,
         "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32771": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -273,11 +282,11 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 15,
+        "sample_count": 18,
         "total_count": 20,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
-        "possible_split_territory": true
+        "dominance_pct": 90.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "95757": {
         "name": "Sacramento Municipal Utility District",
@@ -303,9 +312,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 27,
+        "sample_count": 28,
         "total_count": 28,
-        "dominance_pct": 96.4,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -313,9 +322,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 50,
+        "sample_count": 54,
         "total_count": 54,
-        "dominance_pct": 92.6,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -353,9 +362,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 10,
+        "sample_count": 11,
         "total_count": 12,
-        "dominance_pct": 83.3,
+        "dominance_pct": 91.7,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -399,13 +408,23 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "95673": {
+        "name": "SMUD",
+        "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "95818": {
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 17,
+        "sample_count": 18,
         "total_count": 20,
-        "dominance_pct": 85.0,
+        "dominance_pct": 90.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -433,9 +452,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 10,
         "total_count": 11,
-        "dominance_pct": 81.8,
+        "dominance_pct": 90.9,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -453,9 +472,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 25,
+        "sample_count": 28,
         "total_count": 30,
-        "dominance_pct": 83.3,
+        "dominance_pct": 93.3,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -539,6 +558,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "95832": {
+        "name": "Sacramento Municipal Utility District",
+        "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "95815": {
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
@@ -583,9 +612,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 18,
+        "sample_count": 19,
         "total_count": 20,
-        "dominance_pct": 90.0,
+        "dominance_pct": 95.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -653,9 +682,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 13,
         "total_count": 13,
-        "dominance_pct": 84.6,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -673,9 +702,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 8,
+        "sample_count": 9,
         "total_count": 9,
-        "dominance_pct": 88.9,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -753,9 +782,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 11,
+        "sample_count": 12,
         "total_count": 12,
-        "dominance_pct": 91.7,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -773,9 +802,9 @@
         "name": "Sacramento Municipal Utility District",
         "normalized_name": "SACRAMENTO MUNICIPAL UTILITY DISTRICT",
         "phone": null,
-        "sample_count": 10,
+        "sample_count": 12,
         "total_count": 12,
-        "dominance_pct": 83.3,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       }
@@ -977,13 +1006,63 @@
       }
     },
     "FL": {
+      "32086": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 23,
+        "total_count": 23,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33139": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32514": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 92,
+        "total_count": 92,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32501": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 15,
+        "total_count": 15,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33990": {
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
-        "sample_count": 16,
+        "sample_count": 17,
         "total_count": 18,
-        "dominance_pct": 88.9,
+        "dominance_pct": 94.4,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34221": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 35,
+        "total_count": 42,
+        "dominance_pct": 83.3,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -997,6 +1076,76 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "33981": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32506": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 71,
+        "total_count": 71,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32566": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 33,
+        "total_count": 33,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33913": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 13,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34208": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 19,
+        "total_count": 19,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34241": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 12,
+        "total_count": 12,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34203": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 9,
+        "dominance_pct": 88.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32301": {
         "name": "City of Tallahassee Utilities",
         "normalized_name": "CITY OF TALLAHASSEE UTILITIES",
@@ -1004,6 +1153,76 @@
         "sample_count": 53,
         "total_count": 54,
         "dominance_pct": 98.1,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32966": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34202": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 10,
+        "total_count": 11,
+        "dominance_pct": 90.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33409": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33410": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34224": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32137": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 84,
+        "total_count": 84,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34285": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1021,11 +1240,181 @@
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
-        "sample_count": 19,
+        "sample_count": 21,
         "total_count": 21,
-        "dominance_pct": 90.5,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "32547": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 69,
+        "total_count": 69,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32505": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 24,
+        "total_count": 24,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32548": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 29,
+        "total_count": 29,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32164": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 208,
+        "total_count": 209,
+        "dominance_pct": 99.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32095": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 34,
+        "total_count": 34,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32780": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 27,
+        "total_count": 27,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33905": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32935": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34293": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 44,
+        "total_count": 44,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32771": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 36,
+        "total_count": 36,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32534": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 31,
+        "total_count": 31,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32539": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 32,
+        "total_count": 44,
+        "dominance_pct": 72.7,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "32536": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 34,
+        "total_count": 39,
+        "dominance_pct": 87.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32084": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 28,
+        "total_count": 28,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33952": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32507": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 27,
+        "total_count": 27,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32773": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 17,
+        "total_count": 24,
+        "dominance_pct": 70.8,
+        "confidence_level": "medium",
+        "possible_split_territory": true
       },
       "32304": {
         "name": "City of Tallahassee Utilities",
@@ -1037,6 +1426,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "33415": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "34219": {
         "name": "Peace River Electric Cooperative",
         "normalized_name": "PEACE RIVER ELECTRIC COOPERATIVE",
@@ -1044,6 +1443,66 @@
         "sample_count": 15,
         "total_count": 16,
         "dominance_pct": 93.8,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33428": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34212": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 7,
+        "dominance_pct": 85.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34275": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 19,
+        "total_count": 19,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34120": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33928": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32526": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 76,
+        "total_count": 77,
+        "dominance_pct": 98.7,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1067,12 +1526,112 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "32580": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32569": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 24,
+        "total_count": 25,
+        "dominance_pct": 96.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33130": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33196": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34207": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 21,
+        "total_count": 21,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33904": {
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
         "sample_count": 21,
         "total_count": 21,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33128": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32504": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 35,
+        "total_count": 35,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33054": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34243": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 12,
+        "total_count": 12,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33073": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1087,6 +1646,86 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "34239": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33032": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32092": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 46,
+        "total_count": 49,
+        "dominance_pct": 93.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32583": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 69,
+        "total_count": 69,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34135": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33065": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32533": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 13,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32141": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32073": {
         "name": "Clay Electric Cooperative - FL",
         "normalized_name": "CLAY ELECTRIC COOPERATIVE - FL",
@@ -1094,6 +1733,106 @@
         "sample_count": 13,
         "total_count": 14,
         "dominance_pct": 92.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33973": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 13,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33178": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33414": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32503": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 41,
+        "total_count": 42,
+        "dominance_pct": 97.6,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34237": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 14,
+        "total_count": 14,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32563": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 36,
+        "total_count": 36,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32176": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34238": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 26,
+        "total_count": 26,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33908": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 12,
+        "total_count": 12,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33919": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 10,
+        "total_count": 10,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1107,6 +1846,66 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "33966": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33404": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33004": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33947": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34269": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32124": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32439": {
         "name": "Choctawhatchee Electric Cooperative",
         "normalized_name": "CHOCTAWHATCHEE ELECTRIC COOPERATIVE",
@@ -1116,6 +1915,26 @@
         "dominance_pct": 70.0,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "32132": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33141": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "32669": {
         "name": "Clay Electric Cooperative - FL",
@@ -1127,13 +1946,93 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "32444": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32407": {
+        "name": "Gulf Power Company (now FPL) - FL",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33020": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34232": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 17,
+        "total_count": 17,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32117": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 22,
+        "total_count": 22,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33983": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33991": {
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
-        "sample_count": 14,
+        "sample_count": 16,
         "total_count": 17,
-        "dominance_pct": 82.4,
+        "dominance_pct": 94.1,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32579": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33462": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1141,9 +2040,39 @@
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
-        "sample_count": 19,
+        "sample_count": 21,
         "total_count": 21,
-        "dominance_pct": 90.5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34266": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33486": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34291": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1153,6 +2082,56 @@
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33907": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34288": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32174": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32738": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 16,
+        "total_count": 16,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33167": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1167,12 +2146,62 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "32118": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34209": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "34610": {
         "name": "Withlacoochee River Electric Cooperative - FL",
         "normalized_name": "WITHLACOOCHEE RIVER ELECTRIC COOPERATIVE - FL",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33304": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33034": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32922": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 27,
+        "total_count": 27,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1187,6 +2216,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "32080": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "34667": {
         "name": "Withlacoochee River Electric Cooperative - FL",
         "normalized_name": "WITHLACOOCHEE RIVER ELECTRIC COOPERATIVE - FL",
@@ -1194,6 +2233,106 @@
         "sample_count": 4,
         "total_count": 5,
         "dominance_pct": 80.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33408": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34234": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 17,
+        "total_count": 17,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34292": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32136": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33172": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32561": {
+        "name": "Gulf Power Company (now FPL) - FL",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33980": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32577": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33470": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33193": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1217,15 +2356,115 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "32541": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33334": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33953": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34119": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33917": {
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
-        "sample_count": 9,
+        "sample_count": 11,
         "total_count": 12,
-        "dominance_pct": 75.0,
-        "confidence_level": "medium",
-        "possible_split_territory": true
+        "dominance_pct": 91.7,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33920": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32907": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33018": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33948": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33301": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34110": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "33544": {
         "name": "Withlacoochee River Electric Cooperative - FL",
@@ -1236,6 +2475,166 @@
         "dominance_pct": 75.0,
         "confidence_level": "medium",
         "possible_split_territory": true
+      },
+      "33035": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34231": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 36,
+        "total_count": 36,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33161": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33160": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33901": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32119": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32766": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 4,
+        "dominance_pct": 75.0,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "34205": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 13,
+        "total_count": 13,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33950": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33967": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34240": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 10,
+        "total_count": 10,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33954": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33132": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33916": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 18,
+        "total_count": 18,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33181": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33056": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       },
       "32068": {
         "name": "Clay Electric Cooperative - FL",
@@ -1251,9 +2650,59 @@
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
         "phone": null,
-        "sample_count": 4,
+        "sample_count": 5,
         "total_count": 5,
-        "dominance_pct": 80.0,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32502": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 8,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32962": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32114": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 20,
+        "total_count": 20,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32796": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32550": {
+        "name": "FPL",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -1267,12 +2716,102 @@
         "confidence_level": "medium",
         "possible_split_territory": true
       },
+      "33436": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32404": {
+        "name": "Gulf Power Company (now FPL) - FL",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 9,
+        "dominance_pct": 88.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33135": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32905": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32351": {
         "name": "City of Quincy fl",
         "normalized_name": "CITY OF QUINCY FL",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33308": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33133": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32937": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33147": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34289": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1297,12 +2836,72 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "34286": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34134": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32408": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33025": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33312": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32308": {
         "name": "City of Tallahassee Utilities",
         "normalized_name": "CITY OF TALLAHASSEE UTILITIES",
         "phone": null,
         "sample_count": 3,
         "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32732": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1317,12 +2916,92 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "34229": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32571": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 142,
+        "total_count": 146,
+        "dominance_pct": 97.3,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32309": {
         "name": "City of Tallahassee Utilities",
         "normalized_name": "CITY OF TALLAHASSEE UTILITIES",
         "phone": null,
         "sample_count": 2,
         "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32940": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33024": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32110": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32953": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33306": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33762": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1347,9 +3026,59 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "32112": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33513": {
         "name": "City of Bushnell Utilities Department",
         "normalized_name": "CITY OF BUSHNELL UTILITIES DEPARTMENT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32960": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33411": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34236": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34222": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -1377,9 +3106,59 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "33309": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32451": {
+        "name": "FPL",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33476": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "32757": {
         "name": "City of Mount Dora Electric Utility",
         "normalized_name": "CITY OF MOUNT DORA ELECTRIC UTILITY",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32904": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32405": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -1407,9 +3186,359 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "34233": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 15,
+        "total_count": 15,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32772": {
+        "name": "FLORIDA POWER & LIGHT",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33332": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34287": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34957": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33315": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34117": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33982": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32901": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34235": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32011": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32530": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33972": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33064": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33431": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32570": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 86,
+        "total_count": 87,
+        "dominance_pct": 98.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33314": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34242": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32955": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32128": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33324": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34210": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34108": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33441": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33140": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33009": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33922": {
         "name": "Lee County Electric Cooperative",
         "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33311": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32968": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33143": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33313": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34223": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33137": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33023": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33169": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 10,
+        "total_count": 10,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33126": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -1427,12 +3556,142 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "34109": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33150": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33487": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "33597": {
         "name": "Withlacoochee River Electric Cooperative - FL",
         "normalized_name": "WITHLACOOCHEE RIVER ELECTRIC COOPERATIVE - FL",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33156": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33407": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32420": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32240": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33067": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "32097": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34947": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33433": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "34201": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33931": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -1447,9 +3706,59 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "33467": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33186": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33138": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "34613": {
         "name": "Withlacoochee River Electric Cooperative",
         "normalized_name": "WITHLACOOCHEE RIVER ELECTRIC COOPERATIVE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33903": {
+        "name": "LCEC",
+        "normalized_name": "LEE COUNTY ELECTRIC COOPERATIVE",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "33016": {
+        "name": "Florida Power and Light",
+        "normalized_name": "FLORIDA POWER & LIGHT",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -2023,6 +4332,16 @@
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "47374": {
+        "name": "Richmond Power & Light",
+        "normalized_name": "RICHMOND POWER & LIGHT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -2963,6 +5282,46 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "64056": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "64053": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "64050": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 10,
+        "total_count": 11,
+        "dominance_pct": 90.9,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "64052": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 12,
+        "total_count": 12,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "65201": {
         "name": "City of Columbia - MO",
         "normalized_name": "CITY OF COLUMBIA - MO",
@@ -2979,6 +5338,36 @@
         "phone": null,
         "sample_count": 6,
         "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "64057": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "64055": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 7,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "64058": {
+        "name": "Independence Power & Light - MO",
+        "normalized_name": "INDEPENDENCE POWER & LIGHT - MO",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -3573,6 +5962,26 @@
       }
     },
     "NE": {
+      "68132": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 8,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68105": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 11,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "68803": {
         "name": "City of Grand Island Utilities",
         "normalized_name": "CITY OF GRAND ISLAND UTILITIES",
@@ -3593,9 +6002,309 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "68144": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68114": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68137": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68818": {
+        "name": "Nebraska Public Power District",
+        "normalized_name": "NEBRASKA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68022": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68007": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68116": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68467": {
+        "name": "Nebraska Public Power District",
+        "normalized_name": "NEBRASKA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "68355": {
         "name": "City of Falls City",
         "normalized_name": "CITY OF FALLS CITY",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68134": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 8,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68104": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 9,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68107": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 4,
+        "total_count": 4,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68164": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68028": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68106": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68108": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68005": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 8,
+        "total_count": 8,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68111": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68131": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 5,
+        "total_count": 5,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68046": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68124": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 3,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68112": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68825": {
+        "name": "Nebraska Public Power District",
+        "normalized_name": "NEBRASKA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68117": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68135": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "69001": {
+        "name": "Nebraska Public Power District",
+        "normalized_name": "NEBRASKA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68128": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68456": {
+        "name": "Nebraska Public Power District",
+        "normalized_name": "NEBRASKA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68138": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68157": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "68147": {
+        "name": "Omaha Public Power District",
+        "normalized_name": "OMAHA PUBLIC POWER DISTRICT",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
@@ -3637,6 +6346,46 @@
       }
     },
     "NJ": {
+      "08527": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08724": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08865": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 8,
+        "dominance_pct": 87.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08520": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "08360": {
         "name": "Vineland Municipal Utilities Electric - NJ",
         "normalized_name": "VINELAND MUNICIPAL UTILITIES ELECTRIC - NJ",
@@ -3647,12 +6396,152 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "08722": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08753": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08701": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08757": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07734": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07928": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "07728": {
         "name": "Adams-Columbia Electric Cooperative - WI",
         "normalized_name": "ADAMS-COLUMBIA ELECTRIC COOPERATIVE - WI",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07731": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07801": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07930": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07726": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07825": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "08822": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 6,
+        "total_count": 6,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07462": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "07054": {
+        "name": "Jersey Central Power & Light (JCP&L)",
+        "normalized_name": "JERSEY CENTRAL POWER & LIGHT (JCP&L)",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -3690,9 +6579,59 @@
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
+      },
+      "12149": {
+        "name": "Richmond Power & Light",
+        "normalized_name": "RICHMOND POWER & LIGHT",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
       }
     },
     "OH": {
+      "44108": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 11,
+        "total_count": 14,
+        "dominance_pct": 78.6,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "44105": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 22,
+        "total_count": 27,
+        "dominance_pct": 81.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "44111": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 10,
+        "dominance_pct": 70.0,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "44110": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 25,
+        "total_count": 26,
+        "dominance_pct": 96.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "45015": {
         "name": "City of Hamilton Public Utilities",
         "normalized_name": "CITY OF HAMILTON PUBLIC UTILITIES",
@@ -3703,12 +6642,42 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "44103": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 9,
+        "dominance_pct": 77.8,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
       "44074": {
         "name": "City of Oberlin",
         "normalized_name": "CITY OF OBERLIN",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "44120": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 9,
+        "total_count": 11,
+        "dominance_pct": 81.8,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "44114": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
         "dominance_pct": 100.0,
         "confidence_level": "high",
         "possible_split_territory": false
@@ -3723,6 +6692,16 @@
         "confidence_level": "high",
         "possible_split_territory": false
       },
+      "44113": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 7,
+        "total_count": 8,
+        "dominance_pct": 87.5,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
       "44221": {
         "name": "City of Cuyahoga Falls Electric",
         "normalized_name": "CITY OF CUYAHOGA FALLS ELECTRIC",
@@ -3730,6 +6709,36 @@
         "sample_count": 3,
         "total_count": 3,
         "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "44119": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 3,
+        "total_count": 4,
+        "dominance_pct": 75.0,
+        "confidence_level": "medium",
+        "possible_split_territory": true
+      },
+      "44102": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 15,
+        "total_count": 17,
+        "dominance_pct": 88.2,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "44109": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
+        "phone": null,
+        "sample_count": 17,
+        "total_count": 18,
+        "dominance_pct": 94.4,
         "confidence_level": "high",
         "possible_split_territory": false
       },
@@ -3746,6 +6755,16 @@
       "43119": {
         "name": "Ohio Public Utilities Commission",
         "normalized_name": "OHIO PUBLIC UTILITIES COMMISSION",
+        "phone": null,
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false
+      },
+      "44144": {
+        "name": "Cleveland Public Power - OH",
+        "normalized_name": "CLEVELAND PUBLIC POWER - OH",
         "phone": null,
         "sample_count": 1,
         "total_count": 1,

@@ -50,6 +50,18 @@ def normalize_electric_name(name: str) -> str:
     if 'SCE' in name or 'SOUTHERN CALIFORNIA EDISON' in name:
         return 'SOUTHERN CALIFORNIA EDISON'
     
+    # SMUD (Sacramento Municipal Utility District)
+    if 'SMUD' in name or 'SACRAMENTO MUNICIPAL' in name:
+        return 'SACRAMENTO MUNICIPAL UTILITY DISTRICT'
+    
+    # LCEC (Lee County Electric Cooperative)
+    if name == 'LCEC' or 'LEE COUNTY ELECTRIC' in name:
+        return 'LEE COUNTY ELECTRIC COOPERATIVE'
+    
+    # FirstEnergy / Illuminating Company (Ohio)
+    if 'FIRST ENERGY' in name or 'FIRSTENERGY' in name or 'ILLUMINATING' in name:
+        return 'FIRSTENERGY'
+    
     # PG&E
     if 'PG&E' in name or 'PACIFIC GAS' in name:
         return 'PACIFIC GAS & ELECTRIC'
@@ -58,9 +70,13 @@ def normalize_electric_name(name: str) -> str:
     if 'SDG&E' in name or 'SAN DIEGO GAS' in name:
         return 'SAN DIEGO GAS & ELECTRIC'
     
-    # CenterPoint
+    # CenterPoint / Texas Gas Service (same parent company in some areas)
     if 'CENTERPOINT' in name or 'CENTER POINT' in name:
         return 'CENTERPOINT ENERGY'
+    
+    # Texas Gas Service
+    if 'TEXAS GAS SERVICE' in name:
+        return 'TEXAS GAS SERVICE'
     
     # Oncor
     if 'ONCOR' in name:
@@ -120,6 +136,10 @@ def normalize_gas_name(name: str) -> str:
     if 'ATMOS' in name:
         return 'ATMOS ENERGY'
     
+    # CPS Energy (San Antonio)
+    if 'CPS ENERGY' in name or (name.startswith('CPS') and 'ENERGY' not in name):
+        return 'CPS ENERGY'
+    
     # Southern California Gas
     if 'SOCALGAS' in name or 'SOUTHERN CALIFORNIA GAS' in name:
         return 'SOUTHERN CALIFORNIA GAS'
@@ -174,6 +194,12 @@ def normalize_gas_name(name: str) -> str:
     if name == 'GUC':
         return 'GREENVILLE UTILITIES COMMISSION'
     
+    # Virginia Natural Gas / Columbia Gas of Virginia
+    if 'VIRGINIA NATURAL GAS' in name:
+        return 'VIRGINIA NATURAL GAS'
+    if 'COLUMBIA GAS' in name and 'VIRGINIA' in name:
+        return 'COLUMBIA GAS OF VIRGINIA'
+    
     return name
 
 
@@ -217,9 +243,37 @@ def normalize_water_name(name: str) -> str:
     if 'FAIRFAX' in name and 'WATER' in name:
         return 'FAIRFAX WATER'
     
+    # Fayetteville PWC
+    if 'FAYETTEVILLE' in name and ('PWC' in name or 'PUBLIC WORKS' in name):
+        return 'FAYETTEVILLE PUBLIC WORKS COMMISSION'
+    
+    # Tacoma Water
+    if 'TACOMA' in name and ('WATER' in name or 'PUBLIC' in name or 'UTILITIES' in name):
+        return 'TACOMA PUBLIC UTILITIES'
+    
+    # Greenville Water SC
+    if 'GREENVILLE' in name and 'WATER' in name and ('SC' in name or 'SOUTH CAROLINA' not in name):
+        return 'GREENVILLE WATER'
+    
+    # Fort Wayne
+    if 'FORT WAYNE' in name or 'FORTWAYNE' in name:
+        return 'FORT WAYNE CITY UTILITIES'
+    
     # Charlotte Water
     if 'CHARLOTTE' in name and 'WATER' in name:
         return 'CHARLOTTE WATER'
+    
+    # Austin Water
+    if 'AUSTIN' in name and ('WATER' in name or 'UTILITIES' in name):
+        return 'AUSTIN WATER'
+    
+    # WaterOne (Kansas)
+    if 'WATERONE' in name or 'WATER ONE' in name:
+        return 'WATERONE'
+    
+    # Plano Water
+    if 'PLANO' in name:
+        return 'CITY OF PLANO'
     
     # Denver Water
     if 'DENVER WATER' in name:
@@ -236,6 +290,9 @@ def normalize_water_name(name: str) -> str:
     # Normalize "City of X" and "Town of X"
     if name.startswith('CITY OF '):
         city = name.replace('CITY OF ', '').split(' - ')[0].split(',')[0].strip()
+        # Handle common misspellings
+        if 'CONCONRD' in city or 'CONCORD' in city:
+            city = 'CONCORD'
         return f'CITY OF {city}'
     
     if name.startswith('TOWN OF '):

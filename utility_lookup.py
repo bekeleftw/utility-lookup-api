@@ -46,7 +46,8 @@ try:
     from pipeline.interfaces import UtilityType, LookupContext, PipelineResult
     from pipeline.sources.electric import (
         StateGISElectricSource, MunicipalElectricSource, CoopSource,
-        EIASource, HIFLDElectricSource, CountyDefaultElectricSource
+        EIASource, HIFLDElectricSource, CountyDefaultElectricSource,
+        TenantVerifiedElectricSource
     )
     from pipeline.sources.gas import (
         StateGISGasSource, MunicipalGasSource,
@@ -108,6 +109,7 @@ def _get_electric_pipeline() -> LookupPipeline:
         except ImportError:
             pass
         
+        _pipeline_electric.add_source(TenantVerifiedElectricSource())  # Tenant-verified ZIP data
         _pipeline_electric.add_source(EIASource())
         _pipeline_electric.add_source(HIFLDElectricSource())
         _pipeline_electric.add_source(CountyDefaultElectricSource())

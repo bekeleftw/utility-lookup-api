@@ -287,6 +287,59 @@ class HIFLDElectricSource(DataSource):
             )
 
 
+class TenantVerifiedElectricSource(DataSource):
+    """Look up electric utilities using tenant-verified ZIP data (co-ops/municipals)."""
+    
+    @property
+    def name(self) -> str:
+        return "tenant_verified_electric"
+    
+    @property
+    def supported_types(self) -> List[UtilityType]:
+        return [UtilityType.ELECTRIC]
+    
+    @property
+    def base_confidence(self) -> int:
+        return 70  # Below municipal/GIS but above EIA/HIFLD
+    
+    def query(self, context: LookupContext) -> Optional[SourceResult]:
+        if not context.zip_code or not context.state:
+            return None
+        
+        try:
+            from municipal_utilities import lookup_remaining_states_electric
+            
+            result = lookup_remaining_states_electric(context.zip_code, context.state)
+            
+            if not result or not result.get('name'):
+                return None
+            
+            confidence = result.get('confidence_score', self.base_confidence)
+            
+            return SourceResult(
+                source_name=self.name,
+                utility_name=result.get('name'),
+                confidence_score=confidence,
+                match_type='zip',
+                phone=result.get('phone'),
+                website=result.get('website'),
+                raw_data={
+                    **result,
+                    'confidence_level': result.get('confidence'),
+                    'dominance_pct': result.get('dominance_pct'),
+                    'possible_split_territory': result.get('possible_split_territory', False)
+                }
+            )
+        except Exception as e:
+            return SourceResult(
+                source_name=self.name,
+                utility_name=None,
+                confidence_score=0,
+                match_type='none',
+                error=str(e)
+            )
+
+
 class CountyDefaultElectricSource(DataSource):
     """Look up default electric utility by county."""
     

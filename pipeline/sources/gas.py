@@ -279,9 +279,9 @@ class TenantVerifiedGasSource(DataSource):
                 match_type='zip',
                 phone=result.get('phone'),
                 website=result.get('website'),
-                raw_data=result,
-                metadata={
-                    'confidence': result.get('confidence'),
+                raw_data={
+                    **result,
+                    'confidence_level': result.get('confidence'),
                     'dominance_pct': result.get('dominance_pct'),
                     'possible_split_territory': result.get('possible_split_territory', False)
                 }

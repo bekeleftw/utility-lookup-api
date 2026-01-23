@@ -516,13 +516,19 @@ def lookup_remaining_states_water(zip_code: str, state: str) -> Optional[Dict]:
         zip_mappings = states_data[state_upper]
         if zip_code in zip_mappings:
             district = zip_mappings[zip_code]
+            confidence_level = district.get('confidence_level', 'medium')
+            dominance_pct = district.get('dominance_pct', 50)
+            sample_count = district.get('sample_count', 1)
             return {
                 'name': district['name'],
                 'phone': district.get('phone'),
                 'website': district.get('website'),
-                'source': 'remaining_states_water_zip',
-                'confidence': 'verified',
-                'note': f"Water utility serving ZIP {zip_code} (tenant-verified)"
+                'source': 'tenant_verified_zip',
+                'confidence': confidence_level,
+                'confidence_score': 70 if confidence_level == 'high' else 55 if confidence_level == 'medium' else 45,
+                'dominance_pct': dominance_pct,
+                'sample_count': sample_count,
+                'note': f"Water utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
             }
     
     return None
@@ -553,13 +559,19 @@ def lookup_remaining_states_electric(zip_code: str, state: str) -> Optional[Dict
         zip_mappings = states_data[state_upper]
         if zip_code in zip_mappings:
             utility = zip_mappings[zip_code]
+            confidence_level = utility.get('confidence_level', 'medium')
+            dominance_pct = utility.get('dominance_pct', 60)
+            sample_count = utility.get('sample_count', 1)
             return {
                 'name': utility['name'],
                 'phone': utility.get('phone'),
                 'website': utility.get('website'),
-                'source': 'remaining_states_electric_zip',
-                'confidence': 'verified',
-                'note': f"Electric utility serving ZIP {zip_code} (tenant-verified)"
+                'source': 'tenant_verified_zip',
+                'confidence': confidence_level,
+                'confidence_score': 75 if confidence_level == 'high' else 60 if confidence_level == 'medium' else 50,
+                'dominance_pct': dominance_pct,
+                'sample_count': sample_count,
+                'note': f"Electric utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
             }
     
     return None

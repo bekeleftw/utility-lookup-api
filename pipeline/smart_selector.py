@@ -308,6 +308,10 @@ THINK STEP BY STEP:
    - hifld: Federal dataset. Good coverage but sometimes outdated.
    - eia_861: EIA utility data. Good for identifying which utilities serve which areas.
    - electric_coop: Rural electric cooperatives. Authoritative for their service areas.
+   - tenant_verified_zip: ZIP-level data from 87,000 verified tenant addresses. IMPORTANT: This is aggregated at ZIP level, not address level. Check the confidence level:
+     * HIGH confidence (>80% of addresses in ZIP use this provider) - very reliable
+     * MEDIUM confidence (60-80%) - reliable but some addresses may differ
+     * LOW confidence (50-60%) - ZIP may be split between providers, use with caution
 
 4. **Apply domain knowledge:**
    - Municipal utilities serve their city limits (Austin Energy serves Austin, not Round Rock)
@@ -374,25 +378,44 @@ Respond in JSON format ONLY:
         source_results: List[SourceResult]
     ) -> SelectionResult:
         """Fallback to highest confidence source when LLM is unavailable."""
-        # Prefer municipal > state_gis > eia > hifld > county_default
+        # Prefer municipal > tenant_verified > state_gis > eia > hifld > county_default
+        # tenant_verified_zip is ZIP-level data from 87k verified addresses
         SOURCE_PRIORITY = {
             'municipal': 100,
             'municipal_gas': 100,
+            'municipal_water': 95,
+            'tenant_verified_zip': 85,  # High priority but below municipal (ZIP-level, not address-level)
             'state_gis': 90,
             'state_gis_gas': 90,
             'electric_coop': 80,
             'zip_mapping_gas': 75,
             'eia_861': 70,
+            'remaining_states_water_zip': 65,  # Alias for tenant_verified_zip
+            'remaining_states_electric_zip': 65,
             'hifld': 40,
             'hifld_gas': 40,
             'county_default': 30,
             'county_default_gas': 30,
         }
         
-        # Score each result
+        # Score each result, considering confidence_score from tenant-verified data
         scored = []
         for r in source_results:
-            score = r.confidence_score + SOURCE_PRIORITY.get(r.source_name, 0) * 0.3
+            base_priority = SOURCE_PRIORITY.get(r.source_name, 0)
+            
+            # For tenant-verified ZIP data, use the confidence_score which reflects dominance %
+            # High confidence (>80% dominance) gets full priority
+            # Medium/Low confidence gets reduced priority
+            if r.source_name == 'tenant_verified_zip' and hasattr(r, 'metadata'):
+                confidence_level = r.metadata.get('confidence', 'medium') if r.metadata else 'medium'
+                if confidence_level == 'high':
+                    base_priority = 85
+                elif confidence_level == 'medium':
+                    base_priority = 70
+                else:  # low
+                    base_priority = 55
+            
+            score = r.confidence_score + base_priority * 0.3
             scored.append((score, r))
         
         scored.sort(key=lambda x: x[0], reverse=True)

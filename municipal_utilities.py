@@ -15,6 +15,8 @@ PHILLY_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'philly_wate
 DC_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'dc_water_districts.json')
 ATLANTA_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'atlanta_water_districts.json')
 FLORIDA_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'florida_water_districts.json')
+REMAINING_STATES_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'remaining_states_water.json')
+REMAINING_STATES_ELECTRIC_FILE = os.path.join(os.path.dirname(__file__), 'data', 'remaining_states_electric.json')
 
 _municipal_data = None
 _long_island_water_data = None
@@ -25,6 +27,8 @@ _philly_water_data = None
 _dc_water_data = None
 _atlanta_water_data = None
 _florida_water_data = None
+_remaining_states_water_data = None
+_remaining_states_electric_data = None
 
 
 def load_municipal_data() -> dict:
@@ -40,8 +44,7 @@ def load_municipal_data() -> dict:
 
 
 def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None, county: str = None) -> Optional[Dict]:
-    """
-    Check if address is served by a municipal electric utility.
+    """Check if city has municipal electric utility.
     
     Args:
         state: 2-letter state code
@@ -55,6 +58,12 @@ def lookup_municipal_electric(state: str, city: str = None, zip_code: str = None
     data = load_municipal_data()
     state_upper = state.upper() if state else ''
     state_data = data.get('electric', {}).get(state_upper, {})
+    
+    # Check remaining states electric co-ops/municipals first (tenant-verified)
+    if zip_code:
+        remaining_result = lookup_remaining_states_electric(zip_code, state_upper)
+        if remaining_result:
+            return remaining_result
     
     # Check by ZIP code first (most accurate)
     if zip_code and state_data:
@@ -482,6 +491,80 @@ def lookup_florida_water(zip_code: str) -> Optional[Dict]:
     return None
 
 
+def load_remaining_states_water_data() -> dict:
+    """Load remaining states water district data."""
+    global _remaining_states_water_data
+    if _remaining_states_water_data is None:
+        if os.path.exists(REMAINING_STATES_WATER_FILE):
+            with open(REMAINING_STATES_WATER_FILE, 'r') as f:
+                _remaining_states_water_data = json.load(f)
+        else:
+            _remaining_states_water_data = {}
+    return _remaining_states_water_data
+
+
+def lookup_remaining_states_water(zip_code: str, state: str) -> Optional[Dict]:
+    """Look up water utility for remaining states by ZIP code."""
+    if not zip_code or not state:
+        return None
+    
+    data = load_remaining_states_water_data()
+    states_data = data.get('states', {})
+    
+    state_upper = state.upper()
+    if state_upper in states_data:
+        zip_mappings = states_data[state_upper]
+        if zip_code in zip_mappings:
+            district = zip_mappings[zip_code]
+            return {
+                'name': district['name'],
+                'phone': district.get('phone'),
+                'website': district.get('website'),
+                'source': 'remaining_states_water_zip',
+                'confidence': 'verified',
+                'note': f"Water utility serving ZIP {zip_code} (tenant-verified)"
+            }
+    
+    return None
+
+
+def load_remaining_states_electric_data() -> dict:
+    """Load remaining states electric co-op/municipal data."""
+    global _remaining_states_electric_data
+    if _remaining_states_electric_data is None:
+        if os.path.exists(REMAINING_STATES_ELECTRIC_FILE):
+            with open(REMAINING_STATES_ELECTRIC_FILE, 'r') as f:
+                _remaining_states_electric_data = json.load(f)
+        else:
+            _remaining_states_electric_data = {}
+    return _remaining_states_electric_data
+
+
+def lookup_remaining_states_electric(zip_code: str, state: str) -> Optional[Dict]:
+    """Look up electric co-op/municipal for remaining states by ZIP code."""
+    if not zip_code or not state:
+        return None
+    
+    data = load_remaining_states_electric_data()
+    states_data = data.get('states', {})
+    
+    state_upper = state.upper()
+    if state_upper in states_data:
+        zip_mappings = states_data[state_upper]
+        if zip_code in zip_mappings:
+            utility = zip_mappings[zip_code]
+            return {
+                'name': utility['name'],
+                'phone': utility.get('phone'),
+                'website': utility.get('website'),
+                'source': 'remaining_states_electric_zip',
+                'confidence': 'verified',
+                'note': f"Electric utility serving ZIP {zip_code} (tenant-verified)"
+            }
+    
+    return None
+
+
 def lookup_long_island_water(zip_code: str, county: str = None) -> Optional[Dict]:
     """Look up water district for Long Island (Nassau/Suffolk counties) by ZIP code."""
     if not zip_code or not zip_code.startswith('11'):
@@ -596,6 +679,11 @@ def lookup_municipal_water(state: str, city: str = None, zip_code: str = None, c
         florida_result = lookup_florida_water(zip_code)
         if florida_result:
             return florida_result
+    
+    # FALLBACK: Check remaining states water mappings
+    remaining_result = lookup_remaining_states_water(zip_code, state_upper)
+    if remaining_result:
+        return remaining_result
     
     # FIRST: Check dedicated water section (standalone water utilities)
     water_data = data.get('water', {}).get(state_upper, {})

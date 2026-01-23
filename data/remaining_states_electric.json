@@ -1,0 +1,793 @@
+{
+  "_description": "Electric co-op and municipal utility ZIP mappings for remaining US states",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "states": {
+    "AL": {
+      "36081": {
+        "name": "City of Troy",
+        "phone": null
+      },
+      "36303": {
+        "name": "City of Dothan - AL",
+        "phone": null
+      },
+      "36551": {
+        "name": "Baldwin EMC",
+        "phone": null
+      },
+      "35096": {
+        "name": "Coosa Valley Electric Cooperative",
+        "phone": null
+      },
+      "36301": {
+        "name": "City of Dothan - AL",
+        "phone": null
+      },
+      "36079": {
+        "name": "South Alabama Electric Cooperative",
+        "phone": null
+      }
+    },
+    "AR": {
+      "72916": {
+        "name": "Arkansas Valley Electric Cooperative",
+        "phone": null
+      },
+      "72712": {
+        "name": "City of Bentonville - AR",
+        "phone": null
+      },
+      "72956": {
+        "name": "Arkansas Valley Electric Cooperative",
+        "phone": null
+      },
+      "72704": {
+        "name": "Ozark Electric Cooperative",
+        "phone": null
+      },
+      "72753": {
+        "name": "Ozark Electric Cooperative",
+        "phone": null
+      },
+      "72713": {
+        "name": "City of Bentonville - AR",
+        "phone": null
+      },
+      "72715": {
+        "name": "Carroll Electric Cooperative Corporation",
+        "phone": null
+      }
+    },
+    "AZ": {
+      "86429": {
+        "name": "Mohave Electric Cooperative (AZ)",
+        "phone": null
+      },
+      "85635": {
+        "name": "Sulphur Springs Valley Electric Cooperative",
+        "phone": null
+      },
+      "85658": {
+        "name": "Trico Electric Cooperative",
+        "phone": null
+      },
+      "86442": {
+        "name": "Mohave Electric Cooperative (AZ)",
+        "phone": null
+      },
+      "86426": {
+        "name": "Mohave Electric Cooperative (AZ)",
+        "phone": null
+      },
+      "85650": {
+        "name": "Sulphur Springs Valley Electric Cooperative",
+        "phone": null
+      },
+      "85739": {
+        "name": "Trico Electric Cooperative",
+        "phone": null
+      }
+    },
+    "CO": {
+      "80817": {
+        "name": "City of Fountain Electric",
+        "phone": null
+      },
+      "81082": {
+        "name": "City of Trinidad - CO",
+        "phone": null
+      },
+      "80108": {
+        "name": "CORE Electric Cooperative",
+        "phone": null
+      },
+      "80538": {
+        "name": "City of Loveland Water and Power",
+        "phone": null
+      },
+      "80537": {
+        "name": "City of Loveland Water and Power",
+        "phone": null
+      },
+      "80109": {
+        "name": "CORE Electric Cooperative",
+        "phone": null
+      }
+    },
+    "DE": {
+      "19711": {
+        "name": "CITY OF NEWARK - (DE)",
+        "phone": null
+      },
+      "19963": {
+        "name": "City of Milford Public Works",
+        "phone": null
+      }
+    },
+    "IA": {
+      "50014": {
+        "name": "City of Ames - IA",
+        "phone": null
+      },
+      "50010": {
+        "name": "City of Ames - IA",
+        "phone": null
+      },
+      "50543": {
+        "name": "Gowrie Municipal Utilities",
+        "phone": null
+      }
+    },
+    "IN": {
+      "46158": {
+        "name": "South Central REMC",
+        "phone": null
+      },
+      "46012": {
+        "name": "Anderson Municipal Light & Power",
+        "phone": null
+      },
+      "46016": {
+        "name": "Anderson Municipal Light & Power",
+        "phone": null
+      },
+      "46013": {
+        "name": "Anderson Municipal Light & Power",
+        "phone": null
+      },
+      "46041": {
+        "name": "City of Frankfort - IN",
+        "phone": null
+      }
+    },
+    "KS": {
+      "66547": {
+        "name": "City of Wamego - KS",
+        "phone": null
+      }
+    },
+    "KY": {
+      "42262": {
+        "name": "Pennyrile Electric Cooperative",
+        "phone": null
+      },
+      "40403": {
+        "name": "Berea Municipal Utilities (BMU)",
+        "phone": null
+      },
+      "42301": {
+        "name": "Owensboro Municipal Utilities - KY",
+        "phone": null
+      },
+      "42101": {
+        "name": "Bowling Green Municipal Utilities (BGMU)",
+        "phone": null
+      },
+      "42104": {
+        "name": "Bowling Green Municipal Utilities (BGMU)",
+        "phone": null
+      },
+      "42303": {
+        "name": "Owensboro Municipal Utilities - KY",
+        "phone": null
+      }
+    },
+    "LA": {
+      "70592": {
+        "name": "SLEMCO",
+        "phone": null
+      },
+      "70517": {
+        "name": "SLEMCO",
+        "phone": null
+      },
+      "70520": {
+        "name": "SLEMCO",
+        "phone": null
+      },
+      "70529": {
+        "name": "SLEMCO",
+        "phone": null
+      },
+      "70518": {
+        "name": "SLEMCO",
+        "phone": null
+      },
+      "70706": {
+        "name": "DEMCO",
+        "phone": null
+      }
+    },
+    "MA": {
+      "01880": {
+        "name": "Wakefield Municipal Gas & Light Department (WMGLD) - MA",
+        "phone": null
+      },
+      "02780": {
+        "name": "Taunton Municipal Lighting Plant - MA",
+        "phone": null
+      },
+      "01564": {
+        "name": "Sterling Municipal Light Dep.",
+        "phone": null
+      }
+    },
+    "MN": {
+      "55912": {
+        "name": "City of Austin Public Works Department (MN)",
+        "phone": null
+      },
+      "55330": {
+        "name": "Elk River Municipal Utilities",
+        "phone": null
+      },
+      "55972": {
+        "name": "City of Charles - MN",
+        "phone": null
+      },
+      "56479": {
+        "name": "City of Staples",
+        "phone": null
+      },
+      "55446": {
+        "name": "Wright-Hennepin Cooperative Electric Association",
+        "phone": null
+      },
+      "55386": {
+        "name": "Minnesota Valley Electric Cooperative (MVEC)",
+        "phone": null
+      },
+      "56082": {
+        "name": "City of St. Peter - MN",
+        "phone": null
+      },
+      "55313": {
+        "name": "City of Buffalo Minnesota",
+        "phone": null
+      },
+      "56093": {
+        "name": "City of Waseca",
+        "phone": null
+      },
+      "55373": {
+        "name": "Wright-Hennepin Cooperative Electric Association",
+        "phone": null
+      },
+      "55976": {
+        "name": "People\u2019s Energy Cooperative",
+        "phone": null
+      }
+    },
+    "MO": {
+      "64701": {
+        "name": "City of Harrisonville",
+        "phone": null
+      },
+      "65203": {
+        "name": "City of Columbia - MO",
+        "phone": null
+      },
+      "65584": {
+        "name": "Laclede Electric Cooperative",
+        "phone": null
+      },
+      "65201": {
+        "name": "City of Columbia - MO",
+        "phone": null
+      },
+      "65714": {
+        "name": "The City of Nixa MO",
+        "phone": null
+      },
+      "65742": {
+        "name": "Webster Electric Cooperative",
+        "phone": null
+      },
+      "65401": {
+        "name": "Rolla Municipal Utilities - MO",
+        "phone": null
+      },
+      "63367": {
+        "name": "Cuivre River Electric Cooperative",
+        "phone": null
+      },
+      "65652": {
+        "name": "Webster Electric Cooperative",
+        "phone": null
+      },
+      "63764": {
+        "name": "Black River Electric Cooperative - MO",
+        "phone": null
+      }
+    },
+    "MS": {
+      "39565": {
+        "name": "Singing River Electric Cooperative",
+        "phone": null
+      },
+      "39553": {
+        "name": "Singing River Electric Cooperative",
+        "phone": null
+      },
+      "39562": {
+        "name": "Singing River Electric Cooperative",
+        "phone": null
+      },
+      "39581": {
+        "name": "Singing River Electric Cooperative",
+        "phone": null
+      },
+      "38654": {
+        "name": "Northcentral Electric Cooperative",
+        "phone": null
+      }
+    },
+    "NC": {
+      "28052": {
+        "name": "City of Gastonia, NC Electric",
+        "phone": null
+      },
+      "28173": {
+        "name": "Union Power Cooperative",
+        "phone": null
+      },
+      "28532": {
+        "name": "Carteret-Craven Electric Cooperative",
+        "phone": null
+      },
+      "27262": {
+        "name": "City of High point - NC",
+        "phone": null
+      },
+      "28054": {
+        "name": "City of Gastonia, NC Electric",
+        "phone": null
+      },
+      "28021": {
+        "name": "City of Cherryville",
+        "phone": null
+      },
+      "27260": {
+        "name": "City of High point - NC",
+        "phone": null
+      },
+      "27265": {
+        "name": "City of High point - NC",
+        "phone": null
+      },
+      "28570": {
+        "name": "Carteret-Craven Electric Cooperative",
+        "phone": null
+      },
+      "28025": {
+        "name": "City of Concord Electric Department",
+        "phone": null
+      },
+      "28677": {
+        "name": "CITY OF STATESVILLE - (NC)",
+        "phone": null
+      },
+      "28112": {
+        "name": "City of Monroe - NC",
+        "phone": null
+      },
+      "28150": {
+        "name": "City of Shelby - NC",
+        "phone": null
+      }
+    },
+    "NE": {
+      "68025": {
+        "name": "The City of Fremont - NE",
+        "phone": null
+      }
+    },
+    "NM": {
+      "87410": {
+        "name": "City of Aztec - NM",
+        "phone": null
+      }
+    },
+    "OH": {
+      "45013": {
+        "name": "City of Hamilton Public Utilities",
+        "phone": null
+      },
+      "44221": {
+        "name": "City of Cuyahoga Falls Electric",
+        "phone": null
+      }
+    },
+    "OK": {
+      "74017": {
+        "name": "City of Claremore - OK",
+        "phone": null
+      },
+      "74074": {
+        "name": "City of Stillwater Utilities Authority - OK",
+        "phone": null
+      },
+      "74020": {
+        "name": "Indian Electric Cooperative OK",
+        "phone": null
+      },
+      "73089": {
+        "name": "Oklahoma Electric Cooperative",
+        "phone": null
+      },
+      "73025": {
+        "name": "CITY OF EDMOND - (OK)",
+        "phone": null
+      },
+      "74070": {
+        "name": "City of Skiatook",
+        "phone": null
+      }
+    },
+    "OR": {
+      "97759": {
+        "name": "Central Electric Cooperative, Inc",
+        "phone": null
+      },
+      "97838": {
+        "name": "Umatilla Electric Cooperative (Oregon)",
+        "phone": null
+      },
+      "97520": {
+        "name": "City of Ashland - OR",
+        "phone": null
+      }
+    },
+    "SC": {
+      "29544": {
+        "name": "Horry Electric Cooperative",
+        "phone": null
+      },
+      "29566": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29445": {
+        "name": "Berkeley Electric Cooperative",
+        "phone": null
+      },
+      "29303": {
+        "name": "Broad River Electric Cooperative",
+        "phone": null
+      },
+      "29693": {
+        "name": "Blue Ridge Electric CoOp",
+        "phone": null
+      },
+      "29461": {
+        "name": "Berkeley Electric Cooperative",
+        "phone": null
+      },
+      "29732": {
+        "name": "City of Rock Hill - SC",
+        "phone": null
+      },
+      "29730": {
+        "name": "City of Rock Hill - SC",
+        "phone": null
+      },
+      "29486": {
+        "name": "Berkeley Electric Cooperative",
+        "phone": null
+      },
+      "29579": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29576": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29708": {
+        "name": "York Electric Cooperative",
+        "phone": null
+      },
+      "29527": {
+        "name": "Horry Electric Cooperative",
+        "phone": null
+      },
+      "29577": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29455": {
+        "name": "Berkeley Electric Cooperative",
+        "phone": null
+      },
+      "29568": {
+        "name": "Horry Electric Cooperative",
+        "phone": null
+      },
+      "29585": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29588": {
+        "name": "Horry Electric Cooperative",
+        "phone": null
+      },
+      "29575": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29020": {
+        "name": "City of Camden",
+        "phone": null
+      },
+      "29910": {
+        "name": "Palmetto Electric Cooperative",
+        "phone": null
+      },
+      "29569": {
+        "name": "Horry Electric Cooperative",
+        "phone": null
+      },
+      "29572": {
+        "name": "Santee Cooper - SC",
+        "phone": null
+      },
+      "29829": {
+        "name": "Aiken Electric Cooperative",
+        "phone": null
+      }
+    },
+    "TN": {
+      "37188": {
+        "name": "CEMC (Cumberland Electric Membership Corporation)- TN",
+        "phone": null
+      },
+      "37830": {
+        "name": "City of Oak Ridge, TN",
+        "phone": null
+      },
+      "37185": {
+        "name": "Meriwether Lewis Electric Cooperative",
+        "phone": null
+      },
+      "37803": {
+        "name": "City of Maryville (TN)",
+        "phone": null
+      },
+      "37172": {
+        "name": "City of Springfield - TN",
+        "phone": null
+      },
+      "37148": {
+        "name": "CEMC (Cumberland Electric Membership Corporation)- TN",
+        "phone": null
+      },
+      "37073": {
+        "name": "CEMC (Cumberland Electric Membership Corporation)- TN",
+        "phone": null
+      },
+      "38060": {
+        "name": "Chickasaw Electric Coop",
+        "phone": null
+      },
+      "37801": {
+        "name": "City of Maryville (TN)",
+        "phone": null
+      },
+      "38011": {
+        "name": "Southwest Tennessee Electric Membership Corporation (STEMC)",
+        "phone": null
+      },
+      "37356": {
+        "name": "Sequachee Valley Electric Cooperative",
+        "phone": null
+      },
+      "38544": {
+        "name": "Upper Cumberland Electric Membership Corporation (UCEMC)",
+        "phone": null
+      },
+      "38004": {
+        "name": "Southwest Tennessee Electric Membership Corporation (STEMC)",
+        "phone": null
+      }
+    },
+    "UT": {
+      "84606": {
+        "name": "City of Provo - UT",
+        "phone": null
+      },
+      "84604": {
+        "name": "City of Provo - UT",
+        "phone": null
+      },
+      "84302": {
+        "name": "City of Brigham UT",
+        "phone": null
+      },
+      "84770": {
+        "name": "CITY OF ST GEORGE",
+        "phone": null
+      },
+      "84601": {
+        "name": "City of Provo - UT",
+        "phone": null
+      },
+      "84341": {
+        "name": "City of Logan",
+        "phone": null
+      },
+      "84321": {
+        "name": "City of Logan",
+        "phone": null
+      },
+      "84790": {
+        "name": "CITY OF ST GEORGE",
+        "phone": null
+      }
+    },
+    "WA": {
+      "98926": {
+        "name": "City of Ellensburg",
+        "phone": null
+      },
+      "98258": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "99004": {
+        "name": "City of Cheney (WA)",
+        "phone": null
+      },
+      "98036": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98632": {
+        "name": "Cowlitz County PUD",
+        "phone": null
+      },
+      "98223": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98270": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "99301": {
+        "name": "Franklin County Public Utility District",
+        "phone": null
+      },
+      "98290": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98208": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98271": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98201": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98087": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98230": {
+        "name": "City of Blaine - WA",
+        "phone": null
+      },
+      "98012": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98296": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98204": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98801": {
+        "name": "Chelan County Public Utility District",
+        "phone": null
+      },
+      "98021": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98272": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98026": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98528": {
+        "name": "Mason County PUD 3 - WA",
+        "phone": null
+      },
+      "98037": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98203": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98837": {
+        "name": "Grant County Public Utility District - WA",
+        "phone": null
+      },
+      "98292": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98043": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98252": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98020": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      },
+      "98857": {
+        "name": "Grant County Public Utility District - WA",
+        "phone": null
+      },
+      "99336": {
+        "name": "Benton County Public Utility District",
+        "phone": null
+      },
+      "98275": {
+        "name": "Snohomish County PUD",
+        "phone": null
+      }
+    },
+    "WI": {
+      "54241": {
+        "name": "City of Two Rivers",
+        "phone": null
+      },
+      "54166": {
+        "name": "Shawano Municipal Utilities",
+        "phone": null
+      },
+      "54968": {
+        "name": "City of Princeton Wisconsin",
+        "phone": null
+      }
+    }
+  }
+}

@@ -1448,6 +1448,67 @@
         "phone": null,
         "website": null,
         "note": "From EIA-861 (103 ZIP codes)"
+      },
+      "Lee_County_Electric_Coop": {
+        "name": "Lee County Electric Cooperative (LCEC)",
+        "phone": "239-656-2300",
+        "website": "https://www.lcec.net/",
+        "zip_codes": [
+          "33904",
+          "33909",
+          "33914",
+          "33917",
+          "33936",
+          "33971",
+          "33974",
+          "33976",
+          "33990",
+          "33991",
+          "33993"
+        ]
+      },
+      "Withlacoochee_River_Electric": {
+        "name": "Withlacoochee River Electric Cooperative",
+        "phone": "352-567-5133",
+        "website": "https://www.wrec.net/",
+        "zip_codes": [
+          "33523",
+          "33543",
+          "33544",
+          "33545",
+          "33576",
+          "34601",
+          "34606",
+          "34608",
+          "34609",
+          "34637",
+          "34654",
+          "34667",
+          "34669"
+        ]
+      },
+      "Peace_River_Electric": {
+        "name": "Peace River Electric Cooperative",
+        "phone": "863-494-2300",
+        "website": "https://www.preco.coop/",
+        "zip_codes": [
+          "34211",
+          "34219"
+        ]
+      },
+      "SECO_Energy": {
+        "name": "SECO Energy",
+        "phone": "352-793-3801",
+        "website": "https://www.secoenergy.com/",
+        "zip_codes": [
+          "34450",
+          "34473",
+          "34481",
+          "34714",
+          "34715",
+          "34736",
+          "34737"
+        ]
       }
     },
     "TN": {

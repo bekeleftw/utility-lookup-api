@@ -14,6 +14,7 @@ HOUSTON_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'houston_wa
 PHILLY_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'philly_water_districts.json')
 DC_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'dc_water_districts.json')
 ATLANTA_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'atlanta_water_districts.json')
+FLORIDA_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'florida_water_districts.json')
 
 _municipal_data = None
 _long_island_water_data = None
@@ -23,6 +24,7 @@ _houston_water_data = None
 _philly_water_data = None
 _dc_water_data = None
 _atlanta_water_data = None
+_florida_water_data = None
 
 
 def load_municipal_data() -> dict:
@@ -446,6 +448,40 @@ def lookup_atlanta_water(zip_code: str) -> Optional[Dict]:
     return None
 
 
+def load_florida_water_data() -> dict:
+    """Load Florida water district data."""
+    global _florida_water_data
+    if _florida_water_data is None:
+        if os.path.exists(FLORIDA_WATER_FILE):
+            with open(FLORIDA_WATER_FILE, 'r') as f:
+                _florida_water_data = json.load(f)
+        else:
+            _florida_water_data = {}
+    return _florida_water_data
+
+
+def lookup_florida_water(zip_code: str) -> Optional[Dict]:
+    """Look up water utility for Florida by ZIP code."""
+    if not zip_code:
+        return None
+    
+    data = load_florida_water_data()
+    zip_mappings = data.get('zip_mappings', {})
+    
+    if zip_code in zip_mappings:
+        district = zip_mappings[zip_code]
+        return {
+            'name': district['name'],
+            'phone': district.get('phone'),
+            'website': district.get('website'),
+            'source': 'florida_water_zip',
+            'confidence': 'verified',
+            'note': f"Water utility serving ZIP {zip_code} (tenant-verified)"
+        }
+    
+    return None
+
+
 def lookup_long_island_water(zip_code: str, county: str = None) -> Optional[Dict]:
     """Look up water district for Long Island (Nassau/Suffolk counties) by ZIP code."""
     if not zip_code or not zip_code.startswith('11'):
@@ -554,6 +590,12 @@ def lookup_municipal_water(state: str, city: str = None, zip_code: str = None, c
         atlanta_result = lookup_atlanta_water(zip_code)
         if atlanta_result:
             return atlanta_result
+    
+    # SPECIAL CASE: Florida (33xxx, 34xxx)
+    if state_upper == 'FL' and zip_code and zip_code[:2] in ['33', '34']:
+        florida_result = lookup_florida_water(zip_code)
+        if florida_result:
+            return florida_result
     
     # FIRST: Check dedicated water section (standalone water utilities)
     water_data = data.get('water', {}).get(state_upper, {})

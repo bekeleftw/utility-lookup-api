@@ -1,0 +1,1119 @@
+{
+  "_description": "Florida water utility ZIP mappings (South/Central Florida)",
+  "_source": "Tenant-verified addresses (87k dataset)",
+  "_last_updated": "2026-01-22",
+  "zip_mappings": {
+    "33573": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34668": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33990": {
+      "name": "City of Cape Coral",
+      "phone": null
+    },
+    "33884": {
+      "name": "Winter Haven Water Department",
+      "phone": null
+    },
+    "34736": {
+      "name": "Groveland Water Department",
+      "phone": null
+    },
+    "33584": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33981": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "33603": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33510": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33897": {
+      "name": "Polk County Utilities - FL",
+      "phone": null
+    },
+    "34771": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33612": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34241": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "34759": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33647": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33706": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33914": {
+      "name": "City of Cape Coral",
+      "phone": null
+    },
+    "33705": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "34202": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33598": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33511": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33410": {
+      "name": "Seacoast Utility Authority - FL",
+      "phone": null
+    },
+    "34224": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "33570": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33702": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "33578": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33713": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "33830": {
+      "name": "Bartow City (Florida)",
+      "phone": null
+    },
+    "33974": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "34608": {
+      "name": "Hernando County FL",
+      "phone": null
+    },
+    "33772": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33815": {
+      "name": "City of Lakeland - FL",
+      "phone": null
+    },
+    "33905": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "33801": {
+      "name": "City of Lakeland - FL",
+      "phone": null
+    },
+    "33774": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34491": {
+      "name": "Marion County Utilities (FL)",
+      "phone": null
+    },
+    "33576": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "34748": {
+      "name": "City of Leesburg",
+      "phone": null
+    },
+    "33778": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33952": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "34638": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33626": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33773": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33415": {
+      "name": "City of West Palm Beach - FL",
+      "phone": null
+    },
+    "34219": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33428": {
+      "name": "Palm Beach County Water Utilities Department",
+      "phone": null
+    },
+    "34289": {
+      "name": "North Port Utilities (FL)",
+      "phone": null
+    },
+    "34212": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "34221": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33034": {
+      "name": "Homestead Public Services",
+      "phone": null
+    },
+    "34275": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33881": {
+      "name": "Winter Haven Water Department",
+      "phone": null
+    },
+    "33534": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33853": {
+      "name": "City of Lake Wales Utilities",
+      "phone": null
+    },
+    "34758": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33825": {
+      "name": "City of Avon Park",
+      "phone": null
+    },
+    "33909": {
+      "name": "City of Cape Coral",
+      "phone": null
+    },
+    "33460": {
+      "name": "City of Lake Worth Beach -FL",
+      "phone": null
+    },
+    "34683": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33592": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33196": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33569": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34207": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "34606": {
+      "name": "Hernando County FL",
+      "phone": null
+    },
+    "33904": {
+      "name": "City of Cape Coral",
+      "phone": null
+    },
+    "33993": {
+      "name": "City of Cape Coral",
+      "phone": null
+    },
+    "33128": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33579": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33032": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33635": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34135": {
+      "name": "Bonita Springs Utilities (FL)",
+      "phone": null
+    },
+    "33157": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33054": {
+      "name": "City of Opa-Locka",
+      "phone": null
+    },
+    "34691": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33276": {
+      "name": "City of Eustis",
+      "phone": null
+    },
+    "33178": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "34654": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33837": {
+      "name": "City of Davenport",
+      "phone": null
+    },
+    "33755": {
+      "name": "Clearwater Utilities",
+      "phone": null
+    },
+    "33928": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "33844": {
+      "name": "City of Haines",
+      "phone": null
+    },
+    "33065": {
+      "name": "City of Coral Springs",
+      "phone": null
+    },
+    "33624": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34238": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33604": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34211": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33966": {
+      "name": "City of Fort Myers Utilities",
+      "phone": "239-321-7990"
+    },
+    "33947": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "34269": {
+      "name": "Desoto County FL Water Department",
+      "phone": null
+    },
+    "34232": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33991": {
+      "name": "City of Cape Coral",
+      "phone": null
+    },
+    "33602": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33462": {
+      "name": "Town of Lantana FL",
+      "phone": null
+    },
+    "33711": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "34677": {
+      "name": "City of Oldsmar",
+      "phone": null
+    },
+    "33486": {
+      "name": "BOCA RATON WTP",
+      "phone": null
+    },
+    "33983": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "34291": {
+      "name": "North Port Utilities (FL)",
+      "phone": null
+    },
+    "33543": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33813": {
+      "name": "Polk County Utilities - FL",
+      "phone": null
+    },
+    "34482": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "34669": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33776": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33565": {
+      "name": "The City of Plant City",
+      "phone": null
+    },
+    "34953": {
+      "name": "St Lucie West Services District",
+      "phone": null
+    },
+    "34610": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33304": {
+      "name": "Fort Lauderdale FL",
+      "phone": null
+    },
+    "34711": {
+      "name": "Clermont FL",
+      "phone": null
+    },
+    "34609": {
+      "name": "Hernando County FL",
+      "phone": null
+    },
+    "33327": {
+      "name": "City of Tallahassee",
+      "phone": null
+    },
+    "34746": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "34667": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33708": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33710": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "33919": {
+      "name": "City of Fort Myers Utilities",
+      "phone": "239-321-7990"
+    },
+    "34741": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33637": {
+      "name": "CITY OF TEMPLE TERRACE UTILITIES",
+      "phone": null
+    },
+    "33547": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33896": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33559": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33980": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "33880": {
+      "name": "Winter Haven Water Department",
+      "phone": null
+    },
+    "33556": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "34744": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "34453": {
+      "name": "Citrus County Utilities, FL",
+      "phone": null
+    },
+    "33610": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34690": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33908": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "33523": {
+      "name": "Dade City, FL",
+      "phone": null
+    },
+    "34119": {
+      "name": "Collier County FL Utilities",
+      "phone": null
+    },
+    "33756": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33920": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "34473": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "33018": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33538": {
+      "name": "Lake Panasoffkee Water Association - FL",
+      "phone": null
+    },
+    "33948": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "34733": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33544": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33035": {
+      "name": "Homestead Public Services",
+      "phone": null
+    },
+    "34104": {
+      "name": "City of Naples - FL",
+      "phone": null
+    },
+    "33764": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34231": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33901": {
+      "name": "City of Fort Myers Utilities",
+      "phone": "239-321-7990"
+    },
+    "34476": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "34695": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34698": {
+      "name": "Dunedin City",
+      "phone": null
+    },
+    "33907": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "34205": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33613": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33967": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "33607": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33132": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33917": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "33541": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33916": {
+      "name": "City of Fort Myers Utilities",
+      "phone": "239-321-7990"
+    },
+    "33558": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "34234": {
+      "name": "City of Sarasota",
+      "phone": null
+    },
+    "34689": {
+      "name": "Tarpon Springs Water Department",
+      "phone": null
+    },
+    "33760": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34480": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "33852": {
+      "name": "Town of Lake Placid",
+      "phone": null
+    },
+    "34475": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "34601": {
+      "name": "City of Brooksville Utilities - FL",
+      "phone": null
+    },
+    "33605": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34761": {
+      "name": "City of Ocoee",
+      "phone": null
+    },
+    "33436": {
+      "name": "Boynton Beach FL",
+      "phone": null
+    },
+    "33771": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34737": {
+      "name": "Town of Howey-in-the-Hills - FL",
+      "phone": null
+    },
+    "33870": {
+      "name": "Sebring Water and Sewer System",
+      "phone": null
+    },
+    "33803": {
+      "name": "City of Lakeland - FL",
+      "phone": null
+    },
+    "33135": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33617": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33936": {
+      "name": "FGUA Florida Governmental Utility Authority",
+      "phone": null
+    },
+    "33609": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33020": {
+      "name": "City of Hollywood - FL",
+      "phone": null
+    },
+    "34208": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "34756": {
+      "name": "City of Minneola FL",
+      "phone": null
+    },
+    "33973": {
+      "name": "FGUA Florida Governmental Utility Authority",
+      "phone": null
+    },
+    "33851": {
+      "name": "Town of Lake Hamilton Water Service",
+      "phone": null
+    },
+    "33147": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33954": {
+      "name": "Charlotte County Utilities",
+      "phone": "941-764-4300"
+    },
+    "34715": {
+      "name": "City of Minneola FL",
+      "phone": null
+    },
+    "33855": {
+      "name": "Ile Utilities - FL",
+      "phone": null
+    },
+    "34639": {
+      "name": "FGUA Florida Governmental Utility Authority",
+      "phone": null
+    },
+    "34772": {
+      "name": "City of St Cloud",
+      "phone": null
+    },
+    "34982": {
+      "name": "Fort Pierce Utility Authority",
+      "phone": null
+    },
+    "33629": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33976": {
+      "name": "Lee County Utilities",
+      "phone": "239-533-8845"
+    },
+    "34479": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "33712": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "33596": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34471": {
+      "name": "City of Ocala",
+      "phone": null
+    },
+    "34240": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33850": {
+      "name": "Lake Alfred",
+      "phone": null
+    },
+    "34747": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33056": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "34237": {
+      "name": "City of Sarasota",
+      "phone": null
+    },
+    "34288": {
+      "name": "North Port Utilities (FL)",
+      "phone": null
+    },
+    "33611": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34773": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33545": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33762": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33614": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34655": {
+      "name": "FGUA Florida Governmental Utility Authority",
+      "phone": null
+    },
+    "33759": {
+      "name": "City of Clearwater",
+      "phone": null
+    },
+    "33714": {
+      "name": "City of St. Petersburg Utilities",
+      "phone": null
+    },
+    "33619": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "34743": {
+      "name": "Toho Water Authority",
+      "phone": "407-944-5000"
+    },
+    "33133": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33513": {
+      "name": "City of Bushnell Utilities Department - FL",
+      "phone": null
+    },
+    "34222": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33875": {
+      "name": "Sebring Water and Sewer System",
+      "phone": null
+    },
+    "33476": {
+      "name": "Palm Beach County Water Utilities Department",
+      "phone": null
+    },
+    "33572": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34652": {
+      "name": "New Port Richey, FL",
+      "phone": null
+    },
+    "33404": {
+      "name": "City of Riviera Beach - FL",
+      "phone": null
+    },
+    "33810": {
+      "name": "Polk County Utilities - FL",
+      "phone": null
+    },
+    "34233": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33563": {
+      "name": "The City of Plant City",
+      "phone": null
+    },
+    "33634": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33332": {
+      "name": "City of Sunrise - FL",
+      "phone": null
+    },
+    "33950": {
+      "name": "Punta Gorda FL",
+      "phone": null
+    },
+    "33073": {
+      "name": "Coconut Creek FL",
+      "phone": null
+    },
+    "34450": {
+      "name": "Inverness FL",
+      "phone": null
+    },
+    "34243": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "34209": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33872": {
+      "name": "Sun n Lakes Utilities - FL",
+      "phone": null
+    },
+    "33809": {
+      "name": "City of Lakeland - FL",
+      "phone": null
+    },
+    "34117": {
+      "name": "Collier County FL Utilities",
+      "phone": null
+    },
+    "33615": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33616": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33781": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34287": {
+      "name": "North Port Utilities (FL)",
+      "phone": null
+    },
+    "33594": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "34472": {
+      "name": "Marion County Utilities (FL)",
+      "phone": null
+    },
+    "33703": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "34242": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "34465": {
+      "name": "Central States Water Resources Florida",
+      "phone": null
+    },
+    "34653": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "34210": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33606": {
+      "name": "City of Tampa Water",
+      "phone": "813-274-8811"
+    },
+    "33127": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33709": {
+      "name": "City of St Pete",
+      "phone": null
+    },
+    "33812": {
+      "name": "City of Lakeland - FL",
+      "phone": null
+    },
+    "34108": {
+      "name": "City of Naples - FL",
+      "phone": null
+    },
+    "33143": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "34203": {
+      "name": "Manatee County Utilities",
+      "phone": "941-792-8811"
+    },
+    "33542": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "34229": {
+      "name": "Sarasota County Utilities",
+      "phone": "941-861-6790"
+    },
+    "33839": {
+      "name": "Winter Haven Water Department",
+      "phone": null
+    },
+    "33169": {
+      "name": "City of North Miami Beach - FL",
+      "phone": null
+    },
+    "33770": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33704": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "34236": {
+      "name": "City of Sarasota",
+      "phone": null
+    },
+    "33625": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33126": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33707": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "34684": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "33701": {
+      "name": "St Petersburg FL",
+      "phone": null
+    },
+    "33487": {
+      "name": "BOCA RATON WTP",
+      "phone": null
+    },
+    "33805": {
+      "name": "City of Lakeland - FL",
+      "phone": null
+    },
+    "33433": {
+      "name": "BOCA RATON WTP",
+      "phone": null
+    },
+    "34428": {
+      "name": "Crystal River FL",
+      "phone": null
+    },
+    "34785": {
+      "name": "City of Wildwood WD",
+      "phone": null
+    },
+    "33540": {
+      "name": "City of Zephyrhills - FL",
+      "phone": null
+    },
+    "33931": {
+      "name": "Town of Fort Myers Beach Water Utility",
+      "phone": null
+    },
+    "34637": {
+      "name": "Pasco County Utilities",
+      "phone": "727-847-8131"
+    },
+    "33777": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34223": {
+      "name": "Englewood Water District",
+      "phone": null
+    },
+    "33009": {
+      "name": "City of Hallandale Beach Utilities",
+      "phone": null
+    },
+    "33971": {
+      "name": "City of Fort Myers Utilities",
+      "phone": "239-321-7990"
+    },
+    "33467": {
+      "name": "PBC water",
+      "phone": null
+    },
+    "33636": {
+      "name": "Hillsborough County Water",
+      "phone": "813-272-5977"
+    },
+    "33782": {
+      "name": "Pinellas County Utilities",
+      "phone": "727-464-4000"
+    },
+    "34613": {
+      "name": "Hernando County FL",
+      "phone": null
+    },
+    "33186": {
+      "name": "Miami-Dade Water",
+      "phone": null
+    },
+    "33411": {
+      "name": "Palm Beach County Water Utilities Department",
+      "phone": null
+    },
+    "34432": {
+      "name": "FGUA Florida Governmental Utility Authority",
+      "phone": null
+    }
+  }
+}

@@ -17,6 +17,7 @@ ATLANTA_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'atlanta_wa
 FLORIDA_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'florida_water_districts.json')
 REMAINING_STATES_WATER_FILE = os.path.join(os.path.dirname(__file__), 'data', 'remaining_states_water.json')
 REMAINING_STATES_ELECTRIC_FILE = os.path.join(os.path.dirname(__file__), 'data', 'remaining_states_electric.json')
+REMAINING_STATES_GAS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'remaining_states_gas.json')
 
 _municipal_data = None
 _long_island_water_data = None
@@ -29,6 +30,7 @@ _atlanta_water_data = None
 _florida_water_data = None
 _remaining_states_water_data = None
 _remaining_states_electric_data = None
+_remaining_states_gas_data = None
 
 
 def load_municipal_data() -> dict:
@@ -588,6 +590,64 @@ def lookup_remaining_states_electric(zip_code: str, state: str) -> Optional[Dict
                 conf_score = 60
             
             note = f"Electric utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
+            if is_split:
+                note += " - POSSIBLE SPLIT TERRITORY"
+            
+            return {
+                'name': utility['name'],
+                'phone': utility.get('phone'),
+                'website': utility.get('website'),
+                'source': 'tenant_verified_zip',
+                'confidence': confidence_level,
+                'confidence_score': conf_score,
+                'dominance_pct': dominance_pct,
+                'sample_count': sample_count,
+                'possible_split_territory': is_split,
+                'note': note
+            }
+    
+    return None
+
+
+def load_remaining_states_gas_data() -> dict:
+    """Load remaining states gas utility data."""
+    global _remaining_states_gas_data
+    if _remaining_states_gas_data is None:
+        if os.path.exists(REMAINING_STATES_GAS_FILE):
+            with open(REMAINING_STATES_GAS_FILE, 'r') as f:
+                _remaining_states_gas_data = json.load(f)
+        else:
+            _remaining_states_gas_data = {}
+    return _remaining_states_gas_data
+
+
+def lookup_remaining_states_gas(zip_code: str, state: str) -> Optional[Dict]:
+    """Look up gas utility for remaining states by ZIP code."""
+    if not zip_code or not state:
+        return None
+    
+    data = load_remaining_states_gas_data()
+    states_data = data.get('states', {})
+    
+    state_upper = state.upper()
+    if state_upper in states_data:
+        zip_mappings = states_data[state_upper]
+        if zip_code in zip_mappings:
+            utility = zip_mappings[zip_code]
+            confidence_level = utility.get('confidence_level', 'medium')
+            dominance_pct = utility.get('dominance_pct', 60)
+            sample_count = utility.get('sample_count', 1)
+            is_split = utility.get('possible_split_territory', False)
+            
+            # Adjust confidence score based on split territory flag
+            if confidence_level == 'high':
+                conf_score = 75
+            elif is_split:
+                conf_score = 55
+            else:
+                conf_score = 60
+            
+            note = f"Gas utility serving ZIP {zip_code} ({dominance_pct}% of {sample_count} verified addresses)"
             if is_split:
                 note += " - POSSIBLE SPLIT TERRITORY"
             

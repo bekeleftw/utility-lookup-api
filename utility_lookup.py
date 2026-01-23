@@ -50,7 +50,8 @@ try:
     )
     from pipeline.sources.gas import (
         StateGISGasSource, MunicipalGasSource,
-        ZIPMappingGasSource, HIFLDGasSource, CountyDefaultGasSource
+        ZIPMappingGasSource, HIFLDGasSource, CountyDefaultGasSource,
+        TenantVerifiedGasSource
     )
     PIPELINE_AVAILABLE = True
 except ImportError as e:
@@ -127,6 +128,7 @@ def _get_gas_pipeline() -> LookupPipeline:
             _pipeline_gas.add_source(UserCorrectionSource())
         _pipeline_gas.add_source(MunicipalGasSource())
         _pipeline_gas.add_source(StateGISGasSource())
+        _pipeline_gas.add_source(TenantVerifiedGasSource())  # Tenant-verified ZIP data
         _pipeline_gas.add_source(ZIPMappingGasSource())  # Lowered confidence (50)
         _pipeline_gas.add_source(HIFLDGasSource())
         _pipeline_gas.add_source(CountyDefaultGasSource())

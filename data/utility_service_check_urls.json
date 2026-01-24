@@ -12,7 +12,7 @@
       "states": ["NC", "SC", "FL", "IN", "OH", "KY"]
     },
     "Austin Energy": {
-      "service_check_url": "https://austinenergy.com/ae/residential/start-stop-service",
+      "service_check_url": "https://austinenergy.com/residential",
       "type": "electric",
       "states": ["TX"],
       "notes": "Municipal utility - serves Austin city limits only"
@@ -30,7 +30,7 @@
       "notes": "Also provides gas, water, wastewater"
     },
     "Georgia Power": {
-      "service_check_url": "https://www.georgiapower.com/residential/start-stop-move.html",
+      "service_check_url": "https://www.georgiapower.com/residential",
       "type": "electric",
       "states": ["GA"]
     },

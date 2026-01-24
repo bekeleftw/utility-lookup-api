@@ -64,11 +64,30 @@ def get_service_check_url(utility_name: str) -> Optional[Dict]:
     return None
 
 
+def verify_url_accessible(url: str, timeout: int = 5) -> bool:
+    """Check if a URL returns a successful response (not 404, 500, etc)."""
+    try:
+        headers = {
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+        }
+        response = requests.head(url, headers=headers, timeout=timeout, allow_redirects=True)
+        # Accept 200-399 as valid (includes redirects that resolved)
+        return 200 <= response.status_code < 400
+    except Exception:
+        # If HEAD fails, try GET (some servers don't support HEAD)
+        try:
+            response = requests.get(url, headers=headers, timeout=timeout, allow_redirects=True)
+            return 200 <= response.status_code < 400
+        except Exception:
+            return False
+
+
 def find_service_check_url_via_serp(utility_name: str, city: str, state: str) -> Optional[str]:
     """
     Use Google SERP to find a utility's service area check page.
     
     Uses site: operator to search directly on the utility's domain.
+    Verifies URLs are accessible before returning.
     """
     # Get likely domain for the utility
     domain = _get_utility_domain(utility_name)
@@ -141,7 +160,11 @@ def find_service_check_url_via_serp(utility_name: str, city: str, state: str) ->
                         
                         # Clean up URL (remove tracking params)
                         clean_url = href.split('&')[0] if '&ved=' in href else href
-                        return clean_url
+                        
+                        # Verify URL is accessible (not 404)
+                        if verify_url_accessible(clean_url):
+                            return clean_url
+                        # If not accessible, continue looking for other URLs
             
         except Exception as e:
             print(f"SERP query failed: {e}")
@@ -746,7 +769,8 @@ async def verify_with_llm(
 def find_service_check_url(
     utility_name: str,
     city: str = None,
-    state: str = None
+    state: str = None,
+    verify_accessible: bool = True
 ) -> Optional[str]:
     """
     Find a utility's service check URL using curated data or SERP.
@@ -758,6 +782,7 @@ def find_service_check_url(
         utility_name: Name of the utility
         city: City name (for SERP queries)
         state: State abbreviation (for SERP queries)
+        verify_accessible: Whether to verify URLs return 200 (default True)
         
     Returns:
         URL to service check page, or None if not found
@@ -765,9 +790,16 @@ def find_service_check_url(
     # Step 1: Check curated URLs first (fastest, most reliable)
     curated = get_service_check_url(utility_name)
     if curated and curated.get("service_check_url"):
-        return curated["service_check_url"]
+        url = curated["service_check_url"]
+        # Verify curated URL is still accessible
+        if verify_accessible:
+            if verify_url_accessible(url):
+                return url
+            # Curated URL is broken - fall through to SERP
+        else:
+            return url
     
-    # Step 2: Use SERP to find service check page
+    # Step 2: Use SERP to find service check page (already verifies URLs)
     if city and state:
         serp_url = find_service_check_url_via_serp(utility_name, city, state)
         if serp_url:

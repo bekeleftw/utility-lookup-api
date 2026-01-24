@@ -46,6 +46,7 @@ document.querySelectorAll('.up-confidence-dropdown.open').forEach(d => d.classLi
 document.querySelectorAll('.up-badge-confidence.open').forEach(b => b.classList.remove('open'));
 }
 });
+if (!form) { console.error('Utility widget: form element not found'); return; }
 form.addEventListener('submit', async (e) => {
 e.preventDefault();
 const address = input.value.trim();

@@ -68,12 +68,12 @@ if GUIDE_DATABASE_URL:
     except Exception as e:
         print(f"Warning: Could not connect to database for guide feature: {e}")
 
-# Rate limiting - 100 lookups per 24 hours per IP
+# Rate limiting - 500 lookups per 24 hours total (not per IP)
 # Uses in-memory storage by default, can configure Redis for production
 limiter = Limiter(
     get_remote_address,
     app=app,
-    default_limits=["100 per day"],
+    default_limits=["500 per day"],
     storage_uri="memory://",
     strategy="fixed-window"
 )
@@ -83,7 +83,7 @@ limiter = Limiter(
 def ratelimit_handler(e):
     return jsonify({
         'error': 'Rate limit exceeded',
-        'message': 'You have exceeded the limit of 100 lookups per 24 hours. Please try again tomorrow.',
+        'message': 'You have exceeded the limit of 500 lookups per 24 hours. Please try again tomorrow.',
         'retry_after': e.description
     }), 429
 
@@ -92,7 +92,7 @@ def version():
     return jsonify({'version': '2026-01-20-v31', 'changes': 'county_level_fallbacks_all_states'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
-@limiter.limit("100 per day")
+@limiter.limit("500 per day")
 def lookup():
     """Look up utilities for an address."""
     if request.method == 'POST':
@@ -471,15 +471,15 @@ def rate_limit_status():
     """Check current rate limit status for the requesting IP."""
     # This endpoint is exempt from rate limiting
     return jsonify({
-        'limit': '100 per day',
-        'message': 'Rate limit is 100 lookups per 24 hours per IP address.',
+        'limit': '500 per day',
+        'message': 'Rate limit is 500 lookups per 24 hours per IP address.',
         'batch_limit': '10 per day',
         'note': 'Batch endpoint is limited to 10 requests per day (up to 100 addresses each).'
     })
 
 
 @app.route('/api/lookup/stream', methods=['GET', 'POST'])
-@limiter.limit("100 per day")
+@limiter.limit("500 per day")
 def lookup_stream():
     """
     Streaming lookup - returns results as Server-Sent Events (SSE).

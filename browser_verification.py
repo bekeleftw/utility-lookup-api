@@ -134,7 +134,10 @@ def find_utility_website(utility_name: str, state: str = None) -> Optional[str]:
             
             # Skip social media and unrelated sites
             skip_domains = ['youtube.', 'facebook.', 'twitter.', 'linkedin.', 'wikipedia.', 
-                           'yelp.', 'indeed.', 'glassdoor.', 'reddit.', 'quora.', 'bbb.']
+                           'yelp.', 'indeed.', 'glassdoor.', 'reddit.', 'quora.', 'bbb.',
+                           'instagram.', 'govinfo.gov', 'foreclosure.', 'zillow.', 'realtor.',
+                           'yellowpages.', 'manta.', 'dnb.', 'buzzfile.', 'opencorporates.',
+                           'bloomberg.', 'crunchbase.', 'zoominfo.', 'hoovers.']
             if any(skip in url_lower for skip in skip_domains):
                 continue
             
@@ -146,6 +149,12 @@ def find_utility_website(utility_name: str, state: str = None) -> Optional[str]:
                 from urllib.parse import urlparse
                 parsed = urlparse(clean_url)
                 base_url = f"{parsed.scheme}://{parsed.netloc}"
+                
+                # Additional validation - domain should look like a utility/government site
+                domain_lower = parsed.netloc.lower()
+                # Skip generic aggregator sites
+                if any(agg in domain_lower for agg in ['directory', 'listing', 'finder', 'search', 'lookup']):
+                    continue
                 
                 if verify_url_accessible(base_url):
                     return base_url

@@ -239,10 +239,10 @@ def lookup():
                 elif w.get('_confidence') == 'low':
                     response['utilities']['water_note'] = w.get('_note', 'Estimated based on city name - verify with local utility.')
         
-        # Internet - only if selected
+        # Internet - only if selected (call lookup_internet_only directly)
         if 'internet' in selected_utilities:
-            internet = result.get('internet')
-            if internet:
+            internet = lookup_internet_only(address)
+            if internet and internet.get('providers'):
                 response['utilities']['internet'] = format_internet_providers(internet)
                 if internet.get('has_fiber'):
                     response['utilities']['internet_note'] = f"Fiber available from {internet.get('best_wired', {}).get('name', 'provider')}."

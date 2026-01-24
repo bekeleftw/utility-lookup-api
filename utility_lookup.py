@@ -311,10 +311,14 @@ def lookup_utilities_by_address(
                         sr_name = sr.utility_name.upper()
                         # Only include if different from selected
                         if sr_name != selected_name and sr_name not in [p['name'].upper() for p in other_providers]:
+                            # Get phone and website from raw_data if available
+                            raw = sr.raw_data or {}
                             other_providers.append({
                                 'name': sr.utility_name,
                                 'source': sr.source_name,
-                                'confidence_score': sr.confidence_score
+                                'confidence_score': sr.confidence_score,
+                                'phone': raw.get('TELEPHONE') or raw.get('phone'),
+                                'website': raw.get('WEBSITE') or raw.get('website')
                             })
                 # Sort by confidence and limit to top 3
                 other_providers = sorted(other_providers, key=lambda x: x.get('confidence_score', 0), reverse=True)[:3]

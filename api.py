@@ -262,29 +262,32 @@ def lookup():
 def format_utility(util, util_type, city=None, state=None):
     """Format utility data for API response."""
     from name_normalizer import normalize_utility_name
-    from browser_verification import find_service_check_url
+    from browser_verification import find_utility_website
     
     # Get raw name and normalize it
     raw_name = util.get('NAME', util.get('name', 'Unknown'))
     normalized_name = normalize_utility_name(raw_name)
     
-    # Try to find service check URL for this utility
-    service_check_url = None
-    if normalized_name and util_type in ['electric', 'gas']:
+    # Get existing website
+    website = util.get('WEBSITE', util.get('website'))
+    
+    # If no website, try to find one via SERP
+    if (not website or website in ['NOT AVAILABLE', '', None]) and normalized_name:
         try:
-            service_check_url = find_service_check_url(
-                normalized_name, 
-                city or util.get('CITY', util.get('city')),
+            found_website = find_utility_website(
+                normalized_name,
                 state or util.get('STATE', util.get('state'))
             )
+            if found_website:
+                website = found_website
         except Exception:
-            pass  # Don't fail if service check lookup fails
+            pass  # Don't fail if website lookup fails
     
     if util_type == 'water':
         return {
             'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
-            'website': util.get('WEBSITE', util.get('website')),
+            'website': website,
             'address': util.get('ADDRESS', util.get('address')),
             'city': util.get('CITY', util.get('city')),
             'state': util.get('STATE', util.get('state')),
@@ -303,7 +306,7 @@ def format_utility(util, util_type, city=None, state=None):
     result = {
         'name': normalized_name,
         'phone': util.get('TELEPHONE', util.get('phone')),
-        'website': util.get('WEBSITE', util.get('website')),
+        'website': website,
         'address': util.get('ADDRESS', util.get('address')),
         'city': util.get('CITY', util.get('city')),
         'state': util.get('STATE', util.get('state')),
@@ -315,8 +318,7 @@ def format_utility(util, util_type, city=None, state=None):
         'confidence_factors': util.get('confidence_factors'),
         'verified': util.get('_serp_verified', False),
         '_source': util.get('_source') or util.get('_verification_source') or util.get('source'),
-        'other_providers': util.get('_other_providers'),
-        'service_check_url': service_check_url  # URL where user can verify service area
+        'other_providers': util.get('_other_providers')
     }
     
     # Add deregulated market info for electric utilities

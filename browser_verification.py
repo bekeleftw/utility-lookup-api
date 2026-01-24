@@ -64,6 +64,98 @@ def get_service_check_url(utility_name: str) -> Optional[Dict]:
     return None
 
 
+def find_utility_website(utility_name: str, state: str = None) -> Optional[str]:
+    """
+    Find a utility's website via Google SERP.
+    
+    Args:
+        utility_name: Name of the utility
+        state: Optional state to narrow search
+        
+    Returns:
+        Website URL or None
+    """
+    # Check known domains first
+    domain = _get_utility_domain(utility_name)
+    name_clean = utility_name.lower().replace(' ', '').replace('&', '').replace("'", '').replace('-', '')
+    
+    # If we have a known domain mapping, verify it works
+    if domain != f"{name_clean}.com":
+        test_url = f"https://www.{domain}"
+        if verify_url_accessible(test_url):
+            return test_url
+        test_url = f"https://{domain}"
+        if verify_url_accessible(test_url):
+            return test_url
+    
+    # SERP search for utility website
+    query = f'"{utility_name}" official website'
+    if state:
+        query += f' {state}'
+    
+    proxy_url = f"http://{BRIGHTDATA_PROXY_USER}:{BRIGHTDATA_PROXY_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
+    proxies = {"http": proxy_url, "https": proxy_url}
+    
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+    }
+    
+    import urllib3
+    urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+    
+    try:
+        search_url = f"https://www.google.com/search?q={quote(query)}"
+        
+        response = requests.get(
+            search_url,
+            proxies=proxies,
+            headers=headers,
+            timeout=15,
+            verify=False
+        )
+        
+        if response.status_code != 200:
+            return None
+        
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(response.text, 'html.parser')
+        
+        # Look for external links
+        utility_words = utility_name.lower().split()
+        significant_words = [w for w in utility_words if len(w) > 3 and w not in ['energy', 'power', 'electric', 'gas', 'utility', 'utilities', 'board', 'the', 'city', 'of']]
+        
+        for tag in soup.find_all(href=True):
+            href = tag.get('href', '')
+            
+            if not href.startswith('http') or 'google' in href.lower():
+                continue
+            
+            url_lower = href.lower()
+            
+            # Skip social media and unrelated sites
+            skip_domains = ['youtube.', 'facebook.', 'twitter.', 'linkedin.', 'wikipedia.', 
+                           'yelp.', 'indeed.', 'glassdoor.', 'reddit.', 'quora.', 'bbb.']
+            if any(skip in url_lower for skip in skip_domains):
+                continue
+            
+            # Check if URL contains utility name words
+            if significant_words and any(word in url_lower for word in significant_words):
+                # Clean URL
+                clean_url = href.split('&')[0] if '&ved=' in href else href
+                # Get just the domain
+                from urllib.parse import urlparse
+                parsed = urlparse(clean_url)
+                base_url = f"{parsed.scheme}://{parsed.netloc}"
+                
+                if verify_url_accessible(base_url):
+                    return base_url
+        
+    except Exception as e:
+        print(f"Website search failed: {e}")
+    
+    return None
+
+
 def verify_url_accessible(url: str, timeout: int = 5) -> bool:
     """Check if a URL returns a successful response (not 404, 500, etc)."""
     try:

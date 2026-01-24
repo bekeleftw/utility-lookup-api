@@ -348,8 +348,177 @@ def reject_correction(correction_id: int) -> bool:
     return success
 
 
+def get_unapplied_corrections() -> List[Dict]:
+    """Get verified corrections that haven't been applied to data files yet."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        SELECT * FROM corrections
+        WHERE status = 'verified' AND applied_at IS NULL
+        ORDER BY verified_at ASC
+    ''')
+    
+    rows = cursor.fetchall()
+    conn.close()
+    
+    return [dict(row) for row in rows]
+
+
+def mark_correction_applied(correction_id: int) -> bool:
+    """Mark a correction as applied to data files."""
+    conn = get_connection()
+    cursor = conn.cursor()
+    
+    cursor.execute('''
+        UPDATE corrections
+        SET applied_at = ?, updated_at = ?
+        WHERE id = ?
+    ''', (datetime.now().isoformat(), datetime.now().isoformat(), correction_id))
+    
+    success = cursor.rowcount > 0
+    conn.commit()
+    conn.close()
+    
+    return success
+
+
+def apply_corrections_to_data() -> Dict:
+    """
+    Apply all verified corrections to the JSON data files.
+    Returns summary of what was applied.
+    """
+    import json
+    
+    DATA_DIR = os.path.join(os.path.dirname(__file__), 'data')
+    
+    # Map utility types to their data files
+    DATA_FILES = {
+        'electric': os.path.join(DATA_DIR, 'remaining_states_electric.json'),
+        'gas': os.path.join(DATA_DIR, 'remaining_states_gas.json'),
+    }
+    
+    unapplied = get_unapplied_corrections()
+    
+    if not unapplied:
+        return {'applied': 0, 'message': 'No unapplied corrections'}
+    
+    results = {
+        'applied': 0,
+        'skipped': 0,
+        'errors': [],
+        'details': []
+    }
+    
+    # Group corrections by utility type
+    by_type = {}
+    for correction in unapplied:
+        ut = correction['utility_type']
+        if ut not in by_type:
+            by_type[ut] = []
+        by_type[ut].append(correction)
+    
+    for utility_type, corrections in by_type.items():
+        if utility_type not in DATA_FILES:
+            for c in corrections:
+                results['skipped'] += 1
+                results['errors'].append(f"No data file for {utility_type}")
+            continue
+        
+        filepath = DATA_FILES[utility_type]
+        
+        if not os.path.exists(filepath):
+            for c in corrections:
+                results['skipped'] += 1
+                results['errors'].append(f"Data file not found: {filepath}")
+            continue
+        
+        # Load the data file
+        with open(filepath, 'r') as f:
+            data = json.load(f)
+        
+        states_data = data.get('states', {})
+        modified = False
+        
+        for correction in corrections:
+            state = correction['state']
+            zip_code = correction['zip_code']
+            correct_provider = correction['correct_provider']
+            
+            if not state or not zip_code:
+                results['skipped'] += 1
+                results['errors'].append(f"Missing state/zip for correction {correction['id']}")
+                continue
+            
+            # Find and update the ZIP code entry
+            if state in states_data and zip_code in states_data[state]:
+                old_name = states_data[state][zip_code].get('name', 'Unknown')
+                states_data[state][zip_code]['name'] = correct_provider
+                states_data[state][zip_code]['_corrected'] = True
+                states_data[state][zip_code]['_corrected_from'] = old_name
+                states_data[state][zip_code]['_corrected_at'] = datetime.now().isoformat()
+                
+                mark_correction_applied(correction['id'])
+                modified = True
+                results['applied'] += 1
+                results['details'].append({
+                    'zip': zip_code,
+                    'state': state,
+                    'old': old_name,
+                    'new': correct_provider
+                })
+            else:
+                # ZIP not in data - add it
+                if state not in states_data:
+                    states_data[state] = {}
+                
+                states_data[state][zip_code] = {
+                    'name': correct_provider,
+                    'normalized_name': correct_provider.upper(),
+                    '_corrected': True,
+                    '_added_via_correction': True,
+                    '_corrected_at': datetime.now().isoformat()
+                }
+                
+                mark_correction_applied(correction['id'])
+                modified = True
+                results['applied'] += 1
+                results['details'].append({
+                    'zip': zip_code,
+                    'state': state,
+                    'old': None,
+                    'new': correct_provider,
+                    'added': True
+                })
+        
+        # Save the modified data
+        if modified:
+            with open(filepath, 'w') as f:
+                json.dump(data, f, indent=2)
+    
+    return results
+
+
 if __name__ == "__main__":
-    # Initialize DB and show stats
+    import sys
+    
     init_db()
-    print("Database initialized at:", DB_PATH)
-    print("Stats:", get_stats())
+    
+    if len(sys.argv) > 1 and sys.argv[1] == 'apply':
+        print("Applying verified corrections to data files...")
+        result = apply_corrections_to_data()
+        print(f"Applied: {result['applied']}")
+        print(f"Skipped: {result['skipped']}")
+        if result['errors']:
+            print(f"Errors: {result['errors']}")
+        if result['details']:
+            print("\nDetails:")
+            for d in result['details']:
+                if d.get('added'):
+                    print(f"  + {d['state']} {d['zip']}: Added {d['new']}")
+                else:
+                    print(f"  ~ {d['state']} {d['zip']}: {d['old']} → {d['new']}")
+    else:
+        print("Database initialized at:", DB_PATH)
+        print("Stats:", get_stats())
+        print("\nUsage: python corrections_lookup.py apply")

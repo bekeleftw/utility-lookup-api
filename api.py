@@ -1284,6 +1284,54 @@ def corrections_stats():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/corrections/apply', methods=['POST'])
+def apply_corrections():
+    """
+    Apply all verified corrections to the JSON data files.
+    This updates the actual data files with user-submitted corrections.
+    """
+    try:
+        from corrections_lookup import apply_corrections_to_data, get_unapplied_corrections, init_db
+        init_db()
+        
+        # Check how many are pending
+        unapplied = get_unapplied_corrections()
+        if not unapplied:
+            return jsonify({
+                "status": "no_changes",
+                "message": "No unapplied corrections to apply"
+            })
+        
+        # Apply them
+        result = apply_corrections_to_data()
+        
+        return jsonify({
+            "status": "success",
+            "applied": result['applied'],
+            "skipped": result['skipped'],
+            "errors": result['errors'],
+            "details": result['details']
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/corrections/pending', methods=['GET'])
+def list_unapplied_corrections():
+    """List verified corrections that haven't been applied to data files yet."""
+    try:
+        from corrections_lookup import get_unapplied_corrections, init_db
+        init_db()
+        
+        unapplied = get_unapplied_corrections()
+        return jsonify({
+            "count": len(unapplied),
+            "corrections": unapplied
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 # =============================================================================
 # PROBLEM AREAS REGISTRY
 # =============================================================================

@@ -99,13 +99,32 @@ const explanation = getSourceExplanation(source);
 const dropdownContent = score !== undefined && score !== null ? (explanation ? '<span class="score">' + score + '/100</span> - ' + explanation : '<span class="score">' + score + '/100</span> confidence') : (explanation || 'Confidence details unavailable');
 return '<span class="up-badge ' + badgeClass + ' up-badge-confidence" data-dropdown="' + cardId + '-dropdown">' + badgeLabel + '<span class="up-badge-caret">▼</span></span><div class="up-confidence-dropdown" id="' + cardId + '-dropdown">' + dropdownContent + '</div>';
 }
+function getTechType(tech) {
+  if (!tech) return { label: 'Unknown', dot: '' };
+  const t = tech.toLowerCase();
+  if (t.includes('fiber')) return { label: 'Fiber', dot: 'fiber' };
+  if (t.includes('cable') || t.includes('docsis')) return { label: 'Cable', dot: 'cable' };
+  if (t.includes('dsl') || t.includes('adsl') || t.includes('vdsl')) return { label: 'DSL', dot: 'dsl' };
+  if (t.includes('5g') || t.includes('lte') || t.includes('wireless') || t.includes('fixed')) return { label: 'Wireless', dot: 'wireless' };
+  if (t.includes('satellite')) return { label: 'Satellite', dot: 'satellite' };
+  return { label: tech, dot: '' };
+}
 function renderInternetCard(inet) {
-const providers = inet.providers || [];
-const best = inet.best_wired;
-const badge = inet.has_fiber ? '<span class="up-badge up-badge-verified">Fiber Available</span>' : inet.has_cable ? '<span class="up-badge up-badge-high">Cable Available</span>' : '<span class="up-badge up-badge-medium">Limited Options</span>';
-const sortedProviders = [...providers].sort((a, b) => (b.max_download_mbps || 0) - (a.max_download_mbps || 0));
-const rows = sortedProviders.map(provider => { const isBest = best && provider.name === best.name; return '<div class="up-internet-row' + (isBest ? ' up-internet-row-best' : '') + '"><div class="up-internet-provider"><span class="up-internet-name">' + provider.name + '</span><span class="up-internet-tech">' + (provider.technology || 'Unknown') + '</span></div><div class="up-internet-speed"><span class="up-internet-down">' + (provider.max_download_mbps || '?') + '</span><span class="up-internet-speed-label">↓ / ' + (provider.max_upload_mbps || '?') + ' ↑ Mbps</span></div></div>'; }).join('');
-return '<div class="up-card"><div class="up-card-header"><div class="up-card-type"><div class="up-icon up-icon-internet">' + icons.internet + '</div><span class="up-type-label">Internet</span></div><div class="up-header-badges">' + badge + '</div></div><div class="up-internet-stats"><div class="up-stat"><span class="up-stat-value">' + inet.provider_count + '</span><span class="up-stat-label">Providers</span></div>' + (best ? '<div class="up-stat"><span class="up-stat-value">' + best.max_download_mbps + '</span><span class="up-stat-label">Max Mbps</span></div>' : '') + '</div><div class="up-internet-list">' + rows + '</div></div>';
+  const providers = inet.providers || [];
+  if (providers.length === 0) return '<div class="up-card"><div class="up-no-result">🌐 No internet providers found</div></div>';
+  const sorted = [...providers].sort((a, b) => (b.max_download_mbps || 0) - (a.max_download_mbps || 0));
+  const hasFiber = sorted.some(p => (p.technology || '').toLowerCase().includes('fiber'));
+  const hasCable = sorted.some(p => (p.technology || '').toLowerCase().includes('cable'));
+  let badge = '<span class="up-badge up-badge-medium">Limited Options</span>';
+  if (hasFiber) badge = '<span class="up-badge up-badge-verified">Fiber Available</span>';
+  else if (hasCable) badge = '<span class="up-badge up-badge-high">Cable Available</span>';
+  const rows = sorted.map(p => {
+    const tech = getTechType(p.technology);
+    const down = p.max_download_mbps || '?';
+    const up = p.max_upload_mbps || '?';
+    return '<tr><td class="up-internet-provider-cell">' + (p.name || 'Unknown') + '</td><td><span class="up-internet-type-cell"><span class="up-internet-type-dot ' + tech.dot + '"></span>' + tech.label + '</span></td><td class="up-internet-speed-cell"><span class="up-internet-speed-down">' + down + '</span> / ' + up + ' Mbps</td></tr>';
+  }).join('');
+  return '<div class="up-card"><div class="up-card-header"><div class="up-card-type"><div class="up-icon up-icon-internet">' + icons.internet + '</div><span class="up-type-label">Internet</span></div><div class="up-header-badges">' + badge + '</div></div><table class="up-internet-table"><thead><tr><th>Provider</th><th>Type</th><th>Speed</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
 }
 function attachBadgeListeners() {
 document.querySelectorAll('.up-badge-confidence:not([data-listener])').forEach(badge => {

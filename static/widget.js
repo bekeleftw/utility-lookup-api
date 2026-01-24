@@ -141,6 +141,141 @@ btn.setAttribute('data-listener', 'true');
 btn.addEventListener('click', function() { const altId = this.dataset.altId; const provider = this.dataset.provider; const type = this.dataset.type; const response = this.dataset.response; const item = document.getElementById(altId); item.querySelectorAll('.up-alt-btn').forEach(b => b.style.display = 'none'); document.getElementById(altId + '-done').classList.add('show'); fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: currentAddress, zip_code: currentZipCode, utility_type: type, returned_provider: provider, is_correct: response === 'yes', is_alternative: true, source: 'web_widget' }) }).catch(e => console.error('Failed to submit feedback:', e)); });
 });
 }
+// Mode Toggle (Single vs Bulk)
+const singleModeBtn = document.getElementById('singleModeBtn');
+const bulkModeBtn = document.getElementById('bulkModeBtn');
+const bulkSection = document.getElementById('bulkSection');
+const bulkInput = document.getElementById('bulkInput');
+const bulkSearchBtn = document.getElementById('bulkSearchBtn');
+const bulkResults = document.getElementById('bulkResults');
+const bulkGrid = document.getElementById('bulkGrid');
+const bulkStats = document.getElementById('bulkStats');
+let bulkVerifiedCount = 0;
+let bulkTotalCount = 0;
+
+if (singleModeBtn && bulkModeBtn) {
+  singleModeBtn.addEventListener('click', () => {
+    singleModeBtn.classList.add('active');
+    bulkModeBtn.classList.remove('active');
+    form.classList.remove('up-hidden');
+    if (bulkSection) bulkSection.classList.add('up-hidden');
+    if (bulkResults) bulkResults.classList.add('up-hidden');
+    results.classList.remove('up-hidden');
+  });
+  bulkModeBtn.addEventListener('click', () => {
+    bulkModeBtn.classList.add('active');
+    singleModeBtn.classList.remove('active');
+    form.classList.add('up-hidden');
+    if (bulkSection) bulkSection.classList.remove('up-hidden');
+    results.classList.add('up-hidden');
+  });
+}
+
+if (bulkSearchBtn) {
+  bulkSearchBtn.addEventListener('click', async () => {
+    const text = bulkInput.value.trim();
+    if (!text) { alert('Please enter at least one address'); return; }
+    const addresses = text.split('\n').map(a => a.trim()).filter(a => a.length > 0);
+    if (addresses.length === 0) { alert('Please enter at least one address'); return; }
+    if (addresses.length > 20) { alert('Maximum 20 addresses at a time'); return; }
+    const utilities = getSelectedUtilities();
+    if (utilities.length === 0) { alert('Please select at least one utility type'); return; }
+    
+    bulkResults.classList.remove('up-hidden');
+    bulkGrid.innerHTML = '';
+    bulkVerifiedCount = 0;
+    bulkTotalCount = 0;
+    updateBulkStats();
+    
+    // Create placeholder rows
+    addresses.forEach((addr, i) => {
+      const rowId = 'bulk-row-' + i;
+      bulkGrid.innerHTML += '<div class="up-bulk-row loading" id="' + rowId + '"><div class="up-bulk-address">' + addr + '</div><div class="up-bulk-utilities"><div class="up-bulk-util"><span style="color:#9ca3af;">Loading...</span></div></div></div>';
+    });
+    
+    // Process each address
+    for (let i = 0; i < addresses.length; i++) {
+      const addr = addresses[i];
+      const rowId = 'bulk-row-' + i;
+      const row = document.getElementById(rowId);
+      
+      try {
+        const params = new URLSearchParams({ address: addr, utilities: utilities.join(',') });
+        const response = await fetch(API_URL + '?' + params);
+        const data = await response.json();
+        
+        if (data.error) {
+          row.innerHTML = '<div class="up-bulk-address">' + addr + '</div><div class="up-bulk-utilities"><div class="up-bulk-util" style="color:#ef4444;">Error: ' + data.error + '</div></div>';
+          row.classList.remove('loading');
+          continue;
+        }
+        
+        let utilsHtml = '';
+        const utilTypes = ['electric', 'gas', 'water'];
+        utilTypes.forEach(type => {
+          if (!utilities.includes(type)) return;
+          const util = data.utilities[type]?.[0];
+          if (!util) return;
+          const utilId = rowId + '-' + type;
+          bulkTotalCount++;
+          utilsHtml += '<div class="up-bulk-util" id="' + utilId + '"><div class="up-bulk-util-info"><span class="up-bulk-util-icon">' + icons[type] + '</span><span class="up-bulk-util-name">' + (util.name || 'Unknown') + '</span></div><div class="up-bulk-actions"><button class="up-bulk-btn yes" data-util-id="' + utilId + '" data-addr="' + addr.replace(/"/g, '&quot;') + '" data-type="' + type + '" data-provider="' + (util.name || '').replace(/"/g, '&quot;') + '">✓</button><button class="up-bulk-btn no" data-util-id="' + utilId + '" data-addr="' + addr.replace(/"/g, '&quot;') + '" data-type="' + type + '" data-provider="' + (util.name || '').replace(/"/g, '&quot;') + '">✗</button></div></div>';
+        });
+        
+        row.innerHTML = '<div class="up-bulk-address">' + addr + '</div><div class="up-bulk-utilities">' + (utilsHtml || '<div class="up-bulk-util" style="color:#9ca3af;">No utilities found</div>') + '</div>';
+        row.classList.remove('loading');
+        updateBulkStats();
+        attachBulkFeedbackListeners();
+        
+      } catch (e) {
+        row.innerHTML = '<div class="up-bulk-address">' + addr + '</div><div class="up-bulk-utilities"><div class="up-bulk-util" style="color:#ef4444;">Failed to fetch</div></div>';
+        row.classList.remove('loading');
+      }
+    }
+  });
+}
+
+function updateBulkStats() {
+  if (bulkStats) bulkStats.textContent = bulkVerifiedCount + '/' + bulkTotalCount + ' verified';
+}
+
+function attachBulkFeedbackListeners() {
+  document.querySelectorAll('.up-bulk-btn:not([data-listener])').forEach(btn => {
+    btn.setAttribute('data-listener', 'true');
+    btn.addEventListener('click', function() {
+      const utilId = this.dataset.utilId;
+      const addr = this.dataset.addr;
+      const type = this.dataset.type;
+      const provider = this.dataset.provider;
+      const isYes = this.classList.contains('yes');
+      const utilRow = document.getElementById(utilId);
+      const actions = utilRow.querySelector('.up-bulk-actions');
+      
+      if (isYes) {
+        // Mark as verified
+        actions.innerHTML = '<span class="up-bulk-done">✓ Verified</span>';
+        utilRow.closest('.up-bulk-row').classList.add('verified');
+        bulkVerifiedCount++;
+        updateBulkStats();
+        // Submit positive feedback
+        fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: addr, utility_type: type, returned_provider: provider, is_correct: true, source: 'bulk_verify' }) }).catch(e => console.error('Feedback error:', e));
+      } else {
+        // Show correction input
+        actions.innerHTML = '<div class="up-bulk-correction"><input type="text" placeholder="Correct provider?" id="' + utilId + '-input" /><button data-util-id="' + utilId + '" data-addr="' + addr.replace(/"/g, '&quot;') + '" data-type="' + type + '" data-provider="' + provider.replace(/"/g, '&quot;') + '">Submit</button></div>';
+        utilRow.closest('.up-bulk-row').classList.add('corrected');
+        // Attach submit listener
+        actions.querySelector('button').addEventListener('click', function() {
+          const correction = document.getElementById(utilId + '-input').value.trim();
+          if (!correction) { alert('Please enter the correct provider'); return; }
+          actions.innerHTML = '<span class="up-bulk-done" style="color:#f59e0b;">✓ Corrected</span>';
+          bulkVerifiedCount++;
+          updateBulkStats();
+          fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: addr, utility_type: type, returned_provider: provider, correct_provider: correction, is_correct: false, source: 'bulk_verify' }) }).catch(e => console.error('Feedback error:', e));
+        });
+      }
+    });
+  });
+}
+
 // CSV Bulk Upload
 const csvDropZone = document.getElementById('csvDropZone');
 const csvInput = document.getElementById('csvInput');

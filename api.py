@@ -1033,8 +1033,8 @@ def feedback_dashboard():
     # Get SQLite stats
     sqlite_stats = {}
     try:
-        from corrections_lookup import get_corrections_stats
-        sqlite_stats = get_corrections_stats()
+        from corrections_lookup import get_stats, get_pending_corrections, get_verified_corrections
+        sqlite_stats = get_stats()
     except Exception as e:
         sqlite_stats = {"error": str(e)}
     
@@ -1117,7 +1117,7 @@ def manually_confirm_feedback(feedback_id):
 def confirm_utility():
     """
     User confirms a utility result is correct (clicks "Yes").
-    This caches the confirmation for future lookups.
+    This caches the confirmation and records in verified_utilities table.
     
     Request body:
     {
@@ -1144,9 +1144,32 @@ def confirm_utility():
         website=data.get('website')
     )
     
+    # Also record in SQLite verified_utilities for tracking
+    zip_code = extract_zip(data['address'])
+    city, state = extract_city_state(data['address'])
+    
+    try:
+        from corrections_lookup import add_verification, init_db
+        init_db()
+        result = add_verification(
+            utility_type=data['utility_type'],
+            provider_name=data['utility_name'],
+            state=state or '',
+            zip_code=zip_code,
+            city=city,
+            address=data['address'],
+            phone=data.get('phone'),
+            website=data.get('website')
+        )
+        verification_count = result.get('verification_count', 1)
+    except Exception as e:
+        print(f"Error recording verification: {e}")
+        verification_count = 1
+    
     return jsonify({
         "status": "confirmed",
-        "message": "Thank you! Your confirmation helps improve accuracy."
+        "message": "Thank you! Your confirmation helps improve accuracy.",
+        "verification_count": verification_count
     })
 
 
@@ -1182,6 +1205,83 @@ def reject_feedback(feedback_id):
         "status": "rejected",
         "feedback_id": feedback_id
     })
+
+
+# =============================================================================
+# CORRECTIONS ADMIN API (SQLite-based)
+# =============================================================================
+
+@app.route('/api/corrections', methods=['GET'])
+def list_corrections():
+    """
+    List corrections from SQLite database.
+    Query params: status (pending|verified|all), limit
+    """
+    try:
+        from corrections_lookup import get_pending_corrections, get_verified_corrections, get_stats, init_db
+        init_db()
+        
+        status = request.args.get('status', 'pending')
+        limit = int(request.args.get('limit', 50))
+        
+        if status == 'pending':
+            corrections = get_pending_corrections(limit)
+        elif status == 'verified':
+            corrections = get_verified_corrections(limit)
+        else:
+            corrections = get_pending_corrections(limit) + get_verified_corrections(limit)
+        
+        return jsonify({
+            "status": status,
+            "count": len(corrections),
+            "corrections": corrections,
+            "stats": get_stats()
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/corrections/<int:correction_id>/approve', methods=['POST'])
+def approve_correction(correction_id):
+    """Approve a pending correction (admin action)."""
+    try:
+        from corrections_lookup import approve_correction as do_approve, init_db
+        init_db()
+        
+        success = do_approve(correction_id)
+        if success:
+            return jsonify({"status": "approved", "correction_id": correction_id})
+        else:
+            return jsonify({"error": "Correction not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/corrections/<int:correction_id>/reject', methods=['POST'])
+def reject_correction(correction_id):
+    """Reject a pending correction (admin action)."""
+    try:
+        from corrections_lookup import reject_correction as do_reject, init_db
+        init_db()
+        
+        success = do_reject(correction_id)
+        if success:
+            return jsonify({"status": "rejected", "correction_id": correction_id})
+        else:
+            return jsonify({"error": "Correction not found"}), 404
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/corrections/stats', methods=['GET'])
+def corrections_stats():
+    """Get correction statistics."""
+    try:
+        from corrections_lookup import get_stats, init_db
+        init_db()
+        return jsonify(get_stats())
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 # =============================================================================

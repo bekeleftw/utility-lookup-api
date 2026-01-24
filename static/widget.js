@@ -83,6 +83,7 @@ badges += getConfidenceBadgeWithDropdown(util, cardId);
 let detailsLeft = '';
 if (util.phone && util.phone !== 'NOT AVAILABLE') { detailsLeft += '<div class="up-detail"><span class="up-detail-label">Phone</span><span class="up-detail-value"><a href="tel:' + util.phone + '">' + util.phone + '</a></span></div>'; }
 if (util.website && util.website !== 'NOT AVAILABLE') { const url = util.website.startsWith('http') ? util.website : 'https://' + util.website; detailsLeft += '<div class="up-detail"><span class="up-detail-label">Website</span><span class="up-detail-value"><a href="' + url + '" target="_blank">Visit site</a></span></div>'; }
+if (util.service_check_url) { detailsLeft += '<div class="up-detail"><span class="up-detail-label">Verify Service</span><span class="up-detail-value"><a href="' + util.service_check_url + '" target="_blank" class="up-verify-link">Check if they serve you</a></span></div>'; }
 let deregSection = '';
 if (type === 'electric' && util.deregulated && util.deregulated.has_choice) { const dereg = util.deregulated; deregSection = '<div class="up-dereg-banner"><div class="up-dereg-header"><span class="up-dereg-icon">🎉</span><span class="up-dereg-title">' + (dereg.message || 'You have options!') + '</span></div><div class="up-dereg-body"><p class="up-dereg-explain">' + (dereg.how_it_works || dereg.explanation || '') + '</p>' + (dereg.choice_website ? '<a href="' + dereg.choice_website + '" target="_blank" class="up-dereg-cta"><span>🔍</span> Compare Providers</a>' : '') + '</div></div>'; }
 let otherSection = '';

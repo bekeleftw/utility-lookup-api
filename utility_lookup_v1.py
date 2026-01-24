@@ -1500,30 +1500,34 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
             print(f"  BDC lookup error: {e}")
     
     # Try BroadbandNow (better coverage for Verizon, etc.)
-    if geo_result:
+    # This is the primary fallback when BDC SQLite is not available (e.g., on Railway)
+    zip_code = geo_result.get('zip_code') if geo_result else None
+    city = geo_result.get('city') if geo_result else None
+    state = geo_result.get('state') if geo_result else None
+    
+    if zip_code:
         try:
             from broadbandnow_lookup import lookup_broadbandnow
-            zip_code = geo_result.get('zip_code')
-            city = geo_result.get('city')
-            state = geo_result.get('state')
-            
-            if zip_code:
-                print(f"  Trying BroadbandNow for ZIP {zip_code}...")
-                bbn_result = lookup_broadbandnow(zip_code, city, state)
-                if bbn_result and bbn_result.get('providers'):
-                    print(f"  BroadbandNow found {len(bbn_result['providers'])} providers")
-                    providers = bbn_result['providers']
-                    return {
-                        "providers": providers,
-                        "provider_count": len(providers),
-                        "has_fiber": any(p.get('technology') == 'Fiber' for p in providers),
-                        "has_cable": any(p.get('technology') == 'Cable' for p in providers),
-                        "_source": "broadbandnow",
-                    }
+            print(f"  Trying BroadbandNow for ZIP {zip_code}...")
+            bbn_result = lookup_broadbandnow(zip_code, city, state)
+            if bbn_result and bbn_result.get('providers'):
+                print(f"  BroadbandNow found {len(bbn_result['providers'])} providers")
+                providers = bbn_result['providers']
+                return {
+                    "providers": providers,
+                    "provider_count": len(providers),
+                    "has_fiber": any(p.get('technology', '').lower() == 'fiber' for p in providers),
+                    "has_cable": any(p.get('technology', '').lower() == 'cable' for p in providers),
+                    "_source": "broadbandnow",
+                }
+            else:
+                print(f"  BroadbandNow returned no providers")
         except ImportError as e:
             print(f"  BroadbandNow module not available: {e}")
         except Exception as e:
+            import traceback
             print(f"  BroadbandNow lookup error: {e}")
+            traceback.print_exc()
     
     # Fall back to slow Playwright scraping
     print("  Falling back to Playwright (slow)...")

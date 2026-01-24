@@ -270,13 +270,25 @@ function attachBulkFeedbackListeners() {
       const actions = utilRow.querySelector('.up-bulk-actions');
       
       if (isYes) {
-        // Mark as verified
-        actions.innerHTML = '<span class="up-bulk-done">✓ Verified</span>';
-        utilRow.closest('.up-bulk-row').classList.add('verified');
-        bulkVerifiedCount++;
-        updateBulkStats();
-        // Submit positive feedback
-        fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: addr, utility_type: type, returned_provider: provider, is_correct: true, source: 'bulk_verify' }) }).catch(e => console.error('Feedback error:', e));
+        // Show URL input form for verification link
+        actions.innerHTML = '<div class="up-bulk-correction"><input type="url" placeholder="Verification URL (optional)" id="' + utilId + '-url" /><button class="up-bulk-url-submit" data-util-id="' + utilId + '" data-addr="' + addr.replace(/"/g, '&quot;') + '" data-type="' + type + '" data-provider="' + provider.replace(/"/g, '&quot;') + '">Submit</button><button class="up-bulk-url-skip" data-util-id="' + utilId + '" data-addr="' + addr.replace(/"/g, '&quot;') + '" data-type="' + type + '" data-provider="' + provider.replace(/"/g, '&quot;') + '" style="background:#f3f4f6;color:#6b7280;">Skip</button></div>';
+        // Attach submit listener
+        actions.querySelector('.up-bulk-url-submit').addEventListener('click', function() {
+          const serviceUrl = document.getElementById(utilId + '-url').value.trim();
+          actions.innerHTML = '<span class="up-bulk-done">✓ Verified</span>';
+          utilRow.closest('.up-bulk-row').classList.add('verified');
+          bulkVerifiedCount++;
+          updateBulkStats();
+          fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: addr, utility_type: type, returned_provider: provider, is_correct: true, service_check_url: serviceUrl || null, source: 'bulk_verify' }) }).catch(e => console.error('Feedback error:', e));
+        });
+        // Attach skip listener
+        actions.querySelector('.up-bulk-url-skip').addEventListener('click', function() {
+          actions.innerHTML = '<span class="up-bulk-done">✓ Verified</span>';
+          utilRow.closest('.up-bulk-row').classList.add('verified');
+          bulkVerifiedCount++;
+          updateBulkStats();
+          fetch(FEEDBACK_URL, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ address: addr, utility_type: type, returned_provider: provider, is_correct: true, source: 'bulk_verify' }) }).catch(e => console.error('Feedback error:', e));
+        });
       } else {
         // Show correction input
         actions.innerHTML = '<div class="up-bulk-correction"><input type="text" placeholder="Correct provider?" id="' + utilId + '-input" /><button data-util-id="' + utilId + '" data-addr="' + addr.replace(/"/g, '&quot;') + '" data-type="' + type + '" data-provider="' + provider.replace(/"/g, '&quot;') + '">Submit</button></div>';

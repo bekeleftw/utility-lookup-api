@@ -1499,6 +1499,32 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
         except Exception as e:
             print(f"  BDC lookup error: {e}")
     
+    # Try BroadbandNow (better coverage for Verizon, etc.)
+    if geo_result:
+        try:
+            from broadbandnow_lookup import lookup_broadbandnow
+            zip_code = geo_result.get('zip_code')
+            city = geo_result.get('city')
+            state = geo_result.get('state')
+            
+            if zip_code:
+                print(f"  Trying BroadbandNow for ZIP {zip_code}...")
+                bbn_result = lookup_broadbandnow(zip_code, city, state)
+                if bbn_result and bbn_result.get('providers'):
+                    print(f"  BroadbandNow found {len(bbn_result['providers'])} providers")
+                    providers = bbn_result['providers']
+                    return {
+                        "providers": providers,
+                        "provider_count": len(providers),
+                        "has_fiber": any(p.get('technology') == 'Fiber' for p in providers),
+                        "has_cable": any(p.get('technology') == 'Cable' for p in providers),
+                        "_source": "broadbandnow",
+                    }
+        except ImportError as e:
+            print(f"  BroadbandNow module not available: {e}")
+        except Exception as e:
+            print(f"  BroadbandNow lookup error: {e}")
+    
     # Fall back to slow Playwright scraping
     print("  Falling back to Playwright (slow)...")
     

@@ -1,0 +1,159 @@
+{
+  "_metadata": {
+    "description": "Curated URLs for utility service area verification",
+    "last_updated": "2026-01-23",
+    "notes": "These are direct links to service area check or start service pages"
+  },
+  "utilities": {
+    "Duke Energy": {
+      "service_check_url": "https://www.duke-energy.com/home/start-stop-move",
+      "address_field_selector": "input[name='address']",
+      "type": "electric",
+      "states": ["NC", "SC", "FL", "IN", "OH", "KY"]
+    },
+    "Austin Energy": {
+      "service_check_url": "https://austinenergy.com/ae/residential/start-stop-service",
+      "type": "electric",
+      "states": ["TX"],
+      "notes": "Municipal utility - serves Austin city limits only"
+    },
+    "CPS Energy": {
+      "service_check_url": "https://www.cpsenergy.com/en/my-home/start-stop-service.html",
+      "type": "electric",
+      "states": ["TX"],
+      "notes": "Municipal utility - serves San Antonio area"
+    },
+    "Knoxville Utilities Board": {
+      "service_check_url": "https://www.kub.org/start-stop-transfer-service",
+      "type": "electric",
+      "states": ["TN"],
+      "notes": "Also provides gas, water, wastewater"
+    },
+    "Georgia Power": {
+      "service_check_url": "https://www.georgiapower.com/residential/start-stop-move.html",
+      "type": "electric",
+      "states": ["GA"]
+    },
+    "Florida Power & Light": {
+      "service_check_url": "https://www.fpl.com/start-stop-move.html",
+      "type": "electric",
+      "states": ["FL"]
+    },
+    "Dominion Energy": {
+      "service_check_url": "https://www.dominionenergy.com/virginia/start-stop-or-move-service",
+      "type": "electric",
+      "states": ["VA", "NC", "SC"]
+    },
+    "Xcel Energy": {
+      "service_check_url": "https://my.xcelenergy.com/MyAccount/s/start-service",
+      "type": "electric",
+      "states": ["CO", "MN", "TX", "WI", "ND", "SD", "MI", "NM"]
+    },
+    "ComEd": {
+      "service_check_url": "https://www.comed.com/MyAccount/CustomerSupport/Pages/StartStopTransfer.aspx",
+      "type": "electric",
+      "states": ["IL"]
+    },
+    "Pacific Gas & Electric": {
+      "service_check_url": "https://www.pge.com/en/account/service-requests/start-stop-transfer-service.html",
+      "type": "electric",
+      "states": ["CA"]
+    },
+    "Southern California Edison": {
+      "service_check_url": "https://www.sce.com/residential/start-stop-transfer-service",
+      "type": "electric",
+      "states": ["CA"]
+    },
+    "LADWP": {
+      "service_check_url": "https://www.ladwp.com/residential-services/start-stop-or-transfer-service",
+      "type": "electric",
+      "states": ["CA"],
+      "notes": "Los Angeles Department of Water and Power"
+    },
+    "Entergy": {
+      "service_check_url": "https://www.entergy.com/residential/start-stop-move/",
+      "type": "electric",
+      "states": ["LA", "TX", "AR", "MS"]
+    },
+    "Ameren": {
+      "service_check_url": "https://www.ameren.com/start-stop-move",
+      "type": "electric",
+      "states": ["IL", "MO"]
+    },
+    "AEP": {
+      "service_check_url": "https://www.aep.com/service/start-stop-move",
+      "type": "electric",
+      "states": ["OH", "TX", "OK", "IN", "MI", "WV", "VA", "KY", "TN"]
+    },
+    "NV Energy": {
+      "service_check_url": "https://www.nvenergy.com/my-account/start-stop-move",
+      "type": "electric",
+      "states": ["NV"]
+    },
+    "Arizona Public Service": {
+      "service_check_url": "https://www.aps.com/en/Residential/Start-Stop-Move",
+      "type": "electric",
+      "states": ["AZ"]
+    },
+    "Salt River Project": {
+      "service_check_url": "https://srpnet.com/account/start-stop-transfer.aspx",
+      "type": "electric",
+      "states": ["AZ"]
+    },
+    "Puget Sound Energy": {
+      "service_check_url": "https://www.pse.com/start-stop-move",
+      "type": "electric",
+      "states": ["WA"]
+    },
+    "Seattle City Light": {
+      "service_check_url": "https://www.seattle.gov/city-light/residential-services/start-stop-or-transfer-service",
+      "type": "electric",
+      "states": ["WA"]
+    },
+    "Portland General Electric": {
+      "service_check_url": "https://portlandgeneral.com/start-stop-move",
+      "type": "electric",
+      "states": ["OR"]
+    },
+    "PECO": {
+      "service_check_url": "https://www.peco.com/MyAccount/CustomerSupport/Pages/StartStopTransfer.aspx",
+      "type": "electric",
+      "states": ["PA"]
+    },
+    "PPL Electric": {
+      "service_check_url": "https://www.pplelectric.com/my-account/start-stop-transfer-service",
+      "type": "electric",
+      "states": ["PA"]
+    },
+    "Eversource": {
+      "service_check_url": "https://www.eversource.com/content/residential/account-billing/start-stop-move",
+      "type": "electric",
+      "states": ["CT", "MA", "NH"]
+    },
+    "National Grid": {
+      "service_check_url": "https://www.nationalgridus.com/Start-Stop-Move",
+      "type": "electric",
+      "states": ["NY", "MA", "RI"]
+    },
+    "Con Edison": {
+      "service_check_url": "https://www.coned.com/en/accounts-billing/start-stop-or-move-service",
+      "type": "electric",
+      "states": ["NY"]
+    },
+    "PSEG": {
+      "service_check_url": "https://nj.pseg.com/myaccount/startstopmove",
+      "type": "electric",
+      "states": ["NJ"]
+    },
+    "Baltimore Gas & Electric": {
+      "service_check_url": "https://www.bge.com/MyAccount/CustomerSupport/Pages/StartStopTransfer.aspx",
+      "type": "electric",
+      "states": ["MD"]
+    },
+    "Pepco": {
+      "service_check_url": "https://www.pepco.com/MyAccount/CustomerSupport/Pages/StartStopTransfer.aspx",
+      "type": "electric",
+      "states": ["DC", "MD"]
+    }
+  }
+}

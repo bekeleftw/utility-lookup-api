@@ -127,15 +127,20 @@ def lookup():
             'utilities': {}
         }
         
+        # Extract city/state for service check URL lookup
+        geocoded = result.get('_geocoded', {})
+        city = geocoded.get('city')
+        state = geocoded.get('state')
+        
         # Electric - only if selected
         if 'electric' in selected_utilities:
             electric = result.get('electric')
             if electric:
                 if isinstance(electric, list):
-                    response['utilities']['electric'] = [format_utility(e, 'electric') for e in electric]
+                    response['utilities']['electric'] = [format_utility(e, 'electric', city, state) for e in electric]
                     primary = electric[0]
                 else:
-                    response['utilities']['electric'] = [format_utility(electric, 'electric')]
+                    response['utilities']['electric'] = [format_utility(electric, 'electric', city, state)]
                     primary = electric
                 
                 # Build electric note with verification info
@@ -182,10 +187,10 @@ def lookup():
             
             if gas:
                 if isinstance(gas, list):
-                    response['utilities']['gas'] = [format_utility(g, 'gas') for g in gas]
+                    response['utilities']['gas'] = [format_utility(g, 'gas', city, state) for g in gas]
                     primary = gas[0]
                 else:
-                    response['utilities']['gas'] = [format_utility(gas, 'gas')]
+                    response['utilities']['gas'] = [format_utility(gas, 'gas', city, state)]
                     primary = gas
                 
                 # Build gas note with verification info
@@ -227,7 +232,7 @@ def lookup():
         if 'water' in selected_utilities:
             water = result.get('water')
             if water:
-                response['utilities']['water'] = [format_utility(water, 'water')]
+                response['utilities']['water'] = [format_utility(water, 'water', city, state)]
                 w = water
                 if w.get('_confidence') == 'medium':
                     response['utilities']['water_note'] = f"Matched by county - multiple water systems serve this area. {w.get('_note', '')}"
@@ -254,13 +259,26 @@ def lookup():
         return jsonify({'error': str(e)}), 500
 
 
-def format_utility(util, util_type):
+def format_utility(util, util_type, city=None, state=None):
     """Format utility data for API response."""
     from name_normalizer import normalize_utility_name
+    from browser_verification import find_service_check_url
     
     # Get raw name and normalize it
     raw_name = util.get('NAME', util.get('name', 'Unknown'))
     normalized_name = normalize_utility_name(raw_name)
+    
+    # Try to find service check URL for this utility
+    service_check_url = None
+    if normalized_name and util_type in ['electric', 'gas']:
+        try:
+            service_check_url = find_service_check_url(
+                normalized_name, 
+                city or util.get('CITY', util.get('city')),
+                state or util.get('STATE', util.get('state'))
+            )
+        except Exception:
+            pass  # Don't fail if service check lookup fails
     
     if util_type == 'water':
         return {
@@ -297,7 +315,8 @@ def format_utility(util, util_type):
         'confidence_factors': util.get('confidence_factors'),
         'verified': util.get('_serp_verified', False),
         '_source': util.get('_source') or util.get('_verification_source') or util.get('source'),
-        'other_providers': util.get('_other_providers')
+        'other_providers': util.get('_other_providers'),
+        'service_check_url': service_check_url  # URL where user can verify service area
     }
     
     # Add deregulated market info for electric utilities
@@ -518,7 +537,7 @@ def lookup_stream():
                     electric = v2_result.get('electric') if v2_result else None
                     if electric:
                         raw_confidence = electric.get('_confidence') or 'high'
-                        formatted = format_utility(electric, 'electric')
+                        formatted = format_utility(electric, 'electric', city, state)
                         formatted['confidence'] = raw_confidence
                         yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                     else:
@@ -532,7 +551,7 @@ def lookup_stream():
                             yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
                         else:
                             raw_confidence = gas.get('_confidence') or 'high'
-                            formatted = format_utility(gas, 'gas')
+                            formatted = format_utility(gas, 'gas', city, state)
                             formatted['confidence'] = raw_confidence
                             yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
                     else:
@@ -542,7 +561,7 @@ def lookup_stream():
                 if 'water' in selected_utilities:
                     water = v2_result.get('water') if v2_result else None
                     if water:
-                        yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water')})}\n\n"
+                        yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water', city, state)})}\n\n"
                     else:
                         yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
             

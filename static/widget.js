@@ -2,7 +2,7 @@
 (function() {
 const API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
 const FEEDBACK_URL = 'https://web-production-9acc6.up.railway.app/api/feedback';
-const form = document.getElementById('utilityForm');
+const form = document.getElementById('utilityForm') || document.getElementById('singleForm');
 const input = document.getElementById('addressInput');
 const btn = document.getElementById('searchBtn');
 const results = document.getElementById('utilityResults');

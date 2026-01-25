@@ -27,7 +27,9 @@ return null;
 }
 let currentAddress = '';
 let currentZipCode = '';
-toggles.forEach(toggle => {
+// Only add toggle handlers for single form toggles (not multi-form)
+const singleFormToggles = document.querySelectorAll('#singleForm .up-toggle, #utilityForm .up-toggle');
+(singleFormToggles.length > 0 ? singleFormToggles : toggles).forEach(toggle => {
 toggle.addEventListener('click', (e) => {
 e.preventDefault();
 const checkbox = toggle.querySelector('input');

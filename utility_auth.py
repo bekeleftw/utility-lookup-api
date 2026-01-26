@@ -121,6 +121,26 @@ def require_admin(f):
 # AUTH ENDPOINTS
 # ============================================
 
+@utility_auth_bp.route('/api/utility-auth/debug', methods=['GET'])
+def debug_config():
+    """Debug endpoint to check configuration."""
+    try:
+        result = airtable_request(USERS_TABLE, params={'maxRecords': 1})
+        return jsonify({
+            "airtable_connected": True,
+            "base_id_set": bool(AIRTABLE_BASE_ID),
+            "api_key_set": bool(AIRTABLE_API_KEY),
+            "jwt_secret_set": bool(JWT_SECRET),
+            "sample_record": bool(result.get('records'))
+        })
+    except Exception as e:
+        return jsonify({
+            "airtable_connected": False,
+            "error": str(e),
+            "base_id_set": bool(AIRTABLE_BASE_ID),
+            "api_key_set": bool(AIRTABLE_API_KEY)
+        })
+
 @utility_auth_bp.route('/api/utility-auth/login', methods=['POST'])
 def login():
     """Authenticate user and return JWT token."""

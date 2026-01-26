@@ -158,9 +158,9 @@ def login():
         if not email or not password:
             return jsonify({"success": False, "error": "Email and password required"})
         
-        # Query Airtable for user
+        # Query Airtable for user (Note: Airtable field is "Email" with capital E)
         params = {
-            'filterByFormula': f"AND(LOWER({{email}}) = '{email}', {{is_active}} = TRUE())"
+            'filterByFormula': f"AND(LOWER({{Email}}) = '{email}', {{is_active}} = TRUE())"
         }
         print(f"[AUTH] Looking up user: {email}")
         print(f"[AUTH] Airtable config: BASE_ID={AIRTABLE_BASE_ID[:10] if AIRTABLE_BASE_ID else 'None'}..., API_KEY={'set' if AIRTABLE_API_KEY else 'None'}")

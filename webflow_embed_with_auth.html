@@ -1,0 +1,1151 @@
+<style>
+.upa-login{max-width:360px;margin:60px auto;background:#fff;border-radius:12px;padding:32px;box-shadow:0 4px 12px rgba(0,0,0,.08);text-align:center;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.upa-login h2{font-size:20px;font-weight:600;color:#1a1a1a;margin:0 0 4px}
+.upa-login p{color:#6b7280;font-size:14px;margin:0 0 24px}
+.upa-error{background:#fef2f2;color:#dc2626;padding:10px;border-radius:6px;font-size:13px;margin-bottom:16px;display:none}
+.upa-field{margin-bottom:16px;text-align:left}
+.upa-field label{display:block;font-size:13px;font-weight:500;color:#374151;margin-bottom:6px}
+.upa-field input{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:8px;font-size:14px;box-sizing:border-box}
+.upa-field input:focus{outline:none;border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,.1)}
+.upa-btn{width:100%;padding:12px;background:#7AC143;color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer}
+.upa-btn:hover{background:#5a9a30}
+.upa-btn:disabled{background:#9ca3af;cursor:not-allowed}
+.upa-bar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#f0f9e8;border-radius:8px;margin:0 auto 16px;max-width:720px;font-size:13px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;box-sizing:border-box}
+.upa-logout{padding:4px 10px;font-size:12px;background:#fff;border:1px solid #e5e7eb;color:#6b7280;border-radius:4px;cursor:pointer}
+.upa-logout:hover{background:#f3f4f6}
+.upa-stats{background:#fff;border-radius:12px;padding:20px;margin:0 auto 20px;max-width:720px;box-shadow:0 1px 3px rgba(0,0,0,.08);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}
+.upa-stats h3{font-size:16px;font-weight:600;color:#374151;margin:0 0 16px;display:flex;justify-content:space-between;align-items:center}
+.upa-stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.upa-stat{background:#f9fafb;border-radius:8px;padding:12px;text-align:center}
+.upa-stat-val{font-size:24px;font-weight:700;color:#111827}
+.upa-stat-lbl{font-size:12px;color:#6b7280;margin-top:4px}
+.upa-tbl{width:100%;border-collapse:collapse;font-size:13px}
+.upa-tbl th{text-align:left;padding:8px;border-bottom:2px solid #e5e7eb;color:#6b7280;font-weight:500;font-size:11px;text-transform:uppercase}
+.upa-tbl td{padding:8px;border-bottom:1px solid #f3f4f6}
+.upa-tbl tr:hover{background:#f9fafb}
+.upa-name{font-weight:500;color:#111827}
+.upa-email{font-size:11px;color:#9ca3af}
+.upa-grn{color:#10b981}
+.upa-red{color:#ef4444}
+.upa-refresh{padding:4px 10px;font-size:12px;background:#fff;border:1px solid #e5e7eb;color:#374151;border-radius:4px;cursor:pointer}
+@media(max-width:600px){.upa-stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* Base container */
+.up-container{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;max-width:720px;margin:0 auto;padding:32px 24px;background:#fafafa;border-radius:16px;}
+.up-header{text-align:center;margin-bottom:24px;}
+.up-logo{display:flex;align-items:center;justify-content:center;margin-bottom:8px;}
+.up-logo img{height:40px;width:auto;}
+.up-title{font-size:20px;font-weight:600;color:#1a1a1a;margin:0 0 4px 0;}
+.up-subtitle{font-size:14px;color:#6b7280;margin:0;}
+
+/* Mode toggle */
+.up-mode-tabs{display:flex;gap:0;margin-bottom:20px;border:2px solid #e5e7eb;border-radius:10px;overflow:hidden;background:white;}
+.up-mode-tab{flex:1;padding:12px 16px;font-size:14px;font-weight:500;border:none;background:white;cursor:pointer;transition:all 0.2s;color:#6b7280;}
+.up-mode-tab:not(:last-child){border-right:1px solid #e5e7eb;}
+.up-mode-tab:hover{background:#f9fafb;}
+.up-mode-tab.active{background:#f0f9e8;color:#4a7c28;font-weight:600;}
+
+/* Form */
+.up-form{display:flex;flex-direction:column;gap:16px;margin-bottom:20px;}
+.up-input{width:100%;padding:14px 18px;font-size:16px;border:2px solid #e5e7eb;border-radius:12px;outline:none;transition:all 0.2s;box-sizing:border-box;background:white;}
+.up-input:focus{border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,0.1);}
+.up-textarea{width:100%;padding:14px 18px;font-size:14px;font-family:inherit;border:2px solid #e5e7eb;border-radius:12px;outline:none;transition:all 0.2s;box-sizing:border-box;background:white;resize:vertical;line-height:1.5;}
+.up-textarea:focus{border-color:#7AC143;box-shadow:0 0 0 3px rgba(122,193,67,0.1);}
+.up-textarea-hint{font-size:12px;color:#9ca3af;margin-top:-8px;}
+.up-hidden{display:none !important;}
+
+/* Utility toggles */
+.up-utility-toggles{display:flex;flex-wrap:wrap;gap:8px;}
+.up-toggle{display:flex;align-items:center;gap:6px;padding:8px 14px;background:white;border:2px solid #e5e7eb;border-radius:10px;cursor:pointer;transition:all 0.2s;user-select:none;}
+.up-toggle:hover{border-color:#d1d5db;}
+.up-toggle.active{border-color:#7AC143;background:#f0f9e8;}
+.up-toggle-icon{font-size:16px;}
+.up-toggle-label{font-size:14px;font-weight:500;color:#374151;}
+.up-toggle-check{width:18px;height:18px;border:2px solid #d1d5db;border-radius:4px;display:flex;align-items:center;justify-content:center;transition:all 0.2s;font-size:12px;color:white;}
+.up-toggle.active .up-toggle-check{background:#7AC143;border-color:#7AC143;}
+.up-toggle input{display:none;}
+
+/* Button */
+.up-btn{width:100%;padding:14px 24px;font-size:16px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:12px;cursor:pointer;transition:all 0.2s;}
+.up-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(122,193,67,0.3);}
+.up-btn:disabled{background:#9ca3af;transform:none;box-shadow:none;cursor:not-allowed;}
+
+/* Results area */
+.up-results{display:flex;flex-direction:column;gap:16px;}
+.up-error{background:#fef2f2;border:1px solid #fecaca;border-radius:10px;padding:16px;color:#991b1b;}
+.up-status-message{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#f0f9e8;border-radius:10px;color:#374151;font-size:14px;}
+
+/* Multi-address results */
+.up-multi-results{display:flex;flex-direction:column;gap:24px;margin-top:20px;}
+.up-multi-section{background:white;border-radius:14px;padding:20px;box-shadow:0 2px 8px rgba(0,0,0,0.06);border:1px solid #e5e7eb;}
+.up-multi-address{display:flex;align-items:center;gap:10px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid #e5e7eb;}
+.up-multi-address-icon{font-size:18px;}
+.up-multi-address-text{font-size:15px;font-weight:600;color:#1a1a1a;}
+.up-multi-address-status{margin-left:auto;font-size:12px;padding:4px 10px;border-radius:6px;}
+.up-multi-address-status.loading{background:#f3f4f6;color:#6b7280;}
+.up-multi-address-status.complete{background:#dcfce7;color:#166534;}
+.up-multi-address-status.error{background:#fee2e2;color:#991b1b;}
+.up-multi-utilities{display:flex;flex-direction:column;gap:12px;}
+
+/* Utility card */
+.up-card{background:#f9fafb;border-radius:12px;padding:16px;border:1px solid #e5e7eb;}
+.up-card-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;}
+.up-card-type{display:flex;align-items:center;gap:8px;}
+.up-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.up-icon-electric{background:#fef3c7;}
+.up-icon-gas{background:#fee2e2;}
+.up-icon-water{background:#dbeafe;}
+.up-icon-internet{background:#e0e7ff;}
+.up-type-label{font-size:12px;font-weight:600;color:#6b7280;text-transform:uppercase;letter-spacing:0.5px;}
+.up-header-badges{display:flex;gap:6px;}
+.up-badge{font-size:11px;font-weight:600;padding:4px 10px;border-radius:6px;}
+.up-badge-verified{background:#dcfce7;color:#166534;}
+.up-badge-high{background:#dbeafe;color:#1e40af;}
+.up-badge-medium{background:#fef3c7;color:#92400e;}
+.up-badge-low{background:#fee2e2;color:#991b1b;}
+.up-badge-district{background:#ede9fe;color:#5b21b6;}
+.up-provider-name{font-size:16px;font-weight:700;color:#111827;margin-bottom:8px;}
+.up-details{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
+.up-details-left{display:flex;gap:20px;}
+.up-detail{display:flex;flex-direction:column;gap:2px;}
+.up-detail-label{font-size:10px;text-transform:uppercase;letter-spacing:0.5px;color:#9ca3af;}
+.up-detail-value{font-size:13px;color:#374151;}
+.up-detail-value a{color:#7AC143;text-decoration:none;}
+.up-detail-value a:hover{text-decoration:underline;}
+.up-feedback-inline{display:flex;align-items:center;gap:6px;font-size:12px;color:#9ca3af;}
+.up-feedback-btn-small{padding:4px 8px;font-size:11px;font-weight:500;border-radius:4px;cursor:pointer;transition:all 0.15s;border:1px solid #e5e7eb;background:white;color:#6b7280;}
+.up-feedback-btn-small:hover{border-color:#d1d5db;color:#374151;}
+.up-feedback-btn-small.yes:hover{background:#f0f9e8;border-color:#7AC143;color:#4a7c28;}
+.up-feedback-btn-small.no:hover{background:#fef2f2;border-color:#ef4444;color:#991b1b;}
+.up-feedback-btn-small.selected{pointer-events:none;}
+.up-feedback-btn-small.yes.selected{background:#7AC143;border-color:#7AC143;color:white;}
+.up-feedback-btn-small.no.selected{background:#ef4444;border-color:#ef4444;color:white;}
+.up-feedback-done{display:none;font-size:11px;color:#5a9a30;}
+.up-feedback-done.show{display:inline;}
+.up-no-result{color:#9ca3af;font-size:13px;font-style:italic;}
+
+/* Confidence badge with dropdown */
+.up-badge-confidence{cursor:pointer;position:relative;}
+.up-badge-confidence .up-badge-caret{margin-left:4px;font-size:8px;}
+.up-confidence-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:6px;background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:12px;color:#374151;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:100;}
+.up-confidence-dropdown.open{display:block;}
+.up-confidence-dropdown .score{font-weight:700;color:#7AC143;}
+
+/* Feedback forms */
+.up-feedback-form,.up-url-form{display:none;margin-top:12px;padding:12px;background:#f9fafb;border-radius:8px;border:1px solid #e5e7eb;}
+.up-feedback-form.open,.up-url-form.open{display:block;}
+.up-feedback-form label,.up-url-form label{display:block;font-size:12px;font-weight:600;color:#374151;margin-bottom:8px;}
+.up-feedback-form input,.up-url-form input{width:100%;padding:10px 12px;font-size:14px;border:1px solid #e5e7eb;border-radius:6px;margin-bottom:8px;box-sizing:border-box;}
+.up-feedback-form input:focus,.up-url-form input:focus{outline:none;border-color:#7AC143;}
+.up-feedback-submit,.up-url-submit{padding:8px 16px;font-size:13px;font-weight:600;color:white;background:#7AC143;border:none;border-radius:6px;cursor:pointer;}
+.up-feedback-submit:hover,.up-url-submit:hover{background:#5a9a30;}
+.up-url-buttons{display:flex;gap:8px;}
+.up-url-skip{padding:8px 16px;font-size:13px;font-weight:500;color:#6b7280;background:white;border:1px solid #e5e7eb;border-radius:6px;cursor:pointer;}
+.up-url-skip:hover{background:#f3f4f6;}
+
+/* Location pill */
+.up-location{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f0f9e8;border-radius:8px;font-size:13px;color:#374151;margin-bottom:12px;}
+.up-location-icon{font-size:16px;}
+
+/* Loading spinner */
+.up-loading-spinner{width:20px;height:20px;border:3px solid #e5e7eb;border-top-color:#7AC143;border-radius:50%;animation:spin 0.8s linear infinite;}
+.up-loading-spinner-small{width:14px;height:14px;border:2px solid #e5e7eb;border-top-color:#7AC143;border-radius:50%;animation:spin 0.8s linear infinite;display:inline-block;}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* Deregulated banner */
+.up-dereg-banner{background:linear-gradient(135deg,#ecfdf5 0%,#d1fae5 100%);border:2px solid #10b981;border-radius:10px;padding:12px;margin-top:8px;}
+.up-dereg-header{display:flex;align-items:center;gap:6px;margin-bottom:6px;}
+.up-dereg-icon{font-size:16px;}
+.up-dereg-title{font-size:14px;font-weight:700;color:#065f46;}
+.up-dereg-cta{display:inline-flex;align-items:center;gap:4px;background:#10b981;color:white;padding:6px 12px;border-radius:6px;font-size:12px;font-weight:600;text-decoration:none;transition:all 0.2s;}
+.up-dereg-cta:hover{background:#059669;}
+
+/* CSV section */
+.up-csv-section{background:white;border:2px dashed #e5e7eb;border-radius:12px;padding:24px;text-align:center;transition:all 0.2s;cursor:pointer;}
+.up-csv-section:hover{border-color:#7AC143;background:#f0f9e8;}
+.up-csv-subtitle{font-size:13px;color:#9ca3af;margin-bottom:12px;}
+.up-csv-input{display:none;}
+.up-csv-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;font-size:14px;font-weight:600;color:#7AC143;background:white;border:2px solid #7AC143;border-radius:8px;cursor:pointer;transition:all 0.2s;}
+.up-csv-btn:hover{background:#7AC143;color:white;}
+.up-csv-info{font-size:12px;color:#9ca3af;margin-top:12px;}
+.up-csv-progress{display:none;margin-top:16px;}
+.up-csv-progress.show{display:block;}
+.up-progress-bar{height:8px;background:#e5e7eb;border-radius:4px;overflow:hidden;margin-bottom:8px;}
+.up-progress-fill{height:100%;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border-radius:4px;transition:width 0.3s;width:0%;}
+.up-progress-text{font-size:13px;color:#6b7280;}
+.up-csv-results{display:none;margin-top:16px;text-align:left;}
+.up-csv-results.show{display:block;}
+.up-csv-stats{display:flex;gap:16px;margin-bottom:12px;}
+.up-csv-stat{flex:1;background:#f9fafb;border-radius:8px;padding:12px;text-align:center;}
+.up-csv-stat-value{font-size:24px;font-weight:700;color:#111827;}
+.up-csv-stat-label{font-size:12px;color:#6b7280;}
+.up-csv-stat.success .up-csv-stat-value{color:#5a9a30;}
+.up-csv-stat.error .up-csv-stat-value{color:#dc2626;}
+.up-csv-download{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:14px;font-weight:600;color:white;background:linear-gradient(135deg,#7AC143 0%,#5a9a30 100%);border:none;border-radius:8px;cursor:pointer;}
+
+/* Internet table */
+.up-internet-table{width:100%;border-collapse:collapse;font-size:13px;}
+.up-internet-table th{text-align:left;font-size:11px;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:0.5px;padding:8px 12px;border-bottom:1px solid #e5e7eb;}
+.up-internet-table td{padding:10px 12px;border-bottom:1px solid #f3f4f6;color:#374151;}
+.up-internet-table tr:last-child td{border-bottom:none;}
+.up-internet-table tr:hover{background:#f9fafb;}
+.up-internet-provider-cell{font-weight:600;color:#111827;}
+.up-internet-type-cell{display:inline-flex;align-items:center;gap:6px;}
+.up-internet-type-dot{width:8px;height:8px;border-radius:50%;}
+.up-internet-type-dot.fiber{background:#22c55e;}
+.up-internet-type-dot.cable{background:#3b82f6;}
+.up-internet-type-dot.dsl{background:#eab308;}
+.up-internet-type-dot.wireless{background:#8b5cf6;}
+.up-internet-type-dot.satellite{background:#6b7280;}
+.up-internet-speed-cell{font-family:monospace;font-size:12px;color:#6b7280;}
+.up-internet-speed-down{font-weight:600;color:#111827;}
+
+/* Footer */
+.up-footer{text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid #e5e7eb;}
+.up-footer a{font-size:13px;color:#7AC143;text-decoration:none;font-weight:500;}
+
+/* Other providers dropdown */
+.up-other-providers{margin-top:12px;padding-top:12px;border-top:1px solid #e5e7eb;}
+.up-other-toggle{display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;color:#6b7280;cursor:pointer;user-select:none;}
+.up-other-toggle:hover{color:#374151;}
+.up-other-caret{font-size:10px;transition:transform 0.2s;}
+.up-other-toggle.open .up-other-caret{transform:rotate(180deg);}
+.up-other-list{overflow:hidden;max-height:0;transition:max-height 0.3s ease-out;}
+.up-other-list.open{max-height:1000px;}
+.up-alt-provider{padding:12px 0;border-bottom:1px dashed #e5e7eb;}
+.up-alt-provider:last-child{border-bottom:none;}
+.up-alt-name{font-size:15px;font-weight:600;color:#374151;margin-bottom:6px;}
+.up-alt-details{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.up-alt-contact{display:flex;gap:16px;}
+.up-alt-done{display:none;font-size:11px;color:#5a9a30;}
+.up-alt-done.show{display:inline;}
+.up-propane-note{display:block;font-size:11px;color:#d97706;font-style:italic;margin-top:4px;}
+
+/* Mobile */
+@media (max-width:480px){
+  .up-container{padding:20px 16px;}
+  .up-details{flex-direction:column;align-items:flex-start;}
+  .up-details-left{width:100%;}
+  .up-feedback-inline{margin-top:8px;}
+}
+</style>
+
+<div id="upaLogin" class="upa-login">
+  <h2>Utility Lookup</h2>
+  <p>Sign in to continue</p>
+  <div id="upaError" class="upa-error"></div>
+  <div class="upa-field"><label>Email</label><input type="email" id="upaEmail" placeholder="you@company.com"></div>
+  <div class="upa-field"><label>Password</label><input type="password" id="upaPass" placeholder="••••••••"></div>
+  <button id="upaBtn" class="upa-btn">Sign In</button>
+</div>
+
+<div id="upaBar" class="upa-bar" style="display:none;">
+  <span>👋 Welcome, <strong id="upaUser"></strong></span>
+  <button id="upaLogout" class="upa-logout">Sign Out</button>
+</div>
+
+<div id="upaStats" class="upa-stats" style="display:none;">
+  <h3>📊 Usage Statistics <button id="upaRefresh" class="upa-refresh">Refresh</button></h3>
+  <div class="upa-stats-grid">
+    <div class="upa-stat"><div class="upa-stat-val" id="upaTotalSearches">-</div><div class="upa-stat-lbl">Total Searches</div></div>
+    <div class="upa-stat"><div class="upa-stat-val" id="upaTotalUsers">-</div><div class="upa-stat-lbl">Active Users</div></div>
+    <div class="upa-stat"><div class="upa-stat-val" id="upaAccuracy">-</div><div class="upa-stat-lbl">Accuracy Rate</div></div>
+    <div class="upa-stat"><div class="upa-stat-val" id="upaFeedback">-</div><div class="upa-stat-lbl">Feedback Rate</div></div>
+  </div>
+  <table class="upa-tbl">
+    <thead><tr><th>User</th><th>Searches</th><th class="upa-grn">✓</th><th class="upa-red">✗</th><th>Accuracy</th><th>Last Active</th></tr></thead>
+    <tbody id="upaTblBody"></tbody>
+  </table>
+</div>
+<div class="up-container">
+  <div class="up-header">
+    <div class="up-logo"><img src="https://cdn.prod.website-files.com/659dd5a41f44c8d830f6cd7f/65a6e32124ad5ffc69552987_Utility%20Profit%20logo%20green%20full%20horizontal.svg" alt="Utility Profit"></div>
+    <h2 class="up-title">Utility Provider Lookup</h2>
+    <p class="up-subtitle">Enter an address to find utility providers</p>
+  </div>
+
+  <!-- Mode tabs -->
+  <div class="up-mode-tabs">
+    <button class="up-mode-tab active" data-mode="single">Single Address</button>
+    <button class="up-mode-tab" data-mode="multi">Multiple Addresses</button>
+    <button class="up-mode-tab" data-mode="csv">Upload CSV</button>
+  </div>
+
+  <!-- Single address form -->
+  <form class="up-form" id="singleForm">
+    <input type="text" class="up-input" id="addressInput" placeholder="123 Main St, Dallas, TX 75201" required />
+    <div class="up-utility-toggles" id="singleToggles">
+      <label class="up-toggle active" data-utility="electric"><input type="checkbox" checked /><span class="up-toggle-icon">⚡</span><span class="up-toggle-label">Electric</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="gas"><input type="checkbox" checked /><span class="up-toggle-icon">🔥</span><span class="up-toggle-label">Gas</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="water"><input type="checkbox" checked /><span class="up-toggle-icon">💧</span><span class="up-toggle-label">Water</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="internet"><input type="checkbox" checked /><span class="up-toggle-icon">🌐</span><span class="up-toggle-label">Internet</span><span class="up-toggle-check">✓</span></label>
+    </div>
+    <button type="submit" class="up-btn" id="searchBtn">Search</button>
+  </form>
+
+  <!-- Multi address form -->
+  <div class="up-form up-hidden" id="multiForm">
+    <textarea class="up-textarea" id="multiInput" placeholder="Enter addresses, one per line:&#10;123 Main St, Austin, TX 78701&#10;456 Oak Ave, Dallas, TX 75201&#10;789 Elm Blvd, Houston, TX 77001" rows="6"></textarea>
+    <div class="up-textarea-hint">Enter up to 20 addresses, one per line</div>
+    <div class="up-utility-toggles" id="multiToggles">
+      <label class="up-toggle active" data-utility="electric"><input type="checkbox" checked /><span class="up-toggle-icon">⚡</span><span class="up-toggle-label">Electric</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="gas"><input type="checkbox" checked /><span class="up-toggle-icon">🔥</span><span class="up-toggle-label">Gas</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="water"><input type="checkbox" checked /><span class="up-toggle-icon">💧</span><span class="up-toggle-label">Water</span><span class="up-toggle-check">✓</span></label>
+      <label class="up-toggle active" data-utility="internet"><input type="checkbox" checked /><span class="up-toggle-icon">🌐</span><span class="up-toggle-label">Internet</span><span class="up-toggle-check">✓</span></label>
+    </div>
+    <button type="button" class="up-btn" id="multiSearchBtn">Look Up All</button>
+  </div>
+
+  <!-- CSV form -->
+  <div class="up-form up-hidden" id="csvForm">
+    <div class="up-csv-section" id="csvDropZone">
+      <div class="up-csv-subtitle">Upload a CSV file with addresses (max 100)</div>
+      <input type="file" class="up-csv-input" id="csvInput" accept=".csv" />
+      <button type="button" class="up-csv-btn" id="csvSelectBtn"><span>📁</span> Select CSV File</button>
+      <div class="up-csv-info">CSV must have an "address" column. Optional: city, state, zip columns.</div>
+    </div>
+    <div class="up-csv-progress" id="csvProgress">
+      <div class="up-progress-bar"><div class="up-progress-fill" id="csvProgressFill"></div></div>
+      <div class="up-progress-text" id="csvProgressText">Processing 0 of 0...</div>
+    </div>
+    <div class="up-csv-results" id="csvResults">
+      <div class="up-csv-stats">
+        <div class="up-csv-stat success"><div class="up-csv-stat-value" id="csvSuccessCount">0</div><div class="up-csv-stat-label">Successful</div></div>
+        <div class="up-csv-stat error"><div class="up-csv-stat-value" id="csvErrorCount">0</div><div class="up-csv-stat-label">Errors</div></div>
+      </div>
+      <button type="button" class="up-csv-download" id="csvDownloadBtn"><span>⬇️</span> Download Results CSV</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="utilityResults" class="up-results"></div>
+  <div id="multiResults" class="up-multi-results up-hidden"></div>
+
+  <div class="up-footer">Powered by <a href="https://utilityprofit.com" target="_blank">Utility Profit</a></div>
+</div>
+<script>
+var AUTH_URL='https://web-production-9acc6.up.railway.app/api/utility-auth';
+var USAGE_URL='https://web-production-9acc6.up.railway.app/api/utility-usage';
+var upaUser=null,upaToken=null,upaLogId=null;
+
+async function upaCheckAuth(){
+  var token=localStorage.getItem('utility_auth_token');
+  if(!token){upaShowLogin();return;}
+  try{
+    var res=await fetch(AUTH_URL+'/verify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:token})});
+    var data=await res.json();
+    if(data.valid){upaToken=token;upaUser=data.user;upaShowApp();}
+    else{localStorage.removeItem('utility_auth_token');upaShowLogin();}
+  }catch(e){upaShowLogin();}
+}
+
+async function upaLogin(){
+  var email=document.getElementById('upaEmail').value.trim();
+  var pass=document.getElementById('upaPass').value;
+  var err=document.getElementById('upaError');
+  var btn=document.getElementById('upaBtn');
+  if(!email||!pass){err.textContent='Please enter email and password';err.style.display='block';return;}
+  btn.disabled=true;btn.textContent='Signing in...';err.style.display='none';
+  try{
+    var res=await fetch(AUTH_URL+'/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,password:pass})});
+    var data=await res.json();
+    if(data.success){localStorage.setItem('utility_auth_token',data.token);upaToken=data.token;upaUser=data.user;upaShowApp();}
+    else{err.textContent=data.error||'Login failed';err.style.display='block';}
+  }catch(e){err.textContent='Connection error';err.style.display='block';}
+  btn.disabled=false;btn.textContent='Sign In';
+}
+
+function upaShowLogin(){
+  document.getElementById('upaLogin').style.display='block';
+  document.getElementById('upaBar').style.display='none';
+  document.getElementById('upaStats').style.display='none';
+  document.querySelector('.up-container').style.display='none';
+}
+
+function upaShowApp(){
+  document.getElementById('upaLogin').style.display='none';
+  document.getElementById('upaBar').style.display='flex';
+  document.getElementById('upaUser').textContent=upaUser.name||upaUser.email;
+  document.querySelector('.up-container').style.display='block';
+  if(upaUser.is_admin){document.getElementById('upaStats').style.display='block';upaLoadStats();}
+}
+
+function upaLogout(){localStorage.removeItem('utility_auth_token');upaToken=null;upaUser=null;upaShowLogin();}
+
+async function upaLoadStats(){
+  if(!upaToken||!upaUser||!upaUser.is_admin)return;
+  try{
+    var res=await fetch(USAGE_URL+'/stats',{headers:{'Authorization':'Bearer '+upaToken}});
+    var data=await res.json();
+    if(data.success){
+      document.getElementById('upaTotalSearches').textContent=data.totals.total_searches.toLocaleString();
+      document.getElementById('upaTotalUsers').textContent=data.totals.total_users;
+      document.getElementById('upaAccuracy').textContent=(data.totals.overall_accuracy*100).toFixed(1)+'%';
+      document.getElementById('upaFeedback').textContent=(data.totals.overall_feedback_rate*100).toFixed(1)+'%';
+      var tbody=document.getElementById('upaTblBody');
+      tbody.innerHTML=data.users.map(function(u){
+        var ago=u.last_active?upaFmtTime(u.last_active):'Never';
+        return '<tr><td><div class="upa-name">'+upaEsc(u.name)+'</div><div class="upa-email">'+upaEsc(u.email)+'</div></td><td>'+u.total_searches+'</td><td class="upa-grn">'+u.marked_correct+'</td><td class="upa-red">'+u.marked_incorrect+'</td><td>'+(u.accuracy_rate*100).toFixed(0)+'%</td><td>'+ago+'</td></tr>';
+      }).join('');
+    }
+  }catch(e){}
+}
+
+function upaEsc(s){if(!s)return'';var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function upaFmtTime(iso){var d=new Date(iso),now=new Date(),diff=now-d,m=Math.floor(diff/60000),h=Math.floor(diff/3600000),dy=Math.floor(diff/86400000);if(m<60)return m+'m ago';if(h<24)return h+'h ago';if(dy<7)return dy+'d ago';return d.toLocaleDateString();}
+
+async function upaLogSearch(address,utilities,results){
+  if(!upaToken)return;
+  try{var res=await fetch(USAGE_URL+'/log',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:upaToken,address:address,utilities_requested:utilities,results:results})});var data=await res.json();if(data.success)upaLogId=data.log_id;}catch(e){}
+}
+
+document.addEventListener('DOMContentLoaded',function(){
+  document.getElementById('upaBtn').addEventListener('click',upaLogin);
+  document.getElementById('upaPass').addEventListener('keypress',function(e){if(e.key==='Enter')upaLogin();});
+  document.getElementById('upaLogout').addEventListener('click',upaLogout);
+  document.getElementById('upaRefresh').addEventListener('click',upaLoadStats);
+  upaCheckAuth();
+});
+
+
+(function() {
+  var API_URL = 'https://web-production-9acc6.up.railway.app/api/lookup';
+  var STREAM_URL = 'https://web-production-9acc6.up.railway.app/api/lookup/stream';
+  var FEEDBACK_URL = 'https://web-production-9acc6.up.railway.app/api/feedback';
+  var icons = { electric: '⚡', gas: '🔥', water: '💧', internet: '🌐' };
+  var typeLabels = { electric: 'Electric', gas: 'Natural Gas', water: 'Water', internet: 'Internet' };
+  
+  // Elements
+  var modeTabs = document.querySelectorAll('.up-mode-tab');
+  var singleForm = document.getElementById('singleForm');
+  var multiForm = document.getElementById('multiForm');
+  var csvForm = document.getElementById('csvForm');
+  var utilityResults = document.getElementById('utilityResults');
+  var multiResults = document.getElementById('multiResults');
+  var addressInput = document.getElementById('addressInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var multiInput = document.getElementById('multiInput');
+  var multiSearchBtn = document.getElementById('multiSearchBtn');
+  
+  // Mode switching
+  modeTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      modeTabs.forEach(function(t) { t.classList.remove('active'); });
+      this.classList.add('active');
+      var mode = this.dataset.mode;
+      singleForm.classList.toggle('up-hidden', mode !== 'single');
+      multiForm.classList.toggle('up-hidden', mode !== 'multi');
+      csvForm.classList.toggle('up-hidden', mode !== 'csv');
+      utilityResults.classList.toggle('up-hidden', mode !== 'single');
+      multiResults.classList.toggle('up-hidden', mode !== 'multi');
+    });
+  });
+  
+  // Toggle handlers for single form
+  document.querySelectorAll('#singleToggles .up-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var checkbox = toggle.querySelector('input');
+      checkbox.checked = !checkbox.checked;
+      toggle.classList.toggle('active', checkbox.checked);
+    });
+  });
+  
+  // Toggle handlers for multi form
+  document.querySelectorAll('#multiToggles .up-toggle').forEach(function(toggle) {
+    toggle.addEventListener('click', function(e) {
+      e.preventDefault();
+      var checkbox = toggle.querySelector('input');
+      checkbox.checked = !checkbox.checked;
+      toggle.classList.toggle('active', checkbox.checked);
+    });
+  });
+  
+  function getSelectedUtilities(container) {
+    var selected = [];
+    container.querySelectorAll('.up-toggle').forEach(function(toggle) {
+      if (toggle.querySelector('input').checked) selected.push(toggle.dataset.utility);
+    });
+    return selected;
+  }
+  
+  var sourceExplanations = {
+    'state_gis': 'Matched via official state GIS utility boundary data',
+    'hifld': 'Matched via federal HIFLD utility service territory',
+    'municipal': 'Matched to municipal/city-owned utility',
+    'county_default': 'Default utility for this county',
+    'eia_861': 'Matched via EIA-861 utility data',
+    'serp_verified': 'Verified via web search results',
+    'tenant_verified': 'Verified by tenant reports for this ZIP'
+  };
+  
+  function getSourceExplanation(source) {
+    if (!source) return '';
+    var s = source.toLowerCase();
+    for (var key in sourceExplanations) {
+      if (s.indexOf(key) >= 0) return sourceExplanations[key];
+    }
+    return source;
+  }
+  
+  function getConfidenceBadgeWithDropdown(util, cardId) {
+    var score = util.confidence_score;
+    var source = util._source || util.source || '';
+    var badgeClass, badgeLabel;
+    if (score !== undefined && score !== null) {
+      if (score >= 85) { badgeClass = 'up-badge-verified'; badgeLabel = 'Verified'; }
+      else if (score >= 70) { badgeClass = 'up-badge-high'; badgeLabel = 'High Confidence'; }
+      else if (score >= 50) { badgeClass = 'up-badge-medium'; badgeLabel = 'Medium'; }
+      else { badgeClass = 'up-badge-low'; badgeLabel = 'Low Confidence'; }
+    } else {
+      var confidence = util.confidence || 'medium';
+      var map = { verified: { c: 'up-badge-verified', l: 'Verified' }, high: { c: 'up-badge-high', l: 'High Confidence' }, medium: { c: 'up-badge-medium', l: 'Medium' }, low: { c: 'up-badge-low', l: 'Low Confidence' } };
+      var m = map[confidence] || map.medium;
+      badgeClass = m.c; badgeLabel = m.l;
+    }
+    var explanation = getSourceExplanation(source);
+    var dropdownContent = (score !== undefined && score !== null) 
+      ? (explanation ? '<span class="score">' + score + '/100</span> - ' + explanation : '<span class="score">' + score + '/100</span> confidence')
+      : (explanation || 'Confidence details unavailable');
+    return '<span class="up-badge ' + badgeClass + ' up-badge-confidence" data-dropdown="' + cardId + '-dropdown">' + badgeLabel + '<span class="up-badge-caret">▼</span></span>' +
+      '<div class="up-confidence-dropdown" id="' + cardId + '-dropdown">' + dropdownContent + '</div>';
+  }
+  
+  function getTechType(tech) {
+    if (!tech) return { label: 'Unknown', dot: '' };
+    var t = tech.toLowerCase();
+    if (t.indexOf('fiber') >= 0) return { label: 'Fiber', dot: 'fiber' };
+    if (t.indexOf('cable') >= 0 || t.indexOf('docsis') >= 0) return { label: 'Cable', dot: 'cable' };
+    if (t.indexOf('dsl') >= 0) return { label: 'DSL', dot: 'dsl' };
+    if (t.indexOf('5g') >= 0 || t.indexOf('lte') >= 0 || t.indexOf('wireless') >= 0 || t.indexOf('fixed') >= 0) return { label: 'Wireless', dot: 'wireless' };
+    if (t.indexOf('satellite') >= 0) return { label: 'Satellite', dot: 'satellite' };
+    return { label: tech, dot: '' };
+  }
+  
+  function renderUtilityCard(util, type, address) {
+    var cardId = 'card-' + type + '-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5);
+    var badges = '';
+    if (util.type && ['MUD', 'CDD', 'PUD', 'WCID', 'Metro District'].indexOf(util.type) >= 0) {
+      badges += '<span class="up-badge up-badge-district">' + util.type + '</span>';
+    }
+    badges += getConfidenceBadgeWithDropdown(util, cardId);
+    
+    var detailsLeft = '';
+    if (util.phone && util.phone !== 'NOT AVAILABLE') {
+      detailsLeft += '<div class="up-detail"><span class="up-detail-label">Phone</span><span class="up-detail-value"><a href="tel:' + util.phone + '">' + util.phone + '</a></span></div>';
+    }
+    if (util.website && util.website !== 'NOT AVAILABLE') {
+      var url = util.website.indexOf('http') === 0 ? util.website : 'https://' + util.website;
+      detailsLeft += '<div class="up-detail"><span class="up-detail-label">Website</span><span class="up-detail-value"><a href="' + url + '" target="_blank">Visit site</a></span></div>';
+    }
+    
+    var deregSection = '';
+    if (type === 'electric' && util.deregulated && util.deregulated.has_choice) {
+      var dereg = util.deregulated;
+      deregSection = '<div class="up-dereg-banner"><div class="up-dereg-header"><span class="up-dereg-icon">🎉</span><span class="up-dereg-title">' + (dereg.message || 'Retail choice available') + '</span></div>' + (dereg.choice_website ? '<a href="' + dereg.choice_website + '" target="_blank" class="up-dereg-cta"><span>🔍</span> Compare Providers</a>' : '') + '</div>';
+    }
+    
+    // Render other possible providers if available (collapsible dropdown with full details)
+    var otherSection = '';
+    if (util.other_providers && util.other_providers.length > 0) {
+      var altId = cardId + '-others';
+      
+      // Normalize name for deduplication - remove state suffixes, punctuation, common words
+      function normalizeName(name) {
+        if (!name) return '';
+        return name.toUpperCase()
+          .replace(/\s*-\s*\(?[A-Z]{2}\)?$/i, '') // Remove " - (NC)" or " - NC" suffix
+          .replace(/\s*\([A-Z]{2}\)$/i, '') // Remove "(NC)" suffix
+          .replace(/\s+(INC|LLC|CORP|CO|COMPANY|CORPORATION)\.?$/i, '') // Remove business suffixes
+          .replace(/[^A-Z0-9]/g, ''); // Remove all non-alphanumeric
+      }
+      
+      // Dedupe providers by normalized name (exclude primary provider)
+      var primaryNorm = normalizeName(util.name);
+      var seenNames = {};
+      seenNames[primaryNorm] = true;
+      var dedupedProviders = util.other_providers.filter(function(p) {
+        var normName = normalizeName(p.name);
+        if (seenNames[normName]) return false;
+        seenNames[normName] = true;
+        return true;
+      });
+      
+      var otherRows = dedupedProviders.map(function(p, i) {
+        var altItemId = cardId + '-alt-' + i;
+        // Title case the name
+        var pName = p.name ? p.name.split(' ').map(function(w) { 
+          return w.charAt(0).toUpperCase() + w.slice(1).toLowerCase(); 
+        }).join(' ') : 'Unknown';
+        
+        // Build contact details
+        var altDetails = '';
+        if (p.phone && p.phone !== 'NOT AVAILABLE') {
+          altDetails += '<div class="up-detail"><span class="up-detail-label">Phone</span><span class="up-detail-value"><a href="tel:' + p.phone + '">' + p.phone + '</a></span></div>';
+        }
+        if (p.website && p.website !== 'NOT AVAILABLE') {
+          var wurl = p.website.indexOf('http') === 0 ? p.website : 'https://' + p.website;
+          altDetails += '<div class="up-detail"><span class="up-detail-label">Website</span><span class="up-detail-value"><a href="' + wurl + '" target="_blank">Visit site</a></span></div>';
+        }
+        
+        var propaneNote = p.is_propane ? '<span class="up-propane-note">⚠️ Propane/LP gas dealer (not piped natural gas)</span>' : '';
+        
+        return '<div class="up-alt-provider" id="' + altItemId + '">' +
+          '<div class="up-alt-name">' + pName + '</div>' +
+          propaneNote +
+          '<div class="up-alt-details">' +
+            '<div class="up-alt-contact">' + altDetails + '</div>' +
+            '<div class="up-feedback-inline">' +
+              '<span>Correct?</span>' +
+              '<button class="up-feedback-btn-small up-alt-btn yes" data-alt-id="' + altItemId + '" data-provider="' + (p.name || '').replace(/"/g, '&quot;') + '" data-type="' + type + '" data-response="yes">Yes</button>' +
+              '<button class="up-feedback-btn-small up-alt-btn no" data-alt-id="' + altItemId + '" data-provider="' + (p.name || '').replace(/"/g, '&quot;') + '" data-type="' + type + '" data-response="no">No</button>' +
+              '<span class="up-alt-done" id="' + altItemId + '-done">Thanks!</span>' +
+            '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('');
+      
+      otherSection = '<div class="up-other-providers">' +
+        '<div class="up-other-toggle" data-target="' + altId + '">Other possible providers <span class="up-other-caret">▼</span></div>' +
+        '<div class="up-other-list" id="' + altId + '">' + otherRows + '</div>' +
+      '</div>';
+    }
+    
+    return '<div class="up-card" id="' + cardId + '">' +
+      '<div class="up-card-header">' +
+        '<div class="up-card-type"><div class="up-icon up-icon-' + type + '">' + icons[type] + '</div><span class="up-type-label">' + typeLabels[type] + '</span></div>' +
+        '<div class="up-header-badges">' + badges + '</div>' +
+      '</div>' +
+      '<div class="up-provider-name">' + (util.name || 'Unknown') + '</div>' +
+      deregSection +
+      '<div class="up-details">' +
+        '<div class="up-details-left">' + detailsLeft + '</div>' +
+        '<div class="up-feedback-inline" data-card="' + cardId + '" data-type="' + type + '" data-provider="' + (util.name || '').replace(/"/g, '&quot;') + '" data-address="' + address.replace(/"/g, '&quot;') + '">' +
+          '<span>Correct?</span>' +
+          '<button class="up-feedback-btn-small yes" data-response="yes">Yes</button>' +
+          '<button class="up-feedback-btn-small no" data-response="no">No</button>' +
+          '<span class="up-feedback-done" id="' + cardId + '-done">Thanks!</span>' +
+        '</div>' +
+      '</div>' +
+      otherSection +
+      '<div class="up-feedback-form" id="' + cardId + '-form">' +
+        '<label>What is the correct ' + typeLabels[type].toLowerCase() + ' provider?</label>' +
+        '<input type="text" placeholder="Enter correct provider name" id="' + cardId + '-correction" />' +
+        '<button class="up-feedback-submit" data-card="' + cardId + '" data-type="' + type + '">Submit</button>' +
+      '</div>' +
+      '<div class="up-url-form" id="' + cardId + '-url-form">' +
+        '<label>Know where to check service? (optional)</label>' +
+        '<input type="url" placeholder="https://utility.com/start-service" id="' + cardId + '-service-url" />' +
+        '<div class="up-url-buttons">' +
+          '<button class="up-url-submit" data-card="' + cardId + '" data-type="' + type + '">Submit</button>' +
+          '<button class="up-url-skip" data-card="' + cardId + '">Skip</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+  }
+  
+  function renderInternetCard(inet) {
+    var providers = inet.providers || [];
+    if (providers.length === 0) return '<div class="up-card"><div class="up-no-result">🌐 No internet providers found</div></div>';
+    
+    var sorted = providers.slice().sort(function(a, b) { return (b.max_download_mbps || 0) - (a.max_download_mbps || 0); });
+    
+    var hasFiber = sorted.some(function(p) { return (p.technology || '').toLowerCase().indexOf('fiber') >= 0; });
+    var hasCable = sorted.some(function(p) { return (p.technology || '').toLowerCase().indexOf('cable') >= 0; });
+    var badge = '<span class="up-badge up-badge-medium">Limited Options</span>';
+    if (hasFiber) badge = '<span class="up-badge up-badge-verified">Fiber Available</span>';
+    else if (hasCable) badge = '<span class="up-badge up-badge-high">Cable Available</span>';
+    
+    var rows = sorted.map(function(p) {
+      var tech = getTechType(p.technology);
+      var down = p.max_download_mbps || '?';
+      var up = p.max_upload_mbps || '?';
+      return '<tr><td class="up-internet-provider-cell">' + (p.name || 'Unknown') + '</td><td><span class="up-internet-type-cell"><span class="up-internet-type-dot ' + tech.dot + '"></span>' + tech.label + '</span></td><td class="up-internet-speed-cell"><span class="up-internet-speed-down">' + down + '</span> / ' + up + ' Mbps</td></tr>';
+    }).join('');
+    
+    return '<div class="up-card">' +
+      '<div class="up-card-header">' +
+        '<div class="up-card-type"><div class="up-icon up-icon-internet">' + icons.internet + '</div><span class="up-type-label">Internet</span></div>' +
+        '<div class="up-header-badges">' + badge + '</div>' +
+      '</div>' +
+      '<table class="up-internet-table"><thead><tr><th>Provider</th><th>Type</th><th>Speed</th></tr></thead><tbody>' + rows + '</tbody></table>' +
+    '</div>';
+  }
+  
+  // ========== SINGLE ADDRESS LOOKUP (STREAMING) ==========
+  singleForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var address = addressInput.value.trim();
+    if (!address) return;
+    
+    var utilities = getSelectedUtilities(document.getElementById('singleToggles'));
+    if (utilities.length === 0) {
+      utilityResults.innerHTML = '<div class="up-error">Please select at least one utility type.</div>';
+      return;
+    }
+    
+    searchBtn.disabled = true;
+    searchBtn.textContent = 'Searching...';
+    
+    // Show loading state
+    var loadingHtml = '<div class="up-status-message"><div class="up-loading-spinner"></div><span>Looking up utilities...</span></div>';
+    utilities.forEach(function(u) {
+      loadingHtml += '<div id="slot-' + u + '" class="up-card" style="opacity:0.5;"><div class="up-card-header"><div class="up-card-type"><div class="up-icon up-icon-' + u + '">' + icons[u] + '</div><span class="up-type-label">' + typeLabels[u] + '</span></div></div><div style="display:flex;align-items:center;gap:8px;"><div class="up-loading-spinner-small"></div> Looking up...</div></div>';
+    });
+    utilityResults.innerHTML = loadingHtml;
+    
+    var params = new URLSearchParams({ address: address, utilities: utilities.join(',') });
+    var eventSource = new EventSource(STREAM_URL + '?' + params);
+    var streamData = { location: null };
+    
+    eventSource.onmessage = function(event) {
+      try {
+        var msg = JSON.parse(event.data);
+        
+        if (msg.event === 'geocode' && msg.data) {
+          streamData.location = msg.data;
+          var locHtml = '<div class="up-location"><span class="up-location-icon">📍</span>' + (msg.data.matched_address || address) + '</div>';
+          var statusEl = utilityResults.querySelector('.up-status-message');
+          if (statusEl) statusEl.outerHTML = locHtml;
+        }
+        
+        if (msg.event === 'electric' && msg.data) {
+          var slot = document.getElementById('slot-electric');
+          if (slot) slot.outerHTML = renderUtilityCard(msg.data[0] || msg.data, 'electric', address);
+        }
+        
+        if (msg.event === 'gas' && msg.data) {
+          var slot = document.getElementById('slot-gas');
+          if (slot) slot.outerHTML = renderUtilityCard(msg.data[0] || msg.data, 'gas', address);
+        }
+        
+        if (msg.event === 'water' && msg.data) {
+          var slot = document.getElementById('slot-water');
+          if (slot) slot.outerHTML = renderUtilityCard(msg.data[0] || msg.data, 'water', address);
+        }
+        
+        if (msg.event === 'internet' && msg.data) {
+          var slot = document.getElementById('slot-internet');
+          if (slot) slot.outerHTML = renderInternetCard(msg.data);
+        }
+        
+        if (msg.event === 'complete') {
+          eventSource.close();
+          searchBtn.disabled = false;
+          searchBtn.textContent = 'Search';
+          attachFeedbackListeners();
+        }
+        
+        if (msg.event === 'error') {
+          eventSource.close();
+          utilityResults.innerHTML = '<div class="up-error">' + (msg.message || 'An error occurred') + '</div>';
+          searchBtn.disabled = false;
+          searchBtn.textContent = 'Search';
+        }
+      } catch (err) {
+        console.error('Parse error:', err);
+      }
+    };
+    
+    eventSource.onerror = function() {
+      eventSource.close();
+      searchBtn.disabled = false;
+      searchBtn.textContent = 'Search';
+    };
+  });
+  
+  // ========== MULTI ADDRESS LOOKUP ==========
+  multiSearchBtn.addEventListener('click', async function() {
+    var text = multiInput.value.trim();
+    if (!text) return;
+    
+    var addresses = text.split('\n').map(function(a) { return a.trim(); }).filter(function(a) { return a; });
+    if (addresses.length === 0) return;
+    if (addresses.length > 20) {
+      alert('Maximum 20 addresses. Please reduce your list.');
+      return;
+    }
+    
+    var utilities = getSelectedUtilities(document.getElementById('multiToggles'));
+    if (utilities.length === 0) {
+      alert('Please select at least one utility type.');
+      return;
+    }
+    
+    multiSearchBtn.disabled = true;
+    multiSearchBtn.textContent = 'Looking up...';
+    multiResults.classList.remove('up-hidden');
+    
+    // Render address sections
+    multiResults.innerHTML = addresses.map(function(addr, i) {
+      return '<div class="up-multi-section" id="multi-section-' + i + '">' +
+        '<div class="up-multi-address">' +
+          '<span class="up-multi-address-icon">📍</span>' +
+          '<span class="up-multi-address-text">' + addr + '</span>' +
+          '<span class="up-multi-address-status loading" id="multi-status-' + i + '"><span class="up-loading-spinner-small"></span> Looking up...</span>' +
+        '</div>' +
+        '<div class="up-multi-utilities" id="multi-utils-' + i + '"></div>' +
+      '</div>';
+    }).join('');
+    
+    // Process each address
+    for (var i = 0; i < addresses.length; i++) {
+      var address = addresses[i];
+      var utilsContainer = document.getElementById('multi-utils-' + i);
+      var statusEl = document.getElementById('multi-status-' + i);
+      
+      try {
+        var params = new URLSearchParams({ address: address, utilities: utilities.join(',') });
+        var response = await fetch(API_URL + '?' + params);
+        var data = await response.json();
+        
+        if (data.error) {
+          statusEl.className = 'up-multi-address-status error';
+          statusEl.textContent = 'Error';
+          utilsContainer.innerHTML = '<div class="up-error">' + data.error + '</div>';
+        } else {
+          statusEl.className = 'up-multi-address-status complete';
+          statusEl.textContent = 'Complete';
+          
+          var cardsHtml = '';
+          if (utilities.indexOf('electric') >= 0) {
+            if (data.utilities.electric && data.utilities.electric.length > 0) {
+              cardsHtml += renderUtilityCard(data.utilities.electric[0], 'electric', address);
+            } else {
+              cardsHtml += '<div class="up-card"><div class="up-no-result">⚡ No electric provider found</div></div>';
+            }
+          }
+          if (utilities.indexOf('gas') >= 0) {
+            if (data.utilities.gas && data.utilities.gas.length > 0) {
+              cardsHtml += renderUtilityCard(data.utilities.gas[0], 'gas', address);
+            } else {
+              cardsHtml += '<div class="up-card"><div class="up-no-result">🔥 No gas provider found</div></div>';
+            }
+          }
+          if (utilities.indexOf('water') >= 0) {
+            if (data.utilities.water && data.utilities.water.length > 0) {
+              cardsHtml += renderUtilityCard(data.utilities.water[0], 'water', address);
+            } else {
+              cardsHtml += '<div class="up-card"><div class="up-no-result">💧 No water provider found</div></div>';
+            }
+          }
+          if (utilities.indexOf('internet') >= 0) {
+            if (data.utilities.internet && data.utilities.internet.providers && data.utilities.internet.providers.length > 0) {
+              cardsHtml += renderInternetCard(data.utilities.internet);
+            } else {
+              cardsHtml += '<div class="up-card"><div class="up-no-result">🌐 No internet providers found</div></div>';
+            }
+          }
+          
+          utilsContainer.innerHTML = cardsHtml;
+          attachFeedbackListeners();
+        }
+      } catch (err) {
+        statusEl.className = 'up-multi-address-status error';
+        statusEl.textContent = 'Error';
+        utilsContainer.innerHTML = '<div class="up-error">Failed to look up this address</div>';
+      }
+      
+      // Small delay between requests
+      await new Promise(function(r) { setTimeout(r, 300); });
+    }
+    
+    multiSearchBtn.disabled = false;
+    multiSearchBtn.textContent = 'Look Up All';
+  });
+  
+  // ========== FEEDBACK HANDLERS ==========
+  function attachFeedbackListeners() {
+    // Confidence badge dropdown toggle
+    document.querySelectorAll('.up-badge-confidence:not([data-listener])').forEach(function(badge) {
+      badge.setAttribute('data-listener', 'true');
+      badge.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var dropdownId = this.dataset.dropdown;
+        var dropdown = document.getElementById(dropdownId);
+        // Close other dropdowns
+        document.querySelectorAll('.up-confidence-dropdown.open').forEach(function(d) {
+          if (d.id !== dropdownId) d.classList.remove('open');
+        });
+        document.querySelectorAll('.up-badge-confidence.open').forEach(function(b) {
+          if (b !== this) b.classList.remove('open');
+        });
+        if (dropdown) dropdown.classList.toggle('open');
+        this.classList.toggle('open');
+      });
+    });
+    
+    // Main provider feedback buttons
+    document.querySelectorAll('.up-feedback-btn-small:not(.up-alt-btn):not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var feedback = this.closest('.up-feedback-inline');
+        var cardId = feedback.dataset.card;
+        var type = feedback.dataset.type;
+        var provider = feedback.dataset.provider;
+        var address = feedback.dataset.address;
+        var response = this.dataset.response;
+        
+        feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.classList.remove('selected'); });
+        this.classList.add('selected');
+        
+        if (response === 'yes') {
+          // Show URL form for verification source
+          feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.style.display = 'none'; });
+          var urlForm = document.getElementById(cardId + '-url-form');
+          if (urlForm) urlForm.classList.add('open');
+        } else {
+          // Show correction form
+          var corrForm = document.getElementById(cardId + '-form');
+          if (corrForm) corrForm.classList.add('open');
+        }
+      });
+    });
+    
+    // Correction form submit (No feedback)
+    document.querySelectorAll('.up-feedback-submit:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var cardId = this.dataset.card;
+        var type = this.dataset.type;
+        var correction = document.getElementById(cardId + '-correction').value.trim();
+        if (!correction) { alert('Please enter the correct provider name'); return; }
+        
+        var feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]');
+        var provider = feedback ? feedback.dataset.provider : '';
+        var address = feedback ? feedback.dataset.address : '';
+        
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: address,
+            utility_type: type,
+            returned_provider: provider,
+            correct_provider: correction,
+            is_correct: false,
+            source: 'web_widget'
+          })
+        }).catch(function(e) { console.error('Feedback error:', e); });
+        
+        document.getElementById(cardId + '-form').classList.remove('open');
+        if (feedback) feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.style.display = 'none'; });
+        var doneEl = document.getElementById(cardId + '-done');
+        if (doneEl) doneEl.classList.add('show');
+      });
+    });
+    
+    // URL form submit (Yes feedback with source)
+    document.querySelectorAll('.up-url-submit:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var cardId = this.dataset.card;
+        var type = this.dataset.type;
+        var serviceUrl = document.getElementById(cardId + '-service-url').value.trim();
+        
+        var feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]');
+        var provider = feedback ? feedback.dataset.provider : '';
+        var address = feedback ? feedback.dataset.address : '';
+        
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: address,
+            utility_type: type,
+            returned_provider: provider,
+            is_correct: true,
+            service_check_url: serviceUrl || null,
+            source: 'web_widget'
+          })
+        }).catch(function(e) { console.error('Feedback error:', e); });
+        
+        document.getElementById(cardId + '-url-form').classList.remove('open');
+        var doneEl = document.getElementById(cardId + '-done');
+        if (doneEl) doneEl.classList.add('show');
+      });
+    });
+    
+    // URL form skip button
+    document.querySelectorAll('.up-url-skip:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var cardId = this.dataset.card;
+        
+        var feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]');
+        var type = feedback ? feedback.dataset.type : '';
+        var provider = feedback ? feedback.dataset.provider : '';
+        var address = feedback ? feedback.dataset.address : '';
+        
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: address,
+            utility_type: type,
+            returned_provider: provider,
+            is_correct: true,
+            source: 'web_widget'
+          })
+        }).catch(function(e) { console.error('Feedback error:', e); });
+        
+        document.getElementById(cardId + '-url-form').classList.remove('open');
+        var doneEl = document.getElementById(cardId + '-done');
+        if (doneEl) doneEl.classList.add('show');
+      });
+    });
+    
+    // Alternative provider feedback buttons
+    document.querySelectorAll('.up-alt-btn:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var altId = this.dataset.altId;
+        var provider = this.dataset.provider;
+        var type = this.dataset.type;
+        var response = this.dataset.response;
+        var feedback = this.closest('.up-feedback-inline');
+        
+        feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.classList.remove('selected'); b.style.display = 'none'; });
+        this.classList.add('selected');
+        
+        var doneEl = document.getElementById(altId + '-done');
+        if (doneEl) doneEl.classList.add('show');
+        
+        // Send feedback for alternative provider
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            utility_type: type,
+            returned_provider: provider,
+            is_correct: response === 'yes',
+            is_alternative: true,
+            source: 'web_widget_alt'
+          })
+        }).catch(function(e) { console.error('Feedback error:', e); });
+      });
+    });
+    
+    // Other providers dropdown toggle
+    document.querySelectorAll('.up-other-toggle:not([data-listener])').forEach(function(toggle) {
+      toggle.setAttribute('data-listener', 'true');
+      toggle.addEventListener('click', function() {
+        var targetId = this.dataset.target;
+        var list = document.getElementById(targetId);
+        if (list) {
+          list.classList.toggle('open');
+          this.classList.toggle('open');
+          // Update caret
+          var caret = this.querySelector('.up-other-caret');
+          if (caret) caret.textContent = list.classList.contains('open') ? '▲' : '▼';
+        }
+      });
+    });
+    
+    // Close confidence dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.up-badge-confidence') && !e.target.closest('.up-confidence-dropdown')) {
+        document.querySelectorAll('.up-confidence-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+        document.querySelectorAll('.up-badge-confidence.open').forEach(function(b) { b.classList.remove('open'); });
+      }
+    });
+  }
+  
+  // ========== CSV HANDLING ==========
+  var csvDropZone = document.getElementById('csvDropZone');
+  var csvInput = document.getElementById('csvInput');
+  var csvSelectBtn = document.getElementById('csvSelectBtn');
+  var csvProgress = document.getElementById('csvProgress');
+  var csvProgressFill = document.getElementById('csvProgressFill');
+  var csvProgressText = document.getElementById('csvProgressText');
+  var csvResults = document.getElementById('csvResults');
+  var csvSuccessCount = document.getElementById('csvSuccessCount');
+  var csvErrorCount = document.getElementById('csvErrorCount');
+  var csvDownloadBtn = document.getElementById('csvDownloadBtn');
+  var csvData = [];
+  
+  if (csvDropZone) {
+    csvDropZone.addEventListener('dragover', function(e) { e.preventDefault(); csvDropZone.style.borderColor = '#7AC143'; });
+    csvDropZone.addEventListener('dragleave', function() { csvDropZone.style.borderColor = '#e5e7eb'; });
+    csvDropZone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      csvDropZone.style.borderColor = '#e5e7eb';
+      var file = e.dataTransfer.files[0];
+      if (file && file.name.endsWith('.csv')) processCSV(file);
+      else alert('Please upload a CSV file');
+    });
+  }
+  
+  if (csvSelectBtn) csvSelectBtn.addEventListener('click', function(e) { e.stopPropagation(); csvInput.click(); });
+  if (csvInput) csvInput.addEventListener('change', function(e) { var file = e.target.files[0]; if (file) processCSV(file); });
+  
+  async function processCSV(file) {
+    var text = await file.text();
+    var lines = text.split('\n').map(function(l) { return l.trim(); }).filter(function(l) { return l; });
+    if (lines.length < 2) { alert('CSV must have a header row and at least one address'); return; }
+    
+    var headers = lines[0].split(',').map(function(h) { return h.trim().toLowerCase().replace(/"/g, ''); });
+    var addressIdx = headers.indexOf('address');
+    if (addressIdx < 0) { alert('CSV must have an "address" column'); return; }
+    
+    var addresses = [];
+    for (var i = 1; i < lines.length && i <= 100; i++) {
+      var cols = lines[i].split(',').map(function(c) { return c.trim().replace(/"/g, ''); });
+      if (cols[addressIdx]) addresses.push({ original: lines[i], address: cols[addressIdx] });
+    }
+    
+    if (addresses.length === 0) { alert('No valid addresses found'); return; }
+    
+    csvDropZone.style.display = 'none';
+    csvProgress.classList.add('show');
+    csvData = [];
+    var successCount = 0, errorCount = 0;
+    
+    for (var i = 0; i < addresses.length; i++) {
+      csvProgressFill.style.width = ((i + 1) / addresses.length * 100) + '%';
+      csvProgressText.textContent = 'Processing ' + (i + 1) + ' of ' + addresses.length + '...';
+      
+      try {
+        var params = new URLSearchParams({ address: addresses[i].address, utilities: 'electric,gas,water,internet' });
+        var response = await fetch(API_URL + '?' + params);
+        var data = await response.json();
+        
+        csvData.push({
+          address: addresses[i].address,
+          electric: data.utilities.electric ? data.utilities.electric[0].name : '',
+          gas: data.utilities.gas ? data.utilities.gas[0].name : '',
+          water: data.utilities.water ? data.utilities.water[0].name : '',
+          internet: data.utilities.internet && data.utilities.internet.providers ? data.utilities.internet.providers.map(function(p) { return p.name; }).join('; ') : '',
+          status: 'success'
+        });
+        successCount++;
+      } catch (err) {
+        csvData.push({ address: addresses[i].address, electric: '', gas: '', water: '', internet: '', status: 'error' });
+        errorCount++;
+      }
+      
+      await new Promise(function(r) { setTimeout(r, 300); });
+    }
+    
+    csvProgress.classList.remove('show');
+    csvResults.classList.add('show');
+    csvSuccessCount.textContent = successCount;
+    csvErrorCount.textContent = errorCount;
+  }
+  
+  if (csvDownloadBtn) {
+    csvDownloadBtn.addEventListener('click', function() {
+      var csvContent = 'Address,Electric,Gas,Water,Internet,Status\n';
+      csvData.forEach(function(row) {
+        csvContent += '"' + row.address + '","' + row.electric + '","' + row.gas + '","' + row.water + '","' + row.internet + '","' + row.status + '"\n';
+      });
+      var blob = new Blob([csvContent], { type: 'text/csv' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'utility_results.csv';
+      a.click();
+    });
+  }
+})();
+</script>

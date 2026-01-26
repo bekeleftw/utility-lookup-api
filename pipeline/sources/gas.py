@@ -30,6 +30,7 @@ PROPANE_COMPANIES = [
 
 # Cache for official gas utilities
 _official_gas_utilities = None
+_eia_176_companies = None
 
 def load_official_gas_utilities():
     """Load official gas utility registry for validation."""
@@ -43,6 +44,59 @@ def load_official_gas_utilities():
         except Exception:
             _official_gas_utilities = {}
     return _official_gas_utilities
+
+def load_eia_176_companies():
+    """Load EIA Form 176 company list for validation."""
+    global _eia_176_companies
+    if _eia_176_companies is None:
+        import json
+        eia_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'data', 'eia_176_companies.json')
+        try:
+            with open(eia_path, 'r') as f:
+                data = json.load(f)
+                _eia_176_companies = data.get('companies_by_state', {})
+        except Exception:
+            _eia_176_companies = {}
+    return _eia_176_companies
+
+def is_eia_registered_company(name: str, state: str) -> bool:
+    """
+    Check if a company name appears in EIA Form 176 data for the state.
+    This is a broader validation - includes LDCs, pipelines, and direct sellers.
+    """
+    if not name or not state:
+        return False
+    
+    eia_companies = load_eia_176_companies()
+    state_companies = eia_companies.get(state.upper(), [])
+    
+    if not state_companies:
+        return False
+    
+    name_upper = name.upper().strip()
+    name_words = set(name_upper.replace(',', '').replace('.', '').split())
+    
+    for eia_name in state_companies:
+        eia_upper = eia_name.upper().strip()
+        eia_words = set(eia_upper.replace(',', '').replace('.', '').split())
+        
+        # Exact match
+        if name_upper == eia_upper:
+            return True
+        
+        # Check if significant words overlap (fuzzy match)
+        # Remove common words like "OF", "THE", "INC", "LLC", "CO", "CORP", "COMPANY"
+        common_words = {'OF', 'THE', 'INC', 'LLC', 'CO', 'CORP', 'COMPANY', 'CORPORATION', 'CITY', 'GAS', 'NATURAL', 'ENERGY'}
+        name_significant = name_words - common_words
+        eia_significant = eia_words - common_words
+        
+        if name_significant and eia_significant:
+            # If most significant words match, consider it a match
+            overlap = name_significant & eia_significant
+            if len(overlap) >= min(len(name_significant), len(eia_significant)) * 0.6:
+                return True
+    
+    return False
 
 def is_official_gas_utility(name: str, state: str) -> tuple:
     """
@@ -78,6 +132,10 @@ def is_official_gas_utility(name: str, state: str) -> tuple:
     for muni in municipal:
         if muni.lower() in name_lower or name_lower in muni.lower():
             return True, {'name': muni, 'type': 'municipal'}
+    
+    # Also check EIA Form 176 data as secondary validation
+    if is_eia_registered_company(name, state):
+        return True, {'name': name, 'type': 'eia_176', 'note': 'Found in EIA Form 176 data'}
     
     return False, None
 

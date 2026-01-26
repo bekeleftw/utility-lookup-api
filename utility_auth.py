@@ -215,13 +215,16 @@ def login():
         if not verify_password(password, password_hash):
             return jsonify({"success": False, "error": "Invalid email or password"})
         
-        # Update last_login
-        airtable_request(
-            USERS_TABLE, 
-            method='PATCH', 
-            record_id=user_record['id'],
-            data={"fields": {"last_login": datetime.utcnow().isoformat()}}
-        )
+        # Update last_login (don't fail login if this fails)
+        try:
+            airtable_request(
+                USERS_TABLE, 
+                method='PATCH', 
+                record_id=user_record['id'],
+                data={"fields": {"last_login": datetime.utcnow().isoformat()}}
+            )
+        except Exception as e:
+            print(f"Failed to update last_login: {e}")
         
         # Create token
         name = fields.get('name', email.split('@')[0])
@@ -239,8 +242,10 @@ def login():
         })
         
     except Exception as e:
+        import traceback
         print(f"Login error: {e}")
-        return jsonify({"success": False, "error": "Login failed. Please try again."})
+        traceback.print_exc()
+        return jsonify({"success": False, "error": f"Login failed: {str(e)}"})
 
 
 @utility_auth_bp.route('/api/utility-auth/verify', methods=['POST'])

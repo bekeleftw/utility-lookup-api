@@ -1,0 +1,94 @@
+{
+  "_description": "Official regulated natural gas utilities by state. Used to validate tenant-reported gas providers.",
+  "_sources": [
+    "NC: https://www.ncuc.gov/industries/naturalgas/naturalgas.html",
+    "TX: https://www.puc.texas.gov/",
+    "CA: https://www.cpuc.ca.gov/"
+  ],
+  "NC": {
+    "utilities": [
+      {"name": "Piedmont Natural Gas", "aliases": ["piedmont", "piedmont ng"], "phone": "800-752-7504", "website": "https://www.piedmontng.com"},
+      {"name": "Enbridge Gas North Carolina", "aliases": ["enbridge", "enbridge gas", "psnc", "psnc energy", "dominion energy", "dominion nc", "dominion energy north carolina"], "phone": "877-776-2427", "website": "https://www.enbridgegas.com/north-carolina"},
+      {"name": "Frontier Natural Gas", "aliases": ["frontier", "frontier gas"], "phone": "800-829-4200", "website": "http://www.frontiernaturalgas.com"},
+      {"name": "Toccoa Natural Gas", "aliases": ["toccoa"], "phone": "706-886-8451", "website": null}
+    ],
+    "municipal_systems": [
+      "City of Bessemer City",
+      "City of Kings Mountain", 
+      "City of Shelby",
+      "Town of Dallas",
+      "City of Gastonia",
+      "City of Lexington",
+      "City of Monroe",
+      "City of Rocky Mount"
+    ]
+  },
+  "TX": {
+    "utilities": [
+      {"name": "Atmos Energy", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"},
+      {"name": "CenterPoint Energy", "aliases": ["centerpoint"], "phone": "800-752-8036", "website": "https://www.centerpointenergy.com"},
+      {"name": "Texas Gas Service", "aliases": ["texas gas", "tgs"], "phone": "800-700-2443", "website": "https://www.texasgasservice.com"}
+    ]
+  },
+  "CA": {
+    "utilities": [
+      {"name": "Pacific Gas & Electric", "aliases": ["pg&e", "pge", "pacific gas"], "phone": "800-743-5000", "website": "https://www.pge.com"},
+      {"name": "Southern California Gas", "aliases": ["socal gas", "socalgas", "the gas company"], "phone": "800-427-2200", "website": "https://www.socalgas.com"},
+      {"name": "San Diego Gas & Electric", "aliases": ["sdge", "sdg&e"], "phone": "800-411-7343", "website": "https://www.sdge.com"},
+      {"name": "Southwest Gas", "aliases": ["southwest"], "phone": "877-860-6020", "website": "https://www.swgas.com"}
+    ]
+  },
+  "GA": {
+    "utilities": [
+      {"name": "Atlanta Gas Light", "aliases": ["agl", "atlanta gas"], "phone": "800-427-5463", "website": "https://www.atlantagaslight.com"}
+    ]
+  },
+  "OH": {
+    "utilities": [
+      {"name": "Columbia Gas of Ohio", "aliases": ["columbia gas", "nisource"], "phone": "800-344-4077", "website": "https://www.columbiagasohio.com"},
+      {"name": "Dominion Energy Ohio", "aliases": ["dominion ohio", "east ohio gas"], "phone": "800-362-7557", "website": "https://www.dominionenergy.com"},
+      {"name": "Duke Energy Ohio", "aliases": ["duke ohio"], "phone": "800-544-6900", "website": "https://www.duke-energy.com"},
+      {"name": "Vectren Energy Delivery", "aliases": ["vectren"], "phone": "800-227-1376", "website": "https://www.vectren.com"}
+    ]
+  },
+  "PA": {
+    "utilities": [
+      {"name": "Columbia Gas of Pennsylvania", "aliases": ["columbia gas pa"], "phone": "888-460-4332", "website": "https://www.columbiagaspa.com"},
+      {"name": "PECO Energy", "aliases": ["peco"], "phone": "800-494-4000", "website": "https://www.peco.com"},
+      {"name": "Peoples Gas", "aliases": ["peoples"], "phone": "800-764-0111", "website": "https://www.peoples-gas.com"},
+      {"name": "UGI Utilities", "aliases": ["ugi"], "phone": "800-276-2722", "website": "https://www.ugi.com"},
+      {"name": "National Fuel Gas", "aliases": ["national fuel", "nfg"], "phone": "800-365-3234", "website": "https://www.nationalfuel.com"}
+    ]
+  },
+  "NY": {
+    "utilities": [
+      {"name": "Con Edison", "aliases": ["coned", "consolidated edison"], "phone": "800-752-6633", "website": "https://www.coned.com"},
+      {"name": "National Grid", "aliases": ["keyspan"], "phone": "800-642-4272", "website": "https://www.nationalgridus.com"},
+      {"name": "NYSEG", "aliases": ["new york state electric and gas"], "phone": "800-572-1111", "website": "https://www.nyseg.com"},
+      {"name": "National Fuel Gas", "aliases": ["national fuel", "nfg"], "phone": "800-365-3234", "website": "https://www.nationalfuel.com"},
+      {"name": "Central Hudson", "aliases": [], "phone": "800-527-2714", "website": "https://www.cenhud.com"}
+    ]
+  },
+  "NJ": {
+    "utilities": [
+      {"name": "PSE&G", "aliases": ["pseg", "public service"], "phone": "800-436-7734", "website": "https://www.pseg.com"},
+      {"name": "New Jersey Natural Gas", "aliases": ["njng", "nj natural gas"], "phone": "800-221-0051", "website": "https://www.njng.com"},
+      {"name": "South Jersey Gas", "aliases": ["sjg", "south jersey"], "phone": "800-582-7060", "website": "https://www.southjerseygas.com"},
+      {"name": "Elizabethtown Gas", "aliases": ["etown gas"], "phone": "800-242-5830", "website": "https://www.elizabethtowngas.com"}
+    ]
+  },
+  "IL": {
+    "utilities": [
+      {"name": "Nicor Gas", "aliases": ["nicor"], "phone": "888-642-6748", "website": "https://www.nicorgas.com"},
+      {"name": "Peoples Gas", "aliases": ["peoples"], "phone": "866-556-6001", "website": "https://www.peoplesgasdelivery.com"},
+      {"name": "Ameren Illinois", "aliases": ["ameren"], "phone": "800-755-5000", "website": "https://www.ameren.com"}
+    ]
+  },
+  "FL": {
+    "utilities": [
+      {"name": "TECO Peoples Gas", "aliases": ["teco", "peoples gas florida"], "phone": "877-832-6747", "website": "https://www.peoplesgas.com"},
+      {"name": "Florida City Gas", "aliases": ["fcg"], "phone": "888-352-5325", "website": "https://www.floridacitygas.com"},
+      {"name": "Florida Public Utilities", "aliases": ["fpu"], "phone": "800-427-7712", "website": "https://www.fpuc.com"}
+    ]
+  }
+}

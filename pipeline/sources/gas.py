@@ -28,6 +28,59 @@ PROPANE_COMPANIES = [
     'propane', 'lp gas', 'lpg', 'bottled gas',
 ]
 
+# Cache for official gas utilities
+_official_gas_utilities = None
+
+def load_official_gas_utilities():
+    """Load official gas utility registry for validation."""
+    global _official_gas_utilities
+    if _official_gas_utilities is None:
+        import json
+        registry_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 'data', 'official_gas_utilities.json')
+        try:
+            with open(registry_path, 'r') as f:
+                _official_gas_utilities = json.load(f)
+        except Exception:
+            _official_gas_utilities = {}
+    return _official_gas_utilities
+
+def is_official_gas_utility(name: str, state: str) -> tuple:
+    """
+    Check if a company name matches an official regulated gas utility for the state.
+    Returns (is_official, matched_utility_info or None)
+    """
+    if not name or not state:
+        return False, None
+    
+    registry = load_official_gas_utilities()
+    state_data = registry.get(state.upper(), {})
+    utilities = state_data.get('utilities', [])
+    municipal = state_data.get('municipal_systems', [])
+    
+    name_lower = name.lower().strip()
+    
+    # Check against official utilities
+    for util in utilities:
+        official_name = util.get('name', '').lower()
+        aliases = [a.lower() for a in util.get('aliases', [])]
+        
+        # Check if name matches official name or any alias
+        if name_lower == official_name or name_lower in aliases:
+            return True, util
+        # Check partial matches
+        if official_name in name_lower or name_lower in official_name:
+            return True, util
+        for alias in aliases:
+            if alias in name_lower or name_lower in alias:
+                return True, util
+    
+    # Check municipal systems
+    for muni in municipal:
+        if muni.lower() in name_lower or name_lower in muni.lower():
+            return True, {'name': muni, 'type': 'municipal'}
+    
+    return False, None
+
 def is_propane_company(name: str) -> bool:
     """Check if a company name indicates a propane dealer rather than natural gas utility."""
     if not name:
@@ -294,29 +347,48 @@ class TenantVerifiedGasSource(DataSource):
             
             utility_name = result.get('name')
             confidence = result.get('confidence_score', self.base_confidence)
+            phone = result.get('phone')
+            website = result.get('website')
             
-            # Check if this is a propane company, not a natural gas utility
+            # First check if this is a propane company
             is_propane = is_propane_company(utility_name)
+            
+            # Then validate against official utility registry
+            is_official, official_info = is_official_gas_utility(utility_name, context.state)
             
             if is_propane:
                 # Propane companies should have very low confidence as gas utilities
                 # They'll be shown as alternatives with a propane note
                 confidence = 20  # Very low - should not be primary result
+            elif is_official and official_info:
+                # Boost confidence for officially verified utilities
+                confidence = max(confidence, 80)
+                # Use official contact info if available
+                if official_info.get('phone') and not phone:
+                    phone = official_info.get('phone')
+                if official_info.get('website') and not website:
+                    website = official_info.get('website')
+            elif not is_official and context.state in load_official_gas_utilities():
+                # State has official registry but this utility isn't in it - suspicious
+                # Could be propane, could be typo, could be outdated name
+                confidence = min(confidence, 40)  # Cap confidence for unverified utilities
             
             return SourceResult(
                 source_name=self.name,
                 utility_name=utility_name,
                 confidence_score=confidence,
                 match_type='zip',
-                phone=result.get('phone'),
-                website=result.get('website'),
+                phone=phone,
+                website=website,
                 raw_data={
                     **result,
                     'confidence_level': result.get('confidence'),
                     'dominance_pct': result.get('dominance_pct'),
                     'possible_split_territory': result.get('possible_split_territory', False),
                     'is_propane': is_propane,
-                    'propane_note': 'Propane/LP gas dealer (not piped natural gas)' if is_propane else None
+                    'propane_note': 'Propane/LP gas dealer (not piped natural gas)' if is_propane else None,
+                    'is_official_utility': is_official,
+                    'official_registry_match': official_info.get('name') if official_info else None
                 }
             )
         except Exception as e:

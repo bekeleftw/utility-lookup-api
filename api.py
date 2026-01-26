@@ -264,12 +264,30 @@ def format_utility(util, util_type, city=None, state=None):
     from name_normalizer import normalize_utility_name
     from browser_verification import find_utility_website
     
+    # Blocklist of non-utility websites that should never be returned
+    BLOCKED_WEBSITE_DOMAINS = [
+        'mapquest.com', 'yelp.com', 'yellowpages.com', 'whitepages.com',
+        'facebook.com', 'twitter.com', 'linkedin.com', 'instagram.com',
+        'bbb.org', 'manta.com', 'chamberofcommerce.com', 'bizapedia.com',
+        'opencorporates.com', 'dnb.com', 'zoominfo.com', 'crunchbase.com',
+        'wikipedia.org', 'ncbi.nlm.nih.gov', 'indeed.com', 'glassdoor.com',
+        'google.com', 'bing.com', 'yahoo.com', 'reddit.com',
+    ]
+    
+    def is_blocked_website(url):
+        if not url:
+            return False
+        url_lower = url.lower()
+        return any(domain in url_lower for domain in BLOCKED_WEBSITE_DOMAINS)
+    
     # Get raw name and normalize it
     raw_name = util.get('NAME', util.get('name', 'Unknown'))
     normalized_name = normalize_utility_name(raw_name)
     
-    # Get existing website
+    # Get existing website and filter blocked domains
     website = util.get('WEBSITE', util.get('website'))
+    if is_blocked_website(website):
+        website = None
     
     # If no website, try to find one via SERP
     if (not website or website in ['NOT AVAILABLE', '', None]) and normalized_name:

@@ -37060,17 +37060,6 @@
         "possible_split_territory": false,
         "website": "https://www.monroenc.org"
       },
-      "27534": {
-        "name": "New Hope Gas Company",
-        "normalized_name": "NEW HOPE GAS COMPANY",
-        "phone": null,
-        "sample_count": 2,
-        "total_count": 2,
-        "dominance_pct": 100.0,
-        "confidence_level": "high",
-        "possible_split_territory": false,
-        "website": null
-      },
       "27301": {
         "name": "Piedmont Natural Gas",
         "normalized_name": "PIEDMONT NATURAL GAS",

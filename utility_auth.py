@@ -126,12 +126,18 @@ def debug_config():
     """Debug endpoint to check configuration."""
     try:
         result = airtable_request(USERS_TABLE, params={'maxRecords': 1})
+        # Get field names from first record
+        fields = []
+        if result.get('records'):
+            fields = list(result['records'][0].get('fields', {}).keys())
         return jsonify({
             "airtable_connected": True,
             "base_id_set": bool(AIRTABLE_BASE_ID),
             "api_key_set": bool(AIRTABLE_API_KEY),
             "jwt_secret_set": bool(JWT_SECRET),
-            "sample_record": bool(result.get('records'))
+            "sample_record": bool(result.get('records')),
+            "field_names": fields,
+            "record_count": len(result.get('records', []))
         })
     except Exception as e:
         return jsonify({

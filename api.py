@@ -58,6 +58,10 @@ CORS(app)  # Allow cross-origin requests from Webflow
 # Register Resident Guide Blueprint
 app.register_blueprint(guide_bp)
 
+# Register Utility Auth Blueprint
+from utility_auth import utility_auth_bp
+app.register_blueprint(utility_auth_bp)
+
 # Set up database connection for guide feature (uses separate GUIDE_DATABASE_URL)
 GUIDE_DATABASE_URL = os.getenv('GUIDE_DATABASE_URL')
 if GUIDE_DATABASE_URL:

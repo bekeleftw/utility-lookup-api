@@ -136,7 +136,10 @@ def login():
         params = {
             'filterByFormula': f"AND(LOWER({{email}}) = '{email}', {{is_active}} = TRUE())"
         }
+        print(f"[AUTH] Looking up user: {email}")
+        print(f"[AUTH] Airtable config: BASE_ID={AIRTABLE_BASE_ID[:10] if AIRTABLE_BASE_ID else 'None'}..., API_KEY={'set' if AIRTABLE_API_KEY else 'None'}")
         result = airtable_request(USERS_TABLE, params=params)
+        print(f"[AUTH] Airtable result: {result}")
         records = result.get('records', [])
         
         if not records:

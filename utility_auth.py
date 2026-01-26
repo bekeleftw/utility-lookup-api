@@ -155,15 +155,24 @@ def test_query():
     """Test the user query."""
     email = request.args.get('email', 'mark@utilityprofit.com').lower()
     try:
-        params = {
+        # First try without is_active filter
+        params_simple = {
+            'filterByFormula': f"LOWER({{Email}}) = '{email}'"
+        }
+        result_simple = airtable_request(USERS_TABLE, params=params_simple)
+        
+        # Then try with is_active filter
+        params_full = {
             'filterByFormula': f"AND(LOWER({{Email}}) = '{email}', {{is_active}} = TRUE())"
         }
-        result = airtable_request(USERS_TABLE, params=params)
-        records = result.get('records', [])
+        result_full = airtable_request(USERS_TABLE, params=params_full)
+        
         return jsonify({
-            "query": params['filterByFormula'],
-            "found": len(records),
-            "has_password_hash": bool(records[0].get('fields', {}).get('password_hash')) if records else False
+            "email_searched": email,
+            "found_without_active_filter": len(result_simple.get('records', [])),
+            "found_with_active_filter": len(result_full.get('records', [])),
+            "is_active_value": result_simple.get('records', [{}])[0].get('fields', {}).get('is_active') if result_simple.get('records') else None,
+            "has_password_hash": bool(result_simple.get('records', [{}])[0].get('fields', {}).get('password_hash')) if result_simple.get('records') else False
         })
     except Exception as e:
         return jsonify({"error": str(e)})

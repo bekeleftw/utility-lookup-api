@@ -128,8 +128,10 @@ def debug_config():
         result = airtable_request(USERS_TABLE, params={'maxRecords': 1})
         # Get field names from first record
         fields = []
+        sample_email = None
         if result.get('records'):
             fields = list(result['records'][0].get('fields', {}).keys())
+            sample_email = result['records'][0].get('fields', {}).get('Email')
         return jsonify({
             "airtable_connected": True,
             "base_id_set": bool(AIRTABLE_BASE_ID),
@@ -137,7 +139,8 @@ def debug_config():
             "jwt_secret_set": bool(JWT_SECRET),
             "sample_record": bool(result.get('records')),
             "field_names": fields,
-            "record_count": len(result.get('records', []))
+            "record_count": len(result.get('records', [])),
+            "sample_email": sample_email
         })
     except Exception as e:
         return jsonify({
@@ -146,6 +149,24 @@ def debug_config():
             "base_id_set": bool(AIRTABLE_BASE_ID),
             "api_key_set": bool(AIRTABLE_API_KEY)
         })
+
+@utility_auth_bp.route('/api/utility-auth/test-query', methods=['GET'])
+def test_query():
+    """Test the user query."""
+    email = request.args.get('email', 'mark@utilityprofit.com').lower()
+    try:
+        params = {
+            'filterByFormula': f"AND(LOWER({{Email}}) = '{email}', {{is_active}} = TRUE())"
+        }
+        result = airtable_request(USERS_TABLE, params=params)
+        records = result.get('records', [])
+        return jsonify({
+            "query": params['filterByFormula'],
+            "found": len(records),
+            "has_password_hash": bool(records[0].get('fields', {}).get('password_hash')) if records else False
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)})
 
 @utility_auth_bp.route('/api/utility-auth/login', methods=['POST'])
 def login():

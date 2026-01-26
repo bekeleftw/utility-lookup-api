@@ -97,6 +97,25 @@
 .up-feedback-done.show{display:inline;}
 .up-no-result{color:#9ca3af;font-size:13px;font-style:italic;}
 
+/* Confidence badge with dropdown */
+.up-badge-confidence{cursor:pointer;position:relative;}
+.up-badge-confidence .up-badge-caret{margin-left:4px;font-size:8px;}
+.up-confidence-dropdown{display:none;position:absolute;top:100%;right:0;margin-top:6px;background:white;border:1px solid #e5e7eb;border-radius:8px;padding:10px 14px;font-size:12px;color:#374151;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,0.1);z-index:100;}
+.up-confidence-dropdown.open{display:block;}
+.up-confidence-dropdown .score{font-weight:700;color:#7AC143;}
+
+/* Feedback forms */
+.up-feedback-form,.up-url-form{display:none;margin-top:12px;padding:12px;background:#f9fafb;border-radius:8px;border:1px solid #e5e7eb;}
+.up-feedback-form.open,.up-url-form.open{display:block;}
+.up-feedback-form label,.up-url-form label{display:block;font-size:12px;font-weight:600;color:#374151;margin-bottom:8px;}
+.up-feedback-form input,.up-url-form input{width:100%;padding:10px 12px;font-size:14px;border:1px solid #e5e7eb;border-radius:6px;margin-bottom:8px;box-sizing:border-box;}
+.up-feedback-form input:focus,.up-url-form input:focus{outline:none;border-color:#7AC143;}
+.up-feedback-submit,.up-url-submit{padding:8px 16px;font-size:13px;font-weight:600;color:white;background:#7AC143;border:none;border-radius:6px;cursor:pointer;}
+.up-feedback-submit:hover,.up-url-submit:hover{background:#5a9a30;}
+.up-url-buttons{display:flex;gap:8px;}
+.up-url-skip{padding:8px 16px;font-size:13px;font-weight:500;color:#6b7280;background:white;border:1px solid #e5e7eb;border-radius:6px;cursor:pointer;}
+.up-url-skip:hover{background:#f3f4f6;}
+
 /* Location pill */
 .up-location{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#f0f9e8;border-radius:8px;font-size:13px;color:#374151;margin-bottom:12px;}
 .up-location-icon{font-size:16px;}
@@ -313,21 +332,46 @@
     return selected;
   }
   
-  function getConfidenceBadge(util) {
+  var sourceExplanations = {
+    'state_gis': 'Matched via official state GIS utility boundary data',
+    'hifld': 'Matched via federal HIFLD utility service territory',
+    'municipal': 'Matched to municipal/city-owned utility',
+    'county_default': 'Default utility for this county',
+    'eia_861': 'Matched via EIA-861 utility data',
+    'serp_verified': 'Verified via web search results',
+    'tenant_verified': 'Verified by tenant reports for this ZIP'
+  };
+  
+  function getSourceExplanation(source) {
+    if (!source) return '';
+    var s = source.toLowerCase();
+    for (var key in sourceExplanations) {
+      if (s.indexOf(key) >= 0) return sourceExplanations[key];
+    }
+    return source;
+  }
+  
+  function getConfidenceBadgeWithDropdown(util, cardId) {
     var score = util.confidence_score;
+    var source = util._source || util.source || '';
     var badgeClass, badgeLabel;
     if (score !== undefined && score !== null) {
       if (score >= 85) { badgeClass = 'up-badge-verified'; badgeLabel = 'Verified'; }
-      else if (score >= 70) { badgeClass = 'up-badge-high'; badgeLabel = 'High'; }
+      else if (score >= 70) { badgeClass = 'up-badge-high'; badgeLabel = 'High Confidence'; }
       else if (score >= 50) { badgeClass = 'up-badge-medium'; badgeLabel = 'Medium'; }
-      else { badgeClass = 'up-badge-low'; badgeLabel = 'Low'; }
+      else { badgeClass = 'up-badge-low'; badgeLabel = 'Low Confidence'; }
     } else {
       var confidence = util.confidence || 'medium';
-      var map = { verified: { c: 'up-badge-verified', l: 'Verified' }, high: { c: 'up-badge-high', l: 'High' }, medium: { c: 'up-badge-medium', l: 'Medium' }, low: { c: 'up-badge-low', l: 'Low' } };
+      var map = { verified: { c: 'up-badge-verified', l: 'Verified' }, high: { c: 'up-badge-high', l: 'High Confidence' }, medium: { c: 'up-badge-medium', l: 'Medium' }, low: { c: 'up-badge-low', l: 'Low Confidence' } };
       var m = map[confidence] || map.medium;
       badgeClass = m.c; badgeLabel = m.l;
     }
-    return '<span class="up-badge ' + badgeClass + '">' + badgeLabel + '</span>';
+    var explanation = getSourceExplanation(source);
+    var dropdownContent = (score !== undefined && score !== null) 
+      ? (explanation ? '<span class="score">' + score + '/100</span> - ' + explanation : '<span class="score">' + score + '/100</span> confidence')
+      : (explanation || 'Confidence details unavailable');
+    return '<span class="up-badge ' + badgeClass + ' up-badge-confidence" data-dropdown="' + cardId + '-dropdown">' + badgeLabel + '<span class="up-badge-caret">▼</span></span>' +
+      '<div class="up-confidence-dropdown" id="' + cardId + '-dropdown">' + dropdownContent + '</div>';
   }
   
   function getTechType(tech) {
@@ -342,12 +386,12 @@
   }
   
   function renderUtilityCard(util, type, address) {
-    var cardId = 'card-' + type + '-' + Date.now();
+    var cardId = 'card-' + type + '-' + Date.now() + '-' + Math.random().toString(36).substr(2, 5);
     var badges = '';
     if (util.type && ['MUD', 'CDD', 'PUD', 'WCID', 'Metro District'].indexOf(util.type) >= 0) {
       badges += '<span class="up-badge up-badge-district">' + util.type + '</span>';
     }
-    badges += getConfidenceBadge(util);
+    badges += getConfidenceBadgeWithDropdown(util, cardId);
     
     var detailsLeft = '';
     if (util.phone && util.phone !== 'NOT AVAILABLE') {
@@ -368,7 +412,18 @@
     var otherSection = '';
     if (util.other_providers && util.other_providers.length > 0) {
       var altId = cardId + '-others';
-      var otherRows = util.other_providers.map(function(p, i) {
+      // Dedupe providers by normalized name (exclude primary provider)
+      var primaryName = (util.name || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+      var seenNames = {};
+      seenNames[primaryName] = true;
+      var dedupedProviders = util.other_providers.filter(function(p) {
+        var normName = (p.name || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+        if (seenNames[normName]) return false;
+        seenNames[normName] = true;
+        return true;
+      });
+      
+      var otherRows = dedupedProviders.map(function(p, i) {
         var altItemId = cardId + '-alt-' + i;
         // Title case the name
         var pName = p.name ? p.name.split(' ').map(function(w) { 
@@ -425,6 +480,19 @@
         '</div>' +
       '</div>' +
       otherSection +
+      '<div class="up-feedback-form" id="' + cardId + '-form">' +
+        '<label>What is the correct ' + typeLabels[type].toLowerCase() + ' provider?</label>' +
+        '<input type="text" placeholder="Enter correct provider name" id="' + cardId + '-correction" />' +
+        '<button class="up-feedback-submit" data-card="' + cardId + '" data-type="' + type + '">Submit</button>' +
+      '</div>' +
+      '<div class="up-url-form" id="' + cardId + '-url-form">' +
+        '<label>Know where to check service? (optional)</label>' +
+        '<input type="url" placeholder="https://utility.com/start-service" id="' + cardId + '-service-url" />' +
+        '<div class="up-url-buttons">' +
+          '<button class="up-url-submit" data-card="' + cardId + '" data-type="' + type + '">Submit</button>' +
+          '<button class="up-url-skip" data-card="' + cardId + '">Skip</button>' +
+        '</div>' +
+      '</div>' +
     '</div>';
   }
   
@@ -640,6 +708,25 @@
   
   // ========== FEEDBACK HANDLERS ==========
   function attachFeedbackListeners() {
+    // Confidence badge dropdown toggle
+    document.querySelectorAll('.up-badge-confidence:not([data-listener])').forEach(function(badge) {
+      badge.setAttribute('data-listener', 'true');
+      badge.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var dropdownId = this.dataset.dropdown;
+        var dropdown = document.getElementById(dropdownId);
+        // Close other dropdowns
+        document.querySelectorAll('.up-confidence-dropdown.open').forEach(function(d) {
+          if (d.id !== dropdownId) d.classList.remove('open');
+        });
+        document.querySelectorAll('.up-badge-confidence.open').forEach(function(b) {
+          if (b !== this) b.classList.remove('open');
+        });
+        if (dropdown) dropdown.classList.toggle('open');
+        this.classList.toggle('open');
+      });
+    });
+    
     // Main provider feedback buttons
     document.querySelectorAll('.up-feedback-btn-small:not(.up-alt-btn):not([data-listener])').forEach(function(btn) {
       btn.setAttribute('data-listener', 'true');
@@ -654,12 +741,32 @@
         feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.classList.remove('selected'); });
         this.classList.add('selected');
         
-        // Hide buttons, show thanks
-        feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.style.display = 'none'; });
-        var doneEl = document.getElementById(cardId + '-done');
-        if (doneEl) doneEl.classList.add('show');
+        if (response === 'yes') {
+          // Show URL form for verification source
+          feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.style.display = 'none'; });
+          var urlForm = document.getElementById(cardId + '-url-form');
+          if (urlForm) urlForm.classList.add('open');
+        } else {
+          // Show correction form
+          var corrForm = document.getElementById(cardId + '-form');
+          if (corrForm) corrForm.classList.add('open');
+        }
+      });
+    });
+    
+    // Correction form submit (No feedback)
+    document.querySelectorAll('.up-feedback-submit:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var cardId = this.dataset.card;
+        var type = this.dataset.type;
+        var correction = document.getElementById(cardId + '-correction').value.trim();
+        if (!correction) { alert('Please enter the correct provider name'); return; }
         
-        // Send feedback
+        var feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]');
+        var provider = feedback ? feedback.dataset.provider : '';
+        var address = feedback ? feedback.dataset.address : '';
+        
         fetch(FEEDBACK_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -667,10 +774,76 @@
             address: address,
             utility_type: type,
             returned_provider: provider,
-            is_correct: response === 'yes',
+            correct_provider: correction,
+            is_correct: false,
             source: 'web_widget'
           })
         }).catch(function(e) { console.error('Feedback error:', e); });
+        
+        document.getElementById(cardId + '-form').classList.remove('open');
+        if (feedback) feedback.querySelectorAll('.up-feedback-btn-small').forEach(function(b) { b.style.display = 'none'; });
+        var doneEl = document.getElementById(cardId + '-done');
+        if (doneEl) doneEl.classList.add('show');
+      });
+    });
+    
+    // URL form submit (Yes feedback with source)
+    document.querySelectorAll('.up-url-submit:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var cardId = this.dataset.card;
+        var type = this.dataset.type;
+        var serviceUrl = document.getElementById(cardId + '-service-url').value.trim();
+        
+        var feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]');
+        var provider = feedback ? feedback.dataset.provider : '';
+        var address = feedback ? feedback.dataset.address : '';
+        
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: address,
+            utility_type: type,
+            returned_provider: provider,
+            is_correct: true,
+            service_check_url: serviceUrl || null,
+            source: 'web_widget'
+          })
+        }).catch(function(e) { console.error('Feedback error:', e); });
+        
+        document.getElementById(cardId + '-url-form').classList.remove('open');
+        var doneEl = document.getElementById(cardId + '-done');
+        if (doneEl) doneEl.classList.add('show');
+      });
+    });
+    
+    // URL form skip button
+    document.querySelectorAll('.up-url-skip:not([data-listener])').forEach(function(btn) {
+      btn.setAttribute('data-listener', 'true');
+      btn.addEventListener('click', function() {
+        var cardId = this.dataset.card;
+        
+        var feedback = document.querySelector('.up-feedback-inline[data-card="' + cardId + '"]');
+        var type = feedback ? feedback.dataset.type : '';
+        var provider = feedback ? feedback.dataset.provider : '';
+        var address = feedback ? feedback.dataset.address : '';
+        
+        fetch(FEEDBACK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            address: address,
+            utility_type: type,
+            returned_provider: provider,
+            is_correct: true,
+            source: 'web_widget'
+          })
+        }).catch(function(e) { console.error('Feedback error:', e); });
+        
+        document.getElementById(cardId + '-url-form').classList.remove('open');
+        var doneEl = document.getElementById(cardId + '-done');
+        if (doneEl) doneEl.classList.add('show');
       });
     });
     
@@ -698,6 +871,7 @@
             utility_type: type,
             returned_provider: provider,
             is_correct: response === 'yes',
+            is_alternative: true,
             source: 'web_widget_alt'
           })
         }).catch(function(e) { console.error('Feedback error:', e); });
@@ -713,8 +887,19 @@
         if (list) {
           list.classList.toggle('open');
           this.classList.toggle('open');
+          // Update caret
+          var caret = this.querySelector('.up-other-caret');
+          if (caret) caret.textContent = list.classList.contains('open') ? '▲' : '▼';
         }
       });
+    });
+    
+    // Close confidence dropdowns when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.up-badge-confidence') && !e.target.closest('.up-confidence-dropdown')) {
+        document.querySelectorAll('.up-confidence-dropdown.open').forEach(function(d) { d.classList.remove('open'); });
+        document.querySelectorAll('.up-badge-confidence.open').forEach(function(b) { b.classList.remove('open'); });
+      }
     });
   }
   

@@ -152,27 +152,37 @@ def debug_config():
 
 @utility_auth_bp.route('/api/utility-auth/test-query', methods=['GET'])
 def test_query():
-    """Test the user query."""
+    """Test the user query and password verification."""
     email = request.args.get('email', 'mark@utilityprofit.com').lower()
+    test_password = request.args.get('password', '')
     try:
-        # First try without is_active filter
-        params_simple = {
-            'filterByFormula': f"LOWER({{Email}}) = '{email}'"
-        }
-        result_simple = airtable_request(USERS_TABLE, params=params_simple)
-        
-        # Then try with is_active filter
-        params_full = {
+        params = {
             'filterByFormula': f"AND(LOWER({{Email}}) = '{email}', {{is_active}} = TRUE())"
         }
-        result_full = airtable_request(USERS_TABLE, params=params_full)
+        result = airtable_request(USERS_TABLE, params=params)
+        records = result.get('records', [])
+        
+        if not records:
+            return jsonify({"error": "User not found", "email": email})
+        
+        fields = records[0].get('fields', {})
+        password_hash = fields.get('password_hash', '')
+        
+        # Test password verification if password provided
+        password_valid = None
+        if test_password:
+            try:
+                password_valid = verify_password(test_password, password_hash)
+            except Exception as e:
+                password_valid = f"Error: {str(e)}"
         
         return jsonify({
-            "email_searched": email,
-            "found_without_active_filter": len(result_simple.get('records', [])),
-            "found_with_active_filter": len(result_full.get('records', [])),
-            "is_active_value": result_simple.get('records', [{}])[0].get('fields', {}).get('is_active') if result_simple.get('records') else None,
-            "has_password_hash": bool(result_simple.get('records', [{}])[0].get('fields', {}).get('password_hash')) if result_simple.get('records') else False
+            "email": email,
+            "found": True,
+            "has_password_hash": bool(password_hash),
+            "hash_length": len(password_hash),
+            "hash_prefix": password_hash[:20] if password_hash else None,
+            "password_valid": password_valid
         })
     except Exception as e:
         return jsonify({"error": str(e)})
@@ -192,10 +202,7 @@ def login():
         params = {
             'filterByFormula': f"AND(LOWER({{Email}}) = '{email}', {{is_active}} = TRUE())"
         }
-        print(f"[AUTH] Looking up user: {email}")
-        print(f"[AUTH] Airtable config: BASE_ID={AIRTABLE_BASE_ID[:10] if AIRTABLE_BASE_ID else 'None'}..., API_KEY={'set' if AIRTABLE_API_KEY else 'None'}")
         result = airtable_request(USERS_TABLE, params=params)
-        print(f"[AUTH] Airtable result: {result}")
         records = result.get('records', [])
         
         if not records:

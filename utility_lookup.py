@@ -311,14 +311,16 @@ def lookup_utilities_by_address(
                         sr_name = sr.utility_name.upper()
                         # Only include if different from selected
                         if sr_name != selected_name and sr_name not in [p['name'].upper() for p in other_providers]:
-                            # Get phone and website from raw_data if available
+                            # Get phone and website from SourceResult or raw_data
                             raw = sr.raw_data or {}
+                            phone = sr.phone or raw.get('TELEPHONE') or raw.get('phone') or raw.get('Phone')
+                            website = sr.website or raw.get('WEBSITE') or raw.get('website') or raw.get('Website')
                             provider_entry = {
                                 'name': sr.utility_name,
                                 'source': sr.source_name,
                                 'confidence_score': sr.confidence_score,
-                                'phone': raw.get('TELEPHONE') or raw.get('phone'),
-                                'website': raw.get('WEBSITE') or raw.get('website')
+                                'phone': phone if phone else None,
+                                'website': website if website else None
                             }
                             # Check if this is a propane company
                             if raw.get('is_propane'):

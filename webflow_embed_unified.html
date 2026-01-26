@@ -412,12 +412,23 @@
     var otherSection = '';
     if (util.other_providers && util.other_providers.length > 0) {
       var altId = cardId + '-others';
+      
+      // Normalize name for deduplication - remove state suffixes, punctuation, common words
+      function normalizeName(name) {
+        if (!name) return '';
+        return name.toUpperCase()
+          .replace(/\s*-\s*\(?[A-Z]{2}\)?$/i, '') // Remove " - (NC)" or " - NC" suffix
+          .replace(/\s*\([A-Z]{2}\)$/i, '') // Remove "(NC)" suffix
+          .replace(/\s+(INC|LLC|CORP|CO|COMPANY|CORPORATION)\.?$/i, '') // Remove business suffixes
+          .replace(/[^A-Z0-9]/g, ''); // Remove all non-alphanumeric
+      }
+      
       // Dedupe providers by normalized name (exclude primary provider)
-      var primaryName = (util.name || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+      var primaryNorm = normalizeName(util.name);
       var seenNames = {};
-      seenNames[primaryName] = true;
+      seenNames[primaryNorm] = true;
       var dedupedProviders = util.other_providers.filter(function(p) {
-        var normName = (p.name || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+        var normName = normalizeName(p.name);
         if (seenNames[normName]) return false;
         seenNames[normName] = true;
         return true;

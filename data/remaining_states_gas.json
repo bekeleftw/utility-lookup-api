@@ -38084,17 +38084,48 @@
         "website": "https://www.enbridgegas.com"
       },
       "27534": {
-        "name": "New Hope Gas Company",
-        "normalized_name": "NEW HOPE GAS COMPANY",
-        "phone": null,
-        "sample_count": 2,
-        "total_count": 2,
+        "name": "Piedmont Natural Gas",
+        "normalized_name": "PIEDMONT NATURAL GAS",
+        "phone": "800-752-7504",
+        "sample_count": 1,
+        "total_count": 1,
         "dominance_pct": 100.0,
-        "confidence_level": "low",
+        "confidence_level": "high",
         "possible_split_territory": false,
-        "website": null,
-        "is_propane": true,
-        "propane_note": "Propane/LP gas dealer (not piped natural gas)"
+        "website": "https://www.piedmontng.com"
+      },
+      "27530": {
+        "name": "Piedmont Natural Gas",
+        "normalized_name": "PIEDMONT NATURAL GAS",
+        "phone": "800-752-7504",
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false,
+        "website": "https://www.piedmontng.com"
+      },
+      "27531": {
+        "name": "Piedmont Natural Gas",
+        "normalized_name": "PIEDMONT NATURAL GAS",
+        "phone": "800-752-7504",
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false,
+        "website": "https://www.piedmontng.com"
+      },
+      "27533": {
+        "name": "Piedmont Natural Gas",
+        "normalized_name": "PIEDMONT NATURAL GAS",
+        "phone": "800-752-7504",
+        "sample_count": 1,
+        "total_count": 1,
+        "dominance_pct": 100.0,
+        "confidence_level": "high",
+        "possible_split_territory": false,
+        "website": "https://www.piedmontng.com"
       }
     },
     "ND": {

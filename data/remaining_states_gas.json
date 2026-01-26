@@ -38082,6 +38082,19 @@
         "confidence_level": "high",
         "possible_split_territory": false,
         "website": "https://www.enbridgegas.com"
+      },
+      "27534": {
+        "name": "New Hope Gas Company",
+        "normalized_name": "NEW HOPE GAS COMPANY",
+        "phone": null,
+        "sample_count": 2,
+        "total_count": 2,
+        "dominance_pct": 100.0,
+        "confidence_level": "low",
+        "possible_split_territory": false,
+        "website": null,
+        "is_propane": true,
+        "propane_note": "Propane/LP gas dealer (not piped natural gas)"
       }
     },
     "ND": {

@@ -17,6 +17,28 @@ from pipeline.interfaces import (
     SOURCE_CONFIDENCE,
 )
 
+# Known propane companies - these are NOT natural gas utilities
+# They deliver propane/LP gas, not piped natural gas
+PROPANE_COMPANIES = [
+    'amerigas', 'ferrellgas', 'suburban propane', 'blue rhino', 'cynch',
+    'thompson gas', 'paraco gas', 'sharp energy', 'blossman gas',
+    'superior plus', 'heritage propane', 'pinnacle propane', 'lakes gas',
+    'eastern propane', 'dead river', 'petro home services',
+    'new hope gas', 'tidewater energy', 'dixie gas', 'holston gases',
+    'propane', 'lp gas', 'lpg', 'bottled gas',
+]
+
+def is_propane_company(name: str) -> bool:
+    """Check if a company name indicates a propane dealer rather than natural gas utility."""
+    if not name:
+        return False
+    name_lower = name.lower()
+    # Check for exact matches or partial matches
+    for propane_name in PROPANE_COMPANIES:
+        if propane_name in name_lower:
+            return True
+    return False
+
 
 class StateGISGasSource(DataSource):
     """Query state-specific GIS APIs for gas utilities."""
@@ -270,11 +292,20 @@ class TenantVerifiedGasSource(DataSource):
             if not result or not result.get('name'):
                 return None
             
+            utility_name = result.get('name')
             confidence = result.get('confidence_score', self.base_confidence)
+            
+            # Check if this is a propane company, not a natural gas utility
+            is_propane = is_propane_company(utility_name)
+            
+            if is_propane:
+                # Propane companies should have very low confidence as gas utilities
+                # They'll be shown as alternatives with a propane note
+                confidence = 20  # Very low - should not be primary result
             
             return SourceResult(
                 source_name=self.name,
-                utility_name=result.get('name'),
+                utility_name=utility_name,
                 confidence_score=confidence,
                 match_type='zip',
                 phone=result.get('phone'),
@@ -283,7 +314,9 @@ class TenantVerifiedGasSource(DataSource):
                     **result,
                     'confidence_level': result.get('confidence'),
                     'dominance_pct': result.get('dominance_pct'),
-                    'possible_split_territory': result.get('possible_split_territory', False)
+                    'possible_split_territory': result.get('possible_split_territory', False),
+                    'is_propane': is_propane,
+                    'propane_note': 'Propane/LP gas dealer (not piped natural gas)' if is_propane else None
                 }
             )
         except Exception as e:

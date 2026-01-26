@@ -313,13 +313,18 @@ def lookup_utilities_by_address(
                         if sr_name != selected_name and sr_name not in [p['name'].upper() for p in other_providers]:
                             # Get phone and website from raw_data if available
                             raw = sr.raw_data or {}
-                            other_providers.append({
+                            provider_entry = {
                                 'name': sr.utility_name,
                                 'source': sr.source_name,
                                 'confidence_score': sr.confidence_score,
                                 'phone': raw.get('TELEPHONE') or raw.get('phone'),
                                 'website': raw.get('WEBSITE') or raw.get('website')
-                            })
+                            }
+                            # Check if this is a propane company
+                            if raw.get('is_propane'):
+                                provider_entry['is_propane'] = True
+                                provider_entry['note'] = 'Propane/LP gas dealer (not piped natural gas)'
+                            other_providers.append(provider_entry)
                 # Sort by confidence and limit to top 3
                 other_providers = sorted(other_providers, key=lambda x: x.get('confidence_score', 0), reverse=True)[:3]
                 

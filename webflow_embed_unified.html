@@ -354,9 +354,13 @@
         var pName = p.name || 'Unknown';
         var pPhone = (p.phone && p.phone !== 'NOT AVAILABLE') ? '<a href="tel:' + p.phone + '">' + p.phone + '</a>' : '';
         var pWeb = (p.website && p.website !== 'NOT AVAILABLE') ? '<a href="' + (p.website.indexOf('http') === 0 ? p.website : 'https://' + p.website) + '" target="_blank">Visit site</a>' : '';
-        return '<div style="padding:10px 0;border-bottom:1px dashed #e5e7eb;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">' +
-          '<span style="font-weight:600;color:#374151;">' + pName + '</span>' +
-          '<span style="font-size:12px;color:#9ca3af;">' + (pPhone ? pPhone + ' ' : '') + pWeb + '</span>' +
+        var propaneNote = p.is_propane ? '<span style="display:block;font-size:11px;color:#d97706;font-style:italic;">⚠️ Propane/LP gas dealer (not piped natural gas)</span>' : '';
+        return '<div style="padding:10px 0;border-bottom:1px dashed #e5e7eb;">' +
+          '<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">' +
+            '<span style="font-weight:600;color:#374151;">' + pName + '</span>' +
+            '<span style="font-size:12px;color:#9ca3af;">' + (pPhone ? pPhone + ' ' : '') + pWeb + '</span>' +
+          '</div>' +
+          propaneNote +
         '</div>';
       }).join('');
       otherSection = '<div style="margin-top:12px;padding-top:12px;border-top:1px solid #e5e7eb;">' +

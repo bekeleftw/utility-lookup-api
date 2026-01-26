@@ -59,8 +59,12 @@ CORS(app)  # Allow cross-origin requests from Webflow
 app.register_blueprint(guide_bp)
 
 # Register Utility Auth Blueprint
-from utility_auth import utility_auth_bp
-app.register_blueprint(utility_auth_bp)
+try:
+    from utility_auth import utility_auth_bp
+    app.register_blueprint(utility_auth_bp)
+    print("[API] Utility auth blueprint registered successfully")
+except Exception as e:
+    print(f"[API] Failed to register utility auth blueprint: {e}")
 
 # Set up database connection for guide feature (uses separate GUIDE_DATABASE_URL)
 GUIDE_DATABASE_URL = os.getenv('GUIDE_DATABASE_URL')

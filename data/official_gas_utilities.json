@@ -1,10 +1,57 @@
 {
   "_description": "Official regulated natural gas utilities by state. Used to validate tenant-reported gas providers.",
   "_sources": [
-    "NC: https://www.ncuc.gov/industries/naturalgas/naturalgas.html",
-    "TX: https://www.puc.texas.gov/",
-    "CA: https://www.cpuc.ca.gov/"
+    "EIA Natural Gas Distribution Companies: https://www.eia.gov/naturalgas/ngqs/",
+    "State Public Utility Commission websites"
   ],
+  "AL": {
+    "utilities": [
+      {"name": "Spire Alabama", "aliases": ["spire", "alagasco", "alabama gas"], "phone": "800-292-4008", "website": "https://www.spireenergy.com"},
+      {"name": "Mobile Gas", "aliases": [], "phone": "251-450-4774", "website": "https://mobilegas.com"}
+    ]
+  },
+  "AK": {
+    "utilities": [
+      {"name": "ENSTAR Natural Gas", "aliases": ["enstar"], "phone": "907-277-5551", "website": "https://www.enstarnaturalgas.com"}
+    ]
+  },
+  "AZ": {
+    "utilities": [
+      {"name": "Southwest Gas", "aliases": ["southwest"], "phone": "877-860-6020", "website": "https://www.swgas.com"},
+      {"name": "UNS Gas", "aliases": ["uns", "tucson gas"], "phone": "877-837-4968", "website": "https://www.unsgas.com"}
+    ]
+  },
+  "AR": {
+    "utilities": [
+      {"name": "CenterPoint Energy Arkansas", "aliases": ["centerpoint", "arkla"], "phone": "800-992-7552", "website": "https://www.centerpointenergy.com"},
+      {"name": "Black Hills Energy Arkansas", "aliases": ["black hills"], "phone": "888-890-5554", "website": "https://www.blackhillsenergy.com"}
+    ]
+  },
+  "CO": {
+    "utilities": [
+      {"name": "Xcel Energy", "aliases": ["xcel", "public service of colorado"], "phone": "800-895-4999", "website": "https://www.xcelenergy.com"},
+      {"name": "Black Hills Energy Colorado", "aliases": ["black hills"], "phone": "888-890-5554", "website": "https://www.blackhillsenergy.com"},
+      {"name": "Atmos Energy Colorado", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"},
+      {"name": "Colorado Natural Gas", "aliases": [], "phone": "800-557-9995", "website": "https://coloradonaturalgas.com"}
+    ]
+  },
+  "CT": {
+    "utilities": [
+      {"name": "Eversource", "aliases": ["yankee gas", "connecticut natural gas", "southern connecticut gas"], "phone": "800-989-0900", "website": "https://www.eversource.com"},
+      {"name": "SCG", "aliases": ["southern connecticut gas"], "phone": "800-659-8299", "website": "https://www.soconngas.com"}
+    ]
+  },
+  "DE": {
+    "utilities": [
+      {"name": "Chesapeake Utilities", "aliases": ["chesapeake"], "phone": "888-427-5066", "website": "https://www.chpk.com"},
+      {"name": "Delmarva Power", "aliases": ["delmarva"], "phone": "800-375-7117", "website": "https://www.delmarva.com"}
+    ]
+  },
+  "DC": {
+    "utilities": [
+      {"name": "Washington Gas", "aliases": ["wgl"], "phone": "844-927-4427", "website": "https://www.washingtongas.com"}
+    ]
+  },
   "NC": {
     "utilities": [
       {"name": "Piedmont Natural Gas", "aliases": ["piedmont", "piedmont ng"], "phone": "800-752-7504", "website": "https://www.piedmontng.com"},
@@ -89,6 +136,223 @@
       {"name": "TECO Peoples Gas", "aliases": ["teco", "peoples gas florida"], "phone": "877-832-6747", "website": "https://www.peoplesgas.com"},
       {"name": "Florida City Gas", "aliases": ["fcg"], "phone": "888-352-5325", "website": "https://www.floridacitygas.com"},
       {"name": "Florida Public Utilities", "aliases": ["fpu"], "phone": "800-427-7712", "website": "https://www.fpuc.com"}
+    ]
+  },
+  "HI": {
+    "utilities": [
+      {"name": "Hawaii Gas", "aliases": ["the gas company hawaii"], "phone": "808-535-5933", "website": "https://www.hawaiigas.com"}
+    ]
+  },
+  "ID": {
+    "utilities": [
+      {"name": "Intermountain Gas", "aliases": ["intermountain"], "phone": "800-548-3679", "website": "https://www.intgas.com"},
+      {"name": "Avista Utilities", "aliases": ["avista"], "phone": "800-227-9187", "website": "https://www.myavista.com"}
+    ]
+  },
+  "IN": {
+    "utilities": [
+      {"name": "CenterPoint Energy Indiana", "aliases": ["centerpoint", "vectren"], "phone": "800-227-1376", "website": "https://www.centerpointenergy.com"},
+      {"name": "Citizens Gas", "aliases": ["citizens"], "phone": "317-924-3311", "website": "https://www.citizensgas.com"},
+      {"name": "NIPSCO", "aliases": ["northern indiana"], "phone": "800-464-7726", "website": "https://www.nipsco.com"},
+      {"name": "Duke Energy Indiana", "aliases": ["duke indiana"], "phone": "800-521-2232", "website": "https://www.duke-energy.com"}
+    ]
+  },
+  "IA": {
+    "utilities": [
+      {"name": "MidAmerican Energy", "aliases": ["midamerican"], "phone": "888-427-5632", "website": "https://www.midamericanenergy.com"},
+      {"name": "Black Hills Energy Iowa", "aliases": ["black hills"], "phone": "888-890-5554", "website": "https://www.blackhillsenergy.com"},
+      {"name": "Alliant Energy", "aliases": ["alliant", "interstate power"], "phone": "800-255-4268", "website": "https://www.alliantenergy.com"}
+    ]
+  },
+  "KS": {
+    "utilities": [
+      {"name": "Kansas Gas Service", "aliases": ["kgs", "oneok"], "phone": "800-794-4780", "website": "https://www.kansasgasservice.com"},
+      {"name": "Black Hills Energy Kansas", "aliases": ["black hills"], "phone": "888-890-5554", "website": "https://www.blackhillsenergy.com"},
+      {"name": "Atmos Energy Kansas", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"}
+    ]
+  },
+  "KY": {
+    "utilities": [
+      {"name": "LG&E", "aliases": ["louisville gas", "louisville gas and electric"], "phone": "800-331-7370", "website": "https://www.lge-ku.com"},
+      {"name": "Duke Energy Kentucky", "aliases": ["duke kentucky"], "phone": "800-544-6900", "website": "https://www.duke-energy.com"},
+      {"name": "Columbia Gas of Kentucky", "aliases": ["columbia gas ky"], "phone": "800-432-9345", "website": "https://www.columbiagasky.com"},
+      {"name": "Atmos Energy Kentucky", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"}
+    ]
+  },
+  "LA": {
+    "utilities": [
+      {"name": "Entergy Louisiana", "aliases": ["entergy"], "phone": "800-368-3749", "website": "https://www.entergy.com"},
+      {"name": "Atmos Energy Louisiana", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"},
+      {"name": "CenterPoint Energy Louisiana", "aliases": ["centerpoint", "entex"], "phone": "800-992-7552", "website": "https://www.centerpointenergy.com"}
+    ]
+  },
+  "ME": {
+    "utilities": [
+      {"name": "Summit Natural Gas of Maine", "aliases": ["summit"], "phone": "800-909-7642", "website": "https://www.summitnaturalgasmaine.com"},
+      {"name": "Bangor Gas", "aliases": ["bangor natural gas"], "phone": "207-941-9595", "website": "https://www.bangorgas.com"}
+    ]
+  },
+  "MD": {
+    "utilities": [
+      {"name": "Baltimore Gas and Electric", "aliases": ["bge"], "phone": "800-685-0123", "website": "https://www.bge.com"},
+      {"name": "Washington Gas", "aliases": ["wgl"], "phone": "844-927-4427", "website": "https://www.washingtongas.com"},
+      {"name": "Columbia Gas of Maryland", "aliases": ["columbia gas md"], "phone": "888-460-4332", "website": "https://www.columbiagasmd.com"}
+    ]
+  },
+  "MA": {
+    "utilities": [
+      {"name": "National Grid Massachusetts", "aliases": ["national grid", "boston gas", "colonial gas"], "phone": "800-233-5325", "website": "https://www.nationalgridus.com"},
+      {"name": "Eversource Massachusetts", "aliases": ["eversource", "nstar gas"], "phone": "800-592-2000", "website": "https://www.eversource.com"},
+      {"name": "Liberty Utilities", "aliases": ["liberty", "new england gas"], "phone": "800-375-7413", "website": "https://www.libertyutilities.com"},
+      {"name": "Berkshire Gas", "aliases": ["berkshire"], "phone": "800-292-5012", "website": "https://www.berkshiregas.com"}
+    ]
+  },
+  "MI": {
+    "utilities": [
+      {"name": "DTE Energy", "aliases": ["dte", "michigan consolidated gas", "michcon"], "phone": "800-477-4747", "website": "https://www.dteenergy.com"},
+      {"name": "Consumers Energy", "aliases": ["consumers"], "phone": "800-477-5050", "website": "https://www.consumersenergy.com"},
+      {"name": "SEMCO Energy", "aliases": ["semco"], "phone": "800-624-2019", "website": "https://www.semcoenergygas.com"}
+    ]
+  },
+  "MN": {
+    "utilities": [
+      {"name": "CenterPoint Energy Minnesota", "aliases": ["centerpoint", "minnegasco"], "phone": "800-245-2377", "website": "https://www.centerpointenergy.com"},
+      {"name": "Xcel Energy Minnesota", "aliases": ["xcel", "northern states power"], "phone": "800-895-4999", "website": "https://www.xcelenergy.com"},
+      {"name": "Minnesota Energy Resources", "aliases": ["merc"], "phone": "800-889-9508", "website": "https://www.minnesotaenergyresources.com"},
+      {"name": "Great Plains Natural Gas", "aliases": ["great plains"], "phone": "800-909-6070", "website": "https://www.greatplainsnaturalgas.com"}
+    ]
+  },
+  "MS": {
+    "utilities": [
+      {"name": "Spire Mississippi", "aliases": ["spire", "mississippi valley gas"], "phone": "800-292-4008", "website": "https://www.spireenergy.com"},
+      {"name": "Atmos Energy Mississippi", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"},
+      {"name": "CenterPoint Energy Mississippi", "aliases": ["centerpoint"], "phone": "800-992-7552", "website": "https://www.centerpointenergy.com"}
+    ]
+  },
+  "MO": {
+    "utilities": [
+      {"name": "Spire Missouri", "aliases": ["spire", "laclede gas", "missouri gas energy"], "phone": "800-887-4173", "website": "https://www.spireenergy.com"},
+      {"name": "Ameren Missouri", "aliases": ["ameren"], "phone": "800-552-7583", "website": "https://www.ameren.com"},
+      {"name": "Liberty Utilities Missouri", "aliases": ["liberty", "empire district gas"], "phone": "800-206-2300", "website": "https://www.libertyutilities.com"}
+    ]
+  },
+  "MT": {
+    "utilities": [
+      {"name": "NorthWestern Energy", "aliases": ["northwestern"], "phone": "888-467-2669", "website": "https://www.northwesternenergy.com"},
+      {"name": "Montana-Dakota Utilities", "aliases": ["mdu"], "phone": "800-638-3278", "website": "https://www.montana-dakota.com"}
+    ]
+  },
+  "NE": {
+    "utilities": [
+      {"name": "Black Hills Energy Nebraska", "aliases": ["black hills"], "phone": "888-890-5554", "website": "https://www.blackhillsenergy.com"},
+      {"name": "NorthWestern Energy Nebraska", "aliases": ["northwestern"], "phone": "888-467-2669", "website": "https://www.northwesternenergy.com"},
+      {"name": "Metropolitan Utilities District", "aliases": ["mud", "omaha gas"], "phone": "402-554-6666", "website": "https://www.mudomaha.com"}
+    ]
+  },
+  "NV": {
+    "utilities": [
+      {"name": "Southwest Gas Nevada", "aliases": ["southwest"], "phone": "877-860-6020", "website": "https://www.swgas.com"},
+      {"name": "NV Energy", "aliases": ["nevada power", "sierra pacific"], "phone": "702-402-5555", "website": "https://www.nvenergy.com"}
+    ]
+  },
+  "NH": {
+    "utilities": [
+      {"name": "Liberty Utilities New Hampshire", "aliases": ["liberty", "energynorth"], "phone": "800-375-7413", "website": "https://www.libertyutilities.com"},
+      {"name": "Unitil", "aliases": ["northern utilities"], "phone": "888-301-7700", "website": "https://www.unitil.com"}
+    ]
+  },
+  "NM": {
+    "utilities": [
+      {"name": "New Mexico Gas Company", "aliases": ["nmgc", "emera"], "phone": "888-664-2726", "website": "https://www.nmgco.com"}
+    ]
+  },
+  "ND": {
+    "utilities": [
+      {"name": "Montana-Dakota Utilities", "aliases": ["mdu"], "phone": "800-638-3278", "website": "https://www.montana-dakota.com"},
+      {"name": "Xcel Energy North Dakota", "aliases": ["xcel"], "phone": "800-895-4999", "website": "https://www.xcelenergy.com"}
+    ]
+  },
+  "OK": {
+    "utilities": [
+      {"name": "Oklahoma Natural Gas", "aliases": ["ong", "oneok"], "phone": "800-664-5463", "website": "https://www.oklahomanaturalgas.com"},
+      {"name": "CenterPoint Energy Oklahoma", "aliases": ["centerpoint"], "phone": "800-992-7552", "website": "https://www.centerpointenergy.com"}
+    ]
+  },
+  "OR": {
+    "utilities": [
+      {"name": "NW Natural", "aliases": ["northwest natural"], "phone": "800-422-4012", "website": "https://www.nwnatural.com"},
+      {"name": "Avista Utilities Oregon", "aliases": ["avista"], "phone": "800-227-9187", "website": "https://www.myavista.com"},
+      {"name": "Cascade Natural Gas", "aliases": ["cascade"], "phone": "888-522-1130", "website": "https://www.cngc.com"}
+    ]
+  },
+  "RI": {
+    "utilities": [
+      {"name": "Rhode Island Energy", "aliases": ["national grid ri", "narragansett electric"], "phone": "800-322-3223", "website": "https://www.rienergy.com"}
+    ]
+  },
+  "SC": {
+    "utilities": [
+      {"name": "Piedmont Natural Gas South Carolina", "aliases": ["piedmont", "piedmont ng"], "phone": "800-752-7504", "website": "https://www.piedmontng.com"},
+      {"name": "Dominion Energy South Carolina", "aliases": ["dominion", "scana", "south carolina electric and gas"], "phone": "800-251-7234", "website": "https://www.dominionenergy.com"}
+    ]
+  },
+  "SD": {
+    "utilities": [
+      {"name": "Montana-Dakota Utilities", "aliases": ["mdu"], "phone": "800-638-3278", "website": "https://www.montana-dakota.com"},
+      {"name": "MidAmerican Energy South Dakota", "aliases": ["midamerican"], "phone": "888-427-5632", "website": "https://www.midamericanenergy.com"},
+      {"name": "NorthWestern Energy South Dakota", "aliases": ["northwestern"], "phone": "888-467-2669", "website": "https://www.northwesternenergy.com"}
+    ]
+  },
+  "TN": {
+    "utilities": [
+      {"name": "Piedmont Natural Gas Tennessee", "aliases": ["piedmont", "piedmont ng"], "phone": "800-752-7504", "website": "https://www.piedmontng.com"},
+      {"name": "Atmos Energy Tennessee", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"}
+    ]
+  },
+  "UT": {
+    "utilities": [
+      {"name": "Dominion Energy Utah", "aliases": ["dominion", "questar"], "phone": "800-323-5517", "website": "https://www.dominionenergy.com"}
+    ]
+  },
+  "VT": {
+    "utilities": [
+      {"name": "Vermont Gas Systems", "aliases": ["vermont gas", "vgs"], "phone": "802-863-4511", "website": "https://www.vermontgas.com"}
+    ]
+  },
+  "VA": {
+    "utilities": [
+      {"name": "Washington Gas Virginia", "aliases": ["wgl"], "phone": "844-927-4427", "website": "https://www.washingtongas.com"},
+      {"name": "Columbia Gas of Virginia", "aliases": ["columbia gas va"], "phone": "800-543-8911", "website": "https://www.columbiagasva.com"},
+      {"name": "Roanoke Gas", "aliases": [], "phone": "540-777-4427", "website": "https://www.roanokegas.com"},
+      {"name": "Atmos Energy Virginia", "aliases": ["atmos"], "phone": "888-286-6700", "website": "https://www.atmosenergy.com"}
+    ]
+  },
+  "WA": {
+    "utilities": [
+      {"name": "Puget Sound Energy", "aliases": ["pse"], "phone": "888-225-5773", "website": "https://www.pse.com"},
+      {"name": "Avista Utilities Washington", "aliases": ["avista"], "phone": "800-227-9187", "website": "https://www.myavista.com"},
+      {"name": "Cascade Natural Gas Washington", "aliases": ["cascade"], "phone": "888-522-1130", "website": "https://www.cngc.com"},
+      {"name": "NW Natural Washington", "aliases": ["northwest natural"], "phone": "800-422-4012", "website": "https://www.nwnatural.com"}
+    ]
+  },
+  "WV": {
+    "utilities": [
+      {"name": "Dominion Energy West Virginia", "aliases": ["dominion", "hope gas"], "phone": "800-688-4673", "website": "https://www.dominionenergy.com"},
+      {"name": "Mountaineer Gas", "aliases": [], "phone": "800-834-2070", "website": "https://www.mountaineergas.com"}
+    ]
+  },
+  "WI": {
+    "utilities": [
+      {"name": "We Energies", "aliases": ["wisconsin gas", "wisconsin electric"], "phone": "800-242-9137", "website": "https://www.we-energies.com"},
+      {"name": "Xcel Energy Wisconsin", "aliases": ["xcel"], "phone": "800-895-4999", "website": "https://www.xcelenergy.com"},
+      {"name": "Wisconsin Public Service", "aliases": ["wps"], "phone": "800-450-7260", "website": "https://www.wisconsinpublicservice.com"},
+      {"name": "Alliant Energy Wisconsin", "aliases": ["alliant"], "phone": "800-255-4268", "website": "https://www.alliantenergy.com"}
+    ]
+  },
+  "WY": {
+    "utilities": [
+      {"name": "Black Hills Energy Wyoming", "aliases": ["black hills", "cheyenne light"], "phone": "888-890-5554", "website": "https://www.blackhillsenergy.com"},
+      {"name": "Montana-Dakota Utilities Wyoming", "aliases": ["mdu"], "phone": "800-638-3278", "website": "https://www.montana-dakota.com"}
     ]
   }
 }

@@ -303,15 +303,26 @@ def log_usage():
         avg_confidence = sum(confidences) / len(confidences) if confidences else None
         
         # Prepare record for Airtable
+        # Handle both formats: {ELECTRIC: "name"} or {electric: {provider: "name"}}
+        def get_provider(results, key):
+            val = results.get(key) or results.get(key.upper()) or results.get(key.capitalize())
+            if val is None:
+                return None
+            if isinstance(val, str):
+                return val
+            if isinstance(val, dict):
+                return val.get('provider') or val.get('name')
+            return None
+        
         record_fields = {
             "user_email": user.get('email'),
             "timestamp": datetime.utcnow().isoformat(),
             "address": address,
             "utilities_requested": ','.join(utilities_requested) if isinstance(utilities_requested, list) else utilities_requested,
-            "electric_provider": results.get('electric', {}).get('provider') if results.get('electric') else None,
-            "gas_provider": results.get('gas', {}).get('provider') if results.get('gas') else None,
-            "water_provider": results.get('water', {}).get('provider') if results.get('water') else None,
-            "internet_providers": json.dumps(results.get('internet', {}).get('providers', [])) if results.get('internet') else None,
+            "electric_provider": get_provider(results, 'electric'),
+            "gas_provider": get_provider(results, 'gas'),
+            "water_provider": get_provider(results, 'water'),
+            "internet_providers": get_provider(results, 'internet'),
         }
         
         if avg_confidence is not None:

@@ -362,14 +362,13 @@ def submit_feedback():
         records = result.get('records', [])
         
         if records:
-            # Update existing record
+            # Update existing record with feedback
             log_id = records[0]['id']
-            feedback_field = f"{utility_type}_feedback"
             update_fields = {
-                feedback_field: 'correct' if is_correct else 'incorrect'
+                "feedback": 'correct' if is_correct else 'incorrect'
             }
             if details:
-                update_fields[f"{utility_type}_feedback_details"] = details
+                update_fields["feedback_details"] = details
             
             airtable_request(
                 USAGE_LOG_TABLE,
@@ -383,11 +382,10 @@ def submit_feedback():
                 "user_email": user.get('email'),
                 "timestamp": datetime.utcnow().isoformat(),
                 "address": address,
-                f"{utility_type}_provider": provider,
-                f"{utility_type}_feedback": 'correct' if is_correct else 'incorrect'
+                "feedback": 'correct' if is_correct else 'incorrect'
             }
             if details:
-                record_fields[f"{utility_type}_feedback_details"] = details
+                record_fields["feedback_details"] = details
             
             airtable_request(
                 USAGE_LOG_TABLE,
@@ -469,13 +467,12 @@ def get_stats():
                 if utype in u["by_type"]:
                     u["by_type"][utype] += 1
             
-            # Feedback - check per-utility feedback fields
-            for utype in ['electric', 'gas', 'water', 'internet']:
-                feedback = fields.get(f'{utype}_feedback')
-                if feedback == 'correct':
-                    u["correct"] += 1
-                elif feedback == 'incorrect':
-                    u["incorrect"] += 1
+            # Feedback
+            feedback = fields.get('feedback')
+            if feedback == 'correct':
+                u["correct"] += 1
+            elif feedback == 'incorrect':
+                u["incorrect"] += 1
             
             # Confidence
             avg_conf = fields.get('avg_confidence')

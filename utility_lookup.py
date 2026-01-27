@@ -306,13 +306,45 @@ def lookup_utilities_by_address(
                 # Extract other providers from disagreeing sources
                 other_providers = []
                 selected_name = (result.brand_name or result.utility_name or '').upper()
+                lookup_state = base_context.get('state', '').upper()
+                
                 for sr in result.all_results:
                     if sr.utility_name and sr.source_name != result.source:
                         sr_name = sr.utility_name.upper()
-                        # Only include if different from selected
-                        if sr_name != selected_name and sr_name not in [p['name'].upper() for p in other_providers]:
+                        raw = sr.raw_data or {}
+                        
+                        # Filter out providers from wrong states
+                        provider_state = (raw.get('state') or raw.get('STATE') or '').upper()
+                        if provider_state and lookup_state and provider_state != lookup_state:
+                            continue  # Skip providers from different states
+                        
+                        # Skip if name contains a different state name (e.g., "Pennsylvania Electric" for TX)
+                        wrong_state_names = ['PENNSYLVANIA', 'CALIFORNIA', 'FLORIDA', 'NEW YORK', 'OHIO', 'ILLINOIS']
+                        if lookup_state not in ['PA', 'CA', 'FL', 'NY', 'OH', 'IL']:
+                            state_map = {'PA': 'PENNSYLVANIA', 'CA': 'CALIFORNIA', 'FL': 'FLORIDA', 
+                                        'NY': 'NEW YORK', 'OH': 'OHIO', 'IL': 'ILLINOIS'}
+                            if any(state_name in sr_name for state_name in wrong_state_names 
+                                   if state_map.get(lookup_state, '') != state_name):
+                                continue  # Skip providers with wrong state in name
+                        
+                        # Normalize name for deduplication (remove suffixes like LLC, Inc, Co, etc.)
+                        def normalize_for_dedup(name):
+                            import re
+                            n = name.upper()
+                            # Remove common suffixes
+                            n = re.sub(r'\s+(LLC|INC|CO|CORP|CORPORATION|COMPANY|DELIVERY|ELECTRIC)\.?$', '', n)
+                            n = re.sub(r'\s+(LLC|INC|CO|CORP|CORPORATION|COMPANY|DELIVERY|ELECTRIC)\.?\s+', ' ', n)
+                            # Remove extra whitespace
+                            n = ' '.join(n.split())
+                            return n.strip()
+                        
+                        normalized_sr = normalize_for_dedup(sr_name)
+                        normalized_selected = normalize_for_dedup(selected_name)
+                        existing_normalized = [normalize_for_dedup(p['name']) for p in other_providers]
+                        
+                        # Only include if different from selected AND not a duplicate
+                        if normalized_sr != normalized_selected and normalized_sr not in existing_normalized:
                             # Get phone and website from SourceResult or raw_data
-                            raw = sr.raw_data or {}
                             phone = sr.phone or raw.get('TELEPHONE') or raw.get('phone') or raw.get('Phone')
                             website = sr.website or raw.get('WEBSITE') or raw.get('website') or raw.get('Website')
                             provider_entry = {

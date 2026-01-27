@@ -342,7 +342,28 @@ def lookup_utilities_by_address(
                         normalized_selected = normalize_for_dedup(selected_name)
                         existing_normalized = [normalize_for_dedup(p['name']) for p in other_providers]
                         
-                        # Only include if different from selected AND not a duplicate
+                        # Get website for URL-based deduplication
+                        website = sr.website or raw.get('WEBSITE') or raw.get('website') or raw.get('Website')
+                        
+                        # Normalize URL for deduplication
+                        def normalize_url(url):
+                            if not url:
+                                return None
+                            url = url.lower().strip()
+                            # Remove protocol and www
+                            url = url.replace('https://', '').replace('http://', '').replace('www.', '')
+                            # Remove trailing slash
+                            url = url.rstrip('/')
+                            return url
+                        
+                        normalized_url = normalize_url(website)
+                        existing_urls = [normalize_url(p.get('website')) for p in other_providers if p.get('website')]
+                        
+                        # Skip if same URL as existing provider (likely duplicate)
+                        if normalized_url and normalized_url in existing_urls:
+                            continue
+                        
+                        # Only include if different from selected AND not a duplicate by name
                         if normalized_sr != normalized_selected and normalized_sr not in existing_normalized:
                             # Get phone and website from SourceResult or raw_data
                             phone = sr.phone or raw.get('TELEPHONE') or raw.get('phone') or raw.get('Phone')

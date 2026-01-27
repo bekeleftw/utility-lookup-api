@@ -373,13 +373,28 @@ def submit_feedback():
         records = result.get('records', [])
         
         if records:
-            # Update existing record with feedback
+            # Update existing record with feedback for specific utility type
             log_id = records[0]['id']
+            feedback_value = 'correct' if is_correct else 'incorrect'
+            
+            # Map utility type to specific feedback column
+            utility_type_lower = utility_type.lower().replace(' ', '_')
+            if utility_type_lower in ['electric', 'electricity']:
+                feedback_field = 'electric_feedback'
+            elif utility_type_lower in ['gas', 'natural_gas', 'natural gas']:
+                feedback_field = 'gas_feedback'
+            elif utility_type_lower == 'water':
+                feedback_field = 'water_feedback'
+            elif utility_type_lower == 'internet':
+                feedback_field = 'internet_feedback'
+            else:
+                feedback_field = 'feedback'  # fallback to generic
+            
             update_fields = {
-                "feedback": 'correct' if is_correct else 'incorrect'
+                feedback_field: feedback_value
             }
             if details:
-                update_fields["feedback_details"] = details
+                update_fields["feedback_details"] = f"{utility_type}: {details}" if utility_type else details
             
             airtable_request(
                 USAGE_LOG_TABLE,

@@ -345,19 +345,21 @@ def lookup_utilities_by_address(
                         # Get website for URL-based deduplication
                         website = sr.website or raw.get('WEBSITE') or raw.get('website') or raw.get('Website')
                         
-                        # Normalize URL for deduplication
-                        def normalize_url(url):
+                        # Extract domain for deduplication (oncor.com == www.oncor.com)
+                        def get_domain(url):
                             if not url:
                                 return None
                             url = url.lower().strip()
-                            # Remove protocol and www
-                            url = url.replace('https://', '').replace('http://', '').replace('www.', '')
-                            # Remove trailing slash
-                            url = url.rstrip('/')
-                            return url
+                            # Remove protocol
+                            url = url.replace('https://', '').replace('http://', '')
+                            # Remove www.
+                            url = url.replace('www.', '')
+                            # Get just the domain (before any path)
+                            domain = url.split('/')[0]
+                            return domain
                         
-                        normalized_url = normalize_url(website)
-                        existing_urls = [normalize_url(p.get('website')) for p in other_providers if p.get('website')]
+                        normalized_url = get_domain(website)
+                        existing_urls = [get_domain(p.get('website')) for p in other_providers if p.get('website')]
                         
                         # Skip if same URL as existing provider (likely duplicate)
                         if normalized_url and normalized_url in existing_urls:

@@ -340,36 +340,67 @@ def log_usage():
 @utility_auth_bp.route('/api/utility-usage/feedback', methods=['POST'])
 @require_auth
 def submit_feedback():
-    """Submit feedback for a logged search."""
+    """Submit feedback for a utility result."""
     try:
         data = request.get_json()
+        user = request.current_user
         
-        log_id = data.get('log_id')
-        feedback = data.get('feedback')  # 'correct' or 'incorrect'
+        utility_type = data.get('utility_type', '')
+        provider = data.get('provider', '')
+        address = data.get('address', '')
+        is_correct = data.get('is_correct', True)
         details = data.get('details', '')
         
-        if not log_id or not feedback:
-            return jsonify({"success": False, "error": "log_id and feedback required"})
+        # Find the most recent log entry for this user and address
+        params = {
+            'filterByFormula': f"AND({{user_email}} = '{user.get('email')}', {{address}} = '{address}')",
+            'sort[0][field]': 'timestamp',
+            'sort[0][direction]': 'desc',
+            'maxRecords': 1
+        }
+        result = airtable_request(USAGE_LOG_TABLE, params=params)
+        records = result.get('records', [])
         
-        if feedback not in ['correct', 'incorrect']:
-            return jsonify({"success": False, "error": "feedback must be 'correct' or 'incorrect'"})
-        
-        # Update record in Airtable
-        update_fields = {"feedback": feedback}
-        if details:
-            update_fields["feedback_details"] = details
-        
-        airtable_request(
-            USAGE_LOG_TABLE,
-            method='PATCH',
-            record_id=log_id,
-            data={"fields": update_fields}
-        )
+        if records:
+            # Update existing record
+            log_id = records[0]['id']
+            feedback_field = f"{utility_type}_feedback"
+            update_fields = {
+                feedback_field: 'correct' if is_correct else 'incorrect'
+            }
+            if details:
+                update_fields[f"{utility_type}_feedback_details"] = details
+            
+            airtable_request(
+                USAGE_LOG_TABLE,
+                method='PATCH',
+                record_id=log_id,
+                data={"fields": update_fields}
+            )
+        else:
+            # Create a new feedback-only record
+            record_fields = {
+                "user_email": user.get('email'),
+                "timestamp": datetime.utcnow().isoformat(),
+                "address": address,
+                f"{utility_type}_provider": provider,
+                f"{utility_type}_feedback": 'correct' if is_correct else 'incorrect'
+            }
+            if details:
+                record_fields[f"{utility_type}_feedback_details"] = details
+            
+            airtable_request(
+                USAGE_LOG_TABLE,
+                method='POST',
+                data={"fields": record_fields}
+            )
         
         return jsonify({"success": True})
         
     except Exception as e:
         print(f"Feedback error: {e}")
+        import traceback
+        traceback.print_exc()
         return jsonify({"success": False, "error": "Failed to submit feedback"})
 
 
@@ -438,12 +469,13 @@ def get_stats():
                 if utype in u["by_type"]:
                     u["by_type"][utype] += 1
             
-            # Feedback
-            feedback = fields.get('feedback')
-            if feedback == 'correct':
-                u["correct"] += 1
-            elif feedback == 'incorrect':
-                u["incorrect"] += 1
+            # Feedback - check per-utility feedback fields
+            for utype in ['electric', 'gas', 'water', 'internet']:
+                feedback = fields.get(f'{utype}_feedback')
+                if feedback == 'correct':
+                    u["correct"] += 1
+                elif feedback == 'incorrect':
+                    u["incorrect"] += 1
             
             # Confidence
             avg_conf = fields.get('avg_confidence')

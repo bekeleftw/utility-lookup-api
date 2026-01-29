@@ -76,14 +76,20 @@ if GUIDE_DATABASE_URL:
     except Exception as e:
         print(f"Warning: Could not connect to database for guide feature: {e}")
 
-# Rate limiting - 500 lookups per 24 hours total (not per IP)
-# Uses in-memory storage by default, can configure Redis for production
+# Rate limiting disabled - internal use only
+# limiter = Limiter(
+#     get_remote_address,
+#     app=app,
+#     default_limits=["500 per day"],
+#     storage_uri="memory://",
+#     strategy="fixed-window"
+# )
 limiter = Limiter(
     get_remote_address,
     app=app,
-    default_limits=["500 per day"],
+    default_limits=[],  # No limits
     storage_uri="memory://",
-    strategy="fixed-window"
+    enabled=False  # Disable rate limiting entirely
 )
 
 # Custom error handler for rate limit exceeded
@@ -100,7 +106,7 @@ def version():
     return jsonify({'version': '2026-01-20-v31', 'changes': 'county_level_fallbacks_all_states'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
-@limiter.limit("500 per day")
+# @limiter.limit("500 per day")  # Rate limiting disabled
 def lookup():
     """Look up utilities for an address."""
     if request.method == 'POST':
@@ -505,7 +511,7 @@ def rate_limit_status():
 
 
 @app.route('/api/lookup/stream', methods=['GET', 'POST'])
-@limiter.limit("500 per day")
+# @limiter.limit("500 per day")  # Rate limiting disabled
 def lookup_stream():
     """
     Streaming lookup - returns results as Server-Sent Events (SSE).
@@ -621,7 +627,7 @@ def lookup_stream():
 
 
 @app.route('/api/batch', methods=['POST'])
-@limiter.limit("10 per day")  # Batch is more expensive, limit to 10 batches/day
+# @limiter.limit("10 per day")  # Rate limiting disabled
 def batch_lookup():
     """
     Batch lookup utilities for multiple addresses from CSV.

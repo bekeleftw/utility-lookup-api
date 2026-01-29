@@ -8,7 +8,7 @@ from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
-from utility_lookup import lookup_utilities_by_address, lookup_utility_json, lookup_electric_only, lookup_gas_only, lookup_water_only, lookup_internet_only, geocode_address
+from utility_lookup_v1 import lookup_utilities_by_address, lookup_utility_json, lookup_electric_only, lookup_gas_only, lookup_water_only, lookup_internet_only, geocode_address
 
 # Resident Guide feature
 from guide.guide_api import guide_bp, set_db_connection as set_guide_db_connection

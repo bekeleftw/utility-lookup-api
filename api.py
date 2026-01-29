@@ -112,14 +112,14 @@ def lookup():
     if request.method == 'POST':
         data = request.get_json()
         address = data.get('address')
-        # SERP verification disabled by default - LLM analyzer handles verification now
-        verify = data.get('verify', False)
+        # SERP verification enabled by default for better accuracy
+        verify = data.get('verify', True)
         # Parse utilities parameter - default excludes internet (slow Playwright)
         utilities_param = data.get('utilities', 'electric,gas,water')
     else:
         address = request.args.get('address')
-        # SERP verification disabled by default - LLM analyzer handles verification now
-        verify = request.args.get('verify', 'false').lower() == 'true'
+        # SERP verification enabled by default for better accuracy
+        verify = request.args.get('verify', 'true').lower() == 'true'
         # Parse utilities parameter - default excludes internet (slow Playwright)
         utilities_param = request.args.get('utilities', 'electric,gas,water')
     

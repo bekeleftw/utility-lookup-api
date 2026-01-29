@@ -16,10 +16,10 @@ import requests
 from bs4 import BeautifulSoup
 
 # BrightData Web Unlocker configuration
-BRIGHTDATA_WEB_UNLOCKER_HOST = "brd.superproxy.io"
-BRIGHTDATA_WEB_UNLOCKER_PORT = "33335"
-BRIGHTDATA_WEB_UNLOCKER_USER = os.environ.get("BRIGHTDATA_WEB_UNLOCKER_USER", "brd-customer-hl_6cc76bc7-zone-web_unlocker1")
-BRIGHTDATA_WEB_UNLOCKER_PASS = os.environ.get("BRIGHTDATA_WEB_UNLOCKER_PASS", "1t5cvye3j5zy")
+BRIGHTDATA_PROXY_HOST = "brd.superproxy.io"
+BRIGHTDATA_PROXY_PORT = "33335"
+BRIGHTDATA_PROXY_USER = os.environ.get("BRIGHTDATA_PROXY_USER", "brd-customer-hl_6cc76bc7-zone-address_search")
+BRIGHTDATA_PROXY_PASS = os.environ.get("BRIGHTDATA_PROXY_PASS", "n59dskgnctqr")
 
 # Cache for lookups
 CACHE_FILE = os.path.join(os.path.dirname(__file__), 'data', 'allconnect_cache.json')
@@ -102,8 +102,8 @@ def lookup_allconnect(zip_code: str, city: str = None, state: str = None) -> Opt
     url = f"https://www.allconnect.com/local/{state_url}/{city_url}?zip={zip_code}"
     
     try:
-        # Use BrightData Web Unlocker
-        proxy_url = f"http://{BRIGHTDATA_WEB_UNLOCKER_USER}:{BRIGHTDATA_WEB_UNLOCKER_PASS}@{BRIGHTDATA_WEB_UNLOCKER_HOST}:{BRIGHTDATA_WEB_UNLOCKER_PORT}"
+        # Use BrightData proxy
+        proxy_url = f"http://{BRIGHTDATA_PROXY_USER}:{BRIGHTDATA_PROXY_PASS}@{BRIGHTDATA_PROXY_HOST}:{BRIGHTDATA_PROXY_PORT}"
         proxies = {"http": proxy_url, "https": proxy_url}
         
         headers = {
@@ -111,15 +111,20 @@ def lookup_allconnect(zip_code: str, city: str = None, state: str = None) -> Opt
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
         }
         
-        print(f"  AllConnect: Fetching {url}")
-        
+        # Try direct first (faster), fall back to proxy if blocked
         try:
+            print(f"  AllConnect: Fetching {url}")
+            response = requests.get(url, headers=headers, timeout=15)
+            if response.status_code == 403 or response.status_code == 429:
+                print(f"  AllConnect: Direct blocked ({response.status_code}), trying proxy...")
+                import urllib3
+                urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+                response = requests.get(url, headers=headers, proxies=proxies, timeout=30, verify=False)
+        except Exception as direct_err:
+            print(f"  AllConnect: Direct failed ({direct_err}), trying proxy...")
             import urllib3
             urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
             response = requests.get(url, headers=headers, proxies=proxies, timeout=30, verify=False)
-        except Exception as proxy_err:
-            print(f"  AllConnect: Web Unlocker failed ({proxy_err}), trying direct...")
-            response = requests.get(url, headers=headers, timeout=15)
         
         if response.status_code != 200:
             print(f"AllConnect: HTTP {response.status_code} for {url}")

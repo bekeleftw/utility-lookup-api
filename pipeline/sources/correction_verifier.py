@@ -1,18 +1,21 @@
 """
-Correction verification system using SERP checks.
+Correction verification system using BrightData SERP checks.
 
 Evaluates user-submitted corrections to determine appropriate confidence levels.
+Uses the existing serp_verification.py module for BrightData Google searches.
 """
 
 import os
-import re
+import sys
 import requests
-from typing import Dict, Optional, Tuple
+from typing import Dict, Optional
 from dataclasses import dataclass
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 AIRTABLE_API_KEY = os.getenv('AIRTABLE_API_KEY')
 AIRTABLE_BASE_ID = os.getenv('AIRTABLE_BASE_ID')
-SERP_API_KEY = os.getenv('SERP_API_KEY')  # For Google search API
 CORRECTIONS_TABLE = 'utility_corrections'
 
 
@@ -34,7 +37,7 @@ def verify_correction(
     utility_type: str
 ) -> VerificationResult:
     """
-    Verify a correction using SERP search.
+    Verify a correction using BrightData SERP search.
     
     Returns a VerificationResult with:
     - is_verified: True if SERP confirms the provider serves this area
@@ -44,193 +47,87 @@ def verify_correction(
     - serp_confirmed: True if SERP results clearly confirm
     """
     
-    # Build search query
-    query = f"{provider} {city} {state} {utility_type} utility service area"
-    
     try:
-        search_results = _perform_serp_search(query)
+        # Use the existing BrightData SERP verification module
+        from serp_verification import verify_utility_via_serp, is_alias
         
-        if not search_results:
+        result = verify_utility_via_serp(
+            address="",
+            city=city,
+            state=state,
+            utility_type=utility_type,
+            expected_utility=provider,
+            zip_code=zip_code,
+            use_cache=True
+        )
+        
+        # Convert to our VerificationResult format
+        if result.verified:
+            # SERP confirms the provider
+            if result.confidence_boost >= 0.10:
+                # Strong confirmation
+                return VerificationResult(
+                    is_verified=True,
+                    confidence=95,
+                    ai_context="",  # No context needed, high confidence
+                    notes=f"BrightData SERP confirms {provider} serves {city}, {state}. {result.notes}",
+                    serp_confirmed=True
+                )
+            else:
+                # Moderate confirmation
+                return VerificationResult(
+                    is_verified=True,
+                    confidence=85,
+                    ai_context=f"Search results suggest {provider} serves {city}, {state} for {utility_type}.",
+                    notes=f"BrightData SERP moderately confirms. {result.notes}",
+                    serp_confirmed=True
+                )
+        elif result.serp_utility:
+            # SERP found a different provider
+            if is_alias(provider, result.serp_utility):
+                # Actually a match (alias)
+                return VerificationResult(
+                    is_verified=True,
+                    confidence=90,
+                    ai_context="",
+                    notes=f"BrightData SERP found {result.serp_utility} (alias match). {result.notes}",
+                    serp_confirmed=True
+                )
+            else:
+                # Different provider found - ambiguous
+                return VerificationResult(
+                    is_verified=False,
+                    confidence=75,
+                    ai_context=f"User reported {provider} serves {city}, {state} for {utility_type}, but search found {result.serp_utility}. Multiple providers may serve this area.",
+                    notes=f"BrightData SERP found different provider: {result.serp_utility}. {result.notes}",
+                    serp_confirmed=False
+                )
+        else:
+            # No results
             return VerificationResult(
                 is_verified=False,
                 confidence=70,
-                ai_context=f"User reported {provider} serves {city}, {state} ({zip_code}) for {utility_type}. Unverified.",
-                notes="SERP search returned no results",
+                ai_context=f"User reported {provider} serves {city}, {state} for {utility_type}. Unverified.",
+                notes=f"BrightData SERP returned no conclusive results. {result.notes}",
                 serp_confirmed=False
             )
-        
-        # Analyze results
-        analysis = _analyze_serp_results(search_results, provider, city, state, utility_type)
-        
-        return analysis
-        
+            
+    except ImportError as e:
+        return VerificationResult(
+            is_verified=False,
+            confidence=70,
+            ai_context=f"User reported {provider} serves {city}, {state} for {utility_type}.",
+            notes=f"SERP verification module not available: {str(e)}",
+            serp_confirmed=False
+        )
     except Exception as e:
         return VerificationResult(
             is_verified=False,
             confidence=70,
             ai_context=f"User reported {provider} serves {city}, {state} for {utility_type}.",
-            notes=f"SERP verification failed: {str(e)}",
+            notes=f"BrightData SERP verification failed: {str(e)}",
             serp_confirmed=False
         )
-
-
-def _perform_serp_search(query: str) -> list:
-    """
-    Perform a web search using available SERP API.
-    
-    Tries multiple methods:
-    1. SerpAPI if SERP_API_KEY is set
-    2. Fallback to basic requests if no API key
-    """
-    
-    if SERP_API_KEY:
-        # Use SerpAPI
-        try:
-            response = requests.get(
-                "https://serpapi.com/search",
-                params={
-                    "q": query,
-                    "api_key": SERP_API_KEY,
-                    "num": 5
-                },
-                timeout=10
-            )
-            if response.status_code == 200:
-                data = response.json()
-                return data.get("organic_results", [])
-        except Exception:
-            pass
-    
-    # Fallback: Use DuckDuckGo instant answers (free, no API key)
-    try:
-        response = requests.get(
-            "https://api.duckduckgo.com/",
-            params={
-                "q": query,
-                "format": "json",
-                "no_html": 1
-            },
-            timeout=10
-        )
-        if response.status_code == 200:
-            data = response.json()
-            results = []
-            if data.get("AbstractText"):
-                results.append({
-                    "title": data.get("Heading", ""),
-                    "snippet": data.get("AbstractText", ""),
-                    "link": data.get("AbstractURL", "")
-                })
-            for topic in data.get("RelatedTopics", [])[:5]:
-                if isinstance(topic, dict) and topic.get("Text"):
-                    results.append({
-                        "title": topic.get("FirstURL", "").split("/")[-1],
-                        "snippet": topic.get("Text", ""),
-                        "link": topic.get("FirstURL", "")
-                    })
-            return results
-    except Exception:
-        pass
-    
-    return []
-
-
-def _analyze_serp_results(
-    results: list,
-    provider: str,
-    city: str,
-    state: str,
-    utility_type: str
-) -> VerificationResult:
-    """
-    Analyze SERP results to determine if provider serves the area.
-    """
-    
-    provider_lower = provider.lower()
-    city_lower = city.lower()
-    state_lower = state.lower()
-    
-    # Count positive and negative signals
-    positive_signals = 0
-    negative_signals = 0
-    evidence = []
-    
-    for result in results:
-        title = (result.get("title") or "").lower()
-        snippet = (result.get("snippet") or "").lower()
-        combined = f"{title} {snippet}"
-        
-        # Check if provider is mentioned with the city
-        provider_mentioned = provider_lower in combined or _fuzzy_match(provider_lower, combined)
-        city_mentioned = city_lower in combined
-        
-        if provider_mentioned and city_mentioned:
-            # Strong positive signal
-            if any(word in combined for word in ["serves", "service area", "customers", "provides", "utility"]):
-                positive_signals += 2
-                evidence.append(f"Found: '{snippet[:100]}...'")
-            else:
-                positive_signals += 1
-        
-        # Check for contradicting info (another provider mentioned as serving the city)
-        if city_mentioned and not provider_mentioned:
-            if any(word in combined for word in ["serves", "service area", "electric utility"]):
-                negative_signals += 1
-    
-    # Determine verification result
-    if positive_signals >= 3:
-        # Strong confirmation
-        return VerificationResult(
-            is_verified=True,
-            confidence=95,
-            ai_context="",  # No context needed, high confidence
-            notes=f"SERP strongly confirms {provider} serves {city}, {state}. Evidence: {'; '.join(evidence[:2])}",
-            serp_confirmed=True
-        )
-    elif positive_signals >= 1 and negative_signals == 0:
-        # Moderate confirmation
-        return VerificationResult(
-            is_verified=True,
-            confidence=85,
-            ai_context=f"User feedback and search results suggest {provider} may serve parts of {city}, {state} for {utility_type}.",
-            notes=f"SERP moderately confirms {provider} serves {city}. {positive_signals} positive signals.",
-            serp_confirmed=True
-        )
-    elif positive_signals > 0 and negative_signals > 0:
-        # Ambiguous - multiple providers may serve the area
-        return VerificationResult(
-            is_verified=False,
-            confidence=75,
-            ai_context=f"User reported {provider} serves {city}, {state} for {utility_type}, but multiple providers may serve this area. Consider location carefully.",
-            notes=f"Ambiguous results: {positive_signals} positive, {negative_signals} negative signals.",
-            serp_confirmed=False
-        )
-    else:
-        # No confirmation
-        return VerificationResult(
-            is_verified=False,
-            confidence=70,
-            ai_context=f"User reported {provider} serves {city}, {state} for {utility_type}. Unverified - treat as suggestion.",
-            notes="SERP did not confirm provider serves this area.",
-            serp_confirmed=False
-        )
-
-
-def _fuzzy_match(provider: str, text: str) -> bool:
-    """Check for fuzzy matches of provider name in text."""
-    # Handle common variations
-    variations = [
-        provider,
-        provider.replace(" ", ""),
-        provider.replace("energy", "").strip(),
-        provider.replace("services", "").strip(),
-    ]
-    
-    for var in variations:
-        if var and len(var) > 3 and var in text:
-            return True
-    
-    return False
 
 
 def verify_and_update_correction(record_id: str) -> VerificationResult:

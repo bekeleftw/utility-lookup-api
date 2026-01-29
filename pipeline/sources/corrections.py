@@ -56,7 +56,7 @@ class UserCorrectionSource(DataSource):
     
     @property
     def base_confidence(self) -> int:
-        return 95  # High confidence - user verified (but allow other high-confidence sources to compete)
+        return 75  # Moderate confidence - user feedback is a suggestion, not gospel
     
     def query(self, context: LookupContext) -> Optional[SourceResult]:
         """
@@ -165,13 +165,13 @@ class UserCorrectionSource(DataSource):
             if not correct_provider:
                 return None
             
-            # Calculate confidence boost based on number of matching corrections
-            confidence_boost = min(len(records) * 5, 20)  # Up to +20 for multiple confirmations
+            # Modest confidence boost for multiple confirmations (max 85 total)
+            confidence_boost = min(len(records) * 3, 10)  # Up to +10 for multiple confirmations
             
             return SourceResult(
                 source_name=self.name,
                 utility_name=correct_provider,
-                confidence_score=self.base_confidence + confidence_boost,
+                confidence_score=min(self.base_confidence + confidence_boost, 85),  # Cap at 85
                 match_type='user_feedback',
                 raw_data={
                     '_selection_reason': f"User-verified correction (ZIP: {zip_code}, {len(records)} confirmation(s))",

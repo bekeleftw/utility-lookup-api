@@ -1,11 +1,17 @@
 """
 User-reported corrections - highest priority source.
 
-Works for ALL utility types (electric, gas, water).
+Works for ALL utility types (electric, gas, water, internet).
 Ground truth from actual tenants/residents.
+
+Sources:
+1. Airtable utility_corrections table (primary - synced from user feedback)
+2. Local verified_addresses.json (fallback)
 """
 
 import json
+import os
+import requests
 from typing import List, Optional
 from pathlib import Path
 
@@ -17,20 +23,28 @@ from pipeline.interfaces import (
     SOURCE_CONFIDENCE,
 )
 
+# Airtable configuration
+AIRTABLE_API_KEY = os.getenv('AIRTABLE_API_KEY')
+AIRTABLE_BASE_ID = os.getenv('AIRTABLE_BASE_ID')
+CORRECTIONS_TABLE = 'utility_corrections'
+
 
 class UserCorrectionSource(DataSource):
     """
-    User-reported corrections from verified_addresses.json.
+    User-reported corrections from Airtable and local JSON.
     
     Highest priority - ground truth from actual tenants/residents.
-    Works for electric, gas, and water.
+    Works for electric, gas, water, and internet.
     
     Priority:
-    1. Exact address match (normalized to uppercase)
-    2. ZIP-level override (for entire ZIP codes)
+    1. Airtable corrections (ZIP match)
+    2. Local JSON exact address match
+    3. Local JSON ZIP-level override
     """
     
     _corrections_cache = None
+    _airtable_cache = None
+    _airtable_cache_time = None
     
     @property
     def name(self) -> str:
@@ -38,22 +52,30 @@ class UserCorrectionSource(DataSource):
     
     @property
     def supported_types(self) -> List[UtilityType]:
-        return [UtilityType.ELECTRIC, UtilityType.GAS, UtilityType.WATER]
+        return [UtilityType.ELECTRIC, UtilityType.GAS, UtilityType.WATER, UtilityType.INTERNET]
     
     @property
     def base_confidence(self) -> int:
-        return 99  # Highest confidence - user verified
+        return 95  # High confidence - user verified (but allow other high-confidence sources to compete)
     
     def query(self, context: LookupContext) -> Optional[SourceResult]:
         """
-        Check verified addresses database for user corrections.
+        Check for user corrections.
         
         Priority:
-        1. Exact address match
-        2. ZIP-level override
+        1. Airtable corrections by ZIP code
+        2. Local JSON exact address match
+        3. Local JSON ZIP-level override
         """
+        utility_type_str = context.utility_type.value  # 'electric', 'gas', 'water', 'internet'
+        
+        # 1. Try Airtable corrections first (by ZIP)
+        airtable_result = self._query_airtable(context.zip_code, context.city, context.state, utility_type_str)
+        if airtable_result:
+            return airtable_result
+        
+        # 2. Fall back to local JSON
         corrections = self._load_corrections()
-        utility_type_str = context.utility_type.value  # 'electric', 'gas', 'water'
         
         # Try exact address match (normalized to uppercase)
         address_key = self._normalize_address(context.address)
@@ -61,7 +83,6 @@ class UserCorrectionSource(DataSource):
         
         if address_key in addresses:
             match = addresses[address_key]
-            # Check if this utility type has a correction
             if utility_type_str in match:
                 utility_name = match[utility_type_str]
                 if isinstance(utility_name, str):
@@ -97,6 +118,72 @@ class UserCorrectionSource(DataSource):
                     )
         
         return None
+    
+    def _query_airtable(self, zip_code: str, city: str, state: str, utility_type: str) -> Optional[SourceResult]:
+        """Query Airtable utility_corrections table for matching corrections."""
+        if not AIRTABLE_API_KEY or not AIRTABLE_BASE_ID:
+            return None
+        
+        if not zip_code:
+            return None
+        
+        try:
+            # Query by ZIP code and utility type
+            filter_formula = f"AND({{zip_code}} = '{zip_code}', {{utility_type}} = '{utility_type}')"
+            
+            response = requests.get(
+                f"https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{CORRECTIONS_TABLE}",
+                headers={'Authorization': f'Bearer {AIRTABLE_API_KEY}'},
+                params={'filterByFormula': filter_formula, 'maxRecords': 5},
+                timeout=5
+            )
+            
+            if response.status_code != 200:
+                return None
+            
+            records = response.json().get('records', [])
+            
+            if not records:
+                # Try city-level match if no ZIP match
+                filter_formula = f"AND({{city}} = '{city}', {{state}} = '{state}', {{utility_type}} = '{utility_type}')"
+                response = requests.get(
+                    f"https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{CORRECTIONS_TABLE}",
+                    headers={'Authorization': f'Bearer {AIRTABLE_API_KEY}'},
+                    params={'filterByFormula': filter_formula, 'maxRecords': 5},
+                    timeout=5
+                )
+                if response.status_code == 200:
+                    records = response.json().get('records', [])
+            
+            if not records:
+                return None
+            
+            # Use the first matching correction (could add voting/count logic later)
+            fields = records[0].get('fields', {})
+            correct_provider = fields.get('correct_provider')
+            
+            if not correct_provider:
+                return None
+            
+            # Calculate confidence boost based on number of matching corrections
+            confidence_boost = min(len(records) * 5, 20)  # Up to +20 for multiple confirmations
+            
+            return SourceResult(
+                source_name=self.name,
+                utility_name=correct_provider,
+                confidence_score=self.base_confidence + confidence_boost,
+                match_type='user_feedback',
+                raw_data={
+                    '_selection_reason': f"User-verified correction (ZIP: {zip_code}, {len(records)} confirmation(s))",
+                    '_correction_count': len(records),
+                    '_source_address': fields.get('source_address'),
+                    '_submitted_by': fields.get('submitted_by'),
+                }
+            )
+            
+        except Exception as e:
+            print(f"Airtable correction query error: {e}")
+            return None
     
     def _load_corrections(self) -> dict:
         """Load verified addresses from JSON with caching."""

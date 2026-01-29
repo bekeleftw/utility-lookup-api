@@ -570,8 +570,10 @@ def lookup_stream():
                 if 'electric' in selected_utilities:
                     electric = v2_result.get('electric') if v2_result else None
                     if electric:
-                        raw_confidence = electric.get('_confidence') or 'high'
-                        formatted = format_utility(electric, 'electric', city, state)
+                        # Handle both list and dict returns
+                        primary = electric[0] if isinstance(electric, list) else electric
+                        raw_confidence = primary.get('_confidence') or 'high'
+                        formatted = format_utility(primary, 'electric', city, state)
                         formatted['confidence'] = raw_confidence
                         yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                     else:
@@ -581,11 +583,13 @@ def lookup_stream():
                 if 'gas' in selected_utilities:
                     gas = v2_result.get('gas') if v2_result else None
                     if gas:
-                        if gas.get('_no_service'):
+                        # Handle both list and dict returns
+                        primary = gas[0] if isinstance(gas, list) else gas
+                        if primary.get('_no_service'):
                             yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
                         else:
-                            raw_confidence = gas.get('_confidence') or 'high'
-                            formatted = format_utility(gas, 'gas', city, state)
+                            raw_confidence = primary.get('_confidence') or 'high'
+                            formatted = format_utility(primary, 'gas', city, state)
                             formatted['confidence'] = raw_confidence
                             yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
                     else:
@@ -595,7 +599,9 @@ def lookup_stream():
                 if 'water' in selected_utilities:
                     water = v2_result.get('water') if v2_result else None
                     if water:
-                        yield f"data: {json.dumps({'event': 'water', 'data': format_utility(water, 'water', city, state)})}\n\n"
+                        # Handle both list and dict returns
+                        primary = water[0] if isinstance(water, list) else water
+                        yield f"data: {json.dumps({'event': 'water', 'data': format_utility(primary, 'water', city, state)})}\n\n"
                     else:
                         yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
             

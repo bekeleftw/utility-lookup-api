@@ -1499,7 +1499,7 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
         except Exception as e:
             print(f"  BDC lookup error: {e}")
     
-    # Try BroadbandNow (better coverage for Verizon, etc.)
+    # Try combined internet lookup (BroadbandNow + AllConnect)
     # This is the primary fallback when BDC SQLite is not available (e.g., on Railway)
     zip_code = geo_result.get('zip_code') if geo_result else None
     city = geo_result.get('city') if geo_result else None
@@ -1507,26 +1507,27 @@ def lookup_internet_providers(address: str, try_neighbors: bool = True) -> Optio
     
     if zip_code:
         try:
-            from broadbandnow_lookup import lookup_broadbandnow
-            print(f"  Trying BroadbandNow for ZIP {zip_code}...")
-            bbn_result = lookup_broadbandnow(zip_code, city, state)
-            if bbn_result and bbn_result.get('providers'):
-                print(f"  BroadbandNow found {len(bbn_result['providers'])} providers")
-                providers = bbn_result['providers']
+            from combined_internet_lookup import lookup_internet_combined
+            print(f"  Trying combined lookup (BroadbandNow + AllConnect) for ZIP {zip_code}...")
+            combined_result = lookup_internet_combined(zip_code, city, state, block_geoid)
+            if combined_result and combined_result.get('providers'):
+                print(f"  Combined lookup found {len(combined_result['providers'])} unique providers from {combined_result.get('sources', [])}")
+                providers = combined_result['providers']
                 return {
                     "providers": providers,
                     "provider_count": len(providers),
                     "has_fiber": any(p.get('technology', '').lower() == 'fiber' for p in providers),
                     "has_cable": any(p.get('technology', '').lower() == 'cable' for p in providers),
-                    "_source": "broadbandnow",
+                    "_source": "combined",
+                    "_sources": combined_result.get('sources', []),
                 }
             else:
-                print(f"  BroadbandNow returned no providers")
+                print(f"  Combined lookup returned no providers")
         except ImportError as e:
-            print(f"  BroadbandNow module not available: {e}")
+            print(f"  Combined lookup module not available: {e}")
         except Exception as e:
             import traceback
-            print(f"  BroadbandNow lookup error: {e}")
+            print(f"  Combined lookup error: {e}")
             traceback.print_exc()
     
     # Fall back to slow Playwright scraping

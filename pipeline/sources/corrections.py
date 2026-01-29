@@ -158,26 +158,53 @@ class UserCorrectionSource(DataSource):
             if not records:
                 return None
             
-            # Use the first matching correction (could add voting/count logic later)
-            fields = records[0].get('fields', {})
+            # Use the first matching correction, preferring verified ones
+            # Sort: verified first, then serp_verified, then by confidence_override
+            sorted_records = sorted(
+                records,
+                key=lambda r: (
+                    r.get('fields', {}).get('verified', False),
+                    r.get('fields', {}).get('serp_verified', False),
+                    r.get('fields', {}).get('confidence_override', 0)
+                ),
+                reverse=True
+            )
+            
+            fields = sorted_records[0].get('fields', {})
             correct_provider = fields.get('correct_provider')
             
             if not correct_provider:
                 return None
             
-            # Modest confidence boost for multiple confirmations (max 85 total)
-            confidence_boost = min(len(records) * 3, 10)  # Up to +10 for multiple confirmations
+            # Determine confidence based on verification status
+            if fields.get('verified'):
+                # Manually verified - use override or high default
+                confidence = fields.get('confidence_override') or 95
+            elif fields.get('serp_verified'):
+                # SERP verified - use override or moderate-high default
+                confidence = fields.get('confidence_override') or 85
+            else:
+                # Unverified - modest confidence with small boost for multiple confirmations
+                base = self.base_confidence
+                boost = min(len(records) * 3, 10)
+                confidence = min(base + boost, 80)
+            
+            # Get AI context if available
+            ai_context = fields.get('ai_context', '')
             
             return SourceResult(
                 source_name=self.name,
                 utility_name=correct_provider,
-                confidence_score=min(self.base_confidence + confidence_boost, 85),  # Cap at 85
+                confidence_score=confidence,
                 match_type='user_feedback',
                 raw_data={
-                    '_selection_reason': f"User-verified correction (ZIP: {zip_code}, {len(records)} confirmation(s))",
+                    '_selection_reason': f"User correction (ZIP: {zip_code}, verified={fields.get('verified', False)}, serp={fields.get('serp_verified', False)})",
                     '_correction_count': len(records),
                     '_source_address': fields.get('source_address'),
                     '_submitted_by': fields.get('submitted_by'),
+                    '_ai_context': ai_context,
+                    '_verified': fields.get('verified', False),
+                    '_serp_verified': fields.get('serp_verified', False),
                 }
             )
             

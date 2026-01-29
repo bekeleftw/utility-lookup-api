@@ -283,6 +283,23 @@ class SmartSelector:
         except Exception:
             pass
         
+        # Add user correction context from source results
+        for r in source_results:
+            if r.source_name == 'user_corrections' and r.raw_data:
+                ai_context = r.raw_data.get('_ai_context', '')
+                if ai_context:
+                    if area_context_text:
+                        area_context_text += f"\n\nUSER FEEDBACK:\n{ai_context}"
+                    else:
+                        area_context_text = f"\n\nUSER FEEDBACK:\n{ai_context}"
+                    # Add verification status
+                    if r.raw_data.get('_verified'):
+                        area_context_text += "\n(This correction has been manually verified as accurate)"
+                    elif r.raw_data.get('_serp_verified'):
+                        area_context_text += "\n(This correction was confirmed by web search)"
+                    else:
+                        area_context_text += "\n(This is unverified user feedback - treat as a suggestion)"
+        
         prompt = f"""You are a utility service territory expert with deep knowledge of how utilities work in the United States. Given an address and conflicting results from data sources, use your expertise to determine the correct {utility_type} utility provider.
 
 ADDRESS:

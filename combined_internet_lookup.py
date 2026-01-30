@@ -13,6 +13,7 @@ Deduplicates and merges results from all sources.
 import os
 from typing import Optional, Dict, List
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Canonical provider names for deduplication across sources
 CANONICAL_NAMES = {
@@ -161,35 +162,33 @@ def lookup_internet_combined(
         except Exception as e:
             print(f"  [Internet] BDC error: {e}")
     
-    # Source 2: BroadbandNow
-    try:
-        from broadbandnow_lookup import lookup_broadbandnow
-        bbn_result = lookup_broadbandnow(zip_code, city, state)
-        if bbn_result and bbn_result.get('providers'):
-            for p in bbn_result['providers']:
-                p['source'] = 'broadbandnow'
-            all_providers.extend(bbn_result['providers'])
-            sources_used.append('broadbandnow')
-            print(f"  [Internet] BroadbandNow: {len(bbn_result['providers'])} providers")
-    except ImportError:
-        pass
-    except Exception as e:
-        print(f"  [Internet] BroadbandNow error: {e}")
+    # Source 2 & 3: BroadbandNow and AllConnect (run concurrently)
+    def fetch_broadbandnow():
+        try:
+            from broadbandnow_lookup import lookup_broadbandnow
+            return ('broadbandnow', lookup_broadbandnow(zip_code, city, state))
+        except Exception as e:
+            print(f"  [Internet] BroadbandNow error: {e}")
+            return ('broadbandnow', None)
     
-    # Source 3: AllConnect
-    try:
-        from allconnect_lookup import lookup_allconnect
-        ac_result = lookup_allconnect(zip_code, city, state)
-        if ac_result and ac_result.get('providers'):
-            for p in ac_result['providers']:
-                p['source'] = 'allconnect'
-            all_providers.extend(ac_result['providers'])
-            sources_used.append('allconnect')
-            print(f"  [Internet] AllConnect: {len(ac_result['providers'])} providers")
-    except ImportError:
-        pass
-    except Exception as e:
-        print(f"  [Internet] AllConnect error: {e}")
+    def fetch_allconnect():
+        try:
+            from allconnect_lookup import lookup_allconnect
+            return ('allconnect', lookup_allconnect(zip_code, city, state))
+        except Exception as e:
+            print(f"  [Internet] AllConnect error: {e}")
+            return ('allconnect', None)
+    
+    with ThreadPoolExecutor(max_workers=2) as executor:
+        futures = [executor.submit(fetch_broadbandnow), executor.submit(fetch_allconnect)]
+        for future in as_completed(futures):
+            source_name, result = future.result()
+            if result and result.get('providers'):
+                for p in result['providers']:
+                    p['source'] = source_name
+                all_providers.extend(result['providers'])
+                sources_used.append(source_name)
+                print(f"  [Internet] {source_name}: {len(result['providers'])} providers")
     
     if not all_providers:
         return None

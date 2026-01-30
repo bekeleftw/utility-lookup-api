@@ -8,6 +8,7 @@ from flask import Flask, request, jsonify, Response
 from flask_cors import CORS
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from utility_lookup_v1 import lookup_utilities_by_address, lookup_utility_json, lookup_electric_only, lookup_gas_only, lookup_water_only, lookup_internet_only, geocode_address
 
 # Resident Guide feature
@@ -559,61 +560,77 @@ def lookup_stream():
             state = location.get('state')
             zip_code = location.get('zip_code', '')
             
-            # Step 2: Look up electric, gas, water in ONE call (geocode once)
-            non_internet_utilities = [u for u in selected_utilities if u != 'internet']
-            if non_internet_utilities:
-                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up utility providers...'})}\n\n"
-                # Single v2 lookup for all utilities - geocodes once
-                # verify_with_serp=True enables SERP, but should_skip_serp() skips it for high confidence results
-                v2_result = lookup_utilities_by_address(address, selected_utilities=non_internet_utilities, verify_with_serp=True)
-                
-                # Stream electric result
-                if 'electric' in selected_utilities:
-                    electric = v2_result.get('electric') if v2_result else None
-                    if electric:
-                        # Handle both list and dict returns
-                        primary = electric[0] if isinstance(electric, list) else electric
-                        raw_confidence = primary.get('_confidence') or 'high'
-                        formatted = format_utility(primary, 'electric', city, state)
-                        formatted['confidence'] = raw_confidence
-                        yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
-                    else:
-                        yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
-                
-                # Stream gas result
-                if 'gas' in selected_utilities:
-                    gas = v2_result.get('gas') if v2_result else None
-                    if gas:
-                        # Handle both list and dict returns
-                        primary = gas[0] if isinstance(gas, list) else gas
-                        if primary.get('_no_service'):
-                            yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
-                        else:
-                            raw_confidence = primary.get('_confidence') or 'high'
-                            formatted = format_utility(primary, 'gas', city, state)
-                            formatted['confidence'] = raw_confidence
-                            yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
-                    else:
-                        yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
-                
-                # Stream water result
-                if 'water' in selected_utilities:
-                    water = v2_result.get('water') if v2_result else None
-                    if water:
-                        # Handle both list and dict returns
-                        primary = water[0] if isinstance(water, list) else water
-                        yield f"data: {json.dumps({'event': 'water', 'data': format_utility(primary, 'water', city, state)})}\n\n"
-                    else:
-                        yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
+            # Step 2: Look up ALL utilities concurrently
+            yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up utility providers...'})}\n\n"
             
-            # Step 5: Internet (SLOW - 10-15 seconds)
-            if 'internet' in selected_utilities:
-                yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up internet providers (this takes 10-15 seconds)...'})}\n\n"
-                internet = lookup_internet_only(address)
-                if internet:
-                    yield f"data: {json.dumps({'event': 'internet', 'data': format_internet_providers(internet)})}\n\n"
+            non_internet_utilities = [u for u in selected_utilities if u != 'internet']
+            v2_result = None
+            internet_result = None
+            
+            # Run electric/gas/water and internet lookups concurrently
+            with ThreadPoolExecutor(max_workers=2) as executor:
+                futures = {}
+                
+                if non_internet_utilities:
+                    futures['utilities'] = executor.submit(
+                        lookup_utilities_by_address, address, 
+                        selected_utilities=non_internet_utilities, verify_with_serp=True
+                    )
+                
+                if 'internet' in selected_utilities:
+                    futures['internet'] = executor.submit(lookup_internet_only, address)
+                
+                # Collect results as they complete
+                for future in as_completed(futures.values()):
+                    pass  # Just wait for all to complete
+                
+                if 'utilities' in futures:
+                    v2_result = futures['utilities'].result()
+                if 'internet' in futures:
+                    internet_result = futures['internet'].result()
+            
+            # Stream electric result
+            if 'electric' in selected_utilities:
+                electric = v2_result.get('electric') if v2_result else None
+                if electric:
+                    primary = electric[0] if isinstance(electric, list) else electric
+                    raw_confidence = primary.get('_confidence') or 'high'
+                    formatted = format_utility(primary, 'electric', city, state)
+                    formatted['confidence'] = raw_confidence
+                    yield f"data: {json.dumps({'event': 'electric', 'data': formatted})}\n\n"
                 else:
-                    yield f"data: {json.dumps({'event': 'internet', 'data': None, 'note': 'Could not retrieve internet data from FCC'})}\n\n"
+                    yield f"data: {json.dumps({'event': 'electric', 'data': None, 'note': 'No electric provider found'})}\n\n"
+            
+            # Stream gas result
+            if 'gas' in selected_utilities:
+                gas = v2_result.get('gas') if v2_result else None
+                if gas:
+                    primary = gas[0] if isinstance(gas, list) else gas
+                    if primary.get('_no_service'):
+                        yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No piped natural gas service - area may use propane'})}\n\n"
+                    else:
+                        raw_confidence = primary.get('_confidence') or 'high'
+                        formatted = format_utility(primary, 'gas', city, state)
+                        formatted['confidence'] = raw_confidence
+                        yield f"data: {json.dumps({'event': 'gas', 'data': formatted})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'gas', 'data': None, 'note': 'No gas provider found'})}\n\n"
+            
+            # Stream water result
+            if 'water' in selected_utilities:
+                water = v2_result.get('water') if v2_result else None
+                if water:
+                    primary = water[0] if isinstance(water, list) else water
+                    yield f"data: {json.dumps({'event': 'water', 'data': format_utility(primary, 'water', city, state)})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
+            
+            # Stream internet result
+            if 'internet' in selected_utilities:
+                if internet_result:
+                    yield f"data: {json.dumps({'event': 'internet', 'data': format_internet_providers(internet_result)})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'internet', 'data': None, 'note': 'Could not retrieve internet data'})}\n\n"
             
             # Done!
             yield f"data: {json.dumps({'event': 'complete', 'message': 'Lookup complete'})}\n\n"

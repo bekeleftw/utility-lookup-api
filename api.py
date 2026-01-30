@@ -969,6 +969,8 @@ def submit_feedback():
         "utility_type": data['utility_type'],
         "returned_provider": data.get('returned_provider'),
         "correct_provider": data['correct_provider'],
+        "is_correct": data.get('is_correct', False),
+        "service_check_url": data.get('service_check_url'),
         "source": data.get('source', 'unknown'),
         "email": data.get('email'),
         "submitted_at": datetime.now().isoformat(),

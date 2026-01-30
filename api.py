@@ -112,14 +112,14 @@ def lookup():
     if request.method == 'POST':
         data = request.get_json()
         address = data.get('address')
-        # SERP verification enabled by default for better accuracy
-        verify = data.get('verify', True)
+        # SERP verification disabled by default - should_skip_serp handles confidence-based verification
+        verify = data.get('verify', False)
         # Parse utilities parameter - default excludes internet (slow Playwright)
         utilities_param = data.get('utilities', 'electric,gas,water')
     else:
         address = request.args.get('address')
-        # SERP verification enabled by default for better accuracy
-        verify = request.args.get('verify', 'true').lower() == 'true'
+        # SERP verification disabled by default - should_skip_serp handles confidence-based verification
+        verify = request.args.get('verify', 'false').lower() == 'true'
         # Parse utilities parameter - default excludes internet (slow Playwright)
         utilities_param = request.args.get('utilities', 'electric,gas,water')
     
@@ -564,7 +564,8 @@ def lookup_stream():
             if non_internet_utilities:
                 yield f"data: {json.dumps({'event': 'status', 'message': 'Looking up utility providers...'})}\n\n"
                 # Single v2 lookup for all utilities - geocodes once
-                v2_result = lookup_utilities_by_address(address, selected_utilities=non_internet_utilities)
+                # verify_with_serp=True enables SERP, but should_skip_serp() skips it for high confidence results
+                v2_result = lookup_utilities_by_address(address, selected_utilities=non_internet_utilities, verify_with_serp=True)
                 
                 # Stream electric result
                 if 'electric' in selected_utilities:

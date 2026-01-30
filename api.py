@@ -336,6 +336,19 @@ def format_utility(util, util_type, city=None, state=None):
         }
     
     # Electric and Gas utilities
+    confidence = util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium')
+    confidence_score = util.get('_confidence_score') or util.get('confidence_score')
+    
+    # Ensure confidence_score matches confidence level for proper frontend display
+    # Frontend uses score >= 85 for "Verified", >= 70 for "High"
+    if confidence_score is None or confidence_score < 50:
+        if confidence == 'verified':
+            confidence_score = 95
+        elif confidence == 'high':
+            confidence_score = 85
+        elif confidence == 'medium':
+            confidence_score = 60
+    
     result = {
         'name': normalized_name,
         'phone': util.get('TELEPHONE', util.get('phone')),
@@ -346,8 +359,8 @@ def format_utility(util, util_type, city=None, state=None):
         'zip': util.get('ZIP', util.get('zip')),
         'id': util.get('ID') or util.get('SVCTERID') or util.get('id'),
         'type': util.get('TYPE'),
-        'confidence': util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium'),
-        'confidence_score': util.get('_confidence_score') or util.get('confidence_score'),
+        'confidence': confidence,
+        'confidence_score': confidence_score,
         'confidence_factors': util.get('confidence_factors'),
         'verified': util.get('_serp_verified', False),
         '_source': util.get('_source') or util.get('_verification_source') or util.get('source'),

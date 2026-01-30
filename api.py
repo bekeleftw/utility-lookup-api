@@ -104,7 +104,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-20-v31', 'changes': 'county_level_fallbacks_all_states'})
+    return jsonify({'version': '2026-01-29-v32', 'changes': 'concurrent_lookups_postgres_internet'})
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 # @limiter.limit("500 per day")  # Rate limiting disabled

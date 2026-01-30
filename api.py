@@ -585,9 +585,10 @@ def lookup_stream():
                 futures = {}
                 
                 if non_internet_utilities:
+                    # SERP verification disabled for speed - should_skip_serp was causing delays
                     futures['utilities'] = executor.submit(
                         lookup_utilities_by_address, address, 
-                        selected_utilities=non_internet_utilities, verify_with_serp=True
+                        selected_utilities=non_internet_utilities, verify_with_serp=False
                     )
                 
                 if 'internet' in selected_utilities:

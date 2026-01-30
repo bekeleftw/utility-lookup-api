@@ -339,9 +339,24 @@ def format_utility(util, util_type, city=None, state=None):
     confidence = util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium')
     confidence_score = util.get('_confidence_score') or util.get('confidence_score')
     
+    # Known municipal utilities with exclusive territory - these are 100% certain
+    EXCLUSIVE_MUNICIPAL_UTILITIES = {
+        'austin energy', 'cps energy', 'ladwp', 'los angeles department of water and power',
+        'seattle city light', 'sacramento municipal utility district', 'smud',
+        'austin water', 'san antonio water system', 'ouc', 'orlando utilities commission',
+        'jea', 'lpnt', 'lubbock power & light', 'garland power & light', 'new braunfels utilities',
+        'texas gas service', 'atmos energy', 'centerpoint energy'
+    }
+    
+    name_lower = (normalized_name or '').lower()
+    is_exclusive_municipal = any(muni in name_lower for muni in EXCLUSIVE_MUNICIPAL_UTILITIES)
+    
     # Ensure confidence_score matches confidence level for proper frontend display
     # Frontend uses score >= 85 for "Verified", >= 70 for "High"
-    if confidence_score is None or confidence_score < 50:
+    if is_exclusive_municipal:
+        confidence_score = 98
+        confidence = 'verified'
+    elif confidence_score is None or confidence_score < 50:
         if confidence == 'verified':
             confidence_score = 95
         elif confidence == 'high':

@@ -1,0 +1,99 @@
+<script>
+var AUTH_URL = 'https://web-production-9acc6.up.railway.app/api/utility-auth';
+var USAGE_URL = 'https://web-production-9acc6.up.railway.app/api/utility-usage';
+var authUser = null, authToken = null;
+
+async function checkAuth() {
+  var token = localStorage.getItem('upa_token');
+  if (!token) { showLogin(); return; }
+  try {
+    var r = await fetch(AUTH_URL + '/verify', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: token }) });
+    var d = await r.json();
+    if (d.valid) { authToken = token; authUser = d.user; showApp(); }
+    else { localStorage.removeItem('upa_token'); showLogin(); }
+  } catch (e) { showLogin(); }
+}
+
+async function doLogin() {
+  var email = document.getElementById('upaEm').value.trim();
+  var pw = document.getElementById('upaPw').value;
+  var err = document.getElementById('upaE');
+  var btn = document.getElementById('upaB');
+  if (!email || !pw) { err.textContent = 'Enter email and password'; err.style.display = 'block'; return; }
+  btn.disabled = true; btn.textContent = 'Signing in...'; err.style.display = 'none';
+  try {
+    var r = await fetch(AUTH_URL + '/login', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: email, password: pw }) });
+    var d = await r.json();
+    if (d.success) { localStorage.setItem('upa_token', d.token); authToken = d.token; authUser = d.user; showApp(); }
+    else { err.textContent = d.error || 'Login failed'; err.style.display = 'block'; }
+  } catch (e) { err.textContent = 'Connection error'; err.style.display = 'block'; }
+  btn.disabled = false; btn.textContent = 'Sign In';
+}
+
+function getTool() {
+  return document.getElementById('upaTool') || document.querySelector('.up-container');
+}
+
+function showLogin() {
+  document.getElementById('upaL').style.display = 'block';
+  document.getElementById('upaBar').style.display = 'none';
+  document.getElementById('upaSt').style.display = 'none';
+  var tool = getTool(); if (tool) tool.style.display = 'none';
+}
+
+function showApp() {
+  document.getElementById('upaL').style.display = 'none';
+  document.getElementById('upaBar').style.display = 'flex';
+  document.getElementById('upaU').textContent = authUser.name || authUser.email;
+  var tool = getTool();
+  if (tool) {
+    tool.style.display = 'block';
+    console.log('Tool shown:', tool);
+  } else {
+    console.log('Tool not found, retrying...');
+    setTimeout(function() {
+      var t = getTool();
+      if (t) { t.style.display = 'block'; console.log('Tool shown on retry'); }
+    }, 100);
+  }
+  if (authUser.is_admin) { document.getElementById('upaSt').style.display = 'block'; loadStats(); }
+}
+
+function doLogout() { localStorage.removeItem('upa_token'); authToken = null; authUser = null; showLogin(); }
+
+async function loadStats() {
+  if (!authToken || !authUser || !authUser.is_admin) return;
+  try {
+    var r = await fetch(USAGE_URL + '/stats', { headers: { 'Authorization': 'Bearer ' + authToken } });
+    var d = await r.json();
+    if (d.success) {
+      document.getElementById('upaTS').textContent = d.totals.total_searches;
+      document.getElementById('upaTU').textContent = d.totals.total_users;
+      document.getElementById('upaAc').textContent = (d.totals.overall_accuracy * 100).toFixed(1) + '%';
+      document.getElementById('upaFb').textContent = (d.totals.overall_feedback_rate * 100).toFixed(1) + '%';
+      document.getElementById('upaTb').innerHTML = d.users.map(function(u) {
+        return '<tr><td><div class="upa-nm">' + (u.name||'') + '</div><div class="upa-em">' + (u.email||'') + '</div></td><td>' + u.total_searches + '</td><td class="upa-g">' + u.marked_correct + '</td><td class="upa-r">' + u.marked_incorrect + '</td><td>' + (u.accuracy_rate * 100).toFixed(0) + '%</td><td>' + (u.last_active ? new Date(u.last_active).toLocaleDateString() : 'Never') + '</td></tr>';
+      }).join('');
+    }
+  } catch (e) {}
+}
+
+async function logSearch(addr, utils, results) {
+  if (!authToken) return;
+  try { await fetch(USAGE_URL + '/log', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: authToken, address: addr, utilities_requested: utils, results: results }) }); } catch (e) {}
+}
+
+async function logFeedback(type, provider, addr, correct, details, serviceUrl) {
+  if (!authToken) return;
+  try { await fetch(USAGE_URL + '/feedback', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ token: authToken, utility_type: type, provider: provider, address: addr, is_correct: correct, details: details || '', service_check_url: serviceUrl || '' }) }); } catch (e) {}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('upaB').addEventListener('click', doLogin);
+  document.getElementById('upaPw').addEventListener('keypress', function(e) { if (e.key === 'Enter') doLogin(); });
+  document.getElementById('upaOut').addEventListener('click', doLogout);
+  document.getElementById('upaRf').addEventListener('click', loadStats);
+  // Small delay to ensure all embeds are loaded
+  setTimeout(checkAuth, 50);
+});
+</script>

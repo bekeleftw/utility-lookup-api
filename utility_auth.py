@@ -361,6 +361,7 @@ def submit_feedback():
         address = data.get('address', '')
         is_correct = data.get('is_correct', True)
         details = data.get('details', '')
+        service_check_url = data.get('service_check_url', '')
         
         # Find the most recent log entry for this user and address
         params = {
@@ -395,6 +396,8 @@ def submit_feedback():
             }
             if details:
                 update_fields["feedback_details"] = f"{utility_type}: {details}" if utility_type else details
+            if service_check_url:
+                update_fields["service_check_url"] = service_check_url
             
             airtable_request(
                 USAGE_LOG_TABLE,
@@ -412,6 +415,8 @@ def submit_feedback():
             }
             if details:
                 record_fields["feedback_details"] = details
+            if service_check_url:
+                record_fields["service_check_url"] = service_check_url
             
             airtable_request(
                 USAGE_LOG_TABLE,

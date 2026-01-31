@@ -7,9 +7,16 @@ when multiple sources (CSV, EPA, municipal) return different results.
 import os
 import json
 from typing import Optional, Dict, List
-from openai import OpenAI
 
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+# Lazy-load OpenAI client to avoid import errors when API key not set
+_client = None
+
+def get_openai_client():
+    global _client
+    if _client is None:
+        from openai import OpenAI
+        _client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+    return _client
 
 def reconcile_water_providers(
     address: str,
@@ -81,7 +88,7 @@ Return JSON with:
 Return ONLY valid JSON, no other text."""
 
     try:
-        response = client.chat.completions.create(
+        response = get_openai_client().chat.completions.create(
             model="gpt-4o-mini",
             messages=[{"role": "user", "content": prompt}],
             temperature=0,

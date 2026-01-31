@@ -20,13 +20,64 @@ from cross_validation import cross_validate, SourceResult, format_for_response a
 from municipal_utilities import get_all_municipal_utilities, lookup_municipal_electric, get_municipal_stats
 from address_cache import cache_confirmation, get_cached_utilities, get_cache_stats
 from datetime import datetime
+from functools import wraps
 import hashlib
 import json
 import os
 import re
+import secrets
 
 # Feedback storage
 FEEDBACK_DIR = os.path.join(os.path.dirname(__file__), 'data', 'feedback')
+
+# API Keys storage
+API_KEYS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'api_keys.json')
+
+def load_api_keys():
+    """Load API keys from file."""
+    if os.path.exists(API_KEYS_FILE):
+        with open(API_KEYS_FILE, 'r') as f:
+            return json.load(f)
+    return {}
+
+def save_api_keys(keys):
+    """Save API keys to file."""
+    os.makedirs(os.path.dirname(API_KEYS_FILE), exist_ok=True)
+    with open(API_KEYS_FILE, 'w') as f:
+        json.dump(keys, f, indent=2)
+
+def validate_api_key(api_key):
+    """Validate an API key and return the associated metadata."""
+    keys = load_api_keys()
+    if api_key in keys:
+        key_data = keys[api_key]
+        if key_data.get('active', True):
+            # Update last used timestamp
+            key_data['last_used'] = datetime.utcnow().isoformat()
+            key_data['usage_count'] = key_data.get('usage_count', 0) + 1
+            save_api_keys(keys)
+            return key_data
+    return None
+
+def require_api_key(f):
+    """Decorator to require API key for endpoint access."""
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        # Check for API key in header or query param
+        api_key = request.headers.get('X-API-Key') or request.args.get('api_key')
+        
+        # If no API key, allow access (for web widget which uses session auth)
+        # But if API key is provided, validate it
+        if api_key:
+            key_data = validate_api_key(api_key)
+            if not key_data:
+                return jsonify({'error': 'Invalid or inactive API key'}), 401
+            request.api_key_data = key_data
+        else:
+            request.api_key_data = None
+        
+        return f(*args, **kwargs)
+    return decorated
 
 def load_feedback(filename):
     filepath = os.path.join(FEEDBACK_DIR, filename)
@@ -104,10 +155,85 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-29-v32', 'changes': 'concurrent_lookups_postgres_internet'})
+    return jsonify({'version': '2026-01-31-v33', 'changes': 'api_key_authentication'})
+
+# ============ API Key Management ============
+
+@app.route('/api/keys/generate', methods=['POST'])
+def generate_api_key():
+    """Generate a new API key. Requires admin secret."""
+    data = request.get_json() or {}
+    admin_secret = data.get('admin_secret') or request.headers.get('X-Admin-Secret')
+    
+    # Verify admin secret (set via environment variable)
+    expected_secret = os.getenv('ADMIN_SECRET', 'utility-admin-2026')
+    if admin_secret != expected_secret:
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    # Generate new API key
+    api_key = 'ulk_' + secrets.token_hex(24)  # ulk = utility lookup key
+    
+    keys = load_api_keys()
+    keys[api_key] = {
+        'name': data.get('name', 'Unnamed Key'),
+        'created_at': datetime.utcnow().isoformat(),
+        'created_by': data.get('created_by', 'admin'),
+        'active': True,
+        'usage_count': 0,
+        'last_used': None
+    }
+    save_api_keys(keys)
+    
+    return jsonify({
+        'api_key': api_key,
+        'name': keys[api_key]['name'],
+        'message': 'Store this key securely - it cannot be retrieved later'
+    })
+
+@app.route('/api/keys', methods=['GET'])
+def list_api_keys():
+    """List all API keys (without revealing full keys). Requires admin secret."""
+    admin_secret = request.headers.get('X-Admin-Secret')
+    expected_secret = os.getenv('ADMIN_SECRET', 'utility-admin-2026')
+    if admin_secret != expected_secret:
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    keys = load_api_keys()
+    # Return masked keys
+    masked = []
+    for key, data in keys.items():
+        masked.append({
+            'key_prefix': key[:12] + '...',
+            'name': data.get('name'),
+            'created_at': data.get('created_at'),
+            'active': data.get('active', True),
+            'usage_count': data.get('usage_count', 0),
+            'last_used': data.get('last_used')
+        })
+    return jsonify({'keys': masked})
+
+@app.route('/api/keys/revoke', methods=['POST'])
+def revoke_api_key():
+    """Revoke an API key. Requires admin secret."""
+    data = request.get_json() or {}
+    admin_secret = data.get('admin_secret') or request.headers.get('X-Admin-Secret')
+    expected_secret = os.getenv('ADMIN_SECRET', 'utility-admin-2026')
+    if admin_secret != expected_secret:
+        return jsonify({'error': 'Unauthorized'}), 401
+    
+    api_key = data.get('api_key')
+    if not api_key:
+        return jsonify({'error': 'api_key required'}), 400
+    
+    keys = load_api_keys()
+    if api_key in keys:
+        keys[api_key]['active'] = False
+        save_api_keys(keys)
+        return jsonify({'message': 'API key revoked'})
+    return jsonify({'error': 'API key not found'}), 404
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
-# @limiter.limit("500 per day")  # Rate limiting disabled
+@require_api_key
 def lookup():
     """Look up utilities for an address."""
     if request.method == 'POST':
@@ -540,7 +666,7 @@ def rate_limit_status():
 
 
 @app.route('/api/lookup/stream', methods=['GET', 'POST'])
-# @limiter.limit("500 per day")  # Rate limiting disabled
+@require_api_key
 def lookup_stream():
     """
     Streaming lookup - returns results as Server-Sent Events (SSE).

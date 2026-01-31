@@ -40,12 +40,40 @@ def normalize_name(name: str) -> str:
     # Remove common suffixes
     name = re.sub(r'\s*-\s*[a-z]{2}$', '', name)  # State suffix like "- TX"
     name = re.sub(r'\s*\([a-z]{2}\)$', '', name)  # State in parens like "(TX)"
-    name = re.sub(r'\s+(inc|llc|corp|co|company|corporation|l\.?l\.?c\.?)\.?$', '', name, flags=re.IGNORECASE)
+    name = re.sub(r'\s*,\s*[a-z]{2}$', '', name)  # State after comma like ", TX"
     # Remove special characters except spaces
     name = re.sub(r'[^a-z0-9\s]', '', name)
+    # Remove common business suffixes (always safe to remove)
+    suffix_words = [
+        'inc', 'llc', 'corp', 'co', 'company', 'corporation', 'lp', 'ltd',
+        'delivery', 'distribution', 
+        'department', 'dept', 'division', 'div',
+        'authority', 'commission', 'board'
+    ]
+    for word in suffix_words:
+        name = re.sub(rf'\b{word}\b', '', name, flags=re.IGNORECASE)
     # Normalize whitespace
     name = ' '.join(name.split())
     return name
+
+
+def normalize_name_aggressive(name: str) -> str:
+    """More aggressive normalization for fuzzy matching - strips utility type words."""
+    name = normalize_name(name)
+    if not name:
+        return ''
+    # Remove utility type words for better fuzzy matching
+    utility_words = [
+        'electric', 'electricity', 'energy', 'power', 'light',
+        'gas', 'natural',
+        'water', 'utilities', 'utility', 'services', 'service',
+        'cooperative', 'coop',
+        'municipal', 'city of', 'town of', 'village of', 'county',
+        'public'
+    ]
+    for word in utility_words:
+        name = re.sub(rf'\b{word}\b', '', name, flags=re.IGNORECASE)
+    return ' '.join(name.split())
 
 
 def load_mappings() -> Dict[str, Dict]:
@@ -203,9 +231,122 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
                 best_score = score
                 best_match = pdata
     
-    if best_match and best_score > 0.4:  # Lowered threshold for partial matches like "oncor electric" in "oncor electric delivery company"
+    if best_match and best_score > 0.4:
         best_match['matched_via'] = 'partial'
+        best_match['match_score'] = best_score
         return best_match
+    
+    # Strategy 5: Aggressive normalization matching
+    normalized_agg = normalize_name_aggressive(name)
+    if normalized_agg and len(normalized_agg) >= 3:
+        for pkey, pdata in providers.items():
+            if pdata['utility_type'] != utility_type:
+                continue
+            pnorm_agg = normalize_name_aggressive(pdata['title'])
+            if normalized_agg == pnorm_agg:
+                pdata['matched_via'] = 'aggressive_exact'
+                pdata['match_score'] = 1.0
+                return pdata
+            # Check containment with aggressive normalization
+            if normalized_agg in pnorm_agg or pnorm_agg in normalized_agg:
+                score = min(len(normalized_agg), len(pnorm_agg)) / max(len(normalized_agg), len(pnorm_agg))
+                if score > best_score:
+                    best_score = score
+                    best_match = pdata
+        
+        if best_match and best_score > 0.5:
+            best_match['matched_via'] = 'aggressive_partial'
+            best_match['match_score'] = best_score
+            return best_match
+    
+    # Strategy 6: OpenAI fallback for unmatched names
+    if best_match and best_score > 0.3:
+        # Low confidence match - try OpenAI to verify
+        ai_match = _openai_match_provider(name, utility_type, [best_match])
+        if ai_match:
+            return ai_match
+        # Return low confidence match anyway
+        best_match['matched_via'] = 'low_confidence'
+        best_match['match_score'] = best_score
+        return best_match
+    
+    # No match found - try OpenAI with top candidates
+    if len(name) >= 3:
+        ai_match = _openai_match_provider(name, utility_type, None)
+        if ai_match:
+            return ai_match
+    
+    return None
+
+
+def _openai_match_provider(name: str, utility_type: str, candidates: list = None) -> Optional[Dict]:
+    """Use OpenAI to match a provider name when standard matching fails."""
+    try:
+        import os
+        from openai import OpenAI
+        
+        api_key = os.getenv('OPENAI_API_KEY')
+        if not api_key:
+            return None
+        
+        client = OpenAI(api_key=api_key)
+        
+        # Get top candidates from CSV if not provided
+        if candidates is None:
+            providers = load_providers()
+            # Find potential matches
+            normalized = normalize_name(name)
+            candidates = []
+            for pkey, pdata in providers.items():
+                if pdata['utility_type'] != utility_type:
+                    continue
+                # Simple word overlap check
+                name_words = set(normalized.split())
+                prov_words = set(pdata['normalized'].split())
+                if name_words & prov_words:  # Any word overlap
+                    candidates.append(pdata)
+                    if len(candidates) >= 10:
+                        break
+        
+        if not candidates:
+            return None
+        
+        # Build prompt
+        candidate_list = "\n".join([f"{i+1}. {c['title']} (ID: {c['id']})" for i, c in enumerate(candidates[:10])])
+        
+        prompt = f"""Match this utility provider name to the best candidate from the list.
+
+Provider name to match: "{name}"
+Utility type: {utility_type}
+
+Candidates:
+{candidate_list}
+
+If one of these candidates is clearly the same company (accounting for name variations, abbreviations, parent companies), return the candidate number (1-{len(candidates[:10])}).
+If none match, return 0.
+
+Return ONLY a single number, nothing else."""
+
+        response = client.chat.completions.create(
+            model="gpt-4o-mini",
+            messages=[{"role": "user", "content": prompt}],
+            temperature=0,
+            max_tokens=10
+        )
+        
+        result = response.choices[0].message.content.strip()
+        try:
+            idx = int(result) - 1
+            if 0 <= idx < len(candidates):
+                match = candidates[idx].copy()
+                match['matched_via'] = 'openai'
+                match['match_score'] = 0.8  # AI confidence
+                return match
+        except ValueError:
+            pass
+        
+    except Exception as e:
+        print(f"[ProviderMatcher] OpenAI error: {e}")
     
     return None
 

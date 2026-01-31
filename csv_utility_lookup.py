@@ -158,7 +158,7 @@ def lookup_utility_from_csv(city: str, state: str, utility_type: str) -> Optiona
     Returns:
         Best match or None
     """
-    if not city or utility_type not in ['electric', 'gas']:
+    if not city or utility_type not in ['electric', 'gas', 'trash', 'sewer']:
         return None
     
     providers = load_providers(utility_type)
@@ -187,7 +187,7 @@ def lookup_utility_from_csv(city: str, state: str, utility_type: str) -> Optiona
 
 def get_csv_utility_candidates(city: str, state: str, utility_type: str) -> List[Dict]:
     """Get all utility provider candidates from CSV for a city/state."""
-    if not city or utility_type not in ['electric', 'gas']:
+    if not city or utility_type not in ['electric', 'gas', 'trash', 'sewer']:
         return []
     
     providers = load_providers(utility_type)

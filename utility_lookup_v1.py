@@ -2971,12 +2971,54 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         elif not primary_gas.get('confidence_factors'):
             primary_gas['confidence_factors'] = [f"+{primary_gas['confidence_score']}: Pipeline ({primary_gas.get('_source', 'unknown')})"]
     
+    # Step 7: Trash lookup - only if selected (uses CSV data)
+    trash = None
+    if 'trash' in selected_utilities:
+        try:
+            from csv_utility_lookup import lookup_utility_from_csv
+            trash_result = lookup_utility_from_csv(city, state, 'trash')
+            if trash_result:
+                trash = {
+                    "name": trash_result.get('name'),
+                    "id": trash_result.get('id'),
+                    "phone": trash_result.get('phone'),
+                    "website": trash_result.get('website'),
+                    "state": state,
+                    "city": city,
+                    "_source": "csv_providers",
+                    "_confidence": "high"
+                }
+        except Exception as e:
+            pass
+    
+    # Step 8: Sewer lookup - only if selected (uses CSV data)
+    sewer = None
+    if 'sewer' in selected_utilities:
+        try:
+            from csv_utility_lookup import lookup_utility_from_csv
+            sewer_result = lookup_utility_from_csv(city, state, 'sewer')
+            if sewer_result:
+                sewer = {
+                    "name": sewer_result.get('name'),
+                    "id": sewer_result.get('id'),
+                    "phone": sewer_result.get('phone'),
+                    "website": sewer_result.get('website'),
+                    "state": state,
+                    "city": city,
+                    "_source": "csv_providers",
+                    "_confidence": "high"
+                }
+        except Exception as e:
+            pass
+    
     result = {
         "electric": electric_result,
         "gas": gas_result,
         "gas_no_service": gas_no_service,  # Set if no gas service available
         "water": water,
         "water_no_service": water_no_service,  # Set if no public water (likely private well)
+        "trash": trash,
+        "sewer": sewer,
         "internet": internet,
         "location": {
             "city": city,

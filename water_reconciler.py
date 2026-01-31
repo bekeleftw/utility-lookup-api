@@ -184,6 +184,10 @@ def get_all_utility_candidates(
         return _get_gas_candidates(city, state, zip_code, county)
     elif utility_type == 'water':
         return _get_water_candidates(city, state, zip_code, county)
+    elif utility_type == 'trash':
+        return _get_trash_candidates(city, state, zip_code, county)
+    elif utility_type == 'sewer':
+        return _get_sewer_candidates(city, state, zip_code, county)
     
     return candidates
 
@@ -310,6 +314,38 @@ def _get_water_candidates(city, state, zip_code, county) -> List[Dict]:
             candidates.append(muni_result)
     except Exception as e:
         print(f"[Reconciler] Municipal lookup error: {e}")
+    
+    return candidates
+
+
+def _get_trash_candidates(city, state, zip_code, county) -> List[Dict]:
+    """Gather trash/solid waste provider candidates from CSV."""
+    candidates = []
+    
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'trash')
+        if csv_result:
+            csv_result['_source'] = 'csv_providers'
+            candidates.append(csv_result)
+    except Exception as e:
+        pass
+    
+    return candidates
+
+
+def _get_sewer_candidates(city, state, zip_code, county) -> List[Dict]:
+    """Gather sewer/wastewater provider candidates from CSV."""
+    candidates = []
+    
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'sewer')
+        if csv_result:
+            csv_result['_source'] = 'csv_providers'
+            candidates.append(csv_result)
+    except Exception as e:
+        pass
     
     return candidates
 

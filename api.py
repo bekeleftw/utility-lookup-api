@@ -359,6 +359,20 @@ def lookup_batch():
             if 'internet' in selected_utilities and result.get('internet'):
                 utilities['internet'] = result['internet']
             
+            if 'trash' in selected_utilities and result.get('trash'):
+                trash = result['trash']
+                if isinstance(trash, list):
+                    utilities['trash'] = [format_utility(t, 'trash', city, state) for t in trash]
+                else:
+                    utilities['trash'] = [format_utility(trash, 'trash', city, state)]
+            
+            if 'sewer' in selected_utilities and result.get('sewer'):
+                sewer = result['sewer']
+                if isinstance(sewer, list):
+                    utilities['sewer'] = [format_utility(s, 'sewer', city, state) for s in sewer]
+                else:
+                    utilities['sewer'] = [format_utility(sewer, 'sewer', city, state)]
+            
             response = {
                 'address': address,
                 'location': result.get('location', {}),

@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 """
 Provider ID Matcher - matches provider names to IDs from utility_providers_IDs.csv
+Uses OpenAI-generated mappings for fuzzy matching and deduplication.
 """
 
 import csv
+import json
 import os
 import re
 from typing import Optional, Dict, Tuple
 
-# Cache for loaded providers
+# Cache for loaded data
 _providers_cache = None
+_mappings_cache = None
+_simple_lookup_cache = None
+
+MAPPINGS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_name_mappings.json')
+SIMPLE_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_simple_lookup.json')
 
 # UtilityTypeId mapping
 UTILITY_TYPE_MAP = {
@@ -39,6 +46,40 @@ def normalize_name(name: str) -> str:
     # Normalize whitespace
     name = ' '.join(name.split())
     return name
+
+
+def load_mappings() -> Dict[str, Dict]:
+    """Load OpenAI-generated name mappings."""
+    global _mappings_cache
+    
+    if _mappings_cache is not None:
+        return _mappings_cache
+    
+    if os.path.exists(MAPPINGS_FILE):
+        with open(MAPPINGS_FILE, 'r') as f:
+            _mappings_cache = json.load(f)
+        print(f"[ProviderMatcher] Loaded {len(_mappings_cache)} OpenAI mappings")
+    else:
+        _mappings_cache = {}
+    
+    return _mappings_cache
+
+
+def load_simple_lookup() -> Dict[str, Dict]:
+    """Load simple normalized name -> ID lookup."""
+    global _simple_lookup_cache
+    
+    if _simple_lookup_cache is not None:
+        return _simple_lookup_cache
+    
+    if os.path.exists(SIMPLE_LOOKUP_FILE):
+        with open(SIMPLE_LOOKUP_FILE, 'r') as f:
+            _simple_lookup_cache = json.load(f)
+        print(f"[ProviderMatcher] Loaded {len(_simple_lookup_cache)} simple lookups")
+    else:
+        _simple_lookup_cache = {}
+    
+    return _simple_lookup_cache
 
 
 def load_providers() -> Dict[str, Dict]:
@@ -93,7 +134,11 @@ def load_providers() -> Dict[str, Dict]:
 
 def match_provider(name: str, utility_type: str) -> Optional[Dict]:
     """
-    Match a provider name to an ID.
+    Match a provider name to an ID using multiple strategies:
+    1. OpenAI-generated mappings (best for fuzzy matching like "Oncor" -> "Oncor Electric-TX")
+    2. Simple normalized lookup
+    3. CSV-based exact match
+    4. Partial string matching
     
     Args:
         name: Provider name from lookup
@@ -105,40 +150,61 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
     if not name:
         return None
     
-    providers = load_providers()
     normalized = normalize_name(name)
     
-    # Try exact match first
+    # Strategy 1: Check OpenAI mappings first (best for deduped names)
+    mappings = load_mappings()
+    if normalized in mappings:
+        mapping = mappings[normalized]
+        return {
+            'id': mapping['id'],
+            'title': mapping.get('canonical', mapping.get('original', name)),
+            'matched_via': 'openai_mapping'
+        }
+    
+    # Strategy 2: Simple lookup (normalized name -> ID)
+    simple = load_simple_lookup()
+    if normalized in simple:
+        entry = simple[normalized]
+        return {
+            'id': entry['id'] if isinstance(entry, dict) else entry,
+            'title': entry.get('title', name) if isinstance(entry, dict) else name,
+            'matched_via': 'simple_lookup'
+        }
+    
+    # Strategy 3: CSV-based exact match with utility type
+    providers = load_providers()
     key = f"{normalized}|{utility_type}"
     if key in providers:
+        providers[key]['matched_via'] = 'csv_exact'
         return providers[key]
     
-    # Try without utility type constraint (some providers serve multiple types)
+    # Try without utility type constraint
     for pkey, pdata in providers.items():
         if pdata['normalized'] == normalized:
+            pdata['matched_via'] = 'csv_any_type'
             return pdata
     
-    # Try partial matching - provider name contains or is contained
+    # Strategy 4: Partial matching - provider name contains or is contained
     best_match = None
     best_score = 0
     
     for pkey, pdata in providers.items():
         pnorm = pdata['normalized']
         
-        # Skip if utility types don't match (unless we're desperate)
+        # Skip if utility types don't match
         if pdata['utility_type'] != utility_type:
             continue
         
         # Check if one contains the other
         if normalized in pnorm or pnorm in normalized:
-            # Score by how close the lengths are
             score = min(len(normalized), len(pnorm)) / max(len(normalized), len(pnorm))
             if score > best_score:
                 best_score = score
                 best_match = pdata
     
-    # Only return if we have a good match (>70% similarity)
-    if best_match and best_score > 0.7:
+    if best_match and best_score > 0.5:  # Lowered threshold for partial matches
+        best_match['matched_via'] = 'partial'
         return best_match
     
     return None

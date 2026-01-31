@@ -320,6 +320,7 @@ def source_to_score_key(source_string: str) -> str:
         'eia': 'eia_861',
         'eia_861': 'eia_861',
         'supplemental': 'supplemental',
+        'csv_providers': 'supplemental',
         'electric_cooperative': 'electric_cooperative',
         'co-op': 'electric_cooperative',
         'state ldc': 'state_ldc_mapping',

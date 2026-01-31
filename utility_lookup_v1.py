@@ -28,6 +28,7 @@ from bs4 import BeautifulSoup
 
 # Import state-specific utility verification
 from state_utility_verification import verify_electric_provider, verify_gas_provider, check_problem_area
+from csv_water_lookup import lookup_water_from_csv, get_csv_water_candidates
 from utility_website_verification import enhance_lookup_with_verification, verify_address_utility, get_supported_states
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 from confidence_scoring import calculate_confidence, source_to_score_key
@@ -1034,7 +1035,7 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                 if part.strip() not in city_variants:
                     city_variants.append(part.strip())
     
-    # FIRST: Check supplemental file for cities missing from EPA
+    # FIRST: Check supplemental file for cities missing from EPA (manual corrections)
     if WATER_SUPPLEMENTAL_FILE.exists():
         try:
             with open(WATER_SUPPLEMENTAL_FILE, 'r') as f:
@@ -1060,6 +1061,33 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
                     return result
         except (json.JSONDecodeError, IOError):
             pass
+    
+    # SECOND: Check CSV providers file (utility_providers_IDs.csv)
+    # This has curated local provider data that may be more accurate than EPA
+    csv_result = lookup_water_from_csv(city, state)
+    if csv_result:
+        # Format the CSV result to match expected structure
+        result = {
+            'name': csv_result.get('name'),
+            'id': csv_result.get('id'),
+            'phone': csv_result.get('phone'),
+            'website': csv_result.get('website'),
+            'state': state,
+            'city': city,
+            '_confidence': 'high',
+            '_source': 'csv_providers'
+        }
+        confidence_data = calculate_confidence(
+            source='csv_providers',
+            match_level='zip5',
+            utility_type='water'
+        )
+        result['confidence_score'] = confidence_data['score']
+        result['confidence_factors'] = [
+            f"{f['points']:+d}: {f['description']}" 
+            for f in confidence_data['factors']
+        ]
+        return result
     
     # SECOND: Try EPA SDWA lookup
     if WATER_LOOKUP_FILE.exists():

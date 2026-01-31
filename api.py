@@ -49,6 +49,16 @@ def save_api_keys(keys):
 
 def validate_api_key(api_key):
     """Validate an API key and return the associated metadata."""
+    # Check master API key from environment variable first (survives deploys)
+    master_key = os.getenv('MASTER_API_KEY')
+    if master_key and api_key == master_key:
+        return {
+            'name': 'Master API Key',
+            'active': True,
+            'is_master': True
+        }
+    
+    # Check file-based keys
     keys = load_api_keys()
     if api_key in keys:
         key_data = keys[api_key]
@@ -156,7 +166,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-31-v34', 'changes': 'provider_id_matching'})
+    return jsonify({'version': '2026-01-31-v35', 'changes': 'master_api_key_env_var'})
 
 # ============ API Key Management ============
 

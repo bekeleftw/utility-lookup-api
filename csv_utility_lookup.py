@@ -162,30 +162,24 @@ def lookup_utility_from_csv(city: str, state: str, utility_type: str) -> Optiona
     providers = load_providers(utility_type)
     city_norm = normalize_city(city).upper()
     
-    # Try exact state|city match first
+    # Try exact state|city match first (most reliable)
     if state:
         key = f"{state}|{city_norm}"
         if key in providers:
             matches = providers[key]
-            if len(matches) == 1:
-                return matches[0]
-            # Multiple matches - prefer ones with city name or "municipal" in name
-            for m in matches:
-                name_lower = m['name'].lower()
-                if city.lower() in name_lower or 'municipal' in name_lower:
-                    return m
-            return matches[0]
-    
-    # Try any state with this city
-    any_key = f"ANY|{city_norm}"
-    if any_key in providers:
-        matches = providers[any_key]
-        if state:
+            # Filter to only providers that match the state
             state_matches = [m for m in matches if m.get('state') == state]
             if state_matches:
+                if len(state_matches) == 1:
+                    return state_matches[0]
+                # Multiple matches - prefer ones with city name or "municipal" in name
+                for m in state_matches:
+                    name_lower = m['name'].lower()
+                    if city.lower() in name_lower or 'municipal' in name_lower:
+                        return m
                 return state_matches[0]
-        return matches[0] if matches else None
     
+    # Don't use ANY| fallback - it causes cross-state mismatches
     return None
 
 

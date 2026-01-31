@@ -245,7 +245,7 @@ def _get_gas_candidates(city, state, zip_code, county) -> List[Dict]:
     # Source 2: Municipal utilities
     try:
         from municipal_utilities import lookup_municipal_gas
-        muni_result = lookup_municipal_gas(city, state)
+        muni_result = lookup_municipal_gas(state, city, zip_code, county)
         if muni_result:
             muni_result['_source'] = 'municipal_utility'
             candidates.append(muni_result)

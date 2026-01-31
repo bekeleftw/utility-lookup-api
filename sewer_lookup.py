@@ -28,8 +28,11 @@ TX_SEWER_CCN_URL = "https://services6.arcgis.com/N6Lzvtb46cpxThhu/ArcGIS/rest/se
 # California Water Districts (proxy for sewer - many CA water districts also provide sewer)
 CA_WATER_DISTRICTS_URL = "https://gis.water.ca.gov/arcgis/rest/services/Boundaries/i03_WaterDistricts/FeatureServer/0/query"
 
-# Massachusetts Sewer Service Areas
-MA_SEWER_URL = "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Sewer_Service_Areas/FeatureServer/0/query"
+# Florida DOH FLWMI - parcel-level wastewater data
+FL_FLWMI_URL = "https://gis.floridahealth.gov/server/rest/services/FLWMI/FLWMI_Wastewater/MapServer/0/query"
+
+# Connecticut DEEP Connected Sewer Service Areas
+CT_SEWER_URL = "https://services1.arcgis.com/FjPcSmEFuDYlIdKC/arcgis/rest/services/Connected_Sewer_Service_Areas/FeatureServer/0/query"
 
 # HIFLD Wastewater Treatment Plants endpoint
 HIFLD_WASTEWATER_URL = "https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/wastewater_treatment_plants_epa_frs/FeatureServer/0/query"
@@ -202,6 +205,159 @@ def lookup_hifld_wastewater(lat: float, lon: float, radius_miles: float = 10) ->
         return None
 
 
+def lookup_florida_flwmi(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Florida DOH FLWMI for parcel-level wastewater data.
+    Returns sewer status with provider name if available.
+    """
+    cache_key = f"fl_flwmi|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        # Convert to Web Mercator (EPSG:3857) - required by this service
+        x, y = wgs84_to_web_mercator(lon, lat)
+        
+        params = {
+            "geometry": f"{x},{y}",
+            "geometryType": "esriGeometryPoint",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "WW,WW_SRC_TYP,WW_SRC_NAME",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(FL_FLWMI_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        attrs = features[0].get("attributes", {})
+        ww_status = attrs.get("WW", "")
+        ww_source = attrs.get("WW_SRC_NAME", "")
+        
+        # Map WW status to confidence
+        confidence_map = {
+            "KnownSewer": "high",
+            "LikelySewer": "medium",
+            "SomewhatLikelySewer": "low",
+            "KnownSeptic": "high",  # High confidence it's septic
+            "LikelySeptic": "medium",
+            "Unknown": "low"
+        }
+        
+        # Check if septic
+        is_septic = "Septic" in ww_status
+        
+        if is_septic:
+            result = {
+                "name": "Private Septic System",
+                "status": ww_status,
+                "phone": None,
+                "website": None,
+                "_source": "florida_flwmi",
+                "_confidence": confidence_map.get(ww_status, "low"),
+                "_note": f"Florida DOH indicates {ww_status} - no public sewer service"
+            }
+        else:
+            # Extract provider name from source
+            provider_name = ww_source.split(" Sewer")[0] if " Sewer" in ww_source else ww_source
+            if not provider_name or provider_name == "Unknown":
+                provider_name = "Public Sewer Service"
+            
+            result = {
+                "name": provider_name,
+                "status": ww_status,
+                "phone": None,
+                "website": None,
+                "_source": "florida_flwmi",
+                "_confidence": confidence_map.get(ww_status, "medium"),
+                "_note": f"Florida DOH FLWMI: {ww_status}"
+            }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except Exception as e:
+        print(f"[FL FLWMI] Error: {e}")
+        return None
+
+
+def lookup_connecticut_sewer(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Connecticut DEEP Connected Sewer Service Areas.
+    """
+    cache_key = f"ct_sewer|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        params = {
+            "geometry": f"{lon},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "inSR": "4326",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "TOWN,Sewers,SewerStatus,TreatmentFacility",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(CT_SEWER_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        attrs = features[0].get("attributes", {})
+        town = attrs.get("TOWN", "")
+        sewers = attrs.get("Sewers", "")
+        status = attrs.get("SewerStatus", "")
+        facility = attrs.get("TreatmentFacility", "")
+        
+        # Determine confidence based on status
+        if status == "Connected":
+            confidence = "high"
+        elif sewers == "Existing":
+            confidence = "medium"
+        else:
+            confidence = "low"
+        
+        # Build provider name
+        if facility and facility != "Not Applicable":
+            provider_name = facility
+        elif town:
+            provider_name = f"{town} Sewer Service"
+        else:
+            provider_name = "Connecticut Sewer Service"
+        
+        result = {
+            "name": provider_name,
+            "town": town,
+            "status": status,
+            "phone": None,
+            "website": None,
+            "_source": "connecticut_deep",
+            "_confidence": confidence,
+            "_note": f"CT DEEP: {sewers} - {status}"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except Exception as e:
+        print(f"[CT DEEP] Error: {e}")
+        return None
+
+
 def lookup_california_water_district(lat: float, lon: float) -> Optional[Dict]:
     """
     Query California Water Districts as proxy for sewer service.
@@ -280,19 +436,35 @@ def lookup_sewer_provider(
     result = None
     state_upper = state.upper() if state else ""
     
+    # Tier 1: State-specific authoritative APIs
+    
     # 1. Texas PUC Sewer CCN (authoritative for TX)
     if state_upper == "TX" and lat and lon:
         result = lookup_texas_sewer_ccn(lat, lon)
         if result:
             return result
     
-    # 2. California Water Districts (proxy for sewer)
+    # 2. Florida DOH FLWMI (parcel-level)
+    if state_upper == "FL" and lat and lon:
+        result = lookup_florida_flwmi(lat, lon)
+        if result:
+            return result
+    
+    # 3. Connecticut DEEP
+    if state_upper == "CT" and lat and lon:
+        result = lookup_connecticut_sewer(lat, lon)
+        if result:
+            return result
+    
+    # Tier 2: Water utility proxy
+    
+    # 4. California Water Districts (proxy for sewer)
     if state_upper == "CA" and lat and lon:
         result = lookup_california_water_district(lat, lon)
         if result:
             return result
     
-    # 2. CSV providers database
+    # Tier 3: CSV providers database
     try:
         from csv_utility_lookup import lookup_utility_from_csv
         csv_result = lookup_utility_from_csv(city, state, 'sewer')

@@ -1,0 +1,274 @@
+{
+  "info": {
+    "name": "Utility Lookup API",
+    "description": "API for looking up utility providers (electric, gas, water) by address.\n\nBase URL: https://web-production-9acc6.up.railway.app\n\nAuthentication: Include X-API-Key header with all requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "X-API-Key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{api_key}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://web-production-9acc6.up.railway.app",
+      "type": "string"
+    },
+    {
+      "key": "api_key",
+      "value": "ulk_utilityprofit_master_2026_x7k9m2",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health & Info",
+      "item": [
+        {
+          "name": "API Version",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/version",
+              "host": ["{{base_url}}"],
+              "path": ["api", "version"]
+            },
+            "description": "Get the current API version."
+          }
+        },
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/health",
+              "host": ["{{base_url}}"],
+              "path": ["health"]
+            },
+            "description": "Check if the API is running."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Single Address Lookup",
+      "item": [
+        {
+          "name": "Lookup All Utilities",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/lookup?address=1725 Toomey Rd, Austin, TX 78704&utilities=electric,gas,water",
+              "host": ["{{base_url}}"],
+              "path": ["api", "lookup"],
+              "query": [
+                {
+                  "key": "address",
+                  "value": "1725 Toomey Rd, Austin, TX 78704",
+                  "description": "Full street address"
+                },
+                {
+                  "key": "utilities",
+                  "value": "electric,gas,water,trash,sewer",
+                  "description": "Comma-separated list: electric, gas, water, trash, sewer, internet"
+                }
+              ]
+            },
+            "description": "Look up all utility providers for a single address."
+          }
+        },
+        {
+          "name": "Lookup Electric Only",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/lookup?address=500 Main St, Dallas, TX 75201&utilities=electric",
+              "host": ["{{base_url}}"],
+              "path": ["api", "lookup"],
+              "query": [
+                {
+                  "key": "address",
+                  "value": "500 Main St, Dallas, TX 75201"
+                },
+                {
+                  "key": "utilities",
+                  "value": "electric"
+                }
+              ]
+            },
+            "description": "Look up only electric provider for an address."
+          }
+        },
+        {
+          "name": "Lookup Water Only",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/lookup?address=3211 Ventura Dr, East Hanover, NJ 07936&utilities=water",
+              "host": ["{{base_url}}"],
+              "path": ["api", "lookup"],
+              "query": [
+                {
+                  "key": "address",
+                  "value": "3211 Ventura Dr, East Hanover, NJ 07936"
+                },
+                {
+                  "key": "utilities",
+                  "value": "water"
+                }
+              ]
+            },
+            "description": "Look up only water provider for an address."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Batch Lookup",
+      "item": [
+        {
+          "name": "Batch Lookup (Multiple Addresses)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"addresses\": [\n    \"1725 Toomey Rd, Austin, TX 78704\",\n    \"500 Main St, Dallas, TX 75201\",\n    \"100 Congress Ave, Austin, TX 78701\",\n    \"3211 Ventura Dr, East Hanover, NJ 07936\",\n    \"100 E Broad St, Columbus, OH 43215\"\n  ],\n  \"utilities\": \"electric,gas,water,trash,sewer\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/lookup/batch",
+              "host": ["{{base_url}}"],
+              "path": ["api", "lookup", "batch"]
+            },
+            "description": "Look up utilities for multiple addresses in a single request.\n\n**Limits:**\n- Max 500 addresses per request\n- 50 concurrent workers internally\n- 1-hour cache for repeated addresses\n\n**Request Body:**\n- `addresses`: Array of address strings (required)\n- `utilities`: Comma-separated list of utility types (optional, defaults to all)"
+          }
+        },
+        {
+          "name": "Batch Lookup (Large - 50 addresses)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{api_key}}",
+                "type": "text"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"addresses\": [\n    \"100 Congress Ave, Austin, TX 78701\",\n    \"1725 Toomey Rd, Austin, TX 78704\",\n    \"500 Main St, Dallas, TX 75201\",\n    \"1000 Louisiana St, Houston, TX 77002\",\n    \"300 Alamo Plaza, San Antonio, TX 78205\",\n    \"100 E Weatherford St, Fort Worth, TX 76102\",\n    \"200 S 10th St, McAllen, TX 78501\",\n    \"100 N Chaparral St, Corpus Christi, TX 78401\",\n    \"100 S Grand Ave, Los Angeles, CA 90012\",\n    \"500 Castro St, San Francisco, CA 94114\",\n    \"200 S Anaheim Blvd, Anaheim, CA 92805\",\n    \"100 Civic Center Dr, San Diego, CA 92101\",\n    \"300 Capitol Mall, Sacramento, CA 95814\",\n    \"100 W Santa Clara St, San Jose, CA 95113\",\n    \"100 Centre St, New York, NY 10013\",\n    \"200 Cadman Plaza W, Brooklyn, NY 11201\",\n    \"100 Church St, White Plains, NY 10601\",\n    \"200 Old Country Rd, Mineola, NY 11501\",\n    \"100 State St, Albany, NY 12207\",\n    \"200 E Washington St, Syracuse, NY 13202\",\n    \"100 NW 1st Ave, Miami, FL 33128\",\n    \"200 E Bay St, Jacksonville, FL 32202\",\n    \"100 N Tampa St, Tampa, FL 33602\",\n    \"200 S Orange Ave, Orlando, FL 32801\",\n    \"100 N Andrews Ave, Fort Lauderdale, FL 33301\",\n    \"100 Market St, Newark, NJ 07102\",\n    \"200 Federal St, Camden, NJ 08101\",\n    \"100 Hamilton St, Paterson, NJ 07505\",\n    \"3211 Ventura Dr, East Hanover, NJ 07936\",\n    \"200 Broad St, Trenton, NJ 08608\",\n    \"100 E Broad St, Columbus, OH 43215\",\n    \"200 W Lakeside Ave, Cleveland, OH 44113\",\n    \"100 E 5th St, Cincinnati, OH 45202\",\n    \"200 W Bowery St, Akron, OH 44308\",\n    \"100 Jackson St, Toledo, OH 43604\",\n    \"100 S Broad St, Philadelphia, PA 19110\",\n    \"200 Grant St, Pittsburgh, PA 15219\",\n    \"100 N Duke St, Lancaster, PA 17602\",\n    \"200 N 2nd St, Harrisburg, PA 17101\",\n    \"100 N Main St, Scranton, PA 18503\",\n    \"100 Dexter Ave, Montgomery, AL 36104\",\n    \"200 W Capitol Ave, Little Rock, AR 72201\",\n    \"100 W Washington St, Phoenix, AZ 85003\",\n    \"200 E Colfax Ave, Denver, CO 80203\",\n    \"100 State St, Hartford, CT 06103\",\n    \"200 N King St, Wilmington, DE 19801\",\n    \"100 E Capitol St, Jackson, MS 39201\",\n    \"200 N Main St, St Louis, MO 63101\",\n    \"100 N Carson St, Carson City, NV 89701\",\n    \"200 S State St, Salt Lake City, UT 84111\"\n  ],\n  \"utilities\": \"electric,gas,water,trash,sewer\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/lookup/batch",
+              "host": ["{{base_url}}"],
+              "path": ["api", "lookup", "batch"]
+            },
+            "description": "Test batch lookup with 50 addresses across multiple states."
+          }
+        }
+      ]
+    },
+    {
+      "name": "API Key Management",
+      "item": [
+        {
+          "name": "Generate API Key",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"admin_secret\": \"YOUR_ADMIN_SECRET_HERE\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/keys/generate",
+              "host": ["{{base_url}}"],
+              "path": ["api", "keys", "generate"]
+            },
+            "description": "Generate a new API key. Requires admin secret."
+          }
+        },
+        {
+          "name": "Validate API Key",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-API-Key",
+                "value": "{{api_key}}",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/keys/validate",
+              "host": ["{{base_url}}"],
+              "path": ["api", "keys", "validate"]
+            },
+            "description": "Validate an API key and check remaining usage."
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -573,6 +573,18 @@ def lookup():
             else:
                 response['utilities']['internet_note'] = "Could not retrieve internet provider data from FCC."
         
+        # Trash - only if selected
+        if 'trash' in selected_utilities:
+            trash = result.get('trash')
+            if trash:
+                response['utilities']['trash'] = [format_utility(trash, 'trash', city, state)]
+        
+        # Sewer - only if selected
+        if 'sewer' in selected_utilities:
+            sewer = result.get('sewer')
+            if sewer:
+                response['utilities']['sewer'] = [format_utility(sewer, 'sewer', city, state)]
+        
         return jsonify(response)
         
     except Exception as e:

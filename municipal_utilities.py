@@ -1,5 +1,8 @@
 """
 Municipal utility lookup - city-owned utilities that aren't in federal databases.
+
+Includes: electric, gas, water, trash, sewer
+Trash and sewer are typically provided by the same municipal entity as water.
 """
 
 import json
@@ -889,3 +892,102 @@ def get_municipal_stats() -> Dict:
         'total_zip_codes': total_zips,
         'states': list(electric.keys())
     }
+
+
+def lookup_municipal_trash(state: str, city: str, zip_code: str = None) -> Optional[Dict]:
+    """
+    Look up municipal trash/solid waste service for a city.
+    
+    Most cities provide trash collection as a municipal service.
+    This infers trash service from water utility data since they're
+    typically managed by the same public works department.
+    """
+    # First check CSV for specific trash provider
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'trash')
+        if csv_result:
+            return {
+                'name': csv_result.get('name'),
+                'phone': csv_result.get('phone'),
+                'website': csv_result.get('website'),
+                'city': city,
+                'source': 'csv_providers',
+                'confidence': 'high'
+            }
+    except Exception:
+        pass
+    
+    # Infer from water utility - most cities bundle water/sewer/trash
+    water = lookup_municipal_water(state, city, zip_code)
+    if water:
+        # Derive trash service name from water utility
+        water_name = water.get('name', '')
+        
+        # Common patterns: "City of X Water" -> "City of X Solid Waste"
+        if 'water' in water_name.lower():
+            trash_name = water_name.replace('Water', 'Solid Waste').replace('water', 'Solid Waste')
+        elif 'utilities' in water_name.lower():
+            trash_name = water_name  # Already a general utilities dept
+        else:
+            trash_name = f"{city} Solid Waste Services"
+        
+        return {
+            'name': trash_name,
+            'phone': water.get('phone'),
+            'website': water.get('website'),
+            'city': city,
+            'source': 'municipal_inferred',
+            'confidence': 'medium',
+            'note': 'Inferred from municipal water service - verify with city'
+        }
+    
+    return None
+
+
+def lookup_municipal_sewer(state: str, city: str, zip_code: str = None) -> Optional[Dict]:
+    """
+    Look up municipal sewer/wastewater service for a city.
+    
+    Sewer service is almost always provided by the same entity as water.
+    """
+    # First check CSV for specific sewer provider
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'sewer')
+        if csv_result:
+            return {
+                'name': csv_result.get('name'),
+                'phone': csv_result.get('phone'),
+                'website': csv_result.get('website'),
+                'city': city,
+                'source': 'csv_providers',
+                'confidence': 'high'
+            }
+    except Exception:
+        pass
+    
+    # Infer from water utility - sewer is almost always bundled with water
+    water = lookup_municipal_water(state, city, zip_code)
+    if water:
+        water_name = water.get('name', '')
+        
+        # Common patterns for sewer naming
+        if 'water' in water_name.lower():
+            sewer_name = water_name.replace('Water', 'Water & Sewer').replace('water', 'Water & Sewer')
+        elif 'utilities' in water_name.lower():
+            sewer_name = water_name
+        else:
+            sewer_name = f"{city} Wastewater Services"
+        
+        return {
+            'name': sewer_name,
+            'phone': water.get('phone'),
+            'website': water.get('website'),
+            'city': city,
+            'source': 'municipal_inferred',
+            'confidence': 'high',  # Sewer is almost always with water
+            'note': 'Sewer typically provided by same entity as water'
+        }
+    
+    return None

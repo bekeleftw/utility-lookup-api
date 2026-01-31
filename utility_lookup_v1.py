@@ -2971,42 +2971,44 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         elif not primary_gas.get('confidence_factors'):
             primary_gas['confidence_factors'] = [f"+{primary_gas['confidence_score']}: Pipeline ({primary_gas.get('_source', 'unknown')})"]
     
-    # Step 7: Trash lookup - only if selected (uses CSV data)
+    # Step 7: Trash lookup - CSV first, then municipal inference
     trash = None
     if 'trash' in selected_utilities:
         try:
-            from csv_utility_lookup import lookup_utility_from_csv
-            trash_result = lookup_utility_from_csv(city, state, 'trash')
+            from municipal_utilities import lookup_municipal_trash
+            trash_result = lookup_municipal_trash(state, city, zip_code)
             if trash_result:
                 trash = {
                     "name": trash_result.get('name'),
-                    "id": trash_result.get('id'),
+                    "id": None,
                     "phone": trash_result.get('phone'),
                     "website": trash_result.get('website'),
                     "state": state,
                     "city": city,
-                    "_source": "csv_providers",
-                    "_confidence": "high"
+                    "_source": trash_result.get('source', 'municipal'),
+                    "_confidence": trash_result.get('confidence', 'medium'),
+                    "_note": trash_result.get('note')
                 }
         except Exception as e:
             pass
     
-    # Step 8: Sewer lookup - only if selected (uses CSV data)
+    # Step 8: Sewer lookup - CSV first, then municipal inference
     sewer = None
     if 'sewer' in selected_utilities:
         try:
-            from csv_utility_lookup import lookup_utility_from_csv
-            sewer_result = lookup_utility_from_csv(city, state, 'sewer')
+            from municipal_utilities import lookup_municipal_sewer
+            sewer_result = lookup_municipal_sewer(state, city, zip_code)
             if sewer_result:
                 sewer = {
                     "name": sewer_result.get('name'),
-                    "id": sewer_result.get('id'),
+                    "id": None,
                     "phone": sewer_result.get('phone'),
                     "website": sewer_result.get('website'),
                     "state": state,
                     "city": city,
-                    "_source": "csv_providers",
-                    "_confidence": "high"
+                    "_source": sewer_result.get('source', 'municipal'),
+                    "_confidence": sewer_result.get('confidence', 'high'),
+                    "_note": sewer_result.get('note')
                 }
         except Exception as e:
             pass

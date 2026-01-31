@@ -34,6 +34,9 @@ FL_FLWMI_URL = "https://gis.floridahealth.gov/server/rest/services/FLWMI/FLWMI_W
 # Connecticut DEEP Connected Sewer Service Areas
 CT_SEWER_URL = "https://services1.arcgis.com/FjPcSmEFuDYlIdKC/arcgis/rest/services/Connected_Sewer_Service_Areas/FeatureServer/0/query"
 
+# Washington WASWD Special Purpose Districts (~21% coverage)
+WA_WASWD_URL = "https://services8.arcgis.com/J7RBtn4Gc9TK4jT1/arcgis/rest/services/WASWDMap_WFL1/FeatureServer/0/query"
+
 # HIFLD Wastewater Treatment Plants endpoint
 HIFLD_WASTEWATER_URL = "https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/wastewater_treatment_plants_epa_frs/FeatureServer/0/query"
 
@@ -358,6 +361,62 @@ def lookup_connecticut_sewer(lat: float, lon: float) -> Optional[Dict]:
         return None
 
 
+def lookup_washington_waswd(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Washington WASWD Special Purpose Districts.
+    Covers ~21% of WA with 182 special purpose districts.
+    """
+    cache_key = f"wa_waswd|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        x, y = wgs84_to_web_mercator(lon, lat)
+        
+        params = {
+            "geometry": f"{x},{y}",
+            "geometryType": "esriGeometryPoint",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "JURISDIC_2,JURISDIC_3",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(WA_WASWD_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        attrs = features[0].get("attributes", {})
+        county = attrs.get("JURISDIC_2", "")
+        district_name = attrs.get("JURISDIC_3", "")
+        
+        if not district_name or district_name.strip() == "":
+            district_name = f"{county} County Sewer District"
+        
+        result = {
+            "name": district_name,
+            "county": county,
+            "phone": None,
+            "website": None,
+            "_source": "washington_waswd",
+            "_confidence": "medium",
+            "_note": f"WA Special Purpose District - {county} County"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except Exception as e:
+        print(f"[WA WASWD] Error: {e}")
+        return None
+
+
 def lookup_california_water_district(lat: float, lon: float) -> Optional[Dict]:
     """
     Query California Water Districts as proxy for sewer service.
@@ -456,9 +515,15 @@ def lookup_sewer_provider(
         if result:
             return result
     
+    # 4. Washington WASWD (~21% coverage)
+    if state_upper == "WA" and lat and lon:
+        result = lookup_washington_waswd(lat, lon)
+        if result:
+            return result
+    
     # Tier 2: Water utility proxy
     
-    # 4. California Water Districts (proxy for sewer)
+    # 5. California Water Districts (proxy for sewer)
     if state_upper == "CA" and lat and lon:
         result = lookup_california_water_district(lat, lon)
         if result:

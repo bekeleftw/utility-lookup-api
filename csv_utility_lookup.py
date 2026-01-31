@@ -48,6 +48,17 @@ def extract_city_state_from_title(title: str) -> tuple:
     if not title:
         return None, None
     
+    # Pattern: "City Name (ST)" - e.g., "City of Columbus (OH)"
+    match = re.search(r'^(.+?)\s*\(([A-Z]{2})\)$', title)
+    if match:
+        first_part = match.group(1)
+        state = match.group(2)
+        # Extract city from "City of X" pattern
+        city_match = re.match(r'^(?:City of |Town of |Village of )(.+)$', first_part, re.IGNORECASE)
+        if city_match:
+            return normalize_city(city_match.group(1)), state
+        return normalize_city(first_part), state
+    
     # Pattern: "Something Something - ST" (state at end after dash)
     match = re.search(r'^(.+?)\s*[-–]\s*([A-Z]{2})$', title)
     if match:
@@ -55,7 +66,7 @@ def extract_city_state_from_title(title: str) -> tuple:
         state = match.group(2)
         # Try to extract city name
         city_match = re.match(
-            r'^((?:City of |Town of |Village of )?[\w\s]+?)(?:\s+(?:Township|County|Municipal|Water|Electric|Gas|Utility|Utilities|Department|District|MUD|PWS|WCID|Energy|Power|Light))',
+            r'^((?:City of |Town of |Village of )?[\w\s]+?)(?:\s+(?:Township|County|Municipal|Water|Electric|Gas|Utility|Utilities|Department|District|MUD|PWS|WCID|Energy|Power|Light|Solid|Waste|Trash|Sewer|Sanitary))',
             first_part, re.IGNORECASE
         )
         if city_match:
@@ -68,11 +79,6 @@ def extract_city_state_from_title(title: str) -> tuple:
                 city = ' '.join(words[:2])
             return normalize_city(city), state
         return normalize_city(first_part), state
-    
-    # Pattern: "City Name (ST)"
-    match = re.search(r'^(.+?)\s*\(([A-Z]{2})\)$', title)
-    if match:
-        return normalize_city(match.group(1)), match.group(2)
     
     # Pattern: "City Name, ST"
     match = re.search(r'^(.+?),\s*([A-Z]{2})$', title)

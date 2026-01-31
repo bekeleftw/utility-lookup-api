@@ -19,6 +19,7 @@ from utility_scrapers import get_available_scrapers, get_scrapers_for_state, ver
 from cross_validation import cross_validate, SourceResult, format_for_response as format_cv_response, get_disagreements, providers_match
 from municipal_utilities import get_all_municipal_utilities, lookup_municipal_electric, get_municipal_stats
 from address_cache import cache_confirmation, get_cached_utilities, get_cache_stats
+from provider_id_matcher import get_provider_id, match_provider
 from datetime import datetime
 from functools import wraps
 import hashlib
@@ -155,7 +156,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-31-v33', 'changes': 'api_key_authentication'})
+    return jsonify({'version': '2026-01-31-v34', 'changes': 'provider_id_matching'})
 
 # ============ API Key Management ============
 
@@ -443,6 +444,7 @@ def format_utility(util, util_type, city=None, state=None):
             pass  # Don't fail if website lookup fails
     
     if util_type == 'water':
+        provider_id = get_provider_id(normalized_name, 'water')
         return {
             'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
@@ -452,6 +454,7 @@ def format_utility(util, util_type, city=None, state=None):
             'state': util.get('STATE', util.get('state')),
             'zip': util.get('ZIP', util.get('zip')),
             'id': util.get('PWSID', util.get('id')),
+            'provider_id': provider_id,
             'population_served': util.get('POPULATION_SERVED', util.get('population_served')),
             'source_type': util.get('SOURCE_TYPE', util.get('source_type')),
             'confidence': util.get('_confidence', 'high'),
@@ -490,6 +493,9 @@ def format_utility(util, util_type, city=None, state=None):
         elif confidence == 'medium':
             confidence_score = 60
     
+    # Match to provider ID from utility_providers_IDs.csv
+    provider_id = get_provider_id(normalized_name, util_type)
+    
     result = {
         'name': normalized_name,
         'phone': util.get('TELEPHONE', util.get('phone')),
@@ -499,6 +505,7 @@ def format_utility(util, util_type, city=None, state=None):
         'state': util.get('STATE', util.get('state')),
         'zip': util.get('ZIP', util.get('zip')),
         'id': util.get('ID') or util.get('SVCTERID') or util.get('id'),
+        'provider_id': provider_id,
         'type': util.get('TYPE'),
         'confidence': confidence,
         'confidence_score': confidence_score,

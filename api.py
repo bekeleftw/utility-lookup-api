@@ -654,6 +654,48 @@ def format_utility(util, util_type, city=None, state=None):
             '_source': util.get('_source') or util.get('_verification_source') or util.get('source')
         }
     
+    # Sewer utilities - include CCN info for Texas
+    if util_type == 'sewer':
+        provider_id = get_provider_id(normalized_name, 'sewer')
+        return {
+            'name': normalized_name,
+            'phone': util.get('TELEPHONE', util.get('phone')),
+            'website': website,
+            'address': util.get('ADDRESS', util.get('address')),
+            'city': util.get('CITY', util.get('city')),
+            'state': util.get('STATE', util.get('state')),
+            'zip': util.get('ZIP', util.get('zip')),
+            'id': util.get('id'),
+            'provider_id': provider_id,
+            'ccn_number': util.get('ccn_number'),  # Texas PUC CCN
+            'confidence': util.get('_confidence', 'medium'),
+            'confidence_score': util.get('_confidence_score') or util.get('confidence_score'),
+            'confidence_factors': util.get('confidence_factors'),
+            'verified': util.get('_serp_verified', False),
+            '_source': util.get('_source') or util.get('source'),
+            '_note': util.get('_note')
+        }
+    
+    # Trash utilities
+    if util_type == 'trash':
+        provider_id = get_provider_id(normalized_name, 'trash')
+        return {
+            'name': normalized_name,
+            'phone': util.get('TELEPHONE', util.get('phone')),
+            'website': website,
+            'address': util.get('ADDRESS', util.get('address')),
+            'city': util.get('CITY', util.get('city')),
+            'state': util.get('STATE', util.get('state')),
+            'zip': util.get('ZIP', util.get('zip')),
+            'id': util.get('id'),
+            'provider_id': provider_id,
+            'confidence': util.get('_confidence', 'medium'),
+            'confidence_score': util.get('_confidence_score') or util.get('confidence_score'),
+            'verified': util.get('_serp_verified', False),
+            '_source': util.get('_source') or util.get('source'),
+            '_note': util.get('_note')
+        }
+    
     # Electric and Gas utilities
     confidence = util.get('_confidence') or util.get('confidence') or ('high' if util_type == 'electric' else 'medium')
     confidence_score = util.get('_confidence_score') or util.get('confidence_score')

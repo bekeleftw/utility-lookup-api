@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Water Provider Reconciler - Uses AI to pick the best water provider
-when multiple sources (CSV, EPA, municipal) return different results.
+Utility Provider Reconciler - Uses AI to pick the best utility provider
+when multiple sources (CSV, HIFLD, EPA, municipal) return different results.
+Works for electric, gas, and water utilities.
 """
 
 import os
@@ -18,21 +19,23 @@ def get_openai_client():
         _client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
     return _client
 
-def reconcile_water_providers(
+def reconcile_utility_providers(
     address: str,
     city: str,
     state: str,
     zip_code: str,
+    utility_type: str,
     candidates: List[Dict]
 ) -> Optional[Dict]:
     """
-    Use AI to pick the best water provider from multiple candidates.
+    Use AI to pick the best utility provider from multiple candidates.
     
     Args:
         address: Full street address
         city: City name
         state: State abbreviation
         zip_code: ZIP code
+        utility_type: 'electric', 'gas', or 'water'
         candidates: List of provider dicts from different sources
         
     Returns:
@@ -49,10 +52,11 @@ def reconcile_water_providers(
     names = set()
     for c in candidates:
         name = (c.get('name') or '').lower()
-        # Normalize name for comparison
-        name = name.replace('water department', '').replace('water utility', '')
-        name = name.replace('water', '').replace('utilities', '').strip()
-        names.add(name[:20])  # First 20 chars for fuzzy match
+        # Normalize name for comparison - remove common suffixes
+        for suffix in ['water department', 'water utility', 'electric', 'gas', 
+                       'utilities', 'utility', 'company', 'corp', 'inc', 'llc']:
+            name = name.replace(suffix, '')
+        names.add(name.strip()[:20])  # First 20 chars for fuzzy match
     
     if len(names) == 1:
         # All sources agree - return the one with most info
@@ -60,23 +64,42 @@ def reconcile_water_providers(
         best['_reconciliation'] = 'sources_agree'
         return best
     
+    # Build utility-specific context for AI
+    utility_context = {
+        'electric': """
+1. IOUs (Investor-Owned Utilities) like Duke Energy, Xcel serve large territories
+2. Electric cooperatives (co-ops) serve rural areas, often with "Electric Cooperative" in name
+3. Municipal electric utilities serve specific cities
+4. In deregulated states (TX, PA, etc.), there's a delivery company (TDU) vs retail providers
+5. HIFLD polygon data is authoritative for service territories""",
+        'gas': """
+1. Large gas utilities (Atmos, CenterPoint, etc.) serve multi-state regions
+2. Municipal gas utilities serve specific cities
+3. Some areas have no natural gas service (propane only)
+4. State LDC (Local Distribution Company) data is authoritative""",
+        'water': """
+1. Municipal/township water departments typically serve addresses within that municipality
+2. Regional providers (like "NJ American Water") serve broader areas but may not serve addresses in cities with their own municipal water
+3. MUDs (Municipal Utility Districts) serve specific developments, usually identified by number
+4. EPA SDWIS data covers larger service areas; local municipal data is more specific"""
+    }
+    
     # Sources disagree - use AI to pick
-    prompt = f"""You are a utility service territory expert. Given an address and multiple water provider candidates from different data sources, determine which provider most likely serves this specific address.
+    prompt = f"""You are a utility service territory expert. Given an address and multiple {utility_type} provider candidates from different data sources, determine which provider most likely serves this specific address.
 
 Address: {address}
 City: {city}
 State: {state}
 ZIP: {zip_code}
+Utility Type: {utility_type}
 
 Candidates:
 {json.dumps(candidates, indent=2, default=str)}
 
 Consider:
-1. Municipal/township water departments typically serve addresses within that municipality
-2. Regional providers (like "NJ American Water") serve broader areas but may not serve addresses in cities with their own municipal water
-3. MUDs (Municipal Utility Districts) serve specific developments, usually identified by number
-4. Provider names containing the city name are more likely correct for that city
-5. EPA data covers larger service areas; local municipal data is more specific
+{utility_context.get(utility_type, utility_context['electric'])}
+- Provider names containing the city name are more likely correct for that city
+- CSV provider data is curated; federal data (HIFLD, EPA) covers larger areas
 
 Return JSON with:
 {{
@@ -113,9 +136,9 @@ Return ONLY valid JSON, no other text."""
             return best
         
     except Exception as e:
-        print(f"[Reconciler] AI error: {e}")
+        print(f"[Reconciler] AI error for {utility_type}: {e}")
     
-    # Fallback: prefer municipal/township providers over regional
+    # Fallback: prefer municipal/local providers over regional
     for c in candidates:
         name_lower = (c.get('name') or '').lower()
         if 'township' in name_lower or 'municipal' in name_lower or city.lower() in name_lower:
@@ -127,15 +150,129 @@ Return ONLY valid JSON, no other text."""
     return candidates[0]
 
 
-def get_all_water_candidates(
+# Backwards compatibility alias
+def reconcile_water_providers(address, city, state, zip_code, candidates):
+    return reconcile_utility_providers(address, city, state, zip_code, 'water', candidates)
+
+
+def get_all_utility_candidates(
     city: str,
     state: str,
+    utility_type: str,
     zip_code: str = None,
-    county: str = None
+    county: str = None,
+    lat: float = None,
+    lon: float = None
 ) -> List[Dict]:
     """
-    Gather water provider candidates from all sources.
+    Gather utility provider candidates from all sources.
+    
+    Args:
+        city: City name
+        state: State abbreviation
+        utility_type: 'electric', 'gas', or 'water'
+        zip_code: ZIP code (optional)
+        county: County name (optional)
+        lat: Latitude (optional)
+        lon: Longitude (optional)
     """
+    candidates = []
+    
+    if utility_type == 'electric':
+        return _get_electric_candidates(city, state, zip_code, county, lat, lon)
+    elif utility_type == 'gas':
+        return _get_gas_candidates(city, state, zip_code, county)
+    elif utility_type == 'water':
+        return _get_water_candidates(city, state, zip_code, county)
+    
+    return candidates
+
+
+def _get_electric_candidates(city, state, zip_code, county, lat, lon) -> List[Dict]:
+    """Gather electric provider candidates from all sources."""
+    candidates = []
+    
+    # Source 1: CSV providers (UtilityTypeId = 1 for electric)
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'electric')
+        if csv_result:
+            csv_result['_source'] = 'csv_providers'
+            candidates.append(csv_result)
+    except Exception as e:
+        pass
+    
+    # Source 2: HIFLD polygon data (most authoritative for electric)
+    # This is already the primary source in the main lookup
+    
+    # Source 3: Municipal utilities
+    try:
+        from municipal_utilities import lookup_municipal_electric
+        muni_result = lookup_municipal_electric(city, state)
+        if muni_result:
+            muni_result['_source'] = 'municipal_utility'
+            candidates.append(muni_result)
+    except Exception as e:
+        pass
+    
+    # Source 4: FindEnergy data
+    try:
+        from findenergy_lookup import lookup_findenergy
+        fe_result = lookup_findenergy(zip_code, 'electric') if zip_code else None
+        if fe_result:
+            fe_result['_source'] = 'findenergy'
+            candidates.append(fe_result)
+    except Exception as e:
+        pass
+    
+    return candidates
+
+
+def _get_gas_candidates(city, state, zip_code, county) -> List[Dict]:
+    """Gather gas provider candidates from all sources."""
+    candidates = []
+    
+    # Source 1: CSV providers (UtilityTypeId = 2 for gas)
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'gas')
+        if csv_result:
+            csv_result['_source'] = 'csv_providers'
+            candidates.append(csv_result)
+    except Exception as e:
+        pass
+    
+    # Source 2: Municipal utilities
+    try:
+        from municipal_utilities import lookup_municipal_gas
+        muni_result = lookup_municipal_gas(city, state)
+        if muni_result:
+            muni_result['_source'] = 'municipal_utility'
+            candidates.append(muni_result)
+    except Exception as e:
+        pass
+    
+    # Source 3: State LDC mapping
+    try:
+        from pathlib import Path
+        import json as json_mod
+        gas_file = Path(__file__).parent / "gas_utilities_lookup.json"
+        if gas_file.exists():
+            with open(gas_file, 'r') as f:
+                gas_data = json_mod.load(f)
+            city_key = f"{state}|{city.upper()}"
+            if city_key in gas_data.get('by_city', {}):
+                gas_result = gas_data['by_city'][city_key].copy()
+                gas_result['_source'] = 'state_ldc'
+                candidates.append(gas_result)
+    except Exception as e:
+        pass
+    
+    return candidates
+
+
+def _get_water_candidates(city, state, zip_code, county) -> List[Dict]:
+    """Gather water provider candidates from all sources."""
     candidates = []
     
     # Source 1: CSV providers
@@ -175,6 +312,11 @@ def get_all_water_candidates(
         print(f"[Reconciler] Municipal lookup error: {e}")
     
     return candidates
+
+
+# Backwards compatibility alias
+def get_all_water_candidates(city, state, zip_code=None, county=None):
+    return get_all_utility_candidates(city, state, 'water', zip_code, county)
 
 
 if __name__ == '__main__':

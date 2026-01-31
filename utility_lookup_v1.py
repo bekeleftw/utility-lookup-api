@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 # Import state-specific utility verification
 from state_utility_verification import verify_electric_provider, verify_gas_provider, check_problem_area
 from csv_water_lookup import lookup_water_from_csv, get_csv_water_candidates
-from water_reconciler import reconcile_water_providers, get_all_water_candidates
+from water_reconciler import reconcile_water_providers, reconcile_utility_providers, get_all_water_candidates, get_all_utility_candidates
 from utility_website_verification import enhance_lookup_with_verification, verify_address_utility, get_supported_states
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 from confidence_scoring import calculate_confidence, source_to_score_key
@@ -3428,7 +3428,32 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
             except Exception:
                 pass
         
-        # Priority 1: Check municipal/regional gas data (most accurate for specific ZIPs)
+        # Priority 1: Use AI reconciler to compare all gas sources
+        try:
+            gas_candidates = get_all_utility_candidates(city, state, 'gas', zip_code, county)
+            if gas_candidates:
+                best = reconcile_utility_providers(
+                    address or f"{city}, {state} {zip_code}",
+                    city, state, zip_code or '', 'gas',
+                    gas_candidates
+                )
+                if best:
+                    return {
+                        'NAME': best.get('name'),
+                        'TELEPHONE': best.get('phone') or best.get('TELEPHONE'),
+                        'WEBSITE': best.get('website') or best.get('WEBSITE'),
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': best.get('_reconciliation_confidence', 'high'),
+                        '_source': best.get('_source', 'reconciled'),
+                        '_reconciliation': best.get('_reconciliation'),
+                        '_reconciliation_reasoning': best.get('_reconciliation_reasoning'),
+                        '_verification_source': f"ai_reconciled_{best.get('_source', 'unknown')}"
+                    }
+        except Exception as e:
+            print(f"[Gas] Reconciliation error: {e}")
+        
+        # Priority 2: Check municipal/regional gas data (fallback)
         municipal_gas = lookup_municipal_gas(state, city, zip_code, county)
         if municipal_gas:
             return {

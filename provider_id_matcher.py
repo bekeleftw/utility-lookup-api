@@ -203,7 +203,7 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
                 best_score = score
                 best_match = pdata
     
-    if best_match and best_score > 0.5:  # Lowered threshold for partial matches
+    if best_match and best_score > 0.4:  # Lowered threshold for partial matches like "oncor electric" in "oncor electric delivery company"
         best_match['matched_via'] = 'partial'
         return best_match
     

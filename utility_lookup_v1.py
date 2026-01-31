@@ -2992,23 +2992,26 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
         except Exception as e:
             pass
     
-    # Step 8: Sewer lookup - CSV first, then municipal inference
+    # Step 8: Sewer lookup - Texas PUC CCN first, then CSV, then municipal inference
     sewer = None
     if 'sewer' in selected_utilities:
         try:
-            from municipal_utilities import lookup_municipal_sewer
-            sewer_result = lookup_municipal_sewer(state, city, zip_code)
+            from sewer_lookup import lookup_sewer_provider
+            sewer_result = lookup_sewer_provider(
+                lat=lat, lon=lon, city=city, state=state, zip_code=zip_code
+            )
             if sewer_result:
                 sewer = {
                     "name": sewer_result.get('name'),
-                    "id": None,
+                    "id": sewer_result.get('id'),
                     "phone": sewer_result.get('phone'),
                     "website": sewer_result.get('website'),
                     "state": state,
                     "city": city,
-                    "_source": sewer_result.get('source', 'municipal'),
-                    "_confidence": sewer_result.get('confidence', 'high'),
-                    "_note": sewer_result.get('note')
+                    "ccn_number": sewer_result.get('ccn_number'),
+                    "_source": sewer_result.get('_source', 'unknown'),
+                    "_confidence": sewer_result.get('_confidence', 'medium'),
+                    "_note": sewer_result.get('_note')
                 }
         except Exception as e:
             pass

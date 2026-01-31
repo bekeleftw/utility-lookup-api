@@ -1,0 +1,304 @@
+#!/usr/bin/env python3
+"""
+Sewer/wastewater utility lookup using multiple data sources.
+
+Data Source Hierarchy:
+1. Texas PUC Sewer CCN API (authoritative for TX)
+2. HIFLD Wastewater Treatment Plants (national fallback)
+3. CSV providers database
+4. Municipal water inference (last resort)
+
+Based on: sewer-utility-lookup-spec.md
+"""
+
+import requests
+from typing import Optional, Dict, List
+import math
+
+def wgs84_to_web_mercator(lon: float, lat: float) -> tuple:
+    """Convert WGS84 (EPSG:4326) to Web Mercator (EPSG:3857)."""
+    x = lon * 20037508.34 / 180
+    y = math.log(math.tan((90 + lat) * math.pi / 360)) / (math.pi / 180)
+    y = y * 20037508.34 / 180
+    return x, y
+
+# Texas PUC Sewer CCN endpoint
+TX_SEWER_CCN_URL = "https://services6.arcgis.com/N6Lzvtb46cpxThhu/ArcGIS/rest/services/Sewer_CCN_Service_Areas/FeatureServer/230/query"
+
+# HIFLD Wastewater Treatment Plants endpoint
+HIFLD_WASTEWATER_URL = "https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/wastewater_treatment_plants_epa_frs/FeatureServer/0/query"
+
+# Cache
+_sewer_cache = {}
+
+
+def lookup_texas_sewer_ccn(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Texas PUC Sewer CCN service areas by coordinates.
+    
+    Returns the sewer utility with CCN (Certificate of Convenience and Necessity)
+    that serves the given location.
+    """
+    cache_key = f"tx_sewer|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        # Convert to Web Mercator (EPSG:3857) - required by this ArcGIS service
+        x, y = wgs84_to_web_mercator(lon, lat)
+        
+        params = {
+            "geometry": f"{x},{y}",
+            "geometryType": "esriGeometryPoint",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "CCN_NO,UTILITY,DBA_NAME,COUNTY,CCN_TYPE,STATUS,TYPE",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(TX_SEWER_CCN_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        # Filter to sewer only (TYPE=2)
+        sewer_features = [f for f in features if f.get("attributes", {}).get("TYPE") == 2]
+        
+        if not sewer_features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        # Take first match (should only be one for a point)
+        attrs = sewer_features[0].get("attributes", {})
+        
+        # Determine confidence based on CCN_TYPE
+        ccn_type = attrs.get("CCN_TYPE", "")
+        if "Bounded Service Area" in ccn_type:
+            confidence = "high"
+        elif "Facilities +200 Feet" in ccn_type:
+            confidence = "medium"
+        else:
+            confidence = "low"
+        
+        # Use DBA_NAME if available and not "NA", otherwise use UTILITY
+        dba_name = attrs.get("DBA_NAME", "")
+        utility_name = attrs.get("UTILITY", "Unknown")
+        display_name = utility_name if (not dba_name or dba_name.upper() == "NA") else dba_name
+        
+        result = {
+            "name": display_name,
+            "legal_name": utility_name,
+            "ccn_number": attrs.get("CCN_NO"),
+            "ccn_type": ccn_type,
+            "county": attrs.get("COUNTY"),
+            "status": attrs.get("STATUS"),
+            "phone": None,  # Not in CCN data
+            "website": None,
+            "_source": "texas_puc_sewer_ccn",
+            "_confidence": confidence,
+            "_note": f"Texas PUC CCN #{attrs.get('CCN_NO')} - {ccn_type}"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except requests.RequestException as e:
+        print(f"[TX Sewer CCN] API error: {e}")
+        return None
+    except Exception as e:
+        print(f"[TX Sewer CCN] Error: {e}")
+        return None
+
+
+def lookup_hifld_wastewater(lat: float, lon: float, radius_miles: float = 10) -> Optional[Dict]:
+    """
+    Find nearest wastewater treatment plant from HIFLD database.
+    
+    This is a fallback - returns the nearest facility, NOT a confirmed service provider.
+    """
+    cache_key = f"hifld_ww|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        params = {
+            "geometry": f"{lon},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "spatialRel": "esriSpatialRelIntersects",
+            "distance": radius_miles,
+            "units": "esriSRUnit_StatuteMile",
+            "outFields": "NAME,CITY,STATE,COUNTY,NPDES_ID,CWNS_NBR,TREATMENT_LEVEL,POPULATION_SERVED_COUNT",
+            "returnGeometry": "true",
+            "f": "json"
+        }
+        
+        response = requests.get(HIFLD_WASTEWATER_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        # Find nearest facility
+        nearest = None
+        min_distance = float('inf')
+        
+        for feature in features:
+            attrs = feature.get("attributes", {})
+            geom = feature.get("geometry", {})
+            
+            if geom:
+                fac_lon = geom.get("x", 0)
+                fac_lat = geom.get("y", 0)
+                
+                # Calculate distance (simple Euclidean for nearby points)
+                dist = math.sqrt((fac_lat - lat)**2 + (fac_lon - lon)**2)
+                
+                if dist < min_distance:
+                    min_distance = dist
+                    nearest = attrs
+        
+        if not nearest:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        # Convert distance to approximate miles (1 degree ≈ 69 miles at equator)
+        distance_miles = min_distance * 69
+        
+        result = {
+            "name": nearest.get("NAME", "Unknown Facility"),
+            "city": nearest.get("CITY"),
+            "state": nearest.get("STATE"),
+            "county": nearest.get("COUNTY"),
+            "npdes_id": nearest.get("NPDES_ID"),
+            "treatment_level": nearest.get("TREATMENT_LEVEL"),
+            "population_served": nearest.get("POPULATION_SERVED_COUNT"),
+            "distance_miles": round(distance_miles, 1),
+            "phone": None,
+            "website": None,
+            "_source": "hifld_wastewater",
+            "_confidence": "low",
+            "_note": f"Nearest wastewater facility ({distance_miles:.1f} mi) - does not confirm service"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except requests.RequestException as e:
+        print(f"[HIFLD Wastewater] API error: {e}")
+        return None
+    except Exception as e:
+        print(f"[HIFLD Wastewater] Error: {e}")
+        return None
+
+
+def lookup_sewer_provider(
+    lat: float = None,
+    lon: float = None,
+    city: str = None,
+    state: str = None,
+    zip_code: str = None
+) -> Optional[Dict]:
+    """
+    Main sewer lookup function - tries all sources in priority order.
+    
+    Priority:
+    1. Texas PUC Sewer CCN (if TX and coords available)
+    2. CSV providers database
+    3. HIFLD wastewater (if coords available)
+    4. Municipal water inference
+    """
+    result = None
+    
+    # 1. Texas PUC Sewer CCN (authoritative for TX)
+    if state and state.upper() == "TX" and lat and lon:
+        result = lookup_texas_sewer_ccn(lat, lon)
+        if result:
+            return result
+    
+    # 2. CSV providers database
+    try:
+        from csv_utility_lookup import lookup_utility_from_csv
+        csv_result = lookup_utility_from_csv(city, state, 'sewer')
+        if csv_result:
+            return {
+                "name": csv_result.get('name'),
+                "id": csv_result.get('id'),
+                "phone": csv_result.get('phone'),
+                "website": csv_result.get('website'),
+                "city": city,
+                "state": state,
+                "_source": "csv_providers",
+                "_confidence": "high"
+            }
+    except Exception:
+        pass
+    
+    # 3. HIFLD wastewater treatment plants (fallback)
+    if lat and lon:
+        result = lookup_hifld_wastewater(lat, lon)
+        if result:
+            return result
+    
+    # 4. Municipal water inference (last resort)
+    try:
+        from municipal_utilities import lookup_municipal_sewer
+        muni_result = lookup_municipal_sewer(state, city, zip_code)
+        if muni_result:
+            return {
+                "name": muni_result.get('name'),
+                "phone": muni_result.get('phone'),
+                "website": muni_result.get('website'),
+                "city": city,
+                "state": state,
+                "_source": muni_result.get('source', 'municipal_inferred'),
+                "_confidence": muni_result.get('confidence', 'medium'),
+                "_note": muni_result.get('note')
+            }
+    except Exception:
+        pass
+    
+    return None
+
+
+if __name__ == "__main__":
+    print("Testing sewer lookup...")
+    
+    # Test Texas PUC Sewer CCN
+    print("\n=== Texas PUC Sewer CCN ===")
+    tests_tx = [
+        (30.2672, -97.7431, "Austin, TX"),  # Downtown Austin
+        (29.7604, -95.3698, "Houston, TX"),  # Downtown Houston
+        (32.7767, -96.7970, "Dallas, TX"),   # Downtown Dallas
+    ]
+    
+    for lat, lon, name in tests_tx:
+        result = lookup_texas_sewer_ccn(lat, lon)
+        if result:
+            print(f"{name}: {result['name']} (CCN: {result.get('ccn_number')}, conf: {result['_confidence']})")
+        else:
+            print(f"{name}: No CCN found")
+    
+    # Test HIFLD fallback
+    print("\n=== HIFLD Wastewater (fallback) ===")
+    tests_hifld = [
+        (40.7128, -74.0060, "New York, NY"),
+        (39.9612, -82.9988, "Columbus, OH"),
+    ]
+    
+    for lat, lon, name in tests_hifld:
+        result = lookup_hifld_wastewater(lat, lon)
+        if result:
+            print(f"{name}: {result['name']} ({result.get('distance_miles')} mi away)")
+        else:
+            print(f"{name}: No facility found")
+    
+    # Test full lookup
+    print("\n=== Full Sewer Lookup ===")
+    result = lookup_sewer_provider(lat=30.2672, lon=-97.7431, city="Austin", state="TX", zip_code="78701")
+    if result:
+        print(f"Austin, TX: {result['name']} (source: {result['_source']})")

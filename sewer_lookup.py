@@ -25,6 +25,12 @@ def wgs84_to_web_mercator(lon: float, lat: float) -> tuple:
 # Texas PUC Sewer CCN endpoint
 TX_SEWER_CCN_URL = "https://services6.arcgis.com/N6Lzvtb46cpxThhu/ArcGIS/rest/services/Sewer_CCN_Service_Areas/FeatureServer/230/query"
 
+# California Water Districts (proxy for sewer - many CA water districts also provide sewer)
+CA_WATER_DISTRICTS_URL = "https://gis.water.ca.gov/arcgis/rest/services/Boundaries/i03_WaterDistricts/FeatureServer/0/query"
+
+# Massachusetts Sewer Service Areas
+MA_SEWER_URL = "https://services1.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Sewer_Service_Areas/FeatureServer/0/query"
+
 # HIFLD Wastewater Treatment Plants endpoint
 HIFLD_WASTEWATER_URL = "https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/wastewater_treatment_plants_epa_frs/FeatureServer/0/query"
 
@@ -196,6 +202,64 @@ def lookup_hifld_wastewater(lat: float, lon: float, radius_miles: float = 10) ->
         return None
 
 
+def lookup_california_water_district(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query California Water Districts as proxy for sewer service.
+    Many CA water districts also provide sewer service.
+    """
+    cache_key = f"ca_water|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        x, y = wgs84_to_web_mercator(lon, lat)
+        
+        params = {
+            "geometry": f"{x},{y}",
+            "geometryType": "esriGeometryPoint",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "AGENCYNAME,AGENCYUNIQUEID",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(CA_WATER_DISTRICTS_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        attrs = features[0].get("attributes", {})
+        agency_name = attrs.get("AGENCYNAME", "Unknown")
+        
+        # Check if name suggests sewer service
+        name_lower = agency_name.lower()
+        has_sewer_indicator = any(kw in name_lower for kw in [
+            'sewer', 'sanitary', 'wastewater', 'water & sewer', 'utilities'
+        ])
+        
+        result = {
+            "name": agency_name,
+            "id": attrs.get("AGENCYUNIQUEID"),
+            "phone": None,
+            "website": None,
+            "_source": "ca_water_districts",
+            "_confidence": "medium" if has_sewer_indicator else "low",
+            "_note": "California water district - may also provide sewer service"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except Exception as e:
+        print(f"[CA Water Districts] Error: {e}")
+        return None
+
+
 def lookup_sewer_provider(
     lat: float = None,
     lon: float = None,
@@ -208,15 +272,23 @@ def lookup_sewer_provider(
     
     Priority:
     1. Texas PUC Sewer CCN (if TX and coords available)
-    2. CSV providers database
-    3. HIFLD wastewater (if coords available)
-    4. Municipal water inference
+    2. California Water Districts (if CA and coords available)
+    3. CSV providers database
+    4. HIFLD wastewater (if coords available)
+    5. Municipal water inference
     """
     result = None
+    state_upper = state.upper() if state else ""
     
     # 1. Texas PUC Sewer CCN (authoritative for TX)
-    if state and state.upper() == "TX" and lat and lon:
+    if state_upper == "TX" and lat and lon:
         result = lookup_texas_sewer_ccn(lat, lon)
+        if result:
+            return result
+    
+    # 2. California Water Districts (proxy for sewer)
+    if state_upper == "CA" and lat and lon:
+        result = lookup_california_water_district(lat, lon)
         if result:
             return result
     

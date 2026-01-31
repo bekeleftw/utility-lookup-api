@@ -14,9 +14,11 @@ from typing import Optional, Dict, Tuple
 _providers_cache = None
 _mappings_cache = None
 _simple_lookup_cache = None
+_match_cache = {}  # In-memory cache for name matches
 
 MAPPINGS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_name_mappings.json')
 SIMPLE_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_simple_lookup.json')
+MATCH_CACHE_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_match_cache.json')
 
 # UtilityTypeId mapping
 UTILITY_TYPE_MAP = {
@@ -55,6 +57,74 @@ def normalize_name(name: str) -> str:
     # Normalize whitespace
     name = ' '.join(name.split())
     return name
+
+
+def load_match_cache() -> Dict[str, Dict]:
+    """Load persistent match cache from disk."""
+    global _match_cache
+    
+    if _match_cache:
+        return _match_cache
+    
+    if os.path.exists(MATCH_CACHE_FILE):
+        try:
+            with open(MATCH_CACHE_FILE, 'r') as f:
+                _match_cache = json.load(f)
+            print(f"[ProviderMatcher] Loaded {len(_match_cache)} cached matches")
+        except Exception as e:
+            print(f"[ProviderMatcher] Error loading match cache: {e}")
+            _match_cache = {}
+    else:
+        _match_cache = {}
+    
+    return _match_cache
+
+
+def save_match_cache():
+    """Save match cache to disk."""
+    global _match_cache
+    try:
+        os.makedirs(os.path.dirname(MATCH_CACHE_FILE), exist_ok=True)
+        with open(MATCH_CACHE_FILE, 'w') as f:
+            json.dump(_match_cache, f, indent=2)
+    except Exception as e:
+        print(f"[ProviderMatcher] Error saving match cache: {e}")
+
+
+def cache_match(name: str, utility_type: str, match: Dict):
+    """Cache a successful match for future lookups."""
+    global _match_cache
+    load_match_cache()
+    
+    key = f"{normalize_name(name)}|{utility_type}"
+    _match_cache[key] = {
+        'id': match.get('id'),
+        'title': match.get('title'),
+        'matched_via': match.get('matched_via'),
+        'match_score': match.get('match_score'),
+        'original_name': name
+    }
+    
+    # Save periodically (every 10 new entries)
+    if len(_match_cache) % 10 == 0:
+        save_match_cache()
+
+
+def get_cached_match(name: str, utility_type: str) -> Optional[Dict]:
+    """Check if we have a cached match for this name."""
+    load_match_cache()
+    
+    key = f"{normalize_name(name)}|{utility_type}"
+    if key in _match_cache:
+        cached = _match_cache[key]
+        return {
+            'id': cached['id'],
+            'title': cached['title'],
+            'matched_via': 'cached',
+            'match_score': 1.0,  # High confidence for cached matches
+            'original_cached_name': cached.get('original_name')
+        }
+    return None
 
 
 def normalize_name_aggressive(name: str) -> str:
@@ -163,10 +233,13 @@ def load_providers() -> Dict[str, Dict]:
 def match_provider(name: str, utility_type: str) -> Optional[Dict]:
     """
     Match a provider name to an ID using multiple strategies:
+    0. Check persistent cache first (instant, high confidence)
     1. OpenAI-generated mappings (best for fuzzy matching like "Oncor" -> "Oncor Electric-TX")
     2. Simple normalized lookup
     3. CSV-based exact match
     4. Partial string matching
+    5. Aggressive normalization
+    6. OpenAI fallback for matches below 80% confidence
     
     Args:
         name: Provider name from lookup
@@ -179,6 +252,11 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
         return None
     
     normalized = normalize_name(name)
+    
+    # Strategy 0: Check persistent cache first (instant, high confidence)
+    cached = get_cached_match(name, utility_type)
+    if cached:
+        return cached
     
     # Strategy 1: Check OpenAI mappings first (best for deduped names)
     mappings = load_mappings()
@@ -231,9 +309,11 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
                 best_score = score
                 best_match = pdata
     
-    if best_match and best_score > 0.4:
+    if best_match and best_score > 0.8:
+        # High confidence match - return directly and cache
         best_match['matched_via'] = 'partial'
         best_match['match_score'] = best_score
+        cache_match(name, utility_type, best_match)
         return best_match
     
     # Strategy 5: Aggressive normalization matching
@@ -246,6 +326,7 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
             if normalized_agg == pnorm_agg:
                 pdata['matched_via'] = 'aggressive_exact'
                 pdata['match_score'] = 1.0
+                cache_match(name, utility_type, pdata)
                 return pdata
             # Check containment with aggressive normalization
             if normalized_agg in pnorm_agg or pnorm_agg in normalized_agg:
@@ -254,27 +335,28 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
                     best_score = score
                     best_match = pdata
         
-        if best_match and best_score > 0.5:
+        if best_match and best_score > 0.8:
+            # High confidence aggressive match
             best_match['matched_via'] = 'aggressive_partial'
             best_match['match_score'] = best_score
+            cache_match(name, utility_type, best_match)
             return best_match
     
-    # Strategy 6: OpenAI fallback for unmatched names
-    if best_match and best_score > 0.3:
-        # Low confidence match - try OpenAI to verify
-        ai_match = _openai_match_provider(name, utility_type, [best_match])
+    # Strategy 6: OpenAI fallback for matches below 80% confidence
+    # This includes any match we found so far with score <= 0.8
+    if best_match or len(name) >= 3:
+        # Gather candidates for OpenAI
+        candidates_for_ai = [best_match] if best_match else None
+        ai_match = _openai_match_provider(name, utility_type, candidates_for_ai)
         if ai_match:
+            cache_match(name, utility_type, ai_match)
             return ai_match
-        # Return low confidence match anyway
-        best_match['matched_via'] = 'low_confidence'
-        best_match['match_score'] = best_score
-        return best_match
-    
-    # No match found - try OpenAI with top candidates
-    if len(name) >= 3:
-        ai_match = _openai_match_provider(name, utility_type, None)
-        if ai_match:
-            return ai_match
+        
+        # If OpenAI didn't help but we have a low-confidence match, return it
+        if best_match and best_score > 0.3:
+            best_match['matched_via'] = 'low_confidence'
+            best_match['match_score'] = best_score
+            return best_match
     
     return None
 

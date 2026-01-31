@@ -27,6 +27,34 @@ import json
 import os
 import re
 import secrets
+import time
+from functools import lru_cache
+
+# Simple in-memory cache for address lookups (TTL: 1 hour)
+_address_cache = {}
+_cache_ttl = 3600  # 1 hour
+
+def get_cached_result(address, utilities_key):
+    """Get cached result if not expired."""
+    cache_key = f"{address}|{utilities_key}"
+    if cache_key in _address_cache:
+        result, timestamp = _address_cache[cache_key]
+        if time.time() - timestamp < _cache_ttl:
+            return result
+        else:
+            del _address_cache[cache_key]
+    return None
+
+def set_cached_result(address, utilities_key, result):
+    """Cache a result."""
+    cache_key = f"{address}|{utilities_key}"
+    _address_cache[cache_key] = (result, time.time())
+    # Limit cache size to 10000 entries
+    if len(_address_cache) > 10000:
+        # Remove oldest entries
+        sorted_keys = sorted(_address_cache.keys(), key=lambda k: _address_cache[k][1])
+        for k in sorted_keys[:1000]:
+            del _address_cache[k]
 
 # Feedback storage
 FEEDBACK_DIR = os.path.join(os.path.dirname(__file__), 'data', 'feedback')
@@ -166,7 +194,7 @@ def ratelimit_handler(e):
 
 @app.route('/api/version')
 def version():
-    return jsonify({'version': '2026-01-31-v35', 'changes': 'master_api_key_env_var'})
+    return jsonify({'version': '2026-01-31-v36', 'changes': 'batch_endpoint_with_caching'})
 
 # ============ API Key Management ============
 
@@ -242,6 +270,132 @@ def revoke_api_key():
         save_api_keys(keys)
         return jsonify({'message': 'API key revoked'})
     return jsonify({'error': 'API key not found'}), 404
+
+# ============ Batch Lookup Endpoint ============
+
+@app.route('/api/lookup/batch', methods=['POST'])
+@require_api_key
+def lookup_batch():
+    """
+    Batch lookup - process multiple addresses in parallel.
+    Optimized for high-volume requests (hundreds of addresses).
+    
+    Request body:
+    {
+        "addresses": ["123 Main St, Austin TX", "456 Oak Ave, Dallas TX", ...],
+        "utilities": "electric,gas,water"  // optional, default: electric,gas,water
+    }
+    
+    Response:
+    {
+        "results": [
+            {"address": "123 Main St, Austin TX", "utilities": {...}, "status": "success"},
+            {"address": "456 Oak Ave, Dallas TX", "utilities": {...}, "status": "success"},
+            ...
+        ],
+        "summary": {"total": 100, "success": 98, "failed": 2}
+    }
+    """
+    data = request.get_json()
+    if not data:
+        return jsonify({'error': 'Request body required'}), 400
+    
+    addresses = data.get('addresses', [])
+    if not addresses:
+        return jsonify({'error': 'addresses array required'}), 400
+    
+    if len(addresses) > 500:
+        return jsonify({'error': 'Maximum 500 addresses per batch'}), 400
+    
+    utilities_param = data.get('utilities', 'electric,gas,water')
+    selected_utilities = [u.strip().lower() for u in utilities_param.split(',')]
+    
+    utilities_key = ','.join(sorted(selected_utilities))
+    
+    def process_single_address(address):
+        """Process a single address and return result."""
+        try:
+            # Check cache first
+            cached = get_cached_result(address, utilities_key)
+            if cached:
+                cached['_cached'] = True
+                return cached
+            
+            result = lookup_utilities_by_address(
+                address, 
+                verify_with_serp=False, 
+                selected_utilities=selected_utilities
+            )
+            if not result:
+                return {'address': address, 'status': 'error', 'error': 'Could not geocode'}
+            
+            geocoded = result.get('_geocoded', {})
+            city = geocoded.get('city')
+            state = geocoded.get('state')
+            
+            utilities = {}
+            
+            if 'electric' in selected_utilities and result.get('electric'):
+                electric = result['electric']
+                if isinstance(electric, list):
+                    utilities['electric'] = [format_utility(e, 'electric', city, state) for e in electric]
+                else:
+                    utilities['electric'] = [format_utility(electric, 'electric', city, state)]
+            
+            if 'gas' in selected_utilities and result.get('gas'):
+                gas = result['gas']
+                if isinstance(gas, list):
+                    utilities['gas'] = [format_utility(g, 'gas', city, state) for g in gas]
+                else:
+                    utilities['gas'] = [format_utility(gas, 'gas', city, state)]
+            
+            if 'water' in selected_utilities and result.get('water'):
+                water = result['water']
+                if isinstance(water, list):
+                    utilities['water'] = [format_utility(w, 'water', city, state) for w in water]
+                else:
+                    utilities['water'] = [format_utility(water, 'water', city, state)]
+            
+            if 'internet' in selected_utilities and result.get('internet'):
+                utilities['internet'] = result['internet']
+            
+            response = {
+                'address': address,
+                'location': result.get('location', {}),
+                'utilities': utilities,
+                'status': 'success'
+            }
+            
+            # Cache the result
+            set_cached_result(address, utilities_key, response)
+            
+            return response
+        except Exception as e:
+            return {'address': address, 'status': 'error', 'error': str(e)}
+    
+    # Process in parallel with ThreadPoolExecutor
+    results = []
+    max_workers = min(50, len(addresses))  # Cap at 50 concurrent workers
+    
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        future_to_addr = {executor.submit(process_single_address, addr): addr for addr in addresses}
+        for future in as_completed(future_to_addr):
+            results.append(future.result())
+    
+    # Sort results to match input order
+    addr_to_result = {r['address']: r for r in results}
+    ordered_results = [addr_to_result.get(addr, {'address': addr, 'status': 'error', 'error': 'Not processed'}) for addr in addresses]
+    
+    success_count = sum(1 for r in ordered_results if r['status'] == 'success')
+    
+    return jsonify({
+        'results': ordered_results,
+        'summary': {
+            'total': len(addresses),
+            'success': success_count,
+            'failed': len(addresses) - success_count
+        }
+    })
 
 @app.route('/api/lookup', methods=['GET', 'POST'])
 @require_api_key

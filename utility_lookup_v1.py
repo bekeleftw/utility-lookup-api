@@ -3247,7 +3247,33 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
     the result will be enhanced with utility website verification.
     """
     try:
-        # Priority 0: Use pipeline with SmartSelector for best accuracy
+        # Priority 0: Use AI reconciler to compare all electric sources
+        try:
+            electric_candidates = get_all_utility_candidates(city, state, 'electric', zip_code, county, lat, lon)
+            if len(electric_candidates) > 1:
+                best = reconcile_utility_providers(
+                    address or f"{city}, {state} {zip_code}",
+                    city, state, zip_code or '', 'electric',
+                    electric_candidates
+                )
+                if best:
+                    result = {
+                        'NAME': best.get('name'),
+                        'TELEPHONE': best.get('phone') or best.get('TELEPHONE'),
+                        'WEBSITE': best.get('website') or best.get('WEBSITE'),
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': best.get('_reconciliation_confidence', 'high'),
+                        '_source': best.get('_source', 'reconciled'),
+                        '_reconciliation': best.get('_reconciliation'),
+                        '_reconciliation_reasoning': best.get('_reconciliation_reasoning'),
+                        '_verification_source': f"ai_reconciled_{best.get('_source', 'unknown')}"
+                    }
+                    return _add_deregulated_info(result, state, zip_code)
+        except Exception as e:
+            print(f"[Electric] Reconciliation error: {e}")
+        
+        # Priority 1: Use pipeline with SmartSelector for best accuracy
         if use_pipeline and PIPELINE_AVAILABLE:
             pipeline_result = _pipeline_lookup(lat, lon, address or '', city, county, state, zip_code, 'electric')
             if pipeline_result:

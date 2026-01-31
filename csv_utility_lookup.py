@@ -20,9 +20,11 @@ _providers_cache = {}
 CSV_FILE = os.path.join(os.path.dirname(__file__), 'utility_providers_IDs.csv')
 
 UTILITY_TYPE_IDS = {
-    'electric': '1',
-    'gas': '2',
-    'water': '3'
+    'electric': '2',  # 1,669 entries
+    'water': '3',     # 8,368 entries
+    'gas': '4',       # 833 entries
+    'trash': '5',     # 1,768 entries
+    'sewer': '6'      # 1,706 entries
 }
 
 

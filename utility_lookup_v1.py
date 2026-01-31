@@ -29,6 +29,7 @@ from bs4 import BeautifulSoup
 # Import state-specific utility verification
 from state_utility_verification import verify_electric_provider, verify_gas_provider, check_problem_area
 from csv_water_lookup import lookup_water_from_csv, get_csv_water_candidates
+from water_reconciler import reconcile_water_providers, get_all_water_candidates
 from utility_website_verification import enhance_lookup_with_verification, verify_address_utility, get_supported_states
 from special_districts import lookup_special_district, format_district_for_response, has_special_district_data
 from confidence_scoring import calculate_confidence, source_to_score_key
@@ -1062,34 +1063,45 @@ def lookup_water_utility(city: str, county: str, state: str, full_address: str =
         except (json.JSONDecodeError, IOError):
             pass
     
-    # SECOND: Check CSV providers file (utility_providers_IDs.csv)
-    # This has curated local provider data that may be more accurate than EPA
-    csv_result = lookup_water_from_csv(city, state)
-    if csv_result:
-        # Format the CSV result to match expected structure
-        result = {
-            'name': csv_result.get('name'),
-            'id': csv_result.get('id'),
-            'phone': csv_result.get('phone'),
-            'website': csv_result.get('website'),
-            'state': state,
-            'city': city,
-            '_confidence': 'high',
-            '_source': 'csv_providers'
-        }
-        confidence_data = calculate_confidence(
-            source='csv_providers',
-            match_level='zip5',
-            utility_type='water'
-        )
-        result['confidence_score'] = confidence_data['score']
-        result['confidence_factors'] = [
-            f"{f['points']:+d}: {f['description']}" 
-            for f in confidence_data['factors']
-        ]
-        return result
+    # SECOND: Gather candidates from all sources and use AI to pick best match
+    # This compares CSV providers, EPA SDWIS, and municipal utilities
+    try:
+        candidates = get_all_water_candidates(city, state, zip_code, county)
+        if candidates:
+            best = reconcile_water_providers(
+                full_address or f"{city}, {state} {zip_code}",
+                city, state, zip_code or '',
+                candidates
+            )
+            if best:
+                # Format result
+                result = {
+                    'name': best.get('name'),
+                    'id': best.get('id'),
+                    'phone': best.get('phone') or best.get('TELEPHONE'),
+                    'website': best.get('website') or best.get('WEBSITE'),
+                    'state': state,
+                    'city': city,
+                    '_confidence': best.get('_reconciliation_confidence', 'high'),
+                    '_source': best.get('_source', 'reconciled'),
+                    '_reconciliation': best.get('_reconciliation'),
+                    '_reconciliation_reasoning': best.get('_reconciliation_reasoning')
+                }
+                confidence_data = calculate_confidence(
+                    source=best.get('_source', 'reconciled'),
+                    match_level='zip5',
+                    utility_type='water'
+                )
+                result['confidence_score'] = confidence_data['score']
+                result['confidence_factors'] = [
+                    f"{f['points']:+d}: {f['description']}" 
+                    for f in confidence_data['factors']
+                ]
+                return result
+    except Exception as e:
+        print(f"[Water] Reconciliation error: {e}")
     
-    # SECOND: Try EPA SDWA lookup
+    # FALLBACK: Try EPA SDWA lookup directly
     if WATER_LOOKUP_FILE.exists():
         try:
             with open(WATER_LOOKUP_FILE, 'r') as f:

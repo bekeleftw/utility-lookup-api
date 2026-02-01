@@ -20,6 +20,45 @@ from cross_validation import cross_validate, SourceResult, format_for_response a
 from municipal_utilities import get_all_municipal_utilities, lookup_municipal_electric, get_municipal_stats
 from address_cache import cache_confirmation, get_cached_utilities, get_cache_stats
 from provider_id_matcher import get_provider_id, match_provider
+
+# Load service check URLs
+_service_check_urls = None
+def get_service_check_url(utility_name: str) -> str:
+    """Get the service check/verification URL for a utility."""
+    global _service_check_urls
+    if _service_check_urls is None:
+        try:
+            import json
+            from pathlib import Path
+            urls_file = Path(__file__).parent / 'data' / 'service_check_urls.json'
+            if urls_file.exists():
+                with open(urls_file, 'r') as f:
+                    data = json.load(f)
+                    _service_check_urls = data.get('urls', {})
+            else:
+                _service_check_urls = {}
+        except Exception:
+            _service_check_urls = {}
+    
+    if not utility_name:
+        return None
+    
+    # Try exact match first
+    if utility_name in _service_check_urls:
+        return _service_check_urls[utility_name]
+    
+    # Try case-insensitive match
+    name_lower = utility_name.lower()
+    for key, url in _service_check_urls.items():
+        if key.lower() == name_lower:
+            return url
+    
+    # Try partial match (utility name contains key or vice versa)
+    for key, url in _service_check_urls.items():
+        if key.lower() in name_lower or name_lower in key.lower():
+            return url
+    
+    return None
 from datetime import datetime
 from functools import wraps
 import hashlib
@@ -741,10 +780,14 @@ def format_utility(util, util_type, city=None, state=None):
     util_state = util.get('STATE', util.get('state'))
     provider_id = get_provider_id(normalized_name, util_type, util_state)
     
+    # Get service check URL for this utility
+    service_check_url = get_service_check_url(normalized_name)
+    
     result = {
         'name': normalized_name,
         'phone': util.get('TELEPHONE', util.get('phone')),
         'website': website,
+        'service_check_url': service_check_url,
         'address': util.get('ADDRESS', util.get('address')),
         'city': util.get('CITY', util.get('city')),
         'state': util.get('STATE', util.get('state')),

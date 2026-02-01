@@ -174,16 +174,20 @@ def lookup_florida_water_flwmi(lat: float, lon: float) -> Optional[Dict]:
         # Convert to Web Mercator (EPSG:3857) - required by this service
         x, y = wgs84_to_web_mercator(lon, lat)
         
+        # Use envelope query with ~50m buffer to catch nearby parcels
+        # This helps when geocoded point lands between parcel polygons
+        buffer = 50  # meters in Web Mercator
         params = {
-            "geometry": f"{x},{y}",
-            "geometryType": "esriGeometryPoint",
+            "geometry": f"{x-buffer},{y-buffer},{x+buffer},{y+buffer}",
+            "geometryType": "esriGeometryEnvelope",
             "spatialRel": "esriSpatialRelIntersects",
             "outFields": "DW,DW_SRC_NAME",
             "returnGeometry": "false",
+            "resultRecordCount": "1",
             "f": "json"
         }
         
-        response = requests.get(FL_FLWMI_URL, params=params, timeout=10)
+        response = requests.get(FL_FLWMI_URL, params=params, timeout=20)
         response.raise_for_status()
         
         data = response.json()

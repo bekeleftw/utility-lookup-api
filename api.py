@@ -30,6 +30,9 @@ import secrets
 import time
 from functools import lru_cache
 
+from logging_config import get_logger
+logger = get_logger("api")
+
 # Simple in-memory cache for address lookups (TTL: 1 hour)
 _address_cache = {}
 _cache_ttl = 3600  # 1 hour
@@ -433,9 +436,12 @@ def lookup():
     selected_utilities = [u.strip().lower() for u in utilities_param.split(',')]
     
     if not address:
+        logger.warning("Lookup request missing address")
         return jsonify({'error': 'Address is required'}), 400
     
     try:
+        start_time = time.time()
+        logger.info("Lookup request", extra={"address": address, "utilities": utilities_param})
         result = lookup_utilities_by_address(address, verify_with_serp=verify, selected_utilities=selected_utilities)
         if not result:
             return jsonify({'error': 'Could not geocode address'}), 404
@@ -585,9 +591,12 @@ def lookup():
             if sewer:
                 response['utilities']['sewer'] = [format_utility(sewer, 'sewer', city, state)]
         
+        duration_ms = int((time.time() - start_time) * 1000)
+        logger.info("Lookup completed", extra={"address": address, "duration_ms": duration_ms, "state": state})
         return jsonify(response)
         
     except Exception as e:
+        logger.error("Lookup failed", extra={"address": address, "error": str(e)})
         return jsonify({'error': str(e)}), 500
 
 

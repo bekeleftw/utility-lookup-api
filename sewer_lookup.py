@@ -14,6 +14,10 @@ Based on: sewer-utility-lookup-spec.md
 import requests
 from typing import Optional, Dict, List
 import math
+import time
+
+from logging_config import get_logger
+logger = get_logger("sewer_lookup")
 
 def wgs84_to_web_mercator(lon: float, lat: float) -> tuple:
     """Convert WGS84 (EPSG:4326) to Web Mercator (EPSG:3857)."""
@@ -62,6 +66,7 @@ def lookup_texas_sewer_ccn(lat: float, lon: float) -> Optional[Dict]:
         return _sewer_cache[cache_key]
     
     try:
+        start_time = time.time()
         # Convert to Web Mercator (EPSG:3857) - required by this ArcGIS service
         x, y = wgs84_to_web_mercator(lon, lat)
         
@@ -69,13 +74,14 @@ def lookup_texas_sewer_ccn(lat: float, lon: float) -> Optional[Dict]:
             "geometry": f"{x},{y}",
             "geometryType": "esriGeometryPoint",
             "spatialRel": "esriSpatialRelIntersects",
-            "outFields": "CCN_NO,UTILITY,DBA_NAME,COUNTY,CCN_TYPE,STATUS,TYPE",
+            "outFields": "CCN_HOLDER,CCN_NUMBER,UTILITY,DBA_NAME",
             "returnGeometry": "false",
             "f": "json"
         }
         
         response = requests.get(TX_SEWER_CCN_URL, params=params, timeout=10)
         response.raise_for_status()
+        duration_ms = int((time.time() - start_time) * 1000)
         
         data = response.json()
         features = data.get("features", [])
@@ -122,10 +128,10 @@ def lookup_texas_sewer_ccn(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except requests.RequestException as e:
-        print(f"[TX Sewer CCN] API error: {e}")
+        logger.error("TX Sewer CCN API error", extra={"endpoint": "texas_puc_sewer_ccn", "error": str(e)})
         return None
     except Exception as e:
-        print(f"[TX Sewer CCN] Error: {e}")
+        logger.error("TX Sewer CCN lookup error", extra={"endpoint": "texas_puc_sewer_ccn", "error": str(e)})
         return None
 
 
@@ -207,10 +213,10 @@ def lookup_hifld_wastewater(lat: float, lon: float, radius_miles: float = 10) ->
         return result
         
     except requests.RequestException as e:
-        print(f"[HIFLD Wastewater] API error: {e}")
+        logger.error("HIFLD Wastewater API error", extra={"endpoint": "hifld_wastewater", "error": str(e)})
         return None
     except Exception as e:
-        print(f"[HIFLD Wastewater] Error: {e}")
+        logger.error("HIFLD Wastewater lookup error", extra={"endpoint": "hifld_wastewater", "error": str(e)})
         return None
 
 
@@ -293,7 +299,7 @@ def lookup_florida_flwmi(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except Exception as e:
-        print(f"[FL FLWMI] Error: {e}")
+        logger.error("FL FLWMI lookup error", extra={"endpoint": "florida_flwmi", "error": str(e)})
         return None
 
 
@@ -363,7 +369,7 @@ def lookup_connecticut_sewer(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except Exception as e:
-        print(f"[CT DEEP] Error: {e}")
+        logger.error("CT DEEP lookup error", extra={"endpoint": "connecticut_deep", "error": str(e)})
         return None
 
 
@@ -421,7 +427,7 @@ def lookup_new_jersey_dep_ssa(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except Exception as e:
-        print(f"[NJ DEP SSA] Error: {e}")
+        logger.error("NJ DEP SSA lookup error", extra={"endpoint": "new_jersey_dep_ssa", "error": str(e)})
         return None
 
 
@@ -482,7 +488,7 @@ def lookup_massachusetts_massdep(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except Exception as e:
-        print(f"[MA MassDEP] Error: {e}")
+        logger.error("MA MassDEP lookup error", extra={"endpoint": "massachusetts_massdep_wurp", "error": str(e)})
         return None
 
 
@@ -538,7 +544,7 @@ def lookup_washington_waswd(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except Exception as e:
-        print(f"[WA WASWD] Error: {e}")
+        logger.error("WA WASWD lookup error", extra={"endpoint": "washington_waswd", "error": str(e)})
         return None
 
 
@@ -596,7 +602,7 @@ def lookup_california_water_district(lat: float, lon: float) -> Optional[Dict]:
         return result
         
     except Exception as e:
-        print(f"[CA Water Districts] Error: {e}")
+        logger.error("CA Water Districts lookup error", extra={"endpoint": "ca_water_districts", "error": str(e)})
         return None
 
 

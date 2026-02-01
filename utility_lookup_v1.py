@@ -3633,6 +3633,28 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
 def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
     """Look up water utility only. Fast - typically < 1 second."""
     try:
+        # Priority 0: State GIS APIs (TX, NJ, FL) - most authoritative for these states
+        if lat and lon and state:
+            try:
+                from water_gis_lookup import lookup_state_water_gis
+                state_gis_result = lookup_state_water_gis(lat, lon, state)
+                if state_gis_result and state_gis_result.get('NAME'):
+                    return {
+                        'NAME': state_gis_result.get('NAME'),
+                        'PWSID': state_gis_result.get('PWSID'),
+                        'TELEPHONE': state_gis_result.get('TELEPHONE'),
+                        'WEBSITE': state_gis_result.get('WEBSITE'),
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': state_gis_result.get('_confidence', 'high'),
+                        '_source': state_gis_result.get('_source'),
+                        '_note': state_gis_result.get('_note')
+                    }
+            except ImportError:
+                pass
+            except Exception:
+                pass
+        
         # Priority 0.6: Check geographic boundary (lat/lon based)
         if lat and lon:
             try:

@@ -12,7 +12,12 @@
     "ladwp": 849,
     "aqua water": 433,
     "aqua pennsylvania": 433,
-    "aqua america": 433
+    "aqua america": 433,
+    "city of topeka": 3901,
+    "seattle public utilities": 1156,
+    "gardnerville ranchos gid": 9491,
+    "gardnerville water company": 9491,
+    "gardnerville ranchos general improvement district": 9491
   },
   
   "electric": {
@@ -29,15 +34,48 @@
     "duke energy carolinas": 72,
     "electricities of north carolina": 2088,
     "electricities of north carolina (huntsville & cornelius)": 2088,
+    "energyunited": 2088,
+    "energyunited elec member": 2088,
+    "energy united": 2088,
     "national grid": 1740,
-    "national grid - ny": 1740
+    "national grid - ny": 1740,
+    "pg&e": 422,
+    "pge": 422,
+    "pacific gas and electric": 422,
+    "pacific gas & electric": 422,
+    "puget sound energy": 485,
+    "pse": 485,
+    "pseg": 1388,
+    "pse&g": 1388,
+    "pse&g (public service electric and gas) - nj": 1388,
+    "public service electric & gas co.": 1388,
+    "public service electric and gas": 1388,
+    "aep energy": 1377,
+    "appalachian power": 1377,
+    "appalachian power company": 1377,
+    "evergy": 2530,
+    "evergy kansas central": 2530,
+    "evergy kansas central, inc.": 2530,
+    "seattle city light": 4683,
+    "seattle city light - wa": 4683
   },
   
   "gas": {
     "national grid": 1738,
     "national grid - ny": 1738,
     "atmos energy": 29,
-    "atmos energy corporation": 29
+    "atmos energy corporation": 29,
+    "dominion nc": 385,
+    "piedmont natural gas": 385,
+    "peco gas": 594,
+    "indiana natural gas": 1942,
+    "indiana natural gas co": 1942,
+    "indiana natural gas co - in": 1942,
+    "centerpoint energy": 1942,
+    "teco peoples gas": 109,
+    "peoples gas": 109,
+    "peoples gas systems": 109,
+    "peoples gas systems,": 109
   },
   
   "sewer": {

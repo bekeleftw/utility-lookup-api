@@ -15,10 +15,12 @@ _providers_cache = None
 _mappings_cache = None
 _simple_lookup_cache = None
 _match_cache = {}  # In-memory cache for name matches
+_canonical_ids_cache = None
 
 MAPPINGS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_name_mappings.json')
 SIMPLE_LOOKUP_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_simple_lookup.json')
 MATCH_CACHE_FILE = os.path.join(os.path.dirname(__file__), 'data', 'provider_match_cache.json')
+CANONICAL_IDS_FILE = os.path.join(os.path.dirname(__file__), 'data', 'canonical_provider_ids.json')
 
 # UtilityTypeId mapping
 UTILITY_TYPE_MAP = {
@@ -180,6 +182,52 @@ def load_simple_lookup() -> Dict[str, Dict]:
     return _simple_lookup_cache
 
 
+def load_canonical_ids() -> Dict[str, Dict[str, int]]:
+    """Load canonical provider ID mappings to resolve duplicates."""
+    global _canonical_ids_cache
+    
+    if _canonical_ids_cache is not None:
+        return _canonical_ids_cache
+    
+    if os.path.exists(CANONICAL_IDS_FILE):
+        with open(CANONICAL_IDS_FILE, 'r') as f:
+            _canonical_ids_cache = json.load(f)
+        # Count non-metadata entries
+        count = sum(len(v) for k, v in _canonical_ids_cache.items() if not k.startswith('_') and isinstance(v, dict))
+        print(f"[ProviderMatcher] Loaded {count} canonical ID mappings")
+    else:
+        _canonical_ids_cache = {}
+    
+    return _canonical_ids_cache
+
+
+def get_canonical_id(name: str, utility_type: str) -> Optional[int]:
+    """
+    Check if there's a canonical ID for this provider name.
+    Used to resolve duplicate provider entries and parent company names.
+    """
+    canonical = load_canonical_ids()
+    
+    if utility_type not in canonical:
+        return None
+    
+    type_mappings = canonical[utility_type]
+    if not isinstance(type_mappings, dict):
+        return None
+    
+    # Try exact match first
+    name_lower = name.lower().strip()
+    if name_lower in type_mappings:
+        return type_mappings[name_lower]
+    
+    # Try normalized match
+    normalized = normalize_name(name)
+    if normalized in type_mappings:
+        return type_mappings[normalized]
+    
+    return None
+
+
 def load_providers() -> Dict[str, Dict]:
     """Load providers from CSV file."""
     global _providers_cache
@@ -253,12 +301,33 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
     
     normalized = normalize_name(name)
     
-    # Strategy 0: Check persistent cache first (instant, high confidence)
+    # Strategy 0: Check canonical ID mappings first (resolves duplicates and parent companies)
+    canonical_id = get_canonical_id(name, utility_type)
+    if canonical_id:
+        # Look up the provider details from the canonical ID
+        providers = load_providers()
+        for key, provider in providers.items():
+            if provider.get('id') == str(canonical_id) and provider.get('utility_type') == utility_type:
+                return {
+                    'id': str(canonical_id),
+                    'title': provider.get('title', name),
+                    'matched_via': 'canonical_mapping',
+                    'match_score': 1.0
+                }
+        # If not found in providers, still return the canonical ID
+        return {
+            'id': str(canonical_id),
+            'title': name,
+            'matched_via': 'canonical_mapping',
+            'match_score': 1.0
+        }
+    
+    # Strategy 0.5: Check persistent cache (instant, high confidence)
     cached = get_cached_match(name, utility_type)
     if cached:
         return cached
     
-    # Strategy 1: Check OpenAI mappings first (best for deduped names)
+    # Strategy 1: Check OpenAI mappings (best for deduped names)
     mappings = load_mappings()
     if normalized in mappings:
         mapping = mappings[normalized]

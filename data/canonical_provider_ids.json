@@ -1,0 +1,53 @@
+{
+  "_description": "Maps provider names to canonical IDs. Used to resolve duplicates and parent company names.",
+  "_updated": "2026-02-01",
+  
+  "water": {
+    "charlotte water": 795,
+    "charlotte water (nc)": 795,
+    "charlotte water - nc": 795,
+    "los angeles department of water & power": 849,
+    "los angeles department of water and power": 849,
+    "los angeles department of water & power - ca": 849,
+    "ladwp": 849,
+    "aqua water": 433,
+    "aqua pennsylvania": 433,
+    "aqua america": 433
+  },
+  
+  "electric": {
+    "nv energy": 1188,
+    "berkshire hathaway energy": 1188,
+    "nevada power": 1188,
+    "sierra pacific power": 1188,
+    "oncor": 16065,
+    "oncor electric delivery": 16065,
+    "oncor electric delivery company llc": 16065,
+    "duke energy": 72,
+    "duke energy progress": 72,
+    "duke energy progress - (nc)": 72,
+    "duke energy carolinas": 72,
+    "electricities of north carolina": 2088,
+    "electricities of north carolina (huntsville & cornelius)": 2088,
+    "national grid": 1740,
+    "national grid - ny": 1740
+  },
+  
+  "gas": {
+    "national grid": 1738,
+    "national grid - ny": 1738,
+    "atmos energy": 29,
+    "atmos energy corporation": 29
+  },
+  
+  "sewer": {
+    "charlotte water": 9401,
+    "charlotte water (nc)": 9401
+  },
+  
+  "trash": {
+    "charlotte water": 9400,
+    "charlotte water (nc)": 9400,
+    "waste management": null
+  }
+}

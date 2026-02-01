@@ -41,8 +41,8 @@ CT_SEWER_URL = "https://services1.arcgis.com/FjPcSmEFuDYlIdKC/arcgis/rest/servic
 # Washington WASWD Special Purpose Districts (~21% coverage)
 WA_WASWD_URL = "https://services8.arcgis.com/J7RBtn4Gc9TK4jT1/arcgis/rest/services/WASWDMap_WFL1/FeatureServer/0/query"
 
-# New Jersey DEP Sewer Service Areas
-NJ_DEP_SSA_URL = "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/Util_wastewater_servicearea/FeatureServer/0/query"
+# New Jersey DEP Sewer Service Areas (verified working)
+NJ_DEP_SSA_URL = "https://mapsdep.nj.gov/arcgis/rest/services/Features/Utilities/MapServer/8/query"
 
 # Massachusetts MassDEP WURP Sewer Service Areas
 MA_MASSDEP_URL = "https://services.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Sewer_Service_Area_POTW/FeatureServer/0/query"
@@ -388,7 +388,7 @@ def lookup_new_jersey_dep_ssa(lat: float, lon: float) -> Optional[Dict]:
             "geometryType": "esriGeometryPoint",
             "inSR": "4326",
             "spatialRel": "esriSpatialRelIntersects",
-            "outFields": "TRT_PLANT,NJPDES,SSA_TYPE",
+            "outFields": "FACNAME,NJPDES,TYPE,WQMP,POP_SERVED",
             "returnGeometry": "false",
             "f": "json"
         }
@@ -404,23 +404,25 @@ def lookup_new_jersey_dep_ssa(lat: float, lon: float) -> Optional[Dict]:
             return None
         
         attrs = features[0].get("attributes", {})
-        trt_plant = attrs.get("TRT_PLANT", "")
+        facname = attrs.get("FACNAME", "")
         njpdes = attrs.get("NJPDES", "")
-        ssa_type = attrs.get("SSA_TYPE", "")
+        ssa_type = attrs.get("TYPE", "")
+        pop_served = attrs.get("POP_SERVED")
         
-        if not trt_plant:
+        if not facname:
             _sewer_cache[cache_key] = None
             return None
         
         result = {
-            "name": trt_plant,
+            "name": facname,
             "permit_number": njpdes,
             "ssa_type": ssa_type,
+            "population_served": pop_served,
             "phone": None,
             "website": None,
             "_source": "new_jersey_dep_ssa",
             "_confidence": "high",
-            "_note": f"NJ DEP Sewer Service Area - {trt_plant}"
+            "_note": f"NJ DEP Sewer Service Area - {facname}"
         }
         
         _sewer_cache[cache_key] = result

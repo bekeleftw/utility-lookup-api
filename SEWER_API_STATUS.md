@@ -19,7 +19,7 @@ The sewer utility lookup has been enhanced with state-specific GIS APIs that pro
 | **California** | Water Districts (proxy) | Statewide | Medium | ✅ Production |
 | **Florida** | DOH FLWMI | Parcel-level | Medium | ✅ Production |
 | **Washington** | WASWD Districts | ~21% | Medium | ✅ Production |
-| **New Jersey** | DEP SSA | Statewide | High | ⚠️ Endpoint not accessible |
+| **New Jersey** | DEP SSA | Statewide | High | ✅ Production |
 | **Massachusetts** | MassDEP WURP | Statewide | High | ⚠️ Endpoint not accessible |
 
 ---
@@ -62,13 +62,13 @@ https://services8.arcgis.com/J7RBtn4Gc9TK4jT1/arcgis/rest/services/WASWDMap_WFL1
 ```
 - **Coverage:** 182 special purpose districts (~21% of state)
 
-### New Jersey DEP SSA (Pending)
+### New Jersey DEP SSA
 ```
-https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/Util_wastewater_servicearea/FeatureServer/0
+https://mapsdep.nj.gov/arcgis/rest/services/Features/Utilities/MapServer/8
 ```
 - **Authority:** NJ Department of Environmental Protection
-- **Key Fields:** TRT_PLANT, NJPDES, SSA_TYPE
-- **Status:** ⚠️ Endpoint returns "Invalid URL" - may require authentication
+- **Key Fields:** FACNAME, NJPDES, TYPE, POP_SERVED
+- **Status:** ✅ Production
 
 ### Massachusetts MassDEP WURP (Pending)
 ```

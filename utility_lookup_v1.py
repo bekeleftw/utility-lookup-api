@@ -3294,7 +3294,29 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
     the result will be enhanced with utility website verification.
     """
     try:
-        # Priority 0: Use AI reconciler to compare all electric sources
+        # Priority 0: NJ DEP Electric Territory (authoritative for NJ)
+        if state and state.upper() == "NJ" and lat and lon:
+            try:
+                from nj_utility_gis import lookup_nj_electric
+                nj_result = lookup_nj_electric(lat, lon)
+                if nj_result and nj_result.get('NAME'):
+                    result = {
+                        'NAME': nj_result.get('NAME'),
+                        'TELEPHONE': nj_result.get('TELEPHONE'),
+                        'WEBSITE': nj_result.get('WEBSITE'),
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': 'high',
+                        '_source': nj_result.get('_source'),
+                        '_note': nj_result.get('_note')
+                    }
+                    return _add_deregulated_info(result, state, zip_code)
+            except ImportError:
+                pass
+            except Exception:
+                pass
+        
+        # Priority 0.5: Use AI reconciler to compare all electric sources
         try:
             electric_candidates = get_all_utility_candidates(city, state, 'electric', zip_code, county, lat, lon)
             if len(electric_candidates) > 1:
@@ -3472,6 +3494,27 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
 def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None, use_pipeline: bool = True) -> Optional[Dict]:
     """Look up gas utility only. Fast - typically < 1 second."""
     try:
+        # Priority 0: NJ DEP Gas Territory (authoritative for NJ)
+        if state and state.upper() == "NJ" and lat and lon:
+            try:
+                from nj_utility_gis import lookup_nj_gas
+                nj_result = lookup_nj_gas(lat, lon)
+                if nj_result and nj_result.get('NAME'):
+                    return {
+                        'NAME': nj_result.get('NAME'),
+                        'TELEPHONE': nj_result.get('TELEPHONE'),
+                        'WEBSITE': nj_result.get('WEBSITE'),
+                        'STATE': state,
+                        'CITY': city,
+                        '_confidence': 'high',
+                        '_source': nj_result.get('_source'),
+                        '_note': nj_result.get('_note')
+                    }
+            except ImportError:
+                pass
+            except Exception:
+                pass
+        
         # Priority 0.6: Check geographic boundary (lat/lon based)
         if lat and lon:
             try:

@@ -643,7 +643,8 @@ def format_utility(util, util_type, city=None, state=None):
             pass  # Don't fail if website lookup fails
     
     if util_type == 'water':
-        provider_id = get_provider_id(normalized_name, 'water')
+        util_state = util.get('STATE', util.get('state'))
+        provider_id = get_provider_id(normalized_name, 'water', util_state)
         return {
             'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
@@ -665,7 +666,8 @@ def format_utility(util, util_type, city=None, state=None):
     
     # Sewer utilities - include CCN info for Texas
     if util_type == 'sewer':
-        provider_id = get_provider_id(normalized_name, 'sewer')
+        util_state = util.get('STATE', util.get('state'))
+        provider_id = get_provider_id(normalized_name, 'sewer', util_state)
         return {
             'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
@@ -687,7 +689,8 @@ def format_utility(util, util_type, city=None, state=None):
     
     # Trash utilities
     if util_type == 'trash':
-        provider_id = get_provider_id(normalized_name, 'trash')
+        util_state = util.get('STATE', util.get('state'))
+        provider_id = get_provider_id(normalized_name, 'trash', util_state)
         return {
             'name': normalized_name,
             'phone': util.get('TELEPHONE', util.get('phone')),
@@ -735,7 +738,8 @@ def format_utility(util, util_type, city=None, state=None):
             confidence_score = 60
     
     # Match to provider ID from utility_providers_IDs.csv
-    provider_id = get_provider_id(normalized_name, util_type)
+    util_state = util.get('STATE', util.get('state'))
+    provider_id = get_provider_id(normalized_name, util_type, util_state)
     
     result = {
         'name': normalized_name,

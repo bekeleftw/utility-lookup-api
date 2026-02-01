@@ -46956,6 +46956,12 @@
         "phone": "229-535-6256",
         "website": null,
         "note": "EPA SDWIS (168 connections)"
+      },
+      "Lithonia": {
+        "name": "DeKalb County Watershed Management",
+        "phone": "770-621-7200",
+        "website": "https://www.dekalbcountyga.gov/watershed-management",
+        "note": "Added - Lithonia is in DeKalb County"
       }
     },
     "FL": {
@@ -67230,10 +67236,10 @@
         "note": "EPA SDWIS (9047 connections)"
       },
       "Dry Ridge": {
-        "name": "WILLIAMSTOWN MUNICIPAL WATER DEPT",
-        "phone": "859-466-5578",
-        "website": null,
-        "note": "EPA SDWIS (1983 connections)"
+        "name": "City of Dry Ridge Water",
+        "phone": "859-824-3700",
+        "website": "https://www.dryridgeky.org/",
+        "note": "Corrected - EPA SDWIS had wrong mapping to Williamstown"
       },
       "Corinth": {
         "name": "CORINTH WATER DISTRICT",

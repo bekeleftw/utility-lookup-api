@@ -35,6 +35,29 @@ UTILITY_TYPE_MAP = {
 UTILITY_TYPE_REVERSE = {v: k for k, v in UTILITY_TYPE_MAP.items()}
 
 
+def extract_state_from_title(title: str) -> Optional[str]:
+    """Extract state abbreviation from provider title."""
+    if not title:
+        return None
+    title_upper = title.upper()
+    # Match patterns like "- TX", "(TX)", ", TX", "TX" at end
+    patterns = [
+        r'\s*-\s*([A-Z]{2})$',      # "Provider - TX"
+        r'\s*\(([A-Z]{2})\)$',      # "Provider (TX)"
+        r'\s*,\s*([A-Z]{2})$',      # "Provider, TX"
+        r'\s+([A-Z]{2})$',          # "Provider TX"
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, title_upper)
+        if match:
+            state = match.group(1)
+            # Validate it's a real state
+            valid_states = {'AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY','DC'}
+            if state in valid_states:
+                return state
+    return None
+
+
 def normalize_name(name: str) -> str:
     """Normalize provider name for matching."""
     if not name:
@@ -278,7 +301,7 @@ def load_providers() -> Dict[str, Dict]:
     return providers
 
 
-def match_provider(name: str, utility_type: str) -> Optional[Dict]:
+def match_provider(name: str, utility_type: str, state: str = None) -> Optional[Dict]:
     """
     Match a provider name to an ID using multiple strategies:
     0. Check persistent cache first (instant, high confidence)
@@ -292,6 +315,7 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
     Args:
         name: Provider name from lookup
         utility_type: Type of utility (electric, gas, water, internet)
+        state: Optional state abbreviation to validate matches against
         
     Returns:
         Dict with provider info including 'id', or None if no match
@@ -331,21 +355,49 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
     mappings = load_mappings()
     if normalized in mappings:
         mapping = mappings[normalized]
-        return {
-            'id': mapping['id'],
-            'title': mapping.get('canonical', mapping.get('original', name)),
-            'matched_via': 'openai_mapping'
-        }
+        mapped_title = mapping.get('canonical', mapping.get('original', name))
+        # State validation for OpenAI mappings
+        if state:
+            provider_state = extract_state_from_title(mapped_title)
+            if provider_state and provider_state != state.upper():
+                # Skip this mapping - it's for a different state
+                pass
+            else:
+                return {
+                    'id': mapping['id'],
+                    'title': mapped_title,
+                    'matched_via': 'openai_mapping'
+                }
+        else:
+            return {
+                'id': mapping['id'],
+                'title': mapped_title,
+                'matched_via': 'openai_mapping'
+            }
     
     # Strategy 2: Simple lookup (normalized name -> ID)
     simple = load_simple_lookup()
     if normalized in simple:
         entry = simple[normalized]
-        return {
-            'id': entry['id'] if isinstance(entry, dict) else entry,
-            'title': entry.get('title', name) if isinstance(entry, dict) else name,
-            'matched_via': 'simple_lookup'
-        }
+        entry_title = entry.get('title', name) if isinstance(entry, dict) else name
+        # State validation for simple lookup
+        if state:
+            provider_state = extract_state_from_title(entry_title)
+            if provider_state and provider_state != state.upper():
+                # Skip - different state
+                pass
+            else:
+                return {
+                    'id': entry['id'] if isinstance(entry, dict) else entry,
+                    'title': entry_title,
+                    'matched_via': 'simple_lookup'
+                }
+        else:
+            return {
+                'id': entry['id'] if isinstance(entry, dict) else entry,
+                'title': entry_title,
+                'matched_via': 'simple_lookup'
+            }
     
     # Strategy 3: CSV-based exact match with utility type
     providers = load_providers()
@@ -371,6 +423,13 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
         if pdata['utility_type'] != utility_type:
             continue
         
+        # State validation: if state is provided, check if provider is in that state
+        if state:
+            provider_state = extract_state_from_title(pdata.get('title', ''))
+            if provider_state and provider_state != state.upper():
+                # Provider is explicitly for a different state - skip it
+                continue
+        
         # Check if one contains the other
         if normalized in pnorm or pnorm in normalized:
             score = min(len(normalized), len(pnorm)) / max(len(normalized), len(pnorm))
@@ -391,6 +450,11 @@ def match_provider(name: str, utility_type: str) -> Optional[Dict]:
         for pkey, pdata in providers.items():
             if pdata['utility_type'] != utility_type:
                 continue
+            # State validation for aggressive matching
+            if state:
+                provider_state = extract_state_from_title(pdata.get('title', ''))
+                if provider_state and provider_state != state.upper():
+                    continue
             pnorm_agg = normalize_name_aggressive(pdata['title'])
             if normalized_agg == pnorm_agg:
                 pdata['matched_via'] = 'aggressive_exact'
@@ -502,18 +566,19 @@ Return ONLY a single number, nothing else."""
     return None
 
 
-def get_provider_id(name: str, utility_type: str) -> Optional[str]:
+def get_provider_id(name: str, utility_type: str, state: str = None) -> Optional[str]:
     """
     Get just the provider ID for a name.
     
     Args:
         name: Provider name from lookup
         utility_type: Type of utility
+        state: Optional state abbreviation to validate matches against
         
     Returns:
         Provider ID string or None
     """
-    match = match_provider(name, utility_type)
+    match = match_provider(name, utility_type, state)
     return match['id'] if match else None
 
 

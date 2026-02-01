@@ -44,8 +44,8 @@ WA_WASWD_URL = "https://services8.arcgis.com/J7RBtn4Gc9TK4jT1/arcgis/rest/servic
 # New Jersey DEP Sewer Service Areas (verified working)
 NJ_DEP_SSA_URL = "https://mapsdep.nj.gov/arcgis/rest/services/Features/Utilities/MapServer/8/query"
 
-# Massachusetts MassDEP WURP Sewer Service Areas
-MA_MASSDEP_URL = "https://services.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Sewer_Service_Area_POTW/FeatureServer/0/query"
+# Massachusetts DEP Sewer Service Areas (verified working)
+MA_MASSDEP_URL = "https://arcgisserver.digital.mass.gov/arcgisserver/rest/services/AGOL/DEP_SEWER_SERVICE_AREAS/FeatureServer/2/query"
 
 # HIFLD Wastewater Treatment Plants endpoint
 HIFLD_WASTEWATER_URL = "https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/wastewater_treatment_plants_epa_frs/FeatureServer/0/query"
@@ -439,8 +439,8 @@ def lookup_new_jersey_dep_ssa(lat: float, lon: float) -> Optional[Dict]:
 
 def lookup_massachusetts_massdep(lat: float, lon: float) -> Optional[Dict]:
     """
-    Query Massachusetts MassDEP WURP Sewer Service Areas.
-    Water Utility Resilience Program - verified by contacting utilities.
+    Query Massachusetts DEP Sewer Service Areas (POTW layer).
+    Returns the sewer utility serving the given location.
     """
     cache_key = f"ma_massdep|{lat:.4f}|{lon:.4f}"
     if cache_key in _sewer_cache:
@@ -452,7 +452,7 @@ def lookup_massachusetts_massdep(lat: float, lon: float) -> Optional[Dict]:
             "geometryType": "esriGeometryPoint",
             "inSR": "4326",
             "spatialRel": "esriSpatialRelIntersects",
-            "outFields": "FACILITY_NAME,NPDES_PERMIT,VERIFICATION_STATUS",
+            "outFields": "SYSTNAME,PERMIT_ID,TRTMTPLANT,TOWNNAME,OWNER_TYPE",
             "returnGeometry": "false",
             "f": "json"
         }
@@ -468,26 +468,27 @@ def lookup_massachusetts_massdep(lat: float, lon: float) -> Optional[Dict]:
             return None
         
         attrs = features[0].get("attributes", {})
-        facility_name = attrs.get("FACILITY_NAME", "")
-        npdes_permit = attrs.get("NPDES_PERMIT", "")
-        verification_status = attrs.get("VERIFICATION_STATUS", "")
+        systname = attrs.get("SYSTNAME", "")
+        permit_id = attrs.get("PERMIT_ID", "")
+        treatment_plant = attrs.get("TRTMTPLANT", "")
+        town = attrs.get("TOWNNAME", "")
+        owner_type = attrs.get("OWNER_TYPE", "")
         
-        if not facility_name:
+        if not systname:
             _sewer_cache[cache_key] = None
             return None
         
-        # Confidence based on verification status
-        confidence = "high" if verification_status == "Verified" else "medium"
-        
         result = {
-            "name": facility_name,
-            "permit_number": npdes_permit,
-            "verification_status": verification_status,
+            "name": systname,
+            "permit_number": permit_id,
+            "treatment_plant": treatment_plant,
+            "town": town,
+            "owner_type": owner_type,
             "phone": None,
             "website": None,
-            "_source": "massachusetts_massdep_wurp",
-            "_confidence": confidence,
-            "_note": f"MA DEP WURP - {facility_name}"
+            "_source": "massachusetts_dep_sewer",
+            "_confidence": "high",
+            "_note": f"MA DEP Sewer Service Area - {systname}"
         }
         
         _sewer_cache[cache_key] = result

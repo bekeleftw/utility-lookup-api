@@ -37,6 +37,12 @@ CT_SEWER_URL = "https://services1.arcgis.com/FjPcSmEFuDYlIdKC/arcgis/rest/servic
 # Washington WASWD Special Purpose Districts (~21% coverage)
 WA_WASWD_URL = "https://services8.arcgis.com/J7RBtn4Gc9TK4jT1/arcgis/rest/services/WASWDMap_WFL1/FeatureServer/0/query"
 
+# New Jersey DEP Sewer Service Areas
+NJ_DEP_SSA_URL = "https://services2.arcgis.com/XVOqAjTOJ5P6ngMu/arcgis/rest/services/Util_wastewater_servicearea/FeatureServer/0/query"
+
+# Massachusetts MassDEP WURP Sewer Service Areas
+MA_MASSDEP_URL = "https://services.arcgis.com/hGdibHYSPO59RG1h/arcgis/rest/services/Sewer_Service_Area_POTW/FeatureServer/0/query"
+
 # HIFLD Wastewater Treatment Plants endpoint
 HIFLD_WASTEWATER_URL = "https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/wastewater_treatment_plants_epa_frs/FeatureServer/0/query"
 
@@ -361,6 +367,125 @@ def lookup_connecticut_sewer(lat: float, lon: float) -> Optional[Dict]:
         return None
 
 
+def lookup_new_jersey_dep_ssa(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query New Jersey DEP Sewer Service Areas.
+    Legally adopted Water Quality Management (WQM) plan boundaries.
+    """
+    cache_key = f"nj_dep|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        params = {
+            "geometry": f"{lon},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "inSR": "4326",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "TRT_PLANT,NJPDES,SSA_TYPE",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(NJ_DEP_SSA_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        attrs = features[0].get("attributes", {})
+        trt_plant = attrs.get("TRT_PLANT", "")
+        njpdes = attrs.get("NJPDES", "")
+        ssa_type = attrs.get("SSA_TYPE", "")
+        
+        if not trt_plant:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        result = {
+            "name": trt_plant,
+            "permit_number": njpdes,
+            "ssa_type": ssa_type,
+            "phone": None,
+            "website": None,
+            "_source": "new_jersey_dep_ssa",
+            "_confidence": "high",
+            "_note": f"NJ DEP Sewer Service Area - {trt_plant}"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except Exception as e:
+        print(f"[NJ DEP SSA] Error: {e}")
+        return None
+
+
+def lookup_massachusetts_massdep(lat: float, lon: float) -> Optional[Dict]:
+    """
+    Query Massachusetts MassDEP WURP Sewer Service Areas.
+    Water Utility Resilience Program - verified by contacting utilities.
+    """
+    cache_key = f"ma_massdep|{lat:.4f}|{lon:.4f}"
+    if cache_key in _sewer_cache:
+        return _sewer_cache[cache_key]
+    
+    try:
+        params = {
+            "geometry": f"{lon},{lat}",
+            "geometryType": "esriGeometryPoint",
+            "inSR": "4326",
+            "spatialRel": "esriSpatialRelIntersects",
+            "outFields": "FACILITY_NAME,NPDES_PERMIT,VERIFICATION_STATUS",
+            "returnGeometry": "false",
+            "f": "json"
+        }
+        
+        response = requests.get(MA_MASSDEP_URL, params=params, timeout=10)
+        response.raise_for_status()
+        
+        data = response.json()
+        features = data.get("features", [])
+        
+        if not features:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        attrs = features[0].get("attributes", {})
+        facility_name = attrs.get("FACILITY_NAME", "")
+        npdes_permit = attrs.get("NPDES_PERMIT", "")
+        verification_status = attrs.get("VERIFICATION_STATUS", "")
+        
+        if not facility_name:
+            _sewer_cache[cache_key] = None
+            return None
+        
+        # Confidence based on verification status
+        confidence = "high" if verification_status == "Verified" else "medium"
+        
+        result = {
+            "name": facility_name,
+            "permit_number": npdes_permit,
+            "verification_status": verification_status,
+            "phone": None,
+            "website": None,
+            "_source": "massachusetts_massdep_wurp",
+            "_confidence": confidence,
+            "_note": f"MA DEP WURP - {facility_name}"
+        }
+        
+        _sewer_cache[cache_key] = result
+        return result
+        
+    except Exception as e:
+        print(f"[MA MassDEP] Error: {e}")
+        return None
+
+
 def lookup_washington_waswd(lat: float, lon: float) -> Optional[Dict]:
     """
     Query Washington WASWD Special Purpose Districts.
@@ -521,9 +646,21 @@ def lookup_sewer_provider(
         if result:
             return result
     
+    # 5. New Jersey DEP SSA
+    if state_upper == "NJ" and lat and lon:
+        result = lookup_new_jersey_dep_ssa(lat, lon)
+        if result:
+            return result
+    
+    # 6. Massachusetts MassDEP WURP
+    if state_upper == "MA" and lat and lon:
+        result = lookup_massachusetts_massdep(lat, lon)
+        if result:
+            return result
+    
     # Tier 2: Water utility proxy
     
-    # 5. California Water Districts (proxy for sewer)
+    # 7. California Water Districts (proxy for sewer)
     if state_upper == "CA" and lat and lon:
         result = lookup_california_water_district(lat, lon)
         if result:

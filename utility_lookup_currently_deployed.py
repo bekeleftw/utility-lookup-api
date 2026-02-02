@@ -101,6 +101,35 @@ def get_gas_zip_correction(zip_code: str) -> Optional[Dict]:
         }
     return None
 
+_water_zip_corrections = None
+def load_water_zip_corrections():
+    global _water_zip_corrections
+    if _water_zip_corrections is None:
+        corrections_file = Path(__file__).parent / 'data' / 'water_zip_corrections.json'
+        if corrections_file.exists():
+            with open(corrections_file, 'r') as f:
+                data = json.load(f)
+                _water_zip_corrections = data.get('corrections', {})
+        else:
+            _water_zip_corrections = {}
+    return _water_zip_corrections
+
+def get_water_zip_correction(zip_code: str) -> Optional[Dict]:
+    """Check if there's a user-feedback correction for this ZIP."""
+    corrections = load_water_zip_corrections()
+    if zip_code in corrections:
+        correction = corrections[zip_code]
+        return {
+            'name': correction['provider'],
+            'state': correction['state'],
+            'phone': correction.get('phone'),
+            'website': correction.get('website'),
+            'confidence': 'verified',
+            '_source': 'user_feedback_correction',
+            '_note': correction.get('note', 'User-verified correction')
+        }
+    return None
+
 # GIS-based utility lookups
 try:
     from gis_utility_lookup import lookup_water_utility_gis, lookup_electric_utility_gis, lookup_gas_utility_gis
@@ -2424,13 +2453,32 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
                     gas_no_service = get_no_gas_response(state, zip_code)
     
     # Step 4: Water lookup - only if selected
-    # Priority: Corrections > Municipal utilities > Supplemental (city overrides) > Special districts > SERP > EPA SDWIS
+    # Priority: ZIP corrections > Corrections > Municipal utilities > Supplemental (city overrides) > Special districts > SERP > EPA SDWIS
     water_no_service = None
     if 'water' in selected_utilities:
         water = None
         
+        # PRIORITY -1: Check user-feedback ZIP corrections first (highest priority)
+        zip_water_correction = get_water_zip_correction(zip_code)
+        if zip_water_correction:
+            water = {
+                "name": zip_water_correction['name'],
+                "id": None,
+                "state": state,
+                "phone": zip_water_correction.get('phone'),
+                "website": zip_water_correction.get('website'),
+                "address": None,
+                "city": city,
+                "zip": zip_code,
+                "population_served": None,
+                "source_type": None,
+                "owner_type": "Unknown",
+                "confidence": "verified",
+                "_source": "user_feedback_correction",
+                "_note": zip_water_correction.get('_note', 'User-verified ZIP correction')
+            }
         # PRIORITY 0: Check if correction exists
-        if 'water' in corrections_applied:
+        elif 'water' in corrections_applied:
             correction = corrections_applied['water']
             water = {
                 "name": correction['name'],
@@ -3360,6 +3408,13 @@ def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, 
 def lookup_water_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None) -> Optional[Dict]:
     """Look up water utility only. Fast - typically < 1 second."""
     try:
+        # Priority -1: Check user-feedback ZIP corrections first (highest priority)
+        zip_correction = get_water_zip_correction(zip_code)
+        if zip_correction:
+            zip_correction['city'] = city
+            zip_correction['zip'] = zip_code
+            return zip_correction
+        
         # Note: Special districts (MUDs/CDDs) are checked AFTER municipal/GIS
         # because major cities (Houston, Austin, Dallas) provide municipal water
         # even in areas that have MUD boundaries. MUDs are primarily for:

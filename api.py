@@ -972,6 +972,7 @@ def lookup_stream():
     - electric: Electric utility (fast)
     - gas: Gas utility (fast)
     - water: Water utility (fast)
+    - sewer: Sewer utility (fast)
     - internet: Internet providers (slow, last)
     - complete: All done
     - error: If something fails
@@ -1074,6 +1075,15 @@ def lookup_stream():
                     yield f"data: {json.dumps({'event': 'water', 'data': format_utility(primary, 'water', city, state)})}\n\n"
                 else:
                     yield f"data: {json.dumps({'event': 'water', 'data': None, 'note': 'No water provider found - may be private well'})}\n\n"
+            
+            # Stream sewer result
+            if 'sewer' in selected_utilities:
+                sewer = v2_result.get('sewer') if v2_result else None
+                if sewer:
+                    primary = sewer[0] if isinstance(sewer, list) else sewer
+                    yield f"data: {json.dumps({'event': 'sewer', 'data': format_utility(primary, 'sewer', city, state)})}\n\n"
+                else:
+                    yield f"data: {json.dumps({'event': 'sewer', 'data': None, 'note': 'No sewer provider found - may be septic'})}\n\n"
             
             # Stream internet result
             if 'internet' in selected_utilities:

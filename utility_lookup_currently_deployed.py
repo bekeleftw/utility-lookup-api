@@ -72,6 +72,35 @@ def get_electric_zip_correction(zip_code: str) -> Optional[Dict]:
         }
     return None
 
+_gas_zip_corrections = None
+def load_gas_zip_corrections():
+    global _gas_zip_corrections
+    if _gas_zip_corrections is None:
+        corrections_file = Path(__file__).parent / 'data' / 'gas_zip_corrections.json'
+        if corrections_file.exists():
+            with open(corrections_file, 'r') as f:
+                data = json.load(f)
+                _gas_zip_corrections = data.get('corrections', {})
+        else:
+            _gas_zip_corrections = {}
+    return _gas_zip_corrections
+
+def get_gas_zip_correction(zip_code: str) -> Optional[Dict]:
+    """Check if there's a user-feedback correction for this ZIP."""
+    corrections = load_gas_zip_corrections()
+    if zip_code in corrections:
+        correction = corrections[zip_code]
+        return {
+            'NAME': correction['provider'],
+            'STATE': correction['state'],
+            'TELEPHONE': correction.get('phone'),
+            'WEBSITE': correction.get('website'),
+            '_confidence': 'verified',
+            '_verification_source': 'user_feedback_correction',
+            '_note': correction.get('note', 'User-verified correction')
+        }
+    return None
+
 # GIS-based utility lookups
 try:
     from gis_utility_lookup import lookup_water_utility_gis, lookup_electric_utility_gis, lookup_gas_utility_gis
@@ -2296,8 +2325,22 @@ def lookup_utilities_by_address(address: str, filter_by_city: bool = True, verif
     
     # Step 3: Gas lookup - only if selected
     if 'gas' in selected_utilities:
+        # PRIORITY -1: Check user-feedback ZIP corrections first (highest priority)
+        zip_gas_correction = get_gas_zip_correction(zip_code)
+        if zip_gas_correction:
+            primary_gas = {
+                'NAME': zip_gas_correction['NAME'],
+                'TELEPHONE': zip_gas_correction.get('TELEPHONE'),
+                'WEBSITE': zip_gas_correction.get('WEBSITE'),
+                'STATE': state,
+                'CITY': city,
+                '_confidence': 'verified',
+                '_verification_source': 'user_feedback_correction',
+                '_selection_reason': zip_gas_correction.get('_note', 'User-verified ZIP correction')
+            }
+            other_gas = []
         # PRIORITY 0: Check if correction exists
-        if 'gas' in corrections_applied:
+        elif 'gas' in corrections_applied:
             correction = corrections_applied['gas']
             primary_gas = {
                 'NAME': correction['name'],
@@ -3204,6 +3247,12 @@ def lookup_electric_only(lat: float, lon: float, city: str, county: str, state: 
 def lookup_gas_only(lat: float, lon: float, city: str, county: str, state: str, zip_code: str, address: str = None, use_pipeline: bool = True) -> Optional[Dict]:
     """Look up gas utility only. Fast - typically < 1 second."""
     try:
+        # Priority -1: Check user-feedback ZIP corrections first (highest priority)
+        zip_correction = get_gas_zip_correction(zip_code)
+        if zip_correction:
+            zip_correction['CITY'] = city
+            return zip_correction
+        
         # Priority 0: Check municipal/regional gas data FIRST (most accurate for specific ZIPs)
         municipal_gas = lookup_municipal_gas(state, city, zip_code)
         if municipal_gas:

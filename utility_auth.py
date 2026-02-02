@@ -322,6 +322,7 @@ def log_usage():
             "electric_provider": get_provider(results, 'electric'),
             "gas_provider": get_provider(results, 'gas'),
             "water_provider": get_provider(results, 'water'),
+            "sewer_provider": get_provider(results, 'sewer'),
             "internet_providers": get_provider(results, 'internet'),
         }
         
@@ -386,6 +387,8 @@ def submit_feedback():
                 feedback_field = 'gas_feedback'
             elif utility_type_lower == 'water':
                 feedback_field = 'water_feedback'
+            elif utility_type_lower == 'sewer':
+                feedback_field = 'sewer_feedback'
             elif utility_type_lower == 'internet':
                 feedback_field = 'internet_feedback'
             else:

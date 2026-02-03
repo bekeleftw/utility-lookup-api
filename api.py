@@ -2369,8 +2369,18 @@ def get_client_ip():
            request.headers.get('x-real-ip') or \
            request.remote_addr or 'unknown'
 
+# Whitelisted emails and IPs that bypass rate limiting
+LEADGEN_WHITELIST_EMAILS = {'mark@utilityprofit.com'}
+LEADGEN_WHITELIST_IPS = set()  # Add IPs here if needed
+
 def count_recent_lookups(email=None, ip_address=None):
     """Count lookups in last 24 hours for email or IP."""
+    # Check whitelist - return 0 to bypass limits
+    if email and email.lower() in LEADGEN_WHITELIST_EMAILS:
+        return 0
+    if ip_address and ip_address in LEADGEN_WHITELIST_IPS:
+        return 0
+    
     if not AIRTABLE_API_KEY:
         return 0
     

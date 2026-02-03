@@ -2465,7 +2465,8 @@ def leadgen_lookup():
     # Call internal lookup
     try:
         utility_list = [u.strip() for u in utilities.split(',')]
-        result = lookup_utilities_by_address(address, selected_utilities=utility_list, skip_internet=True)
+        skip_internet = 'internet' not in utility_list
+        result = lookup_utilities_by_address(address, selected_utilities=utility_list, skip_internet=skip_internet)
         
         # Format response
         formatted_results = {}

@@ -1,0 +1,8481 @@
+{
+  "_metadata": {
+    "description": "ZIPs with confirmed different providers from 46K address comparison",
+    "total_addresses": 46146,
+    "total_zips": 9708,
+    "zips_with_splits": 507,
+    "electric_splits": 380,
+    "gas_splits": 303
+  },
+  "splits": {
+    "84106": {
+      "address_count": 147,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "28215": {
+      "address_count": 195,
+      "electric_split": [
+        "Union Electric Membership Corp. - (nc)",
+        "Town of Huntersville - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Membership Corp. - (nc)",
+        "Town of Huntersville - (nc)",
+        "Snohomish Co. Pud #1",
+        "City of Concord - (nc)"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "28205": {
+      "address_count": 110,
+      "electric_split": [
+        "Town of Huntersville - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Town of Huntersville - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "27616": {
+      "address_count": 221,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership",
+        "SCE"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Southern California Gas Company",
+        "Dominion Energy",
+        "Enbridge Gas North Carolina"
+      ]
+    },
+    "80214": {
+      "address_count": 227,
+      "electric_split": [
+        "Xcel Energy Colorado",
+        "PSC of Colorado"
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "Xcel Energy Colorado",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "27713": {
+      "address_count": 233,
+      "electric_split": [
+        "Duke Energy Progress",
+        "SCE"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "Duke Energy Progress",
+        "SCE",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy",
+        "Southern California Gas Company"
+      ]
+    },
+    "84401": {
+      "address_count": 208,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "30349": {
+      "address_count": 240,
+      "electric_split": [
+        "City of College Park Electric",
+        "Georgia Power"
+      ],
+      "gas_split": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "City of College Park Electric",
+        "Georgia Power",
+        "City of East Point Electric"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ]
+    },
+    "84043": {
+      "address_count": 339,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Lehi City Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Lehi City Power",
+        "Eagle Mountain City"
+      ],
+      "all_gas": [
+        "Dominion Energy"
+      ]
+    },
+    "84115": {
+      "address_count": 218,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "80229": {
+      "address_count": 150,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "80015": {
+      "address_count": 60,
+      "electric_split": [
+        "Intermountain Rural Electric Association",
+        "PSC of Colorado"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Intermountain Rural Electric Association",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado"
+      ]
+    },
+    "97756": {
+      "address_count": 186,
+      "electric_split": [
+        "CEC or PAC",
+        "Central Electric Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CEC or PAC",
+        "Central Electric Cooperative",
+        "Berkshire Hathaway Energy",
+        "Pacific Power"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas"
+      ]
+    },
+    "97217": {
+      "address_count": 175,
+      "electric_split": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "NW Natural"
+      ]
+    },
+    "27606": {
+      "address_count": 180,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "84601": {
+      "address_count": 260,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Provo City Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Provo City Power"
+      ],
+      "all_gas": [
+        "Enbridge Gas Utah"
+      ]
+    },
+    "90046": {
+      "address_count": 134,
+      "electric_split": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)",
+        "Southern California Gas Company"
+      ]
+    },
+    "47802": {
+      "address_count": 200,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Win Energy Remc"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "Win Energy Remc"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "80022": {
+      "address_count": 87,
+      "electric_split": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "84321": {
+      "address_count": 451,
+      "electric_split": [
+        "City of Logan",
+        "Rocky Mountain Power"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "City of Logan",
+        "Rocky Mountain Power",
+        "Logan City Light & Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "73120": {
+      "address_count": 107,
+      "electric_split": [
+        "OG&E (Oklahoma Gas & Electric)",
+        "Oklahoma Gas & Electric Co."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "OG&E (Oklahoma Gas & Electric)",
+        "Oklahoma Gas & Electric Co."
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "Oklahoma Natural Gas Co."
+      ]
+    },
+    "28590": {
+      "address_count": 156,
+      "electric_split": null,
+      "gas_split": [
+        "Greenville Utilities Commission Gas",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Greenville Utilities Commission Gas",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "84404": {
+      "address_count": 147,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "99208": {
+      "address_count": 159,
+      "electric_split": null,
+      "gas_split": [
+        "Avista Gas",
+        "PSE"
+      ],
+      "all_electric": [
+        "Avista Energy"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "PSE"
+      ]
+    },
+    "37066": {
+      "address_count": 145,
+      "electric_split": [
+        "Cumberland Elec Member",
+        "Middle Tennessee E M C"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Cumberland Elec Member",
+        "Middle Tennessee E M C",
+        "Gallatin Department of Electricity"
+      ],
+      "all_gas": [
+        "Gallatin Natural Gas System",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "32526": {
+      "address_count": 138,
+      "electric_split": null,
+      "gas_split": [
+        "Escambia Cty Util. Auth.",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Escambia Cty Util. Auth.",
+        "TECO Peoples Gas",
+        "Energy Services of Pensacola"
+      ]
+    },
+    "27858": {
+      "address_count": 341,
+      "electric_split": [
+        "Edgecombe-martin County E M C",
+        "City of Wilson"
+      ],
+      "gas_split": [
+        "Greenville Utilities Commission Gas",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Edgecombe-martin County E M C",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Greenville Utilities Commission Gas",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "32514": {
+      "address_count": 167,
+      "electric_split": null,
+      "gas_split": [
+        "Escambia Cty Util. Auth.",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Escambia Cty Util. Auth.",
+        "TECO Peoples Gas",
+        "Energy Services of Pensacola"
+      ]
+    },
+    "50014": {
+      "address_count": 257,
+      "electric_split": [
+        "Ames Municipal",
+        "Interstate Power and Light Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Ames Municipal",
+        "Interstate Power and Light Company"
+      ],
+      "all_gas": [
+        "Alliant Energy"
+      ]
+    },
+    "65584": {
+      "address_count": 334,
+      "electric_split": null,
+      "gas_split": [
+        "City of Waynesville",
+        "Spire Missouri"
+      ],
+      "all_electric": [
+        "Laclede Electric Coop,",
+        "Gascosage Electric Coop"
+      ],
+      "all_gas": [
+        "City of Waynesville",
+        "City of St. Robert",
+        "Spire Missouri"
+      ]
+    },
+    "24401": {
+      "address_count": 219,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "Dominion Virginia Power"
+      ],
+      "gas_split": [
+        "Columbia Gas of Virginia",
+        "Southwest Gas Corporation"
+      ],
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "Dominion Virginia Power",
+        "Shenandoah Valley Electric Cooperative"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "39503": {
+      "address_count": 12,
+      "electric_split": [
+        "Coast EPA",
+        "Mississippi Power Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Coast EPA",
+        "Mississippi Power Company"
+      ],
+      "all_gas": [
+        "Spire Mississippi"
+      ]
+    },
+    "52317": {
+      "address_count": 159,
+      "electric_split": [
+        "Linn County Rural Electric Coop.",
+        "Interstate Power and Light Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Linn County Rural Electric Coop.",
+        "Interstate Power and Light Company"
+      ],
+      "all_gas": [
+        "Black Hills Energy"
+      ]
+    },
+    "10470": {
+      "address_count": 5,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Con Edison Gas"
+      ]
+    },
+    "32703": {
+      "address_count": 22,
+      "electric_split": null,
+      "gas_split": [
+        "TECO Peoples Gas",
+        "Lake Apopka Natual Gas Dist."
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "Duke Energy Florida,"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Lake Apopka Natual Gas Dist.",
+        "Peoples Gas Systems,"
+      ]
+    },
+    "32608": {
+      "address_count": 12,
+      "electric_split": [
+        "Clay Electric Cooperative - FL",
+        "Gainesville Regional Utilities (GRU)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Clay Electric Cooperative - FL",
+        "Gainesville Regional Utilities (GRU)"
+      ],
+      "all_gas": [
+        "Gainesville Regional Utilities (GRU)",
+        "Gainesville Regional Utilities Gas"
+      ]
+    },
+    "34714": {
+      "address_count": 7,
+      "electric_split": [
+        "Duke Energy Florida,",
+        "SECO Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida,",
+        "SECO Energy"
+      ],
+      "all_gas": []
+    },
+    "45405": {
+      "address_count": 8,
+      "electric_split": [
+        "SCE",
+        "AES Ohio"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "AES Ohio"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Southern California Gas Company"
+      ]
+    },
+    "78748": {
+      "address_count": 20,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "40701": {
+      "address_count": 7,
+      "electric_split": [
+        "Cumberland Valley Electric, Inc.",
+        "Kentucky Utilities Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Cumberland Valley Electric, Inc.",
+        "Kentucky Utilities Company"
+      ],
+      "all_gas": [
+        "Delta Natural Gas Co."
+      ]
+    },
+    "84111": {
+      "address_count": 21,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "95203": {
+      "address_count": 14,
+      "electric_split": [
+        "Pacific Gas and Electric",
+        "Hawaiian Electric Company (HECO)"
+      ],
+      "gas_split": [
+        "Pacific Gas & Electric (PG&E)",
+        "Hawaii Gas"
+      ],
+      "all_electric": [
+        "Pacific Gas and Electric",
+        "Hawaiian Electric Company (HECO)"
+      ],
+      "all_gas": [
+        "Pacific Gas & Electric (PG&E)",
+        "Hawaii Gas"
+      ]
+    },
+    "12208": {
+      "address_count": 17,
+      "electric_split": [
+        "National Grid",
+        "PSE"
+      ],
+      "gas_split": [
+        "Puget Sound Energy Gas",
+        "National Grid Gas"
+      ],
+      "all_electric": [
+        "National Grid",
+        "PSE"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas",
+        "National Grid Gas"
+      ]
+    },
+    "84790": {
+      "address_count": 9,
+      "electric_split": [
+        "Dixie-Escalante Rural Electric Association,",
+        "Rocky Mountain Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Dixie-Escalante Rural Electric Association,",
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Enbridge Gas Utah"
+      ]
+    },
+    "39452": {
+      "address_count": 8,
+      "electric_split": [
+        "Mississippi Power Company",
+        "Singing River EPA"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Mississippi Power Company",
+        "Singing River EPA"
+      ],
+      "all_gas": [
+        "Spire Mississippi"
+      ]
+    },
+    "78626": {
+      "address_count": 31,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC",
+        "Georgetown Utility Systems"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "99205": {
+      "address_count": 126,
+      "electric_split": [
+        "Avista Energy",
+        "AES Ohio"
+      ],
+      "gas_split": [
+        "Avista Gas",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "Avista Energy",
+        "AES Ohio"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "CenterPoint Energy"
+      ]
+    },
+    "80121": {
+      "address_count": 12,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "55912": {
+      "address_count": 45,
+      "electric_split": null,
+      "gas_split": [
+        "Austin Utilities Gas",
+        "Interstate Pwr&light Co. (alliant Energy)"
+      ],
+      "all_electric": [
+        "Austin Utilities"
+      ],
+      "all_gas": [
+        "Austin Utilities Gas",
+        "Interstate Pwr&light Co. (alliant Energy)"
+      ]
+    },
+    "76549": {
+      "address_count": 41,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Bartlett Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Bartlett Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "80127": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "27103": {
+      "address_count": 18,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "84770": {
+      "address_count": 6,
+      "electric_split": [
+        "Dixie-Escalante Rural Electric Association,",
+        "Rocky Mountain Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Dixie-Escalante Rural Electric Association,",
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Enbridge Gas Utah"
+      ]
+    },
+    "28110": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "City of Monroe",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Union Electric Membership Corp. - (nc)"
+      ],
+      "all_gas": [
+        "City of Monroe",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "19720": {
+      "address_count": 21,
+      "electric_split": [
+        "DTE Electric Company",
+        "Delmarva Power"
+      ],
+      "gas_split": [
+        "Expand Energy",
+        "DTE Gas Company"
+      ],
+      "all_electric": [
+        "DTE Electric Company",
+        "Delmarva Power",
+        "Delmarva Power and Light"
+      ],
+      "all_gas": [
+        "Expand Energy",
+        "DTE Gas Company"
+      ]
+    },
+    "77521": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Centerpoint Energy",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Atmos Energy",
+        "CenterPoint Energy"
+      ]
+    },
+    "12520": {
+      "address_count": 6,
+      "electric_split": [
+        "SCE",
+        "Austin Energy"
+      ],
+      "gas_split": [
+        "Florida City Gas",
+        "Texas Gas Service"
+      ],
+      "all_electric": [
+        "SCE",
+        "Austin Energy",
+        "Florida Power & Light",
+        "Central Hudson Gas and Electric"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Texas Gas Service",
+        "Southern California Gas Company",
+        "Central Hudson Gas and Electric"
+      ]
+    },
+    "17603": {
+      "address_count": 32,
+      "electric_split": null,
+      "gas_split": [
+        "Peco",
+        "UGI Utilities"
+      ],
+      "all_electric": [
+        "PPL Electric Utilities Corporation"
+      ],
+      "all_gas": [
+        "Peco",
+        "UGI Utilities"
+      ]
+    },
+    "97223": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ],
+      "all_electric": [
+        "Portland General Electric"
+      ],
+      "all_gas": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ]
+    },
+    "12158": {
+      "address_count": 8,
+      "electric_split": [
+        "National Grid",
+        "PSC of Colorado"
+      ],
+      "gas_split": [
+        "National Grid",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "National Grid",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "National Grid",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "75126": {
+      "address_count": 13,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Trinity Valley Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Trinity Valley Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "30736": {
+      "address_count": 14,
+      "electric_split": null,
+      "gas_split": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "North Georgia Electric Membership Corporation (NGEMC) - GA"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ]
+    },
+    "29203": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "27265": {
+      "address_count": 11,
+      "electric_split": [
+        "Energyunited Elec Member",
+        "Town of High Point"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Energyunited Elec Member",
+        "Town of High Point"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "14221": {
+      "address_count": 5,
+      "electric_split": [
+        "NYS Electric and Gas",
+        "National Grid"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "NYS Electric and Gas",
+        "National Grid"
+      ],
+      "all_gas": [
+        "National Fuel Gas Distribution"
+      ]
+    },
+    "67501": {
+      "address_count": 15,
+      "electric_split": null,
+      "gas_split": [
+        "Black Hills Energy",
+        "Kansas Gas Service"
+      ],
+      "all_electric": [
+        "Evergy Kansas Central, Inc."
+      ],
+      "all_gas": [
+        "Black Hills Energy",
+        "Kansas Gas Service"
+      ]
+    },
+    "27613": {
+      "address_count": 13,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "12901": {
+      "address_count": 35,
+      "electric_split": [
+        "Municipal Utility: PLATTSBURGH",
+        "Snohomish Co. Pud #1"
+      ],
+      "gas_split": [
+        "Nys Electric and Gas",
+        "PSE"
+      ],
+      "all_electric": [
+        "Municipal Utility: PLATTSBURGH",
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "Nys Electric and Gas",
+        "PSE"
+      ]
+    },
+    "84005": {
+      "address_count": 16,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Eagle Mountain City"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Eagle Mountain City"
+      ],
+      "all_gas": [
+        "Dominion Energy"
+      ]
+    },
+    "32824": {
+      "address_count": 9,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "27801": {
+      "address_count": 5,
+      "electric_split": [
+        "SDG&E",
+        "City of Wilson"
+      ],
+      "gas_split": [
+        "Piedmont Natural Gas",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SDG&E",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas",
+        "Southern California Gas Company"
+      ]
+    },
+    "77450": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Atmos Energy",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "CenterPoint Energy"
+      ]
+    },
+    "46806": {
+      "address_count": 69,
+      "electric_split": null,
+      "gas_split": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ],
+      "all_electric": [
+        "Indiana Michigan Power Company"
+      ],
+      "all_gas": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ]
+    },
+    "98115": {
+      "address_count": 24,
+      "electric_split": [
+        "PSE",
+        "Seattle City Light"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PSE",
+        "Seattle City Light"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas"
+      ]
+    },
+    "39759": {
+      "address_count": 19,
+      "electric_split": [
+        "4-County EPA",
+        "City of Starkville"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "4-County EPA",
+        "City of Starkville"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "20115": {
+      "address_count": 5,
+      "electric_split": [
+        "Laclede Electric Coop,",
+        "Bluebonnet Electric Cooperative, Inc."
+      ],
+      "gas_split": [
+        "Spire Missouri",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "Laclede Electric Coop,",
+        "Bluebonnet Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Spire Missouri",
+        "CenterPoint Energy"
+      ]
+    },
+    "14850": {
+      "address_count": 19,
+      "electric_split": null,
+      "gas_split": [
+        "NYSEG Gas",
+        "Nys Electric and Gas"
+      ],
+      "all_electric": [
+        "NYS Electric and Gas"
+      ],
+      "all_gas": [
+        "NYSEG Gas",
+        "Nys Electric and Gas"
+      ]
+    },
+    "67219": {
+      "address_count": 14,
+      "electric_split": null,
+      "gas_split": [
+        "Black Hills Energy",
+        "Kansas Gas Service"
+      ],
+      "all_electric": [
+        "Evergy Kansas South, Inc."
+      ],
+      "all_gas": [
+        "Black Hills Energy",
+        "Kansas Gas Service"
+      ]
+    },
+    "98498": {
+      "address_count": 6,
+      "electric_split": [
+        "PSE",
+        "Lakeview L & P Co."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PSE",
+        "Lakeview L & P Co.",
+        "Tacoma"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc."
+      ]
+    },
+    "80120": {
+      "address_count": 21,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "84058": {
+      "address_count": 30,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "67226": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Kansas Gas Service",
+        "Black Hills Energy"
+      ],
+      "all_electric": [
+        "Evergy Kansas South, Inc."
+      ],
+      "all_gas": [
+        "Kansas Gas Service",
+        "Black Hills Energy"
+      ]
+    },
+    "39702": {
+      "address_count": 5,
+      "electric_split": [
+        "4-County EPA",
+        "City of Columbus"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "4-County EPA",
+        "City of Columbus"
+      ],
+      "all_gas": [
+        "Columbus Light & Water Gas"
+      ]
+    },
+    "10028": {
+      "address_count": 17,
+      "electric_split": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Con Edison Gas"
+      ]
+    },
+    "78130": {
+      "address_count": 47,
+      "electric_split": [
+        "Guadalupe Valley Electric Cooperative, Inc.",
+        "New Braunfels Utilities"
+      ],
+      "gas_split": [
+        "Centerpoint Energy",
+        "Texas Gas Service"
+      ],
+      "all_electric": [
+        "Guadalupe Valley Electric Cooperative, Inc.",
+        "New Braunfels Utilities"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Texas Gas Service",
+        "Atmos Energy"
+      ]
+    },
+    "13224": {
+      "address_count": 9,
+      "electric_split": [
+        "National Grid",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "National Grid Gas"
+      ],
+      "all_electric": [
+        "National Grid",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "National Grid Gas"
+      ]
+    },
+    "97703": {
+      "address_count": 13,
+      "electric_split": [
+        "Pacific Power",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pacific Power",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas"
+      ]
+    },
+    "46408": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ],
+      "all_electric": [
+        "Northern Indiana Public Service Company"
+      ],
+      "all_gas": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ]
+    },
+    "84070": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "13206": {
+      "address_count": 6,
+      "electric_split": [
+        "National Grid",
+        "Austin Energy"
+      ],
+      "gas_split": [
+        "National Grid",
+        "Texas Gas Service"
+      ],
+      "all_electric": [
+        "National Grid",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "National Grid",
+        "National Grid Gas",
+        "Texas Gas Service"
+      ]
+    },
+    "10302": {
+      "address_count": 5,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Evergy Kansas Metro, Inc."
+      ],
+      "gas_split": [
+        "Nicor Gas",
+        "Kansas Gas Service"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Evergy Kansas Metro, Inc.",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Nicor Gas",
+        "Kansas Gas Service",
+        "Con Edison Gas"
+      ]
+    },
+    "80538": {
+      "address_count": 16,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "Loveland Water & Power Dept."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "Loveland Water & Power Dept."
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado"
+      ]
+    },
+    "28806": {
+      "address_count": 17,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "French Broad Elec Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "32819": {
+      "address_count": 8,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": [
+        "TECO Peoples Gas",
+        "Lake Apopka Natual Gas Dist."
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Lake Apopka Natual Gas Dist."
+      ]
+    },
+    "98103": {
+      "address_count": 32,
+      "electric_split": [
+        "Hawaiian Electric Company (HECO)",
+        "Seattle City Light"
+      ],
+      "gas_split": [
+        "Puget Sound Energy Gas",
+        "Hawaii Gas"
+      ],
+      "all_electric": [
+        "Hawaiian Electric Company (HECO)",
+        "Seattle City Light"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas",
+        "Hawaii Gas"
+      ]
+    },
+    "79416": {
+      "address_count": 15,
+      "electric_split": [
+        "Lubbock Power & Light System",
+        "Southwestern Public Service Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Lubbock Power & Light System",
+        "Southwestern Public Service Company"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "10456": {
+      "address_count": 31,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Con Edison Gas"
+      ]
+    },
+    "28804": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "French Broad Elec Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "20175": {
+      "address_count": 8,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Northern Virginia Electric Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Northern Virginia Electric Cooperative"
+      ],
+      "all_gas": [
+        "Washington Gas"
+      ]
+    },
+    "80112": {
+      "address_count": 16,
+      "electric_split": [
+        "Intermountain Rural Electric Association",
+        "PSC of Colorado"
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "Intermountain Rural Electric Association",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "78660": {
+      "address_count": 21,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Austin Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "27604": {
+      "address_count": 19,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "81101": {
+      "address_count": 20,
+      "electric_split": [
+        "San Luis Valley Rural Electric Coop, Inc.",
+        "PSC of Colorado"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "San Luis Valley Rural Electric Coop, Inc.",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "27284": {
+      "address_count": 10,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "43224": {
+      "address_count": 12,
+      "electric_split": [
+        "AEP Ohio",
+        "Ohio Power Co."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "AEP Ohio",
+        "Ohio Power Co."
+      ],
+      "all_gas": [
+        "Columbia Gas of Ohio"
+      ]
+    },
+    "17745": {
+      "address_count": 42,
+      "electric_split": null,
+      "gas_split": [
+        "Ppl Gas Utilities",
+        "Peco"
+      ],
+      "all_electric": [
+        "PPL Electric Utilities Corporation"
+      ],
+      "all_gas": [
+        "Ppl Gas Utilities",
+        "Peco"
+      ]
+    },
+    "27516": {
+      "address_count": 17,
+      "electric_split": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "32835": {
+      "address_count": 13,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "80924": {
+      "address_count": 5,
+      "electric_split": [
+        "Colorado Springs Utilities",
+        "Mountain View Electric Association, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Colorado Springs Utilities",
+        "Mountain View Electric Association, Inc."
+      ],
+      "all_gas": [
+        "Colorado Springs Utilities"
+      ]
+    },
+    "78577": {
+      "address_count": 15,
+      "electric_split": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "28173": {
+      "address_count": 6,
+      "electric_split": [
+        "Union Electric Membership Corp. - (nc)",
+        "City of Monroe - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Membership Corp. - (nc)",
+        "City of Monroe - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "11501": {
+      "address_count": 5,
+      "electric_split": [
+        "Long Island Power Authority",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "National Grid"
+      ],
+      "all_electric": [
+        "Long Island Power Authority",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "National Grid"
+      ]
+    },
+    "98926": {
+      "address_count": 43,
+      "electric_split": [
+        "PSE",
+        "Ellensburg"
+      ],
+      "gas_split": [
+        "PSE",
+        "Ellensburg Natural Gas Dept."
+      ],
+      "all_electric": [
+        "PSE",
+        "Ellensburg"
+      ],
+      "all_gas": [
+        "PSE",
+        "Ellensburg Natural Gas Dept."
+      ]
+    },
+    "06460": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Eversource",
+        "Southern Connecticut Gas"
+      ],
+      "all_electric": [
+        "United Illuminating"
+      ],
+      "all_gas": [
+        "Eversource",
+        "Southern Connecticut Gas"
+      ]
+    },
+    "76020": {
+      "address_count": 5,
+      "electric_split": [
+        "Tri-County Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Tri-County Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "27534": {
+      "address_count": 12,
+      "electric_split": [
+        "Tri-county Elec Member",
+        "City of Wilson"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Tri-county Elec Member",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "30092": {
+      "address_count": 5,
+      "electric_split": [
+        "City of Norcross Electric",
+        "Georgia Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "City of Norcross Electric",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light"
+      ]
+    },
+    "27603": {
+      "address_count": 18,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "22911": {
+      "address_count": 20,
+      "electric_split": [
+        "Rappahannock Electric Cooperative",
+        "Dominion Virginia Power"
+      ],
+      "gas_split": [
+        "Columbia Gas of Virginia",
+        "Centerpoint Energy"
+      ],
+      "all_electric": [
+        "Rappahannock Electric Cooperative",
+        "Dominion Virginia Power",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia",
+        "Centerpoint Energy"
+      ]
+    },
+    "78666": {
+      "address_count": 23,
+      "electric_split": [
+        "Bluebonnet Electric Cooperative, Inc.",
+        "San Marcos Electric Utility"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Bluebonnet Electric Cooperative, Inc.",
+        "Pedernales Electric Cooperative, Inc.",
+        "San Marcos Electric Utility"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "99212": {
+      "address_count": 69,
+      "electric_split": [
+        "Modern Electric Water",
+        "Vera Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Modern Electric Water",
+        "Vera Water & Power"
+      ],
+      "all_gas": [
+        "Avista Gas"
+      ]
+    },
+    "46835": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ],
+      "all_electric": [
+        "Indiana Michigan Power Company"
+      ],
+      "all_gas": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ]
+    },
+    "80123": {
+      "address_count": 9,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "11106": {
+      "address_count": 9,
+      "electric_split": [
+        "Portland General Electric",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "NW Natural",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Portland General Electric",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "NW Natural",
+        "Con Edison Gas"
+      ]
+    },
+    "27610": {
+      "address_count": 37,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Piedmont Electric Member"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Piedmont Electric Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "38018": {
+      "address_count": 15,
+      "electric_split": [
+        "Memphis Light Gas & Water",
+        "Entergy Arkansas LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Memphis Light Gas & Water",
+        "Entergy Arkansas LLC"
+      ],
+      "all_gas": [
+        "Memphis Light Gas & Water",
+        "Memphis Light Gas & Water Div"
+      ]
+    },
+    "28306": {
+      "address_count": 15,
+      "electric_split": [
+        "Lumbee River Elec Member",
+        "Fayetteville Public Works Commission"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Lumbee River Elec Member",
+        "Fayetteville Public Works Commission"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "78559": {
+      "address_count": 5,
+      "electric_split": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "22801": {
+      "address_count": 18,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "City of Robertsdale"
+      ],
+      "gas_split": [
+        "Columbia Gas of Virginia",
+        "City of Robertsdale"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "City of Robertsdale",
+        "Harrisonburg Electric"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia",
+        "City of Robertsdale"
+      ]
+    },
+    "98662": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ],
+      "all_electric": [
+        "Clark Co. Pud #1"
+      ],
+      "all_gas": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ]
+    },
+    "52245": {
+      "address_count": 16,
+      "electric_split": null,
+      "gas_split": [
+        "Black Hills Energy",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_electric": [
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Black Hills Energy",
+        "Berkshire Hathaway Energy"
+      ]
+    },
+    "21601": {
+      "address_count": 10,
+      "electric_split": [
+        "SCE",
+        "Delmarva Power"
+      ],
+      "gas_split": [
+        "Easton Utilities",
+        "Southwest Gas Corporation"
+      ],
+      "all_electric": [
+        "SCE",
+        "Delmarva Power"
+      ],
+      "all_gas": [
+        "Easton Utilities",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "22903": {
+      "address_count": 44,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Central Virginia Electric Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Central Virginia Electric Cooperative"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia"
+      ]
+    },
+    "28546": {
+      "address_count": 31,
+      "electric_split": [
+        "Jones-onslow Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Jones-onslow Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "28601": {
+      "address_count": 8,
+      "electric_split": [
+        "Blue Ridge Elec Member Corp. - (nc)",
+        "City of Newton - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Blue Ridge Elec Member Corp. - (nc)",
+        "City of Newton - (nc)",
+        "City of Morganton - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "45601": {
+      "address_count": 7,
+      "electric_split": [
+        "AEP Ohio",
+        "South Central Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "AEP Ohio",
+        "South Central Power"
+      ],
+      "all_gas": [
+        "Columbia Gas of Ohio"
+      ]
+    },
+    "24060": {
+      "address_count": 15,
+      "electric_split": [
+        "Appalachian Power Company",
+        "Vpi & Su"
+      ],
+      "gas_split": [
+        "Columbia Gas of Virginia",
+        "Roanoke Gas Company"
+      ],
+      "all_electric": [
+        "Appalachian Power Company",
+        "Vpi & Su"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia",
+        "Roanoke Gas Company"
+      ]
+    },
+    "30213": {
+      "address_count": 8,
+      "electric_split": [
+        "Georgia Power",
+        "City of Fairburn Electric"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Georgia Power",
+        "City of Fairburn Electric"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light"
+      ]
+    },
+    "19805": {
+      "address_count": 8,
+      "electric_split": [
+        "PSE",
+        "Delmarva Power and Light"
+      ],
+      "gas_split": [
+        "Delmarva Power Gas",
+        "Expand Energy"
+      ],
+      "all_electric": [
+        "PSE",
+        "Delmarva Power and Light"
+      ],
+      "all_gas": [
+        "Delmarva Power Gas",
+        "Expand Energy",
+        "City of Buckley"
+      ]
+    },
+    "28348": {
+      "address_count": 12,
+      "electric_split": [
+        "Lumbee River Elec Member",
+        "Fayetteville Public Works Commission"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Lumbee River Elec Member",
+        "Fayetteville Public Works Commission"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "32803": {
+      "address_count": 15,
+      "electric_split": [
+        "OUC",
+        "Orlando Utilities Commission (OUC)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "OUC",
+        "Orlando Utilities Commission (OUC)"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "63021": {
+      "address_count": 6,
+      "electric_split": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Laclede Gas Co."
+      ]
+    },
+    "27587": {
+      "address_count": 21,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas North Carolina"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas North Carolina"
+      ]
+    },
+    "11237": {
+      "address_count": 17,
+      "electric_split": [
+        "Con Edison",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Con Edison",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "Con Edison Gas"
+      ]
+    },
+    "80524": {
+      "address_count": 16,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado"
+      ]
+    },
+    "18510": {
+      "address_count": 6,
+      "electric_split": [
+        "Portland General Electric",
+        "PPL Electric Utilities Corporation"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "PPL Electric Utilities Corporation"
+      ],
+      "all_gas": [
+        "Northwest Natural Gas Co.",
+        "UGI Penn Natural Gas"
+      ]
+    },
+    "18360": {
+      "address_count": 5,
+      "electric_split": [
+        "PPL Electric Utilities Corporation",
+        "Metropolitan Edison Company"
+      ],
+      "gas_split": [
+        "Ppl Gas Utilities",
+        "Peco"
+      ],
+      "all_electric": [
+        "PPL Electric Utilities Corporation",
+        "Metropolitan Edison Company"
+      ],
+      "all_gas": [
+        "Ppl Gas Utilities",
+        "Peco"
+      ]
+    },
+    "63117": {
+      "address_count": 6,
+      "electric_split": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": [
+        "Spire",
+        "Laclede Gas Co."
+      ],
+      "all_electric": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Spire",
+        "Laclede Gas Co."
+      ]
+    },
+    "76226": {
+      "address_count": 6,
+      "electric_split": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "CoServ Gas"
+      ]
+    },
+    "28269": {
+      "address_count": 21,
+      "electric_split": [
+        "Town of Huntersville - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Town of Huntersville - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "18702": {
+      "address_count": 7,
+      "electric_split": [
+        "UGI Utilities,",
+        "PPL Electric Utilities Corporation"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "UGI Utilities,",
+        "PPL Electric Utilities Corporation"
+      ],
+      "all_gas": [
+        "Ugi Penn Natural Gas",
+        "UGI Penn Natural Gas"
+      ]
+    },
+    "78541": {
+      "address_count": 28,
+      "electric_split": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "97202": {
+      "address_count": 24,
+      "electric_split": null,
+      "gas_split": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ],
+      "all_electric": [
+        "Portland General Electric"
+      ],
+      "all_gas": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ]
+    },
+    "47906": {
+      "address_count": 11,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Tipmont Remc"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "Tipmont Remc"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "11205": {
+      "address_count": 9,
+      "electric_split": [
+        "Florida Power & Light",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Florida City Gas",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Florida Power & Light",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Con Edison Gas"
+      ]
+    },
+    "78744": {
+      "address_count": 20,
+      "electric_split": [
+        "Austin Energy",
+        "Bluebonnet Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Austin Energy",
+        "Bluebonnet Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "78596": {
+      "address_count": 37,
+      "electric_split": null,
+      "gas_split": [
+        "Atmos Energy",
+        "Rio Grande Valley Gas Co."
+      ],
+      "all_electric": [
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "40769": {
+      "address_count": 16,
+      "electric_split": [
+        "Cumberland Valley Electric, Inc.",
+        "Kentucky Utilities Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Cumberland Valley Electric, Inc.",
+        "Kentucky Utilities Company"
+      ],
+      "all_gas": [
+        "Delta Natural Gas Co."
+      ]
+    },
+    "76131": {
+      "address_count": 7,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Peoples Gas (WEC Energy)"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Peoples Gas (WEC Energy)"
+      ]
+    },
+    "27545": {
+      "address_count": 6,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "54703": {
+      "address_count": 29,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Gas",
+        "Northern States Power Company (xcel Energy)"
+      ],
+      "all_electric": [
+        "Northern States Power Company-wisconsin"
+      ],
+      "all_gas": [
+        "Xcel Energy Gas",
+        "Northern States Power Company (xcel Energy)"
+      ]
+    },
+    "17401": {
+      "address_count": 13,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Metropolitan Edison Company"
+      ],
+      "gas_split": [
+        "Columbia Gas of Pennsylvania",
+        "Texas Gas Service"
+      ],
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Metropolitan Edison Company"
+      ],
+      "all_gas": [
+        "Columbia Gas of Pennsylvania",
+        "Texas Gas Service"
+      ]
+    },
+    "27107": {
+      "address_count": 15,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "11249": {
+      "address_count": 13,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Con Edison Gas",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Con Edison Gas",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "27712": {
+      "address_count": 6,
+      "electric_split": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "27360": {
+      "address_count": 12,
+      "electric_split": [
+        "City of Lexington - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "City of Lexington - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "27526": {
+      "address_count": 14,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "15001": {
+      "address_count": 9,
+      "electric_split": [
+        "PSE",
+        "Duquesne Light Company"
+      ],
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "Columbia Gas of Pennsylvania"
+      ],
+      "all_electric": [
+        "PSE",
+        "Duquesne Light Company"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "Columbia Gas of Pennsylvania"
+      ]
+    },
+    "29229": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "25526": {
+      "address_count": 16,
+      "electric_split": null,
+      "gas_split": [
+        "Mountaineer Gas Co.",
+        "Union Oil & Gas"
+      ],
+      "all_electric": [
+        "Appalachian Power Co."
+      ],
+      "all_gas": [
+        "Mountaineer Gas Co.",
+        "Union Oil & Gas",
+        "Mountaineer Gas"
+      ]
+    },
+    "37130": {
+      "address_count": 12,
+      "electric_split": [
+        "Middle Tennessee Electric",
+        "PSE"
+      ],
+      "gas_split": [
+        "PSE",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Middle Tennessee Electric",
+        "PSE"
+      ],
+      "all_gas": [
+        "PSE",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "57006": {
+      "address_count": 17,
+      "electric_split": null,
+      "gas_split": [
+        "Black Hills Energy",
+        "Northwestern Energy"
+      ],
+      "all_electric": [
+        "Brookings Municipal Utilities - SD"
+      ],
+      "all_gas": [
+        "Black Hills Energy",
+        "Northwestern Energy"
+      ]
+    },
+    "32810": {
+      "address_count": 13,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": [
+        "TECO Peoples Gas",
+        "Lake Apopka Natual Gas Dist."
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Lake Apopka Natual Gas Dist.",
+        "Peoples Gas Systems,"
+      ]
+    },
+    "23970": {
+      "address_count": 8,
+      "electric_split": [
+        "Mecklenburg Electric Cooperative",
+        "Dominion Virginia Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Mecklenburg Electric Cooperative",
+        "Dominion Virginia Power"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia"
+      ]
+    },
+    "27540": {
+      "address_count": 14,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Withlacoochee River Electric Cooperative - FL"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Withlacoochee River Electric Cooperative - FL"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "80504": {
+      "address_count": 9,
+      "electric_split": [
+        "Longmont Electric Utility",
+        "PSC of Colorado"
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "Longmont Electric Utility",
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "30080": {
+      "address_count": 10,
+      "electric_split": [
+        "SCE",
+        "Georgia Power"
+      ],
+      "gas_split": [
+        "Atlanta Gas Light",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light",
+        "Southern California Gas Company"
+      ]
+    },
+    "21224": {
+      "address_count": 14,
+      "electric_split": [
+        "Baltimore Gas & Electric Co.",
+        "BGE (Baltimore Gas & Electric)"
+      ],
+      "gas_split": [
+        "Baltimore Gas and Electric Co.",
+        "BGE Gas"
+      ],
+      "all_electric": [
+        "Baltimore Gas & Electric Co.",
+        "BGE (Baltimore Gas & Electric)"
+      ],
+      "all_gas": [
+        "Baltimore Gas and Electric Co.",
+        "BGE Gas"
+      ]
+    },
+    "98277": {
+      "address_count": 5,
+      "electric_split": [
+        "PSE",
+        "Hawaiian Electric Company (HECO)"
+      ],
+      "gas_split": [
+        "Cascade Natural Gas",
+        "Hawaii Gas"
+      ],
+      "all_electric": [
+        "PSE",
+        "Hawaiian Electric Company (HECO)"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "Hawaii Gas"
+      ]
+    },
+    "14214": {
+      "address_count": 6,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "National Grid"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "Southwest Gas Corporation"
+      ],
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "National Grid"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "12180": {
+      "address_count": 14,
+      "electric_split": [
+        "National Grid",
+        "Jea"
+      ],
+      "gas_split": [
+        "National Grid",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "National Grid",
+        "Jea"
+      ],
+      "all_gas": [
+        "National Grid",
+        "National Grid Gas",
+        "TECO Peoples Gas"
+      ]
+    },
+    "11924": {
+      "address_count": 6,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "AEP Texas Inc."
+      ],
+      "gas_split": [
+        "Rio Grande Valley Gas Co.",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co.",
+        "Atmos Energy"
+      ]
+    },
+    "84059": {
+      "address_count": 10,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "79407": {
+      "address_count": 25,
+      "electric_split": [
+        "Southwestern Public Service Company",
+        "Lubbock Power & Light System"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Southwestern Public Service Company",
+        "Lubbock Power & Light System",
+        "South Plains Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "78628": {
+      "address_count": 23,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Pedernales Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Pedernales Electric Cooperative, Inc.",
+        "Georgetown Utility Systems"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "46637": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ],
+      "all_electric": [
+        "Indiana Michigan Power Company"
+      ],
+      "all_gas": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ]
+    },
+    "28104": {
+      "address_count": 6,
+      "electric_split": [
+        "Union Electric Membership Corp. - (nc)",
+        "City of Monroe - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Membership Corp. - (nc)",
+        "City of Monroe - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "38655": {
+      "address_count": 16,
+      "electric_split": null,
+      "gas_split": [
+        "Centerpoint Energy",
+        "Spire Mississippi"
+      ],
+      "all_electric": [
+        "Northeast Mississippi EPA"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Spire Mississippi"
+      ]
+    },
+    "32808": {
+      "address_count": 17,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "27834": {
+      "address_count": 34,
+      "electric_split": [
+        "Pitt & Greene Elec Member",
+        "Edgecombe-martin County E M C"
+      ],
+      "gas_split": [
+        "Greenville Utilities Commission Gas",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Pitt & Greene Elec Member",
+        "Edgecombe-martin County E M C",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Greenville Utilities Commission Gas",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "27703": {
+      "address_count": 37,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "46360": {
+      "address_count": 11,
+      "electric_split": null,
+      "gas_split": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ],
+      "all_electric": [
+        "Northern Indiana Public Service Company"
+      ],
+      "all_gas": [
+        "Northern Indiana Pub Svc Co.",
+        "Nipsco"
+      ]
+    },
+    "27597": {
+      "address_count": 17,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Wake Electric Membership",
+        "Duke Energy Progress - (nc)",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "28326": {
+      "address_count": 10,
+      "electric_split": [
+        "Central Electric Membership Corp. - (nc)",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Central Electric Membership Corp. - (nc)",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "98607": {
+      "address_count": 10,
+      "electric_split": [
+        "Clark Co. Pud #1",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ],
+      "all_electric": [
+        "Clark Co. Pud #1",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ]
+    },
+    "28327": {
+      "address_count": 8,
+      "electric_split": [
+        "Central Electric Membership Corp. - (nc)",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Central Electric Membership Corp. - (nc)",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "27302": {
+      "address_count": 8,
+      "electric_split": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "98362": {
+      "address_count": 9,
+      "electric_split": [
+        "Clallam Co. Pud #1",
+        "Port Angeles"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Clallam Co. Pud #1",
+        "Port Angeles"
+      ],
+      "all_gas": [
+        "PSE"
+      ]
+    },
+    "14210": {
+      "address_count": 5,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "National Grid"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "National Grid"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "Columbia Gas of Virginia"
+      ]
+    },
+    "38141": {
+      "address_count": 17,
+      "electric_split": null,
+      "gas_split": [
+        "Memphis Light Gas & Water",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Memphis Light Gas & Water",
+        "Memphis Light, Gas and Water (MLGW)"
+      ],
+      "all_gas": [
+        "Memphis Light Gas & Water",
+        "Piedmont Natural Gas",
+        "Memphis Light Gas & Water Div"
+      ]
+    },
+    "89118": {
+      "address_count": 6,
+      "electric_split": [
+        "Entergy Louisiana",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": [
+        "Entergy Louisiana Gas",
+        "Southwest Gas Corporation"
+      ],
+      "all_electric": [
+        "Entergy Louisiana",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Entergy Louisiana Gas",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "85207": {
+      "address_count": 8,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "all_gas": [
+        "Southwest Gas Corporation"
+      ]
+    },
+    "64138": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Spire",
+        "Liberty Utilities Natural Gas"
+      ],
+      "all_electric": [
+        "Evergy"
+      ],
+      "all_gas": [
+        "Spire",
+        "Liberty Utilities Natural Gas"
+      ]
+    },
+    "75071": {
+      "address_count": 11,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Grayson-Collin Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Grayson-Collin Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "21155": {
+      "address_count": 8,
+      "electric_split": [
+        "Louisville Gas and Electric Company",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "LG&E Gas"
+      ],
+      "all_electric": [
+        "Louisville Gas and Electric Company",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "LG&E Gas"
+      ]
+    },
+    "97232": {
+      "address_count": 8,
+      "electric_split": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "NW Natural"
+      ]
+    },
+    "75070": {
+      "address_count": 10,
+      "electric_split": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "16000": {
+      "address_count": 9,
+      "electric_split": [
+        "DTE Electric Company",
+        "Snohomish Co. Pud #1"
+      ],
+      "gas_split": [
+        "DTE Gas",
+        "Puget Sound Energy, Inc."
+      ],
+      "all_electric": [
+        "DTE Electric Company",
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "DTE Gas",
+        "Puget Sound Energy, Inc."
+      ]
+    },
+    "38506": {
+      "address_count": 12,
+      "electric_split": [
+        "Upper Cumberland E M C",
+        "Cookeville Electric Department"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Cookeville Gas Department"
+      ],
+      "all_electric": [
+        "Upper Cumberland E M C",
+        "Cookeville Electric Department"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Cookeville Gas Department"
+      ]
+    },
+    "19106": {
+      "address_count": 12,
+      "electric_split": [
+        "Avista Energy",
+        "PECO Energy Company"
+      ],
+      "gas_split": [
+        "Avista Gas",
+        "Dominion Energy Ohio"
+      ],
+      "all_electric": [
+        "Avista Energy",
+        "PECO Energy Company",
+        "The Illuminating Company"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "Dominion Energy Ohio",
+        "Philadelphia Gas Works (PGW)"
+      ]
+    },
+    "19601": {
+      "address_count": 16,
+      "electric_split": [
+        "OG&E (Oklahoma Gas & Electric)",
+        "Metropolitan Edison Company"
+      ],
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "UGI Utilities"
+      ],
+      "all_electric": [
+        "OG&E (Oklahoma Gas & Electric)",
+        "Metropolitan Edison Company"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "UGI Utilities",
+        "Peco"
+      ]
+    },
+    "98248": {
+      "address_count": 17,
+      "electric_split": null,
+      "gas_split": [
+        "Cascade Natural Gas",
+        "PSE"
+      ],
+      "all_electric": [
+        "PSE"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "PSE"
+      ]
+    },
+    "80528": {
+      "address_count": 5,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "54701": {
+      "address_count": 23,
+      "electric_split": [
+        "Northern States Power Company-wisconsin",
+        "Eau Claire Energy Cooperative"
+      ],
+      "gas_split": [
+        "WE Energies",
+        "Xcel Energy Gas"
+      ],
+      "all_electric": [
+        "Northern States Power Company-wisconsin",
+        "Eau Claire Energy Cooperative"
+      ],
+      "all_gas": [
+        "WE Energies",
+        "Xcel Energy Gas",
+        "Northern States Power Company (xcel Energy)"
+      ]
+    },
+    "47905": {
+      "address_count": 5,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Tipmont Remc"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "Tipmont Remc"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "95501": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "PG&E",
+        "Pacific Gas and Electric"
+      ],
+      "all_electric": [
+        "Pacific Gas and Electric"
+      ],
+      "all_gas": [
+        "PG&E",
+        "Pacific Gas and Electric"
+      ]
+    },
+    "08629": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "PSE&G Gas",
+        "Public Service Elec. & Gas Co."
+      ],
+      "all_electric": [
+        "Public Service Electric & Gas Co."
+      ],
+      "all_gas": [
+        "PSE&G Gas",
+        "Public Service Elec. & Gas Co."
+      ]
+    },
+    "72701": {
+      "address_count": 24,
+      "electric_split": [
+        "Fort Smith Fayetteville Springdale Fayetteville",
+        "SWEPCO (Southwestern Electric Power)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Fort Smith Fayetteville Springdale Fayetteville",
+        "SWEPCO (Southwestern Electric Power)"
+      ],
+      "all_gas": [
+        "Black Hills Energy"
+      ]
+    },
+    "27886": {
+      "address_count": 5,
+      "electric_split": [
+        "Edgecombe-martin County E M C",
+        "City of Wilson"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Edgecombe-martin County E M C",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "26505": {
+      "address_count": 11,
+      "electric_split": [
+        "Monongahela Power Co.",
+        "Mon Power (FirstEnergy)"
+      ],
+      "gas_split": [
+        "Dominion Energy West Virginia",
+        "Mountaineer Gas"
+      ],
+      "all_electric": [
+        "Monongahela Power Co.",
+        "Mon Power (FirstEnergy)"
+      ],
+      "all_gas": [
+        "Dominion Energy West Virginia",
+        "Mountaineer Gas",
+        "Dominion Hope Gas"
+      ]
+    },
+    "17110": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "UGI Utilities",
+        "Peco"
+      ],
+      "all_electric": [
+        "PPL Electric Utilities Corporation"
+      ],
+      "all_gas": [
+        "UGI Utilities",
+        "Peco"
+      ]
+    },
+    "99354": {
+      "address_count": 6,
+      "electric_split": [
+        "Richland",
+        "Benton Rea"
+      ],
+      "gas_split": [
+        "Cascade Natural Gas",
+        "PSE"
+      ],
+      "all_electric": [
+        "Richland",
+        "Benton Rea"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "PSE"
+      ]
+    },
+    "78542": {
+      "address_count": 7,
+      "electric_split": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "99217": {
+      "address_count": 9,
+      "electric_split": [
+        "Modern Electric Water",
+        "Avista Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Modern Electric Water",
+        "Avista Energy"
+      ],
+      "all_gas": [
+        "Avista Gas"
+      ]
+    },
+    "63123": {
+      "address_count": 8,
+      "electric_split": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": [
+        "Spire",
+        "Laclede Gas Co."
+      ],
+      "all_electric": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Spire",
+        "Laclede Gas Co."
+      ]
+    },
+    "97201": {
+      "address_count": 7,
+      "electric_split": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "NW Natural"
+      ]
+    },
+    "98499": {
+      "address_count": 12,
+      "electric_split": [
+        "Lakeview L & P Co.",
+        "Tacoma"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Lakeview L & P Co.",
+        "Tacoma"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas",
+        "Puget Sound Energy, Inc."
+      ]
+    },
+    "46580": {
+      "address_count": 15,
+      "electric_split": [
+        "Kosciusko Remc",
+        "Northern Indiana Public Service Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Kosciusko Remc",
+        "Northern Indiana Public Service Company"
+      ],
+      "all_gas": [
+        "Northern Indiana Pub Svc Co."
+      ]
+    },
+    "29601": {
+      "address_count": 9,
+      "electric_split": [
+        "SCE",
+        "Duke Energy Carolinas"
+      ],
+      "gas_split": [
+        "Piedmont Natural Gas",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "Duke Energy Carolinas"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas",
+        "Southern California Gas Company"
+      ]
+    },
+    "10940": {
+      "address_count": 6,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Pacific Gas and Electric"
+      ],
+      "gas_split": [
+        "Pacific Gas & Electric (PG&E)",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Pacific Gas and Electric",
+        "Orange and Rockland Utilities"
+      ],
+      "all_gas": [
+        "Pacific Gas & Electric (PG&E)",
+        "Columbia Gas of Virginia",
+        "Con Edison",
+        "Orange and Rockland Utilities"
+      ]
+    },
+    "29455": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "28625": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "10039": {
+      "address_count": 13,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Con Edison"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Con Edison Gas"
+      ]
+    },
+    "84606": {
+      "address_count": 37,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Provo City Power"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Provo City Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "29803": {
+      "address_count": 9,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy Gas",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "Dominion Energy Gas",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "32822": {
+      "address_count": 28,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "12206": {
+      "address_count": 8,
+      "electric_split": [
+        "Avista Energy",
+        "National Grid"
+      ],
+      "gas_split": [
+        "Avista Gas",
+        "National Grid Gas"
+      ],
+      "all_electric": [
+        "Avista Energy",
+        "National Grid",
+        "CPS Energy"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "National Grid Gas",
+        "CPS Energy"
+      ]
+    },
+    "47265": {
+      "address_count": 6,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Southeastern Indiana Remc"
+      ],
+      "gas_split": [
+        "Midwest Natural Gas",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "Southeastern Indiana Remc"
+      ],
+      "all_gas": [
+        "Midwest Natural Gas",
+        "CenterPoint Energy"
+      ]
+    },
+    "23860": {
+      "address_count": 19,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Prince George Electric Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Prince George Electric Cooperative"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia"
+      ]
+    },
+    "80246": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "31907": {
+      "address_count": 14,
+      "electric_split": [
+        "Diverse Power Incorporated",
+        "Georgia Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Diverse Power Incorporated",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "AGL Resources"
+      ]
+    },
+    "81007": {
+      "address_count": 5,
+      "electric_split": [
+        "San Isabel Electric Association, Inc.",
+        "Black Hills Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "San Isabel Electric Association, Inc.",
+        "Black Hills Energy"
+      ],
+      "all_gas": [
+        "Black Hills Energy"
+      ]
+    },
+    "11212": {
+      "address_count": 11,
+      "electric_split": [
+        "Austin Energy",
+        "Evergy"
+      ],
+      "gas_split": [
+        "Spire",
+        "Puget Sound Energy Gas"
+      ],
+      "all_electric": [
+        "Austin Energy",
+        "Evergy",
+        "Con Edison",
+        "Tacoma"
+      ],
+      "all_gas": [
+        "Spire",
+        "Puget Sound Energy Gas",
+        "Texas Gas Service",
+        "Con Edison Gas"
+      ]
+    },
+    "15010": {
+      "address_count": 8,
+      "electric_split": [
+        "Duquesne Light Company",
+        "Pennsylvania Power Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duquesne Light Company",
+        "Pennsylvania Power Company"
+      ],
+      "all_gas": [
+        "Columbia Gas of Pennsylvania"
+      ]
+    },
+    "27292": {
+      "address_count": 21,
+      "electric_split": null,
+      "gas_split": [
+        "City of Lexington",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "City of Lexington",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "30078": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "Walton Electric Membership Corporation"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ]
+    },
+    "79423": {
+      "address_count": 24,
+      "electric_split": [
+        "Lubbock Power & Light System",
+        "South Plains Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Lubbock Power & Light System",
+        "South Plains Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "63130": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Spire",
+        "Laclede Gas Co."
+      ],
+      "all_electric": [
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Spire",
+        "Laclede Gas Co."
+      ]
+    },
+    "80863": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Black Hills Energy"
+      ],
+      "all_electric": [
+        "Intermountain Rural Electric Association"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Black Hills Energy"
+      ]
+    },
+    "47803": {
+      "address_count": 11,
+      "electric_split": null,
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "76028": {
+      "address_count": 9,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "United Electric Cooperative Services, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "United Electric Cooperative Services, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "23222": {
+      "address_count": 15,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Pacific Gas and Electric"
+      ],
+      "gas_split": [
+        "Pacific Gas & Electric (PG&E)",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Pacific Gas and Electric"
+      ],
+      "all_gas": [
+        "Pacific Gas & Electric (PG&E)",
+        "Columbia Gas of Virginia"
+      ]
+    },
+    "32807": {
+      "address_count": 5,
+      "electric_split": [
+        "OUC",
+        "Orlando Utilities Commission (OUC)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "OUC",
+        "Orlando Utilities Commission (OUC)"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "39564": {
+      "address_count": 15,
+      "electric_split": [
+        "Mississippi Power Company",
+        "Singing River EPA"
+      ],
+      "gas_split": [
+        "Centerpoint Energy",
+        "Spire Mississippi"
+      ],
+      "all_electric": [
+        "Mississippi Power Company",
+        "Singing River EPA"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Spire Mississippi"
+      ]
+    },
+    "92507": {
+      "address_count": 6,
+      "electric_split": [
+        "City of Riverside",
+        "SCE"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "City of Riverside",
+        "SCE"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)"
+      ]
+    },
+    "78613": {
+      "address_count": 26,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "42101": {
+      "address_count": 20,
+      "electric_split": [
+        "Bowling Green Municipal",
+        "Warren RECC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Bowling Green Municipal",
+        "Warren RECC"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "19153": {
+      "address_count": 8,
+      "electric_split": [
+        "DTE Electric Company",
+        "PECO Energy Company"
+      ],
+      "gas_split": [
+        "DTE Gas",
+        "Philadelphia Gas Works (PGW)"
+      ],
+      "all_electric": [
+        "DTE Electric Company",
+        "PECO Energy Company"
+      ],
+      "all_gas": [
+        "DTE Gas",
+        "Philadelphia Gas Works (PGW)"
+      ]
+    },
+    "22304": {
+      "address_count": 9,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Snohomish Co. Pud #1"
+      ],
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "Washington Gas"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "Washington Gas"
+      ]
+    },
+    "52241": {
+      "address_count": 5,
+      "electric_split": [
+        "Linn County Rural Electric Coop.",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Linn County Rural Electric Coop.",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Black Hills Energy"
+      ]
+    },
+    "98270": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "PSE"
+      ],
+      "all_electric": [
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "PSE"
+      ]
+    },
+    "84341": {
+      "address_count": 17,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Logan City Light & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Logan City Light & Power"
+      ],
+      "all_gas": [
+        "Enbridge Gas Utah"
+      ]
+    },
+    "22630": {
+      "address_count": 9,
+      "electric_split": [
+        "Rappahannock Electric Cooperative",
+        "Town of Front Royal"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rappahannock Electric Cooperative",
+        "Town of Front Royal"
+      ],
+      "all_gas": [
+        "Washington Gas"
+      ]
+    },
+    "30340": {
+      "address_count": 7,
+      "electric_split": [
+        "City of Norcross Electric",
+        "Georgia Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "City of Norcross Electric",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light"
+      ]
+    },
+    "27278": {
+      "address_count": 6,
+      "electric_split": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Progress - (nc)",
+        "Piedmont Electric Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "28540": {
+      "address_count": 18,
+      "electric_split": [
+        "Jones-onslow Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Jones-onslow Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "27591": {
+      "address_count": 18,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Cheney"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Avista"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Cheney",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Avista",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "15224": {
+      "address_count": 6,
+      "electric_split": [
+        "Duquesne Light Company",
+        "Ocala Electric Utility"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duquesne Light Company",
+        "Ocala Electric Utility"
+      ],
+      "all_gas": [
+        "Peoples Gas (WEC Energy)"
+      ]
+    },
+    "16507": {
+      "address_count": 7,
+      "electric_split": [
+        "Pennsylvania Electric Company",
+        "CPS Energy"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "CPS Energy"
+      ],
+      "all_electric": [
+        "Pennsylvania Electric Company",
+        "CPS Energy"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "CPS Energy"
+      ]
+    },
+    "10801": {
+      "address_count": 8,
+      "electric_split": [
+        "The Illuminating Company",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Dominion Energy Ohio",
+        "Con Edison"
+      ],
+      "all_electric": [
+        "The Illuminating Company",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Dominion Energy Ohio",
+        "Con Edison"
+      ]
+    },
+    "24112": {
+      "address_count": 15,
+      "electric_split": [
+        "PSE",
+        "City of Martinsville"
+      ],
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "Southwestern VA Gas Co."
+      ],
+      "all_electric": [
+        "PSE",
+        "City of Martinsville",
+        "Appalachian Power Company"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "Southwestern VA Gas Co.",
+        "Washington Gas"
+      ]
+    },
+    "54302": {
+      "address_count": 18,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Wisconsin Public Service Corporation"
+      ],
+      "gas_split": [
+        "Wisconsin Pub Svc",
+        "Peoples Gas (WEC Energy)"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Wisconsin Public Service Corporation"
+      ],
+      "all_gas": [
+        "Wisconsin Pub Svc",
+        "Peoples Gas (WEC Energy)",
+        "Wisconsin Public Service Gas"
+      ]
+    },
+    "85254": {
+      "address_count": 12,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "all_gas": [
+        "Southwest Gas Corporation"
+      ]
+    },
+    "30815": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "Jefferson Energy Cooperative"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ]
+    },
+    "90048": {
+      "address_count": 16,
+      "electric_split": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)"
+      ]
+    },
+    "35020": {
+      "address_count": 8,
+      "electric_split": [
+        "PSE",
+        "Alabama Power"
+      ],
+      "gas_split": [
+        "Cascade Natural Gas",
+        "Spire Alabama (Alagasco)"
+      ],
+      "all_electric": [
+        "PSE",
+        "Alabama Power"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "Spire Alabama (Alagasco)"
+      ]
+    },
+    "11312": {
+      "address_count": 6,
+      "electric_split": [
+        "Town of Huntersville - (nc)",
+        "Austin Energy"
+      ],
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "Southern California Gas (SoCalGas)"
+      ],
+      "all_electric": [
+        "Town of Huntersville - (nc)",
+        "Austin Energy",
+        "Los Angeles Department of Water & Power",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "Southern California Gas (SoCalGas)",
+        "Texas Gas Service",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "12047": {
+      "address_count": 7,
+      "electric_split": [
+        "Duke Energy Florida",
+        "National Grid"
+      ],
+      "gas_split": [
+        "TECO Peoples Gas",
+        "National Grid"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "National Grid"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "National Grid"
+      ]
+    },
+    "13211": {
+      "address_count": 5,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Avista Energy"
+      ],
+      "gas_split": [
+        "Avista Gas",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Avista Energy",
+        "National Grid",
+        "Dominion Virginia Power"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "Columbia Gas of Virginia",
+        "National Grid",
+        "Atmos Energy"
+      ]
+    },
+    "30024": {
+      "address_count": 7,
+      "electric_split": [
+        "PSE",
+        "Georgia Power"
+      ],
+      "gas_split": [
+        "Atlanta Gas Light",
+        "Puget Sound Energy, Inc."
+      ],
+      "all_electric": [
+        "PSE",
+        "Georgia Power",
+        "City of Buford Electric"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light",
+        "Puget Sound Energy, Inc.",
+        "City of Buford Gas"
+      ]
+    },
+    "85213": {
+      "address_count": 14,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "all_gas": [
+        "Southwest Gas Corporation"
+      ]
+    },
+    "84121": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "15009": {
+      "address_count": 9,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Duquesne Light Company"
+      ],
+      "gas_split": [
+        "Southern California Gas (SoCalGas)",
+        "Texas Gas Service"
+      ],
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Duquesne Light Company",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)",
+        "Texas Gas Service",
+        "Columbia Gas of Pennsylvania"
+      ]
+    },
+    "15220": {
+      "address_count": 6,
+      "electric_split": [
+        "The Illuminating Company",
+        "Duquesne Light Company"
+      ],
+      "gas_split": [
+        "TECO Peoples Gas",
+        "Dominion Energy Ohio"
+      ],
+      "all_electric": [
+        "The Illuminating Company",
+        "Duquesne Light Company",
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Peoples Gas (WEC Energy)",
+        "Dominion Energy Ohio"
+      ]
+    },
+    "28376": {
+      "address_count": 12,
+      "electric_split": [
+        "Mountain View Electric Association, Inc.",
+        "Lumbee River Elec Member"
+      ],
+      "gas_split": [
+        "Colorado Springs Utilities",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Mountain View Electric Association, Inc.",
+        "Lumbee River Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Colorado Springs Utilities",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "32534": {
+      "address_count": 10,
+      "electric_split": null,
+      "gas_split": [
+        "Escambia Cty Util. Auth.",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Escambia Cty Util. Auth.",
+        "TECO Peoples Gas"
+      ]
+    },
+    "27106": {
+      "address_count": 12,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Surry-yadkin Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Surry-yadkin Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "16101": {
+      "address_count": 7,
+      "electric_split": [
+        "Pennsylvania Power Company",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Columbia Gas of Pennsylvania"
+      ],
+      "all_electric": [
+        "Pennsylvania Power Company",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Columbia Gas of Pennsylvania"
+      ]
+    },
+    "10625": {
+      "address_count": 10,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Seattle City Light"
+      ],
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "Southern California Gas (SoCalGas)"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Seattle City Light",
+        "Los Angeles Department of Water & Power",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "Southern California Gas (SoCalGas)",
+        "Puget Sound Energy Gas",
+        "Peoples Gas (WEC Energy)"
+      ]
+    },
+    "47401": {
+      "address_count": 16,
+      "electric_split": [
+        "Duke Energy Florida",
+        "South Central Indiana Remc"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "South Central Indiana Remc"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "63011": {
+      "address_count": 5,
+      "electric_split": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Laclede Gas Co."
+      ]
+    },
+    "47404": {
+      "address_count": 11,
+      "electric_split": null,
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "50263": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Berkshire Hathaway Energy",
+        "Waukee Municipal Gas"
+      ],
+      "all_electric": [
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Berkshire Hathaway Energy",
+        "Waukee Municipal Gas"
+      ]
+    },
+    "29414": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "34743": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Expand Energy",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Kissimmee Utility Authority (KUA)"
+      ],
+      "all_gas": [
+        "Expand Energy",
+        "TECO Peoples Gas"
+      ]
+    },
+    "84119": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "98444": {
+      "address_count": 10,
+      "electric_split": [
+        "Parkland P & L",
+        "Tacoma"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Parkland P & L",
+        "Tacoma"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas"
+      ]
+    },
+    "16510": {
+      "address_count": 7,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "Dominion Virginia Power"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "Dominion Virginia Power",
+        "Pennsylvania Electric Company"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "Columbia Gas of Virginia",
+        "Peco",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "27560": {
+      "address_count": 19,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "29412": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "76502": {
+      "address_count": 6,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Heart of Texas Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Heart of Texas Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "37042": {
+      "address_count": 22,
+      "electric_split": [
+        "CDE Lightband",
+        "Cumberland Elec Member"
+      ],
+      "gas_split": [
+        "Clarksville Gas & Water",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "CDE Lightband",
+        "Cumberland Elec Member"
+      ],
+      "all_gas": [
+        "Clarksville Gas & Water",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "84414": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "10003": {
+      "address_count": 10,
+      "electric_split": [
+        "SCE",
+        "Austin Energy"
+      ],
+      "gas_split": [
+        "Texas Gas Service",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "SCE",
+        "Austin Energy",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Texas Gas Service",
+        "Con Edison Gas",
+        "Southern California Gas Company"
+      ]
+    },
+    "41018": {
+      "address_count": 5,
+      "electric_split": [
+        "Owen Electric Cooperative, Inc.",
+        "Duke Energy Kentucky, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Owen Electric Cooperative, Inc.",
+        "Duke Energy Kentucky, Inc."
+      ],
+      "all_gas": [
+        "Duke Energy Kentucky"
+      ]
+    },
+    "29486": {
+      "address_count": 10,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "28443": {
+      "address_count": 8,
+      "electric_split": [
+        "Four County Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Four County Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "02816": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "National Grid Gas",
+        "Narragansett Electric Co. (gas Division of Ri)"
+      ],
+      "all_electric": [
+        "Rhode Island Energy"
+      ],
+      "all_gas": [
+        "National Grid Gas",
+        "Narragansett Electric Co. (gas Division of Ri)"
+      ]
+    },
+    "28213": {
+      "address_count": 7,
+      "electric_split": [
+        "Town of Huntersville - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Town of Huntersville - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "08865": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "PSE&G",
+        "Elizabethtown Gas Co."
+      ],
+      "all_electric": [
+        "Jersey Central Power & Light"
+      ],
+      "all_gas": [
+        "PSE&G",
+        "Elizabethtown Gas Co."
+      ]
+    },
+    "53941": {
+      "address_count": 9,
+      "electric_split": [
+        "Wisconsin Power & Light Company",
+        "Vernon Electric Cooperative"
+      ],
+      "gas_split": [
+        "WE Energies",
+        "Wisconsin Power and Light"
+      ],
+      "all_electric": [
+        "Wisconsin Power & Light Company",
+        "Vernon Electric Cooperative"
+      ],
+      "all_gas": [
+        "WE Energies",
+        "Wisconsin Power and Light"
+      ]
+    },
+    "33024": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Florida City Gas",
+        "Peoples Gas Systems,"
+      ],
+      "all_electric": [
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Peoples Gas Systems,"
+      ]
+    },
+    "27317": {
+      "address_count": 7,
+      "electric_split": [
+        "Randolph Electric Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Randolph Electric Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "80003": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "97205": {
+      "address_count": 13,
+      "electric_split": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "NW Natural"
+      ]
+    },
+    "80516": {
+      "address_count": 10,
+      "electric_split": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "all_gas": [
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "80526": {
+      "address_count": 17,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "Fort Collins Utilities Light & Power"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado"
+      ]
+    },
+    "90405": {
+      "address_count": 7,
+      "electric_split": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)",
+        "Southern California Gas Company"
+      ]
+    },
+    "14206": {
+      "address_count": 6,
+      "electric_split": [
+        "NYS Electric and Gas",
+        "National Grid"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "NYS Electric and Gas",
+        "National Grid"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "National Fuel Gas Distribution"
+      ]
+    },
+    "78155": {
+      "address_count": 16,
+      "electric_split": [
+        "Seguin Electric System",
+        "Guadalupe Valley Electric Cooperative, Inc."
+      ],
+      "gas_split": [
+        "Centerpoint Energy",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "Seguin Electric System",
+        "Guadalupe Valley Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Atmos Energy"
+      ]
+    },
+    "80534": {
+      "address_count": 7,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "PSC of Colorado"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "all_gas": [
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "31201": {
+      "address_count": 5,
+      "electric_split": [
+        "DTE Electric Company",
+        "Georgia Power"
+      ],
+      "gas_split": [
+        "AGL Resources",
+        "DTE Gas"
+      ],
+      "all_electric": [
+        "DTE Electric Company",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "DTE Gas"
+      ]
+    },
+    "78681": {
+      "address_count": 10,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "63136": {
+      "address_count": 8,
+      "electric_split": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": [
+        "Spire",
+        "Laclede Gas Co."
+      ],
+      "all_electric": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Spire",
+        "Laclede Gas Co."
+      ]
+    },
+    "84123": {
+      "address_count": 13,
+      "electric_split": [
+        "Murray City Power",
+        "Rocky Mountain Power"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Murray City Power",
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "98230": {
+      "address_count": 26,
+      "electric_split": [
+        "PSE",
+        "Blaine"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PSE",
+        "Blaine"
+      ],
+      "all_gas": [
+        "PSE"
+      ]
+    },
+    "76537": {
+      "address_count": 17,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Bartlett Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Bartlett Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "80212": {
+      "address_count": 11,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "33023": {
+      "address_count": 20,
+      "electric_split": null,
+      "gas_split": [
+        "Florida City Gas",
+        "Peoples Gas Systems,"
+      ],
+      "all_electric": [
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Peoples Gas Systems,"
+      ]
+    },
+    "11215": {
+      "address_count": 17,
+      "electric_split": [
+        "Idaho Power",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Con Edison Gas",
+        "Intermountain Gas"
+      ],
+      "all_electric": [
+        "Idaho Power",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Con Edison Gas",
+        "Intermountain Gas"
+      ]
+    },
+    "95330": {
+      "address_count": 5,
+      "electric_split": [
+        "Pacific Gas and Electric",
+        "Lathrop Irrigation District"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pacific Gas and Electric",
+        "Lathrop Irrigation District"
+      ],
+      "all_gas": [
+        "Pacific Gas and Electric"
+      ]
+    },
+    "63501": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Liberty Utilities Natural Gas",
+        "Spire Missouri"
+      ],
+      "all_electric": [
+        "Tri-county Electric Coop Assn"
+      ],
+      "all_gas": [
+        "Liberty Utilities Natural Gas",
+        "Spire Missouri"
+      ]
+    },
+    "79424": {
+      "address_count": 21,
+      "electric_split": [
+        "Southwestern Public Service Company",
+        "Lubbock Power & Light System"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Southwestern Public Service Company",
+        "Lubbock Power & Light System",
+        "South Plains Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "27127": {
+      "address_count": 6,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "02882": {
+      "address_count": 19,
+      "electric_split": null,
+      "gas_split": [
+        "National Grid",
+        "Narragansett Electric Co. (gas Division of Ri)"
+      ],
+      "all_electric": [
+        "Rhode Island Energy"
+      ],
+      "all_gas": [
+        "National Grid",
+        "Narragansett Electric Co. (gas Division of Ri)"
+      ]
+    },
+    "23602": {
+      "address_count": 5,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "gas_split": [
+        "Centerpoint Energy",
+        "Virginia Natural Gas"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Virginia Natural Gas"
+      ]
+    },
+    "28801": {
+      "address_count": 9,
+      "electric_split": [
+        "SCE",
+        "French Broad Elec Member"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "French Broad Elec Member"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Southern California Gas Company"
+      ]
+    },
+    "10013": {
+      "address_count": 7,
+      "electric_split": [
+        "Oncor Electric Delivery Company LLC",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Oncor Electric Delivery Company LLC",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Con Edison Gas"
+      ]
+    },
+    "10011": {
+      "address_count": 11,
+      "electric_split": [
+        "Portland General Electric",
+        "EPB (Electric Power Board)"
+      ],
+      "gas_split": [
+        "NW Natural",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Portland General Electric",
+        "EPB (Electric Power Board)",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "NW Natural",
+        "Con Edison Gas",
+        "Chattanooga Gas Company"
+      ]
+    },
+    "15201": {
+      "address_count": 12,
+      "electric_split": [
+        "Duquesne Light Company",
+        "Florida Power & Light"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duquesne Light Company",
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Peoples Gas (WEC Energy)"
+      ]
+    },
+    "01105": {
+      "address_count": 7,
+      "electric_split": [
+        "City Utilities of Springfield",
+        "Eversource Energy (NSTAR Electric)"
+      ],
+      "gas_split": [
+        "Eversource Gas",
+        "City Utilities of Springfield Gas"
+      ],
+      "all_electric": [
+        "City Utilities of Springfield",
+        "Eversource Energy (NSTAR Electric)"
+      ],
+      "all_gas": [
+        "Eversource Gas",
+        "City Utilities of Springfield Gas"
+      ]
+    },
+    "12210": {
+      "address_count": 11,
+      "electric_split": [
+        "National Grid",
+        "The Illuminating Company"
+      ],
+      "gas_split": [
+        "National Grid Gas",
+        "Dominion Energy Ohio"
+      ],
+      "all_electric": [
+        "National Grid",
+        "The Illuminating Company"
+      ],
+      "all_gas": [
+        "National Grid Gas",
+        "Dominion Energy Ohio"
+      ]
+    },
+    "02871": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "National Grid",
+        "Narragansett Electric Co. (gas Division of Ri)"
+      ],
+      "all_electric": [
+        "Rhode Island Energy"
+      ],
+      "all_gas": [
+        "National Grid",
+        "Narragansett Electric Co. (gas Division of Ri)"
+      ]
+    },
+    "76048": {
+      "address_count": 7,
+      "electric_split": [
+        "Tri-County Electric Cooperative, Inc.",
+        "Granbury Municipal Electric Department"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Tri-County Electric Cooperative, Inc.",
+        "Granbury Municipal Electric Department",
+        "United Electric Cooperative Services, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "11222": {
+      "address_count": 23,
+      "electric_split": null,
+      "gas_split": [
+        "National Grid",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Con Edison"
+      ],
+      "all_gas": [
+        "National Grid",
+        "Con Edison Gas"
+      ]
+    },
+    "43202": {
+      "address_count": 6,
+      "electric_split": [
+        "AEP Ohio",
+        "Benton Rea"
+      ],
+      "gas_split": [
+        "Columbia Gas of Ohio",
+        "Cascade Natural Gas"
+      ],
+      "all_electric": [
+        "AEP Ohio",
+        "Benton Rea"
+      ],
+      "all_gas": [
+        "Columbia Gas of Ohio",
+        "Cascade Natural Gas"
+      ]
+    },
+    "27614": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Dominion Energy"
+      ]
+    },
+    "10405": {
+      "address_count": 5,
+      "electric_split": [
+        "Municipal",
+        "SDG&E"
+      ],
+      "gas_split": [
+        "Puget Sound Energy Gas",
+        "Kansas Gas Service"
+      ],
+      "all_electric": [
+        "Municipal",
+        "SDG&E",
+        "Oncor Electric Delivery Company LLC",
+        "Pacific Gas and Electric",
+        "Seattle City Light"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas",
+        "Kansas Gas Service",
+        "San Diego Gas & Electric (SDG&E)",
+        "Atmos Energy",
+        "Pacific Gas & Electric (PG&E)"
+      ]
+    },
+    "83401": {
+      "address_count": 10,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Idaho Falls Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Idaho Falls Power"
+      ],
+      "all_gas": [
+        "Intermountain Gas Co.",
+        "Intermountain Gas"
+      ]
+    },
+    "20011": {
+      "address_count": 10,
+      "electric_split": [
+        "DTE Electric Company",
+        "Pepco"
+      ],
+      "gas_split": [
+        "DTE Gas",
+        "Washington Gas"
+      ],
+      "all_electric": [
+        "DTE Electric Company",
+        "Pepco"
+      ],
+      "all_gas": [
+        "DTE Gas",
+        "Washington Gas"
+      ]
+    },
+    "27312": {
+      "address_count": 11,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "27105": {
+      "address_count": 16,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "90017": {
+      "address_count": 7,
+      "electric_split": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)",
+        "Southern California Gas Company"
+      ]
+    },
+    "55987": {
+      "address_count": 13,
+      "electric_split": [
+        "Xcel Energy Colorado",
+        "MiEnergy Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Xcel Energy Colorado",
+        "MiEnergy Cooperative"
+      ],
+      "all_gas": [
+        "Northern States Power Co."
+      ]
+    },
+    "80634": {
+      "address_count": 15,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "PSC of Colorado"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "37343": {
+      "address_count": 12,
+      "electric_split": [
+        "SCE",
+        "EPB (Electric Power Board)"
+      ],
+      "gas_split": [
+        "Chattanooga Gas",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "EPB (Electric Power Board)"
+      ],
+      "all_gas": [
+        "Chattanooga Gas",
+        "Southern California Gas Company",
+        "Chattanooga Gas Company"
+      ]
+    },
+    "10467": {
+      "address_count": 7,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Con Edison"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Con Edison Gas"
+      ]
+    },
+    "23227": {
+      "address_count": 7,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "gas_split": [
+        "Centerpoint Energy",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Columbia Gas of Virginia"
+      ]
+    },
+    "84107": {
+      "address_count": 5,
+      "electric_split": [
+        "Murray City Power",
+        "Rocky Mountain Power"
+      ],
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Murray City Power",
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "28216": {
+      "address_count": 12,
+      "electric_split": [
+        "Town of Huntersville - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Town of Huntersville - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "11220": {
+      "address_count": 8,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Florida Power & Light"
+      ],
+      "gas_split": [
+        "Florida City Gas",
+        "Washington Gas"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Florida Power & Light",
+        "Pedernales Electric Cooperative, Inc.",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Washington Gas",
+        "Texas Gas Service",
+        "Con Edison Gas"
+      ]
+    },
+    "29483": {
+      "address_count": 15,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "18705": {
+      "address_count": 5,
+      "electric_split": [
+        "PPL Electric Utilities Corporation",
+        "UGI Utilities,"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PPL Electric Utilities Corporation",
+        "UGI Utilities,"
+      ],
+      "all_gas": [
+        "Ugi Penn Natural Gas",
+        "UGI Penn Natural Gas"
+      ]
+    },
+    "63368": {
+      "address_count": 6,
+      "electric_split": [
+        "Cuivre River Electric Coop",
+        "Ameren Missouri"
+      ],
+      "gas_split": [
+        "Spire",
+        "Laclede Gas Co."
+      ],
+      "all_electric": [
+        "Cuivre River Electric Coop",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Spire",
+        "Laclede Gas Co."
+      ]
+    },
+    "63701": {
+      "address_count": 5,
+      "electric_split": [
+        "Ozark Electric Coop Inc. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Ozark Electric Coop Inc. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Spire",
+        "Spire Missouri"
+      ]
+    },
+    "78725": {
+      "address_count": 11,
+      "electric_split": [
+        "Austin Energy",
+        "Bluebonnet Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Austin Energy",
+        "Bluebonnet Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "61104": {
+      "address_count": 9,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Duke Energy"
+      ],
+      "gas_split": [
+        "Nicor Gas",
+        "Duke Energy Gas"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Duke Energy"
+      ],
+      "all_gas": [
+        "Nicor Gas",
+        "Duke Energy Gas"
+      ]
+    },
+    "35633": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Alabama Gas",
+        "Florence Utilities Gas"
+      ],
+      "all_electric": [
+        "Florence Utilities"
+      ],
+      "all_gas": [
+        "Alabama Gas",
+        "Florence Utilities Gas"
+      ]
+    },
+    "75034": {
+      "address_count": 6,
+      "electric_split": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "CoServ Gas"
+      ]
+    },
+    "29577": {
+      "address_count": 7,
+      "electric_split": [
+        "Duke Energy Progress",
+        "Santee Cooper - SC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Progress",
+        "Santee Cooper - SC"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas"
+      ]
+    },
+    "72758": {
+      "address_count": 6,
+      "electric_split": [
+        "Fort Smith Fayetteville Springdale Fayetteville",
+        "City Utilities of Springfield"
+      ],
+      "gas_split": [
+        "Black Hills Energy",
+        "City Utilities of Springfield Gas"
+      ],
+      "all_electric": [
+        "Fort Smith Fayetteville Springdale Fayetteville",
+        "City Utilities of Springfield"
+      ],
+      "all_gas": [
+        "Black Hills Energy",
+        "City Utilities of Springfield Gas"
+      ]
+    },
+    "14207": {
+      "address_count": 8,
+      "electric_split": [
+        "National Grid",
+        "St Cloud"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "National Grid",
+        "St Cloud"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "National Fuel Gas Distribution",
+        "TECO Peoples Gas"
+      ]
+    },
+    "38501": {
+      "address_count": 7,
+      "electric_split": [
+        "Upper Cumberland E M C",
+        "Cookeville Electric Department"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Upper Cumberland E M C",
+        "Cookeville Electric Department"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "19403": {
+      "address_count": 13,
+      "electric_split": [
+        "PECO Energy Company",
+        "Snohomish Co. Pud #1"
+      ],
+      "gas_split": [
+        "PECO Energy Gas",
+        "Puget Sound Energy, Inc."
+      ],
+      "all_electric": [
+        "PECO Energy Company",
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "PECO Energy Gas",
+        "Puget Sound Energy, Inc.",
+        "Peco Energy Co."
+      ]
+    },
+    "13315": {
+      "address_count": 5,
+      "electric_split": [
+        "Avista Energy",
+        "The Illuminating Company"
+      ],
+      "gas_split": [
+        "Avista Gas",
+        "Dominion Energy Ohio"
+      ],
+      "all_electric": [
+        "Avista Energy",
+        "The Illuminating Company",
+        "Austin Energy",
+        "CPS Energy"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "Dominion Energy Ohio",
+        "Texas Gas Service",
+        "CPS Energy"
+      ]
+    },
+    "22003": {
+      "address_count": 6,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Snohomish Co. Pud #1"
+      ],
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "Washington Gas"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "Washington Gas"
+      ]
+    },
+    "10036": {
+      "address_count": 15,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Nicor Gas",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Nicor Gas",
+        "Con Edison Gas"
+      ]
+    },
+    "78504": {
+      "address_count": 7,
+      "electric_split": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "gas_split": [
+        "Texas Gas Service",
+        "Rio Grande Valley Gas Co."
+      ],
+      "all_electric": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Texas Gas Service",
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "13208": {
+      "address_count": 9,
+      "electric_split": [
+        "Avista Energy",
+        "National Grid"
+      ],
+      "gas_split": [
+        "Avista Gas",
+        "National Grid Gas"
+      ],
+      "all_electric": [
+        "Avista Energy",
+        "National Grid",
+        "PSC of Colorado",
+        "Evergy Kansas Metro, Inc."
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "National Grid Gas",
+        "Xcel Energy Colorado",
+        "Kansas Gas Service"
+      ]
+    },
+    "11233": {
+      "address_count": 5,
+      "electric_split": [
+        "Florida Power & Light",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Florida City Gas",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Florida Power & Light",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Con Edison Gas"
+      ]
+    },
+    "84037": {
+      "address_count": 9,
+      "electric_split": [
+        "Kaysville City Power",
+        "Rocky Mountain Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Kaysville City Power",
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy"
+      ]
+    },
+    "28227": {
+      "address_count": 6,
+      "electric_split": [
+        "Union Electric Membership Corp. - (nc)",
+        "Town of Huntersville - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Membership Corp. - (nc)",
+        "Town of Huntersville - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "84047": {
+      "address_count": 16,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "19007": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Peco Energy Co.",
+        "Public Service Elec. & Gas Co."
+      ],
+      "all_electric": [
+        "PECO Energy Company"
+      ],
+      "all_gas": [
+        "Peco Energy Co.",
+        "Public Service Elec. & Gas Co."
+      ]
+    },
+    "97058": {
+      "address_count": 5,
+      "electric_split": [
+        "Northern Wasco PUD",
+        "Wasco Electric Cooperative"
+      ],
+      "gas_split": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ],
+      "all_electric": [
+        "Northern Wasco PUD",
+        "Wasco Electric Cooperative"
+      ],
+      "all_gas": [
+        "Northwest Natural Gas Co.",
+        "NW Natural"
+      ]
+    },
+    "30016": {
+      "address_count": 9,
+      "electric_split": [
+        "Snapping Shoals Electric Membership Corporation",
+        "SCE"
+      ],
+      "gas_split": [
+        "Atlanta Gas Light",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "Snapping Shoals Electric Membership Corporation",
+        "SCE"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light",
+        "Southern California Gas Company"
+      ]
+    },
+    "45324": {
+      "address_count": 8,
+      "electric_split": [
+        "AES Ohio",
+        "Ohio Edison"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "AES Ohio",
+        "Ohio Edison"
+      ],
+      "all_gas": [
+        "CenterPoint Energy"
+      ]
+    },
+    "78573": {
+      "address_count": 14,
+      "electric_split": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Magic Valley Electric Cooperative, Inc.",
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co."
+      ]
+    },
+    "10065": {
+      "address_count": 5,
+      "electric_split": [
+        "Salt River Project (SRP)",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": [
+        "Con Edison Gas",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "Salt River Project (SRP)",
+        "Oncor Electric Delivery Company LLC",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Con Edison Gas",
+        "Atmos Energy",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "27529": {
+      "address_count": 11,
+      "electric_split": [
+        "North Carolina Eastern M P a",
+        "City of Wilson"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "North Carolina Eastern M P a",
+        "City of Wilson"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "11206": {
+      "address_count": 6,
+      "electric_split": [
+        "SCE",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Con Edison Gas",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "Con Edison"
+      ],
+      "all_gas": [
+        "Con Edison Gas",
+        "Southern California Gas Company"
+      ]
+    },
+    "27288": {
+      "address_count": 8,
+      "electric_split": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Carolinas,",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "64014": {
+      "address_count": 14,
+      "electric_split": null,
+      "gas_split": [
+        "Liberty Utilities Natural Gas",
+        "Spire Missouri"
+      ],
+      "all_electric": [
+        "Evergy"
+      ],
+      "all_gas": [
+        "Liberty Utilities Natural Gas",
+        "Spire Missouri"
+      ]
+    },
+    "28311": {
+      "address_count": 18,
+      "electric_split": [
+        "Fayetteville Public Works Commission",
+        "South River Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Fayetteville Public Works Commission",
+        "South River Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "80922": {
+      "address_count": 12,
+      "electric_split": [
+        "Colorado Springs Utilities",
+        "Mountain View Electric Association, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Colorado Springs Utilities",
+        "Mountain View Electric Association, Inc."
+      ],
+      "all_gas": [
+        "Colorado Springs Utilities"
+      ]
+    },
+    "17404": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "PECO Energy Gas",
+        "Columbia Gas of Pennsylvania"
+      ],
+      "all_electric": [
+        "Metropolitan Edison Company"
+      ],
+      "all_gas": [
+        "PECO Energy Gas",
+        "Columbia Gas of Pennsylvania"
+      ]
+    },
+    "97213": {
+      "address_count": 6,
+      "electric_split": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "NW Natural"
+      ]
+    },
+    "97209": {
+      "address_count": 7,
+      "electric_split": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Portland General Electric",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "NW Natural"
+      ]
+    },
+    "41017": {
+      "address_count": 6,
+      "electric_split": [
+        "Owen Electric Cooperative, Inc.",
+        "Duke Energy Kentucky, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Owen Electric Cooperative, Inc.",
+        "Duke Energy Kentucky, Inc."
+      ],
+      "all_gas": [
+        "Duke Energy Gas",
+        "Duke Energy Kentucky"
+      ]
+    },
+    "28025": {
+      "address_count": 7,
+      "electric_split": [
+        "Union Electric Membership Corp. - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Membership Corp. - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "45371": {
+      "address_count": 5,
+      "electric_split": [
+        "WE Energies",
+        "AES Ohio"
+      ],
+      "gas_split": [
+        "WE Energies",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "WE Energies",
+        "AES Ohio"
+      ],
+      "all_gas": [
+        "WE Energies",
+        "CenterPoint Energy"
+      ]
+    },
+    "75455": {
+      "address_count": 8,
+      "electric_split": [
+        "Southwestern Electric Power Company",
+        "Bowie-Cass Electric Cooperative, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Southwestern Electric Power Company",
+        "Bowie-Cass Electric Cooperative, Inc."
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "91104": {
+      "address_count": 6,
+      "electric_split": [
+        "Pasadena Water & Power",
+        "SCE"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pasadena Water & Power",
+        "SCE"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)"
+      ]
+    },
+    "19111": {
+      "address_count": 6,
+      "electric_split": [
+        "PECO Energy Company",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Philadelphia Gas Works (PGW)"
+      ],
+      "all_electric": [
+        "PECO Energy Company",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Philadelphia Gas Works (PGW)"
+      ]
+    },
+    "46112": {
+      "address_count": 9,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Hendricks Power Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "Hendricks Power Cooperative",
+        "Indianapolis Power & Light Company"
+      ],
+      "all_gas": [
+        "Indiana Gas and Electric"
+      ]
+    },
+    "32806": {
+      "address_count": 9,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "30093": {
+      "address_count": 8,
+      "electric_split": [
+        "City of Norcross Electric",
+        "Georgia Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "City of Norcross Electric",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light"
+      ]
+    },
+    "77338": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Centerpoint Energy",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Atmos Energy"
+      ]
+    },
+    "30013": {
+      "address_count": 6,
+      "electric_split": [
+        "Withlacoochee River Electric Cooperative",
+        "Snapping Shoals Electric Membership Corporation"
+      ],
+      "gas_split": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "Withlacoochee River Electric Cooperative",
+        "Snapping Shoals Electric Membership Corporation"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ]
+    },
+    "45503": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Columbia Gas of Ohio",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "Ohio Edison"
+      ],
+      "all_gas": [
+        "Columbia Gas of Ohio",
+        "CenterPoint Energy"
+      ]
+    },
+    "98387": {
+      "address_count": 8,
+      "electric_split": [
+        "Elmhurst Mutual",
+        "Tacoma"
+      ],
+      "gas_split": [
+        "Puget Sound Energy Gas",
+        "PSE"
+      ],
+      "all_electric": [
+        "Elmhurst Mutual",
+        "Tacoma"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas",
+        "PSE"
+      ]
+    },
+    "75068": {
+      "address_count": 13,
+      "electric_split": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "CoServ Gas"
+      ]
+    },
+    "29456": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "84054": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "78572": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Rio Grande Valley Gas Co.",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "AEP Texas Inc."
+      ],
+      "all_gas": [
+        "Rio Grande Valley Gas Co.",
+        "Atmos Energy"
+      ]
+    },
+    "32789": {
+      "address_count": 6,
+      "electric_split": [
+        "Winter Park",
+        "Duke Energy Florida"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Winter Park",
+        "Duke Energy Florida"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Peoples Gas Systems,"
+      ]
+    },
+    "78738": {
+      "address_count": 5,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "32092": {
+      "address_count": 18,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Florida Power & Light"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Commonwealth Edison",
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Peoples Gas (WEC Energy)"
+      ]
+    },
+    "84050": {
+      "address_count": 10,
+      "electric_split": [
+        "Rocky Mountain Power",
+        "Morgan City Corporation"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Rocky Mountain Power",
+        "Morgan City Corporation"
+      ],
+      "all_gas": [
+        "Dominion Energy"
+      ]
+    },
+    "08618": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "PSE&G Gas",
+        "Public Service Elec. & Gas Co."
+      ],
+      "all_electric": [
+        "Public Service Electric & Gas Co."
+      ],
+      "all_gas": [
+        "PSE&G Gas",
+        "Public Service Elec. & Gas Co."
+      ]
+    },
+    "27406": {
+      "address_count": 8,
+      "electric_split": [
+        "SCE",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": [
+        "Piedmont Natural Gas",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "SCE",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas",
+        "Southern California Gas Company"
+      ]
+    },
+    "47201": {
+      "address_count": 7,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Bartholomew County Remc"
+      ],
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida",
+        "Bartholomew County Remc"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "19602": {
+      "address_count": 5,
+      "electric_split": [
+        "Tacoma",
+        "Metropolitan Edison Company"
+      ],
+      "gas_split": [
+        "Puget Sound Energy Gas",
+        "UGI Utilities"
+      ],
+      "all_electric": [
+        "Tacoma",
+        "Metropolitan Edison Company"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas",
+        "UGI Utilities"
+      ]
+    },
+    "23310": {
+      "address_count": 5,
+      "electric_split": [
+        "A&N Electric Cooperative",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "gas_split": [
+        "Washington Gas",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "A&N Electric Cooperative",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Washington Gas",
+        "CenterPoint Energy"
+      ]
+    },
+    "47403": {
+      "address_count": 10,
+      "electric_split": null,
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Duke Energy Florida"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "98445": {
+      "address_count": 5,
+      "electric_split": [
+        "Elmhurst Mutual",
+        "Parkland P & L"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Elmhurst Mutual",
+        "Parkland P & L",
+        "Tacoma"
+      ],
+      "all_gas": [
+        "Puget Sound Energy Gas"
+      ]
+    },
+    "85205": {
+      "address_count": 7,
+      "electric_split": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Arizona Public Service (APS)",
+        "Salt River Project (SRP)"
+      ],
+      "all_gas": [
+        "Southwest Gas Corporation"
+      ]
+    },
+    "28120": {
+      "address_count": 6,
+      "electric_split": [
+        "City of Kings Mountain - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "City of Kings Mountain - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "34744": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Expand Energy",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Kissimmee Utility Authority (KUA)"
+      ],
+      "all_gas": [
+        "Expand Energy",
+        "TECO Peoples Gas"
+      ]
+    },
+    "10014": {
+      "address_count": 6,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Con Edison"
+      ],
+      "gas_split": [
+        "Columbia Gas of Virginia",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Con Edison",
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia",
+        "Con Edison Gas",
+        "CenterPoint Energy"
+      ]
+    },
+    "75402": {
+      "address_count": 6,
+      "electric_split": [
+        "Farmers Electric Cooperative, Inc.",
+        "Greenville Electric Utility System"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Farmers Electric Cooperative, Inc.",
+        "Greenville Electric Utility System"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "27546": {
+      "address_count": 7,
+      "electric_split": [
+        "South River Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "South River Elec Member",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "99336": {
+      "address_count": 7,
+      "electric_split": [
+        "Benton Co. Pud #1",
+        "Benton Rea"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Benton Co. Pud #1",
+        "Benton Rea"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas"
+      ]
+    },
+    "33308": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Florida City Gas",
+        "Peoples Gas Systems,"
+      ],
+      "all_electric": [
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Florida City Gas",
+        "Peoples Gas Systems,"
+      ]
+    },
+    "80216": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "10125": {
+      "address_count": 5,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "The Illuminating Company"
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "The Illuminating Company",
+        "Avista Energy",
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Columbia Gas of Virginia",
+        "Dominion Energy Ohio",
+        "Avista Gas"
+      ]
+    },
+    "42104": {
+      "address_count": 6,
+      "electric_split": [
+        "Bowling Green Municipal",
+        "Warren RECC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Bowling Green Municipal",
+        "Warren RECC"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "10443": {
+      "address_count": 6,
+      "electric_split": [
+        "Commonwealth Edison",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": [
+        "Peoples Gas (WEC Energy)",
+        "Southwest Gas Corporation"
+      ],
+      "all_electric": [
+        "Commonwealth Edison",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Peoples Gas (WEC Energy)",
+        "Southwest Gas Corporation"
+      ]
+    },
+    "47302": {
+      "address_count": 9,
+      "electric_split": null,
+      "gas_split": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ],
+      "all_electric": [
+        "Indiana Michigan Power Company"
+      ],
+      "all_gas": [
+        "CenterPoint Energy",
+        "Indiana Gas and Electric"
+      ]
+    },
+    "30058": {
+      "address_count": 14,
+      "electric_split": null,
+      "gas_split": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "AGL Resources",
+        "Atlanta Gas Light"
+      ]
+    },
+    "47546": {
+      "address_count": 8,
+      "electric_split": [
+        "Jasper Municipal Electric Utilities",
+        "Dubois Rec"
+      ],
+      "gas_split": [
+        "City of Jasper",
+        "Community Nat Gas Co."
+      ],
+      "all_electric": [
+        "Jasper Municipal Electric Utilities",
+        "Dubois Rec"
+      ],
+      "all_gas": [
+        "City of Jasper",
+        "Community Nat Gas Co."
+      ]
+    },
+    "11216": {
+      "address_count": 9,
+      "electric_split": null,
+      "gas_split": [
+        "National Grid",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Con Edison"
+      ],
+      "all_gas": [
+        "National Grid",
+        "Con Edison Gas"
+      ]
+    },
+    "13913": {
+      "address_count": 5,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Gulf Power Company (now FPL) - FL"
+      ],
+      "gas_split": [
+        "TECO Peoples Gas",
+        "Columbia Gas of Virginia"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Gulf Power Company (now FPL) - FL",
+        "AEP Texas Inc.",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas",
+        "Columbia Gas of Virginia",
+        "Texas Gas Service",
+        "Southern Union Gas"
+      ]
+    },
+    "55411": {
+      "address_count": 6,
+      "electric_split": [
+        "Xcel Energy Colorado",
+        "Commonwealth Edison"
+      ],
+      "gas_split": [
+        "Peoples Gas (WEC Energy)",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "Xcel Energy Colorado",
+        "Commonwealth Edison"
+      ],
+      "all_gas": [
+        "Peoples Gas (WEC Energy)",
+        "CenterPoint Energy"
+      ]
+    },
+    "35040": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "City of Calera",
+        "Alabaster Water & Gas Board"
+      ],
+      "all_electric": [
+        "Alabama Power Co."
+      ],
+      "all_gas": [
+        "City of Calera",
+        "Alabaster Water & Gas Board"
+      ]
+    },
+    "34219": {
+      "address_count": 5,
+      "electric_split": [
+        "Peace River Electric Cooperative",
+        "Florida Power & Light"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Peace River Electric Cooperative",
+        "Florida Power & Light"
+      ],
+      "all_gas": []
+    },
+    "22191": {
+      "address_count": 6,
+      "electric_split": [
+        "Dominion Virginia Power",
+        "Gascosage Electric Coop"
+      ],
+      "gas_split": [
+        "Columbia Gas of Virginia",
+        "Washington Gas"
+      ],
+      "all_electric": [
+        "Dominion Virginia Power",
+        "Gascosage Electric Coop"
+      ],
+      "all_gas": [
+        "Columbia Gas of Virginia",
+        "Washington Gas",
+        "Spire Missouri"
+      ]
+    },
+    "28083": {
+      "address_count": 5,
+      "electric_split": [
+        "Town of Landis - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Town of Landis - (nc)",
+        "City of Concord - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina"
+      ]
+    },
+    "15300": {
+      "address_count": 10,
+      "electric_split": [
+        "PSE",
+        "Singing River EPA"
+      ],
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "Spire Mississippi"
+      ],
+      "all_electric": [
+        "PSE",
+        "Singing River EPA"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "Spire Mississippi"
+      ]
+    },
+    "80233": {
+      "address_count": 9,
+      "electric_split": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "78749": {
+      "address_count": 5,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "28214": {
+      "address_count": 8,
+      "electric_split": [
+        "Town of Huntersville - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Town of Huntersville - (nc)",
+        "Energyunited Elec Member"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "80537": {
+      "address_count": 21,
+      "electric_split": [
+        "Poudre Valley REA, Inc.",
+        "Loveland Water & Power Dept."
+      ],
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "Poudre Valley REA, Inc.",
+        "Loveland Water & Power Dept."
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "37355": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Elk River Public Utility District",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Duck River Elec Member"
+      ],
+      "all_gas": [
+        "Elk River Public Utility District",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "75025": {
+      "address_count": 7,
+      "electric_split": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CoServ Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "32804": {
+      "address_count": 10,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "97838": {
+      "address_count": 7,
+      "electric_split": [
+        "Hermiston",
+        "Umatilla"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Hermiston",
+        "Umatilla"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas"
+      ]
+    },
+    "28390": {
+      "address_count": 6,
+      "electric_split": [
+        "Fayetteville Public Works Commission",
+        "Duke Energy Progress - (nc)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Fayetteville Public Works Commission",
+        "Duke Energy Progress - (nc)"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "14208": {
+      "address_count": 6,
+      "electric_split": [
+        "National Grid",
+        "Town of Huntersville - (nc)"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "Puget Sound Energy Gas"
+      ],
+      "all_electric": [
+        "National Grid",
+        "Town of Huntersville - (nc)",
+        "Elmhurst Mutual"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "Puget Sound Energy Gas",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "32828": {
+      "address_count": 5,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": []
+    },
+    "30135": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "City of Douglas Gas",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "GreyStone Power Corporation"
+      ],
+      "all_gas": [
+        "City of Douglas Gas",
+        "Atlanta Gas Light"
+      ]
+    },
+    "76244": {
+      "address_count": 6,
+      "electric_split": [
+        "Tri-County Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Tri-County Electric Cooperative, Inc.",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "98188": {
+      "address_count": 5,
+      "electric_split": [
+        "PSE",
+        "Seattle City Light"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PSE",
+        "Seattle City Light"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc."
+      ]
+    },
+    "75150": {
+      "address_count": 8,
+      "electric_split": [
+        "Hawaii Electric Light Company (HELCO)",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Hawaii Gas"
+      ],
+      "all_electric": [
+        "Hawaii Electric Light Company (HELCO)",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Hawaii Gas"
+      ]
+    },
+    "46168": {
+      "address_count": 5,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Hendricks Power Cooperative"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "Hendricks Power Cooperative"
+      ],
+      "all_gas": [
+        "Indiana Gas and Electric"
+      ]
+    },
+    "80260": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "77406": {
+      "address_count": 9,
+      "electric_split": null,
+      "gas_split": [
+        "Centerpoint Energy",
+        "Atmos Energy"
+      ],
+      "all_electric": [
+        "CenterPoint Energy Houston Electric,"
+      ],
+      "all_gas": [
+        "Centerpoint Energy",
+        "Atmos Energy",
+        "CenterPoint Energy"
+      ]
+    },
+    "84094": {
+      "address_count": 5,
+      "electric_split": null,
+      "gas_split": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ],
+      "all_electric": [
+        "Rocky Mountain Power"
+      ],
+      "all_gas": [
+        "Dominion Energy",
+        "Enbridge Gas Utah"
+      ]
+    },
+    "73132": {
+      "address_count": 7,
+      "electric_split": [
+        "Oklahoma Gas & Electric Co.",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Oklahoma Gas & Electric Co.",
+        "OG&E (Oklahoma Gas & Electric)"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "Oklahoma Natural Gas Co."
+      ]
+    },
+    "19127": {
+      "address_count": 7,
+      "electric_split": [
+        "Sam Houston Electric Cooperative, Inc.",
+        "PECO Energy Company"
+      ],
+      "gas_split": [
+        "Universal Natural Gas",
+        "Florida City Gas"
+      ],
+      "all_electric": [
+        "Sam Houston Electric Cooperative, Inc.",
+        "PECO Energy Company",
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Universal Natural Gas",
+        "Florida City Gas",
+        "Philadelphia Gas Works (PGW)"
+      ]
+    },
+    "77845": {
+      "address_count": 7,
+      "electric_split": [
+        "BTU Rural Electric Division",
+        "College Station Utilities"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "BTU Rural Electric Division",
+        "College Station Utilities"
+      ],
+      "all_gas": [
+        "Atmos Energy"
+      ]
+    },
+    "41501": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "LG&E",
+        "City of Pikeville"
+      ],
+      "all_electric": [
+        "Kentucky Power Company"
+      ],
+      "all_gas": [
+        "LG&E",
+        "City of Pikeville"
+      ]
+    },
+    "80221": {
+      "address_count": 10,
+      "electric_split": null,
+      "gas_split": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ],
+      "all_electric": [
+        "PSC of Colorado"
+      ],
+      "all_gas": [
+        "Xcel Energy Colorado",
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "75217": {
+      "address_count": 6,
+      "electric_split": [
+        "Idaho Power",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "gas_split": [
+        "Atmos Energy",
+        "Intermountain Gas"
+      ],
+      "all_electric": [
+        "Idaho Power",
+        "Oncor Electric Delivery Company LLC"
+      ],
+      "all_gas": [
+        "Atmos Energy",
+        "Intermountain Gas"
+      ]
+    },
+    "32839": {
+      "address_count": 9,
+      "electric_split": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "OUC"
+      ],
+      "all_gas": [
+        "TECO Peoples Gas"
+      ]
+    },
+    "63105": {
+      "address_count": 7,
+      "electric_split": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Union Electric Co. - (mo)",
+        "Ameren Missouri"
+      ],
+      "all_gas": [
+        "Laclede Gas Co."
+      ]
+    },
+    "44691": {
+      "address_count": 8,
+      "electric_split": [
+        "AEP Ohio",
+        "Holmes-Wayne Electric"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "AEP Ohio",
+        "Holmes-Wayne Electric"
+      ],
+      "all_gas": [
+        "East Ohio Gas Co/dominion"
+      ]
+    },
+    "33896": {
+      "address_count": 11,
+      "electric_split": [
+        "Kissimmee Utility Authority (KUA)",
+        "Duke Energy Florida,"
+      ],
+      "gas_split": [
+        "Expand Energy",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Kissimmee Utility Authority (KUA)",
+        "Duke Energy Florida,"
+      ],
+      "all_gas": [
+        "Expand Energy",
+        "TECO Peoples Gas"
+      ]
+    },
+    "52214": {
+      "address_count": 6,
+      "electric_split": [
+        "Linn County Rural Electric Coop.",
+        "Interstate Power and Light Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Linn County Rural Electric Coop.",
+        "Interstate Power and Light Company"
+      ],
+      "all_gas": [
+        "Berkshire Hathaway Energy"
+      ]
+    },
+    "19144": {
+      "address_count": 6,
+      "electric_split": [
+        "PECO Energy Company",
+        "Independence Power & Light - MO"
+      ],
+      "gas_split": [
+        "Spire",
+        "Philadelphia Gas Works (PGW)"
+      ],
+      "all_electric": [
+        "PECO Energy Company",
+        "Independence Power & Light - MO"
+      ],
+      "all_gas": [
+        "Spire",
+        "Philadelphia Gas Works (PGW)"
+      ]
+    },
+    "35950": {
+      "address_count": 9,
+      "electric_split": [
+        "Guntersville Electric Board",
+        "Albertville Municipal Utilities Board"
+      ],
+      "gas_split": [
+        "Marshall Cty Gas Dept",
+        "Spire Alabama"
+      ],
+      "all_electric": [
+        "Guntersville Electric Board",
+        "Albertville Municipal Utilities Board"
+      ],
+      "all_gas": [
+        "Marshall Cty Gas Dept",
+        "Spire Alabama"
+      ]
+    },
+    "95747": {
+      "address_count": 9,
+      "electric_split": [
+        "Roseville Electric",
+        "Pacific Gas and Electric"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Roseville Electric",
+        "Pacific Gas and Electric"
+      ],
+      "all_gas": [
+        "Pacific Gas and Electric"
+      ]
+    },
+    "29210": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "30134": {
+      "address_count": 5,
+      "electric_split": [
+        "City of Douglas Electric",
+        "Georgia Power"
+      ],
+      "gas_split": [
+        "City of Douglas Gas",
+        "Atlanta Gas Light"
+      ],
+      "all_electric": [
+        "City of Douglas Electric",
+        "Georgia Power"
+      ],
+      "all_gas": [
+        "City of Douglas Gas",
+        "Atlanta Gas Light"
+      ]
+    },
+    "73034": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "Oklahoma Natural Gas",
+        "Cashion Public Works Authority"
+      ],
+      "all_electric": [
+        "OG&E"
+      ],
+      "all_gas": [
+        "Oklahoma Natural Gas",
+        "Cashion Public Works Authority"
+      ]
+    },
+    "37043": {
+      "address_count": 8,
+      "electric_split": [
+        "CDE Lightband",
+        "Cumberland Elec Member"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "CDE Lightband",
+        "Cumberland Elec Member"
+      ],
+      "all_gas": [
+        "Clarksville Gas & Water",
+        "Clarksville Gas Dept."
+      ]
+    },
+    "30742": {
+      "address_count": 14,
+      "electric_split": [
+        "North Georgia Electric Membership Corporation",
+        "SDG&E"
+      ],
+      "gas_split": [
+        "Atlanta Gas Light",
+        "Southern California Gas Company"
+      ],
+      "all_electric": [
+        "North Georgia Electric Membership Corporation",
+        "SDG&E"
+      ],
+      "all_gas": [
+        "Atlanta Gas Light",
+        "Southern California Gas Company"
+      ]
+    },
+    "98258": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Puget Sound Energy, Inc.",
+        "PSE"
+      ],
+      "all_electric": [
+        "Snohomish Co. Pud #1"
+      ],
+      "all_gas": [
+        "Puget Sound Energy, Inc.",
+        "PSE"
+      ]
+    },
+    "78734": {
+      "address_count": 5,
+      "electric_split": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Pedernales Electric Cooperative, Inc.",
+        "Austin Energy"
+      ],
+      "all_gas": [
+        "Texas Gas Service"
+      ]
+    },
+    "29407": {
+      "address_count": 8,
+      "electric_split": null,
+      "gas_split": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ],
+      "all_electric": [
+        "Dominion Energy South Carolina"
+      ],
+      "all_gas": [
+        "South Carolina Electric & Gas",
+        "Dominion Energy Gas"
+      ]
+    },
+    "72936": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Arkansas Oklahoma Gas",
+        "CenterPoint Energy"
+      ],
+      "all_electric": [
+        "Fort Smith Fayetteville Springdale Fayetteville"
+      ],
+      "all_gas": [
+        "Arkansas Oklahoma Gas",
+        "CenterPoint Energy"
+      ]
+    },
+    "97701": {
+      "address_count": 5,
+      "electric_split": [
+        "Midstate Electric Cooperative",
+        "Berkshire Hathaway Energy"
+      ],
+      "gas_split": [
+        "Cascade Natural Gas",
+        "NW Natural"
+      ],
+      "all_electric": [
+        "Midstate Electric Cooperative",
+        "Berkshire Hathaway Energy"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "NW Natural"
+      ]
+    },
+    "18301": {
+      "address_count": 7,
+      "electric_split": [
+        "PPL Electric Utilities Corporation",
+        "Metropolitan Edison Company"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PPL Electric Utilities Corporation",
+        "Metropolitan Edison Company"
+      ],
+      "all_gas": [
+        "Ppl Gas Utilities"
+      ]
+    },
+    "39206": {
+      "address_count": 6,
+      "electric_split": [
+        "Entergy Mississippi, Inc.",
+        "DTE Electric Company"
+      ],
+      "gas_split": [
+        "DTE Gas",
+        "Spire Mississippi"
+      ],
+      "all_electric": [
+        "Entergy Mississippi, Inc.",
+        "DTE Electric Company"
+      ],
+      "all_gas": [
+        "DTE Gas",
+        "Spire Mississippi"
+      ]
+    },
+    "38016": {
+      "address_count": 5,
+      "electric_split": [
+        "Memphis Light Gas & Water",
+        "Entergy Arkansas LLC"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Memphis Light Gas & Water",
+        "Entergy Arkansas LLC"
+      ],
+      "all_gas": [
+        "Memphis Light Gas & Water",
+        "Memphis Light Gas & Water Div"
+      ]
+    },
+    "14222": {
+      "address_count": 6,
+      "electric_split": [
+        "National Grid",
+        "The Illuminating Company"
+      ],
+      "gas_split": [
+        "National Fuel",
+        "Dominion Energy Ohio"
+      ],
+      "all_electric": [
+        "National Grid",
+        "The Illuminating Company"
+      ],
+      "all_gas": [
+        "National Fuel",
+        "Dominion Energy Ohio"
+      ]
+    },
+    "53546": {
+      "address_count": 7,
+      "electric_split": null,
+      "gas_split": [
+        "Wisconsin Power and Light",
+        "Alliant Energy Gas"
+      ],
+      "all_electric": [
+        "Wisconsin Power & Light Company"
+      ],
+      "all_gas": [
+        "Wisconsin Power and Light",
+        "Alliant Energy Gas"
+      ]
+    },
+    "80601": {
+      "address_count": 8,
+      "electric_split": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "PSC of Colorado",
+        "United Power, Inc."
+      ],
+      "all_gas": [
+        "Public Service Co. of Colorado"
+      ]
+    },
+    "99206": {
+      "address_count": 6,
+      "electric_split": [
+        "Avista Energy",
+        "Vera Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Avista Energy",
+        "Vera Water & Power"
+      ],
+      "all_gas": [
+        "Avista Gas",
+        "Avista"
+      ]
+    },
+    "37072": {
+      "address_count": 6,
+      "electric_split": [
+        "Nashville Electric Service",
+        "CEMC (Cumberland Electric Membership Corporation)- TN"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Nashville Electric Service",
+        "CEMC (Cumberland Electric Membership Corporation)- TN"
+      ],
+      "all_gas": [
+        "Piedmont Natural Gas"
+      ]
+    },
+    "11221": {
+      "address_count": 11,
+      "electric_split": [
+        "Con Edison",
+        "CPS Energy"
+      ],
+      "gas_split": [
+        "Southern California Gas (SoCalGas)",
+        "Con Edison Gas"
+      ],
+      "all_electric": [
+        "Con Edison",
+        "CPS Energy",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)",
+        "Con Edison Gas",
+        "CPS Energy"
+      ]
+    },
+    "98284": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Cascade Natural Gas",
+        "PSE"
+      ],
+      "all_electric": [
+        "PSE"
+      ],
+      "all_gas": [
+        "Cascade Natural Gas",
+        "PSE"
+      ]
+    },
+    "34221": {
+      "address_count": 5,
+      "electric_split": [
+        "Peace River Electric Cooperative",
+        "Florida Power & Light"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Peace River Electric Cooperative",
+        "Florida Power & Light"
+      ],
+      "all_gas": [
+        "Peoples Gas Systems,"
+      ]
+    },
+    "90023": {
+      "address_count": 5,
+      "electric_split": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "SCE",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Southern California Gas (SoCalGas)"
+      ]
+    },
+    "27332": {
+      "address_count": 6,
+      "electric_split": null,
+      "gas_split": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ],
+      "all_electric": [
+        "Central Electric Membership Corp. - (nc)"
+      ],
+      "all_gas": [
+        "Public Service Co. of North Carolina",
+        "Piedmont Natural Gas"
+      ]
+    },
+    "47909": {
+      "address_count": 6,
+      "electric_split": [
+        "Duke Energy Florida",
+        "Tipmont Remc"
+      ],
+      "gas_split": null,
+      "all_electric": [
+        "Duke Energy Florida",
+        "Tipmont Remc"
+      ],
+      "all_gas": [
+        "CenterPoint Energy"
+      ]
+    },
+    "15922": {
+      "address_count": 7,
+      "electric_split": [
+        "Avista Energy",
+        "Pacific Gas and Electric"
+      ],
+      "gas_split": [
+        "Pacific Gas & Electric (PG&E)",
+        "TECO Peoples Gas"
+      ],
+      "all_electric": [
+        "Avista Energy",
+        "Pacific Gas and Electric",
+        "Florida Power & Light",
+        "Los Angeles Department of Water & Power"
+      ],
+      "all_gas": [
+        "Pacific Gas & Electric (PG&E)",
+        "TECO Peoples Gas",
+        "Southern California Gas (SoCalGas)",
+        "Avista Gas"
+      ]
+    }
+  }
+}

@@ -1,0 +1,831 @@
+{
+  "_metadata": {
+    "description": "ZIPs where spreadsheet and API disagree - need manual verification",
+    "total_zips": 7693,
+    "workflow": "For each ZIP, Google the providers to find official service territory maps"
+  },
+  "queue": [
+    {
+      "zip": "84321",
+      "disagreement_count": 410,
+      "electric": {
+        "spreadsheet_says": [
+          "City of Logan",
+          "City of Logan, Rocky Mountain Power",
+          "Rocky Mountain Power, City of Logan",
+          "Rocky Mountain Power",
+          "PacifiCorp (Pacific Power), City of Logan",
+          "Entergy Louisiana, City of Logan",
+          "Entergy Louisiana",
+          "PacifiCorp (Pacific Power)"
+        ],
+        "api_says": [
+          "Logan City Light & Power",
+          "Rocky Mountain Power"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas UT",
+          "Enbridge Gas",
+          "Enbridge Gas UT, Enbridge Gas",
+          "Rocky Mountain Power",
+          "Enbridge Gas, Enbridge Gas UT",
+          "Dominion Energy, Enbridge Gas",
+          "Enbridge Gas Ohio, Enbridge Gas",
+          "Enbridge Gas, Enbridge Gas Ohio",
+          "Rocky Mountain Power, Enbridge Gas",
+          "Dominion NC, Enbridge Gas",
+          "Enbridge Gas Ohio"
+        ],
+        "api_says": [
+          "Dominion Energy",
+          "Enbridge Gas Utah"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "1270 W 3440, Nibley, UT 84321",
+        "1266 W 1900 S, Logan, UT 84321",
+        "1328 W 1925 S, Logan, UT 84321",
+        "1160 Fox Farm Rd, Logan, UT 84321",
+        "119 S Main St, Logan, UT 84321"
+      ]
+    },
+    {
+      "zip": "84043",
+      "disagreement_count": 338,
+      "electric": {
+        "spreadsheet_says": [
+          "Lehi City, Rocky Mountain Power",
+          "Lehi City",
+          "Rocky Mountain Power",
+          "Lehi City , Rocky Mountain Power",
+          "Rocky Mountain Power, Lehi City",
+          "PacifiCorp (Pacific Power)",
+          "PacifiCorp (Pacific Power), Lehi Power",
+          "Rocky Mountain Power, Lehi City - UT",
+          "Rocky Mountain Power, Lehi Power"
+        ],
+        "api_says": [
+          "Lehi City Power",
+          "Rocky Mountain Power",
+          "Eagle Mountain City"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas UT, Enbridge Gas",
+          "Enbridge Gas UT",
+          "Enbridge Gas",
+          "Enbridge Gas, Enbridge Gas Utah",
+          "Enbridge Gas Ohio",
+          "Enbridge Gas, Enbridge Gas Ohio",
+          "Enbridge Gas, Enbridge Gas Ohio, Rocky Mountain Power",
+          "Enbridge Gas, Enbridge Gas UT",
+          "Enbridge Gas Ohio, Enbridge Gas",
+          "Dominion NC",
+          "Enbridge Gas UT, Enbridge Gas Ohio, Rocky Mountain Power",
+          "Rock Mountain Power, Enbridge Gas",
+          "Rocky Mountain Power, Enbridge Gas",
+          "Enbridge Gas, Enbridge Gas Ohio, Dominion NC",
+          "Enbridge Gas, Dominion NC"
+        ],
+        "api_says": [
+          "Dominion Energy"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "2353 N Holbrook Way, Lehi, UT 84043",
+        "4821 N Vialetti Way, Lehi, UT 84043",
+        "3148 N Prairie Grass Dr, Lehi, UT 84043",
+        "1023 N Sawtooth Way 303, Lehi, UT 84043",
+        "1023 Sawtooth Wy 303, Lehi, UT 84043"
+      ]
+    },
+    {
+      "zip": "27858",
+      "disagreement_count": 334,
+      "electric": {
+        "spreadsheet_says": [
+          "Greenville Utilities Commission (GUC) - NC",
+          "Duke Energy",
+          "Greenville Utilities Commission (GUC) - NC, Duke Energy"
+        ],
+        "api_says": [
+          "City of Wilson",
+          "Edgecombe-martin County E M C"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Greenville Utilities Commission (GUC) - NC",
+          "Piedmont Natural Gas, Greenville Utilities Commission (GUC) - NC",
+          "Greenville Utilities Commission (GUC) - NC, Piedmont Natural Gas",
+          "Piedmont Natural Gas",
+          "Dominion NC, Greenville Utilities Commission (GUC) - NC",
+          "GUC, Greenville Utilities Commission (GUC) - NC"
+        ],
+        "api_says": [
+          "Greenville Utilities Commission Gas",
+          "Piedmont Natural Gas"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "206 S Elm St N, Greenville, NC 27858",
+        "208 S Elm St Apt 105, Greenville, NC 27858",
+        "208 S Elm St, Greenville, NC 27858",
+        "1400 E 1st St, Greenville, NC 27858",
+        "1092 Cheyenne Ct, Greenville, NC 27858"
+      ]
+    },
+    {
+      "zip": "65584",
+      "disagreement_count": 318,
+      "electric": {
+        "spreadsheet_says": [
+          "Saint Robert MO",
+          "Saint Robert MO, City of st. Robert utilities ",
+          "City of Waynesville-MO"
+        ],
+        "api_says": [
+          "Laclede Electric Coop,",
+          "Gascosage Electric Coop"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Saint Robert Utilities - MO",
+          "Amerigas Propane",
+          "Saint Robert Utilities - MO, Amerigas Propane",
+          "Amerigas Propane, Saint Robert Utilities - MO",
+          "Goodrich Gas-MO"
+        ],
+        "api_says": [
+          "City of St. Robert",
+          "Spire Missouri"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "100 Burson Blvd 32H, St Robert, MO 65584",
+        "100 Bogad St B, St Robert, MO 65584",
+        "100 Burson Blvd 30H, St Robert, MO 65584",
+        "100 Carter St 50L, St Robert, MO 65584",
+        "100 Burson Blvd 31H, St Robert, MO 65584"
+      ]
+    },
+    {
+      "zip": "84601",
+      "disagreement_count": 257,
+      "electric": {
+        "spreadsheet_says": [
+          "City of Provo - UT, Rocky Mountain Power",
+          "Rocky Mountain Power, City of Provo - UT",
+          "City of Provo - UT",
+          "Rocky Mountain Power",
+          "City of Provo - UT, PacifiCorp (Pacific Power)"
+        ],
+        "api_says": [
+          "Provo City Power",
+          "Rocky Mountain Power"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas UT, Enbridge Gas",
+          "Enbridge Gas Ohio, Enbridge Gas",
+          "Enbridge Gas Ohio",
+          "Enbridge Gas, Enbridge Gas UT",
+          "Enbridge Gas, Enbridge Gas Ohio",
+          "Enbridge Gas, Dominion NC"
+        ],
+        "api_says": [
+          "Enbridge Gas Utah"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "1236 N 350 1220, Provo, UT 84601",
+        "363 N 1220 W, Provo, UT 84601",
+        "663 W 970 665, Provo, UT 84601",
+        "902 Aspen Way, Provo, UT 84601",
+        "970 W 663, Provo, UT 84601"
+      ]
+    },
+    {
+      "zip": "50014",
+      "disagreement_count": 257,
+      "electric": {
+        "spreadsheet_says": [
+          "City of Ames - IA",
+          "Alliant Energy",
+          "Florida Power and Light",
+          "Alliant Energy, City of Ames - IA",
+          "City of Ames - IA, Florida Power and Light",
+          "Florida Power and Light, City of Ames - IA",
+          "City of Ames - IA, Alliant Energy",
+          "Florida Power and Light, City of Ames Utilities"
+        ],
+        "api_says": [
+          "Ames Municipal",
+          "Interstate Power and Light Company"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Alliant Gas",
+          "Midamerica Energy Company"
+        ],
+        "api_says": [
+          "Alliant Energy"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "1401 Georgia, Ames, IA 50014",
+        "4008 Ontario St, Ames, IA 50014",
+        "2313 Baker St, Ames, IA 50014",
+        "2336 Knapp St, Ames, IA 50014",
+        "419 Lynn Ave, Ames, IA 50014"
+      ]
+    },
+    {
+      "zip": "80214",
+      "disagreement_count": 226,
+      "electric": {
+        "spreadsheet_says": [
+          "Xcel Energy",
+          "Moorhead Public Service - MN"
+        ],
+        "api_says": [
+          "PSC of Colorado"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Xcel Energy"
+        ],
+        "api_says": [
+          "Public Service Co. of Colorado"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "1020 Carr St 2, Lakewood, CO 80214",
+        "5865 W 11th Ave 101A, Lakewood, CO 80214",
+        "1020 Carr St 1, Lakewood, CO 80214",
+        "5855 W 11th Ave 304B, Lakewood, CO 80214",
+        "1020 Carr St 1B, Lakewood, CO 80214"
+      ]
+    },
+    {
+      "zip": "27713",
+      "disagreement_count": 221,
+      "electric": {
+        "spreadsheet_says": [
+          "Dominion North Carolina Power",
+          "Southern California Edison",
+          "Dominion Energy, Duke Energy",
+          "Duke Energy, Dominion North Carolina Power",
+          "Dominion Energy"
+        ],
+        "api_says": [
+          "Duke Energy Progress - (nc)",
+          "SCE"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Dominion NC",
+          "Dominion NC, Enbridge Gas North Carolina",
+          "Enbridge Gas North Carolina, Dominion NC",
+          "Enbridge Gas",
+          "Enbridge Gas Ohio",
+          "Enbridge Gas NC",
+          "Enbridge Gas North Carolina",
+          "Dominion NC, Enbridge Gas"
+        ],
+        "api_says": [
+          "Dominion Energy",
+          "Public Service Co. of North Carolina"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "1121 Latitude Dr, Durham, NC 27713",
+        "1017 Red Hat Ln, Durham, NC 27713",
+        "24 E Gleewood Pl, Durham, NC 27713",
+        "1509 Clermont Rd Apt T24, Durham, NC 27713",
+        "607 Bucknell Way, Durham, NC 27713"
+      ]
+    },
+    {
+      "zip": "27616",
+      "disagreement_count": 220,
+      "electric": {
+        "spreadsheet_says": [
+          "Duke Energy",
+          "Dominion North Carolina Power, Dominion Energy, Duke Energy",
+          "Dominion North Carolina Power",
+          "Duke Energy, Wake Electric Membership Corporation",
+          "Wake Electric Membership Corporation",
+          "Wake Electric Membership Corporation, Duke Energy",
+          "Dominion North Carolina Power, Duke Energy",
+          "Duke Energy, Enbridge Gas",
+          "Dominion North Carolina Power, Duke Energy Corporation",
+          "Duke Energy, Dominion Energy",
+          "Southern California Edison",
+          "Duke Energy, Dominion North Carolina Power"
+        ],
+        "api_says": [
+          "North Carolina Eastern M P a",
+          "Wake Electric Membership",
+          "SCE"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas North Carolina",
+          "Dominion NC",
+          "Enbridge Gas Ohio",
+          "Piedmont Natural Gas",
+          "Enbridge Gas NC",
+          "Frontier Natural Gas",
+          "Enbridge Gas",
+          "Duke Energy",
+          "Duke Energy, Dominion NC",
+          "Enbridge Gas Ohio, Duke Energy",
+          "Duke Energy, Piedmont Natural Gas"
+        ],
+        "api_says": [
+          "Dominion Energy",
+          "Enbridge Gas North Carolina",
+          "Public Service Co. of North Carolina"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "8321 Glenwood Springs Ct 1, Raleigh, NC 27616",
+        "4408 Walker Hallow St, Raleigh, NC 27616",
+        "7608 Birchmoor Way, Raleigh, NC 27616",
+        "8321 Glenwood Springs Ct, Raleigh, NC 27616",
+        "3625 Hamilton Mill Dr, Raleigh, NC 27616"
+      ]
+    },
+    {
+      "zip": "28215",
+      "disagreement_count": 195,
+      "electric": {
+        "spreadsheet_says": [
+          "Duke Energy",
+          "Duke Energy, Enbridge Gas",
+          "Union Power Cooperative",
+          "Duke Energy, Dominion Energy",
+          "Snohomish County PUD"
+        ],
+        "api_says": [
+          "Town of Huntersville - (nc)",
+          "City of Concord - (nc)",
+          "Union Electric Membership Corp. - (nc)",
+          "Snohomish Co. Pud #1"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas Ohio"
+        ],
+        "api_says": [
+          "Piedmont Natural Gas"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "2438 Finchley Dr, Charlotte, NC 28215",
+        "5729 Timbertop Ln, Charlotte, NC 28215",
+        "7024 Milport Pl, Charlotte, NC 28215",
+        "2310 Transatlantic Ave, Charlotte, NC 28215",
+        "7126 Fauna Dr, Charlotte, NC 28215"
+      ]
+    },
+    {
+      "zip": "30349",
+      "disagreement_count": 191,
+      "electric": {
+        "spreadsheet_says": [
+          "Georgia Power Company, City of East Point",
+          "Georgia Power Company",
+          "College Park Power",
+          "GreyStone Power Corporation",
+          "College Park Power-GA",
+          "College Park Power, Reliant Energy, Georgia Power Company",
+          "Georgia Power Company, Reliant Energy",
+          "Reliant Energy, Georgia Power Company",
+          "Reliant Energy, Georgia Power Company, College Park Power",
+          "College Park Power, Georgia Power Company, Reliant Energy",
+          "Reliant Energy, College Park Power, Georgia Power Company",
+          "College Park Power, Georgia Power Company"
+        ],
+        "api_says": [
+          "City of East Point Electric",
+          "City of College Park Electric",
+          "Georgia Power"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Gas South",
+          "Georgia Natural Gas-Atlanta Area PM",
+          "Georgia Natural Gas",
+          "Gas South Avalon",
+          "Scana Energy, Georgia Natural Gas-Atlanta Area PM, Gas South Avalon",
+          "Georgia Natural Gas, Scana Energy, Gas South Avalon, Georgia Natural Gas-Atlanta Area PM",
+          "Georgia Natural Gas, Georgia Natural Gas-Atlanta Area PM",
+          "Georgia Natural Gas-Atlanta Area PM, Georgia Natural Gas",
+          "Georgia Natural Gas-Atlanta Area PM, Gas South Avalon, Scana Energy",
+          "Gas South, Georgia Natural Gas",
+          "Scana Energy, Gas South Avalon, Georgia Natural Gas-Atlanta Area PM",
+          "Scana Energy",
+          "Gas South Avalon, Georgia Natural Gas-Atlanta Area PM",
+          "Georgia Natural Gas, Gas South",
+          "Gas South Avalon, Georgia Natural Gas-Atlanta Area PM, Georgia Natural Gas",
+          "Georgia Natural Gas, Gas South Avalon, Georgia Natural Gas-Atlanta Area PM",
+          "Georgia Natural Gas-Atlanta Area PM, Gas South Avalon, Georgia Natural Gas",
+          "Georgia Natural Gas-Atlanta Area PM, Gas South Avalon",
+          "Georgia Natural Gas, Gas South Avalon",
+          "Gas South, Georgia Natural Gas-Atlanta Area PM, Scana Energy",
+          "Georgia Natural Gas, Georgia Natural Gas-Atlanta Area PM, Gas South Avalon",
+          "Gas South Avalon, Georgia Natural Gas-Atlanta Area PM, Scana Energy",
+          "City of College Park, Georgia Natural Gas-Atlanta Area PM, Gas South Avalon",
+          "Atlanta Gas Light Co - GA",
+          "Scana Energy, Georgia Natural Gas-Atlanta Area PM, Gas South Avalon, Georgia Natural Gas",
+          "Gas South Avalon, Georgia Natural Gas"
+        ],
+        "api_says": [
+          "Atlanta Gas Light",
+          "AGL Resources"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "4527 Heritage Pkwy, Atlanta, GA 30349",
+        "140 Prattling Ct, Atlanta, GA 30349",
+        "6255 Topaz Trl, College Park, GA 30349",
+        "95 Hidden Brook Ct, Atlanta, GA 30349",
+        "1682 Broad River Rd, Atlanta, GA 30349"
+      ]
+    },
+    {
+      "zip": "32404",
+      "disagreement_count": 185,
+      "electric": {
+        "spreadsheet_says": [
+          "Florida Power and Light",
+          "GCEC",
+          "FPL. Palm Coast (FL)",
+          "Florida Public Utilities"
+        ],
+        "api_says": [
+          "Gulf Power Company (now FPL) - FL"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "TECO Peoples Gas"
+        ],
+        "api_says": [
+          "Peoples Gas Systems,"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "105 N Shoreview Dr, Panama City, FL 32404",
+        "103 Salt Marsh Way, Panama City, FL 32404",
+        "3914 E 11th St Apt 403, Panama City, FL 32404",
+        "3914 E 11th St Apt 103, Panama City, FL 32404",
+        "3914 E 11th St Apt 301, Panama City, FL 32404"
+      ]
+    },
+    {
+      "zip": "27606",
+      "disagreement_count": 180,
+      "electric": {
+        "spreadsheet_says": [
+          "Duke Energy",
+          "Dominion North Carolina Power",
+          "Dominion North Carolina Power, Duke Energy",
+          "Duke Energy, Dominion North Carolina Power"
+        ],
+        "api_says": [
+          "North Carolina Eastern M P a",
+          "Duke Energy Progress - (nc)"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas North Carolina",
+          "Enbridge Gas NC",
+          "Dominion NC",
+          "Enbridge Gas Ohio",
+          "Piedmont Natural Gas",
+          "Enbridge Gas Ohio, Piedmont Natural Gas",
+          "Dominion NC, Piedmont Natural Gas",
+          "Enbridge Gas",
+          "Piedmont Natural Gas, Dominion NC",
+          "Piedmont Natural Gas, Enbridge Gas Ohio",
+          "Enbridge Gas NC, Enbridge Gas North Carolina"
+        ],
+        "api_says": [
+          "Dominion Energy",
+          "Public Service Co. of North Carolina"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "2059 Trexler Ct, Raleigh, NC 27606",
+        "3215 Cyanne, Raleigh, NC 27606",
+        "4561 Treerose Way, Raleigh, NC 27606",
+        "4644 Altha St, Raleigh, NC 27606",
+        "6000 Winterpointe Ln 101, Raleigh, NC 27606"
+      ]
+    },
+    {
+      "zip": "84115",
+      "disagreement_count": 173,
+      "electric": {
+        "spreadsheet_says": [
+          "PacifiCorp (Pacific Power)",
+          "Murray City Utilities"
+        ],
+        "api_says": [
+          "Rocky Mountain Power"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Enbridge Gas UT",
+          "Dominion NC, Enbridge Gas Ohio, Enbridge Gas UT, Enbridge Gas",
+          "Enbridge Gas UT, Enbridge Gas",
+          "Enbridge Gas Ohio",
+          "Enbridge Gas",
+          "Rocky Mountain Power",
+          "Dominion NC",
+          "Rocky Mountain Power, Enbridge Gas",
+          "Enbridge Gas Ohio, Enbridge Gas",
+          "Enbridge Gas, Enbridge Gas Ohio",
+          "Enbridge Gas, Enbridge Gas UT",
+          "Enbridge Gas Ohio, Enbridge Gas UT",
+          "Dominion NC, Enbridge Gas",
+          "Enbridge gas Utah"
+        ],
+        "api_says": [
+          "Dominion Energy",
+          "Enbridge Gas Utah"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "3806 S Canyon River Way, Salt Lake City, UT 84115",
+        "2101 Marigold Syringa Ter, Salt Lake City, UT 84115",
+        "3461 S State St 1B1C, South Salt Lake, UT 84115",
+        "1768 S 400 E  1768 400 E b 400B, Salt Lake City, UT 84115",
+        "1768 S 400 E B, Salt Lake City, UT 84115"
+      ]
+    },
+    {
+      "zip": "97756",
+      "disagreement_count": 166,
+      "electric": {
+        "spreadsheet_says": [
+          "Pacific Power",
+          "PacifiCorp (Pacific Power)",
+          "Central Electric Cooperative, Inc, PacifiCorp (Pacific Power)",
+          "Central Electric Cooperative, Inc",
+          "PacifiCorp (Pacific Power), Central Electric Cooperative, Inc",
+          "Central Electric Cooperative, Inc, Pacific Power",
+          "Pacific Power, Central Electric Cooperative, Inc"
+        ],
+        "api_says": [
+          "CEC or PAC",
+          "Berkshire Hathaway Energy",
+          "Central Electric Cooperative",
+          "Pacific Power"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Ferrell Gas",
+          "Northwest Natural Gas"
+        ],
+        "api_says": [
+          "Cascade Natural Gas"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "3593 SW Pumice Ave, Redmond, OR 97756",
+        "1937 SW Canyon Dr, Redmond, OR 97756",
+        "1238 SW 16th St, Redmond, OR 97756",
+        "1679 SW Black Butte Ct, Redmond, OR 97756",
+        "1240 SW 16th St, Redmond, OR 97756"
+      ]
+    },
+    {
+      "zip": "32514",
+      "disagreement_count": 166,
+      "electric": {
+        "spreadsheet_says": [
+          "Florida Power and Light",
+          "FPL. Palm Coast (FL), Gulf Power Company (now FPL) - FL",
+          "Gulf Power Company (now FPL) - FL",
+          "Florida Power and Light, Gulf Power Company (now FPL) - FL",
+          "Gulf Power Company (now FPL) - FL, Florida Power and Light"
+        ],
+        "api_says": [
+          "Florida Power & Light"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Pensacola Energy",
+          "City of Tallahassee",
+          "Florida Public Utilities",
+          "City of pensacola",
+          "Pensacola Energy, Florida Public Utilities",
+          "Florida Public Utilities, Pensacola Energy",
+          "Florida Public Utilities, City of pensacola",
+          "Florida Public Utilities, Pensacola energy",
+          "Pensacola energy",
+          "Pensacola energy, Pensacola Energy"
+        ],
+        "api_says": [
+          "TECO Peoples Gas",
+          "Escambia Cty Util. Auth.",
+          "Energy Services of Pensacola"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "3152 Parazine St, Pensacola, FL 32514",
+        "193 Wildflower Ln, Pensacola, FL 32514",
+        "193 Wildflower egr, Pensacola, FL 32514",
+        "8785 Jernigan Rd, Egr Pensacola, FL 32514",
+        "8733 Chisholm Rd, Pensacola, FL 32514"
+      ]
+    },
+    {
+      "zip": "99208",
+      "disagreement_count": 159,
+      "electric": {
+        "spreadsheet_says": [
+          "Avista Utilities"
+        ],
+        "api_says": [
+          "Avista Energy"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Avista Utilities"
+        ],
+        "api_says": [
+          "Avista Gas",
+          "PSE"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "5420 W Barnes Rd 110, Spokane, WA 99208",
+        "5420 W Barnes Rd 107, Spokane, WA 99208",
+        "5420 W Barnes Rd 224, Spokane, WA 99208",
+        "5420 W Barnes Rd 261, Spokane, WA 99208",
+        "5420 W Barnes Rd 232, Spokane, WA 99208"
+      ]
+    },
+    {
+      "zip": "52317",
+      "disagreement_count": 155,
+      "electric": {
+        "spreadsheet_says": [
+          "Alliant Energy",
+          "Midamerican Energy Company",
+          "Alliant Energy, Midamerican Energy Company",
+          "Midamerican Energy Company, Alliant Energy"
+        ],
+        "api_says": [
+          "Interstate Power and Light Company",
+          "Linn County Rural Electric Coop."
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Midamerica Energy Company",
+          "Alliant Energy"
+        ],
+        "api_says": [
+          "Black Hills Energy"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "235 N Lockmoor Ave, North Liberty, IA 52317",
+        "795 N River Bend Ln, North Liberty, IA 52317",
+        "125 E Zeller St 9, North Liberty, IA 52317",
+        "125 E Zeller St 3, North Liberty, IA 52317",
+        "125 E Zeller St 4, North Liberty, IA 52317"
+      ]
+    },
+    {
+      "zip": "80229",
+      "disagreement_count": 150,
+      "electric": {
+        "spreadsheet_says": [
+          "Xcel Energy",
+          "United Power"
+        ],
+        "api_says": [
+          "PSC of Colorado"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Xcel Energy"
+        ],
+        "api_says": [
+          "Public Service Co. of Colorado"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "4801 E 9th Ave 204S, Denver, CO 80229",
+        "946 Coronado Pkwy, Denver, CO 80229",
+        "946 Coronado Pkwy, Denver, CO 80229",
+        "9350 Nagel Dr, Thornton, CO 80229",
+        "9864 Pennsylvania Dr, Thornton, CO 80229"
+      ]
+    },
+    {
+      "zip": "28590",
+      "disagreement_count": 149,
+      "electric": {
+        "spreadsheet_says": [
+          "Duke Energy",
+          "The Town of Winterville Electric Department",
+          "Greenville Utilities Commission (GUC) - NC",
+          "Duke Energy, The Town of Winterville Electric Department",
+          "The Town of Winterville Electric Department, Greenville Utilities Commission (GUC) - NC",
+          "The Town of Winterville Electric Department, GEUS (Greenville Electric Utility System)",
+          "Greenville Utilities Commission (GUC) - NC, The Town of Winterville Electric Department",
+          "Duke Energy, City of winterville",
+          "Greenville Utilities Commission (GUC) - NC, Duke Energy"
+        ],
+        "api_says": [
+          "City of Wilson"
+        ],
+        "needs_verification": true
+      },
+      "gas": {
+        "spreadsheet_says": [
+          "Piedmont Natural Gas",
+          "Greenville Utilities Commission (GUC) - NC, Piedmont Natural Gas",
+          "Piedmont Natural Gas, Greenville Utilities Commission (GUC) - NC",
+          "Dominion NC",
+          "Greenville Utilities Commission (GUC) - NC"
+        ],
+        "api_says": [
+          "Greenville Utilities Commission Gas",
+          "Piedmont Natural Gas"
+        ],
+        "needs_verification": true
+      },
+      "sample_addresses": [
+        "2548 Saddleback Dr UNIT A, Winterville, NC 28590",
+        "4309 Lagan Cir, Winterville, NC 28590",
+        "707 Patton Cir, Winterville, NC 28590",
+        "710 Patton Cir, Winterville, NC 28590",
+        "1021 Jade Ln, Winterville, NC 28590"
+      ]
+    }
+  ]
+}

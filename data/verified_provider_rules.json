@@ -1,0 +1,374 @@
+{
+  "_metadata": {
+    "description": "Verified provider disputes from AI research",
+    "name_variations": 18,
+    "split_territories": 11,
+    "corrections": 11
+  },
+  "name_variations": [
+    {
+      "zip": "84321",
+      "utility_type": "electric",
+      "names": [
+        "City of Logan",
+        "Logan City Light & Power"
+      ],
+      "canonical": "Logan City Light & Power"
+    },
+    {
+      "zip": "27858",
+      "utility_type": "gas",
+      "names": [
+        "Greenville Utilities Commission (GUC) - NC",
+        "Greenville Utilities Commission Gas"
+      ],
+      "canonical": "Greenville Utilities Commission"
+    },
+    {
+      "zip": "65584",
+      "utility_type": "gas",
+      "names": [
+        "Saint Robert Utilities - MO",
+        "City of St. Robert"
+      ],
+      "canonical": "Saint Robert Utilities - MO"
+    },
+    {
+      "zip": "84601",
+      "utility_type": "gas",
+      "names": [
+        "Enbridge Gas UT, Enbridge Gas",
+        "Enbridge Gas Utah"
+      ],
+      "canonical": "Enbridge Gas"
+    },
+    {
+      "zip": "50014",
+      "utility_type": "electric",
+      "names": [
+        "City of Ames - IA",
+        "Ames Municipal"
+      ],
+      "canonical": "City of Ames - IA"
+    },
+    {
+      "zip": "50014",
+      "utility_type": "gas",
+      "names": [
+        "Alliant Gas",
+        "Alliant Energy"
+      ],
+      "canonical": "Alliant Energy"
+    },
+    {
+      "zip": "80214",
+      "utility_type": "electric",
+      "names": [
+        "Xcel Energy",
+        "PSC of Colorado"
+      ],
+      "canonical": "Xcel Energy"
+    },
+    {
+      "zip": "80214",
+      "utility_type": "gas",
+      "names": [
+        "Xcel Energy",
+        "Public Service Co. of Colorado"
+      ],
+      "canonical": "Xcel Energy"
+    },
+    {
+      "zip": "27713",
+      "utility_type": "gas",
+      "names": [
+        "Dominion NC",
+        "Dominion Energy"
+      ],
+      "canonical": "Dominion Energy"
+    },
+    {
+      "zip": "32404",
+      "utility_type": "electric",
+      "names": [
+        "Florida Power and Light",
+        "Gulf Power Company (now FPL) - FL"
+      ],
+      "canonical": "Florida Power and Light"
+    },
+    {
+      "zip": "32404",
+      "utility_type": "gas",
+      "names": [
+        "TECO Peoples Gas",
+        "Peoples Gas Systems,"
+      ],
+      "canonical": "TECO Peoples Gas"
+    },
+    {
+      "zip": "84115",
+      "utility_type": "electric",
+      "names": [
+        "PacifiCorp (Pacific Power)",
+        "Rocky Mountain Power"
+      ],
+      "canonical": "Rocky Mountain Power"
+    },
+    {
+      "zip": "32514",
+      "utility_type": "electric",
+      "names": [
+        "Florida Power and Light",
+        "Florida Power & Light"
+      ],
+      "canonical": "Florida Power & Light"
+    },
+    {
+      "zip": "99208",
+      "utility_type": "electric",
+      "names": [
+        "Avista Utilities",
+        "Avista Energy"
+      ],
+      "canonical": "Avista Utilities"
+    },
+    {
+      "zip": "99208",
+      "utility_type": "gas",
+      "names": [
+        "Avista Utilities",
+        "Avista Gas"
+      ],
+      "canonical": "Avista Utilities"
+    },
+    {
+      "zip": "52317",
+      "utility_type": "electric",
+      "names": [
+        "Alliant Energy",
+        "Interstate Power and Light Company"
+      ],
+      "canonical": "Alliant Energy"
+    },
+    {
+      "zip": "80229",
+      "utility_type": "electric",
+      "names": [
+        "Xcel Energy",
+        "PSC of Colorado"
+      ],
+      "canonical": "Xcel Energy"
+    },
+    {
+      "zip": "80229",
+      "utility_type": "gas",
+      "names": [
+        "Xcel Energy",
+        "Public Service Co. of Colorado"
+      ],
+      "canonical": "Xcel Energy"
+    }
+  ],
+  "split_territories": [
+    {
+      "zip": "84043",
+      "utility_type": "electric",
+      "providers": [
+        "Lehi City, Rocky Mountain Power",
+        "Lehi City Power"
+      ],
+      "details": "Lehi City Power likely serves areas within the city limits of Lehi, while Rocky Mountain Power serves areas outside the municipal utility's coverage, possibly in more rural or newly developed areas.",
+      "reasoning": "Lehi City Power is a municipal utility serving the city of Lehi, while Rocky Mountain Power is a larger regional utility. Both can serve different parts of the same ZIP code, with municipal utilities often covering specific city areas."
+    },
+    {
+      "zip": "84601",
+      "utility_type": "electric",
+      "providers": [
+        "City of Provo - UT, Rocky Mountain Power",
+        "Provo City Power"
+      ],
+      "details": "Provo City Power serves areas within the Provo city limits, while Rocky Mountain Power serves areas outside the city limits or in overlapping regions. The specific provider for an address depends on its location relative to the city boundaries.",
+      "reasoning": "Provo City Power is a municipal utility serving the city of Provo, while Rocky Mountain Power serves other areas in Utah. Both utilities can serve different parts of the same ZIP code, with Provo City Power typically covering areas within the city limits."
+    },
+    {
+      "zip": "27616",
+      "utility_type": "electric",
+      "providers": [
+        "Duke Energy",
+        "North Carolina Eastern M P a"
+      ],
+      "details": "The service territory is likely divided based on municipal boundaries or specific service agreements. Customers in certain areas of the ZIP code may be served by Duke Energy, while others are served by NCEMPA, depending on the location within the ZIP code and municipal agreements.",
+      "reasoning": "Duke Energy and North Carolina Eastern Municipal Power Agency (NCEMPA) are separate entities. Duke Energy is a major utility provider in North Carolina, while NCEMPA is a joint agency serving multiple municipalities. Both may serve different parts of the ZIP code 27616, as utility territories can overlap or be divided within a ZIP code."
+    },
+    {
+      "zip": "30349",
+      "utility_type": "electric",
+      "providers": [
+        "Georgia Power Company, City of East Point",
+        "City of East Point Electric"
+      ],
+      "details": "Georgia Power generally serves broader areas, while City of East Point Electric serves areas within the city limits of East Point. The specific provider for an address depends on whether it falls within the municipal boundaries of East Point.",
+      "reasoning": "Georgia Power Company is a major utility provider in Georgia, while City of East Point Electric is a municipal utility serving the City of East Point and possibly surrounding areas. Both companies likely serve different parts of ZIP code 30349."
+    },
+    {
+      "zip": "27606",
+      "utility_type": "electric",
+      "providers": [
+        "Duke Energy",
+        "North Carolina Eastern M P a"
+      ],
+      "details": "The service territory is divided based on municipal boundaries and agreements. Some areas within the ZIP code may be served by Duke Energy, while others are served by municipal utilities that are part of NCEMPA.",
+      "reasoning": "Duke Energy and North Carolina Eastern Municipal Power Agency (NCEMPA) are distinct entities. Duke Energy is a major utility provider in North Carolina, while NCEMPA is a joint agency serving multiple municipalities. Both can serve different parts of the same ZIP code depending on municipal boundaries."
+    },
+    {
+      "zip": "97756",
+      "utility_type": "electric",
+      "providers": [
+        "Pacific Power",
+        "CEC or PAC"
+      ],
+      "details": "The service territory is divided based on historical service areas and agreements. Typically, Pacific Power serves more urban and suburban areas, while CEC serves more rural areas. The exact division can depend on specific streets or neighborhoods.",
+      "reasoning": "Pacific Power and Central Electric Cooperative (CEC) are separate entities. Pacific Power is a part of PacifiCorp, while CEC is a member-owned cooperative. Both companies serve different parts of ZIP code 97756, which is common in areas where utility territories overlap."
+    },
+    {
+      "zip": "97756",
+      "utility_type": "gas",
+      "providers": [
+        "Ferrell Gas",
+        "Cascade Natural Gas"
+      ],
+      "details": "Cascade Natural Gas serves customers with natural gas connections, typically in more urban or suburban areas with infrastructure for natural gas pipelines. Ferrell Gas provides propane services, often in areas without natural gas pipeline access or for specific customer needs.",
+      "reasoning": "Cascade Natural Gas is a natural gas utility provider, while Ferrell Gas is a propane supplier. Both can serve the same ZIP code but provide different types of gas services."
+    },
+    {
+      "zip": "32514",
+      "utility_type": "gas",
+      "providers": [
+        "Pensacola Energy",
+        "TECO Peoples Gas"
+      ],
+      "details": "Pensacola Energy typically serves areas within the city limits of Pensacola, while TECO Peoples Gas may serve areas outside the city limits or specific neighborhoods. The exact division can depend on historical service agreements and municipal boundaries.",
+      "reasoning": "Pensacola Energy is a municipal utility serving the city of Pensacola, while TECO Peoples Gas is a private utility company that serves various parts of Florida, including some areas in Pensacola. Both companies have service territories that overlap in certain ZIP codes, including 32514."
+    },
+    {
+      "zip": "52317",
+      "utility_type": "gas",
+      "providers": [
+        "Midamerica Energy Company",
+        "Black Hills Energy"
+      ],
+      "details": "The division of service territories is typically based on historical agreements and infrastructure layouts. Specific addresses are served by one provider or the other, depending on the infrastructure in place. Customers should contact the local utility companies or check with the city of North Liberty for precise service boundaries.",
+      "reasoning": "MidAmerican Energy Company and Black Hills Energy are distinct entities. Both companies have service territories in Iowa, and it is common for utility service areas to overlap or be divided within a ZIP code. Official utility maps and local government resources indicate that both companies serve different parts of North Liberty, IA."
+    },
+    {
+      "zip": "28590",
+      "utility_type": "electric",
+      "providers": [
+        "Duke Energy",
+        "City of Wilson"
+      ],
+      "details": "The division is likely based on municipal boundaries, with City of Wilson serving areas within its jurisdiction and Duke Energy serving the remaining areas.",
+      "reasoning": "Duke Energy and City of Wilson are distinct entities. Duke Energy is a large investor-owned utility, while City of Wilson is a municipal utility. Both may serve different parts of the ZIP code 28590, which is common in areas where municipal utilities serve specific cities or towns within a larger ZIP code area."
+    },
+    {
+      "zip": "28590",
+      "utility_type": "gas",
+      "providers": [
+        "Piedmont Natural Gas",
+        "Greenville Utilities Commission Gas"
+      ],
+      "details": "The service territory is divided based on municipal boundaries and agreements. Greenville Utilities Commission typically serves areas within the city limits or specific municipal agreements, while Piedmont Natural Gas serves other areas. Customers should contact the providers directly to confirm service availability for specific addresses.",
+      "reasoning": "Piedmont Natural Gas and Greenville Utilities Commission Gas are distinct entities. Greenville Utilities Commission is a municipal utility that serves specific areas within Greenville and surrounding regions, including parts of Winterville. Piedmont Natural Gas is a larger regional provider that also serves parts of Winterville. Both companies have service territories that overlap in ZIP code 28590."
+    }
+  ],
+  "corrections": [
+    {
+      "zip": "84321",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Enbridge Gas UT",
+      "correct_value": "Dominion Energy",
+      "reasoning": "Enbridge Gas primarily operates in Canada, while Dominion Energy is a known provider in Utah. Official utility service maps and local government resources confirm Dominion Energy serves the Logan, UT area."
+    },
+    {
+      "zip": "84043",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Enbridge Gas UT, Enbridge Gas",
+      "correct_value": "Dominion Energy",
+      "reasoning": "Enbridge Gas primarily operates in Canada and does not serve Utah. Dominion Energy is a well-known provider in Utah, including the Lehi area."
+    },
+    {
+      "zip": "27858",
+      "utility_type": "electric",
+      "wrong_source": "api",
+      "wrong_value": "City of Wilson",
+      "correct_value": "Greenville Utilities Commission (GUC) - NC",
+      "reasoning": "Greenville Utilities Commission (GUC) is the primary electric utility provider for the city of Greenville, NC, including ZIP code 27858. The City of Wilson operates its own utilities but primarily serves the Wilson, NC area. There is no indication that these two entities are the same or that the City of Wilson serves Greenville."
+    },
+    {
+      "zip": "65584",
+      "utility_type": "electric",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Saint Robert MO",
+      "correct_value": "Laclede Electric Coop,",
+      "reasoning": "Laclede Electric Cooperative is the primary electric utility provider for the area including ZIP code 65584, which covers St. Robert, MO. Saint Robert MO is not a utility provider but rather a location name. The confusion likely arises from the spreadsheet listing the location instead of the utility provider."
+    },
+    {
+      "zip": "27713",
+      "utility_type": "electric",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Dominion North Carolina Power",
+      "correct_value": "Duke Energy Progress - (nc)",
+      "reasoning": "Duke Energy Progress is the primary electric utility provider for Durham, NC, including ZIP code 27713. Dominion North Carolina Power primarily serves northeastern North Carolina, not Durham."
+    },
+    {
+      "zip": "27616",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Enbridge Gas North Carolina",
+      "correct_value": "Dominion Energy",
+      "reasoning": "Enbridge Gas primarily operates in Canada and does not have a presence in North Carolina. Dominion Energy is a known provider in the Raleigh area, including ZIP code 27616."
+    },
+    {
+      "zip": "28215",
+      "utility_type": "electric",
+      "wrong_source": "api",
+      "wrong_value": "Town of Huntersville - (nc)",
+      "correct_value": "Duke Energy",
+      "reasoning": "Duke Energy is the primary electric utility provider for the majority of Charlotte, NC, including ZIP code 28215. The Town of Huntersville operates its own municipal electric utility, but it primarily serves the town of Huntersville, not Charlotte. The discrepancy likely arises from a misunderstanding of service areas."
+    },
+    {
+      "zip": "28215",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Enbridge Gas Ohio",
+      "correct_value": "Piedmont Natural Gas",
+      "reasoning": "Enbridge Gas Ohio primarily serves areas in Ohio, while Piedmont Natural Gas is known to serve the Charlotte, NC area, including ZIP code 28215."
+    },
+    {
+      "zip": "30349",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Gas South",
+      "correct_value": "Atlanta Gas Light",
+      "reasoning": "Atlanta Gas Light is the primary natural gas distributor in the Atlanta area, including ZIP code 30349. Gas South is a natural gas marketer that operates in Georgia, but it does not own the infrastructure. Instead, it sells gas that is delivered by Atlanta Gas Light."
+    },
+    {
+      "zip": "27606",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Enbridge Gas North Carolina",
+      "correct_value": "Dominion Energy",
+      "reasoning": "Enbridge Gas does not operate in North Carolina; it primarily serves Canada and parts of the northern United States. Dominion Energy is a known provider in North Carolina, including the Raleigh area."
+    },
+    {
+      "zip": "84115",
+      "utility_type": "gas",
+      "wrong_source": "spreadsheet",
+      "wrong_value": "Enbridge Gas UT",
+      "correct_value": "Dominion Energy",
+      "reasoning": "Enbridge Gas UT does not operate in Utah. Dominion Energy is the primary natural gas provider for the Salt Lake City area, including ZIP code 84115."
+    }
+  ]
+}

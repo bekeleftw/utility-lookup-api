@@ -2468,8 +2468,12 @@ def leadgen_lookup():
         skip_internet = 'internet' not in utility_list
         result = lookup_utilities_by_address(address, selected_utilities=utility_list, skip_internet=skip_internet)
         
-        # Format response
+        # Format response - use format_utility for consistent output
         formatted_results = {}
+        location = result.get('location', {}) if result else {}
+        city = location.get('city')
+        state = location.get('state')
+        
         for util_type in utility_list:
             util_data = result.get(util_type) if result else None
             if util_data:
@@ -2484,20 +2488,20 @@ def leadgen_lookup():
                         }
                         for p in util_data.get('providers', [])[:5]  # Top 5 providers
                     ]
-                # Other utilities return as list of provider dicts
+                # Other utilities - use format_utility for consistent formatting
                 elif isinstance(util_data, list) and len(util_data) > 0:
-                    provider = util_data[0]  # Get first provider
+                    formatted = format_utility(util_data[0], util_type, city, state)
                     formatted_results[util_type] = [{
-                        'name': provider.get('name', ''),
-                        'phone': provider.get('phone', ''),
-                        'website': provider.get('website') or provider.get('service_check_url', '')
+                        'name': formatted.get('name', ''),
+                        'phone': formatted.get('phone', ''),
+                        'website': formatted.get('website') or formatted.get('service_check_url', '')
                     }]
-                # Fallback for dict structure
                 elif isinstance(util_data, dict):
+                    formatted = format_utility(util_data, util_type, city, state)
                     formatted_results[util_type] = [{
-                        'name': util_data.get('name', ''),
-                        'phone': util_data.get('phone', ''),
-                        'website': util_data.get('website') or util_data.get('service_check_url', '')
+                        'name': formatted.get('name', ''),
+                        'phone': formatted.get('phone', ''),
+                        'website': formatted.get('website') or formatted.get('service_check_url', '')
                     }]
                 else:
                     formatted_results[util_type] = []

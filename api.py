@@ -188,6 +188,12 @@ def extract_city_state(address):
 app = Flask(__name__, static_folder='static', static_url_path='/static')
 CORS(app)  # Allow cross-origin requests from Webflow
 
+# Serve static files from /public (for leadgen JS)
+from flask import send_from_directory
+@app.route('/js/<path:filename>')
+def serve_js(filename):
+    return send_from_directory(os.path.join(os.path.dirname(__file__), 'public', 'js'), filename)
+
 # Register Resident Guide Blueprint
 app.register_blueprint(guide_bp)
 
@@ -2312,6 +2318,315 @@ def lookup_municipal():
         return jsonify({'found': True, 'utility': result})
     else:
         return jsonify({'found': False, 'message': 'No municipal utility found for this location'})
+
+
+# =============================================================================
+# LEADGEN ENDPOINTS
+# =============================================================================
+
+import requests
+import string
+import random
+from datetime import datetime, timedelta
+
+# Airtable configuration for LeadGen
+AIRTABLE_API_KEY = os.getenv('AIRTABLE_API_KEY')
+AIRTABLE_BASE_ID = os.getenv('AIRTABLE_BASE_ID')
+LEADGEN_LOOKUPS_TABLE_ID = os.getenv('LEADGEN_LOOKUPS_TABLE_ID', 'LeadGen_Lookups')
+LEADGEN_REFCODES_TABLE_ID = os.getenv('LEADGEN_REFCODES_TABLE_ID', 'LeadGen_RefCodes')
+
+def get_airtable_headers():
+    """Get headers for Airtable API requests."""
+    return {
+        'Authorization': f'Bearer {AIRTABLE_API_KEY}',
+        'Content-Type': 'application/json'
+    }
+
+def airtable_url(table_id):
+    """Get Airtable API URL for a table."""
+    return f'https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{table_id}'
+
+def resolve_ref_code_to_email(ref_code):
+    """Look up email from ref_code in Airtable."""
+    if not ref_code or not AIRTABLE_API_KEY:
+        return None
+    
+    try:
+        url = airtable_url(LEADGEN_REFCODES_TABLE_ID)
+        params = {'filterByFormula': f"{{ref_code}}='{ref_code}'"}
+        resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
+        if resp.status_code == 200:
+            records = resp.json().get('records', [])
+            if records:
+                return records[0].get('fields', {}).get('email')
+    except Exception as e:
+        logger.error(f"Error resolving ref_code: {e}")
+    return None
+
+def get_client_ip():
+    """Get client IP from request headers."""
+    return request.headers.get('x-forwarded-for', '').split(',')[0].strip() or \
+           request.headers.get('x-real-ip') or \
+           request.remote_addr or 'unknown'
+
+def count_recent_lookups(email=None, ip_address=None):
+    """Count lookups in last 24 hours for email or IP."""
+    if not AIRTABLE_API_KEY:
+        return 0
+    
+    try:
+        url = airtable_url(LEADGEN_LOOKUPS_TABLE_ID)
+        # Airtable formula for last 24 hours
+        twenty_four_hours_ago = (datetime.utcnow() - timedelta(hours=24)).isoformat()
+        
+        conditions = []
+        if email:
+            conditions.append(f"{{email}}='{email}'")
+        if ip_address:
+            conditions.append(f"{{ip_address}}='{ip_address}'")
+        
+        if not conditions:
+            return 0
+        
+        # Use OR for email or IP match
+        formula = f"AND(IS_AFTER({{created_at}}, '{twenty_four_hours_ago}'), OR({','.join(conditions)}))"
+        params = {'filterByFormula': formula}
+        
+        resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
+        if resp.status_code == 200:
+            return len(resp.json().get('records', []))
+    except Exception as e:
+        logger.error(f"Error counting lookups: {e}")
+    return 0
+
+def log_leadgen_lookup(ref_code, email, ip_address, address, utilities, results, source='organic'):
+    """Log a lookup to Airtable LeadGen_Lookups table."""
+    if not AIRTABLE_API_KEY:
+        return
+    
+    try:
+        url = airtable_url(LEADGEN_LOOKUPS_TABLE_ID)
+        data = {
+            'fields': {
+                'ref_code': ref_code or '',
+                'email': email,
+                'ip_address': ip_address,
+                'address_searched': address,
+                'utilities_requested': utilities,
+                'results_json': json.dumps(results) if results else '',
+                'cta_clicked': False,
+                'created_at': datetime.utcnow().isoformat(),
+                'source': 'cold_email' if ref_code else source
+            }
+        }
+        requests.post(url, headers=get_airtable_headers(), json=data, timeout=10)
+    except Exception as e:
+        logger.error(f"Error logging leadgen lookup: {e}")
+
+def generate_ref_code():
+    """Generate a random 6-character alphanumeric ref code."""
+    chars = string.ascii_lowercase + string.digits
+    return ''.join(random.choice(chars) for _ in range(6))
+
+
+@app.route('/api/leadgen/lookup', methods=['POST'])
+def leadgen_lookup():
+    """Main leadgen lookup endpoint with tracking and limits."""
+    data = request.get_json() or {}
+    
+    address = data.get('address')
+    utilities = data.get('utilities', 'electric,gas,water')
+    email = data.get('email')
+    ref_code = data.get('ref_code')
+    
+    if not address:
+        return jsonify({'status': 'error', 'message': 'Address is required'}), 400
+    
+    if not email and not ref_code:
+        return jsonify({'status': 'error', 'message': 'Email or ref_code is required'}), 400
+    
+    # Resolve ref_code to email if needed
+    if ref_code and not email:
+        email = resolve_ref_code_to_email(ref_code)
+        if not email:
+            return jsonify({'status': 'error', 'message': 'Invalid ref code'}), 400
+    
+    # Get client IP
+    ip_address = get_client_ip()
+    
+    # Check limits (5 per 24 hours per email or IP)
+    lookup_count = count_recent_lookups(email=email, ip_address=ip_address)
+    if lookup_count >= 5:
+        return jsonify({
+            'status': 'limit_exceeded',
+            'message': "You've reached the search limit. Book a demo for unlimited access."
+        })
+    
+    # Call internal lookup
+    try:
+        utility_list = [u.strip() for u in utilities.split(',')]
+        result = lookup_utilities_by_address(address, selected_utilities=utility_list, skip_internet=True)
+        
+        # Format response
+        formatted_results = {}
+        for util_type in utility_list:
+            util_data = result.get(util_type) if result else None
+            if util_data:
+                formatted_results[util_type] = [{
+                    'name': util_data.get('NAME') or util_data.get('name', ''),
+                    'phone': util_data.get('PHONE') or util_data.get('phone', ''),
+                    'website': util_data.get('WEBSITE') or util_data.get('website', '')
+                }]
+            else:
+                formatted_results[util_type] = []
+        
+        # Log to Airtable
+        log_leadgen_lookup(ref_code, email, ip_address, address, utilities, formatted_results)
+        
+        searches_remaining = max(0, 5 - lookup_count - 1)
+        
+        return jsonify({
+            'status': 'success',
+            'utilities': formatted_results,
+            'searches_remaining': searches_remaining
+        })
+        
+    except Exception as e:
+        logger.error(f"Leadgen lookup error: {e}")
+        return jsonify({'status': 'error', 'message': 'Lookup failed'}), 500
+
+
+@app.route('/api/leadgen/check-limit', methods=['GET'])
+def leadgen_check_limit():
+    """Check if user can search before they try."""
+    email = request.args.get('email')
+    ref_code = request.args.get('ref')
+    
+    # Resolve ref_code to email if needed
+    if ref_code and not email:
+        email = resolve_ref_code_to_email(ref_code)
+    
+    ip_address = get_client_ip()
+    
+    lookup_count = count_recent_lookups(email=email, ip_address=ip_address)
+    searches_remaining = max(0, 5 - lookup_count)
+    
+    return jsonify({
+        'can_search': searches_remaining > 0,
+        'searches_remaining': searches_remaining
+    })
+
+
+@app.route('/api/leadgen/resolve-ref', methods=['GET'])
+def leadgen_resolve_ref():
+    """Resolve a ref code to its associated email."""
+    ref_code = request.args.get('ref')
+    
+    if not ref_code:
+        return jsonify({'error': 'ref parameter required'}), 400
+    
+    email = resolve_ref_code_to_email(ref_code)
+    
+    if email:
+        return jsonify({'email': email})
+    else:
+        return jsonify({'error': 'Invalid ref code'}), 404
+
+
+@app.route('/api/leadgen/track-cta', methods=['POST'])
+def leadgen_track_cta():
+    """Track when someone clicks the CTA button."""
+    data = request.get_json() or {}
+    email = data.get('email')
+    ref_code = data.get('ref_code')
+    
+    if not email and not ref_code:
+        return jsonify({'error': 'email or ref_code required'}), 400
+    
+    if not AIRTABLE_API_KEY:
+        return jsonify({'success': True})  # Silently succeed if no Airtable
+    
+    try:
+        # Find most recent record matching email or ref_code
+        url = airtable_url(LEADGEN_LOOKUPS_TABLE_ID)
+        conditions = []
+        if email:
+            conditions.append(f"{{email}}='{email}'")
+        if ref_code:
+            conditions.append(f"{{ref_code}}='{ref_code}'")
+        
+        formula = f"OR({','.join(conditions)})"
+        params = {
+            'filterByFormula': formula,
+            'sort[0][field]': 'created_at',
+            'sort[0][direction]': 'desc',
+            'maxRecords': 1
+        }
+        
+        resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
+        if resp.status_code == 200:
+            records = resp.json().get('records', [])
+            if records:
+                record_id = records[0]['id']
+                # Update cta_clicked
+                update_url = f"{url}/{record_id}"
+                requests.patch(update_url, headers=get_airtable_headers(), 
+                             json={'fields': {'cta_clicked': True}}, timeout=10)
+        
+        return jsonify({'success': True})
+    except Exception as e:
+        logger.error(f"Error tracking CTA: {e}")
+        return jsonify({'success': True})  # Don't fail the request
+
+
+@app.route('/api/leadgen/generate-ref', methods=['POST'])
+def leadgen_generate_ref():
+    """Generate a new ref code for cold email campaigns."""
+    data = request.get_json() or {}
+    email = data.get('email')
+    campaign = data.get('campaign', '')
+    
+    if not email:
+        return jsonify({'error': 'email required'}), 400
+    
+    if not AIRTABLE_API_KEY:
+        return jsonify({'error': 'Airtable not configured'}), 500
+    
+    try:
+        # Generate unique ref code
+        for _ in range(10):  # Try up to 10 times to avoid collisions
+            ref_code = generate_ref_code()
+            
+            # Check for collision
+            existing = resolve_ref_code_to_email(ref_code)
+            if not existing:
+                break
+        else:
+            return jsonify({'error': 'Could not generate unique ref code'}), 500
+        
+        # Insert into Airtable
+        url = airtable_url(LEADGEN_REFCODES_TABLE_ID)
+        data = {
+            'fields': {
+                'ref_code': ref_code,
+                'email': email,
+                'campaign': campaign,
+                'created_at': datetime.utcnow().isoformat()
+            }
+        }
+        resp = requests.post(url, headers=get_airtable_headers(), json=data, timeout=10)
+        
+        if resp.status_code in [200, 201]:
+            return jsonify({
+                'ref_code': ref_code,
+                'url': f'https://www.utilityprofit.com/utility-lookup?ref={ref_code}'
+            })
+        else:
+            return jsonify({'error': 'Failed to create ref code'}), 500
+            
+    except Exception as e:
+        logger.error(f"Error generating ref code: {e}")
+        return jsonify({'error': 'Failed to generate ref code'}), 500
 
 
 if __name__ == '__main__':

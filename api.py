@@ -2473,11 +2473,23 @@ def leadgen_lookup():
         for util_type in utility_list:
             util_data = result.get(util_type) if result else None
             if util_data:
-                formatted_results[util_type] = [{
-                    'name': util_data.get('NAME') or util_data.get('name', ''),
-                    'phone': util_data.get('PHONE') or util_data.get('phone', ''),
-                    'website': util_data.get('WEBSITE') or util_data.get('website', '')
-                }]
+                # Internet has different structure (providers array)
+                if util_type == 'internet' and 'providers' in util_data:
+                    formatted_results[util_type] = [
+                        {
+                            'name': p.get('name', ''),
+                            'technology': p.get('technology', ''),
+                            'max_download_mbps': p.get('max_download_mbps', 0),
+                            'max_upload_mbps': p.get('max_upload_mbps', 0)
+                        }
+                        for p in util_data.get('providers', [])[:5]  # Top 5 providers
+                    ]
+                else:
+                    formatted_results[util_type] = [{
+                        'name': util_data.get('NAME') or util_data.get('name', ''),
+                        'phone': util_data.get('PHONE') or util_data.get('phone', ''),
+                        'website': util_data.get('WEBSITE') or util_data.get('website', '')
+                    }]
             else:
                 formatted_results[util_type] = []
         

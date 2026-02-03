@@ -2473,8 +2473,8 @@ def leadgen_lookup():
         for util_type in utility_list:
             util_data = result.get(util_type) if result else None
             if util_data:
-                # Internet has different structure (providers array)
-                if util_type == 'internet' and 'providers' in util_data:
+                # Internet has different structure (providers array with 'providers' key)
+                if util_type == 'internet' and isinstance(util_data, dict) and 'providers' in util_data:
                     formatted_results[util_type] = [
                         {
                             'name': p.get('name', ''),
@@ -2484,12 +2484,23 @@ def leadgen_lookup():
                         }
                         for p in util_data.get('providers', [])[:5]  # Top 5 providers
                     ]
-                else:
+                # Other utilities return as list of provider dicts
+                elif isinstance(util_data, list) and len(util_data) > 0:
+                    provider = util_data[0]  # Get first provider
                     formatted_results[util_type] = [{
-                        'name': util_data.get('NAME') or util_data.get('name', ''),
-                        'phone': util_data.get('PHONE') or util_data.get('phone', ''),
-                        'website': util_data.get('WEBSITE') or util_data.get('website', '')
+                        'name': provider.get('name', ''),
+                        'phone': provider.get('phone', ''),
+                        'website': provider.get('website') or provider.get('service_check_url', '')
                     }]
+                # Fallback for dict structure
+                elif isinstance(util_data, dict):
+                    formatted_results[util_type] = [{
+                        'name': util_data.get('name', ''),
+                        'phone': util_data.get('phone', ''),
+                        'website': util_data.get('website') or util_data.get('service_check_url', '')
+                    }]
+                else:
+                    formatted_results[util_type] = []
             else:
                 formatted_results[util_type] = []
         

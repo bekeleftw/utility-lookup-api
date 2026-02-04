@@ -408,7 +408,7 @@ async function upsertContact(contact, companyData) {
     email: props.email || '',
     job_title: props.jobtitle || '',
     company_name: companyData.companyName,
-    company_city: companyData.companyCity,
+    company_city: companyData.city,  // Just city, no state code for contacts
     ref_id: companyData.refId
   };
   
@@ -542,6 +542,7 @@ async function syncLeadGenData() {
           companyId,
           companyName,
           companyCity,
+          city,  // Just city name for contacts
           refId
         };
         

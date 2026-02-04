@@ -148,6 +148,16 @@ function formatCompanyCity(city, state) {
   return stateCode ? `${city}, ${stateCode}` : city;
 }
 
+// Map HubSpot company_type to display value
+function mapCompanyType(hubspotType) {
+  if (!hubspotType) return 'SFR';  // Default to SFR if empty
+  const typeMap = {
+    'Property Manager': 'SFR',
+    'Mixed': 'Mixed'
+  };
+  return typeMap[hubspotType] || hubspotType;
+}
+
 // Get PMS config
 function getPmsConfig(currentSoftware) {
   if (!currentSoftware) return PMS_FALLBACK;
@@ -368,7 +378,7 @@ async function upsertCompany(company) {
     ref_id: generateRefId(companyName, state),
     company_name: companyName,
     company_city: companyCity,
-    company_type: props.company_type || '',  // Property Manager, Mixed, or empty
+    company_type: mapCompanyType(props.company_type),  // SFR, Mixed, etc.
     logo_url: props.hs_logo_url || '',
     pms_name: pmsConfig.name,
     pms_color: pmsConfig.color,

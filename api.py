@@ -2371,7 +2371,7 @@ def get_client_ip():
 
 # Whitelisted emails and IPs that bypass rate limiting
 LEADGEN_WHITELIST_EMAILS = {'mark@utilityprofit.com'}
-LEADGEN_WHITELIST_IPS = set()  # Add IPs here if needed
+LEADGEN_WHITELIST_IPS = {'104.6.39.39'}
 
 def count_recent_lookups(email=None, ip_address=None):
     """Count lookups in last 24 hours for email or IP."""

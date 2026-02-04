@@ -2557,18 +2557,45 @@ def leadgen_check_limit():
 
 @app.route('/api/leadgen/resolve-ref', methods=['GET'])
 def leadgen_resolve_ref():
-    """Resolve a ref code to its associated email."""
+    """Resolve a ref code to its personalization data."""
     ref_code = request.args.get('ref')
     
     if not ref_code:
-        return jsonify({'error': 'ref parameter required'}), 400
+        return jsonify({'success': False, 'data': None})
     
-    email = resolve_ref_code_to_email(ref_code)
+    if not AIRTABLE_API_KEY:
+        return jsonify({'success': False, 'data': None})
     
-    if email:
-        return jsonify({'email': email})
-    else:
-        return jsonify({'error': 'Invalid ref code'}), 404
+    try:
+        url = airtable_url(LEADGEN_REFCODES_TABLE_ID)
+        params = {'filterByFormula': f"{{ref_code}}='{ref_code}'", 'maxRecords': 1}
+        resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
+        
+        if resp.status_code == 200:
+            records = resp.json().get('records', [])
+            if records:
+                fields = records[0].get('fields', {})
+                return jsonify({
+                    'success': True,
+                    'data': {
+                        'email': fields.get('email'),
+                        'company_name': fields.get('company_name'),
+                        'logo_url': fields.get('logo_url'),
+                        'pms_name': fields.get('pms_name'),
+                        'pms_color': fields.get('pms_color'),
+                        'pms_logo_url': fields.get('pms_logo_url'),
+                        'address_1_street': fields.get('address_1_street'),
+                        'address_1_city': fields.get('address_1_city'),
+                        'address_2_street': fields.get('address_2_street'),
+                        'address_2_city': fields.get('address_2_city'),
+                        'address_3_street': fields.get('address_3_street'),
+                        'address_3_city': fields.get('address_3_city')
+                    }
+                })
+    except Exception as e:
+        logger.error(f"Error resolving ref_code: {e}")
+    
+    return jsonify({'success': False, 'data': None})
 
 
 @app.route('/api/leadgen/track-cta', methods=['POST'])

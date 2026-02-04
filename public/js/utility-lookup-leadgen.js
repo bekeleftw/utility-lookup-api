@@ -393,7 +393,7 @@
   }
   
   /**
-   * Resolve ref code to email
+   * Resolve ref code to email and personalization data
    */
   async function resolveRefCode(refCode) {
     try {
@@ -403,12 +403,44 @@
       
       const data = await response.json();
       
-      if (data.email) {
-        state.email = data.email;
+      if (data.success && data.data) {
+        if (data.data.email) {
+          state.email = data.data.email;
+        }
+        applyPersonalization(data.data);
       }
     } catch (err) {
-      console.error('Ref code resolution error:', err);
+      // Silent fail - show fallback content
     }
+  }
+  
+  /**
+   * Apply personalization data to elements with data-dynamic attributes
+   */
+  function applyPersonalization(data) {
+    if (!data) return;
+    
+    // Handle data-dynamic attributes (text or image src)
+    document.querySelectorAll('[data-dynamic]').forEach(el => {
+      const fieldName = el.getAttribute('data-dynamic');
+      const value = data[fieldName];
+      if (value) {
+        if (el.tagName === 'IMG') {
+          el.src = value;
+        } else {
+          el.textContent = value;
+        }
+      }
+    });
+    
+    // Handle data-dynamic-color attributes (set style.color)
+    document.querySelectorAll('[data-dynamic-color]').forEach(el => {
+      const fieldName = el.getAttribute('data-dynamic-color');
+      const value = data[fieldName];
+      if (value) {
+        el.style.color = value;
+      }
+    });
   }
   
   /**

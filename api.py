@@ -2580,6 +2580,7 @@ def leadgen_resolve_ref():
                     'data': {
                         'email': fields.get('email'),
                         'company_name': fields.get('company_name'),
+                        'company_city': fields.get('company_city'),
                         'logo_url': fields.get('logo_url'),
                         'pms_name': fields.get('pms_name'),
                         'pms_color': fields.get('pms_color'),

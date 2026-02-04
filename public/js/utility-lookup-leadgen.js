@@ -191,12 +191,14 @@
     }
     
     state.email = email;
+    
+    // Save pending search before hiding modal (which clears it)
+    const searchToPerform = state.pendingSearch;
     hideModal();
     
     // Perform the pending search
-    if (state.pendingSearch) {
-      await performSearch(state.pendingSearch.address, state.pendingSearch.utilities);
-      state.pendingSearch = null;
+    if (searchToPerform) {
+      await performSearch(searchToPerform.address, searchToPerform.utilities);
     }
   }
   

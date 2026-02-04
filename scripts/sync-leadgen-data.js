@@ -368,6 +368,7 @@ async function upsertCompany(company) {
     ref_id: generateRefId(companyName, state),
     company_name: companyName,
     company_city: companyCity,
+    company_type: props.company_type || '',  // Property Manager, Mixed, or empty
     logo_url: props.hs_logo_url || '',
     pms_name: pmsConfig.name,
     pms_color: pmsConfig.color,

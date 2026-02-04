@@ -2334,6 +2334,7 @@ AIRTABLE_API_KEY = os.getenv('AIRTABLE_API_KEY')
 AIRTABLE_BASE_ID = os.getenv('AIRTABLE_BASE_ID')
 LEADGEN_LOOKUPS_TABLE_ID = os.getenv('LEADGEN_LOOKUPS_TABLE_ID', 'LeadGen_Lookups')
 LEADGEN_REFCODES_TABLE_ID = os.getenv('LEADGEN_REFCODES_TABLE_ID', 'LeadGen_RefCodes')
+LEADGEN_COMPANIES_TABLE_ID = os.getenv('LEADGEN_COMPANIES_TABLE_ID', 'LeadGen_Companies')
 
 def get_airtable_headers():
     """Get headers for Airtable API requests."""
@@ -2557,7 +2558,11 @@ def leadgen_check_limit():
 
 @app.route('/api/leadgen/resolve-ref', methods=['GET'])
 def leadgen_resolve_ref():
-    """Resolve a ref code to its personalization data."""
+    """Resolve a ref code to its personalization data.
+    
+    Queries LeadGen_Companies table by ref_id field.
+    Falls back to LeadGen_RefCodes if not found (for backwards compatibility).
+    """
     ref_code = request.args.get('ref')
     
     if not ref_code:
@@ -2567,6 +2572,34 @@ def leadgen_resolve_ref():
         return jsonify({'success': False, 'data': None})
     
     try:
+        # First try LeadGen_Companies table (new HubSpot-synced data)
+        url = airtable_url(LEADGEN_COMPANIES_TABLE_ID)
+        params = {'filterByFormula': f"{{ref_id}}='{ref_code}'", 'maxRecords': 1}
+        resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
+        
+        if resp.status_code == 200:
+            records = resp.json().get('records', [])
+            if records:
+                fields = records[0].get('fields', {})
+                return jsonify({
+                    'success': True,
+                    'data': {
+                        'company_name': fields.get('company_name'),
+                        'company_city': fields.get('company_city'),
+                        'logo_url': fields.get('logo_url'),
+                        'pms_name': fields.get('pms_name'),
+                        'pms_color': fields.get('pms_color'),
+                        'pms_logo_url': fields.get('pms_logo_url'),
+                        'address_1_street': fields.get('address_1_street'),
+                        'address_1_city': fields.get('address_1_city'),
+                        'address_2_street': fields.get('address_2_street'),
+                        'address_2_city': fields.get('address_2_city'),
+                        'address_3_street': fields.get('address_3_street'),
+                        'address_3_city': fields.get('address_3_city')
+                    }
+                })
+        
+        # Fallback to LeadGen_RefCodes table (legacy/manual entries)
         url = airtable_url(LEADGEN_REFCODES_TABLE_ID)
         params = {'filterByFormula': f"{{ref_code}}='{ref_code}'", 'maxRecords': 1}
         resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)

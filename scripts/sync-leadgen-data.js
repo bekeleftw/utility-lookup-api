@@ -101,6 +101,34 @@ function makeRequest(options, postData = null) {
   });
 }
 
+// State name to 2-letter code mapping
+const STATE_CODES = {
+  'alabama': 'AL', 'alaska': 'AK', 'arizona': 'AZ', 'arkansas': 'AR', 'california': 'CA',
+  'colorado': 'CO', 'connecticut': 'CT', 'delaware': 'DE', 'florida': 'FL', 'georgia': 'GA',
+  'hawaii': 'HI', 'idaho': 'ID', 'illinois': 'IL', 'indiana': 'IN', 'iowa': 'IA',
+  'kansas': 'KS', 'kentucky': 'KY', 'louisiana': 'LA', 'maine': 'ME', 'maryland': 'MD',
+  'massachusetts': 'MA', 'michigan': 'MI', 'minnesota': 'MN', 'mississippi': 'MS', 'missouri': 'MO',
+  'montana': 'MT', 'nebraska': 'NE', 'nevada': 'NV', 'new hampshire': 'NH', 'new jersey': 'NJ',
+  'new mexico': 'NM', 'new york': 'NY', 'north carolina': 'NC', 'north dakota': 'ND', 'ohio': 'OH',
+  'oklahoma': 'OK', 'oregon': 'OR', 'pennsylvania': 'PA', 'rhode island': 'RI', 'south carolina': 'SC',
+  'south dakota': 'SD', 'tennessee': 'TN', 'texas': 'TX', 'utah': 'UT', 'vermont': 'VT',
+  'virginia': 'VA', 'washington': 'WA', 'west virginia': 'WV', 'wisconsin': 'WI', 'wyoming': 'WY',
+  'district of columbia': 'DC', 'puerto rico': 'PR'
+};
+
+// Convert state name to 2-letter code
+function getStateCode(state) {
+  if (!state) return '';
+  const trimmed = state.trim();
+  // Already a 2-letter code
+  if (trimmed.length === 2 && /^[A-Za-z]{2}$/.test(trimmed)) {
+    return trimmed.toUpperCase();
+  }
+  // Look up full name
+  const code = STATE_CODES[trimmed.toLowerCase()];
+  return code || trimmed.toUpperCase().substring(0, 2);
+}
+
 // Generate URL-safe ref_id
 function generateRefId(companyName, state) {
   if (!companyName) return '';
@@ -109,14 +137,15 @@ function generateRefId(companyName, state) {
     .replace(/[^a-z0-9\s]/g, '')
     .replace(/\s+/g, '-')
     .substring(0, 50);
-  const stateCode = (state || 'us').toLowerCase();
-  return `${slug}-${stateCode}`;
+  const stateCode = getStateCode(state) || 'us';
+  return `${slug}-${stateCode.toLowerCase()}`;
 }
 
 // Format company city
 function formatCompanyCity(city, state) {
   if (!city) return '';
-  return state ? `${city}, ${state}` : city;
+  const stateCode = getStateCode(state);
+  return stateCode ? `${city}, ${stateCode}` : city;
 }
 
 // Get PMS config
@@ -242,7 +271,7 @@ async function getCompanyContacts(companyId) {
 async function getContactDetails(contactId) {
   const options = {
     hostname: 'api.hubapi.com',
-    path: `/crm/v3/objects/contacts/${contactId}?properties=hs_object_id,firstname,first_name_clean,email`,
+    path: `/crm/v3/objects/contacts/${contactId}?properties=hs_object_id,firstname,first_name_clean,email,jobtitle`,
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${HUBSPOT_API_KEY}`
@@ -377,6 +406,7 @@ async function upsertContact(contact, companyData) {
     company_record_id: companyData.companyId,
     first_name: firstName,
     email: props.email || '',
+    job_title: props.jobtitle || '',
     company_name: companyData.companyName,
     company_city: companyData.companyCity,
     ref_id: companyData.refId

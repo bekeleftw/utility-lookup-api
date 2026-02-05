@@ -150,7 +150,32 @@ function groupAndPrioritize(contacts) {
   return prioritized;
 }
 
+// Get email quality score (lower = better)
+// 1 = Personal (john.smith@, jsmith@)
+// 2 = Role-based (propertymanager@, owner@)
+// 3 = Generic (info@, contact@, hello@, office@)
+function getEmailQuality(email) {
+  if (!email) return 3;
+  const localPart = email.split('@')[0].toLowerCase();
+  
+  // Generic emails
+  const genericPrefixes = ['info', 'contact', 'hello', 'office', 'admin', 'support', 'sales', 'team', 'mail', 'enquiries', 'inquiries'];
+  if (genericPrefixes.some(p => localPart === p || localPart.startsWith(p + '.'))) {
+    return 3;
+  }
+  
+  // Role-based emails
+  const rolePrefixes = ['propertymanager', 'pm', 'owner', 'manager', 'leasing', 'accounting', 'maintenance', 'operations'];
+  if (rolePrefixes.some(p => localPart === p || localPart.startsWith(p + '.'))) {
+    return 2;
+  }
+  
+  // Personal email (has name-like pattern)
+  return 1;
+}
+
 // Simpler prioritization: score 1s first (round robin), then 2s, then 3s
+// Within each score, sort by email quality (personal > role-based > generic)
 function simplePrioritize(contacts) {
   const byCompany = {};
   
@@ -162,12 +187,17 @@ function simplePrioritize(contacts) {
     byCompany[companyId].push(contact);
   }
   
-  // Sort each company's contacts by score
+  // Sort each company's contacts by score, then by email quality
   for (const companyId of Object.keys(byCompany)) {
     byCompany[companyId].sort((a, b) => {
       const scoreA = parseInt(a.fields.lead_score) || 5;
       const scoreB = parseInt(b.fields.lead_score) || 5;
-      return scoreA - scoreB;
+      if (scoreA !== scoreB) return scoreA - scoreB;
+      
+      // Secondary sort by email quality
+      const emailQualityA = getEmailQuality(a.fields.email);
+      const emailQualityB = getEmailQuality(b.fields.email);
+      return emailQualityA - emailQualityB;
     });
   }
   

@@ -99,17 +99,35 @@ async function scoreContactsBatch(contacts) {
   const prompt = `Score these property management contacts for cold email outreach on a scale of 1-5.
 
 SCORING CRITERIA:
-1 (Best): Decision makers - Owner, CEO, President, Partner, Principal, Broker. Has first+last name. Personal/name-based email.
-2 (Great): PM leaders - Property Manager, Operations Manager, Director, VP. Has name. Name-based email.
-3 (Good): PM staff - Office Manager, Assistant PM, Leasing Manager, Coordinator. Has name or reasonable email.
-4 (Maybe): Support roles - Office Assistant, Admin, Receptionist. Generic email (info@, office@) but has name.
-5 (Skip): Low value - Realtor, Agent, Sales, Marketing roles. OR no name + generic email (info@, contact@, hello@).
+
+1 (Best): Decision makers with name
+   Titles: Owner, CEO, President, Partner, Principal, Founder, Broker, Designated Broker, Managing Broker
+   Requirements: Has first name OR last name
+
+2 (Great): Senior operators with name
+   Titles: Property Manager, Operations Manager, Director, VP, COO, Regional Manager, Portfolio Manager, Asset Manager, General Manager
+   Requirements: Has first name OR last name
+
+3 (Good): Mid-level staff OR unknown title with good signals
+   Titles: Office Manager, Assistant PM, Leasing Manager, Coordinator (non-maintenance)
+   Also: No title BUT has name + personal email (name-based, not generic)
+
+4 (Maybe): Support roles OR good title with missing name
+   Titles: Office Assistant, Admin, Receptionist, Accountant, Bookkeeper
+   Also: Decision maker title BUT no name (can't personalize)
+   Also: No title + generic email but has name
+
+5 (Skip): Low value - do not push
+   Titles: Realtor, Agent, Sales, Marketing, Maintenance, Transaction Coordinator
+   Also: No name + generic email (info@, contact@, hello@, office@)
+   Also: Leasing Agent (not Manager)
+
+MIXED TITLES: If title contains multiple roles (e.g., "Owner/Realtor"), use the higher-authority role.
 
 CONTACTS TO SCORE:
 ${JSON.stringify(contactData, null, 2)}
 
-Return ONLY a JSON array with objects containing "id" and "score" (integer 1-5). No explanation.
-Example: [{"id": "rec123", "score": 2}, {"id": "rec456", "score": 1}]`;
+Return ONLY a JSON array: [{"id": "...", "score": 1-5}]`;
 
   const options = {
     hostname: 'api.openai.com',

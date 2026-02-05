@@ -281,7 +281,7 @@ async function getCompanyContacts(companyId) {
 async function getContactDetails(contactId) {
   const options = {
     hostname: 'api.hubapi.com',
-    path: `/crm/v3/objects/contacts/${contactId}?properties=hs_object_id,firstname,first_name_clean,lastname,email,jobtitle`,
+    path: `/crm/v3/objects/contacts/${contactId}?properties=hs_object_id,firstname,first_name_clean,lastname,last_name_clean,email,jobtitle`,
     method: 'GET',
     headers: {
       'Authorization': `Bearer ${HUBSPOT_API_KEY}`
@@ -411,7 +411,7 @@ async function upsertContact(contact, companyData) {
   const props = contact.properties || {};
   const contactId = props.hs_object_id || contact.id;
   const firstName = props.first_name_clean || props.firstname || '';
-  const lastName = props.lastname || '';
+  const lastName = props.last_name_clean || props.lastname || '';
   
   const fields = {
     contact_id: contactId,

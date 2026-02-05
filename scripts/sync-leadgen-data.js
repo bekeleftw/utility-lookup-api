@@ -64,8 +64,9 @@ const STATIC_ADDRESSES = {
 };
 
 // Rate limiting
-const HUBSPOT_RATE_LIMIT_MS = 110; // ~10 requests per second
-const AIRTABLE_RATE_LIMIT_MS = 210; // ~5 requests per second
+const HUBSPOT_RATE_LIMIT_MS = 50; // ~20 requests per second
+const AIRTABLE_RATE_LIMIT_MS = 100; // ~10 requests per second
+const PARALLEL_CONTACTS = 5; // Process contacts in parallel
 
 // Helper: Sleep
 function sleep(ms) {
@@ -178,58 +179,55 @@ function getPmsConfig(currentSoftware) {
   return PMS_FALLBACK;
 }
 
-// HubSpot API: Search companies
-async function searchHubSpotCompanies(after = null) {
-  const body = {
-    filterGroups: [
-      {
-        filters: [
-          {
-            propertyName: 'company_type',
-            operator: 'IN',
-            values: ['Property Manager', 'Mixed']
-          }
-        ]
-      },
-      {
-        filters: [
-          {
-            propertyName: 'company_type',
-            operator: 'NOT_HAS_PROPERTY'
-          }
-        ]
-      }
-    ],
-    properties: [
-      'hs_object_id',
-      'name',
-      'company_name__clean_',
-      'city',
-      'state_',
-      'hs_logo_url',
-      'current_software',
-      'company_type',
-      'company_status'
-    ],
-    limit: 100
-  };
+// HubSpot API: List all companies (no 10k limit like search)
+async function listHubSpotCompanies(after = null) {
+  const properties = [
+    'hs_object_id',
+    'name',
+    'company_name__clean_',
+    'city',
+    'state_',
+    'hs_logo_url',
+    'current_software',
+    'company_type',
+    'company_status'
+  ].join(',');
   
+  let path = `/crm/v3/objects/companies?limit=100&properties=${properties}`;
   if (after) {
-    body.after = after;
+    path += `&after=${after}`;
   }
   
   const options = {
     hostname: 'api.hubapi.com',
-    path: '/crm/v3/objects/companies/search',
-    method: 'POST',
+    path: path,
+    method: 'GET',
     headers: {
-      'Authorization': `Bearer ${HUBSPOT_API_KEY}`,
-      'Content-Type': 'application/json'
+      'Authorization': `Bearer ${HUBSPOT_API_KEY}`
     }
   };
   
   await sleep(HUBSPOT_RATE_LIMIT_MS);
-  return makeRequest(options, JSON.stringify(body));
+  return makeRequest(options);
+}
+
+// Filter companies locally (replaces search filtering)
+function companyMatchesCriteria(company) {
+  const props = company.properties || {};
+  const companyType = props.company_type || '';
+  const companyStatus = props.company_status || '';
+  
+  // Skip if status is Onboarding or Pending Decision (existing customers)
+  if (companyStatus === 'Onboarding' || companyStatus === 'Pending Decision') {
+    return false;
+  }
+  
+  // Include if company_type is Property Manager, Mixed, or empty/null
+  if (companyType === 'Property Manager' || companyType === 'Mixed' || !companyType) {
+    return true;
+  }
+  
+  return false;
 }
 
 // HubSpot API: Get company's associated deals
@@ -479,31 +477,38 @@ async function syncLeadGenData() {
   let totalCompanies = 0;
   let processedCount = 0;
   
-  // First pass: count total companies
-  console.log('Fetching companies from HubSpot...');
+  // First pass: fetch ALL companies and filter locally
+  console.log('Fetching ALL companies from HubSpot (no 10k limit)...');
+  const allCompanies = [];
   
   do {
     try {
-      const response = await searchHubSpotCompanies(after);
+      const response = await listHubSpotCompanies(after);
       const companies = response.results || [];
-      totalCompanies += companies.length;
+      
+      // Filter locally
+      for (const company of companies) {
+        if (companyMatchesCriteria(company)) {
+          allCompanies.push(company);
+        }
+      }
+      
       after = response.paging?.next?.after || null;
+      process.stdout.write(`\r  Fetched ${allCompanies.length} matching companies...`);
     } catch (e) {
-      console.error('Error fetching companies:', e.body || e.message || e);
+      console.error('\nError fetching companies:', e.body || e.message || e);
       break;
     }
   } while (after);
   
-  console.log(`Found ${totalCompanies} companies matching criteria`);
+  totalCompanies = allCompanies.length;
+  console.log(`\nFound ${totalCompanies} companies matching criteria`);
   console.log('');
   
   // Second pass: process companies
-  after = null;
-  
-  do {
+  for (let i = 0; i < allCompanies.length; i++) {
     try {
-      const response = await searchHubSpotCompanies(after);
-      const companies = response.results || [];
+      const companies = [allCompanies[i]];
       
       for (const company of companies) {
         processedCount++;
@@ -559,27 +564,30 @@ async function syncLeadGenData() {
           refId
         };
         
-        // Fetch and process contacts
+        // Fetch and process contacts in parallel batches
         try {
           const contactAssociations = await getCompanyContacts(companyId);
           const contactIds = (contactAssociations.results || []).map(r => r.id);
           
-          for (const contactId of contactIds) {
-            try {
-              const contact = await getContactDetails(contactId);
-              const contactResult = await upsertContact(contact, companyData);
+          // Process contacts in parallel batches
+          for (let i = 0; i < contactIds.length; i += PARALLEL_CONTACTS) {
+            const batch = contactIds.slice(i, i + PARALLEL_CONTACTS);
+            const results = await Promise.allSettled(
+              batch.map(async (contactId) => {
+                const contact = await getContactDetails(contactId);
+                return upsertContact(contact, companyData);
+              })
+            );
+            
+            for (const result of results) {
               stats.contactsProcessed++;
-              
-              if (contactResult.action === 'created') {
-                stats.contactsCreated++;
-              } else if (contactResult.action === 'updated') {
-                stats.contactsUpdated++;
+              if (result.status === 'fulfilled') {
+                if (result.value.action === 'created') stats.contactsCreated++;
+                else if (result.value.action === 'updated') stats.contactsUpdated++;
+                else stats.contactsError++;
               } else {
                 stats.contactsError++;
               }
-            } catch (e) {
-              console.log(`  Error processing contact ${contactId}`);
-              stats.contactsError++;
             }
           }
           
@@ -591,12 +599,11 @@ async function syncLeadGenData() {
         }
       }
       
-      after = response.paging?.next?.after || null;
     } catch (e) {
-      console.error('Error in sync loop:', e.body || e.message || e);
-      break;
+      console.error('Error processing company:', e.body || e.message || e);
+      stats.companiesError++;
     }
-  } while (after);
+  }
   
   // Print summary
   console.log('');

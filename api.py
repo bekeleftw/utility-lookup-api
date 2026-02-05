@@ -2348,11 +2348,27 @@ def airtable_url(table_id):
     return f'https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{table_id}'
 
 def resolve_ref_code_to_email(ref_code):
-    """Look up email from ref_code in Airtable."""
+    """Look up email from ref_code in Airtable.
+    
+    First checks LeadGen_Companies (new HubSpot-synced data) by ref_id.
+    Falls back to LeadGen_RefCodes (legacy) by ref_code.
+    Returns email if found, or 'valid' if ref exists but has no email.
+    """
     if not ref_code or not AIRTABLE_API_KEY:
         return None
     
     try:
+        # First try LeadGen_Companies table by ref_id
+        url = airtable_url(LEADGEN_COMPANIES_TABLE_ID)
+        params = {'filterByFormula': f"{{ref_id}}='{ref_code}'", 'maxRecords': 1}
+        resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
+        if resp.status_code == 200:
+            records = resp.json().get('records', [])
+            if records:
+                # Valid ref found - return 'valid' marker (no email needed)
+                return 'valid'
+        
+        # Fallback to LeadGen_RefCodes table by ref_code
         url = airtable_url(LEADGEN_REFCODES_TABLE_ID)
         params = {'filterByFormula': f"{{ref_code}}='{ref_code}'"}
         resp = requests.get(url, headers=get_airtable_headers(), params=params, timeout=10)
@@ -2458,9 +2474,12 @@ def leadgen_lookup():
     
     # Resolve ref_code to email if needed
     if ref_code and not email:
-        email = resolve_ref_code_to_email(ref_code)
-        if not email:
+        resolved = resolve_ref_code_to_email(ref_code)
+        if not resolved:
             return jsonify({'status': 'error', 'message': 'Invalid ref code'}), 400
+        # If resolved is 'valid', ref exists but has no email - use IP-based rate limiting
+        if resolved != 'valid':
+            email = resolved
     
     # Get client IP
     ip_address = get_client_ip()

@@ -59,9 +59,10 @@ def get_service_check_url(utility_name: str) -> str:
             return url
     
     return None
-from datetime import datetime
+from datetime import datetime, timedelta
 from functools import wraps
 import hashlib
+import hmac
 import json
 import os
 import re
@@ -186,7 +187,12 @@ def extract_city_state(address):
     return None, None
 
 app = Flask(__name__, static_folder='static', static_url_path='/static')
-CORS(app)  # Allow cross-origin requests from Webflow
+CORS(app, origins=[
+    'https://www.utilityprofit.com',
+    'https://utilityprofit.com',
+    'https://utilityprofit.webflow.io',
+    'http://localhost:3000',  # local dev
+])
 
 # Serve static files from /public (for leadgen JS)
 from flask import send_from_directory
@@ -215,21 +221,78 @@ if GUIDE_DATABASE_URL:
     except Exception as e:
         print(f"Warning: Could not connect to database for guide feature: {e}")
 
-# Rate limiting disabled - internal use only
-# limiter = Limiter(
-#     get_remote_address,
-#     app=app,
-#     default_limits=["500 per day"],
-#     storage_uri="memory://",
-#     strategy="fixed-window"
-# )
+# Rate limiting — enabled for leadgen, no default limits on internal endpoints
 limiter = Limiter(
     get_remote_address,
     app=app,
-    default_limits=[],  # No limits
+    default_limits=[],  # No default limits (applied per-endpoint)
     storage_uri="memory://",
-    enabled=False  # Disable rate limiting entirely
+    enabled=True
 )
+
+# ── Leadgen anti-scraping: short-lived HMAC tokens ──────────────────────
+# The frontend must first call GET /api/leadgen/token to get a single-use
+# token, then include it in the lookup POST.  Tokens expire after 60s and
+# can only be used once.  The token endpoint itself is rate-limited.
+LEADGEN_TOKEN_SECRET = os.getenv('LEADGEN_TOKEN_SECRET', secrets.token_hex(32))
+_used_tokens = {}  # token -> expiry timestamp (cleaned periodically)
+_TOKEN_TTL = 60  # seconds
+_TOKEN_CLEANUP_INTERVAL = 300  # clean expired tokens every 5 min
+_last_token_cleanup = time.time()
+
+def _cleanup_expired_tokens():
+    """Remove expired tokens from the used-tokens set."""
+    global _last_token_cleanup
+    now = time.time()
+    if now - _last_token_cleanup < _TOKEN_CLEANUP_INTERVAL:
+        return
+    _last_token_cleanup = now
+    expired = [t for t, exp in _used_tokens.items() if exp < now]
+    for t in expired:
+        del _used_tokens[t]
+
+def generate_leadgen_token():
+    """Generate a short-lived HMAC token for leadgen requests."""
+    ts = str(int(time.time()))
+    nonce = secrets.token_hex(8)
+    payload = f"{ts}:{nonce}"
+    sig = hmac.new(LEADGEN_TOKEN_SECRET.encode(), payload.encode(), hashlib.sha256).hexdigest()[:32]
+    return f"{payload}:{sig}"
+
+def validate_leadgen_token(token):
+    """Validate and consume a leadgen token. Returns True if valid."""
+    _cleanup_expired_tokens()
+    if not token:
+        return False
+    parts = token.split(':')
+    if len(parts) != 3:
+        return False
+    ts_str, nonce, sig = parts
+    try:
+        ts = int(ts_str)
+    except ValueError:
+        return False
+    # Check expiry
+    if time.time() - ts > _TOKEN_TTL:
+        return False
+    # Check signature
+    payload = f"{ts_str}:{nonce}"
+    expected = hmac.new(LEADGEN_TOKEN_SECRET.encode(), payload.encode(), hashlib.sha256).hexdigest()[:32]
+    if not hmac.compare_digest(sig, expected):
+        return False
+    # Check single-use
+    if token in _used_tokens:
+        return False
+    _used_tokens[token] = time.time() + _TOKEN_TTL
+    return True
+
+def get_real_ip():
+    """Get the real client IP — Railway sets X-Forwarded-For with the real IP first."""
+    xff = request.headers.get('x-forwarded-for', '')
+    if xff:
+        # Railway: first IP in the chain is the real client
+        return xff.split(',')[0].strip()
+    return request.remote_addr or 'unknown'
 
 # Custom error handler for rate limit exceeded
 @app.errorhandler(429)
@@ -2381,10 +2444,8 @@ def resolve_ref_code_to_email(ref_code):
     return None
 
 def get_client_ip():
-    """Get client IP from request headers."""
-    return request.headers.get('x-forwarded-for', '').split(',')[0].strip() or \
-           request.headers.get('x-real-ip') or \
-           request.remote_addr or 'unknown'
+    """Get client IP from request headers. Uses get_real_ip() for consistency."""
+    return get_real_ip()
 
 # Whitelisted emails and IPs that bypass rate limiting
 LEADGEN_WHITELIST_EMAILS = {'mark@utilityprofit.com'}
@@ -2456,10 +2517,34 @@ def generate_ref_code():
     return ''.join(random.choice(chars) for _ in range(6))
 
 
+@app.route('/api/leadgen/token', methods=['GET'])
+@limiter.limit("20 per minute")
+def leadgen_get_token():
+    """Issue a short-lived single-use token for the next leadgen lookup.
+    
+    The frontend must call this before each lookup and include the token
+    in the POST body.  Tokens expire after 60s and cannot be reused.
+    This forces scrapers to make 2 requests per lookup (token + lookup)
+    and the token endpoint is tightly rate-limited.
+    """
+    token = generate_leadgen_token()
+    return jsonify({'token': token})
+
+
 @app.route('/api/leadgen/lookup', methods=['POST'])
+@limiter.limit("10 per minute")
 def leadgen_lookup():
     """Main leadgen lookup endpoint with tracking and limits."""
     data = request.get_json() or {}
+    
+    # Validate leadgen token (anti-scraping)
+    token = data.get('token')
+    if not validate_leadgen_token(token):
+        logger.warning(f"Leadgen: invalid/missing token from {get_real_ip()}")
+        return jsonify({
+            'status': 'error',
+            'message': 'Invalid or expired request token. Please refresh and try again.'
+        }), 403
     
     address = data.get('address')
     utilities = data.get('utilities', 'electric,gas,water')
@@ -2482,7 +2567,7 @@ def leadgen_lookup():
             email = resolved
     
     # Get client IP
-    ip_address = get_client_ip()
+    ip_address = get_real_ip()
     
     # Check limits (5 per 24 hours per email or IP)
     lookup_count = count_recent_lookups(email=email, ip_address=ip_address)
@@ -2555,6 +2640,7 @@ def leadgen_lookup():
 
 
 @app.route('/api/leadgen/check-limit', methods=['GET'])
+@limiter.limit("30 per minute")
 def leadgen_check_limit():
     """Check if user can search before they try."""
     email = request.args.get('email')
@@ -2576,6 +2662,7 @@ def leadgen_check_limit():
 
 
 @app.route('/api/leadgen/resolve-ref', methods=['GET'])
+@limiter.limit("30 per minute")
 def leadgen_resolve_ref():
     """Resolve a ref code to its personalization data.
     

@@ -24,7 +24,6 @@
   // Configuration
   const CONFIG = {
     apiBase: 'https://web-production-9acc6.up.railway.app',
-    apiKey: 'ulk_utilityprofit_master_2026_x7k9m2',
     ctaUrl: 'https://www.utilityprofit.com/book-a-demo-via-calendly',
     maxSearches: 5
   };
@@ -219,18 +218,31 @@
         return;
       }
       
+      // Fetch a single-use token first
+      let token = null;
+      try {
+        const tokenResp = await fetch(`${CONFIG.apiBase}/api/leadgen/token`);
+        const tokenData = await tokenResp.json();
+        token = tokenData.token;
+      } catch (err) {
+        console.error('Token fetch error:', err);
+        showError('Unable to connect. Please try again.');
+        setLoading(false);
+        return;
+      }
+
       // Call the lookup API
       const response = await fetch(`${CONFIG.apiBase}/api/leadgen/lookup`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': CONFIG.apiKey
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           address: address,
           utilities: utilities.join(','),
           email: state.email || null,
-          ref_code: state.refCode || null
+          ref_code: state.refCode || null,
+          token: token
         })
       });
       
@@ -360,9 +372,7 @@
       if (state.email) params.set('email', state.email);
       if (state.refCode) params.set('ref', state.refCode);
       
-      const response = await fetch(`${CONFIG.apiBase}/api/leadgen/check-limit?${params}`, {
-        headers: { 'X-API-Key': CONFIG.apiKey }
-      });
+      const response = await fetch(`${CONFIG.apiBase}/api/leadgen/check-limit?${params}`);
       
       const data = await response.json();
       
@@ -397,9 +407,7 @@
    */
   async function resolveRefCode(refCode) {
     try {
-      const response = await fetch(`${CONFIG.apiBase}/api/leadgen/resolve-ref?ref=${refCode}`, {
-        headers: { 'X-API-Key': CONFIG.apiKey }
-      });
+      const response = await fetch(`${CONFIG.apiBase}/api/leadgen/resolve-ref?ref=${refCode}`);
       
       const data = await response.json();
       
@@ -451,8 +459,7 @@
       await fetch(`${CONFIG.apiBase}/api/leadgen/track-cta`, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': CONFIG.apiKey
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           email: state.email || null,
